@@ -3,6 +3,7 @@ import globals.Photoresists
 import globals.Etchants
 
 import static gregtech.api.unification.material.Materials.*;
+import gregtech.api.metatileentity.multiblock.CleanroomType
 
 
 def BR = recipemap('batch_reactor')
@@ -26,8 +27,8 @@ FORMING_PRESS.recipeBuilder()
         .notConsumable(metaitem('shape.mold.cylinder'))
         .inputs(ore('ingotTitanium') * 8)
         .outputs(metaitem('titanium_cylinder') * 1)
-        .duration(320)
         .EUt(42)
+        .duration(320)
         .buildAndRegister();
 
 // ED Copper Foil
@@ -38,8 +39,8 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .outputs(metaitem('foilElectrodepositedCopper') * 4)
         .fluidOutputs(fluid('sulfuric_acid') * 1000)
         .fluidOutputs(fluid('oxygen') * 1000)
-        .duration(240)
-        .EUt(120)
+        .EUt(480)
+        .duration(20)
         .buildAndRegister();
 
 // Copper Clad Laminate
@@ -47,8 +48,9 @@ FORMING_PRESS.recipeBuilder()
         .inputs(metaitem('board.epoxy.prepreg'))
         .inputs(ore('foilElectrodepositedCopper') * 2)
         .outputs(metaitem('board.epoxy.copper_clad'))
-        .duration(240)
-        .EUt(120)
+        .EUt(30)
+        .duration(100)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 // Patterned FR-4 Circuit Board
@@ -61,52 +63,56 @@ Etchants.generateEtchingRecipes("board.epoxy.patterned", "board.epoxy.etched", "
 MILLING.recipeBuilder()
         .inputs(metaitem('board.epoxy.etched') * 4)
         .outputs(metaitem('board.epoxy.drilled') * 4)
-        .duration(240)
-        .EUt(120)
+        .EUt(30)
+        .duration(300)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 // Electroless Plating
 // Base reaction: HCHO + 3OH- + Cu+2 --EDTA-> HCOO- + 2H2O + Cu° 
 LCR.recipeBuilder()
         .notConsumable(fluid('tetrasodium_ethylenediaminetetraacetate_solution') * 1000)
-        .inputs(metaitem('board.epoxy.drilled'))
+        .inputs(metaitem('board.epoxy.drilled') * 4)
         .fluidInputs(fluid('sodium_hydroxide_solution') * 3000)
         .fluidInputs(fluid('copper_sulfate_solution') * 1000)
         .fluidInputs(fluid('formaldehyde') * 1000)
-        .outputs(metaitem('board.epoxy.electroless'))
+        .outputs(metaitem('board.epoxy.electroless') * 4)
         .fluidOutputs(fluid('sodium_sulfate_solution') * 1000)
         .fluidOutputs(fluid('sodium_formate_solution') * 1000)
         .fluidOutputs(fluid('water') * 4000)
-        .duration(240)
-        .EUt(120)
+        .EUt(30)
+        .duration(300)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 LCR.recipeBuilder()
         .notConsumable(fluid('tetrasodium_ethylenediaminetetraacetate_solution') * 1000)
-        .inputs(metaitem('board.epoxy.drilled'))
+        .inputs(metaitem('board.epoxy.drilled') * 4)
         .inputs(ore('dustCopperIiChloride') * 3)
         .fluidInputs(fluid('sodium_hydroxide_solution') * 3000)
         .fluidInputs(fluid('formaldehyde') * 1000)
-        .outputs(metaitem('board.epoxy.electroless'))
+        .outputs(metaitem('board.epoxy.electroless') * 4)
         .fluidOutputs(fluid('salt_water') * 2000)
         .fluidOutputs(fluid('sodium_formate_solution') * 1000)
         .fluidOutputs(fluid('water') * 2000)
-        .duration(240)
-        .EUt(120)
+        .EUt(30)
+        .duration(300)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
         
 LCR.recipeBuilder()
         .notConsumable(fluid('tetrasodium_ethylenediaminetetraacetate_solution') * 1000)
-        .inputs(metaitem('board.epoxy.drilled'))
+        .inputs(metaitem('board.epoxy.drilled') * 4)
         .inputs(ore('dustCopperIiNitrate') * 9)
         .fluidInputs(fluid('sodium_hydroxide_solution') * 3000)
         .fluidInputs(fluid('formaldehyde') * 1000)
-        .outputs(metaitem('board.epoxy.electroless'))
-        .fluidOutputs(fluid('salt_water') * 2000)
+        .outputs(metaitem('board.epoxy.electroless') * 4)
         .fluidOutputs(fluid('sodium_nitrate_solution') * 2000)
-        .fluidOutputs(fluid('water') * 1000)
-        .duration(240)
-        .EUt(120)
+        .fluidOutputs(fluid('sodium_formate_solution') * 1000)
+        .fluidOutputs(fluid('water') * 2000)
+        .EUt(30)
+        .duration(300)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 // Electrolytic Plating
@@ -118,8 +124,9 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .outputs(metaitem('board.epoxy.electrolytic'))
         .fluidOutputs(fluid('sulfuric_acid') * 2600)
         .fluidOutputs(fluid('oxygen') * 600)
-        .duration(960)
         .EUt(120)
+        .duration(480)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 ELECTROLYTIC_CELL.recipeBuilder()
@@ -130,8 +137,9 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .outputs(metaitem('board.epoxy.electrolytic'))
         .fluidOutputs(fluid('sulfuric_acid') * 2600)
         .fluidOutputs(fluid('oxygen') * 600)
-        .duration(240)
         .EUt(120)
+        .duration(80)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 // Masking
@@ -139,31 +147,35 @@ MIXER.recipeBuilder()
         .inputs(ore('dyeGreen'))
         .fluidInputs(fluid('epoxy') * 288)
         .fluidOutputs(fluid('green_epoxy_pcb_coating') * 288)
-        .duration(32)
         .EUt(40)
+        .duration(32)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 CURTAIN_COATER.recipeBuilder()
         .inputs(metaitem('board.epoxy.electrolytic'))
         .fluidInputs(fluid('green_epoxy_pcb_coating') * 72)
         .outputs(metaitem('board.epoxy.wet_masked'))
-        .duration(240)
-        .EUt(120)
+        .EUt(30)
+        .duration(20)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 DRYER.recipeBuilder()
         .inputs(metaitem('board.epoxy.wet_masked'))
         .outputs(metaitem('board.epoxy.masked'))
-        .duration(240)
-        .EUt(120)
+        .EUt(30)
+        .duration(60)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 UV_LIGHT_BOX.recipeBuilder()
         .notConsumable(metaitem('mask.pcb'))
         .inputs(metaitem('board.epoxy.masked'))
         .outputs(metaitem('board.epoxy.mask_affixed'))
-        .duration(240)
-        .EUt(120)
+        .EUt(30)
+        .duration(100)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
 // Surface Finished
@@ -172,6 +184,7 @@ CHEMICAL_BATH.recipeBuilder()
         .notConsumable(fluid('soldering_alloy') * 144)
         .fluidInputs(fluid('soldering_alloy') * 144)
         .outputs(metaitem('circuit_board.extreme'))
-        .duration(240)
-        .EUt(120)
+        .EUt(30)
+        .duration(40)
+        .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();

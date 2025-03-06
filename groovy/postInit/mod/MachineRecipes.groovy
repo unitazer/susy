@@ -1204,3 +1204,37 @@ RecyclingHelper.addShaped("gregtech:sieve_distillation_tower", metaitem('sieve_d
 	[metaitem('springKanthal'),metaitem('hull.Hv'),metaitem('springKanthal')],
 	[metaitem('frameStainlessSteel'),metaitem('electric.pump.hv'),metaitem('frameStainlessSteel')]
 ])
+
+RecyclingHelper.addShaped("gregtech:curtain_coater", metaitem('curtain_coater'), [
+		[metaitem('electric.pump.hv'), metaitem('frameStainlessSteel'), metaitem('electric.pump.hv')],
+		[ore('circuitHv'), metaitem('hull.Hv'), ore('circuitHv')],
+		[metaitem('pipeLargeFluidStainlessSteel'), ore('circuitHv'), metaitem('pipeLargeFluidStainlessSteel')]
+])
+
+recipemap('assembler').recipeBuilder()
+		.inputs(ore('frameGtSteel'))
+		.inputs(metaitem('conveyor.module.lv') * 2)	
+		.outputs(item('susy:conveyor_belt') * 1)
+        .fluidInputs(fluid('soldering_alloy') * 288)
+		.EUt(30)
+		.duration(600)
+		.buildAndRegister()
+
+RecyclingHelper.addShaped("gregtech:milling", metaitem('milling'), [
+		[ore('circuitHv'), metaitem('conveyor.module.hv'), ore('circuitHv')],
+		[metaitem('robot.arm.hv'), metaitem('hull.Hv'), metaitem('robot.arm.hv')],
+		[ore('circuitHv'), metaitem('conveyor.module.hv'), ore('circuitHv')]
+])
+
+recipemap('assembler').recipeBuilder()
+		.inputs(item('gregtech:metal_casing', 4))
+		.inputs(ore('toolHeadDrillSteel'))
+		.inputs(ore('circuitHv') * 2)
+		.inputs(metaitem('conveyor.module.hv') * 4)
+		.inputs(metaitem('electric.motor.hv') * 4)
+        .fluidInputs(fluid('soldering_alloy') * 1152)
+		.outputs(item('susy:drill_bit'))
+		.EUt(120)
+		.duration(600)
+		.buildAndRegister()
+

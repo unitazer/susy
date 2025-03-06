@@ -246,7 +246,7 @@ eventManager.listen {
         customMetaItems.addItem(5307, "etched.silicon_nitride");
         
         //Epoxy Circuit Board + Components 5800-5900
-        // Epoxy Prepreg is ???
+        // Epoxy Prepreg is 214
         customMetaItems.addItem(5800, "board.epoxy.copper_clad");
         customMetaItems.addItem(5801, "board.epoxy.patterned");
         customMetaItems.addItem(5802, "board.epoxy.etched");
@@ -256,7 +256,6 @@ eventManager.listen {
         customMetaItems.addItem(5806, "board.epoxy.wet_masked");
         customMetaItems.addItem(5807, "board.epoxy.masked");
         customMetaItems.addItem(5808, "board.epoxy.mask_affixed"); 
-        // Surface finished
 
         //Good Circuit Components 5900-6000
         customMetaItems.addItem(5900, "op_amp");

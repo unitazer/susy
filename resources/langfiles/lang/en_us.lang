@@ -121,6 +121,8 @@ susy.material.acidic_chloronitrobenzene_mixture=Acidic Chloronitrobenzene Mixtur
 susy.material.mixed_dichlorobenzene_solution=Mixed Dichlorobenzene Solution
 susy.material.two_butanol_solution=2-Butanol Solution
 susy.material.DilutedSodiumCarbonateSolution=Diluted Sodium Carbonate Solution
+susy.material.sodium_formate_solution=Sodium Formate Solution
+susy.material.green_epoxy_pcb_coating=Green Epoxy PCB Coating
 
 susy.material.iron_ii_sulfide=Iron II Sulfide
 susy.material.potassium_bisulfate=Potassium Bisulfate
@@ -288,6 +290,7 @@ susy.material.sodium_tetraborate=Sodium Tetraborate
 susy.material.boron_carbide=Boron Carbide
 susy.material.potassium_tetrafluoroborate=Potassium Tetrafluoroborate
 susy.material.electrolytic_boron=Electrolytic Boron
+susy.material.electrodeposited_copper=Electrodeposited (ED) Copper
 
 susy.material.methylenedianiline=Methylenedianiline
 susy.material.methylene_diphenyl_diisocyanate=Methylene Diphenyl Diisocyanate
@@ -2593,9 +2596,10 @@ metaitem.sponge.rhodium.name=Rhodium Sponge
 metaitem.drone.lv.name=Basic Drone
 
 metaitem.glass_fibers.name=Glass Fibers
-metaitem.board.epoxy.prepreg.name=Epoxy Lamina
 metaitem.stem.cotton.name=Cotton Stem
 metaitem.spinneret.name=Spinneret
+
+metaitem.titanium_cylinder.name=Titanium Cylinder
 
 metaitem.rubylith.name=Rubylith
 metaitem.rubylith_film.name=Rubylith Film
@@ -2626,6 +2630,17 @@ metaitem.circuit.advanced_integrated.name=High-Voltage Electronic Circuit
 metaitem.turbojet.small.name=Small Turbojet Engine
 metaitem.wing_panel.fiber_reinforced_epoxy.name=Glass Fiber Reinforced Epoxy (GFEP) Wing Panel
 metaitem.wing.small.name=Lightweight Wing
+
+metaitem.board.epoxy.prepreg.name=FR-4 Epoxy Prepreg
+metaitem.board.epoxy.copper_clad.name=FR-4 Copper Clad Laminate
+metaitem.board.epoxy.patterned.name=Patterned FR-4 Circuit Board
+metaitem.board.epoxy.etched.name=Etched FR-4 Circuit Board
+metaitem.board.epoxy.drilled.name=Drilled FR-4 Circuit Board
+metaitem.board.epoxy.electroless.name=Electroless Plated FR-4 Circuit Board
+metaitem.board.epoxy.electrolytic.name=Electrolytic Plated FR-4 Circuit Board
+metaitem.board.epoxy.wet_masked.name=Wet-masked FR-4 Circuit Board
+metaitem.board.epoxy.masked.name=Masked FR-4 Circuit Board
+metaitem.board.epoxy.mask_affixed.name=Mask-affixed FR-4 Circuit Board
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
