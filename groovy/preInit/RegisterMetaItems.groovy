@@ -106,7 +106,8 @@ eventManager.listen {
 
         customMetaItems.addItem(212, "drone.lv").setMaxStackSize(1).addComponents(ElectricStats.createRechargeableBattery(10000, GTValues.LV)).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
         customMetaItems.addItem(213, "glass_fibers")
-        customMetaItems.addItem(214, "epoxy_lamina")
+        customMetaItems.addItem(214, "board.epoxy.prepreg")
+        customMetaItems.addItem(215, "titanium_cylinder");
 
         customMetaItems.addItem(250, "beads.amberlyst_ch");
         customMetaItems.addItem(251, "beads.strong_acidic_cation_exchange");
@@ -244,6 +245,19 @@ eventManager.listen {
         customMetaItems.addItem(5306, "etched.polysilicon");
         customMetaItems.addItem(5307, "etched.silicon_nitride");
         
+        //Epoxy Circuit Board + Components 5800-5900
+        // Epoxy Prepreg is ???
+        customMetaItems.addItem(5800, "board.epoxy.copper_clad");
+        customMetaItems.addItem(5801, "board.epoxy.patterned");
+        customMetaItems.addItem(5802, "board.epoxy.etched");
+        customMetaItems.addItem(5803, "board.epoxy.drilled");
+        customMetaItems.addItem(5804, "board.epoxy.electroless");
+        customMetaItems.addItem(5805, "board.epoxy.electrolytic");
+        customMetaItems.addItem(5806, "board.epoxy.wet_masked");
+        customMetaItems.addItem(5807, "board.epoxy.masked");
+        customMetaItems.addItem(5808, "board.epoxy.mask_affixed"); 
+        // Surface finished
+
         //Good Circuit Components 5900-6000
         customMetaItems.addItem(5900, "op_amp");
         customMetaItems.addItem(5901, "heat_sink");

@@ -649,5 +649,10 @@ public class ThirdDegreeMaterials {
                 .components(Isopropylamine, Water)
                 .colorAverage()
                 .build();
+
+        GreenEpoxyPCBCoating = new Material.Builder(24104, SuSyUtility.susyId('green_epoxy_pcb_coating'))
+                .liquid()
+                .color(0x196809)
+                .build();
     }
 }

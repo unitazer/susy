@@ -1290,6 +1290,8 @@ class SuSyMaterials {
         public static Material AmmoniumHexachloroiridate;
         public static Material PotassiumOsmate;
         public static Material SodiumHydrosulfide;
+        public static Material ElectrodepositedCopper;
+        public static Material SodiumFormateSolution;
 
         // HP Materials
 
@@ -2020,6 +2022,7 @@ class SuSyMaterials {
         public static Material LithiumHydroxideMotherLiquor;
         public static Material LithiumHydroxideMonohydrate;
         public static Material IsopropylamineSolution;
+        public static Material GreenEpoxyPCBCoating;
 
         // Thermodynamics Materials
 

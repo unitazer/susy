@@ -404,16 +404,9 @@ VACUUM_CHAMBER.recipeBuilder()
     CHEMICAL_BATH.recipeBuilder()
         .inputs(metaitem('glass_fibers'))
         .fluidInputs(fluid('flame_retardant_epoxy') * 144)
-        .outputs(metaitem('epoxy_lamina'))
+        .outputs(metaitem('board.epoxy.prepreg'))
         .EUt(120)
         .duration(10)
-        .buildAndRegister()
-
-    DRYER.recipeBuilder()
-        .inputs(metaitem('epoxy_lamina'))
-        .outputs(metaitem('plateReinforcedEpoxyResin'))
-        .EUt(120)
-        .duration(100)
         .buildAndRegister()
 
 // SU-8 photoresist
