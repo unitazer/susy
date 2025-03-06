@@ -19,6 +19,8 @@ def MIXER = recipemap('mixer')
 def UV_LIGHT_BOX = recipemap('uv_light_box')
 
 
+// Roughly follows https://medium.com/@raypcb/how-are-fr4-pcbs-manufactured-c571fd1e4a29
+
 // Epoxy Prepreg 
 // (in Epoxy Chain)
 
@@ -53,13 +55,17 @@ FORMING_PRESS.recipeBuilder()
         .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
-// Patterned FR-4 Circuit Board
-Photoresists.generatePatterningRecipes("board.epoxy.copper_clad", "board.epoxy.patterned", "mask.pcb", 4 /* EV */, 2, 1, 1, true)
+// Patterned
+Photoresists.generatePatterningRecipes("board.epoxy.copper_clad", "board.epoxy.patterned", "mask.pcb", 
+                                       4 /* EV */, 
+                                       2 /* double sided */, 1, 1, true)
 
-// Etched FR-4 Circuit Board 
-Etchants.generateEtchingRecipes("board.epoxy.patterned", "board.epoxy.etched", "copper", 4 /* EV */, 2, true)
+// Etched
+Etchants.generateEtchingRecipes("board.epoxy.patterned", "board.epoxy.etched", "copper", 
+                                4 /* EV */, 
+                                2 /* double sided */, true)
 
-// Drilled FR-4 Circuit Board
+// Drilled
 MILLING.recipeBuilder()
         .inputs(metaitem('board.epoxy.etched') * 4)
         .outputs(metaitem('board.epoxy.drilled') * 4)
@@ -69,6 +75,10 @@ MILLING.recipeBuilder()
         .buildAndRegister();
 
 // Electroless Plating
+// Source: 
+//      https://www.nmfrc.org/pdf/p0295g.pdf
+//      https://www.rsc.org/suppdata/d2/ee/d2ee01427k/d2ee01427k1.pdf
+// (the upper one seems to have a typo: 2H2O instead of 2H2)
 // Base reaction: HCHO + 3OH- + Cu+2 --EDTA-> HCOO- + 2H2O + Cu° 
 LCR.recipeBuilder()
         .notConsumable(fluid('tetrasodium_ethylenediaminetetraacetate_solution') * 1000)
@@ -116,6 +126,7 @@ LCR.recipeBuilder()
         .buildAndRegister();
 
 // Electrolytic Plating
+// Reference for the mixture: https://patents.google.com/patent/US4242181A/en
 ELECTROLYTIC_CELL.recipeBuilder()
         .inputs(metaitem('board.epoxy.electroless'))
         .circuitMeta(1)
@@ -133,7 +144,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .inputs(metaitem('board.epoxy.electroless'))
         .fluidInputs(fluid('sulfuric_acid') * 2000)
         .fluidInputs(fluid('copper_sulfate_solution') * 600)
-        .fluidInputs(fluid('gtfo_coffee') * 10)
+        .fluidInputs(fluid('gtfo_coffee') * 10) // :tr:
         .outputs(metaitem('board.epoxy.electrolytic'))
         .fluidOutputs(fluid('sulfuric_acid') * 2600)
         .fluidOutputs(fluid('oxygen') * 600)
@@ -178,7 +189,7 @@ UV_LIGHT_BOX.recipeBuilder()
         .cleanroom(CleanroomType.CLEANROOM)
         .buildAndRegister();
 
-// Surface Finished
+// Surface Finished (apply solder)
 CHEMICAL_BATH.recipeBuilder()
         .inputs(metaitem('board.epoxy.mask_affixed'))
         .notConsumable(fluid('soldering_alloy') * 144)
