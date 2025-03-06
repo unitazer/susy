@@ -408,6 +408,13 @@ VACUUM_CHAMBER.recipeBuilder()
         .EUt(120)
         .duration(10)
         .buildAndRegister()
+        
+    DRYER.recipeBuilder()
+        .inputs(metaitem('board.epoxy.prepreg'))
+        .outputs(metaitem('plateReinforcedEpoxyResin'))
+        .EUt(120)
+        .duration(100)
+        .buildAndRegister()
 
 // SU-8 photoresist
     // Bisphenol A Novolac Epoxy
