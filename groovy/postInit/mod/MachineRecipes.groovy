@@ -1205,6 +1205,8 @@ RecyclingHelper.addShaped("gregtech:sieve_distillation_tower", metaitem('sieve_d
 	[metaitem('frameStainlessSteel'),metaitem('electric.pump.hv'),metaitem('frameStainlessSteel')]
 ])
 
+// Curtain Coater
+
 RecyclingHelper.addShaped("gregtech:curtain_coater", metaitem('curtain_coater'), [
 		[metaitem('electric.pump.hv'), metaitem('frameStainlessSteel'), metaitem('electric.pump.hv')],
 		[ore('circuitHv'), metaitem('hull.Hv'), ore('circuitHv')],
@@ -1219,6 +1221,8 @@ recipemap('assembler').recipeBuilder()
 		.EUt(30)
 		.duration(600)
 		.buildAndRegister()
+
+// Precise Milling Machine
 
 RecyclingHelper.addShaped("gregtech:milling", metaitem('milling'), [
 		[ore('circuitHv'), metaitem('conveyor.module.hv'), ore('circuitHv')],
