@@ -133,7 +133,7 @@ crafting.replaceShaped('cd4017be_lib:rs_ctr/assembler', item('rs_ctr:assembler')
 
 crafting.replaceShaped('cd4017be_lib:rs_ctr/editor', item('rs_ctr:editor'), [
         [null, ore('paneGlass'), null],
-        [metaitem('circuit.electronic'), metaitem('plateSteel'), metaitem('circuit.electronic')],
+        [ore('circuitLv'), metaitem('plateSteel'), ore('circuitLv')],
         [null, metaitem('workbench'), null]
 ])
 
@@ -164,7 +164,7 @@ crafting.replaceShaped('cd4017be_lib:rs_ctr/panel', item('rs_ctr:panel'), [
 crafting.replaceShaped('cd4017be_lib:rs_ctr/slider', item('rs_ctr:slider'), [
         [null, null, null],
         [item('minecraft:redstone_torch'), metaitem('stickSteel'), item('rs_ctr:wire')],
-        [null, metaitem('circuit.electronic'), null]
+        [null, ore('circuitLv'), null]
 ])
 
 crafting.replaceShaped('cd4017be_lib:rs_ctr/seg7_0', item('rs_ctr:seg7'), [

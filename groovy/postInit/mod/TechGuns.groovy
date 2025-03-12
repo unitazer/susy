@@ -206,7 +206,7 @@ crafting.addShaped("techguns:netherdoor", item('techguns:item_door3x3', 3), [
 	[item('minecraft:piston'), item('techguns:nethermetal'), item('minecraft:piston')],
 	[item('techguns:nethermetal'), item('techguns:nethermetal'), item('techguns:nethermetal')]
 ])
-
+	
 crafting.replaceShaped("techguns:simplemachine_8_camo_bench", item('techguns:simplemachine', 8), [
 	[ore('dye'), ore('dye'), ore('dye')],
 	[ore('plateIron'), ore('workbench'), ore('plateIron')],
@@ -1090,6 +1090,67 @@ crafting.addShaped("tg_glider_wing", item('techguns:itemshared:91'), [
 		[ore('platePlastic'), ore('platePlastic'), ore('platePlastic')],
 		[ore('platePlastic'), ore('platePlastic'), ore('platePlastic')]
 ]);
+
+crafting.replaceShapeless("techguns:thompson_ammo_default", item('techguns:thompson'), [
+	item('techguns:thompson:*'), 
+	item('techguns:itemshared', 9)
+]);
+
+crafting.replaceShapeless("techguns:thompson_ammo_incendiary", item('techguns:thompson').withNbt([ammovariant: 'incendiary', ammo: 20]), [
+	item('techguns:thompson:*'), 
+	item('techguns:itemshared', 112)
+]);
+
+crafting.replaceShapeless("techguns:boltaction_ammo_default", item('techguns:boltaction'), [
+	item('techguns:boltaction:*'), 
+	item('techguns:itemshared', 3)
+]);
+
+crafting.replaceShapeless("techguns:boltaction_ammo_incendiary", item('techguns:boltaction').withNbt([ammovariant: 'incendiary', ammo: 6]), [
+	item('techguns:boltaction:*'), 
+	item('techguns:itemshared', 110)
+]);
+
+crafting.replaceShapeless("techguns:revolver_ammo_default", item('techguns:revolver'), [
+	item('techguns:revolver:*'), 
+	item('techguns:itemshared', 1)
+]);
+
+crafting.replaceShapeless("techguns:revolver_ammo_incendiary", item('techguns:revolver').withNbt([ammovariant: 'incendiary', ammo: 6]), [
+	item('techguns:revolver:*'), 
+	item('techguns:itemshared', 109)
+]);
+
+crafting.replaceShapeless("techguns:pistol_ammo_default", item('techguns:pistol'), [
+	item('techguns:pistol:*'), 
+	item('techguns:itemshared', 11)
+]);
+
+crafting.replaceShapeless("techguns:pistol_ammo_default_ammo_incendiary", item('techguns:pistol').withNbt([ammovariant: 'incendiary', ammo: 18]), [
+	item('techguns:pistol:*'), 
+	item('techguns:itemshared', 113)
+]);
+
+crafting.replaceShapeless("techguns:sawedoff_ammo_default", item('techguns:sawedoff'), [
+	item('techguns:sawedoff:*'), 
+	item('techguns:itemshared', 2)
+]);
+
+crafting.replaceShapeless("techguns:sawedoff_ammo_incendiary", item('techguns:sawedoff').withNbt([ammovariant: 'incendiary', ammo: 2]), [
+	item('techguns:sawedoff:*'), 
+	item('techguns:itemshared', 106)
+]);
+
+crafting.replaceShapeless("techguns:ak47_ammo_default", item('techguns:ak47'), [
+	item('techguns:ak47:*'), 
+	item('techguns:itemshared', 13)
+]);
+
+crafting.replaceShapeless("techguns:ak47_ammo_incendiary", item('techguns:ak47').withNbt([ammovariant: 'incendiary', ammo: 30]), [
+	item('techguns:ak47:*'), 
+	item('techguns:itemshared', 115)
+]);
+
 
 //--------------------GregTech machines only recipes--------------------
 

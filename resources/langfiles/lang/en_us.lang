@@ -625,6 +625,7 @@ susy.material.sodium_arsenide=Sodium Arsenide
 
 susy.material.sodium_perchlorate_solution=Sodium Perchlorate Solution
 susy.material.sodium_chlorate_solution=Sodium Chlorate Solution
+susy.material.diluted_sodium_chlorate_solution=Diluted Sodium Chlorate Solution
 susy.material.diluted_aniline=Diluted Aniline
 susy.material.hot_hp_steam=Hot High Pressure Steam
 

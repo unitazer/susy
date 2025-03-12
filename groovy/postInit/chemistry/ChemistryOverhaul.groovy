@@ -3940,6 +3940,25 @@ BR.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
+// Diluted NaClO3
+
+MIXER.recipeBuilder()
+    .fluidInputs(fluid('sodium_chlorate_solution') * 1000)
+    .fluidInputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('diluted_sodium_chlorate_solution') * 2000)
+    .EUt(30)
+    .duration(80)
+    .buildAndRegister()
+
+DISTILLATION_TOWER.recipeBuilder()
+    .fluidInputs(fluid('diluted_sodium_chlorate_solution') * 2000)
+    .fluidOutputs(fluid('sodium_chlorate_solution') * 1000)
+    .fluidOutputs(fluid('water') * 1000)
+    .EUt(30)
+    .duration(80)
+    .buildAndRegister()
+
+
 // Copper Sulfate Preparation
 BR.recipeBuilder()
     .inputs(ore('dustCupricOxide') * 1)

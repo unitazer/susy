@@ -348,6 +348,7 @@ ASSEMBLER.recipeBuilder()
     .EUt(Globals.voltAmps[4])
     .buildAndRegister()
 
+//Industrial Concrete
 FLUID_SOLIDIFIER.recipeBuilder()
     .inputs(ore('frameGtSteel'))
     .fluidInputs(fluid('concrete') * 576)
@@ -355,3 +356,7 @@ FLUID_SOLIDIFIER.recipeBuilder()
     .duration(100)
     .EUt(Globals.voltAmps[1])
     .buildAndRegister()
+
+// Concrete Dust * 1 (remove Industrial Concrete recycling)
+mods.gregtech.macerator.removeByInput(2, [item('susy:susy_stone_smooth', 9)], null)
+

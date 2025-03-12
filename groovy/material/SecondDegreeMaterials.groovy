@@ -232,14 +232,14 @@ public class SecondDegreeMaterials {
                 .color(0x5880c7)
                 .build()
 
-        SodiumPerchlorateSolution.setFormula('(H2O)(NaClO4)', true);
+        SodiumPerchlorateSolution.setFormula('(NaClO4)(H2O)', true);
 
         SodiumChlorateSolution = new Material.Builder(13036, SuSyUtility.susyId('sodium_chlorate_solution'))
                 .liquid()
                 .color(0x315fe8)
                 .build()
 
-        SodiumChlorateSolution.setFormula('(H2O)(NaClO3)', true);
+        SodiumChlorateSolution.setFormula('(NaClO3)(H2O)', true);
 
         DilutedAniline = new Material.Builder(13037, SuSyUtility.susyId('diluted_aniline'))
                 .liquid()
@@ -464,7 +464,12 @@ public class SecondDegreeMaterials {
                 .color(0x340959)
                 .build()
 
-        // FREE ID: 13074
+        DilutedSodiumChlorateSolution = new Material.Builder(13074, SuSyUtility.susyId('diluted_sodium_chlorate_solution'))
+                .liquid()
+                .color(0x5f81e8)
+                .build()
+
+        DilutedSodiumChlorateSolution.setFormula('(NaClO3)(H2O)2', true);
 
         DilutedAmmoniumSulfateSolution = new Material.Builder(13075, SuSyUtility.susyId('diluted_ammonium_sulfate_solution'))
                 .liquid()
