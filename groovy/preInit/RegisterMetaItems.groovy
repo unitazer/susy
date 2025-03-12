@@ -256,6 +256,7 @@ eventManager.listen {
         customMetaItems.addItem(5806, "board.epoxy.wet_masked");
         customMetaItems.addItem(5807, "board.epoxy.masked");
         customMetaItems.addItem(5808, "board.epoxy.mask_affixed"); 
+        customMetaItems.addItem(5809, "circuit_board.fr4");
 
         //Good Circuit Components 5900-6000
         customMetaItems.addItem(5900, "op_amp");

@@ -2642,6 +2642,8 @@ metaitem.board.epoxy.electrolytic.name=Electrolytic Plated FR-4 Circuit Board
 metaitem.board.epoxy.wet_masked.name=Wet-masked FR-4 Circuit Board
 metaitem.board.epoxy.masked.name=Masked FR-4 Circuit Board
 metaitem.board.epoxy.mask_affixed.name=Mask-affixed FR-4 Circuit Board
+metaitem.circuit_board.fr4.name=Advanced Circuit Board
+metaitem.circuit_board.fr4.tooltip=An Advanced Circuit Board/nDouble-sided FR-4 Printed Circuit Board
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand

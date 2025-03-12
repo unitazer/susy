@@ -18,6 +18,12 @@ def MILLING = recipemap('milling')
 def MIXER = recipemap('mixer')
 def UV_LIGHT_BOX = recipemap('uv_light_box')
 
+mods.jei.ingredient.yeet(
+    metaitem('board.epoxy'),
+    metaitem('board.fiber_reinforced'),
+    metaitem('circuit_board.advanced'),
+    metaitem('circuit_board.extreme')
+)
 
 // Roughly follows https://medium.com/@raypcb/how-are-fr4-pcbs-manufactured-c571fd1e4a29
 
@@ -192,7 +198,7 @@ UV_LIGHT_BOX.recipeBuilder()
 CHEMICAL_BATH.recipeBuilder()
         .inputs(metaitem('board.epoxy.mask_affixed'))
         .fluidInputs(fluid('soldering_alloy') * 144)
-        .outputs(metaitem('circuit_board.extreme'))
+        .outputs(metaitem('circuit_board.fr4'))
         .EUt(Globals.voltAmps[1])
         .duration(60)
         .cleanroom(CleanroomType.CLEANROOM)
