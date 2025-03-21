@@ -13,10 +13,9 @@ class NDopants {
     }
 
     public static final ndopants = [
-        new NDopant("dustHighPurityBoron", 1),
-        new NDopant("dustHighPurityGallium", 2),
-        new NDopant("dustHighPurityAluminium", 2),
-        new NDopant("dustTinyHighPurityIndium", 1)
+        new NDopant("dustHighPurityAntimony", 1),
+        new NDopant("dustHighPurityPhosphorus", 2),
+        new NDopant("dustHighPurityArsenic", 2)
     ]
 }
 

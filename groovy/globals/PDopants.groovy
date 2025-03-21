@@ -13,8 +13,9 @@ class PDopants {
     }
 
     public static final pdopants = [
-        new PDopant("dustHighPurityAntimony", 1),
-        new PDopant("dustHighPurityPhosphorus", 2),
-        new PDopant("dustHighPurityArsenic", 2)
+        new PDopant("dustHighPurityBoron", 1),
+        new PDopant("dustHighPurityGallium", 2),
+        new PDopant("dustHighPurityAluminium", 2),
+        new PDopant("dustTinyHighPurityIndium", 1)
     ]
 }

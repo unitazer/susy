@@ -143,33 +143,33 @@ CSTR.recipeBuilder()
 
 //DOPING
 
-for (ndopant in NDopants.ndopants) {
+for (pdopant in PDopants.pdopants) {
     ION_IMPLANTER.recipeBuilder()
-            .inputs(metaitem('wafer.silicon') * 16 * ndopant.efficiency)
+            .inputs(metaitem('wafer.silicon') * 16 * pdopant.efficiency)
             .circuitMeta(1)
-            .inputs(metaitem(ndopant.metaItemName))
-            .outputs(metaitem('wafer.n_doped.silicon') * 16 * ndopant.efficiency)
+            .inputs(metaitem(pdopant.metaItemName))
+            .outputs(metaitem('wafer.n_doped.silicon') * 16 * pdopant.efficiency)
             .duration(300)
             .EUt(60)
             .buildAndRegister()
 
     ION_IMPLANTER.recipeBuilder()
-            .inputs(metaitem('etched.silicon_dioxide') * 16 * ndopant.efficiency)
+            .inputs(metaitem('etched.silicon_dioxide') * 16 * pdopant.efficiency)
             .circuitMeta(1)
-            .inputs(metaitem(ndopant.metaItemName))
-            .outputs(metaitem('wafer.doped.silicon_dioxide') * 16 * ndopant.efficiency)
+            .inputs(metaitem(pdopant.metaItemName))
+            .outputs(metaitem('wafer.doped.silicon_dioxide') * 16 * pdopant.efficiency)
             .cleanroom(CleanroomType.CLEANROOM)
             .duration(300)
             .EUt(240)
             .buildAndRegister()
 
-    for (pdopant in PDopants.pdopants) {
-        int batchSize = pdopant.efficiency * ndopant.efficiency
+    for (ndopant in NDopants.ndopants) {
+        int batchSize = ndopant.efficiency * pdopant.efficiency
 
         ION_IMPLANTER.recipeBuilder()
                 .inputs(metaitem('wafer.silicon') * 16 * batchSize)
-                .inputs(metaitem(pdopant.metaItemName))
                 .inputs(metaitem(ndopant.metaItemName))
+                .inputs(metaitem(pdopant.metaItemName))
                 .outputs(metaitem('wafer.doped.silicon') * 16 * batchSize)
                 .duration(200)
                 .EUt(60)
@@ -177,8 +177,8 @@ for (ndopant in NDopants.ndopants) {
 
         ION_IMPLANTER.recipeBuilder()
                 .inputs(metaitem('etched.polysilicon') * 16 * batchSize)
-                .inputs(metaitem(pdopant.metaItemName))
                 .inputs(metaitem(ndopant.metaItemName))
+                .inputs(metaitem(pdopant.metaItemName))
                 .outputs(metaitem('wafer.doped.polysilicon') * 16 * batchSize)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .duration(200)
