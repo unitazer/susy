@@ -13,6 +13,7 @@ import supersymmetry.api.util.SuSyUtility;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.Materials.*;
+import static gregtechfoodoption.GTFOMaterialHandler.*;
 
 public class ThirdDegreeMaterials {
     public static void register() {
@@ -653,6 +654,12 @@ public class ThirdDegreeMaterials {
         GreenEpoxyPCBCoating = new Material.Builder(24104, SuSyUtility.susyId('green_epoxy_pcb_coating'))
                 .liquid()
                 .color(0x196809)
+                .build();
+        
+        FormicAcidSodiumSulfateSolution = new Material.Builder(24105, SuSyUtility.susyId('formic_acid_sodium_sulfate_solution'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .components(FormicAcid * 2, SodiumSulfate * 1, Water * 2)
+                .color(0xe35fa8)
                 .build();
     }
 }

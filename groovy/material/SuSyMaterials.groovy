@@ -2024,6 +2024,7 @@ class SuSyMaterials {
         public static Material LithiumHydroxideMonohydrate;
         public static Material IsopropylamineSolution;
         public static Material GreenEpoxyPCBCoating;
+        public static Material FormicAcidSodiumSulfateSolution;
 
         // Thermodynamics Materials
 

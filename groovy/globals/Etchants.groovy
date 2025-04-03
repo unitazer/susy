@@ -25,34 +25,40 @@ class Etchants {
         String fluidName
         int amountUsed
         int timeUsed
+        boolean isPlasma
 
-        Etchant(String fluidName, int amountUsed, int timeUsed) {
+        Etchant(String fluidName, int amountUsed, int timeUsed, boolean isPlasma) {
             this.fluidName = fluidName
             this.amountUsed = amountUsed
             this.timeUsed = timeUsed
+            this.isPlasma = isPlasma
+        }
+
+        Etchant(String fluidName, int amountUsed, int timeUsed) {
+            this(fluidName, amountUsed, timeUsed, false)
         }
     }
 
     public static final etchants = [
         aluminium: [
-            new Etchant("plasma.chlorine", 10, 80),
-            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
-            new Etchant("plasma.boron_trichloride", 10, 60),
+            new Etchant("plasma.chlorine", 10, 80, true),
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60, true),
+            new Etchant("plasma.boron_trichloride", 10, 60, true),
             new Etchant("phosphoric_acid", 50, 700),
         ],
         gallium_arsenide: [
-            new Etchant("plasma.chlorine", 10, 80),
-            new Etchant("plasma.carbon_tetrafluoride",  10, 60),
-            new Etchant("plasma.boron_trichloride", 10, 60),
+            new Etchant("plasma.chlorine", 10, 80, true),
+            new Etchant("plasma.carbon_tetrafluoride",  10, 60, true),
+            new Etchant("plasma.boron_trichloride", 10, 60, true),
             new Etchant("hydrogen_peroxide", 50, 700),
         ],
         photoresist: [
-            new Etchant("plasma.oxygen", 10, 60),
+            new Etchant("plasma.oxygen", 10, 60, true),
             new Etchant("hydrogen_peroxide", 50, 500),
         ],
         silicon: [
-            new Etchant("plasma.chlorine", 10, 80),
-            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
+            new Etchant("plasma.chlorine", 10, 80, true),
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60, true),
             new Etchant("ethylenediamine_pyrocatechol", 40, 80),
             new Etchant("tetramethylammonium_hydroxide_solution", 40, 80),
             new Etchant("nitric_acid", 80, 700),
@@ -63,25 +69,25 @@ class Etchants {
             new Etchant("tetramethylammonium_hydroxide_solution", 40, 80),
         ],
         silicon_dioxide: [
-            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
-            new Etchant("plasma.nitrogen_trifluoride", 10, 60),
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60, true),
+            new Etchant("plasma.nitrogen_trifluoride", 10, 60, true),
             new Etchant("hydrofluoric_acid", 40, 600),
         ],
         silicon_nitride: [
-            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
-            new Etchant("plasma.nitrogen_trifluoride", 10, 60),
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60, true),
+            new Etchant("plasma.nitrogen_trifluoride", 10, 60, true),
             new Etchant("phosphoric_acid", 40, 600),
         ],
         titanium: [
-            new Etchant("plasma.boron_trichloride", 10, 60),
+            new Etchant("plasma.boron_trichloride", 10, 60, true),
             new Etchant("hydrofluoric_acid", 50, 700),
         ],
         nickel: [
-            new Etchant("plasma.boron_trichloride", 10, 60),
+            new Etchant("plasma.boron_trichloride", 10, 60, true),
             new Etchant("hydrofluoric_acid", 50, 700),
         ],
         tungsten: [
-            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60, true),
             new Etchant("hydrogen_peroxide", 50, 700),
         ],
         copper: [
@@ -109,7 +115,7 @@ class Etchants {
 
     static void generateEtchingRecipes(String input, String product, String materialEtched, int voltageTier, int timeMultiplier, boolean cleanroom) {
         if (!etchants.containsKey(materialEtched)) {    
-            log.warn("Tried adding etching recipe with no matching etchant: " + materialEtched + ", no recipe is generated");
+            log.warn("Attempted adding etching recipe with no matching etchant: " + materialEtched + ". No recipe is generated");
             return;
         }
         for (etchant in etchants[materialEtched]) {
