@@ -112,7 +112,7 @@ for (combustible in combustibles()) {
 
 ELECTROLYTIC_CELL.recipeBuilder()
         .fluidInputs(fluid('nickel_sulfate_solution') * 1000)
-        .fluidInputs(fluid('water') * 2000)
+        .fluidInputs(fluid('water') * 1000)
         .notConsumable(metaitem('stickNickel'))
         .notConsumable(metaitem('graphite_electrode'))
         .outputs(metaitem('dustNickel'))

@@ -1,5 +1,5 @@
 import globals.Globals
-import globals.RecyclingHelper
+import postInit.utils.RecyclingHelper
 
 ABS = recipemap('alloy_blast_smelter')
 

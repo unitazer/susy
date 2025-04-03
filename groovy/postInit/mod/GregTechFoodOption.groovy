@@ -1,7 +1,5 @@
-import globals.RecyclingHelper
+import postInit.utils.RecyclingHelper
 import gregtechfoodoption.utils.GTFOUtils
-
-import static gregtechfoodoption.utils.GTFOUtils.*
 
 // MACHINE RECIPES
 

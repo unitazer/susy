@@ -493,7 +493,7 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
-        DilutedSaltwater = new Material.Builder(8158, SuSyUtility.susyId('diluted_saltwater'))
+        DilutedSaltWater = new Material.Builder(8158, SuSyUtility.susyId('diluted_salt_water'))
                 .liquid()
                 .components(Salt, Water * 2)
                 .color(0x3d61b8)
@@ -1028,6 +1028,8 @@ public class FirstDegreeMaterials {
                 .components(Sodium * 2, Sulfur * 2, Oxygen * 3)
                 .color(0x879e21)
                 .build()
+
+        // FREE IDs: 8245-8246
 
         SulfidicSilverCyanideSolution = new Material.Builder(8247, SuSyUtility.susyId('sulfidic_silver_cyanide_solution'))
                 .liquid()
@@ -1672,11 +1674,7 @@ public class FirstDegreeMaterials {
                 .color(0xb3c99)
                 .build();
 
-        SodiumSulfateAcetoneSolution = new Material.Builder(8345, SuSyUtility.susyId('sodium_sulfate_acetone_solution'))
-                .liquid()
-                .components(Sodium * 12, Sulfur * 6, Oxygen * 24, Acetone, Water * 9)
-                .color(0x2c733a)
-                .build();
+        // FREE ID: 8345
 
         LeadFreeSolder = new Material.Builder(8346, SuSyUtility.susyId('lead_free_solder'))
                 .ingot().liquid(new FluidBuilder().temperature(411))
@@ -1969,9 +1967,9 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        RutheniumIVOxide = new Material.Builder(8390, SuSyUtility.susyId('ruthenium_iv_oxide'))
+        RutheniumIIIChloride = new Material.Builder(8390, SuSyUtility.susyId('ruthenium_iii_chloride'))
                 .dust()
-                .components(Ruthenium, Oxygen * 2)
+                .components(Ruthenium, Chlorine * 3)
                 .colorAverage()
                 .build()
 
@@ -2223,11 +2221,7 @@ public class FirstDegreeMaterials {
                 .color(0xe8c3a5)
                 .build();
 
-        ChromiumSulfateSolution = new Material.Builder(8426, SuSyUtility.susyId('chromium_sulfate_solution'))
-                .liquid()
-                .components(Chrome * 4, Sulfur * 6, Oxygen * 24, Acetone, Water * 9)
-                .color(0x2c733a)
-                .build();
+        // FREE ID: 8426
 
         MustardGas = new Material.Builder(8427, SuSyUtility.susyId('mustard_gas'))
                 .liquid()
@@ -3375,11 +3369,11 @@ public class FirstDegreeMaterials {
 
         SodiumSeleniteSolution = new Material.Builder(8606, SuSyUtility.susyId('sodium_selenite_solution'))
                 .liquid()
-                .components(Sodium * 2, Selenium, Oxygen * 3, Water)
+                .components(Sodium * 2, Selenium, Oxygen * 3, Water * 4)
                 .color(0x96a67c)
                 .build()
 
-        SodiumSeleniteSolution.setFormula("(Na2SeO3)(H2O)", true);
+        SodiumSeleniteSolution.setFormula("(Na2SeO3)(H2O)4", true);
 
         HydrogenSelenide = new Material.Builder(8607, SuSyUtility.susyId('hydrogen_selenide'))
                 .gas()

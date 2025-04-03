@@ -1,5 +1,5 @@
 import globals.Globals
-import globals.RecyclingHelper
+import postInit.utils.RecyclingHelper
 import gregtech.api.recipes.ingredients.nbtmatch.*
 
 ASSEMBLER = recipemap('assembler')
@@ -307,7 +307,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('threadPolybenzimidazole') * 10)
     .inputs(metaitem('plateNomex') * 5)
     .inputs(metaitem('pipeSmallFluidEthyleneVinylAcetate'))
-    .fluidInputs(fluid('borosilicate_glass') * 288)
+    .fluidInputs(fluid('e_glass') * 288)
     .outputs(item('susy:susy_armor', 14))
     .duration(400)
     .EUt(Globals.voltAmps[4])
@@ -359,4 +359,6 @@ FLUID_SOLIDIFIER.recipeBuilder()
 
 // Concrete Dust * 1 (remove Industrial Concrete recycling)
 mods.gregtech.macerator.removeByInput(2, [item('susy:susy_stone_smooth', 9)], null)
+// Concrete Dust * 1
+mods.gregtech.macerator.removeByInput(2, [item('susy:susy_stone_cobble', 9)], null)
 

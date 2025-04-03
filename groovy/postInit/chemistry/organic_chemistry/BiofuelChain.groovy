@@ -153,7 +153,7 @@ alcohols.forEach { alcohol ->
             .fluidInputs(fluid('diluted_hydrochloric_acid') * 1000)
             .fluidInputs(alcohol.getCrudeEster(3500))
             .fluidOutputs(alcohol.getNeutralizedEster(3500))
-            .fluidOutputs(fluid('diluted_saltwater') * 1000)
+            .fluidOutputs(fluid('diluted_salt_water') * 1000)
             .duration(30)
             .EUt(7)
             .buildAndRegister()

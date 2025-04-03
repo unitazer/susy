@@ -143,6 +143,14 @@ FBR.recipeBuilder()
 
 // Cativa Process
 
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('hexachloroiridic_acid_solution') * 2000)
+    .outputs(metaitem('dustHexachloroiridicAcid'))
+    .fluidOutputs(fluid('water') * 2000)
+    .duration(200)
+    .EUt(Globals.voltAmps[2])
+    .buildAndRegister()
+
 LCR.recipeBuilder()
     .fluidInputs(fluid('methanol') * 1000)
     .fluidInputs(fluid('carbon_monoxide') * 1000)

@@ -5,7 +5,7 @@ import com.codetaylor.mc.pyrotech.library.spi.block.IBlockIgnitableWithIgniterIt
 import com.codetaylor.mc.pyrotech.modules.tech.basic.ModuleTechBasic
 import com.codetaylor.mc.pyrotech.modules.tech.basic.block.BlockKilnPit
 import globals.Globals
-import globals.RecyclingHelper
+import postInit.utils.RecyclingHelper
 import gregtech.api.items.metaitem.MetaItem
 import gregtech.api.items.metaitem.stats.IItemBehaviour
 import gregtech.api.util.GTUtility

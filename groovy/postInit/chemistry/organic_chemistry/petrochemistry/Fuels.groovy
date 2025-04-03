@@ -363,7 +363,7 @@ BR.recipeBuilder()
         .duration(50)
         .buildAndRegister()
 
-    // Wax antisetlling agent (N,N-dihexadecyl phthalic acid amide)
+    // Wax antisettling agent (not implemented)(N,N-dihexadecyl phthalic acid amide)
 
     FBR.recipeBuilder()
         .notConsumable(metaitem('catalystBedAlumina'))
