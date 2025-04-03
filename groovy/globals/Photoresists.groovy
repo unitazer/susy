@@ -28,45 +28,27 @@ class Photoresists {
                                          int voltageTier, int timeMultiplier, int outputMultiplier, 
                                          int circ, boolean cleanroom) {
         for (photoresist in photoresists) {
+            def uvLightBoxRecipe = recipemap("uv_light_box").recipeBuilder()
+                        .inputs(metaitem(input))
+                        .notConsumable(metaitem(mask))
+                        .fluidInputs(fluid(photoresist.fluidName) * photoresist.amountUsed)
+                        .outputs(metaitem(product) * outputMultiplier)
+                        .duration(photoresist.timeUsed * timeMultiplier)
+                        .EUt(Globals.voltAmps[voltageTier]);
+            def laserEngraverRecipe = recipemap('laser_engraver').recipeBuilder()
+                        .inputs(metaitem(input))
+                        .circuitMeta(circ)
+                        .fluidInputs(fluid(photoresist.fluidName) * (photoresist.amountUsed / 4))
+                        .outputs(metaitem(product) * outputMultiplier)
+                        .duration((int) (photoresist.timeUsed * timeMultiplier / 10))
+                        .EUt(Globals.voltAmps[voltageTier]);
+
             if (cleanroom) {
-                recipemap("uv_light_box").recipeBuilder()
-                        .inputs(metaitem(input))
-                        .notConsumable(metaitem(mask))
-                        .fluidInputs(fluid(photoresist.fluidName) * photoresist.amountUsed)
-                        .outputs(metaitem(product) * outputMultiplier)
-                        .duration(photoresist.timeUsed * timeMultiplier)
-                        .cleanroom(CleanroomType.CLEANROOM)
-                        .EUt(Globals.voltAmps[voltageTier])
-                        .buildAndRegister()
-
-                recipemap('laser_engraver').recipeBuilder()
-                        .inputs(metaitem(input))
-                        .circuitMeta(circ)
-                        .fluidInputs(fluid(photoresist.fluidName) * (photoresist.amountUsed / 4))
-                        .outputs(metaitem(product) * outputMultiplier)
-                        .duration((int) (photoresist.timeUsed * timeMultiplier / 10))
-                        .cleanroom(CleanroomType.CLEANROOM)
-                        .EUt(Globals.voltAmps[voltageTier])
-                        .buildAndRegister()
-            } else {
-                recipemap("uv_light_box").recipeBuilder()
-                        .inputs(metaitem(input))
-                        .notConsumable(metaitem(mask))
-                        .fluidInputs(fluid(photoresist.fluidName) * photoresist.amountUsed)
-                        .outputs(metaitem(product) * outputMultiplier)
-                        .duration(photoresist.timeUsed * timeMultiplier)
-                        .EUt(Globals.voltAmps[voltageTier])
-                        .buildAndRegister()
-
-                recipemap('laser_engraver').recipeBuilder()
-                        .inputs(metaitem(input))
-                        .circuitMeta(circ)
-                        .fluidInputs(fluid(photoresist.fluidName) * (photoresist.amountUsed / 4))
-                        .outputs(metaitem(product) * outputMultiplier)
-                        .duration((int) (photoresist.timeUsed * timeMultiplier / 10))
-                        .EUt(Globals.voltAmps[voltageTier])
-                        .buildAndRegister()
+                uvLightBoxRecipe = uvLightBoxRecipe.cleanroom(CleanroomType.CLEANROOM);
+                laserEngraverRecipe = laserEngraverRecipe.cleanroom(CleanroomType.CLEANROOM);
             }
+            uvLightBoxRecipe.buildAndRegister();
+            laserEngraverRecipe.buildAndRegister();
         }
     }
 }

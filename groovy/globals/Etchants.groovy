@@ -23,86 +23,106 @@ class Etchants {
 
     static class Etchant {
         String fluidName
-        String materialEtched
         int amountUsed
         int timeUsed
 
-        Etchant(String fluidName, String materialEtched, int amountUsed, int timeUsed) {
+        Etchant(String fluidName, int amountUsed, int timeUsed) {
             this.fluidName = fluidName
-            this.materialEtched = materialEtched
             this.amountUsed = amountUsed
             this.timeUsed = timeUsed
         }
     }
 
     public static final etchants = [
-        new Etchant("plasma.chlorine", "aluminium", 10, 80),
-        new Etchant("plasma.carbon_tetrafluoride", "aluminium", 10, 60),
-        new Etchant("plasma.boron_trichloride", "aluminium", 10, 60),
-        new Etchant("plasma.chlorine", "gallium_arsenide", 10, 80),
-        new Etchant("plasma.carbon_tetrafluoride", "gallium_arsenide", 10, 60),
-        new Etchant("plasma.boron_trichloride", "gallium_arsenide", 10, 60),
-        new Etchant("plasma.oxygen", "photoresist", 10, 60),
-        new Etchant("plasma.chlorine", "silicon", 10, 80),
-        new Etchant("plasma.carbon_tetrafluoride", "silicon", 10, 60),
-        new Etchant("plasma.carbon_tetrafluoride", "silicon_dioxide", 10, 60),
-        new Etchant("plasma.nitrogen_trifluoride", "silicon_dioxide", 10, 60),
-        new Etchant("plasma.carbon_tetrafluoride", "silicon_nitride", 10, 60),
-        new Etchant("plasma.nitrogen_trifluoride", "silicon_nitride", 10, 60),
-        new Etchant("plasma.boron_trichloride", "titanium", 10, 60),
-        new Etchant("plasma.boron_trichloride", "nickel", 10, 60),
-        new Etchant("plasma.carbon_tetrafluoride", "tungsten", 10, 60),
-
-        new Etchant("iron_iii_chloride_solution", "copper", 100, 100),
-        new Etchant("sodium_bisulfate_solution", "copper", 100, 100),
-
-        new Etchant("ethylenediamine_pyrocatechol", "silicon", 40, 80),
-        new Etchant("tetramethylammonium_hydroxide_solution", "silicon", 40, 80),
-        new Etchant("ethylenediamine_pyrocatechol", "silicon_advanced", 40, 80),
-        new Etchant("tetramethylammonium_hydroxide_solution", "silicon_advanced", 40, 80),
-        new Etchant("phosphoric_acid", "aluminium", 50, 700),
-        new Etchant("nitration_mixture", "indium_tin_oxide", 50, 700),
-        new Etchant("hydrochloric_acid", "chrome", 50, 700),
-        new Etchant("hydrogen_peroxide", "gallium_arsenide", 50, 700),
-        new Etchant("aqua_regia", "gold", 50, 700),
-        new Etchant("aqua_regia", "platinum", 50, 700),
-        new Etchant("hydrogen_peroxide", "photoresist", 50, 500),
-        new Etchant("hydrofluoric_acid", "silicon_dioxide", 40, 600),
-        new Etchant("phosphoric_acid", "silicon_nitride", 40, 600),
-        new Etchant("hydrofluoric_acid", "titanium", 50, 700),
-        new Etchant("hydrofluoric_acid", "nickel", 50, 700),
-        new Etchant("hydrogen_peroxide", "tungsten", 50, 700),
-        new Etchant("nitric_acid", "titanium_nitride", 50, 700),
-        new Etchant("hydrofluoric_acid", "titanium_nitride", 50, 700),
-        new Etchant("nitric_acid", "silicon", 80, 700),
-        new Etchant("hydrofluoric_acid", "silicon", 40, 500)
+        aluminium: [
+            new Etchant("plasma.chlorine", 10, 80),
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
+            new Etchant("plasma.boron_trichloride", 10, 60),
+            new Etchant("phosphoric_acid", 50, 700),
+        ],
+        gallium_arsenide: [
+            new Etchant("plasma.chlorine", 10, 80),
+            new Etchant("plasma.carbon_tetrafluoride",  10, 60),
+            new Etchant("plasma.boron_trichloride", 10, 60),
+            new Etchant("hydrogen_peroxide", 50, 700),
+        ],
+        photoresist: [
+            new Etchant("plasma.oxygen", 10, 60),
+            new Etchant("hydrogen_peroxide", 50, 500),
+        ],
+        silicon: [
+            new Etchant("plasma.chlorine", 10, 80),
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
+            new Etchant("ethylenediamine_pyrocatechol", 40, 80),
+            new Etchant("tetramethylammonium_hydroxide_solution", 40, 80),
+            new Etchant("nitric_acid", 80, 700),
+            new Etchant("hydrofluoric_acid", 40, 500)
+        ],
+        silicon_advanced: [
+            new Etchant("ethylenediamine_pyrocatechol", 40, 80),
+            new Etchant("tetramethylammonium_hydroxide_solution", 40, 80),
+        ],
+        silicon_dioxide: [
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
+            new Etchant("plasma.nitrogen_trifluoride", 10, 60),
+            new Etchant("hydrofluoric_acid", 40, 600),
+        ],
+        silicon_nitride: [
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
+            new Etchant("plasma.nitrogen_trifluoride", 10, 60),
+            new Etchant("phosphoric_acid", 40, 600),
+        ],
+        titanium: [
+            new Etchant("plasma.boron_trichloride", 10, 60),
+            new Etchant("hydrofluoric_acid", 50, 700),
+        ],
+        nickel: [
+            new Etchant("plasma.boron_trichloride", 10, 60),
+            new Etchant("hydrofluoric_acid", 50, 700),
+        ],
+        tungsten: [
+            new Etchant("plasma.carbon_tetrafluoride", 10, 60),
+            new Etchant("hydrogen_peroxide", 50, 700),
+        ],
+        copper: [
+            new Etchant("iron_iii_chloride_solution", 100, 100),
+            new Etchant("sodium_bisulfate_solution", 100, 100),
+        ],
+        indium_tin_oxide: [
+            new Etchant("nitration_mixture", 50, 700),
+        ],
+        chrome: [
+            new Etchant("hydrochloric_acid", 50, 700),
+        ],
+        gold: [
+            new Etchant("aqua_regia", 50, 700),
+        ],
+        platinum: [
+            new Etchant("aqua_regia", 50, 700),
+        ],
+        titanium_nitride: [
+            new Etchant("nitric_acid", 50, 700),
+            new Etchant("hydrofluoric_acid", 50, 700),
+        ]
     ]
 
 
     static void generateEtchingRecipes(String input, String product, String materialEtched, int voltageTier, int timeMultiplier, boolean cleanroom) {
-        float ok = 0.5f;
-
-        for (etchant in etchants) {
-            if (etchant.materialEtched == materialEtched) {
-                if (cleanroom) {
-                    recipemap('chemical_bath').recipeBuilder()
-                            .inputs(metaitem(input))
-                            .fluidInputs(fluid(etchant.fluidName) * etchant.amountUsed)
-                            .outputs(metaitem(product))
-                            .duration(etchant.timeUsed * timeMultiplier)
-                            .cleanroom(CleanroomType.CLEANROOM)
-                            .EUt(Globals.voltAmps[voltageTier])
-                            .buildAndRegister()
-                } else {
-                    recipemap('chemical_bath').recipeBuilder()
-                            .inputs(metaitem(input))
-                            .fluidInputs(fluid(etchant.fluidName) * etchant.amountUsed)
-                            .outputs(metaitem(product))
-                            .duration(etchant.timeUsed * timeMultiplier)
-                            .EUt(Globals.voltAmps[voltageTier])
-                            .buildAndRegister()
-                }
+        if (!etchants.containsKey(materialEtched)) {    
+            log.warn("Tried adding etching recipe with no matching etchant: " + materialEtched + ", no recipe is generated");
+            return;
+        }
+        for (etchant in etchants[materialEtched]) {
+            def baseRecipeBuilder = recipemap('chemical_bath').recipeBuilder()
+                        .inputs(metaitem(input))
+                        .fluidInputs(fluid(etchant.fluidName) * etchant.amountUsed)
+                        .outputs(metaitem(product))
+                        .duration(etchant.timeUsed * timeMultiplier)
+                        .EUt(Globals.voltAmps[voltageTier]);
+            if (cleanroom) {
+                baseRecipeBuilder = baseRecipeBuilder.cleanroom(CleanroomType.CLEANROOM)
             }
+            baseRecipeBuilder.buildAndRegister()
         }
     }
 
