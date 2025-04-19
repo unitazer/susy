@@ -1274,14 +1274,14 @@ class SuSyMaterials {
         public static Material DriedGraphene;
         public static Material MoistArgon;
         public static Material ArgonHydrogenMixture;
-        public static Material IncoloyTwenty;
-        public static Material IncoloyEightTwoFive;
-        public static Material IncoloyNineZeroEight;
-        public static Material ReneN;
-        public static Material MonelFiveHundred;
+        public static Material Incoloy20;
+        public static Material Incoloy825;
+        public static Material Incoloy908;
+        public static Material ReneN5;
+        public static Material Monel500;
         public static Material StelliteJ;
-        public static Material StelliteSix;
-        public static Material HSLAEightyX;
+        public static Material Stellite6;
+        public static Material HSLA980X;
         public static Material FoodGradeStainlessSteel;
         public static Material CobaltSulfate;
         public static Material LithiumNitrate;
@@ -1293,6 +1293,7 @@ class SuSyMaterials {
         public static Material AmmoniumHexachloroiridate;
         public static Material PotassiumOsmate;
         public static Material SodiumHydrosulfide;
+        public static Material PotassiumIodate;
         public static Material ElectrodepositedCopper;
         public static Material SodiumFormateSolution;
 
