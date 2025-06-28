@@ -4086,15 +4086,6 @@ MIXER.recipeBuilder()
     .EUt(128)
     .buildAndRegister()
 
-// Copper Sulfate Preparation
-BR.recipeBuilder()
-    .inputs(ore('dustCupricOxide') * 1)
-    .fluidInputs(fluid('sulfuric_acid') * 1000)
-    .fluidOutputs(fluid('copper_sulfate_solution') * 1000)
-    .duration(80)
-    .EUt(30)
-    .buildAndRegister()
-
 // Sodium Formate Solution Recycle
 BR.recipeBuilder()
     .fluidInputs(fluid('sodium_formate_solution') * 2000)
