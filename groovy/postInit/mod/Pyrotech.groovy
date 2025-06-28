@@ -197,7 +197,9 @@ def name_removals = [
         "pyrotech:leather_leggings_fireproof",
         "pyrotech:leather_helmet_fireproof",
         "pyrotech:leather_chestplate_fireproof",
-        "pyrotech:leather_boots_fireproof"
+        "pyrotech:leather_boots_fireproof",
+        "pyrotech:chest",
+        "pyrotech:fire_charge"
 ]
 
 for (item in name_removals) {
@@ -580,7 +582,7 @@ crafting.addShapeless("susy:cutting_wheat", item('pyrotech:material', 2), [
 // Bone block compacting
 crafting.remove("minecraft:bone_block")
 mods.pyrotech.compacting_bin.remove("pyrotech:bone_block")
-mods.pyrotech.compacting_bin.add("pyrotech:bone_block", item('minecraft:dye', 15), item('minecraft:bone_block'), 9)
+mods.pyrotech.compacting_bin.add("pyrotech:bone_block_susy", item('minecraft:dye', 15), item('minecraft:bone_block'), 9)
 
 crafting.replaceShaped("pyrotech:straw", item('pyrotech:material', 2) * 4, [
         [item('pyrotech:material', 13), item('pyrotech:material', 13), item('pyrotech:material', 13)],

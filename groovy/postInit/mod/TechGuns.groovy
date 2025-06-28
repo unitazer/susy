@@ -328,12 +328,6 @@ crafting.replaceShaped("techguns:camonet_top_0", item('techguns:camonet_top') * 
     [ore('stickWood'), ore('treeLeaves'), ore('stickWood')]
 ])
 
-crafting.replaceShaped("techguns:itemshared_37_stonebarrel", item('techguns:itemshared', 37), [
-    [null, ore('craftingToolHardHammer'), null],
-    [null, ore('craftingToolFile'), null],
-    [null, ore('stone'), null]
-])
-
 crafting.replaceShaped("techguns:itemshared_42_woodstock", item('techguns:itemshared', 42), [
     [null, null, null],
     [ore('craftingToolFile'), ore('logWood'), ore('craftingToolSaw')],

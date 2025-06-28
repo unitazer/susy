@@ -12,6 +12,8 @@ AUTOCLAVE = recipemap('autoclave')
 ION_EXCHANGE = recipemap('ion_exchange_column')
 FBR = recipemap('fixed_bed_reactor')
 LCR = recipemap('large_chemical_reactor')
+ASSEMBLER = recipemap('assembler')
+ALLOY_SMELTER = recipemap('alloy_smelter')
 
 // Alumina supports
 
@@ -379,7 +381,7 @@ LCR.recipeBuilder()
         .buildAndRegister()
 
     BR.recipeBuilder()
-        .inputs(ore('dustCobaltOxide') * 2)
+        .inputs(ore('dustHighPurityCobaltOxide') * 2)
         .fluidInputs(fluid('nitric_acid') * 2000)
         .fluidOutputs(fluid('cobalt_nitrate_solution') * 1000)
         .duration(60)
@@ -476,22 +478,22 @@ ROASTER.recipeBuilder()
 // Methanol catalyst
 
 BR.recipeBuilder()
-	.inputs(ore('dustZincChloride') * 3)
-	.fluidInputs(fluid('soda_ash_solution') * 1000)
-	.outputs(metaitem('dustZincCarbonate') * 5)
-	.fluidOutputs(fluid('concentrated_salt_water') * 1000)
-	.duration(100)
-	.EUt(120)
-	.buildAndRegister();
+    .inputs(ore('dustZincChloride') * 3)
+    .fluidInputs(fluid('soda_ash_solution') * 1000)
+    .outputs(metaitem('dustZincCarbonate') * 5)
+    .fluidOutputs(fluid('concentrated_salt_water') * 1000)
+    .duration(100)
+    .EUt(120)
+    .buildAndRegister();
 
 BR.recipeBuilder()
-	.inputs(ore('dustCopperIiChloride') * 3)
-	.fluidInputs(fluid('soda_ash_solution') * 1000)
-	.outputs(metaitem('dustCopperCarbonate') * 5)
-	.fluidOutputs(fluid('concentrated_salt_water') * 1000)
-	.duration(100)
-	.EUt(120)
-	.buildAndRegister();
+    .inputs(ore('dustCopperIiChloride') * 3)
+    .fluidInputs(fluid('soda_ash_solution') * 1000)
+    .outputs(metaitem('dustCopperCarbonate') * 5)
+    .fluidOutputs(fluid('concentrated_salt_water') * 1000)
+    .duration(100)
+    .EUt(120)
+    .buildAndRegister();
 
 
 ROASTER.recipeBuilder()
@@ -505,6 +507,7 @@ ROASTER.recipeBuilder()
     .buildAndRegister()
 
 //RuO2
+
 ROASTER.recipeBuilder()
     .inputs(ore('dustRuthenium'))
     .fluidInputs(fluid('chlorine') * 3000)
@@ -520,4 +523,65 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('chlorine') * 3000)
     .duration(200)
     .EUt(480)
+    .buildAndRegister()
+
+//Wustite Catalyst for Haber Process
+ROASTER.recipeBuilder()
+    .fluidInputs(fluid('monoxide_rich_syngas') * 1000)
+    .inputs(ore('dustMagnetite'))
+    .outputs(metaitem('dustWustiteCatalyst') * 5)
+    .duration(400)
+    .EUt(Globals.voltAmps[2])
+    .buildAndRegister()
+
+ROASTER.recipeBuilder()
+    .fluidInputs(fluid('hydrogen_rich_syngas') * 1000)
+    .inputs(ore('dustMagnetite'))
+    .outputs(metaitem('dustWustiteCatalyst') * 5)
+    .duration(400)
+    .EUt(Globals.voltAmps[2])
+    .buildAndRegister()
+
+//Pd-Rh Catalyst for Haber Process
+MIXER.recipeBuilder()
+    .inputs(ore('dustPlatinum') * 9)
+    .inputs(ore('dustRhodium') * 1)
+    .outputs(metaitem('dustPlatinumRhodium') * 10)
+    .duration(800)
+    .EUt(Globals.voltAmps[3])
+    .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+    .inputs(ore('wireFinePlatinumRhodium') * 16)
+    .outputs(metaitem('mesh.platinum_rhodium'))
+    .EUt(120)
+    .duration(160)
+    .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+    .inputs(ore('wireFinePlatinum') * 16)
+    .outputs(metaitem('mesh.platinum'))
+    .circuitMeta(3)
+    .EUt(120)
+    .duration(160)
+    .buildAndRegister()
+
+// Dicobalt Octacarbonyl
+
+ROASTER.recipeBuilder()
+    .inputs(ore('dustAnyPurityCobalt') * 2)
+    .fluidInputs(fluid('carbon_monoxide') * 8000)
+    .outputs(metaitem('dustDicobaltOctacarbonyl') * 18)
+    .duration(200)
+    .EUt(Globals.voltAmps[1])
+    .buildAndRegister()
+
+// Impregnated Alumina Catalyst
+
+ALLOY_SMELTER.recipeBuilder()
+    .inputs(ore('dustSilicaGel') * 3)
+    .inputs(ore('dustAlumina') * 5)
+    .outputs(metaitem('dustImpregnatedAluminaCatalyst') * 8)
+    .duration(200)
+    .EUt(Globals.voltAmps[1])
     .buildAndRegister()

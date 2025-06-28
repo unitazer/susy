@@ -79,6 +79,8 @@ mods.gregtech.blender.removeByInput(120, [metaitem('dustNickel'), metaitem('dust
 
 // Nickel Zinc Ferrite Ingot * 1
 mods.gregtech.electric_blast_furnace.removeByInput(120, [metaitem('dustFerriteMixture')], [fluid('oxygen') * 2000])
+// Liquid Nickel Zinc Ferrite * 864
+mods.gregtech.advanced_arc_furnace.removeByInput(120, [metaitem('dustNickel'), metaitem('dustZinc'), metaitem('dustIron') * 4, metaitem('circuit.integrated').withNbt(['Configuration': 6])], [fluid('oxygen') * 8000 * 8000, fluid('refractory_gunning_mixture') * 50 * 50])
 
 // Alumina Plate * 1
 mods.gregtech.fluid_solidifier.removeByInput(7, [metaitem('shape.mold.plate')], [fluid('alumina') * 144])
@@ -867,6 +869,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('chip.insulated_silicon_germanium') * 8)
         .inputs(ore('wireFinePlatinum') * 2)
         .outputs(metaitem('component.smd.transistor') * 12)
+        .circuitMeta(1)
         .duration(200)
         .EUt(240)
         .buildAndRegister()
@@ -921,6 +924,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('chip.insulated_silicon') * 8)
         .inputs(ore('wireFinePlatinum') * 2)
         .outputs(metaitem('component.smd.transistor') * 12)
+        .circuitMeta(1)
         .duration(200)
         .EUt(240)
         .buildAndRegister()
@@ -975,6 +979,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('chip.silicon_dioxide') * 8)
         .inputs(ore('wireFinePlatinum') * 2)
         .outputs(metaitem('component.smd.transistor') * 12)
+        .circuitMeta(1)
         .duration(200)
         .EUt(240)
         .buildAndRegister()

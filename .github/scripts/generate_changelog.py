@@ -3,7 +3,7 @@ import os
 import re
 import subprocess
 import toml
-import json
+import logging
 import requests
 from collections import defaultdict
 from datetime import datetime
@@ -27,12 +27,15 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_REPO = "SymmetricDevs/Supersymmetry"  # Format: owner/repo
 GITHUB_ORG = os.environ.get("GITHUB_ORGANIZATION", "SymmetricDevs")  # Default organization
 VERSION = os.environ.get("VERSION", get_current_version())
+GITHUB_API_BASE = "https://api.github.com"
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Find the latest tag (excluding "latest")
 def get_latest_tag():
     tags = subprocess.check_output(["git", "tag", "-l", "--sort=-v:refname"]).decode().strip().split("\n")
     for tag in tags:
-        if tag != "latest":
+        version_match = re.search("^(?:[0-9]\.?)+", tag)
+        if version_match:
             return tag
     return None
 
@@ -197,158 +200,174 @@ def get_reference_date(ref):
     ).decode().strip()
     return date_str
 
-# Get merged PRs since the last tag using GitHub API
-def get_merged_prs_since_tag(tag, repository=None):
-    if not GITHUB_TOKEN:
-        print("GitHub token not configured.")
+
+def get_latest_commit_sha(repo_full_name: str, headers: dict) -> str | None:
+    logging.info(f"Fetching repository details for {repo_full_name} to find default branch.")
+    repo_url = f"{GITHUB_API_BASE}/repos/{repo_full_name}"
+    try:
+        response = requests.get(repo_url, headers=headers)
+        response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
+        repo_data = response.json()
+        default_branch = repo_data.get("default_branch")
+        if not default_branch:
+            logging.error(f"Could not determine default branch for {repo_full_name}.")
+            return None
+
+        logging.info(f"Default branch for {repo_full_name} is '{default_branch}'. Fetching latest commit.")
+        commits_url = f"{GITHUB_API_BASE}/repos/{repo_full_name}/commits/{default_branch}"
+        response = requests.get(commits_url, headers=headers)
+        response.raise_for_status()
+        commit_data = response.json()
+        latest_sha = commit_data.get("sha")
+        if latest_sha:
+            logging.info(f"Latest commit SHA on branch '{default_branch}' is {latest_sha}")
+            return latest_sha
+        else:
+            logging.error(f"Could not get latest commit SHA for {repo_full_name} on branch '{default_branch}'.")
+            return None
+
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error fetching repository details or latest commit for {repo_full_name}: {e}")
+        if e.response is not None:
+            logging.error(f"Response status: {e.response.status_code}")
+            logging.error(f"Response body: {e.response.text}")
+        return None
+    except Exception as e:
+        logging.error(f"An unexpected error occurred while fetching latest commit: {e}")
+        return None
+
+
+def get_merged_prs_between_refs(repo_full_name: str, start_ref: str, end_ref: str | None = None) -> list[dict]:
+    if not repo_full_name:
+        logging.error("Repository name (owner/repo) is required.")
         return []
-    
-    repo = repository or GITHUB_REPO
-    
-    tag_date = get_reference_date(tag)
-    print(f"Looking for PRs in {repo} merged after {tag_date}")
-    
+    if not start_ref:
+        logging.error("Starting reference (tag, branch, SHA) is required.")
+        return []
+
     headers = {
         "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github.v3+json"
     }
-    
-    # Query for merged PRs since the tag date
-    url = f"https://api.github.com/repos/{repo}/pulls"
-    params = {
-        "state": "closed",
-        "sort": "updated",
-        "direction": "desc",
-        "per_page": 100
-    }
-    
-    all_prs = []
-    page = 1
-    more_pages = True
-    
-    while more_pages:
-        params["page"] = page
-        response = requests.get(url, headers=headers, params=params)
-        
-        if response.status_code != 200:
-            print(f"Error getting PRs: {response.status_code}")
-            print(response.text)
+
+    # Determine the end reference
+    effective_end_ref = end_ref
+    if not effective_end_ref:
+        logging.info(f"No end reference provided for {repo_full_name}. Determining latest commit...")
+        effective_end_ref = get_latest_commit_sha(repo_full_name, headers)
+        if not effective_end_ref:
+            logging.error(f"Could not determine the latest commit for {repo_full_name}. Aborting.")
             return []
-        
-        prs = response.json()
-        if not prs:
-            break
-            
-        for pr in prs:
-            # Only include PRs that were merged (not just closed)
-            if pr.get("merged_at") and pr.get("merge_commit_sha"):
-                # Check if PR was merged after the tag date
-                merged_at = pr.get("merged_at")
-                if merged_at > tag_date:
-                    # Fetch more details about the PR
-                    pr_url = pr.get("url")
-                    pr_response = requests.get(pr_url, headers=headers)
-                    if pr_response.status_code == 200:
-                        pr_data = pr_response.json()
-                        # Add repo name to PR data
-                        pr_data["repository"] = repo
-                        all_prs.append(pr_data)
-                else:
-                    # We've gone past the tag date, no need to check more PRs
-                    more_pages = False
-                    break
-        
-        page += 1
-        
-        # Stop if we've gone through all pages or found older PRs
-        if not more_pages or len(prs) < 100:
-            break
-    
-    return all_prs
+        logging.info(f"Using latest commit {effective_end_ref} as the end reference.")
+    else:
+        logging.info(f"Using provided end reference: {effective_end_ref}")
 
-# Get PRs merged between two SusyCore tags
-def get_susy_core_prs(old_version, new_version):
-    if not old_version or not new_version:
-        print("SusyCore versions not found")
-        return []
+    logging.info(f"Looking for PRs merged in {repo_full_name} between {start_ref} and {effective_end_ref}")
+
+    # Use the GitHub compare endpoint to get commits between the two refs
+    compare_url = f"{GITHUB_API_BASE}/repos/{repo_full_name}/compare/{start_ref}...{effective_end_ref}"
     
-    susy_repo = f"{GITHUB_ORG}/Susy-Core"
-    
-    print(f"Looking for PRs in {susy_repo} between versions {old_version} and {new_version}")
-    
-    headers = {
-        "Authorization": f"token {GITHUB_TOKEN}",
-        "Accept": "application/vnd.github.v3+json"
-    }
-    
-    # First check if the tags exist
-    tags_url = f"https://api.github.com/repos/{susy_repo}/tags"
-    tags_response = requests.get(tags_url, headers=headers)
-    
-    if tags_response.status_code != 200:
-        print(f"Error fetching tags: {tags_response.status_code}")
-        return []
-    
-    tags = tags_response.json()
-    tag_names = [tag["name"] for tag in tags]
-    
-    # Search for tags that match the versions
-    old_tag = None
-    new_tag = None
-    
-    for tag in tag_names:
-        if old_version in tag:
-            old_tag = tag
-        if new_version in tag:
-            new_tag = tag
-    
-    if not old_tag or not new_tag:
-        print(f"SusyCore tags not found for versions {old_version} and {new_version}")
-        # Fallback to using PRs between dates
-        return get_merged_prs_since_tag(get_latest_tag(), susy_repo)
-    
-    # Get PRs between these tags
-    commits_url = f"https://api.github.com/repos/{susy_repo}/compare/{old_tag}...{new_tag}"
-    commits_response = requests.get(commits_url, headers=headers)
-    
-    if commits_response.status_code != 200:
-        print(f"Error fetching commits: {commits_response.status_code}")
-        return []
-    
+    all_commits = []
+    page = 1
+    while True:
+        paginated_url = f"{compare_url}?page={page}&per_page=250"
+        logging.info(f"Fetching comparison page {page}: {compare_url}") # Use base url for logging
+        try:
+            response = requests.get(paginated_url, headers=headers) # No pagination params needed here
+            response.raise_for_status()
+            compare_data = response.json()
+            commits = compare_data.get("commits", [])
+            total_commits = compare_data.get("total_commits", len(commits))
+
+            if not commits:
+                 logging.info(f"No commits found between {start_ref} and {effective_end_ref} on page {page}.")
+                 break # Exit loop if no commits or after handling the single page
+
+            all_commits.extend(commits)
+            if (len(all_commits) == total_commits):
+                break
+            page += 1
+        except requests.exceptions.RequestException as e:
+            logging.error(f"Error fetching comparison from {compare_url}: {e}")
+            if e.response is not None:
+                logging.error(f"Response status: {e.response.status_code}")
+                logging.error(f"Response body: {e.response.text}")
+                if e.response.status_code == 404:
+                    logging.error(f"Repository '{repo_full_name}' or refs '{start_ref}'/'{effective_end_ref}' not found.")
+            return [] # Stop processing if compare fails
+        except Exception as e:
+            logging.error(f"An unexpected error occurred during comparison fetch: {e}")
+            return []
+
+
     # Look through commits to find associated PRs
-    commits = commits_response.json().get("commits", [])
-    
-    prs = []
-    for commit in commits:
-        commit_sha = commit["sha"]
-        # Check if this commit is associated with a PR
-        pr_url = f"https://api.github.com/repos/{susy_repo}/commits/{commit_sha}/pulls"
-        pr_response = requests.get(pr_url, headers=headers)
-        
-        if pr_response.status_code == 200:
-            commit_prs = pr_response.json()
-            for pr in commit_prs:
-                # Fetch full PR details
-                full_pr_url = pr["url"]
-                full_pr_response = requests.get(full_pr_url, headers=headers)
-                
-                if full_pr_response.status_code == 200:
-                    pr_data = full_pr_response.json()
-                    # Add repo name to PR data
-                    pr_data["repository"] = susy_repo
-                    prs.append(pr_data)
-    
-    # Remove duplicates (a PR might have multiple commits)
-    unique_prs = []
-    pr_ids = set()
-    
-    for pr in prs:
-        if pr["id"] not in pr_ids:
-            pr_ids.add(pr["id"])
-            unique_prs.append(pr)
-    
-    return unique_prs
+    logging.info(f"Processing {len(all_commits)} commits to find associated Pull Requests...")
+    prs = {} # Use dict to store PRs by ID for automatic deduplication
+    commit_pr_association_url_base = f"{GITHUB_API_BASE}/repos/{repo_full_name}/commits"
 
+    for i, commit in enumerate(all_commits):
+        commit_sha = commit.get("sha")
+        if not commit_sha:
+            logging.warning(f"Commit data missing SHA: {commit}")
+            continue
+        message = commit.get("commit").get("message")
+        filter = re.search("Merge pull request #[0-9]+", message)
+        if not filter:
+            continue
+        # Check if this commit is associated with a PR (usually merge commits)
+        # Use the commit/pulls endpoint (more reliable for merge commits)
+        # This endpoint requires the 'pulls: read' scope if the repo is private.
+        pr_url = f"{commit_pr_association_url_base}/{commit_sha}/pulls"
+        try:
+            # Add header to specifically ask for the gfm description format if needed later,
+            # but for now, default json is fine.
+            pr_response = requests.get(pr_url, headers=headers)
+            # Allow 404s gracefully - commit might not be associated with a PR
+            if pr_response.status_code == 404:
+                logging.debug(f"Commit {commit_sha} not directly associated with a PR via API.")
+                continue
+            pr_response.raise_for_status() # Raise for other errors (5xx, 403, etc.)
+
+            commit_prs_data = pr_response.json()
+
+            # This endpoint returns an array of PRs associated with the commit.
+            # Usually for a merge commit, it's just one.
+            for pr_summary in commit_prs_data:
+                pr_number = pr_summary.get("number")
+                pr_id = pr_summary.get("id") # Use Github's global PR ID
+                if not pr_number or not pr_id:
+                    logging.warning(f"PR data associated with commit {commit_sha} is missing number or id: {pr_summary}")
+                    continue
+
+                # Check if we already processed this PR
+                if pr_id in prs:
+                    logging.debug(f"PR #{pr_number} (ID: {pr_id}) already found, skipping duplicate.")
+                    continue
+                
+                logging.info(f"Found PR #{pr_number} associated with commit {commit_sha[:7]}")
+                pr_data = pr_summary # Use the summary data directly
+                pr_data["repository"] = repo_full_name # Add repository context
+                prs[pr_id] = pr_data # Add to dict using unique ID as key
+
+        except requests.exceptions.RequestException as e:
+            # Log non-404 errors for the commit/pulls endpoint
+            if e.response is None or e.response.status_code != 404:
+                 logging.error(f"Error checking PRs for commit {commit_sha}: {e}")
+                 if e.response is not None:
+                    logging.error(f"Response status: {e.response.status_code}")
+                    logging.error(f"Response body: {e.response.text}")
+            # Continue to the next commit even if one fails
+            continue
+        except Exception as e:
+            logging.error(f"An unexpected error occurred processing commit {commit_sha}: {e}")
+            continue # Continue to next commit
+
+    unique_prs_list = list(prs.values())
+    logging.info(f"Found {len(unique_prs_list)} unique PRs merged between {start_ref} and {effective_end_ref}.")
+
+    unique_prs_list.sort(key=lambda pr: pr.get("number"))
+
+    return unique_prs_list
 # Categorize a PR based on its labels or title
 def categorize_pr(pr):
     # Check for the "internal" label to skip this PR
@@ -435,12 +454,12 @@ def generate_full_changelog():
     mod_changes, susy_old_version, susy_new_version = generate_mod_changelog()
     
     # Get merged PRs since the last tag from main repo
-    main_prs = get_merged_prs_since_tag(tag)
+    main_prs = get_merged_prs_between_refs("SymmetricDevs/Supersymmetry", tag)
     
     # Get merged PRs from SusyCore between relevant versions
     susy_prs = []
     if susy_old_version and susy_new_version:
-        susy_prs = get_susy_core_prs(susy_old_version, susy_new_version)
+        susy_prs = get_merged_prs_between_refs("SymmetricDevs/Susy-Core", susy_old_version, susy_new_version)
     
     # Combine PRs from both repositories
     all_prs = main_prs + susy_prs
