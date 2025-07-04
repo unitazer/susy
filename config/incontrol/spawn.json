@@ -58,10 +58,6 @@
 	  "angry": true
 	},
 	{
-	  "dimension": 0,
-	  "result": "deny"
-	},
-	{
 	  "dimension": -1,
 	  "result": "deny"
 	},
