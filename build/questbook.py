@@ -19,7 +19,6 @@ this reduces file size by roughly 50% (eg DJ2 4.2mb -> 2.2mb)
 import argparse
 import json
 import os
-from argparse import Namespace
 
 
 def intlist(string):
