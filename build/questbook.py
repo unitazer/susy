@@ -19,6 +19,8 @@ this reduces file size by roughly 50% (eg DJ2 4.2mb -> 2.2mb)
 import argparse
 import json
 import os
+from argparse import Namespace
+
 
 def intlist(string):
     return [int(i) for i in string.split(',')]
@@ -175,6 +177,7 @@ def build(args):
     os.makedirs(lang, exist_ok=True)
     langFile = lang + "/" + args.lang + ".lang"
     questKeys = {}
+    # This is called via main.py without edit present
     if args.__contains__("edit"):
         editQuestIds = args.edit
     else:
