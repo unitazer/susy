@@ -175,9 +175,9 @@ def build(args):
     os.makedirs(lang, exist_ok=True)
     langFile = lang + "/" + args.lang + ".lang"
     questKeys = {}
-    editQuestIds = args.edit
+    editQuestIds = []
     if len(editQuestIds) > 0:
-        print("Editing quest IDs: %s" % editQuestIds)
+        print("diting quest IDs: %s" % editQuestIds)
     
     try:
         with open(langFile, "r", errors="ignore") as file:
