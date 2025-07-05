@@ -404,7 +404,7 @@ public class SecondDegreeMaterials {
 
         SodiumDichromateSolution = new Material.Builder(13063, SuSyUtility.susyId('sodium_dichromate_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(SodiumDichromate * 1, Water * 1, SulfuricAcid * 1)
+                .components(SodiumDichromate * 1, SodiumSulfate * 1, Water * 2)
                 .color(0xe0912f)
                 .build();
 

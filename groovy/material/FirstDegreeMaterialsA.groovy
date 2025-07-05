@@ -2444,15 +2444,17 @@ public class FirstDegreeMaterialsA {
 
         SodiumChromateMixture = new Material.Builder(8458, SuSyUtility.susyId('sodium_chromate_mixture'))
                 .dust()
-                .components(Sodium, Chrome, Oxygen * 4, SodaAsh)
+                .components(Sodium * 8, Chrome * 4, Iron * 2, Oxygen * 19)
                 .color(0xfaff7d)
                 .build();
+        SodiumChromateMixture.setFormula("(Fe2O3)(Na2CrO4)4", true);
 
         SodiumChromateSolution = new Material.Builder(8459, SuSyUtility.susyId('sodium_chromate_solution'))
                 .liquid()
-                .components(Sodium, Chrome, Oxygen * 4, Water)
+                .components(Sodium * 2, Chrome, Oxygen * 4, Water)
                 .color(0xa4a839)
                 .build();
+        SodiumChromateSolution.setFormula("(Na2CrO4)(H2O)", true);
 
         LeadChloride = new Material.Builder(8460, SuSyUtility.susyId('lead_chloride'))
                 .dust().liquid(new FluidBuilder().temperature(774))
