@@ -1,26 +1,6 @@
 [
   {
     "dimension": 0,
-    "mob": [
-      "minecraft:pig",
-      "minecraft:cow",
-      "minecraft:sheep",
-      "minecraft:rabbit",
-      "minecraft:llama",
-      "minecraft:chicken",
-      "minecraft:horse",
-      "minecraft:squid"
-    ],
-    "mintime": 0,
-    "maxtime": 12000,
-    "maxcount": {
-      "amount": 2,
-      "perplayer": true
-    },
-    "result": "default"
-  },
-  {
-    "dimension": 0,
     "mod": "caracalsmod",
     "maxcount": {
       "amount": 1,
@@ -62,25 +42,27 @@
     "mob": [
       "minecraft:bat",
       "minecraft:donkey",
-      "minecraft:mule",
-      "minecraft:trader_llama",
-      "minecraft:turtle",
       "minecraft:parrot",
       "minecraft:ocelot",
       "minecraft:wolf",
-      "minecraft:fox",
-      "minecraft:bee",
       "minecraft:villager",
-      "minecraft:wandering_trader",
       "minecraft:zombie",
       "minecraft:skeleton",
       "minecraft:creeper",
       "minecraft:spider",
       "minecraft:witch",
       "minecraft:enderman",
-      "minecraft:phantom",
       "minecraft:slime",
-      "minecraft:silverfish"
+      "minecraft:silverfish",
+      "minecraft:zombie_villager",
+      "minecraft:pig",
+      "minecraft:cow",
+      "minecraft:sheep",
+      "minecraft:rabbit",
+      "minecraft:llama",
+      "minecraft:chicken",
+      "minecraft:horse",
+      "minecraft:squid"
     ],
     "spawntype": [
       "natural"
@@ -103,5 +85,25 @@
   {
     "dimension": 10,
     "result": "deny"
+  },
+  {
+    "dimension": 0,
+    "mob": [
+      "minecraft:pig",
+      "minecraft:cow",
+      "minecraft:sheep",
+      "minecraft:rabbit",
+      "minecraft:llama",
+      "minecraft:chicken",
+      "minecraft:horse",
+      "minecraft:squid"
+    ],
+    "mintime": 0,
+    "maxtime": 12000,
+    "maxcount": {
+      "amount": 2,
+      "perplayer": true
+    },
+    "result": "default"
   }
 ]
