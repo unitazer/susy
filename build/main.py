@@ -133,6 +133,9 @@ def export_server_pack():
     os.chdir("../..")
     shutil.move(f"build/server/{server_pack}", f"buildOut/{server_pack}")
     print("Server Pack Export Done")
+    subprocess.run(['git','restore','pack.toml','index.toml'], check=True)
+    print("restored things packwiz does for no reason")
+
 
 def export_modlist():
     print("Modlist Exporting")
