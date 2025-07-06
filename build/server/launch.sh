@@ -2,9 +2,9 @@
 
 # If you are having problems, make sure your java version is 1.8.0_xx with java -version
 
-RAM='2048M'
-FORGEJAR="forge-1.12.2-14.23.5.2860.jar"
-JAVA_CMD="java" # you can change it to like /usr/lib/jvm/java-8-openjdk/bin/java  if you need a different version without changing the global one
+RAM='6G'
+FORGEJAR=$(ls cleanroom*)
+JAVA_CMD="/usr/lib/jvm/java-21-openjdk/bin/java" # you can change it to like /usr/lib/jvm/java-8-openjdk/bin/java  if you need a different version without changing the global one
 
 PARAMS="-server -Xms$RAM -Xmx$RAM -jar $FORGEJAR nogui"
 
@@ -31,6 +31,6 @@ if [[ -f missing_mods.txt ]]; then
     exit 1
 fi
 
-
+echo "eula=true" > eula.txt # you cant do that. but i dont care much? :p like thats just a waste of time to edit it manually
 echo "$JAVA_CMD $PARAMS"
 $JAVA_CMD $PARAMS

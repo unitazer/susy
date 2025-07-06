@@ -8,19 +8,7 @@ basePath = os.path.normpath(os.path.realpath(__file__).replace("download.py", ""
 
 def download():
     with open(basePath + "/forge-installer.jar", "w+b") as jar:
-        forgeVer = "14.23.5.2860"
-        mcVer = "1.12.2"
-        url = (
-            "https://maven.minecraftforge.net/net/minecraftforge/forge/"
-            + mcVer
-            + "-"
-            + forgeVer
-            + "/forge-"
-            + mcVer
-            + "-"
-            + forgeVer
-            + "-installer.jar"
-        )
+        url = "https://github.com/CleanroomMC/Cleanroom/releases/download/0.3.7-alpha/cleanroom-0.3.7-alpha-installer.jar"
         r = requests.get(url)
         jar.write(r.content)
     print("Forge installer Downloaded")
