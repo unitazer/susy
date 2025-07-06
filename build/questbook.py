@@ -177,7 +177,7 @@ def build(args):
     langFile = lang + "/" + args.lang + ".lang"
     questKeys = {}
     # This is called via main.py without edit present
-    if args.__contains__("edit"):
+    if hasattr(args, "edit"):
         editQuestIds = args.edit
     else:
         editQuestIds = []
