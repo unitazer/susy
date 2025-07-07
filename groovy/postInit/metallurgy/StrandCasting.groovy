@@ -96,12 +96,12 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('nozzle.boron_nitride'))
         .inputs(ore('plateBoronNitride') * 64)
         .circuitMeta(1)
-        .outputs(metaitem('gas_atomizer'))
+        .outputs(metaitem('susy:gas_atomizer'))
         .EUt(1920)
         .duration(300)
         .buildAndRegister()
 
-RecyclingHelper.handleRecycling(metaitem('gas_atomizer'), [
+RecyclingHelper.handleRecycling(metaitem('susy:gas_atomizer'), [
     ore('plateBoronNitride') * 64,
     metaitem('nozzle.boron_nitride'),
     metaitem('electric.pump.ev') * 4,
@@ -110,7 +110,7 @@ RecyclingHelper.handleRecycling(metaitem('gas_atomizer'), [
 ])
 
 // Hot isostatic press
-RecyclingHelper.addShaped("susy:hot_isostatic_press", metaitem('hot_isostatic_press'), [
+RecyclingHelper.addShaped("susy:hot_isostatic_press", metaitem('susy:hot_isostatic_press'), [
     [ore('plateStainlessSteel'), metaitem('electric.pump.hv'), ore('plateStainlessSteel')],
         [ore('circuitHv'), item('gregtech:metal_casing', 5), ore('circuitHv')],
         [ore('plateStainlessSteel'), metaitem('electric.piston.hv'), ore('plateStainlessSteel')]
@@ -123,12 +123,12 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('electric.motor.ev') * 2)
         .inputs(metaitem('electric.pump.ev'))
         .circuitMeta(2)
-        .outputs(metaitem('metallurgical_converter'))
+        .outputs(metaitem('susy:metallurgical_converter'))
         .EUt(1920)
         .duration(300)
         .buildAndRegister()
 
-RecyclingHelper.handleRecycling(metaitem('metallurgical_converter'), [
+RecyclingHelper.handleRecycling(metaitem('susy:metallurgical_converter'), [
     item('gregtech:metal_casing', 4),
     metaitem('electric.motor.ev') * 2,
     metaitem('electric.pump.ev'),
@@ -136,46 +136,46 @@ RecyclingHelper.handleRecycling(metaitem('metallurgical_converter'), [
 ])
 
 // Turning zone
-RecyclingHelper.addShaped("susy:turning_zone", metaitem('turning_zone'), [
+RecyclingHelper.addShaped("susy:turning_zone", metaitem('susy:turning_zone'), [
         [ore('gearUltimet'), metaitem('cableGtOctalNichrome'), ore('gearUltimet')],
     [metaitem('electric.motor.ev'), item('gregtech:metal_casing', 4), metaitem('electric.motor.ev')],
     [metaitem('electric.motor.ev'), ore('circuitMv'), metaitem('electric.motor.ev')]
 ])
 
 // Rolling mill and cluster mill
-RecyclingHelper.addShaped("susy:rolling_mill", metaitem('rolling_mill'), [
+RecyclingHelper.addShaped("susy:rolling_mill", metaitem('susy:rolling_mill'), [
         [ore('gearUltimet'), metaitem('cableGtOctalNichrome'), ore('gearUltimet')],
     [metaitem('electric.pump.ev'), item('gregtech:boiler_casing', 1), metaitem('electric.pump.ev')],
     [metaitem('electric.motor.ev'), metaitem('cableGtOctalNichrome'), metaitem('electric.motor.ev')]
 ])
 
-RecyclingHelper.addShaped("susy:cluster_mill", metaitem('cluster_mill'), [
+RecyclingHelper.addShaped("susy:cluster_mill", metaitem('susy:cluster_mill'), [
         [ore('gearUltimet'), metaitem('cableGtHexNichrome'), ore('gearUltimet')],
         [metaitem('electric.pump.ev'), item('gregtech:boiler_casing', 1), metaitem('electric.pump.ev')],
         [metaitem('electric.motor.ev'), metaitem('cableGtHexNichrome'), metaitem('electric.motor.ev')]
 ])
 
 // Flying shear
-RecyclingHelper.addShaped("susy:flying_shear", metaitem('flying_shear'), [
+RecyclingHelper.addShaped("susy:flying_shear", metaitem('susy:flying_shear'), [
         [ore('gearUltimet'), metaitem('cableGtOctalNichrome'), ore('gearUltimet')],
         [metaitem('sensor.ev'), item('gregtech:metal_casing', 4), metaitem('electric.piston.ev')],
         [metaitem('electric.motor.ev'), ore('circuitEv'), metaitem('electric.piston.ev')]
 ])
 
 // Molds
-RecyclingHelper.addShaped("susy:slab_mold", metaitem('slab_mold'), [
+RecyclingHelper.addShaped("susy:slab_mold", metaitem('susy:slab_mold'), [
         [metaitem('electric.pump.ev'), metaitem('plateDoubleCopper'), metaitem('electric.pump.ev')],
         [metaitem('sensor.ev'), metaitem('plateDoubleCopper'), ore('circuitEv')],
         [metaitem('electric.pump.ev'), metaitem('plateDoubleCopper'), metaitem('electric.pump.ev')]
 ])
 
-RecyclingHelper.addShaped("susy:billet_mold", metaitem('billet_mold'), [
+RecyclingHelper.addShaped("susy:billet_mold", metaitem('susy:billet_mold'), [
         [metaitem('electric.pump.ev'), metaitem('plateSteel'), metaitem('electric.pump.ev')],
         [metaitem('sensor.ev'), metaitem('plateDoubleCopper'), ore('circuitEv')],
         [metaitem('electric.pump.ev'), metaitem('plateSteel'), metaitem('electric.pump.ev')]
 ])
 
-RecyclingHelper.addShaped("susy:strand_cooler", metaitem("strand_cooler"), [
+RecyclingHelper.addShaped("susy:strand_cooler", metaitem("susy:strand_cooler"), [
     [metaitem('electric.pump.ev'), ore('pipeNormalFluidMonel500'), metaitem('electric.pump.ev')],
     [item('susy:metallurgy_roll'), ore('circuitEv'), item('susy:metallurgy_roll')],
     [metaitem('electric.motor.ev'), ore('pipeNormalFluidMonel500'), metaitem('electric.motor.ev')]
@@ -187,12 +187,12 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('hull.ev'))
         .fluidInputs(fluid('soldering_alloy') * 288)
         .circuitMeta(1)
-        .outputs(metaitem('strand_bus.import'))
+        .outputs(metaitem('susy:strand_bus.import'))
         .EUt(1920)
         .duration(300)
         .buildAndRegister()
 
-RecyclingHelper.handleRecycling(metaitem('strand_bus.import'), [
+RecyclingHelper.handleRecycling(metaitem('susy:strand_bus.import'), [
         metaitem('electric.motor.ev') * 2,
         ore('ingotVanadiumSteel') * 3,
         ore('ingotSolderingAlloy') * 2,
@@ -205,12 +205,12 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('hull.ev'))
         .fluidInputs(fluid('soldering_alloy') * 288)
         .circuitMeta(2)
-        .outputs(metaitem('strand_bus.export'))
+        .outputs(metaitem('susy:strand_bus.export'))
         .EUt(1920)
         .duration(300)
         .buildAndRegister()
 
-RecyclingHelper.handleRecycling(metaitem('strand_bus.export'), [
+RecyclingHelper.handleRecycling(metaitem('susy:strand_bus.export'), [
         metaitem('electric.motor.ev') * 2,
         ore('ingotVanadiumSteel') * 3,
         ore('ingotSolderingAlloy') * 2,
@@ -218,14 +218,14 @@ RecyclingHelper.handleRecycling(metaitem('strand_bus.export'), [
 ])
 
 // Interconversion
-crafting.addShaped("susy:strand_bus_import_to_export", metaitem('strand_bus.export'), [
+crafting.addShaped("susy:strand_bus_import_to_export", metaitem('susy:strand_bus.export'), [
         [ore('RecyclingHelperToolScrewdriver')],
-        [metaitem('strand_bus.import')]
+        [metaitem('susy:strand_bus.import')]
 ])
 
-crafting.addShaped("susy:strand_bus_export_to_import", metaitem('strand_bus.import'), [
+crafting.addShaped("susy:strand_bus_export_to_import", metaitem('susy:strand_bus.import'), [
         [ore('RecyclingHelperToolScrewdriver')],
-        [metaitem('strand_bus.export')]
+        [metaitem('susy:strand_bus.export')]
 ])
 
 // Refractories
