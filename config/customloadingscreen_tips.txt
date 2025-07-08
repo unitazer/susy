@@ -13,7 +13,7 @@ Gregification of the world!
 Going one Voltage tier up, means having 4 times more EU/t.
 Don't build multiblocks on chunk borders!
 You cannot make a Nether Portal, you need to dig down.
-Dig down to y level 0 to reach the Beneath!
+Dig down to y-level 0 to reach the Beneath!
 Don't forget to pray to Gregorius Techneticies every morning.
 The Small Coal Boiler will release 4,000mB of steam when it gets full.
 SUPERSYMMETRY is not for magic.
@@ -35,7 +35,7 @@ Don't stick your head into the particle accelerator!
 A chemist's dream!
 Gregicality: now with more realistic particle physics!
 You can extract Sulfur from Pyrite.
-If it's too tedious you're doing it wrong.
+If it's too tedious, you're doing it wrong.
 More Complexity, less Waiting!
 With the power of Duct Tape, I solved all of your maintenance problems!
 Using a Circuit Assembler will make circuits cheaper.
@@ -45,7 +45,6 @@ Yes, beds are unlocked at EV.
 Cables are lossy.
 You need Cryogenic machinery if you want superconductors.
 You can change InGame Info XML scale in ingame configs.
-Mobs will increase their HP the longer you play. Good luck!
 Use F9 to see chunk borders!
 It's aluminIum, not aluminum!
 Use JEI to see information about ore deposits.
@@ -53,21 +52,49 @@ Steam is hot! It will burn Wooden Fluid Pipes!
 A machine draws electricity from its internal buffer first.
 Loss on uninsulated cables is twice as big as on insulated ones.
 Use the Traveler Backpack if you want an upgraded inventory.
-You can bind the quests menu to a key, instead of using the book.
-Make sure you have backups!
+You can bind the quests menu to a hotkey instead of using the book.
+Make sure to have backups!
 Industrial Renewal tanks can have up to 1,000,000mB of storage.
-The Electrolyzer separates substances into their basic chemicals.
+The Electrolyzer uses a voltage to break apart certain molecules.
 Don't forget your daily offering to Flop!
-Consider the function 1-e^{-0.1x} as the susy completion reaching 100% in x years.
+Use the function 1-e^{-0.1x} to calculate SUSY's completion (x is in years).
 Former federation soldiers, zombies, bandits and parasites will show you no mercy!
 Smiley is your friend.
 Use superconductors.
-Make sure to load your chunks for unintended incident.
-Independent AE2 unlocked at UHV.
-You are going to need weapons and lots of ammunition to fight against dangerous mobs.
+Make sure to claim your chunks to protect them against incidents.
+You can craft AE2 items from scratch... in UHV.
+You are going to need lots of ammunition to fight against dangerous mobs.
 Glory to the Federation!
-Do not cut off Large Boilers Water supply!
-Do not visit the Saturn.
+Do not cut off the water supply to large boilers!
+Do not visit Saturn.
 Skill issues will not be tolerated.
-Open your eyes and let JEI lead the way for you!
-Make sure to wear masks in the Beneath and Nether to avoid suffocation!
+Let JEI lead the way for you!
+Make sure to wear a mask in the Beneath to avoid suffocation!
+SUPERSYMMETRY: the chemistry textbook!
+Can you reach LV tier in real life?
+Integrated circuits require Rubylith.
+Make sure to use the better motor recipe in MV!
+Doctors recommend eating one steel pipe per day.
+Gregification is the left adjoint to the inclusion functor from GregTechs to mods.
+Play with your friends, play against your friends!
+You can win with the power of empirical evidence.
+You can win with the power of hard work.
+SUPERSYMMETRY: it is spreading.
+You cannot stop it.
+Don't forget to make acid-resistant pipes for acids!
+Turrets make for a nice defense.
+You are running out of time.
+This modpack follows the laws of thermodynamics.
+Make sure to upload logs when reporting bugs through mclo.gs!
+STILL DOWNLOADING USING THE CURSEFORGE APP?? Use PrismLauncher or ATLauncher!
+Don't use your launcher's update feature! Please redownload the modpack instead.
+Try out Industrial Renewal building blocks to improve your base's look!
+Beans on toast.
+Those bandits seem pretty friendly, don't they?
+IV tier - just a week away!
+Canonically begins on April 1st, 2423.
+Paint your pipes to aid in organization!
+Use extenders and bridges to help reduce pipe spaghetti.
+You'll need a pump or a conveyor to move both items and fluids from a singleblock.
+SUPERSYMMETRY does (mostly) follow conservation of mass!
+Thank you for playing SUPERSYMMETRY.
