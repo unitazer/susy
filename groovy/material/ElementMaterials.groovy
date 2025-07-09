@@ -16,14 +16,6 @@ public class ElementMaterials {
         
         
 
-        ElectrodepositedCopper = new Material.Builder(8722, SuSyUtility.susyId('electrodeposited_copper'))
-                .ingot(1)
-                .color(0xFF8000)
-                .iconSet(SHINY)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_FOIL)
-                .components(Copper)
-                .build();
-
 
     }
 }
