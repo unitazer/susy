@@ -28,6 +28,20 @@ public class FirstDegreeMaterialsB {
 
         log.infoMC('Registering First Degree Materials B!');
 
+        ThoriumDioxide = new Material.Builder(8707, SuSyUtility.susyId('thorium_dioxide'))
+                .dust()
+                .components(Thorium, Oxygen * 2)
+                .color(0x00061e)
+                .build();
+
+        // ThoriumDioxide.setProperty(SCPropertyKey.FISSION_FUEL, new FissionFuelProperty(?, ?, ?, ?, ?, ?, ?, ThoriumDioxide.getRegistryName()));
+
+        ThoriumChloride = new Material.Builder(8708, SuSyUtility.susyId('thorium_chloride'))
+                .dust()
+                .components(Thorium, Chlorine * 3)
+                .color(0x012916)
+                .build();
+
         Zircaloy4 = new Material.Builder(8710, SuSyUtility.susyId('zircaloy_4'))
                 .ingot().liquid(new FluidBuilder().temperature(2200))
                 .components(HighPurityZirconium * 18, Tin * 3, Iron * 2, Chrome)
@@ -127,7 +141,112 @@ public class FirstDegreeMaterialsB {
                 .macerateInto(Alnico)
                 .build()
 
-        ElectrodepositedCopper = new Material.Builder(8722, SuSyUtility.susyId('electrodeposited_copper'))
+        ReprocessedUranylNitrate = new Material.Builder(8722, SuSyUtility.susyId('reprocessed_uranyl_nitrate'))
+                .dust()
+                .components(ReprocessedUranium, Nitrogen * 2, Oxygen * 8)
+                .color(0xb7d629)
+                .build()
+
+        ReprocessedUranylNitrate.setFormula("UO2(NO3)2", true)
+
+        FerrousSulfamate = new Material.Builder(8723, SuSyUtility.susyId('ferrous_sulfamate'))
+                .dust()
+                .components(Iron * 1, Nitrogen * 1, Sulfur * 1, Oxygen * 3, Hydrogen * 6)
+                .color(0x4c5b4c)
+                .build()
+                
+        FerrousSulfamate.setFormula("Fe(NH2SO3)2", true)
+
+        ReprocessedUraniumTrioxide = new Material.Builder(8724, SuSyUtility.susyId('reprocessed_uranium_trioxide'))
+                .dust()
+                .components(ReprocessedUranium, Oxygen * 3)
+                .color(0x8b8b00)
+                .build();
+
+        ReprocessedUraniumTrioxide.setFormula("UO3", true);
+
+        ReactorGradePlutoniumIIINitrate = new Material.Builder(8725, SuSyUtility.susyId('reactor_grade_plutonium_iii_nitrate'))
+                .dust()
+                .components(ReactorGradePlutonium, Nitrogen * 3, Oxygen * 9)
+                .color(0x8b0000)
+                .build()
+
+        ReactorGradePlutoniumIIINitrate.setFormula("Pu(NO3)3", true);
+
+        ReactorGradePlutoniumDioxide = new Material.Builder(8726, SuSyUtility.susyId('reactor_grade_plutonium_dioxide'))
+                .dust()
+                .components(ReactorGradePlutonium, Oxygen * 2)
+                .colorAverage()
+                .build()
+        
+        ReactorGradePlutoniumDioxide.setFormula("PuO2", true)
+
+        HydroxylammoniumNitrateSolution = new Material.Builder(8727, SuSyUtility.susyId('hydroxylammonium_nitrate_solution'))
+                .liquid()
+                .components(Hydroxylamine, Hydrogen, Nitrogen, Oxygen * 3, Water)
+                .color(0x8b0000)
+                .build();
+
+        HydroxylammoniumNitrateSolution.setFormula("(N2H4O4)(H2O)", true);
+
+        ReprocessedUraniumDioxide = new Material.Builder(8728, SuSyUtility.susyId('reprocessed_uranium_dioxide'))
+                .dust()
+                .iconSet(SAND)
+                .components(ReprocessedUranium, Oxygen * 2)
+                .color(0x4c6e5c)
+                .build();
+
+        ReprocessedUraniumDioxide.setFormula("UO2", true);
+
+        ReprocessedUraniumTetrafluoride = new Material.Builder(8729, SuSyUtility.susyId('reprocessed_uranium_tetrafluoride'))
+                .dust()
+                .iconSet(SAND)
+                .components(ReprocessedUranium, Fluorine * 4)
+                .color(0x5d8570)
+                .build();
+
+        ReprocessedUraniumTetrafluoride.setFormula("UF4", true);
+
+        ReprocessedUraniumHexafluoride = new Material.Builder(8730, SuSyUtility.susyId('reprocessed_uranium_hexafluoride'))
+                .gas(new FluidBuilder().temperature(330))
+                .components(ReprocessedUranium, Fluorine * 6)
+                .color(0x49c930)
+                .build();
+
+        ReprocessedUraniumHexafluoride.setFormula("UF6", true);
+
+        PlutoniumGallium = new Material.Builder(8731, SuSyUtility.susyId('plutonium_gallium'))
+                .dust()
+                .iconSet(METALLIC)
+                .components(ReactorGradePlutonium * 29, Gallium)
+                .colorAverage()
+                .blastTemp(1100, GasTier.MID, GTValues.VA[GTValues.EV])
+                .build();
+
+        MixedOxideFuel = new Material.Builder(8732, SuSyUtility.susyId('mixed_oxide_fuel'))
+                .dust()
+                .color(0x62C032).iconSet(METALLIC)
+                .components(ReprocessedUraniumDioxide * 19, ReactorGradePlutoniumDioxide)
+                .build();
+
+        MixedOxideFuel.setFormula("(U,Pu)O2", true);
+        MixedOxideFuel.setProperty(SCPropertyKey.FISSION_FUEL, new FissionFuelProperty(1600, 1000, 50.0, 10.0, 4000.0, 10.0, 1.5, MixedOxideFuel.getRegistryName()));
+
+        DilutedAcetone = new Material.Builder(8733, SuSyUtility.susyId('diluted_acetone'))
+                .liquid()
+                .components(Acetone, Water)
+                .colorAverage()
+                .build();
+
+        BariumNitrate = new Material.Builder(8734, SuSyUtility.susyId('barium_nitrate'))
+                .dust()
+                .components(Barium, Nitrogen * 2, Oxygen * 6)
+                .colorAverage()
+                .build();
+
+        BariumNitrate.setFormula("Ba(NO3)2", true);
+
+        ElectrodepositedCopper = new Material.Builder(8735, SuSyUtility.susyId('electrodeposited_copper'))
                 .ingot(1)
                 .color(0xFF8000)
                 .iconSet(SHINY)
@@ -135,12 +254,11 @@ public class FirstDegreeMaterialsB {
                 .components(Copper)
                 .build();
 
-        SodiumFormateSolution = new Material.Builder(8723, SuSyUtility.susyId('sodium_formate_solution'))
+        SodiumFormateSolution = new Material.Builder(8736, SuSyUtility.susyId('sodium_formate_solution'))
                 .liquid()
                 .components(Sodium, Carbon, Hydrogen, Oxygen * 2)
                 .color(0xC9C9A5)
                 .build();
-
         SodiumFormateSolution.setFormula("(HCOONa)(H2O)", true)
     }
 }

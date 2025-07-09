@@ -373,11 +373,7 @@ public class OrganicChemistryMaterials {
                 .color(0x202226)
                 .build();
 
-        Hydroxylamine = new Material.Builder(15059, SuSyUtility.susyId('hydroxylamine'))
-                .liquid(new FluidBuilder().temperature(306))
-                .components(Hydrogen * 3, Nitrogen * 1, Oxygen * 1)
-                .colorAverage()
-                .build();
+        // FREE ID: 15059
 
         Cyclohexanone = new Material.Builder(15060, SuSyUtility.susyId('cyclohexanone'))
                 .liquid()
@@ -1403,12 +1399,11 @@ public class OrganicChemistryMaterials {
                 .color(0x403c32)
                 .build();
 
-        HexamethylenetetramineSolution = new Material.Builder(15226, SuSyUtility.susyId('hexamethylenetetramine_solution'))
-                .liquid()
-                .components(Carbon * 6, Hydrogen * 12, Nitrogen * 4, Water * 4)
+        Hexamethylenetetramine = new Material.Builder(15226, SuSyUtility.susyId('hexamethylenetetramine'))
+                .dust()
+                .components(Carbon * 6, Hydrogen * 12, Nitrogen * 4)
                 .colorAverage()
                 .build()
-                .setFormula("(C6H12N4)(H2O)4", true)
 
         Ferrocene = new Material.Builder(15227, SuSyUtility.susyId('ferrocene'))
                 .dust()
@@ -2762,6 +2757,24 @@ public class OrganicChemistryMaterials {
                 .dust()
                 .components(Carbon * 10, Hydrogen * 18, Nitrogen * 2, Oxygen * 7)
                 .color(0x7ebdba)
+                .build();
+
+        Pentaerythritol = new Material.Builder(15439, SuSyUtility.susyId('pentaerythritol'))
+                .dust()
+                .components(Carbon * 5, Hydrogen * 12, Oxygen * 4)
+                .color(0x6b0b0b)
+                .build();
+
+        PentaerythritolTetranitrate = new Material.Builder(15440, SuSyUtility.susyId('pentaerythritol_tetranitrate'))
+                .dust()
+                .components(Carbon * 5, Hydrogen * 8, Nitrogen * 4, Oxygen * 12)
+                .color(0xc90a4d)
+                .build();
+
+        RDX = new Material.Builder(15441, SuSyUtility.susyId('rdx'))
+                .dust()
+                .components(Carbon * 3, Hydrogen * 6, Nitrogen * 6, Oxygen * 6)
+                .color(0xb019ad)
                 .build();
     }
 }

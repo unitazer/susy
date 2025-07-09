@@ -120,6 +120,15 @@ for (fluid in IQuenchingFluid.quenching_fluids) {
         .duration((int) fluid.getDuration() * 4)
         .EUt(120)
         .buildAndRegister();
+
+    CHEMICAL_BATH.recipeBuilder()
+        .inputs(ore('ingotHotAlnico'))
+        .fluidInputs(liquid(fluid.getColdFluid()) * fluid.amount)
+        .outputs(metaitem('ingotAlnico'))
+        .fluidOutputs(liquid(fluid.getHotFluid()) * fluid.amount)
+        .duration((int) fluid.getDuration() * 4)
+        .EUt(120)
+        .buildAndRegister();
 }
 
 for (entry in ingotMap) {

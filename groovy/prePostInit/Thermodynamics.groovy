@@ -46,11 +46,13 @@ def WaterCoolant = new ICoolant("water", "warm_water");
 WaterCoolant.setDurationRadiator(100);
 WaterCoolant.setAmountToUse(1000);
 WaterCoolant.setTimeFactor(10);
+WaterCoolant.setCircuit(1);
 
 def ChilledWaterCoolant = new ICoolant("chilled_water", "warm_water");
 ChilledWaterCoolant.setDurationRadiator(50);
 ChilledWaterCoolant.setAmountToUse(384);
 ChilledWaterCoolant.setTimeFactor(5);
+ChilledWaterCoolant.setCircuit(2);
 
 def SaltWaterCoolant = new ICoolant("salt_water", "warm_salt_water");
 SaltWaterCoolant.setDurationRadiator(100);
@@ -357,12 +359,23 @@ for (refrigerant in Refrigerants) {
 }
 
 //Coolant recipes generation
+    
 for (coolant in Coolants) {
-    recipemap('radiator').recipeBuilder()
+    if (coolant.circuit != 0) {
+        recipemap('radiator').recipeBuilder()
+            .fluidInputs(liquid(coolant.warm_coolant) * (coolant.amount_to_use / 10))
+            .fluidOutputs(liquid(coolant.cold_coolant) * (coolant.amount_to_use / 10))
+            .duration(coolant.duration_radiator)
+            .circuitMeta(coolant.getCircuit())
+            .buildAndRegister();
+    }
+    else {
+        recipemap('radiator').recipeBuilder()
             .fluidInputs(liquid(coolant.warm_coolant) * (coolant.amount_to_use / 10))
             .fluidOutputs(liquid(coolant.cold_coolant) * (coolant.amount_to_use / 10))
             .duration(coolant.duration_radiator)
             .buildAndRegister();
+    }
 }
 
 //Heat exchanger recipes generation

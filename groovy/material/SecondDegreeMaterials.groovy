@@ -404,7 +404,7 @@ public class SecondDegreeMaterials {
 
         SodiumDichromateSolution = new Material.Builder(13063, SuSyUtility.susyId('sodium_dichromate_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(SodiumDichromate * 1, Water * 1, SulfuricAcid * 1)
+                .components(SodiumDichromate * 1, SodiumSulfate * 1, Water * 2)
                 .color(0xe0912f)
                 .build();
 
@@ -945,6 +945,30 @@ public class SecondDegreeMaterials {
         PotassiumChlorateSolution = new Material.Builder(13157, SuSyUtility.susyId('potassium_chlorate_solution'))
                 .liquid()
                 .components(PotassiumChlorate, Water)
+                .colorAverage()
+                .build();
+
+        FerrousSulfamateSolution = new Material.Builder(13158, SuSyUtility.susyId('ferrous_sulfamate_solution'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .components(FerrousSulfamate, SulfuricAcid * 2, Water * 9)
+                .colorAverage()
+                .build();
+
+        SodiumNitriteSolution = new Material.Builder(13159, SuSyUtility.susyId('sodium_nitrite_solution'))
+                .liquid()
+                .components(SodiumNitrite, Water)
+                .colorAverage()
+                .build();
+
+        PlutoniumReductionSolution = new Material.Builder(13160, SuSyUtility.susyId('plutonium_reduction_solution'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .components(FerrousSulfamate, DilutedNitricAcid)
+                .colorAverage()
+                .build();
+
+        BariumNitrateSolution = new Material.Builder(13161, SuSyUtility.susyId('barium_nitrate_solution'))
+                .liquid()
+                .components(BariumNitrate, Water)
                 .colorAverage()
                 .build();
     }

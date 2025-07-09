@@ -665,12 +665,31 @@ public class ThirdDegreeMaterials {
                 .colorAverage()
                 .build();
 
-        GreenEpoxyPCBCoating = new Material.Builder(24107, SuSyUtility.susyId('green_epoxy_pcb_coating'))
+        ActinideSeparationMixture = new Material.Builder(24107, SuSyUtility.susyId('actinide_separation_mixture'))
                 .liquid()
-                .color(0x196809)
+                .components(TributylPhosphate * 3, Kerosene * 7)
+                .color(0xa89e43)
+                .build();
+
+        HexamethylenetetramineSolution = new Material.Builder(24108, SuSyUtility.susyId('hexamethylenetetramine_solution'))
+                .liquid()
+                .components(Hexamethylenetetramine, Water * 4)
+                .colorAverage()
+                .build()
+
+        CompositionB = new Material.Builder(24109, SuSyUtility.susyId('composition_b'))
+                .dust()
+                .components(RDX * 6, TNT * 4)
+                .colorAverage()
                 .build();
         
-        FormicAcidSodiumSulfateSolution = new Material.Builder(24109, SuSyUtility.susyId('formic_acid_sodium_sulfate_solution'))
+        Baratol = new Material.Builder(24110, SuSyUtility.susyId('baratol'))
+                .dust()
+                .components(TNT, BariumNitrate * 3)
+                .colorAverage()
+                .build();
+        
+        FormicAcidSodiumSulfateSolution = new Material.Builder(24111, SuSyUtility.susyId('formic_acid_sodium_sulfate_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .components(FormicAcid * 2, SodiumSulfate * 1, Water * 2)
                 .color(0xe35fa8)
