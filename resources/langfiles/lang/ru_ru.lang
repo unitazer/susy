@@ -2668,10 +2668,10 @@ item.gregtech.material.polytetrafluoroethylene.fiber=Расширенное по
 item.gregtech.material.polytetrafluoroethylene.thread=Расширенная политетрафторэтиленовая нить
 
 # Resin Logs
-gregtech.block_group_members.extractable_logs_1.name=Бревно из березы, джунглей, дуба и ели
-gregtech.block_group_members.extractable_logs_2.name=Акация и темный дуб
+susy.block_group_members.extractable_logs_1.name=Бревно из березы, джунглей, дуба и ели
+susy.block_group_members.extractable_logs_2.name=Акация и темный дуб
 
-gregtech.block_group_members.latex_logs.name=Резиновое бревно
+susy.block_group_members.latex_logs.name=Резиновое бревно
 
 # Main Menu
 susy.menu.options=Параметры

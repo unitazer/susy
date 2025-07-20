@@ -578,51 +578,55 @@ public class FirstDegreeMaterialsA {
                 .color(0x2497a6)
                 .build();
 
-        HeavyWater = new Material.Builder(8173, SuSyUtility.susyId('heavy_water'))
+        HeavyWater = new Material.Builder(8172, SuSyUtility.susyId('heavy_water'))
                 .liquid()
                 .components(Deuterium * 2, Oxygen)
-                .color(0x2c37b0)
+                .color(0x3047b8)
                 .build();
 
-        HeavyHydrogenSulfide = new Material.Builder(8174, SuSyUtility.susyId('heavy_hydrogen_sulfide'))
+        HighlyEnrichedHydrogenSulfide = new Material.Builder(8173, SuSyUtility.susyId('highly_enriched_hydrogen_sulfide'))
                 .gas()
-                .components(Deuterium * 2, Sulfur)
                 .color(0xb09a2c)
                 .build();
 
-        SemiHeavyHydrogenSulfide = new Material.Builder(8175, SuSyUtility.susyId('semiheavy_hydrogen_sulfide'))
+        HighlyEnrichedWater = new Material.Builder(8174, SuSyUtility.susyId('highly_enriched_water'))
+                .liquid()
+                .color(0x3047b8)
+                .build();
+
+        MediumEnrichedHydrogenSulfide = new Material.Builder(8175, SuSyUtility.susyId('medium_enriched_hydrogen_sulfide'))
                 .gas()
-                .components(Hydrogen, Deuterium, Sulfur)
                 .color(0xc29836)
                 .build();
 
-        SemiHeavyWater = new Material.Builder(8176, SuSyUtility.susyId('semiheavy_water'))
+        MediumEnrichedWater = new Material.Builder(8176, SuSyUtility.susyId('medium_enriched_water'))
                 .liquid()
-                .components(Hydrogen, Deuterium, Oxygen)
                 .color(0x364ec2)
                 .build();
 
-        ImpureSemiheavyWater = new Material.Builder(8177, SuSyUtility.susyId('impure_semiheavy_water'))
+        LightlyEnrichedHydrogenSulfide = new Material.Builder(8177, SuSyUtility.susyId('lightly_enriched_hydrogen_sulfide'))
+                .gas()
+                .colorAverage()
+                .build();
+
+        LightlyEnrichedWater = new Material.Builder(8178, SuSyUtility.susyId('lightly_enriched_water'))
                 .liquid()
-                .components(SemiHeavyWater, Water)
-                .colorAverage()
+                .color(0x3957bd)
                 .build();
 
-        IsotopicallyPureHydrogenSulfide = new Material.Builder(8178, SuSyUtility.susyId('isotopically_pure_hydrogen_sulfide'))
-                .gas()
+        PartiallyDeionizedSeawater = new Material.Builder(8179, SuSyUtility.susyId('partially_deionized_sea_water'))
+                .liquid()
+                .color(0x4565d1)
+                .build();
+
+        DeionizedSeawater = new Material.Builder(8180, SuSyUtility.susyId('deionized_sea_water'))
+                .liquid()
+                .color(0x4e6fde)
+                .build();
+
+        DepletedHydrogenSulfide = new Material.Builder(8181, SuSyUtility.susyId('depleted_hydrogen_sulfide'))
+                .liquid()
                 .components(HydrogenSulfide)
-                .color(0xffab66)
-                .build();
-
-        ImpureSemiheavyHydrogenSulfide = new Material.Builder(8179, SuSyUtility.susyId('impure_semiheavy_hydrogen_sulfide'))
-                .gas()
-                .components(HydrogenSulfide, SemiHeavyHydrogenSulfide)
-                .colorAverage()
-                .build();
-
-        ImpureHeavyHydrogenSulfide = new Material.Builder(8180, SuSyUtility.susyId('impure_heavy_hydrogen_sulfide'))
-                .gas()
-                .components(HydrogenSulfide, HeavyHydrogenSulfide)
                 .colorAverage()
                 .build();
 

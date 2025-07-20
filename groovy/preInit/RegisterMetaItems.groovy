@@ -27,7 +27,9 @@ eventManager.listen {
         customMetaItems.addItem(100, "cement.clinker")
         customMetaItems.addItem(101, "hot.cement.clinker")
         customMetaItems.addItem(102, "cement.dust")
-        customMetaItems.addItem(103, "limestone.dust")
+
+        // Free ID: 103
+
         customMetaItems.addItem(104, "shape.mold.rod")
         customMetaItems.addItem(105, "shape.mold.crucible")
         customMetaItems.addItem(106, "crucible.boron.nitride")
@@ -138,6 +140,7 @@ eventManager.listen {
         customMetaItems.addItem(1002, "voltaic_pile").setMaxStackSize(1);
         customMetaItems.addItem(1003, "electrolyte_paper")
         customMetaItems.addItem(1004, "hot_steel_plate")
+        customMetaItems.addItem(1005, "hot_steel_rod")
         
         customMetaItems.addItem(1100, "steam.piston")
         customMetaItems.addItem(1101, "steam.motor")

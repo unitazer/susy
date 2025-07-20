@@ -397,7 +397,7 @@ RecyclingHelper.handleRecycling(metaitem('supercritical:basket.anode'),
     // Panelling
 
     ASSEMBLER.recipeBuilder()
-        .inputs(ore('plateStainlessSteelSteel') * 6)
+        .inputs(ore('plateStainlessSteel') * 6)
         .inputs(ore('frameGtStainlessSteel'))
         .fluidInputs(fluid('concrete') * 144)
         .circuitMeta(17)

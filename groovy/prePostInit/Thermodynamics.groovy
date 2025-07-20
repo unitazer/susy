@@ -879,6 +879,20 @@ recipemap('heat_exchanger').recipeBuilder()
         .duration(10)
         .buildAndRegister();
 
+recipemap('fluid_heater').recipeBuilder()
+    .circuitMeta(3)
+    .fluidInputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('dense_steam') * 1000)
+    .duration(20)
+    .EUt(30)
+    .buildAndRegister()
+
+recipemap('condenser').recipeBuilder()
+    .fluidInputs(fluid('dense_steam') * 1000)
+    .fluidOutputs(fluid('water') * 1000)
+    .duration(5)
+    .buildAndRegister()
+
 // Nuclear coolant cycles
 
 // PWR pressurizer & steam generator
@@ -891,11 +905,26 @@ recipemap('fluid_compressor').recipeBuilder()
         .EUt(480)
         .buildAndRegister();
 
+recipemap('fluid_heater').recipeBuilder()
+        .fluidInputs(liquid('heavy_water') * 1536)
+        .fluidOutputs(liquid('pressurized_heavy_water') * 1536)
+        .duration(1)
+        .EUt(480)
+        .buildAndRegister();
+
 recipemap('heat_exchanger').recipeBuilder()
         .fluidInputs(liquid('hot_pressurized_water') * 1536)
         .fluidInputs(liquid('water') * 1640)
         .fluidOutputs(liquid('distilled_water') * 1536)
         .fluidOutputs(fluid('hp_steam') * 1640)
+        .duration(1)
+        .buildAndRegister();
+
+recipemap('heat_exchanger').recipeBuilder()
+        .fluidInputs(liquid('hot_pressurized_heavy_water') * 1536)
+        .fluidInputs(liquid('water') * 1490)
+        .fluidOutputs(liquid('tritiated_heavy_water') * 1536)
+        .fluidOutputs(fluid('hp_steam') * 1490)
         .duration(1)
         .buildAndRegister();
 
@@ -911,6 +940,7 @@ recipemap('fluid_compressor').recipeBuilder()
 // BWR bootstrap
 
 recipemap('fluid_heater').recipeBuilder()
+        .circuitMeta(4)
         .fluidInputs(liquid('water') * 1536)
         .fluidOutputs(liquid('boiling_water') * 1536)
         .duration(2000)

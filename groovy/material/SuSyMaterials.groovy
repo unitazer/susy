@@ -970,14 +970,15 @@ class SuSyMaterials {
         public static Material Cryolite;
         public static Material EthanolSolution;
         public static Material HeavyWater;
-        public static Material HeavyHydrogenSulfide;
-        public static Material SemiHeavyHydrogenSulfide;
-        public static Material SemiHeavyWater;
-        public static Material ImpureSemiheavyWater;
-        public static Material IsotopicallyPureHydrogenSulfide;
-        public static Material ImpureSemiheavyHydrogenSulfide;
-        public static Material ImpureHeavyHydrogenSulfide;
-        public static Material SeaWater;
+        public static Material HighlyEnrichedHydrogenSulfide;
+        public static Material HighlyEnrichedWater;
+        public static Material MediumEnrichedHydrogenSulfide;
+        public static Material MediumEnrichedWater;
+        public static Material LightlyEnrichedHydrogenSulfide;
+        public static Material LightlyEnrichedWater;
+        public static Material PartiallyDeionizedSeawater;
+        public static Material DeionizedSeawater;
+        public static Material DepletedHydrogenSulfide;
         public static Material TetrafluoroboricAcid;
         public static Material BoronTrichloride;
         public static Material ProustiteAlkalineLeachSolution;
@@ -1540,6 +1541,7 @@ class SuSyMaterials {
         public static Material PurifiedBerylliumHydroxide;
         public static Material PurifiedBerylliumOxide;
         public static Material PurifiedBerylliumChloride;
+        public static Material DeuteriumTritiumMixture;
         public static Material ReprocessedUranylNitrate;
         public static Material FerrousSulfamate;
         public static Material ReprocessedUraniumTrioxide;
@@ -2386,7 +2388,10 @@ class SuSyMaterials {
         public static Material BoilingWater;
         public static Material HighPressureExhaustSteam;
         public static Material HighPressureWetExhaustSteam;
-        //public static Material HighPressureHeavyWater;
+        public static Material PressurizedHeavyWater;
+        public static Material HotPressurizedHeavyWater;
+        public static Material TritiatedHeavyWater;
+        public static Material TritiatedSteam;
         public static Material ChilledWater;
         
 

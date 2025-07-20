@@ -246,7 +246,13 @@ public class FirstDegreeMaterialsB {
 
         BariumNitrate.setFormula("Ba(NO3)2", true);
 
-        ElectrodepositedCopper = new Material.Builder(8735, SuSyUtility.susyId('electrodeposited_copper'))
+        DeuteriumTritiumMixture = new Material.Builder(8735, SuSyUtility.susyId('deuterium_tritium_mixture'))
+                .gas()
+                .components(Deuterium * 99, Tritium * 1)
+                .colorAverage()
+                .build();
+      
+        ElectrodepositedCopper = new Material.Builder(8736, SuSyUtility.susyId('electrodeposited_copper'))
                 .ingot(1)
                 .color(0xFF8000)
                 .iconSet(SHINY)
@@ -254,7 +260,7 @@ public class FirstDegreeMaterialsB {
                 .components(Copper)
                 .build();
 
-        SodiumFormateSolution = new Material.Builder(8736, SuSyUtility.susyId('sodium_formate_solution'))
+        SodiumFormateSolution = new Material.Builder(8737, SuSyUtility.susyId('sodium_formate_solution'))
                 .liquid()
                 .components(Sodium, Carbon, Hydrogen, Oxygen * 2)
                 .color(0xC9C9A5)

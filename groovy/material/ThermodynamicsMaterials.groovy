@@ -611,19 +611,36 @@ class ThermodynamicsMaterials {
                 .components(Steam)
                 .build();
 
-        /*HighPressureHeavyWater = new Material.Builder(22866, SuSyUtility.susyId("hp_heavy_water"))
-                .gas(new FluidBuilder().temperature(500))
-                .color(0xccd9f0)
+        PressurizedHeavyWater = new Material.Builder(22866, SuSyUtility.susyId("pressurized_heavy_water"))
+                .liquid(new FluidBuilder().temperature(548))
+                .color(0x0b2a8f)
                 .flags(DISABLE_DECOMPOSITION)
-                .components(Deuterium, 2, Oxygen, 1)
+                .components(Deuterium * 2, Oxygen * 1)
                 .build();
-                
-        HeavyWater.setProperty(SCPropertyKey.COOLANT,
-            new CoolantProperty(HeavyWater, HighPressureHeavyWater, FluidStorageKeys.LIQUID, 4., 1000,
-                374.4, 2064000, 4228.)
-                    .setAccumulatesHydrogen(true));*/
 
-        ChilledWater = new Material.Builder(22867, SuSyUtility.susyId("chilled_water"))
+        HotPressurizedHeavyWater = new Material.Builder(22867, SuSyUtility.susyId("hot_pressurized_heavy_water"))
+                .liquid(new FluidBuilder().temperature(588))
+                .color(0x153499)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Deuterium * 2, Oxygen * 1)
+                .build();
+
+        PressurizedHeavyWater.setProperty(SCPropertyKey.COOLANT, new CoolantProperty(PressurizedHeavyWater, HotPressurizedHeavyWater, FluidStorageKeys.LIQUID, 4, 1000, 558, 2064000, 4228).setAccumulatesHydrogen(true));
+        // per mole, 2,233,120J absorbed --> 331,143 EU/mol
+
+        TritiatedHeavyWater = new Material.Builder(22868, SuSyUtility.susyId("tritiated_heavy_water"))
+                .liquid(new FluidBuilder().temperature(548))
+                .color(0x1f5a7b)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Tritium * 2, Oxygen * 1)
+                .build();
+
+        TritiatedSteam = new Material.Builder(22869, SuSyUtility.susyId("tritiated_steam"))
+                .gas(new FluidBuilder().temperature(448))
+                .color(0x9ebaac)
+                .build();
+
+        ChilledWater = new Material.Builder(22870, SuSyUtility.susyId("chilled_water"))
                 .liquid(new FluidBuilder().temperature(283))
                 .color(0x6da2ed)
                 .build();

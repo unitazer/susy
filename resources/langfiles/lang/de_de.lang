@@ -2723,10 +2723,10 @@ item.gregtech.material.polytetrafluoroethylene.fiber=Expandierte Polytetrafluore
 item.gregtech.material.polytetrafluoroethylene.thread=Expandierter Polytetrafluorethylen-Faden
 
 # Resin Logs
-gregtech.block_group_members.extractable_logs_1.name=Birken-, Tropen-, Eichen- und Fichtenholz
-gregtech.block_group_members.extractable_logs_2.name=Akazien- und Dunkleichenholz
+susy.block_group_members.extractable_logs_1.name=Birken-, Tropen-, Eichen- und Fichtenholz
+susy.block_group_members.extractable_logs_2.name=Akazien- und Dunkleichenholz
 
-gregtech.block_group_members.latex_logs.name=Gummibaumholz
+susy.block_group_members.latex_logs.name=Gummibaumholz
 
 # Main Menu
 

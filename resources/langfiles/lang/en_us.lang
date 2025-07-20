@@ -348,8 +348,6 @@ susy.material.hydroxyapatite=Hydroxyapatite
 susy.material.calcium_metasilicate=Calcium Metasilicate
 susy.material.pyrazine=Pyrazine
 
-gregtech.material.chrome=Chromium
-
 # Fluids
 
 susy.material.smoke_bomb_mix=Smoke Bomb Mix
@@ -450,14 +448,15 @@ susy.material.grain_solution=Grain Solution
 susy.material.mash=Mash
 
 susy.material.heavy_water=Heavy Water
-susy.material.heavy_hydrogen_sulfide=Heavy Hydrogen Sulfide
-susy.material.semiheavy_hydrogen_sulfide=Semi-Heavy Hydrogen Sulfide
-susy.material.semiheavy_water=Semi-Heavy Water
-susy.material.impure_semiheavy_water=Impure Semi-Heavy Water
-susy.material.isotopically_pure_hydrogen_sulfide=Isotopically Pure Hydrogen Sulfide
-susy.material.impure_semiheavy_hydrogen_sulfide=Impure Semi-Heavy Hydrogen Sulfide
-susy.material.impure_heavy_hydrogen_sulfide=Impure Heavy Hydrogen Sulfide
-susy.material.sea_water=Sea Water
+susy.material.highly_enriched_hydrogen_sulfide=Highly Enriched Hydrogen Sulfide
+susy.material.highly_enriched_water=Highly Enriched Water
+susy.material.medium_enriched_hydrogen_sulfide=Medium Enriched Hydrogen Sulfide
+susy.material.medium_enriched_water=Medium Enriched Water
+susy.material.lightly_enriched_hydrogen_sulfide=Lightly Enriched Hydrogen Sulfide
+susy.material.lightly_enriched_water=Lightly Enriched Water
+susy.material.partially_deionized_sea_water=Partially Deionized Sea Water
+susy.material.deionized_sea_water=Deionized Sea Water
+susy.material.depleted_hydrogen_sulfide=Depleted Hydrogen Sulfide
 
 susy.material.novolacs=Novolacs Photoresist
 susy.material.silicon_tetrachloride=Silicon Tetrachloride
@@ -646,6 +645,10 @@ susy.material.hp_steam=High Pressure Steam
 susy.material.lp_steam=Low Pressure Steam
 susy.material.pressurized_water=Pressurized Water
 susy.material.hot_pressurized_water=Hot Pressurized Water
+susy.material.pressurized_heavy_water=Pressurized Heavy Water
+susy.material.hot_pressurized_heavy_water=Hot Pressurized Heavy Water
+susy.material.tritiated_heavy_water=Tritiated Heavy Water
+susy.material.tritiated_steam=Tritiated Steam
 susy.material.boiling_water=Boiling Water
 susy.material.hp_wet_steam=High Pressure Wet Steam
 susy.material.hp_exhaust_steam=High Pressure Exhaust Steam
@@ -2151,7 +2154,6 @@ susy.material.compounded_styrene_butadiene_rubber=Compounded Styrene Butadiene R
 susy.material.fuel_oil=Fuel Oil
 susy.material.isopropylamine=Isopropylamine
 susy.material.isopropylamine_solution=Isopropylamine Solution
-susy.material.platinum_rhodium=Platinum-Rhodium
 susy.material.incoloy_20=Incoloy 20
 susy.material.incoloy_825=Incoloy 825
 susy.material.incoloy_908=Incoloy 908
@@ -2512,6 +2514,14 @@ susy.material.combusted_krypton_xenon_concentrate=Combusted Krypton-Xenon Concen
 susy.material.purified_krypton_xenon_concentrate=Purified Krypton-Xenon Concentrate
 susy.material.liquid_crude_xenon=Liquid Crude Xenon
 susy.material.oxidized_xenon=Oxidized Xenon
+
+# Isotopes
+
+susy.material.natural_uranium=Natural Uranium
+susy.material.leu_235=Low Enriched Uranium-235 (LEU-235)
+susy.material.haleu_235=High Assay Low Enriched Uranium-235 (HALEU-235)
+susy.material.heu_235=High Enriched Uranium-235 (HEU-235)
+susy.material.weapons_grade_uranium=Weapons Grade Uranium
 susy.material.mixed_oxide_fuel=MOX
 susy.material.natural_uranium_hexafluoride=Natural Uranium Hexafluoride
 susy.material.leu_235_hexafluoride=LEU-235 Hexafluoride
@@ -2528,6 +2538,7 @@ susy.material.leu_235_dioxide=LEU-235 Dioxide
 susy.material.haleu_235_dioxide=HALEU-235 Dioxide
 susy.material.heu_235_dioxide=HEU-235 Dioxide
 susy.material.weapons_grade_uranium_dioxide=Weapons Grade Uranium Dioxide
+susy.material.deuterium_tritium_mixture=Deuterium-Tritium Mixture
 susy.material.hexamethylenetetramine=Hexamethylenetetramine (HMTA)
 susy.material.diluted_acetone=Diluted Acetone
 susy.material.pentaerythritol=Pentaerythritol
@@ -2622,6 +2633,7 @@ metaitem.hot_iron_rod.name=Hot Iron Rod
 metaitem.voltaic_pile.name=Voltaic Pile
 metaitem.electrolyte_paper.name=Electrolyte Paper
 metaitem.hot_steel_plate.name=Hot Steel Plate
+metaitem.hot_steel_rod.name=Hot Steel Rod
 metaitem.sand.dust.name=Fine Pile of Sand
 metaitem.native_copper.name=Native Copper
 metaitem.mudbrick_mix.name=Mudbrick Mix
@@ -2907,8 +2919,8 @@ metaitem.beads.strong_acidic_cation_exchange.name=Strong Acidic Cation Exchange 
 metaitem.beads.amberlyst_ch.name=Amberlyst CH-43 Beads
 metaitem.beads.loaded_rhenium_anion_exchange.name=Rhenium Ion Exchange Beads
 metaitem.beads.loaded_uranium_anion_exchange.name=Uranium Ion Exchange Beads
-metaitem.beads.weak_basic_anion_exchange.name=Weak Basic Cation Exchange Resin Beads
-metaitem.beads.strong_basic_anion_exchange.name=Strong Basic Cation Exchange Resin Beads
+metaitem.beads.weak_basic_anion_exchange.name=Weak Basic Anion Exchange Resin Beads
+metaitem.beads.strong_basic_anion_exchange.name=Strong Basic Anion Exchange Resin Beads
 metaitem.beads.rare_earth_cation_exchange.name=Rare Earth Cation Exchange Resin Beads
 metaitem.beads.loaded_lutetium_cation_exchange.name=Loaded Lutetium Exchange Resin Beads
 
@@ -3045,12 +3057,13 @@ item.susy.material.ultra_high_molecular_weight_polyethylene.plate=Woven Ultra Hi
 item.susy.material.kevlar.plate=Woven Kevlar
 item.gregtech.material.polytetrafluoroethylene.fiber=Expanded Polytetrafluoroethylene Fiber
 item.gregtech.material.polytetrafluoroethylene.thread=Expanded Polytetrafluoroethylene Thread
+gregtech.material.chrome=Chromium
 
 # Resin Logs
-gregtech.block_group_members.extractable_logs_1.name=Birch, Jungle, Oak, and Spruce Log
-gregtech.block_group_members.extractable_logs_2.name=Acacia and Dark Oak
+susy.block_group_members.extractable_logs_1.name=Birch, Jungle, Oak, and Spruce Log
+susy.block_group_members.extractable_logs_2.name=Acacia and Dark Oak
 
-gregtech.block_group_members.latex_logs.name=Rubber Log
+susy.block_group_members.latex_logs.name=Rubber Log
 
 # Main Menu
 susy.menu.options=Options

@@ -2292,7 +2292,7 @@ item.gregtech.material.polytetrafluoroethylene.fiber=Expanded Polytetrafluoroeth
 item.gregtech.material.polytetrafluoroethylene.thread=Expanded Polytetrafluoroethylene Thread
 
 # Resin Logs
-gregtech.block_group_members.extractable_logs_1.name=Kłody Brzozy, Dżunglowe, Dębu, i Świerku
-gregtech.block_group_members.extractable_logs_2.name=Akacja i Ciemny Dąb
+susy.block_group_members.extractable_logs_1.name=Kłody Brzozy, Dżunglowe, Dębu, i Świerku
+susy.block_group_members.extractable_logs_2.name=Akacja i Ciemny Dąb
 
-gregtech.block_group_members.latex_logs.name=Kłoda Kauczukowca
+susy.block_group_members.latex_logs.name=Kłoda Kauczukowca

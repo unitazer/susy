@@ -3732,24 +3732,8 @@ DISTILLERY.recipeBuilder()
     .fluidInputs(fluid('diluted_sodium_sulfate_solution') * 2000)
     .fluidOutputs(fluid('water') * 2000)
     .outputs(metaitem('dustSodiumSulfate') * 7)
-    .duration(30)
-    .EUt(200)
-    .buildAndRegister()
-
-// Dense steam processing
-
-FLUID_HEATER.recipeBuilder()
-    .circuitMeta(3)
-    .fluidInputs(fluid('water') * 1000)
-    .fluidOutputs(fluid('dense_steam') * 1000)
-    .duration(20)
-    .EUt(30)
-    .buildAndRegister()
-
-CONDENSER.recipeBuilder()
-    .fluidInputs(fluid('dense_steam') * 1000)
-    .fluidOutputs(fluid('water') * 1000)
-    .duration(5)
+    .duration(200)
+    .EUt(Globals.voltAmps[1])
     .buildAndRegister()
 
 // Nitration Mixture * 2000
