@@ -2266,6 +2266,20 @@ class SuSyMaterials {
     public static Material DibutylButylphosphonate
     public static Material TributylPhosphite
     public static Material NButylIodide
+    public static Material Acetanilide
+    public static Material NAcetylsulfanilylChloride
+    public static Material Guanidine
+    public static Material GuanidiniumChloride
+    public static Material Tetramethoxypropane
+    public static Material TrimethylOrthoformate
+    public static Material MethylVinylEther
+    public static Material TwoAminopyrimidine
+    public static Material SulfonamideIntermediate
+    public static Material Sulfadiazine
+    public static Material SodiumAcetate
+    public static Material SodiumAcetateSolution
+    public static Material SilverNitrate
+    public static Material SilverSulfadiazine
 
     // Third Degree Materials
 
