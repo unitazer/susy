@@ -3097,12 +3097,6 @@ class OrganicChemistryMaterials {
                 .color(0xE6F7FF)
                 .build()
 
-        SilverNitrate = new Material.Builder(15490, SuSyUtility.susyId('silver_nitrate'))
-                .dust()
-                .components(Silver, Nitrogen, Oxygen * 3)
-                .color(0xF5F3D0)
-                .build()
-
         SilverSulfadiazine = new Material.Builder(15491, SuSyUtility.susyId('silver_sulfadiazine'))
                 .dust()
                 .components(Silver, Carbon * 10, Hydrogen * 9, Nitrogen * 4, Oxygen * 2, Sulfur)

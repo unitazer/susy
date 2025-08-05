@@ -495,5 +495,11 @@ class FirstDegreeMaterialsB {
                 .components(Toluene, Methanol)
                 .color(0x47260e)
                 .build()
+
+        SilverNitrate = new Material.Builder(15490, SuSyUtility.susyId('silver_nitrate'))
+                .dust()
+                .components(Silver, Nitrogen, Oxygen * 3)
+                .color(0xF5F3D0)
+                .build()
     }
 }

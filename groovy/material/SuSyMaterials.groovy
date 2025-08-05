@@ -1565,6 +1565,7 @@ class SuSyMaterials {
     public static Material MixedOxideFuel
     public static Material DilutedAcetone
     public static Material BariumNitrate
+    public static Material SilverNitrate
 
     // HP Materials
 
@@ -2278,7 +2279,6 @@ class SuSyMaterials {
     public static Material Sulfadiazine
     public static Material SodiumAcetate
     public static Material SodiumAcetateSolution
-    public static Material SilverNitrate
     public static Material SilverSulfadiazine
 
     // Third Degree Materials
