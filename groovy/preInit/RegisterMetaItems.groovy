@@ -131,9 +131,10 @@ eventManager.listen {
         customMetaItems.addItem(303, "carbon.mesh.treated")
         customMetaItems.addItem(304, "proton_exchange_membrane_fuel_cell")
 
-        customMetaItems.addItem(400, "engine.spark_plug")
+        customMetaItems.addItem(400, "engine.spark_plug.iridium")
         customMetaItems.addItem(401, "engine.piston")
         customMetaItems.addItem(402, "engine.crankshaft")
+        customMetaItems.addItem(403, "engine.spark_plug.palladium")
 
         customMetaItems.addItem(500, "sintered_alumina.insulator")
 

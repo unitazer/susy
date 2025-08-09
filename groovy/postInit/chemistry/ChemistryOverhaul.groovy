@@ -1077,40 +1077,12 @@ BCR.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
-// PVB
-
-BR.recipeBuilder()
-    .fluidInputs(fluid('polyvinyl_acetate') * 144)
-    .fluidInputs(fluid('ethanol') * 1000)
-    .outputs(metaitem('dustPolyvinylAlcohol'))
-    .fluidOutputs(fluid('ethyl_acetate') * 1000)
-    .duration(400)
-    .EUt(30)
-    .buildAndRegister()
-
-CSTR.recipeBuilder()
-    .fluidInputs(fluid('ethyl_acetate') * 50)
-    .notConsumable(fluid('sulfuric_acid') * 50)
-    .fluidOutputs(fluid('ethanol') * 50)
-    .fluidOutputs(fluid('acetic_acid') * 50)
-    .duration(20)
-    .EUt(30)
-    .buildAndRegister()
-
-BR.recipeBuilder()
-    .inputs(ore('dustPolyvinylAlcohol'))
-    .fluidInputs(fluid('butyraldehyde') * 1000)
-    .outputs(metaitem('dustPolyvinylButyral'))
-    .duration(400)
-    .EUt(480)
-    .buildAndRegister()
-
 // Cyclohexane
 
 TBR.recipeBuilder()
     .fluidInputs(fluid('hydrogen') * 300)
     .fluidInputs(fluid('benzene') * 50)
-        .notConsumable(ore('dustActivatedRaneyNickel') * 1)
+    .notConsumable(ore('dustActivatedRaneyNickel') * 1)
     .fluidOutputs(fluid('cyclohexane') * 50)
     .duration(20)
     .EUt(Globals.voltAmps[1])

@@ -1260,7 +1260,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('springCopper'))
     .inputs(ore('springSmallCopper'))
     .inputs(ore('circuitLv'))
-    .inputs(metaitem('engine.spark_plug') * 4)
+    .inputs(metaitem('engine.spark_plug.palladium') * 4)
     .inputs(metaitem('engine.piston') * 4)
     .inputs(metaitem('engine.crankshaft'))
     .inputs(ore('gearSteel') * 2)
@@ -1275,7 +1275,7 @@ RecyclingHelper.handleRecycling(metaitem('combustion_generator.lv'), [
     metaitem('hull.Lv'),
     ore('springCopper'),
     ore('springSmallCopper'),
-    metaitem('engine.spark_plug') * 4, //doesn't get counted by RecyclingHandler
+    metaitem('engine.spark_plug.palladium') * 4, //doesn't get counted by RecyclingHandler
     metaitem('engine.piston') * 4,     //doesn't get counted by RecyclingHandler
     metaitem('engine.crankshaft'),     //doesn't get counted by RecyclingHandler
     ore('gearSteel') * 2,
@@ -1287,7 +1287,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('springCopper'))
     .inputs(ore('springSmallCopper'))
     .inputs(ore('circuitMv'))
-    .inputs(metaitem('engine.spark_plug') * 4)
+    .inputs(metaitem('engine.spark_plug.palladium') * 4)
     .inputs(metaitem('engine.piston') * 4)
     .inputs(metaitem('engine.crankshaft'))
     .inputs(ore('gearAluminium') * 2)
@@ -1302,7 +1302,7 @@ RecyclingHelper.handleRecycling(metaitem('combustion_generator.mv'), [
     metaitem('hull.Mv'),
     ore('springCopper'),
     ore('springSmallCopper'),
-    metaitem('engine.spark_plug') * 4, //doesn't get counted by RecyclingHandler
+    metaitem('engine.spark_plug.palladium') * 4, //doesn't get counted by RecyclingHandler
     metaitem('engine.piston') * 4,     //doesn't get counted by RecyclingHandler
     metaitem('engine.crankshaft'),     //doesn't get counted by RecyclingHandler
     ore('gearAluminium') * 2,
@@ -1314,7 +1314,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('springCopper'))
     .inputs(ore('springSmallCopper'))
     .inputs(ore('circuitHv'))
-    .inputs(metaitem('engine.spark_plug') * 4)
+    .inputs(metaitem('engine.spark_plug.iridium') * 4)
     .inputs(metaitem('engine.piston') * 4)
     .inputs(metaitem('engine.crankshaft'))
     .inputs(ore('gearStainlessSteel') * 2)
@@ -1329,7 +1329,7 @@ RecyclingHelper.handleRecycling(metaitem('combustion_generator.hv'), [
     metaitem('hull.Hv'),
     ore('springCopper'),
     ore('springSmallCopper'),
-    metaitem('engine.spark_plug') * 4, //doesn't get counted by RecyclingHandler
+    metaitem('engine.spark_plug.iridium') * 4, //doesn't get counted by RecyclingHandler
     metaitem('engine.piston') * 4,     //doesn't get counted by RecyclingHandler
     metaitem('engine.crankshaft'),     //doesn't get counted by RecyclingHandler
     ore('gearStainlessSteel') * 2,

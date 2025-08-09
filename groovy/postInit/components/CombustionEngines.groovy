@@ -6,18 +6,37 @@ BENDER = recipemap('bender')
 
 ASSEMBLER.recipeBuilder()
     .circuitMeta(16)
+    .inputs(ore('boltPalladium'))
+    .inputs(ore('plateStainlessSteel'))
+    .inputs(ore('boltStainlessSteel'))
+    .inputs(metaitem('sintered_alumina.insulator'))
+    .inputs(metaitem('cableGtSingleCopper'))
+    .outputs(metaitem('engine.spark_plug.palladium'))
+    .duration(100)
+    .EUt(Globals.voltAmps[3])
+    .buildAndRegister()
+
+RecyclingHelper.handleRecycling(metaitem('engine.spark_plug.palladium'), [
+    ore('boltPalladium'),
+    ore('plateStainlessSteel'),
+    ore('boltStainlessSteel'),
+    metaitem('cableGtSingleCopper'),
+])
+
+ASSEMBLER.recipeBuilder()
+    .circuitMeta(16)
     .inputs(ore('boltIridium'))
     .inputs(ore('plateStainlessSteel'))
     .inputs(ore('boltStainlessSteel'))
     .inputs(metaitem('sintered_alumina.insulator'))
     .inputs(metaitem('cableGtSingleCopper'))
-    .outputs(metaitem('engine.spark_plug'))
+    .outputs(metaitem('engine.spark_plug.iridium'))
     .duration(100)
     .EUt(Globals.voltAmps[3])
     .buildAndRegister()
 
-RecyclingHelper.handleRecycling(metaitem('engine.spark_plug'), [
-    ore('stickIridium'),
+RecyclingHelper.handleRecycling(metaitem('engine.spark_plug.iridium'), [
+    ore('boltIridium'),
     ore('plateStainlessSteel'),
     ore('boltStainlessSteel'),
     metaitem('cableGtSingleCopper'),
