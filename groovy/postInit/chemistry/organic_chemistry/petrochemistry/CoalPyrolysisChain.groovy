@@ -12,6 +12,7 @@ def CENTRIFUGE = recipemap('centrifuge');
 def MIXER = recipemap('mixer');
 def CSTR = recipemap('continuous_stirred_tank_reactor');
 def DISTILLERY = recipemap('distillery');
+def FLBR = recipemap('fluidized_bed_reactor');
 
 byNames(['dustCoal', 'gemCoal', 'dustCharcoal', 'gemCharcoal']).each { input ->
     int CARBON_PROCESSED = 1200
@@ -37,6 +38,14 @@ byNames(['dustAnthracite', 'gemAnthracite']).each { input ->
         .duration(20)
         .EUt(60)
         .buildAndRegister()
+
+    FLBR.recipeBuilder()
+        .inputs(ore(input.name) * 10)
+        .fluidInputs(fluid('dense_steam') * 4000)
+        .fluidOutputs(fluid('monoxide_rich_syngas') * 10000)
+        .duration(10)
+        .EUt(60)
+        .buildAndRegister()
 }
 
 byNames(['dustLignite', 'gemLignite']).each { input ->
@@ -60,6 +69,15 @@ byNames(['dustCoke', 'gemCoke']).each { input ->
         .fluidInputs(fluid('dense_steam') * 4000)
         .fluidOutputs(fluid('monoxide_rich_syngas') * 10000)
         .duration(20)
+        .EUt(60)
+        .buildAndRegister()
+
+    FLBR.recipeBuilder()
+        .inputs(ore(input.name) * 16)
+        .outputs(metaitem(output.name) * 12)
+        .fluidInputs(fluid('dense_steam') * 4000)
+        .fluidOutputs(fluid('monoxide_rich_syngas') * 10000)
+        .duration(10)
         .EUt(60)
         .buildAndRegister()
 }
