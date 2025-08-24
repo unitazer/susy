@@ -10,17 +10,7 @@ def download():
     with open(basePath + "/forge-installer.jar", "w+b") as jar:
         forgeVer = "14.23.5.2860"
         mcVer = "1.12.2"
-        url = (
-            "https://maven.minecraftforge.net/net/minecraftforge/forge/"
-            + mcVer
-            + "-"
-            + forgeVer
-            + "/forge-"
-            + mcVer
-            + "-"
-            + forgeVer
-            + "-installer.jar"
-        )
+        url = "https://github.com/CleanroomMC/Cleanroom/releases/download/0.3.13-alpha/cleanroom-0.3.13-alpha-installer.jar"
         r = requests.get(url)
         jar.write(r.content)
     print("Forge installer Downloaded")
@@ -33,7 +23,7 @@ def download():
             jar.write(r.content)
     print("Vanilla Downloaded")
 
-    subprocess.run(["java", "-jar", "forge-installer.jar",
+    subprocess.run(["java", "-jar", "cleanroom-0.3.13-alpha-installer.jar",
                    "--installServer"], cwd=basePath)
     print("Forge Installed")
 
