@@ -19,28 +19,23 @@ MIXER.recipeBuilder()
 
 // Alumina
 
-for (blanket in sintering_blankets) {
-    SINTERING_OVEN.recipeBuilder()
-        .inputs(ore('dustAlumina') * 10)
-        .fluidInputs(fluid('polyvinyl_alcohol_binder') * 200)
-        .notConsumable(metaitem('shape.mold.ring'))
-        .fluidInputs(fluid(blanket.name) * blanket.amountRequired)
-        .outputs(metaitem('sintered_alumina.insulator'))
-        .duration(blanket.duration)
-        .EUt(Globals.voltAmps[2])
-        .buildAndRegister()
+SINTERING_OVEN.recipeBuilder()
+    .inputs(ore('dustAlumina') * 10)
+    .fluidInputs(fluid('polyvinyl_alcohol_binder') * 200)
+    .notConsumable(metaitem('shape.mold.ring'))
+    .outputs(metaitem('sintered_alumina.insulator'))
+    .duration(300)
+    .EUt(Globals.voltAmps[2])
+    .buildAndRegister()
 
-    SINTERING_OVEN.recipeBuilder()
-        .inputs(ore('dustAlumina') * 5)
-        .inputs(ore('dustSmallGraphite'))    
-        .notConsumable(metaitem('shape.mold.plate'))
-        .fluidInputs(fluid(blanket.name) * blanket.amountRequired)
-        .outputs(metaitem('membrane.support.alumina'))
-        .duration(blanket.duration)
-        .EUt(Globals.voltAmps[2])
-        .buildAndRegister()
-}
-
+SINTERING_OVEN.recipeBuilder()
+    .inputs(ore('dustAlumina') * 5)
+    .inputs(ore('dustSmallGraphite'))    
+    .notConsumable(metaitem('shape.mold.plate'))
+    .outputs(metaitem('membrane.support.alumina'))
+    .duration(300)
+    .EUt(Globals.voltAmps[2])
+    .buildAndRegister()
 
 // Boron carbide
 

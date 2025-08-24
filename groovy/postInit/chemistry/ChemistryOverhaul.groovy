@@ -1805,7 +1805,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustCelluloseAcetate'))
     .fluidOutputs(fluid('acidic_wastewater') * 1000)
     .EUt(120)
-    .duration(1)
+    .duration(80)
     .buildAndRegister()
 
 MIXER.recipeBuilder()

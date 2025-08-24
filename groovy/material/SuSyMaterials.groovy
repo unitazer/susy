@@ -130,6 +130,13 @@ class SuSyMaterials {
     public static Material HydrothermalDeposit
     public static Material AlluvialDeposit
     public static Material MagmaticHydrothermalDeposit
+    public static Material NonMarineEvaporiteDeposit
+    public static Material HalideEvaporiteDeposit
+    public static Material SulfateEvaporiteDeposit
+    public static Material CarbonateEvaporiteDeposit
+    public static Material PlatinumPlacerDeposit
+    public static Material PhosphoriteDeposit
+    public static Material PotashDeposit
     public static Material CoalDeposit
     public static Material NativeCopperDeposit
     public static Material AnthraciteDeposit
