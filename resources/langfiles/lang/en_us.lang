@@ -3169,6 +3169,7 @@ recipemap.laser_engraver.name=Electron Beam Lithography
 
 # Generic Renaming
 item.chisel.chisel_diamond.name=Steel Chisel
+item.chisel.blockaluminum.name=Block of Aluminium
 tooltip.computronics.waila.tape.notapeinserted=No Tape Inserted
 tooltip.computronics.waila.tape.tapeinserted=Tape Inserted
 item.chesttransporter_copper.name=Bronze Chest Transporter
