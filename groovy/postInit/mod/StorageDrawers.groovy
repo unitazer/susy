@@ -6,7 +6,7 @@ def name_removals = [
     'storagedrawers:upgrade_storage_diamond',
     'storagedrawers:upgrade_storage_emerald',
     'storagedrawers:upgrade_void',
-    'storagedrawers:upgrade_conversion'
+    'storagedrawers:upgrade_conversion',
     'storagedrawers:basicdrawers_halfdrawers2_oak',
     'storagedrawers:basicdrawers_halfdrawers4_oak',
 ]
