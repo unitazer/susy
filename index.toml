@@ -5222,7 +5222,7 @@ hash = "2619ab5a4978e07627fd1be9618df21b9105fda6f76f926b1f067422ed18e3da"
 
 [[files]]
 file = "config/betterquesting/resources/supersymmetry/lang/en_us.lang"
-hash = "8ffa547ebc22bd064f1695ce1effdef1540ad1d6bfed3b08c1633fb4f4a8cb29"
+hash = "0716c9b03a343efb0bb05fa55c94a12a2462710cd6f52893d4b1af35b384f26e"
 
 [[files]]
 file = "config/betterquesting/resources/supersymmetry/lang/ru_ru.lang"
@@ -9079,7 +9079,7 @@ hash = "d2029421dc5390a174499197a77dbfeec723ccb1a69941546bc87d9797f87c0a"
 
 [[files]]
 file = "groovy/postInit/mod/Pyrotech.groovy"
-hash = "76afdc13c4be49fd3a0cc8245578a8d730cbe6b6dcfdbf1eb5db7b17aef416f5"
+hash = "f821c4505368cca4ca6193551264959901b648a00fedbb8b504117786936223e"
 
 [[files]]
 file = "groovy/postInit/mod/Quark.groovy"
