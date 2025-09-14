@@ -2200,6 +2200,7 @@ susy.material.sodium_hydroxide_methanol_solution=Раствор гидрокси
 susy.material.dehexanized_naphtha=Дегексанизированный лигроин
 susy.material.sodium_hydrosulfide=Гидросульфид натрия
 susy.material.sodium_hydrosulfide_solution=Раствор гидросульфида натрия
+susy.material.oxide_coated_lead=Окисленный свинец
 
 # Изотопы
 
@@ -2282,9 +2283,13 @@ metaitem.storage.segment.name=Сегмент хранения
 
 metaitem.gun.barrel.steel.name=Стальной ствол
 
+metaitem.cathode.lead_paste.name=Свинцовая катодная паста
 metaitem.cathode.lead.name=Свинцовый катод
 metaitem.anode.lead.name=Свинцовый анод
 metaitem.battery.lead_acid.name=Свинцово-кислотная батарея
+
+metaitem.battery.primitivehull.lv.name=Примитивный корпус LV-батареи
+metaitem.battery.primitivehull.mv.name=Примитивный корпус MV-батареи
 
 metaitem.steam.piston.name=Паровой поршень
 metaitem.steam.motor.name=Паровой двигатель

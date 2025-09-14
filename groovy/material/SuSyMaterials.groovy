@@ -1828,6 +1828,7 @@ class SuSyMaterials {
     public static Material AmmoniumDihydrogenPhosphateSolution
     public static Material DiammoniumHydrogenPhosphateSolution
     public static Material StabilizedSodiumSilicateSolution
+    public static Material OxideCoatedLead;
     public static Material MagnesiumNitrateSolution
     public static Material PlatinumOnCarbon
 
