@@ -1,10 +1,12 @@
-package preInit;
+package preInit
 
+import baubles.api.BaubleType;
 import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.items.metaitem.*;
 import gregtech.api.unification.material.MarkerMaterials;
-import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.unification.ore.OrePrefix
+import gregtech.integration.baubles.BaubleBehavior;
 import net.minecraft.util.text.TextFormatting;
 import gregtech.api.unification.material.event.PostMaterialEvent;
 import gregtech.common.items.behaviors.TooltipBehavior;
@@ -211,7 +213,7 @@ eventManager.listen {
         customMetaItems.addItem(3500, "copra")
 
         //Batteries 4000-4100
-        customMetaItems.addItem(4000, "battery.lead_acid").addComponents(ElectricStats.createRechargeableBattery(120000, GTValues.LV)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.LV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        customMetaItems.addItem(4000, "battery.lead_acid").addComponents(ElectricStats.createRechargeableBattery(120000, GTValues.LV), new BaubleBehavior(BaubleType.TRINKET)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.LV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
         customMetaItems.addItem(4001, "cathode.lead");
         customMetaItems.addItem(4002, "anode.lead");
         //customMetaItems.addItem(4003, "battery.mv.lead_acid").addComponents(ElectricStats.createRechargeableBattery(480000, GTValues.MV)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
