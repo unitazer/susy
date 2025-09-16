@@ -2622,7 +2622,6 @@ susy.material.perfluorovinyl_sulfonyl_ether_solution=Perfluorovinyl Sulfonyl Eth
 susy.material.nafion_solution=Nafion Solution
 susy.material.partially_deionized_water=Partially Deionized Water
 susy.material.stabilized_sodium_silicate_solution=Stabilized Sodium Silicate Solution
-susy.material.oxide_coated_lead=Oxide Coated Lead
 
 # Isotopes
 
@@ -2694,6 +2693,7 @@ susy.material.dichlorodiphenyl_sulfone_solution=Dichlorodiphenyl Sulfone Solutio
 susy.material.fuel_cell_catalyst_solution=Fuel Cell Catalyst Solution
 susy.material.polytetrafluoroethylene_coating_solution=Polytetrafluoroethylene Coating Solution
 susy.material.acetonitrile=Acetonitrile
+susy.material.lead_iv_oxide=Lead IV Oxide
 
 # Isotopes
 

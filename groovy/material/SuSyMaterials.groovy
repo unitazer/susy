@@ -1600,6 +1600,7 @@ class SuSyMaterials {
     public static Material LanthanumStrontiumChromite
     public static Material YttriaStabilizedZirconia
     public static Material BismuthIIINitrateSolution
+    public static Material LeadIVOxide
 
     // HP Materials
 
@@ -1828,7 +1829,6 @@ class SuSyMaterials {
     public static Material AmmoniumDihydrogenPhosphateSolution
     public static Material DiammoniumHydrogenPhosphateSolution
     public static Material StabilizedSodiumSilicateSolution
-    public static Material OxideCoatedLead;
     public static Material MagnesiumNitrateSolution
     public static Material PlatinumOnCarbon
 

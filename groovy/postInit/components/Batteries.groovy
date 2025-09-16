@@ -12,11 +12,11 @@ import gregtech.api.unification.stack.UnificationEntry
 
 import postInit.utils.RecyclingHelper
 
+ASSEMBLER = recipemap('assembler')
 CSTR = recipemap('continuous_stirred_tank_reactor')
 ROASTER = recipemap('roaster')
 BR = recipemap('batch_reactor')
 BCR = recipemap('bubble_column_reactor')
-ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
 
 /*
  * Components
@@ -29,27 +29,26 @@ crafting.addShapeless("anode_lead", metaitem('anode.lead'), [
 ]);
 
 MIXER.recipeBuilder()
-        .inputs(ore('dustLead'))
+        .inputs(ore('dustLeadIvOxide') * 3)
         .fluidInputs(fluid('diluted_sulfuric_acid') * 1000)
         .outputs(metaitem('cathode.lead_paste'))
-        .fluidOutputs(fluid('water') * 1000)
         .duration(100)
         .EUt(16)
         .buildAndRegister()
 
-crafting.addShapeless("cathode_lead", metaitem('cathode.lead'), [
-        metaitem('anode.lead'), metaitem('cathode.lead_paste')
+crafting.addShaped("cathode_lead", metaitem('cathode.lead'), [
+        [metaitem('wireFineLead'), metaitem('cableGtSingleTin'), metaitem('wireFineLead')],
+        [metaitem('wireFineLead'), metaitem('cathode.lead_paste'), metaitem('wireFineLead')],
+        [metaitem('wireFineLead'), ore('craftingToolWireCutter'), metaitem('wireFineLead')]
 ]);
 
-ELECTROLYTIC_CELL.recipeBuilder()
-        .inputs(ore('plateLead'))
-        .fluidInputs(fluid('water') * 1000)
-        .notConsumable(metaitem('plateCopper'))
-        .notConsumable(fluid('sulfuric_acid') * 1000)
-        .outputs(metaitem('plateOxideCoatedLead'))
-        .fluidOutputs(fluid('hydrogen') * 2000)
+ASSEMBLER.recipeBuilder()
+        .inputs(ore('wireFineLead') * 4)
+        .inputs(metaitem('cathode.lead_paste'))
+        .inputs(ore('cableGtSingleTin'))
+        .outputs(metaitem('cathode.lead'))
         .duration(80)
-        .EUt(30)
+        .EUt(16)
         .buildAndRegister()
 
 /*

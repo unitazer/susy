@@ -789,14 +789,7 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        OxideCoatedLead = new Material.Builder(13124, SuSyUtility.susyId('oxide_coated_lead'))
-                .ingot()
-                .flags(NO_UNIFICATION, GENERATE_PLATE)
-                .color(0x1d0b25)
-                .build()
-                .setFormula("(Pb)(PbO2)", true) 
-
-        // FREE ID: 13125-13129
+        // FREE ID: 13124-13129
 
         HexachloroiridicAcidSolution = new Material.Builder(13130, SuSyUtility.susyId('hexachloroiridic_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))

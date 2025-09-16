@@ -636,5 +636,12 @@ class FirstDegreeMaterialsB {
 
         BismuthIIINitrateSolution.setFormula("(Bi(NO3)3)2(H2O)3", true)
 
+        LeadIVOxide = new Material.Builder(8758, SuSyUtility.susyId('lead_iv_oxide'))
+                .dust()
+                .components(Lead, Oxygen * 2)
+                .color(0x1d0b25)
+                .build()
+                .setFormula("PbO2", true) 
+
     }
 }
