@@ -1,3 +1,25 @@
+# UPDATE 0.1.15.6
+## Mod Changes
+### Mod Updates
+- Forgelin-Continuous Continuous-2.2.0.0 → Continuous-2.2.20.0
+- Had Enough Items 4.29.6 → 4.29.7
+- Universal Tweaks 1.12.2-1.16.0 → 1.12.2-1.16.0.1
+- SussyPatches 1.4.2 → 1.5.0
+- SusyCore v0.1.75 → v0.1.76
+## Changes
+### New Features
+- [Susy-Core] Replace your forge hammers with the new large steam hammer multiblock! (#548 by @trexxet)
+### Changed Features
+- The NaHSO4 recipe has been updated to match industry (#1642 by @Fiery36)
+- Added dustwood recipe with Mortar (#1650 by @Ceredick)
+- Storage drawers can now be crafted with all wood types! (#1651 by @Fiery36)
+- EV coils now use platinum in place of tungstensteel (#1640 by @Rick8484)
+### Fixes
+- Tungstensteel can no longer be recycled to dupe materials. (#1648 by @Rick8484)
+- Encoding and spelling errors have been removed from the questbook (#1647 by @Fiery36) (#1643 by @Solothesolo)
+- Guns dropped by bandits can now be reloaded! (#1649 by @Fiery36)
+- Lignite deposits can now be processed with hammers! (#1653 by @PatRat2)
+- [Susy-Core] Sieve Distillation towers now accept item buses. (#545 by @WideMann)
 # UPDATE 0.1.15.5
 ## Mod Changes
 ### Mod Updates
