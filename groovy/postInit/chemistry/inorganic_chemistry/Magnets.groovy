@@ -318,7 +318,7 @@ crafting.replaceShaped('gregtech:gregtech.machine.polarizer.iv', metaitem('polar
 
 ASSEMBLER.recipeBuilder()
     .inputs(ore('stickAlnicoMagnetic') * 1)
-    .inputs(ore('wireFineTungstenSteel') * 16)
+    .inputs(ore('wireFinePlatinum') * 16)
     .outputs(metaitem('voltage_coil.ev'))
     .duration(200)
     .EUt(1920)
