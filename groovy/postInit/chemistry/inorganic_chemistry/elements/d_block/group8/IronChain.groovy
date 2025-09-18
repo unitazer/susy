@@ -154,10 +154,10 @@ for (blastable in blastables) {
     // Puddling
     for (combustible in combustibles) {
         REVERBERATORY_FURNACE.recipeBuilder()
-            .inputs(ore('ingotPigIron') * 4)
+            .inputs(ore('ingotPigIron') * 16)
             .inputs(ore(combustible.name) * combustible.equivalent(1))
-            .outputs(metaitem('ingotWroughtIron') * 4)
-            .duration(40)
+            .outputs(metaitem('ingotWroughtIron') * 16)
+            .duration(80)
             .buildAndRegister()
     }
 
