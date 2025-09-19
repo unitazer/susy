@@ -125,7 +125,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('brush') * 2)
     .outputs(metaitem('electric.motor.ev'))
     .duration(80)
-    .EUt(1920)
+    .EUt(480)
     .buildAndRegister();
 
 // Brushless DC Motors
@@ -179,7 +179,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('circuit_board.advanced'))
     .outputs(metaitem('electric.motor.ev') * 6)
     .duration(160)
-    .EUt(480)
+    .EUt(1920)
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
