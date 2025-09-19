@@ -179,7 +179,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('circuit_board.advanced'))
     .outputs(metaitem('electric.motor.ev') * 6)
     .duration(160)
-    .EUt(1920)
+    .EUt(480)
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
