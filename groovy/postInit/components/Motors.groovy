@@ -183,7 +183,7 @@ ASSEMBLER.recipeBuilder()
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
-    .inputs(ore('cableGtDoubleTungsten') * 2)
+    .inputs(ore('cableGtDoublePlatinum') * 2)
     .inputs(ore('stickLongTungstenSteel'))
     .inputs(ore('plateNeodymiumAlloyMagnetic') * 3)
     .inputs(ore('wireGtDoubleGraphene') * 4)
