@@ -30,7 +30,7 @@ event_manager.listen { RecyclingManager.PreRecyclingEvent event ->
     ])
 
     RecyclingManager.addRecyclingGroovy(metaitem('electric.motor.iv') * 6, [
-        ore('cableGtDoubleTungsten') * 2,
+        ore('cableGtDoublePlatinum') * 2,
         ore('stickLongTungstenSteel'),
         ore('plateAlnicoMagnetic') * 3,
         ore('wireGtDoubleGraphene') * 4
