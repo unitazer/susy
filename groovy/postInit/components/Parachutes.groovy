@@ -3,7 +3,7 @@ import globals.Globals;
 ASSEMBLER = recipemap('assembler')
 
 ASSEMBLER.recipeBuilder()
-        .circuitMeta(2)
+        .circuitMeta(1)
         .inputs(metaitem('foilPolycaprolactam') * 64)
         .inputs(metaitem('threadKevlar') * 32)
         .outputs(metaitem('parachute.drogue'))
@@ -12,7 +12,7 @@ ASSEMBLER.recipeBuilder()
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
-        .circuitMeta(3)
+        .circuitMeta(2)
         .inputs(metaitem('foilPolycaprolactam') * 64)
         .inputs(metaitem('foilPolycaprolactam') * 64)
         .inputs(metaitem('foilPolycaprolactam') * 64)
@@ -26,7 +26,7 @@ ASSEMBLER.recipeBuilder()
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
-        .circuitMeta(4)
+        .circuitMeta(3)
         .inputs(metaitem('foilPolycaprolactam') * 64)
         .inputs(metaitem('foilPolycaprolactam') * 64)
         .inputs(metaitem('foilPolycaprolactam') * 64)
