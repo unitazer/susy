@@ -129,6 +129,16 @@ for (fluid in IQuenchingFluid.quenching_fluids) {
         .duration((int) fluid.getDuration() * 4)
         .EUt(120)
         .buildAndRegister();
+
+    QUENCHER.recipeBuilder()
+        .notConsumable(metaitem('shape.mold.ingot'))
+        .fluidInputs(liquid(fluid.getColdFluid()) * fluid.amount)
+        .fluidInputs(liquid('stainless_steel') * 2880)
+        .outputs(metaitem('ingotStainlessSteel') * 20)
+        .fluidOutputs(liquid(fluid.getHotFluid()) * fluid.amount)
+        .duration((int) fluid.getDuration() * 1)
+        .EUt(120)
+        .buildAndRegister();
 }
 
 for (entry in ingotMap) {
