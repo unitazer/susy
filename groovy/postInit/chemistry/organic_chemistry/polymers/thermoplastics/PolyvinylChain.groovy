@@ -8,6 +8,7 @@ MIXER = recipemap('mixer')
 DRYER = recipemap('dryer')
 AUTOCLAVE = recipemap('autoclave')
 PHASE_SEPARATOR = recipemap('phase_separator')
+ROASTER = recipemap('roaster')
 
 // Vinyl Chloride
 
