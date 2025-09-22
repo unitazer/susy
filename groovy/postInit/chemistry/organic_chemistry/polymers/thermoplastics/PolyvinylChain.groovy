@@ -11,7 +11,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 
 // Vinyl Chloride
 
-BR.recipeBuilder()
+ROASTER.recipeBuilder()
     .fluidInputs(fluid('mercury') * 1000)
     .fluidInputs(fluid('chlorine') * 2000)
     .outputs(metaitem('dustMercuryIiChloride') * 3)
