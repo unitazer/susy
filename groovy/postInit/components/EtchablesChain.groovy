@@ -563,7 +563,7 @@ mods.gregtech.assembler.removeByInput(30, [metaitem('dustWood'), metaitem('circu
 
 ASSEMBLER.recipeBuilder()
         .inputs(ore('dustTreatedWood'))
-        .fluidInputs(fluid('glue') * 100)
+        .fluidInputs(fluid('glue') * 50)
         .outputs(metaitem('board.phenolic'))
         .duration(160)
         .EUt(30)
