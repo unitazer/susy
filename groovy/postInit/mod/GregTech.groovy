@@ -201,6 +201,10 @@ mods.gregtech.assembler.removeByInput(30, [metaitem('wireGtDoubleCupronickel') *
 mods.gregtech.assembler.removeByInput(120, [metaitem('wireGtDoubleKanthal') * 8, metaitem('foilAluminium') * 8], [fluid('copper') * 144])
 // Nichrome Coil Block * 1
 mods.gregtech.assembler.removeByInput(480, [metaitem('wireGtDoubleNichrome') * 8, metaitem('foilStainlessSteel') * 8], [fluid('aluminium') * 144])
+// RTM Alloy Coil Block * 1
+mods.gregtech.assembler.removeByInput(1920, [metaitem('wireGtDoubleRtmAlloy') * 8, metaitem('foilVanadiumSteel') * 8], [fluid('nichrome') * 144])
+// HSS-G Coil Block * 1
+mods.gregtech.assembler.removeByInput(7680, [metaitem('wireGtDoubleHssg') * 8, metaitem('foilTungstenCarbide') * 8], [fluid('tungsten') * 144])
 // Aluminium Nugget * 3
 mods.gregtech.electric_blast_furnace.removeByInput(100, [metaitem('gemRuby')], null)
 // Aluminium Nugget * 3
@@ -641,6 +645,26 @@ ASSEMBLER.recipeBuilder()
     .outputs(item('gregtech:wire_coil', 2))
     .duration(400)
     .EUt(480)
+    .buildAndRegister();
+
+ASSEMBLER.recipeBuilder()
+    .fluidInputs(fluid('nichrome') * 144)
+    .inputs(ore('wireGtDoubleRtmAlloy') * 8)
+    .inputs(metaitem('mineral_wool') * 8)
+    .inputs(ore('foilVanadiumSteel') * 8)
+    .outputs(item('gregtech:wire_coil', 3))
+    .duration(500)
+    .EUt(1920)
+    .buildAndRegister();
+
+ASSEMBLER.recipeBuilder()
+    .fluidInputs(fluid('tungsten') * 144)
+    .inputs(ore('wireGtDoubleHssg') * 8)
+    .inputs(metaitem('mineral_wool') * 8)
+    .inputs(ore('foilTungstenCarbide') * 8)
+    .outputs(item('gregtech:wire_coil', 4))
+    .duration(600)
+    .EUt(7680)
     .buildAndRegister();
 
 //Cleanroom Filter Casings
