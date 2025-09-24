@@ -446,7 +446,7 @@ class FirstDegreeMaterialsB {
                         .slowNeutronFissionCrossSection(2.2)
                         .requiredNeutrons(1)
                         .releasedNeutrons(2.60)
-                        .releasedHeatEnergy(0.02)
+                        .releasedHeatEnergy(0.052)
                         .decayRate(0.1)
                         .build())
 

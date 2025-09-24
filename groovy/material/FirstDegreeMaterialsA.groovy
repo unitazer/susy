@@ -3849,7 +3849,7 @@ class FirstDegreeMaterialsA {
                 .slowNeutronFissionCrossSection(1.8)
                 .requiredNeutrons(1)
                 .releasedNeutrons(2.5)
-                .releasedHeatEnergy(0.01)
+                .releasedHeatEnergy(0.025)
                 .decayRate(0.025)
                 .build())
 
@@ -3869,7 +3869,7 @@ class FirstDegreeMaterialsA {
                 .slowNeutronFissionCrossSection(1.9)
                 .requiredNeutrons(1)
                 .releasedNeutrons(2.5)
-                .releasedHeatEnergy(0.01)
+                .releasedHeatEnergy(0.025)
                 .decayRate(0.025)
                 .build())
 
@@ -3890,7 +3890,7 @@ class FirstDegreeMaterialsA {
                         .slowNeutronFissionCrossSection(2)
                         .requiredNeutrons(1)
                         .releasedNeutrons(2.5)
-                        .releasedHeatEnergy(0.01)
+                        .releasedHeatEnergy(0.025)
                         .decayRate(0.05)
                         .build())
 
