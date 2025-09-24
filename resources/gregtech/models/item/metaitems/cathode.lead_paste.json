@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-      "layer0": "gregtech:items/metaitems/cathode.lead_paste"
+      "layer0": "gregtech:items/metaitems/battery/cathode.lead_paste"
     }
   }
