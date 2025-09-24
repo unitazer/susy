@@ -1028,3 +1028,13 @@ recipemap('heat_exchanger').recipeBuilder()
         .duration(1)
         .EUt(480)
         .buildAndRegister();
+
+//Hot Air
+
+recipemap('fluid_heater').recipeBuilder()
+        .circuitMeta(1)
+        .fluidInputs(liquid('air') * 1000)
+        .fluidOutputs(liquid('hot_air') * 1000)
+        .duration(40)
+        .EUt(30)
+        .buildAndRegister();
