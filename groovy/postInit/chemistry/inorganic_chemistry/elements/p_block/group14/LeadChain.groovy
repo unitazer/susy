@@ -495,6 +495,17 @@ ELECTROLYZER.recipeBuilder()
         .EUt(30)
         .buildAndRegister()
 
+// PbO
+
+ROASTER.recipeBuilder()
+        .circuitMeta(1)
+        .inputs(ore('dustLead'))
+        .fluidInputs(fluid('oxygen') * 1000)
+        .outputs(metaitem('dustLeadOxide') * 2)
+        .duration(200)
+        .EUt(30)
+        .buildAndRegister()
+
 ROASTER.recipeBuilder()
         .inputs(ore('dustLeadIiHydroxide') * 5)
         .outputs(metaitem('dustLeadOxide') * 2)
@@ -503,11 +514,22 @@ ROASTER.recipeBuilder()
         .EUt(30)
         .buildAndRegister()
 
+// PbO2
+
 ROASTER.recipeBuilder()
         .inputs(ore('dustLead') * 1)
-        .fluidInputs(fluid('air') * 1000)
+        .fluidInputs(fluid('air') * 8000)
         .outputs(metaitem('dustLeadIvOxide') * 3)
-        .duration(120)
+        .duration(160)
+        .EUt(30)
+        .buildAndRegister()
+
+ROASTER.recipeBuilder()
+        .circuitMeta(2)
+        .inputs(ore('dustLead') * 1)
+        .fluidInputs(fluid('oxygen') * 2000)
+        .outputs(metaitem('dustLeadIvOxide') * 3)
+        .duration(100)
         .EUt(30)
         .buildAndRegister()
 

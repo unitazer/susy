@@ -1,5 +1,6 @@
 package preInit
 
+import globals.Globals
 import baubles.api.BaubleType
 import gregtech.api.GTValues
 import gregtech.api.GregTechAPI
@@ -212,7 +213,7 @@ eventManager.listen { PostMaterialEvent event ->
 
         //Batteries 4000-4100
         addItem(4000, "battery.lead_acid")
-            .addComponents(ElectricStats.createRechargeableBattery(80000, GTValues.LV))
+            .addComponents(ElectricStats.createRechargeableBattery(Globals.batteryCapacities['lead_acid'], GTValues.LV))
             .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.LV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
         addItem(4001, "cathode.lead");
         addItem(4002, "anode.lead");
