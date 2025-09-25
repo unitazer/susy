@@ -13,10 +13,12 @@ import gregtech.api.unification.stack.UnificationEntry
 import postInit.utils.RecyclingHelper
 
 ASSEMBLER = recipemap('assembler')
-CSTR = recipemap('continuous_stirred_tank_reactor')
-ROASTER = recipemap('roaster')
-BR = recipemap('batch_reactor')
 BCR = recipemap('bubble_column_reactor')
+BR = recipemap('batch_reactor')
+CSTR = recipemap('continuous_stirred_tank_reactor')
+EXTRACTOR = recipemap('extractor')
+FORMING_PRESS = recipemap('forming_press')
+ROASTER = recipemap('roaster')
 
 /*
  * Components
@@ -32,23 +34,37 @@ MIXER.recipeBuilder()
         .inputs(ore('dustLeadIvOxide') * 3)
         .fluidInputs(fluid('diluted_sulfuric_acid') * 1000)
         .outputs(metaitem('cathode.lead_paste'))
-        .duration(100)
-        .EUt(16)
+        .duration(80)
+        .EUt(Globals.voltAmps[1])
+        .buildAndRegister()
+
+RecyclingHelper.addShaped("cathode_lead_frame", metaitem('cathode.lead_frame'), [
+        [null, null, null],
+        [ore('craftingToolWireCutter'), ore('plateLead'), null],
+        [null, null, null]
+]);
+
+FORMING_PRESS.recipeBuilder()
+        .notConsumable(metaitem('cathode.lead_frame'))
+        .inputs(ore('plateLead'))
+        .outputs(metaitem('cathode.lead_frame'))
+        .duration(80)
+        .EUt(Globals.voltAmps[1])
         .buildAndRegister()
 
 crafting.addShaped("cathode_lead", metaitem('cathode.lead'), [
-        [metaitem('wireFineLead'), metaitem('cableGtSingleTin'), metaitem('wireFineLead')],
-        [metaitem('wireFineLead'), metaitem('cathode.lead_paste'), metaitem('wireFineLead')],
-        [metaitem('wireFineLead'), ore('craftingToolWireCutter'), metaitem('wireFineLead')]
+        [null, metaitem('cableGtSingleTin'), ore('craftingToolWireCutter')],
+        [null, metaitem('cathode.lead_frame'), null],
+        [ore('craftingToolRollingPin'), metaitem('cathode.lead_paste'), null]
 ]);
 
 ASSEMBLER.recipeBuilder()
-        .inputs(ore('wireFineLead') * 4)
+        .inputs(metaitem('cathode.lead_frame'))
         .inputs(metaitem('cathode.lead_paste'))
         .inputs(ore('cableGtSingleTin'))
         .outputs(metaitem('cathode.lead'))
         .duration(80)
-        .EUt(16)
+        .EUt(Globals.voltAmps[1])
         .buildAndRegister()
 
 /*
@@ -66,11 +82,19 @@ crafting.addShaped("battery_lead_acid", metaitem('battery.lead_acid'), [
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('battery.primitivehull.lv'))
         .inputs(ore('plateLead'))
-        .inputs(ore('plateOxideCoatedLead'))
+        .inputs(metaitem('cathode.lead_frame'))
+        .inputs(metaitem('cathode.lead_paste'))
         .fluidInputs(fluid('diluted_sulfuric_acid') * 1000)
         .outputs(metaitem('battery.lead_acid'))
         .duration(200)
-        .EUt(30)
+        .EUt(Globals.voltAmps[1])
+        .buildAndRegister()
+
+EXTRACTOR.recipeBuilder()
+        .inputs(metaitem('battery.lead_acid'))
+        .outputs(metaitem('battery.primitivehull.lv'))
+        .duration(200)
+        .EUt(Globals.voltAmps[1])
         .buildAndRegister()
 
 // Temporary allow to craft old sodium MV battery with primitive hull

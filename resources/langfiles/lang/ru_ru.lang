@@ -2283,6 +2283,7 @@ metaitem.storage.segment.name=Сегмент хранения
 metaitem.gun.barrel.steel.name=Стальной ствол
 
 metaitem.cathode.lead_paste.name=Свинцовая катодная паста
+metaitem.cathode.lead_frame.name=Свинцовая катодная рама
 metaitem.cathode.lead.name=Свинцовый катод
 metaitem.anode.lead.name=Свинцовый анод
 metaitem.battery.lead_acid.name=Свинцово-кислотная батарея

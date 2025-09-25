@@ -507,7 +507,7 @@ ROASTER.recipeBuilder()
         .inputs(ore('dustLead') * 1)
         .fluidInputs(fluid('air') * 1000)
         .outputs(metaitem('dustLeadIvOxide') * 3)
-        .duration(80)
+        .duration(120)
         .EUt(30)
         .buildAndRegister()
 

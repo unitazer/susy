@@ -217,6 +217,7 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(4001, "cathode.lead");
         addItem(4002, "anode.lead");
         addItem(4003, "cathode.lead_paste");
+        addItem(4004, "cathode.lead_frame");
         // Battery hulls 4090-4100
         addItem(4090, "battery.primitivehull.lv");
         addItem(4091, "battery.primitivehull.mv");
