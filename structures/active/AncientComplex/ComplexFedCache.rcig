@@ -389,25 +389,6 @@
       }
     },
     {
-      "weight": 1.0950840711593628,
-      "min": 1,
-      "max": 1,
-      "item": {
-        "id": "gregtech:gt_armor",
-        "damage": 1,
-        "count": 1,
-        "tag": {
-          "nbtType": "compound",
-          "nbt": {
-            "Charge": {
-              "nbtType": "long",
-              "nbt": 80000
-            }
-          }
-        }
-      }
-    },
-    {
       "weight": 1.290178656578064,
       "min": 1,
       "max": 1,
