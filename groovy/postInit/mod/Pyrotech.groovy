@@ -1054,14 +1054,14 @@ crafting.replaceShapeless("pyrotech:tech/basic/anvil_granite", item('pyrotech:an
 
 // Brick machines
 // Brick oven
-crafting.replaceShaped("pyrotech:tech/machine/brick_oven", item('pyrotech:brick_oven'), [
+RecyclingHelper.replaceShaped("pyrotech:tech/machine/brick_oven", item('pyrotech:brick_oven'), [
         [ore('plateIron'), metaitem('brick.fireclay'), ore('plateIron')],
         [item('gregtech:metal_casing', 1), ore('craftingToolHardHammer'), item('gregtech:metal_casing', 1)],
         [ore('plateIron'), item('gregtech:metal_casing', 1), ore('plateIron')]
 ])
 
 // Brick kiln
-crafting.replaceShaped("pyrotech:tech/machine/brick_kiln", item('pyrotech:brick_kiln'), [
+RecyclingHelper.replaceShaped("pyrotech:tech/machine/brick_kiln", item('pyrotech:brick_kiln'), [
         [ore('plateIron'), ore('frameGtIron'), ore('plateIron')],
         [item('gregtech:metal_casing', 1), ore('craftingToolHardHammer'), item('gregtech:metal_casing', 1)],
         [ore('plateIron'), item('gregtech:metal_casing', 1), ore('plateIron')]
@@ -1390,3 +1390,31 @@ ALLOY_SMELTER.recipeBuilder()
         .duration(100)
         .EUt(Globals.voltAmps[1])
         .buildAndRegister();
+
+// Recycling
+def recycleStoneItem = { IIngredient itemInput, int stoneAmount, int smallStoneAmount = 0 ->
+    RecyclingHelper.handleRecycling(itemInput, [
+        metaitem('dustStone') * stoneAmount,
+        metaitem('dustSmallStone') * smallStoneAmount
+    ])
+}
+
+recycleStoneItem(item('pyrotech:material', 16), 0, 1)
+recycleStoneItem(item('pyrotech:masonry_brick_slab'), 0, 2)
+recycleStoneItem(item('pyrotech:masonry_brick_block'), 1)
+recycleStoneItem(item('pyrotech:stone_kiln'), 7)
+recycleStoneItem(item('pyrotech:stone_oven'), 7)
+recycleStoneItem(item('pyrotech:tar_collector'), 0, 7)
+recycleStoneItem(item('pyrotech:tar_drain'), 0, 6)
+recycleStoneItem(item('pyrotech:mechanical_hopper'), 0, 5)
+recycleStoneItem(metaitem('susy:primitive_smelter'), 1)
+recycleStoneItem(metaitem('susy:primitive_item_import'), 1, 5)
+recycleStoneItem(metaitem('susy:primitive_item_export'), 1, 5)
+
+RecyclingHelper.handleRecycling(item('pyrotech:trip_hammer'), [
+    metaitem('dustStone') * 2,
+    metaitem('dustSmallStone') * 2,
+    metaitem('dustTreatedWood') * 3,
+    metaitem('springSmallCopper')
+])
+

@@ -854,7 +854,7 @@ hash = "072c460fdc97ecc1e4b45d6e2523bb2e6be8b959a324f9423d9f60f35811723b"
 
 [[files]]
 file = "config/Universal Tweaks - Tweaks.cfg"
-hash = "e489e4dcf2f4325e54b35fef9ae3dfe5c84217c21afd3c25e4036f4804b7dd25"
+hash = "b3f69cadfb5388d9f7ebb68dc34e5be75db6e5ed4ced0d34966f87d1447fc735"
 
 [[files]]
 file = "config/Weeping Angels.cfg"
@@ -1238,7 +1238,7 @@ hash = "ef664b1dfa014b07ea46673b875a93bd0d787544d43582b0c1ccca757433f1b9"
 
 [[files]]
 file = "config/betterquesting/DefaultQuests/Quests/0/722.json"
-hash = "df54377d9822280cd5754c5213b9901cecc745978803b32ab014d847f09abc7e"
+hash = "c70b6b75f0feeceae8e0a5994efe8c5d0077056789f475f700a9bfca90079e58"
 
 [[files]]
 file = "config/betterquesting/DefaultQuests/Quests/0/738.json"
@@ -2210,7 +2210,7 @@ hash = "bb95258ff309baa365449de3f51db23dc6acacb88696f7d71d59cf984d5d44fc"
 
 [[files]]
 file = "config/betterquesting/DefaultQuests/Quests/2/203.json"
-hash = "33c75cf55f657338ab6838697c40f737b090b04a042d6f2980a425f866c80f19"
+hash = "ee8de0e723843cdada443daee64fe5a2d386e178e763a889a771bcef02ce2ac7"
 
 [[files]]
 file = "config/betterquesting/DefaultQuests/Quests/2/205.json"
@@ -4734,7 +4734,7 @@ hash = "b41a0cb4b475745fd75d37bc58cd8fefbb2763f3782f0401fb49f4a8a1c748a0"
 
 [[files]]
 file = "config/betterquesting/DefaultQuests/Quests/MultipleQuestLine/2114289290.json"
-hash = "ce5513b6112dedd4dc6b2e6bea3d9ad4d72d64a9979dfb9f978700d8d4d69e73"
+hash = "cd8a2228be7d310dc79c84b549a3b6a07d2e0ebfb14cd1bb5ec51359e952686c"
 
 [[files]]
 file = "config/betterquesting/DefaultQuests/Quests/MultipleQuestLine/213.json"
@@ -5074,7 +5074,7 @@ hash = "4bc1e754d68c4ef9bb61339cb06b2663b5328ccb401722a9e0e642e625469401"
 
 [[files]]
 file = "config/betterquesting/DefaultQuests/Quests/MultipleQuestLine/702454111.json"
-hash = "faca6ac56f9ad2fe7de24d2633054abaadeaaa1c19d9b240b447d1a73fdd37b6"
+hash = "7b30d675f100d724a388ae059027f9cc41910fb7820c6ec45ccd9f3448bf00b0"
 
 [[files]]
 file = "config/betterquesting/DefaultQuests/Quests/MultipleQuestLine/703.json"
@@ -5222,7 +5222,7 @@ hash = "2619ab5a4978e07627fd1be9618df21b9105fda6f76f926b1f067422ed18e3da"
 
 [[files]]
 file = "config/betterquesting/resources/supersymmetry/lang/en_us.lang"
-hash = "0716c9b03a343efb0bb05fa55c94a12a2462710cd6f52893d4b1af35b384f26e"
+hash = "626c9e69af2a683445d12984406ce88827a9708519fb76763cffb4f0f906a8ef"
 
 [[files]]
 file = "config/betterquesting/resources/supersymmetry/lang/ru_ru.lang"
@@ -7999,7 +7999,7 @@ hash = "a1375ed1c4e56ca599543d2ef6e26d947d2b8d64ee4c4b25cb5eaf858c17ec84"
 
 [[files]]
 file = "config/sussypatches.cfg"
-hash = "be716e883eab921363f5e8afbc0cbbe6e7220ad24144980dd6524b0d7e80dfa5"
+hash = "19354127fd5f89230b3949a1cefbd1ea78e0fab858027ca393bef39528994d6a"
 
 [[files]]
 file = "config/susy/susy_canary"
@@ -8203,7 +8203,7 @@ hash = "7b11cc3ee1aa9d18fa58014594f4b1d026d7b56059cf1b015e043182c550d926"
 
 [[files]]
 file = "groovy/postInit/chemistry/ChemistryOverhaul.groovy"
-hash = "c55dc3a06a10b7a299092c037edf834ef19c063709a3a8849bdfa40ce5cd888c"
+hash = "2c42c90675ea193ed5851c50fbda061c989acfb647cedff3562b1a53fe74e13a"
 
 [[files]]
 file = "groovy/postInit/chemistry/inorganic_chemistry/Ceramics.groovy"
@@ -8223,7 +8223,7 @@ hash = "773e127c60b42e85098bb2e9403973bd7cc5f3c64febe9e77e2dbdc004f9164e"
 
 [[files]]
 file = "groovy/postInit/chemistry/inorganic_chemistry/Magnets.groovy"
-hash = "7fb634a30fbb78119607e94ca4fbc56fd5bde52bf3f33a3719a46ca80ed670db"
+hash = "b101a8981a1cbab678d59044ddbf829ec18c48489d3d3da2b8ea1fcde5737b01"
 
 [[files]]
 file = "groovy/postInit/chemistry/inorganic_chemistry/WaterPurificationChain.groovy"
@@ -8319,7 +8319,7 @@ hash = "6303b44c581dec4cc78a0f98c3d9f4b1c71e46174b6e3255daf982bd56b138d4"
 
 [[files]]
 file = "groovy/postInit/chemistry/inorganic_chemistry/elements/d_block/group8/IronChain.groovy"
-hash = "a113137f2c337b7cbf33965d19c02fa0577bd62769b9530ca095d35aefd01a26"
+hash = "923540f977b6240c9d164bb5e2209e06697a06b06ad6a388deec77ac14b3da2f"
 
 [[files]]
 file = "groovy/postInit/chemistry/inorganic_chemistry/elements/d_block/group9/CobaltChain.groovy"
@@ -8863,7 +8863,7 @@ hash = "527986cc6102395d0ee68c5eec15202e9bf9e2d7f62688cbd7949fbd4dba0350"
 
 [[files]]
 file = "groovy/postInit/gameplay/StartingAge.groovy"
-hash = "5918956e11a0d54df5557c5ef5d391d13ee3ea2a699ef58505b734252e5a209a"
+hash = "494fafb81d95b476de543133b0490a8fa0bcbcc504483e11b05f29276f40b113"
 
 [[files]]
 file = "groovy/postInit/gameplay/Vanilla.groovy"
@@ -8995,7 +8995,7 @@ hash = "d586068a5c6bd25c04242cb360027efa98bdeac1ec60d035d5872a00ac5649ec"
 
 [[files]]
 file = "groovy/postInit/mod/GregTech.groovy"
-hash = "c5f1416b05cdbfd07ad0ae224f61bfc4bab4a55cee4960fc37ae276b0a559989"
+hash = "7c59dd733a67c17b1c40a0385f7ff92d513d3f8a388b21a55e14fb9be29c5eec"
 
 [[files]]
 file = "groovy/postInit/mod/GregTechFoodOption.groovy"
@@ -9083,7 +9083,7 @@ hash = "f821c4505368cca4ca6193551264959901b648a00fedbb8b504117786936223e"
 
 [[files]]
 file = "groovy/postInit/mod/Quark.groovy"
-hash = "e5905762af1af3c650622f57c28f8ddf8b54a43fbd5b9a9107fead66b9b24ae0"
+hash = "7c09447450d744725c085f66ed4d69e5190fecb99a4072678139f2d3e611ebd0"
 
 [[files]]
 file = "groovy/postInit/mod/RFTools.groovy"
@@ -9103,7 +9103,7 @@ hash = "3115b26f237b495ced9ce6ff0e2a105569783172e074f5543f9a3f8e633fb5c8"
 
 [[files]]
 file = "groovy/postInit/mod/StorageDrawers.groovy"
-hash = "449240eb14f485b4b85745d4af88faf17378eedd2f84e51f78b9a59888bfc507"
+hash = "1ec88407f2a28b406d8eb644080ea9e78a201b34bdcd184b385d48a06dc92a1f"
 
 [[files]]
 file = "groovy/postInit/mod/Supercritical.groovy"
@@ -9115,7 +9115,7 @@ hash = "c2929f5ac4642fd8c0cb0b654f895fe7573d2e4979eb0f9487352da2610722da"
 
 [[files]]
 file = "groovy/postInit/mod/TechGuns.groovy"
-hash = "7718e97310db24d059d984d0626637528b782e7be97b62ed90e1c025e2a0299c"
+hash = "9e51fb334b94433f5748642bde2f1394645556edcad87ad2a1befd01cf34232c"
 
 [[files]]
 file = "groovy/postInit/mod/TorchMaster.groovy"
@@ -9171,7 +9171,7 @@ hash = "4d8489a42457ec77bdaf93c0cd4d808509be606bac5a5a658511f91fada2d14a"
 
 [[files]]
 file = "groovy/prePostInit/ModifyRecipeMaps.groovy"
-hash = "29074a79c96e2ce07f67eba8481655da8510d6a18d6dd82e65f25f973846aece"
+hash = "ed0156583f1b104f950360de584f1325d306e0c7986e07207ee6fe2f6d16e3c0"
 
 [[files]]
 file = "groovy/prePostInit/Thermodynamics.groovy"
@@ -9486,7 +9486,7 @@ metafile = true
 
 [[files]]
 file = "mods/forgelin-continuous.pw.toml"
-hash = "baa65aabbd2a518ab6ee710d9b609b83ca7077be078bca96e6a57f939d9f4663"
+hash = "ecc2775cc90ff26dbaeec769b55655281ef7e25e766da6be70fb3d698ff76966"
 metafile = true
 
 [[files]]
@@ -9571,7 +9571,7 @@ metafile = true
 
 [[files]]
 file = "mods/had-enough-items.pw.toml"
-hash = "e6380f5b41c35fd1d131f29a63bd9495a3ca413027446c2256a69306bdbd178b"
+hash = "e008b14c2256987fee62cee44d249f1d779f3ce8c148a1edad8cc6ac2ae282c4"
 metafile = true
 
 [[files]]
@@ -10001,12 +10001,12 @@ metafile = true
 
 [[files]]
 file = "mods/sussypatches.pw.toml"
-hash = "1d862cdc2e03c48fef2f9f5caf07654ae730ec731b6c85353050748832ef288c"
+hash = "c193c9cf34d78f07c38db007309e8e1766cc2721cc792e47b1eddea3a60481d3"
 metafile = true
 
 [[files]]
 file = "mods/susycore.pw.toml"
-hash = "56976f1eb808a9f5631ead6c99d6383b0162a1050c967dccaa337fd9b0f40bcd"
+hash = "2e8ae1f53133d936ca61c780e2206a79e46dac6f406e217e8438e0b800685a17"
 metafile = true
 
 [[files]]
@@ -10086,7 +10086,7 @@ metafile = true
 
 [[files]]
 file = "mods/universal-tweaks.pw.toml"
-hash = "988e57cf4b46da7c3c8bcd5646dae6e3561f089b34444ffa6d83bc43c5aa996e"
+hash = "568675704c15bcb91672d3973b8a3083c501a236206ed4927e1fa5c721af01be"
 metafile = true
 
 [[files]]
@@ -13052,6 +13052,10 @@ hash = "32d48613c6cb5e3f0e7b65b199fffa7b2a2bf3ef8553a51dc019f4b7366612a2"
 [[files]]
 file = "resources/gregtech/textures/items/metaitems/vacuum_tube_components.png"
 hash = "d6a8bffd043a03816bd5fdacc5039c718ee2bd311c2b34e23d85ae7176446441"
+
+[[files]]
+file = "resources/gregtech/textures/items/metaitems/voltage_coil.ev.png"
+hash = "da34236a06bc39dc92c8484a7c7709fc21d405f4e297658e473a59c50784fe39"
 
 [[files]]
 file = "resources/gregtech/textures/items/metaitems/voltage_regulator.hv.png"
