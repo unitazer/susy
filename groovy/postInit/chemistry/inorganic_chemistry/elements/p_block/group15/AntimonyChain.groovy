@@ -151,7 +151,7 @@ VACUUM_DT.recipeBuilder()
 
 BR.recipeBuilder()
     .fluidInputs(fluid('purified_antimony_trichloride') * 1152)
-    .fluidInputs(fluid('ultrapure_water') * 9000)
+    .fluidInputs(fluid('distilled_water') * 9000)
     .outputs(metaitem('dustPurifiedAntimonyTrioxide') * 5)
     .fluidOutputs(fluid('hydrochloric_acid') * 6000)
     .EUt(Globals.voltAmps[2])

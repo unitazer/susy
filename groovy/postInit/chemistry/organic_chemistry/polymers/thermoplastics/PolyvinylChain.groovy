@@ -8,10 +8,11 @@ MIXER = recipemap('mixer')
 DRYER = recipemap('dryer')
 AUTOCLAVE = recipemap('autoclave')
 PHASE_SEPARATOR = recipemap('phase_separator')
+ROASTER = recipemap('roaster')
 
 // Vinyl Chloride
 
-BR.recipeBuilder()
+ROASTER.recipeBuilder()
     .fluidInputs(fluid('mercury') * 1000)
     .fluidInputs(fluid('chlorine') * 2000)
     .outputs(metaitem('dustMercuryIiChloride') * 3)
