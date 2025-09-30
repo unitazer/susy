@@ -161,7 +161,7 @@ MIXER.recipeBuilder()
 
 // MnCl2
 
-BR.recipeBuilder()
+ROASTER.recipeBuilder()
     .inputs(ore('dustAnyPurityManganese'))
     .fluidInputs(fluid('chlorine') * 2000)
     .outputs(metaitem('dustManganeseIiChloride') * 3)
@@ -334,4 +334,16 @@ CRYSTALLIZER.recipeBuilder()
     .fluidOutputs(fluid('potassium_hydroxide_solution') * 1000)
     .duration(200)
     .EUt(30)
+    .buildAndRegister()
+
+// Manganese carbonate
+
+BR.recipeBuilder()
+    .inputs(ore('dustSodaAsh') * 5)
+    .fluidInputs(fluid('manganese_ii_nitrate_solution') * 1000)
+    .fluidInputs(fluid('distilled_water') * 1000)
+    .outputs(metaitem('dustManganeseIiCarbonate') * 5)
+    .fluidOutputs(fluid('sodium_nitrate_solution') * 2000)
+    .duration(100)
+    .EUt(120)
     .buildAndRegister()

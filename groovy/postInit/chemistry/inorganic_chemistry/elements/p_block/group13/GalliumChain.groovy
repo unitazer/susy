@@ -11,6 +11,7 @@ FORMINGPRESS = recipemap('forming_press')
 ZONEREFINER = recipemap('zone_refiner')
 MACERATOR = recipemap('macerator')
 CUTTER = recipemap('cutter')
+ROASTER = recipemap('roaster')
 
 //FROM BAUXITE
 ELECTROLYZER.recipeBuilder()
@@ -38,7 +39,7 @@ ELECTROLYZER.recipeBuilder()
 //FROM COAL FLY ASH (WILL ADD LATER)
 
 //HIGH PURITY GALLIUM
-BATCH_REACTOR.recipeBuilder()
+ROASTER.recipeBuilder()
 .inputs(ore('dustGallium'))
 .fluidInputs(fluid('chlorine') * 3500)
 .outputs(metaitem('dustCrudeGalliumTrichloride') * 3)

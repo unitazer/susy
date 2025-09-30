@@ -81,7 +81,7 @@ class ChangeFlags {
         Polonium.setProperty(PropertyKey.DUST, new DustProperty());
 
         Silver.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(1234, 50, false, false, true, false));
-        Rubber.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(593, 50, true, false, false, false));
+        Rubber.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(593, 6, true, false, false, false));
 
         
         setupFluidType(AntimonyTrifluoride, FluidStorageKeys.LIQUID, 565)
@@ -242,6 +242,7 @@ class ChangeFlags {
         Polybenzimidazole.setFormula("[C20H12N4]n", true);
         PolyvinylAcetate.setFormula("[C4H6O2]n", true);
         PolyvinylButyral.setFormula("[C8H14O2]n", true);
+        TungstenSteel.setFormula("Fe60W8Cr3Mo2V", true);
 
         // Ore Processing
         

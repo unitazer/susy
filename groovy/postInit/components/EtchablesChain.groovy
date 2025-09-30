@@ -197,15 +197,6 @@ new NDopant("dustHighPurityAntimony", 1)
 new NDopant("dustHighPurityPhosphorus", 2)
 new NDopant("dustHighPurityArsenic", 2)
 
-MIXER.recipeBuilder()
-        .inputs(ore('dustTinyPotassiumHydroxide'))
-        .inputs(ore('dustSiliconDioxide') * 30)
-        .fluidInputs(fluid('demineralized_water') * 10000)
-        .fluidOutputs(fluid('silicon_dioxide_slurry') * 10000)
-        .duration(200)
-        .EUt(Globals.voltAmps[2])
-        .buildAndRegister()
-
 def generatePatterningRecipes(input, product, mask, voltageTier, timeMultiplier, int outputMultiplier, int circ, boolean cleanroom) {
     for (photoresist in Photoresist.photoresists) {
         if (cleanroom) {
@@ -565,4 +556,25 @@ ASSEMBLER.recipeBuilder()
         .cleanroom(CleanroomType.CLEANROOM)
         .duration(200)
         .EUt(120)
+        .buildAndRegister()
+
+// Phenolic Circuit Board * 1
+mods.gregtech.assembler.removeByInput(30, [metaitem('dustWood'), metaitem('circuit.integrated').withNbt(['Configuration': 1])], [fluid('glue') * 50])
+
+ASSEMBLER.recipeBuilder()
+        .inputs(ore('dustTreatedWood'))
+        .fluidInputs(fluid('glue') * 50)
+        .outputs(metaitem('board.phenolic'))
+        .duration(160)
+        .EUt(30)
+        .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('foilCopper') * 2)
+        .inputs(metaitem('plateTreatedWood'))
+        .inputs(metaitem('wireFineSilver') * 4)
+        .fluidInputs(fluid('glue') * 50)
+        .outputs(metaitem('circuit_board.good'))
+        .duration(120)
+        .EUt(30)
         .buildAndRegister()
