@@ -247,7 +247,7 @@ REACTION_FURNACE.recipeBuilder()
         .buildAndRegister()
 
 MIXER.recipeBuilder()
-        .inputs(ore('dustLeadOxide') * 2)
+        .inputs(ore('dustLeadIiOxide') * 2)
         .fluidInputs(fluid('sodium_hydroxide_solution') * 1000)
         .fluidOutputs(fluid('ceramic_thick_film_paste') * 1000)
         .duration(400)

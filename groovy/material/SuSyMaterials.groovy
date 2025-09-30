@@ -1234,7 +1234,7 @@ class SuSyMaterials {
     public static Material ManganeseZincFerrite
     public static Material StrontiumCarbonate
     public static Material BariumCarbonate
-    public static Material LeadOxide
+    public static Material LeadIIOxide
     public static Material TantalumNitride
     public static Material RutheniumIIIChloride
     public static Material BismuthIridate

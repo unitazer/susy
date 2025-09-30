@@ -164,7 +164,7 @@ CUTTER.recipeBuilder()
 // Lead Zirconate Titanate
 
 ROASTER.recipeBuilder()
-        .inputs(ore('dustLeadOxide'))
+        .inputs(ore('dustLeadIiOxide'))
         .fluidOutputs(fluid('lead_oxide') * 1000)
         .duration(200)
         .EUt(120)
@@ -172,7 +172,7 @@ ROASTER.recipeBuilder()
 
 REACTION_FURNACE.recipeBuilder()
         .notConsumable(fluid('lead_oxide') * 1000)
-        .inputs(ore('dustLeadOxide') * 4)
+        .inputs(ore('dustLeadIiOxide') * 4)
         .inputs(ore('dustTitaniumDioxide') * 3)
         .inputs(ore('dustZirconiumDioxide') * 3)
         .outputs(metaitem('dustLeadZirconateTitanate') * 10)
