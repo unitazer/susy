@@ -1,3 +1,19 @@
+# UPDATE 0.1.15.7
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.76 → v0.1.77
+- Supercritical 0.2.1 → 0.2.2
+- SussyPatches 1.5.0 → 1.6.2
+## Changes
+### New Features
+- Structures have been upgraded once more! Go explore a little. (#1669 by @oliwier509)
+- Lead acid batteries now act as baubles. (#1657 by @MCTian-mi)
+### Changed Features
+- Large steam hammers are now craftable (#1658 by @trexxet)
+- Rubber pipes are no longer overpowered. (#1662 by @trainvoi)
+- More items now have recycling! (#1663 by @trexxet)
+### Fixes
+- Lots of small changes and fixes have occurred since the last update... (#1659 by @Rick8484) (#1660 by @Fiery36) (#1665 by @PatRat2) (#1670 by @Syriusz171)
 # UPDATE 0.1.15.6
 ## Mod Changes
 ### Mod Updates
