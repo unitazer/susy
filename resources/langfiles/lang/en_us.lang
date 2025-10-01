@@ -125,16 +125,6 @@ susy.material.DilutedSodiumCarbonateSolution=Diluted Sodium Carbonate Solution
 susy.material.four_nitrophenol=4-Nitrophenol
 susy.material.four_aminophenol_solution=4-Aminophenol Solution
 susy.material.four_aminophenol=4-Aminophenol
-susy.material.wet_aluminium_soap=Wet Aluminium Soap
-susy.material.impure_aluminium_soap=Impure Aluminium Soap
-susy.material.napalm_gelling_agent=Napalm Gelling Agent
-susy.material.impure_sodium_soap_solution=Impure Sodium Soap
-susy.material.clarified_sodium_soap_solution=Clarified Sodium Soap
-susy.material.sodium_soap_solution=Sodium Soap Solution
-susy.material.clear_sodium_soap_solution=Purified Sodium Soap Solution
-susy.material.napalm=Napalm
-susy.material.colloidal_aluminium_soap=Colloidal Aluminium Soap
-susy.material.naphthenic_acid=Naphthenic Acid
 
 susy.material.iron_ii_sulfide=Iron II Sulfide
 susy.material.potassium_bisulfate=Potassium Bisulfate
