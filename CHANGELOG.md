@@ -6,8 +6,9 @@
 - SussyPatches 1.5.0 → 1.6.2
 ## Changes
 ### New Features
-- Structures have been upgraded once more! Go explore a little. (#1669 by @oliwier509)
-- Lead acid batteries now act as baubles. (#1657 by @MCTian-mi)
+- Structures have been upgraded once more! Explore the world. (#1669 by @oliwier509)
+- Lead-acid battery recipes have been properly SUSY-fied! (#1655 by @trexxet)
+- Lead-acid batteries also now act as baubles. (#1657 by @MCTian-mi)
 ### Changed Features
 - Large steam hammers are now craftable (#1658 by @trexxet)
 - Rubber pipes are no longer overpowered. (#1662 by @trainvoi)
