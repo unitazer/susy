@@ -224,9 +224,9 @@ RecyclingHelper.handleRecycling(metaitem('battery.hull.iv'),
 // Primitive LV Battery Hull
 
 crafting.addShaped('primitive_battery_hull_lv', metaitem('battery.primitivehull.lv'), [
-    [ore('plateGlass'),         metaitem('cableGtSingleTin'),   ore('plateGlass')],
-    [ore('plateRubber'),  ore('plateGlass'),              ore('plateRubber')],
-    [null,                      null,                           null]
+    [ore('plateGlass'),  metaitem('cableGtSingleTin'),   ore('plateGlass')],
+    [ore('plateRubber'), ore('plateGlass'),              ore('plateRubber')],
+    [null,               null,                           null]
 ])
 
 ASSEMBLER.recipeBuilder()
@@ -322,16 +322,6 @@ ROASTER.recipeBuilder()
         .EUt(30)
         .buildAndRegister()
 
-BR.recipeBuilder()
-        .inputs(ore('dustNickelHydroxide') * 10)
-        .fluidInputs(fluid('potassium_hydroxide_solution') * 2000)
-        .fluidInputs(fluid('chlorine') * 2000)
-        .outputs(metaitem('dustNickelOxideHydroxide') * 8)
-        .fluidOutputs(fluid('diluted_rock_salt_solution') * 4000)
-        .duration(100)
-        .EUt(30)
-        .buildAndRegister()
-
 mods.gregtech.assembler.recipeBuilder()
         .inputs(metaitem('battery.hull.hv'))
         .inputs(ore('dustCarbon') * 4)
@@ -365,7 +355,7 @@ mods.gregtech.assembler.recipeBuilder()
 mods.gregtech.assembler.recipeBuilder()
         .inputs(metaitem('battery.hull.mv'))
         .inputs(ore('dustCadmium') * 2)
-        .inputs(ore('dustNickelOxideHydroxide') * 2)
+        .inputs(ore('dustNickelHydroxide') * 5)
         .fluidInputs(fluid('potassium_hydroxide_solution') * 200)
         .outputs(metaitem('battery.re.mv.cadmium'))
         .duration(200)
@@ -375,7 +365,7 @@ mods.gregtech.assembler.recipeBuilder()
 mods.gregtech.assembler.recipeBuilder()
         .inputs(metaitem('battery.hull.hv'))
         .inputs(ore('dustCadmium') * 4)
-        .inputs(ore('dustNickelOxideHydroxide') * 4)
+        .inputs(ore('dustNickelHydroxide') * 10)
         .fluidInputs(fluid('potassium_hydroxide_solution') * 500)
         .outputs(metaitem('battery.re.hv.cadmium'))
         .duration(400)
