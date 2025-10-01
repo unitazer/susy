@@ -1378,7 +1378,7 @@ RecyclingHelper.replaceShaped('gregtech:distillation_tower', metaitem('distillat
 
 crafting.shapedBuilder()
     .name('gregtech:lv_magnet_lead_acid')
-    .output(metaitem('item_magnet.lv').withNbt(['MaxCharge': 120000L]))
+    .output(metaitem('item_magnet.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
     .shape([
         [ore('stickSteelMagnetic'), ore('toolWrench'), ore('stickSteelMagnetic')],
         [ore('stickSteelMagnetic'), metaitem('battery.lead_acid').mark('battery'), ore('stickSteelMagnetic')],
@@ -1396,7 +1396,7 @@ crafting.shapedBuilder()
 
 crafting.shapedBuilder()
     .name('gregtech:lv_power_unit_lead_acid')
-    .output(metaitem('power_unit.lv').withNbt(['MaxCharge': 120000L]))
+    .output(metaitem('power_unit.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
     .shape([
         [ore('screwSteel'), null, ore('toolScrewdriver')],
         [ore('gearSmallSteel'), metaitem('electric.motor.lv'), ore('gearSmallSteel')],
@@ -1414,7 +1414,7 @@ crafting.shapedBuilder()
 
 crafting.shapedBuilder()
         .name("gregtech:prospector_lead_acid")
-        .output(metaitem('prospector.lv').withNbt(['MaxCharge': 120000L]))
+        .output(metaitem('prospector.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
         .shape([
     [metaitem('emitter.lv'), ore('plateSteel'), metaitem('sensor.lv')],
         [ore('circuitLv'), ore('plateGlass'), ore('circuitLv')],
