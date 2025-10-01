@@ -779,16 +779,6 @@ class SuSyMaterials {
     public static Material AmmoxidationCatalyst
     public static Material PropyleneAmmoxidationMixture
     public static Material CrudeAcrylonitrile
-    public static Material NaphthenicAcid
-    public static Material ImpureSodiumSoapSolution
-    public static Material ClarifiedSodiumSoapSolution
-    public static Material SodiumSoapSolution
-    public static Material ClearSodiumSoapSolution
-    public static Material ColloidalAluminiumSoap
-    public static Material Napalm
-    public static Material ImpureAluminiumSoap
-    public static Material WetAluminiumSoap
-    public static Material NapalmGellingAgent
 
     // Petrochem Materials
 
