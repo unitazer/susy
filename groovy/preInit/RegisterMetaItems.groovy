@@ -389,5 +389,5 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10102, "wing.small")
     }
 
-    log.infoMC("Finished adding metaitems")
+        log.infoMC("Finished adding metaitems")
 }
