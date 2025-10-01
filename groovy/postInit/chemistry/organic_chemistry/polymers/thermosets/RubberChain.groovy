@@ -5,11 +5,14 @@ import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 
+import groovy.transform.TupleConstructor
+
 POLYMERIZATION_TANK = recipemap('polymerization_tank')
 MIXER = recipemap('mixer')
 SIFTER = recipemap('sifter')
 DRYER = recipemap('dryer')
 EXTRACTOR = recipemap('extractor')
+VULCANIZER = recipemap("vulcanizing_press")
 
 //REMOVALS
 // Raw Rubber Pulp * 2
@@ -25,27 +28,13 @@ mods.gregtech.extractor.removeByInput(2, [item('gregtech:rubber_log')], null)
 // Liquid Latex * 144
 mods.gregtech.extractor.removeByInput(30, [metaitem('dustLatex')], null)
 
-//DEFINITIONS
-class Catalyser {
+@TupleConstructor
+class Catalyst {
     String name
     int speed_bonus
-
-    Catalyser(name, speed_bonus) {
-        this.name = name
-        this.speed_bonus = speed_bonus
-    }
 }
 
-class SulfurSource {
-    String name
-    int amount_required
-
-    SulfurSource(name, amount_required) {
-        this.name = name
-        this.amount_required = amount_required
-    }
-}
-
+@TupleConstructor
 class Rubber {
     String name 
     String output
@@ -53,31 +42,15 @@ class Rubber {
     int duration
     int yield
     boolean isFluid 
-
-    Rubber(name, output, amount_required, duration, yield, isFluid){
-        this.name = name
-        this.output = output
-        this.amount_required = amount_required
-        this.duration = duration
-        this.yield = yield
-        this.isFluid = isFluid
-    }
 }
 
+@TupleConstructor
 class Coagulant {
     String name
     int amount_required
     int speed_bonus
     int yield_bonus
     boolean isFluid
-
-    Coagulant(name, amount_required, speed_bonus, yield_bonus, isFluid){
-        this.name = name
-        this.amount_required = amount_required
-        this.speed_bonus = speed_bonus
-        this.yield_bonus = yield_bonus
-        this.isFluid = isFluid
-    }
 }
 
 class Shape {
@@ -136,13 +109,9 @@ def rubbers = [
     new Rubber('dustCompoundedStyreneButadieneRubber', 'StyreneButadieneRubber', 4, 30 * 20, 4, false)
 ]
 
-def sulfurSources = [
-    new SulfurSource('dustSulfur', 1)
-]
-
-def catalysers = [
-    new Catalyser('dustZincite', 2),
-    new Catalyser('dustMagnesia', 2)
+def catalysts = [
+    new Catalyst('dustZincite', 2),
+    new Catalyst('dustMagnesia', 2)
 ]
 
 def coagulants = [
@@ -159,64 +128,93 @@ def shapes = [
     new Shape('pipeTinyFluid', 'pipe.tiny', 2)
 ]
 
-
-
-def VULCANIZING_RECIPES = recipemap("vulcanizing_press")
-
 for (rubber in rubbers) {
-    for (sulfurSource in sulfurSources) { 
-        for(shape in shapes) {
-            if (oreDict.getItems(shape.name + rubber.output).size() == 0) {
-                continue;
-            }
-            if (rubber.isFluid)  {
-                VULCANIZING_RECIPES.recipeBuilder()
+    for (shape in shapes) {
+        if (oreDict.getItems(shape.name + rubber.output).size() == 0) {
+            continue;
+        }
+        if (rubber.isFluid)  {
+            VULCANIZER.recipeBuilder()
                 .fluidInputs(fluid(rubber.name) * rubber.amount_required * 1000)
-                .inputs(ore(sulfurSource.name) * sulfurSource.amount_required)
+                .inputs(ore('dustSulfur'))
                 .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
                 .circuitMeta(2)
                 .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
                 .duration(rubber.duration)
                 .EUt(7)
                 .buildAndRegister()
+        } 
+        else {
+            VULCANIZER.recipeBuilder()
+                .inputs(ore(rubber.name) * rubber.amount_required)
+                .inputs(ore('dustSulfur'))
+                .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
+                .circuitMeta(2)
+                .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
+                .duration(rubber.duration)
+                .EUt(7)
+                .buildAndRegister()
+        }
+        for (catalyst in catalysts) {
+            if (rubber.isFluid)  {
+                VULCANIZER.recipeBuilder()
+                    .fluidInputs(fluid(rubber.name) * rubber.amount_required * 1000)
+                    .inputs(ore('dustSulfur'))
+                    .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
+                    .notConsumable(ore(catalyst.name))
+                    .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
+                    .duration(rubber.duration.intdiv(catalyst.speed_bonus))
+                    .EUt(7)
+                    .buildAndRegister()
             } 
             else {
-                VULCANIZING_RECIPES.recipeBuilder()
-                .inputs(ore(rubber.name) * rubber.amount_required)
-                .inputs(ore(sulfurSource.name) * sulfurSource.amount_required)
-                .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
-                .circuitMeta(2)
-                .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
-                .duration(rubber.duration)
-                .EUt(7)
-                .buildAndRegister()
-            }
-            for (catalyser in catalysers) {
-                if(rubber.isFluid)  {
-                    VULCANIZING_RECIPES.recipeBuilder()
-                    .fluidInputs(fluid(rubber.name) * rubber.amount_required * 1000)
-                    .inputs(ore(sulfurSource.name) * sulfurSource.amount_required)
-                    .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
-                    .notConsumable(ore(catalyser.name))
-                    .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
-                    .duration(rubber.duration.intdiv(catalyser.speed_bonus))
-                    .EUt(7)
-                    .buildAndRegister()
-                } 
-                else {
-                    VULCANIZING_RECIPES.recipeBuilder()
+                VULCANIZER.recipeBuilder()
                     .inputs(ore(rubber.name) * rubber.amount_required)
-                    .inputs(ore(sulfurSource.name) * sulfurSource.amount_required)
+                    .inputs(ore('dustSulfur'))
                     .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
-                    .notConsumable(ore(catalyser.name))
+                    .notConsumable(ore(catalyst.name))
                     .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
-                    .duration(rubber.duration.intdiv(catalyser.speed_bonus))
+                    .duration(rubber.duration.intdiv(catalyst.speed_bonus))
                     .EUt(7)
                     .buildAndRegister()
-                }
             }
         }
     }
+}
+
+// Ebonite
+// currently there are no liquid rubbers, so can skip fluid check
+ebonite_duration = 400
+
+for (rubber in rubbers) {
+    coal_amount = (rubber.amount_required > 4) ? rubber.amount_required.intdiv(4) : 1
+    MIXER.recipeBuilder()
+        .inputs(ore(rubber.name) * rubber.amount_required)
+        .inputs(ore('dustSulfur') * rubber.amount_required)
+        .inputs(ore('dustCoal') * coal_amount)
+        .outputs(metaitem('dustCompoundedEbonite') * (rubber.yield * 2))
+        .duration(20 * rubber.yield)
+        .EUt(Globals.voltAmps[1])
+        .buildAndRegister()
+}
+
+VULCANIZER.recipeBuilder()
+    .inputs(ore('dustCompoundedEbonite'))
+    .notConsumable(metaitem('shape.extruder.plate'))
+    .circuitMeta(2)
+    .outputs(metaitem('plateEbonite'))
+    .duration(ebonite_duration)
+    .EUt(Globals.voltAmps[1])
+    .buildAndRegister()
+for (catalyst in catalysts) {
+    VULCANIZER.recipeBuilder()
+        .inputs(ore('dustCompoundedEbonite'))
+        .notConsumable(metaitem('shape.extruder.plate'))
+        .notConsumable(ore(catalyst.name))
+        .outputs(metaitem('plateEbonite'))
+        .duration(ebonite_duration.intdiv(catalyst.speed_bonus))
+        .EUt(Globals.voltAmps[1])
+        .buildAndRegister()
 }
 
 CoagulationRecipe(1, 150)
