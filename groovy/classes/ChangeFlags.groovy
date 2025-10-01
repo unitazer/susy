@@ -188,7 +188,7 @@ class ChangeFlags {
         Hafnium.addFlags("generate_long_rod", "generate_rod");
         VanadiumSteel.addFlags("generate_round");
         Mica.addFlags("generate_plate", "no_unification");
-        Rubber.addFlags("generate_double_plate");
+        Rubber.addFlags("generate_plate");
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")
