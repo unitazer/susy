@@ -22,3 +22,7 @@ mods.gregtech.advanced_arc_furnace.removeByInput(1920, [metaitem('dustSamarium')
 mods.gregtech.advanced_arc_furnace.removeByInput(7680, [metaitem('dustIndium') * 4, metaitem('dustTin') * 2, metaitem('dustBarium') * 2, metaitem('dustTitanium'), metaitem('dustCopper') * 7, metaitem('circuit.integrated').withNbt(['Configuration': 16])], [fluid('oxygen') * 14000 * 14000, fluid('argon') * 800 * 800, fluid('refractory_gunning_mixture') * 50 * 50])
 // Molten Indium Tin Barium Titanium Cuprate * 2304
 mods.gregtech.advanced_arc_furnace.removeByInput(7680, [metaitem('dustIndium') * 4, metaitem('dustTin') * 2, metaitem('dustBarium') * 2, metaitem('dustTitanium'), metaitem('dustCopper') * 7, metaitem('circuit.integrated').withNbt(['Configuration': 6])], [fluid('oxygen') * 14000 * 14000, fluid('refractory_gunning_mixture') * 50 * 50])
+// Liquid Kovar * 576
+mods.gregtech.advanced_arc_furnace.removeByInput(120, [metaitem('dustIron') * 2, metaitem('dustNickel'), metaitem('dustCobalt'), metaitem('circuit.integrated').withNbt(['Configuration': 13])], [fluid('nitrogen') * 4000, fluid('refractory_gunning_mixture') * 50])
+// Liquid Kovar * 576
+mods.gregtech.advanced_arc_furnace.removeByInput(120, [metaitem('dustIron') * 2, metaitem('dustNickel'), metaitem('dustCobalt'), metaitem('circuit.integrated').withNbt(['Configuration': 3])], [fluid('refractory_gunning_mixture') * 50])
