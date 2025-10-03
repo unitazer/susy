@@ -179,7 +179,7 @@ mods.gregtech.mixer.recipeBuilder()
         .inputs(ore('dustNickel') * 5)
         .inputs(ore('dustCobalt') * 3)
         .outputs(metaitem('dustKovar') * 18)
-        .circuitMeta(3)
+        .circuitMeta(4)
         .duration(800)
         .EUt(16)
         .buildAndRegister();
