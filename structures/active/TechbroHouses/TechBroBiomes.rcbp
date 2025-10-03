@@ -1,0 +1,13 @@
+{
+  "data": [
+    {
+      "biomes": "minecraft:plains"
+    }
+  ],
+  "metadata": {
+    "title": "TechBroBiomes",
+    "description": [
+      "Biomes for Techbro"
+    ]
+  }
+}
