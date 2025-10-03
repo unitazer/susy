@@ -87,7 +87,7 @@ ROASTER.recipeBuilder()
 
     BR.recipeBuilder()
         .inputs(ore('dustActivatedCarbon') * 10)
-        .inputs(ore('dustSodiumCarbonate') * 5)
+        .inputs(ore('dustSodaAsh') * 5)
         .fluidInputs(fluid('chloroplatinic_acid_solution') * 4000)
         .fluidInputs(fluid('hydrazine') * 1000)
         .outputs(metaitem('dustPlatinumOnCarbon') * 11)

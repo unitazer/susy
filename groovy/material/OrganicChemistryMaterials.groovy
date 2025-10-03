@@ -3139,9 +3139,9 @@ class OrganicChemistryMaterials {
                 .build()
 
         Polysulfone = new Material.Builder(15494, SuSyUtility.susyId('polysulfone'))
-                .polymer(2)
+                .polymer()
                 .components(Carbon * 27, Hydrogen * 22, Sulfur, Oxygen * 2)
-                .flags(GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_FOIL, GENERATE_ROD, GENERATE_FRAME)
                 .color(0xd7d9bd)
                 .build()
 

@@ -45,7 +45,7 @@ def polymers = [
         new ExtrudablePolymers('Ultem', 1920, 8, false, false, false, false, false),
         new ExtrudablePolymers('Epoxy', 1920, 8, false, false, false, false, false),
         new ExtrudablePolymers('Pmma', 1920, 8, true, false, false, false, false),
-        new ExtrudablePolymers('Polysulfone', 1920, 8, false, false, false, false, true),
+        new ExtrudablePolymers('Polysulfone', 1920, 8, true, false, false, false, true),
         new ExtrudablePolymers('Viton', 1920, 8, false, false, false, true, false),
 
         new ExtrudablePolymers('Polybenzimidazole', 7680, 8, true, true, true, false, false),
