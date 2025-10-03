@@ -200,7 +200,7 @@ for (rubber in rubbers) {
 
 VULCANIZER.recipeBuilder()
     .inputs(ore('dustCompoundedEbonite'))
-    .notConsumable(metaitem('shape.extruder.plate'))
+    .notConsumable(metaitem('shape.mold.plate'))
     .circuitMeta(2)
     .outputs(metaitem('plateEbonite'))
     .duration(ebonite_duration)
@@ -209,7 +209,7 @@ VULCANIZER.recipeBuilder()
 for (catalyst in catalysts) {
     VULCANIZER.recipeBuilder()
         .inputs(ore('dustCompoundedEbonite'))
-        .notConsumable(metaitem('shape.extruder.plate'))
+        .notConsumable(metaitem('shape.mold.plate'))
         .notConsumable(ore(catalyst.name))
         .outputs(metaitem('plateEbonite'))
         .duration(ebonite_duration.intdiv(catalyst.speed_bonus))
