@@ -295,7 +295,7 @@ for (solder in soldering_alloys) {
 
 recipemap('mixer').recipeBuilder()
         .inputs(ore('dustClay'))
-        .fluidInputs(liquid('gasoline')*1000)
+        .fluidInputs(liquid('napalm')*1000)
         .outputs(item('openmodularturrets:ammo_meta:0')*32)
         .duration(20)
         .EUt(30)
