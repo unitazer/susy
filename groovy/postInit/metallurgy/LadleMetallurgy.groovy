@@ -4,6 +4,7 @@ ADVANCED_ARC_FURNACE = recipemap('advanced_arc_furnace')
 
 // Tungstensteel
 ADVANCED_ARC_FURNACE.recipeBuilder()
+    .circuitMeta(1)
     .fluidInputs(fluid('molten.steel') * 8640) //equal to 60 Steel dust 
     .inputs(ore('dustTungsten') * 8)
     .inputs(ore('dustChrome') * 3)
@@ -15,6 +16,7 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .buildAndRegister()
 
 ADVANCED_ARC_FURNACE.recipeBuilder()
+    .circuitMeta(2)
     .fluidInputs(fluid('molten.steel') * 8640) //equal to 60 Steel dust
     .fluidInputs(fluid('argon') * 6000)
     .inputs(ore('dustTungsten') * 8)

@@ -28,6 +28,7 @@ POLYMERIZATION_TANK.recipeBuilder()
     .buildAndRegister();
 
 MIXER.recipeBuilder()
+    .circuitMeta(2)
     .fluidInputs(fluid('ethylenediamine') * 1000)
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('ethylenediamine_solution') * 2000)
