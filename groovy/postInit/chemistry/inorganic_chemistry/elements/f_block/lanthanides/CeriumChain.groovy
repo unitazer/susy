@@ -84,7 +84,7 @@ BR.recipeBuilder()
 //For EV fuel cell to be crafted at EV
 
 ROASTER.recipeBuilder()
-    .fluidInputs(fluid('dustCerium') * 1000)
+    .inputs(ore('dustCerium'))
     .fluidInputs(fluid('chlorine') * 3000)
     .outputs(metaitem('dustCeriumIiiChloride') * 4)
     .duration(80)
