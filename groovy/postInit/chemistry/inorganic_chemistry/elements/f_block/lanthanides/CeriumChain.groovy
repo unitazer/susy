@@ -5,6 +5,7 @@ REACTION_FURNACE = recipemap('reaction_furnace')
 ROASTER = recipemap('roaster')
 DISTILLERY = recipemap('distillery')
 MIXER_SETTLER = recipemap('mixer_settler')
+ROASTER = recipemap('roaster')
 
 // Cerium reductive stripping
 // 2Ce(NO3)4 + H2O2 -> 2Ce(NO3)3 + O2 + 2HNO3
@@ -78,4 +79,14 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('salt_water') * 6000)
     .duration(80)
     .EUt(30)
+    .buildAndRegister()
+
+//For EV fuel cell to be crafted at EV
+
+ROASTER.recipeBuilder()
+    .fluidInputs(fluid('dustCerium') * 1000)
+    .fluidInputs(fluid('chlorine') * 3000)
+    .outputs(metaitem('dustCeriumIiiChloride') * 4)
+    .duration(80)
+    .EUt(1920)
     .buildAndRegister()
