@@ -495,16 +495,46 @@ ELECTROLYZER.recipeBuilder()
         .EUt(30)
         .buildAndRegister()
 
+// PbO
+
+ROASTER.recipeBuilder()
+        .circuitMeta(1)
+        .inputs(ore('dustLead'))
+        .fluidInputs(fluid('oxygen') * 1000)
+        .outputs(metaitem('dustLeadIiOxide') * 2)
+        .duration(200)
+        .EUt(30)
+        .buildAndRegister()
+
 ROASTER.recipeBuilder()
         .inputs(ore('dustLeadIiHydroxide') * 5)
-        .outputs(metaitem('dustLeadOxide') * 2)
+        .outputs(metaitem('dustLeadIiOxide') * 2)
         .fluidOutputs(fluid('dense_steam') * 1000)
         .duration(80)
         .EUt(30)
         .buildAndRegister()
 
+// PbO2
+
+ROASTER.recipeBuilder()
+        .inputs(ore('dustLead') * 1)
+        .fluidInputs(fluid('air') * 8000)
+        .outputs(metaitem('dustLeadIvOxide') * 3)
+        .duration(160)
+        .EUt(30)
+        .buildAndRegister()
+
+ROASTER.recipeBuilder()
+        .circuitMeta(2)
+        .inputs(ore('dustLead') * 1)
+        .fluidInputs(fluid('oxygen') * 2000)
+        .outputs(metaitem('dustLeadIvOxide') * 3)
+        .duration(100)
+        .EUt(30)
+        .buildAndRegister()
+
 EBF.recipeBuilder()
-        .inputs(ore('dustLeadOxide') * 2)
+        .inputs(ore('dustLeadIiOxide') * 2)
         .fluidInputs(fluid('carbon_monoxide') * 1000)
         .outputs(metaitem('dustLead'))
         .fluidOutputs(fluid('carbon_dioxide') * 1000)

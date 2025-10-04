@@ -1151,7 +1151,6 @@ class SuSyMaterials {
     public static Material LithiumHexafluorophosphate
     public static Material NickelHydroxide
     public static Material NickelChloride
-    public static Material NickelOxideHydroxide
     public static Material SilverNitrateSolution
     public static Material ChloroauricAcid
     public static Material SpentMoebiusElectrolyte
@@ -1214,7 +1213,7 @@ class SuSyMaterials {
     public static Material SodiumArsenate
     public static Material SodiumStannate
     public static Material SaltyArsenicAcid
-    public static Material SaltyArsenicPentoxide
+    public static Material SaltyArsenicVOxide
     public static Material TinIVOxide
     public static Material AntimonyVOxide
     public static Material PartiallyDeionizedWater
@@ -1244,7 +1243,7 @@ class SuSyMaterials {
     public static Material ManganeseZincFerrite
     public static Material StrontiumCarbonate
     public static Material BariumCarbonate
-    public static Material LeadOxide
+    public static Material LeadIIOxide
     public static Material TantalumNitride
     public static Material RutheniumIIIChloride
     public static Material BismuthIridate
@@ -1610,6 +1609,7 @@ class SuSyMaterials {
     public static Material LanthanumStrontiumChromite
     public static Material YttriaStabilizedZirconia
     public static Material BismuthIIINitrateSolution
+    public static Material LeadIVOxide
 
     // HP Materials
 

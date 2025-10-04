@@ -104,6 +104,7 @@ TUBE_FURNACE.recipeBuilder()
 
 for (blanket in sintering_blankets) {
     SINTERING_OVEN.recipeBuilder()
+        .circuitMeta(1)
         .notConsumable(metaitem('shape.extruder.plate'))
         .inputs(ore('dustYttriaStabilizedZirconia'))
         .fluidInputs(fluid('polyvinyl_alcohol_binder') * 50)
@@ -117,6 +118,7 @@ for (blanket in sintering_blankets) {
 
 for (blanket in sintering_blankets) {
     SINTERING_OVEN.recipeBuilder()
+        .circuitMeta(2)
         .notConsumable(metaitem('shape.extruder.plate'))
         .inputs(ore('dustNickelIiOxide') * 2)
         .inputs(ore('dustYttriaStabilizedZirconia') * 6)

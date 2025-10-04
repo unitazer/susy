@@ -176,6 +176,7 @@ class ChangeFlags {
         Silver.addFlags("generate_catalyst_bed");
         Nickel.addFlags("generate_catalyst_bed");
         Magnesia.addFlags("generate_catalyst_bed");
+        CupricOxide.addFlags("generate_catalyst_bed");
         Brass.addFlags("generate_ring");
         Indium.addFlags("generate_plate");
         BisphenolA.addFlags("no_unification");
@@ -186,8 +187,9 @@ class ChangeFlags {
         SteelMagnetic.addFlags("generate_plate")
         StainlessSteel.addFlags("generate_round");
         Hafnium.addFlags("generate_long_rod", "generate_rod");
-        VanadiumSteel.addFlags("generate_round")
-        Mica.addFlags(GENERATE_PLATE, NO_UNIFICATION)
+        VanadiumSteel.addFlags("generate_round");
+        Mica.addFlags("generate_plate", "no_unification");
+        Rubber.addFlags("generate_plate");
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")

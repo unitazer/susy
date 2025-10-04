@@ -1,3 +1,20 @@
+# UPDATE 0.1.15.7.1
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.77 → v0.1.78
+- Fluidlogged API API-v2.2.4-mc1.12.2 → API-v3.1.1-mc1.12.2
+- ModularUI 2.5.0-rc6 → 2.5.0
+- Had Enough Items 4.29.7 → 4.29.8
+- Extreme Sound Muffler: Legacy legacy-1.12.2-1.0.4 → legacy-1.12.2-1.0.5
+- MixinBooter 10.6 → 10.7
+- Fugue 0.20.3 → 0.20.4
+- SussyPatches 1.6.2 → 1.6.4
+## Changes
+### New Features
+- [Susy-Core] added more concrete types for upcoming dungeons (#559 by @oliwier509)
+- Biomes for techbrohouses (#1675 by @Rick8484)
+### Fixes
+- Use Ni(OH)2 instead of NiOOH in battery production (#1672 by @trexxet)
 # UPDATE 0.1.15.7
 ## Mod Changes
 ### Mod Updates
@@ -6,8 +23,9 @@
 - SussyPatches 1.5.0 → 1.6.2
 ## Changes
 ### New Features
-- Structures have been upgraded once more! Go explore a little. (#1669 by @oliwier509)
-- Lead acid batteries now act as baubles. (#1657 by @MCTian-mi)
+- Structures have been upgraded once more! Explore the world. (#1669 by @oliwier509)
+- Lead-acid battery recipes have been properly SUSY-fied! (#1655 by @trexxet)
+- Lead-acid batteries also now act as baubles. (#1657 by @MCTian-mi)
 ### Changed Features
 - Large steam hammers are now craftable (#1658 by @trexxet)
 - Rubber pipes are no longer overpowered. (#1662 by @trainvoi)

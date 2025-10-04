@@ -3,7 +3,7 @@ MIXER = recipemap('mixer')
 EBF = recipemap('electric_blast_furnace')
 
 BR.recipeBuilder()
-        .inputs(ore('dustLeadOxide') * 2)
+        .inputs(ore('dustLeadIiOxide') * 2)
         .fluidInputs(fluid('nitric_acid') * 2000)
         .outputs(metaitem('dustLeadNitrate') * 9)
         .fluidOutputs(fluid('water') * 1000)

@@ -1,5 +1,6 @@
 package preInit
 
+import globals.Globals
 import baubles.api.BaubleType
 import gregtech.api.GTValues
 import gregtech.api.GregTechAPI
@@ -211,15 +212,18 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(3500, "copra")
 
         //Batteries 4000-4100
-        addItem(4000, "battery.lead_acid").addComponents(ElectricStats.createRechargeableBattery(120000, GTValues.LV), new BaubleBehavior(BaubleType.TRINKET)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.LV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
-        addItem(4001, "cathode.lead")
-        addItem(4002, "anode.lead")
-        //addItem(4003, "battery.mv.lead_acid").addComponents(ElectricStats.createRechargeableBattery(480000, GTValues.MV)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        //addItem(4004, "battery.hv.lead_acid").addComponents(ElectricStats.createRechargeableBattery(1440000, GTValues.HV)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.HV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        //addItem(4005, "battery.mv.lithium_ion").addComponents(ElectricStats.createRechargeableBattery(600000, GTValues.MV)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        //addItem(4006, "battery.hv.lithium_ion").addComponents(ElectricStats.createRechargeableBattery(2400000, GTValues.HV)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.HV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        //addItem(4007, "battery.ev.lithium_ion").addComponents(ElectricStats.createRechargeableBattery(9600000, GTValues.EV)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.EV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        addItem(4101, "vacuum_tube_components")
+        addItem(4000, "battery.lead_acid")
+            .addComponents(ElectricStats.createRechargeableBattery(Globals.batteryCapacities['lead_acid'], GTValues.LV))
+            .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.LV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        addItem(4001, "cathode.lead");
+        addItem(4002, "anode.lead");
+        addItem(4003, "cathode.lead_paste");
+        addItem(4004, "cathode.lead_frame");
+        // Battery hulls 4090-4100
+        addItem(4090, "battery.primitivehull.lv");
+        addItem(4091, "battery.primitivehull.mv");
+
+        addItem(4101, "vacuum_tube_components");
 
         //Dusts & Pulps 4500-4999
 
