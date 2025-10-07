@@ -89,7 +89,7 @@ EXTRACTOR.recipeBuilder()
         .buildAndRegister()
 
 // Temporary allow to craft old sodium MV battery with primitive hull
-mods.gregtech.assembler.recipeBuilder()
+ASSEMBLER.recipeBuilder()
         .inputs(metaitem('battery.primitivehull.mv'))
         .inputs(ore('dustCarbon') * 2)
         .inputs(ore('dustSodiumCathodeAlloy') * 2)
