@@ -26,7 +26,7 @@ CSTR.recipeBuilder()
     .buildAndRegister();
 
 LCR.recipeBuilder()
-    .inputs(ore('dustSodiumCarbonate') * 5)
+    .inputs(ore('dustSodaAsh') * 5)
     .fluidInputs(fluid('dimethylformamide') * 2000)
     .fluidInputs(fluid('hexafluoropropylene_oxide') * 2000)
     .fluidInputs(fluid('fluorosulfonyl_difluoroacetyl_fluoride') * 1000)

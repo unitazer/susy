@@ -806,6 +806,7 @@ for (FluidFuel in FluidFuels) {
 }
 
 recipemap('fluid_heater').recipeBuilder()
+        .circuitMeta(1)
         .fluidInputs(fluid('air') * 1000)
         .fluidOutputs(fluid('preheated_air') * 1000)
         .duration(5)

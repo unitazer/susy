@@ -144,16 +144,6 @@ ASSEMBLER.recipeBuilder()
         .EUt(120)
         .buildAndRegister()
 
-ASSEMBLER.recipeBuilder()
-        .circuitMeta(5)
-        .inputs(ore('plateSteel') * 4)
-        .inputs(metaitem('cableGtSingleCopper') * 2)
-        .fluidInputs(fluid('plastic') * 432)
-        .outputs(metaitem('battery.hull.mv'))
-        .duration(160)
-        .EUt(120)
-        .buildAndRegister()
-
 RecyclingHelper.handleRecycling(metaitem('battery.hull.mv'),
         [ore('plateSteel') * 4, metaitem('cableGtSingleCopper') * 2, ore('dustPlastic') * 3])
 

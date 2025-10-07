@@ -1205,7 +1205,7 @@ class SuSyMaterials {
     public static Material SodiumArsenate
     public static Material SodiumStannate
     public static Material SaltyArsenicAcid
-    public static Material SaltyArsenicPentoxide
+    public static Material SaltyArsenicVOxide
     public static Material TinIVOxide
     public static Material AntimonyVOxide
     public static Material PartiallyDeionizedWater
