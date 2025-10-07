@@ -58,15 +58,6 @@ crafting.addShaped("cathode_lead", metaitem('cathode.lead'), [
         [ore('craftingToolRollingPin'), metaitem('cathode.lead_paste'), null]
 ]);
 
-ASSEMBLER.recipeBuilder()
-        .inputs(metaitem('cathode.lead_frame'))
-        .inputs(metaitem('cathode.lead_paste'))
-        .inputs(ore('cableGtSingleTin'))
-        .outputs(metaitem('cathode.lead'))
-        .duration(80)
-        .EUt(Globals.voltAmps[1])
-        .buildAndRegister()
-
 /*
  * Batteries
  */
@@ -224,45 +215,36 @@ RecyclingHelper.handleRecycling(metaitem('battery.hull.iv'),
 // Primitive LV Battery Hull
 
 crafting.addShaped('primitive_battery_hull_lv', metaitem('battery.primitivehull.lv'), [
-    [ore('plateGlass'),  metaitem('cableGtSingleTin'),   ore('plateGlass')],
-    [ore('plateRubber'), ore('plateGlass'),              ore('plateRubber')],
-    [null,               null,                           null]
+    [null,                metaitem('cableGtSingleTin'), null],
+    [ore('plateEbonite'), null,                         ore('plateEbonite')],
+    [ore('plateEbonite'), null,                         ore('plateEbonite')]
 ])
 
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('cableGtSingleTin'))
-        .inputs(ore('plateGlass'))
-        .inputs(ore('plateRubber'))
+        .inputs(ore('plateEbonite') * 2)
         .fluidInputs(fluid('plastic') * 144)
         .outputs(metaitem('battery.primitivehull.lv'))
         .duration(80)
-        .EUt(30)
+        .EUt(Globals.voltAmps[1])
         .buildAndRegister()
-
-RecyclingHelper.handleRecycling(metaitem('battery.primitivehull.lv'),
-        [ore('plateGlass'), metaitem('plateRubber'), metaitem('cableGtSingleTin')])
 
 // Primitive MV Battery Hull
 
 crafting.addShaped('primitive_battery_hull_mv', metaitem('battery.primitivehull.mv'), [
-    [metaitem('cableGtSingleCopper'),   ore('plateRubber'), metaitem('cableGtSingleCopper')],
-    [ore('plateGlass'),                 ore('plateRubber'), ore('plateGlass')],
-    [ore('plateGlass'),                 ore('plateRubber'), ore('plateGlass')]
+    [metaitem('cableGtSingleCopper'), null,                metaitem('cableGtSingleCopper')],
+    [ore('plateEbonite'),             ore('plateEbonite'), ore('plateEbonite')],
+    [ore('plateEbonite'),             ore('plateEbonite'), ore('plateEbonite')]
 ])
 
 ASSEMBLER.recipeBuilder()
-        .inputs(ore('plateBatteryAlloy') * 3)
         .inputs(metaitem('cableGtSingleCopper') * 2)
-        .inputs(ore('plateGlass') * 2)
-        .inputs(ore('plateRubber') * 2)
+        .inputs(ore('plateEbonite') * 4)
         .fluidInputs(fluid('plastic') * 288)
         .outputs(metaitem('battery.primitivehull.mv'))
-        .duration(160)
-        .EUt(30)
+        .duration(80)
+        .EUt(Globals.voltAmps[2])
         .buildAndRegister()
-
-RecyclingHelper.handleRecycling(metaitem('battery.primitivehull.mv'),
-        [ore('plateBatteryAlloy') * 3, metaitem('cableGtSingleCopper') * 2])
 
 /* Old recipes */
 
