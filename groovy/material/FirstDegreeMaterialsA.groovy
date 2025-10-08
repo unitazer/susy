@@ -1802,7 +1802,7 @@ class FirstDegreeMaterialsA {
 
         SaltyArsenicAcid.setFormula("(H3AsO4)(NaCl)3(H2O)3", true)
 
-        SaltyArsenicVOxide = new Material.Builder(8357, SuSyUtility.susyId('salty_arsenic_v_oxide'))
+        SaltyArsenicPentoxide = new Material.Builder(8357, SuSyUtility.susyId('salty_arsenic_pentoxide'))
                 .dust()
                 .components(Salt * 6, Arsenic * 2, Oxygen * 5)
                 .colorAverage()
