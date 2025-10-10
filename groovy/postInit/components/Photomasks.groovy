@@ -230,7 +230,7 @@ UV_LIGHT_BOX.recipeBuilder()
 
 REACTION_FURNACE.recipeBuilder()
     .notConsumable(metaitem('shape.mold.plate'))
-    .fluidInputs(fluid('silicon_tetrachloride') * 1000)
+    .fluidInputs(fluid('purified_silicon_tetrachloride') * 1000)
     .fluidInputs(fluid('oxygen') * 3000)
     .fluidInputs(fluid('hydrogen') * 2000)
     .outputs(metaitem('fused_quartz'))
