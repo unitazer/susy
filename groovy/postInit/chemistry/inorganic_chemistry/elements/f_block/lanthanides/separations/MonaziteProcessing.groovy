@@ -363,12 +363,12 @@ MIXER_SETTLER.recipeBuilder()
         .buildAndRegister()
 
     BR.recipeBuilder()
-        .inputs(ore('dustSmallSodiumHydroxide') * 6)
+        .inputs(ore('dustSodiumHydroxide') * 6)
         .fluidInputs(fluid('mona_y_concentrate') * 1000)
         .chancedOutput(metaitem('dustYttriumHydroxide') * 7, 4300, 0)
         .fluidOutputs(fluid('wastewater') * 1000)
         .duration(80)
-        .EUt(120)
+        .EUt(30)
         .buildAndRegister()
 
     // Terbium group separation
