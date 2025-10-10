@@ -367,6 +367,8 @@ mods.gregtech.extruder.removeByInput(42, [metaitem('dustEthyleneVinylAcetate'), 
 // Polysulfone Bar * 1
 mods.gregtech.extruder.removeByInput(28, [metaitem('dustPolysulfone'), metaitem('shape.extruder.ingot')], null)
 // Polysulfone Rod * 2
+mods.gregtech.lathe.removeByInput(16, [metaitem('ingotPolysulfone')], null)
+// Polysulfone Rod * 2
 mods.gregtech.extruder.removeByInput(42, [metaitem('ingotPolysulfone'), metaitem('shape.extruder.rod')], null)
 // Viton Ring * 4
 mods.gregtech.extruder.removeByInput(42, [metaitem('ingotViton'), metaitem('shape.extruder.ring')], null)
