@@ -388,9 +388,6 @@ mods.gregtech.bender.removeByInput(24, [metaitem('platePolyphenyleneSulfide'), m
 mods.gregtech.bender.removeByInput(24, [metaitem('ingotPolyphenyleneSulfide'), metaitem('circuit.integrated').withNbt(['Configuration': 10])], null)
 // Ethenone * 100
 mods.gregtech.fluid_heater.removeByInput(30, [metaitem('circuit.integrated').withNbt(['Configuration': 1])], [fluid('acetone') * 100])
-// Carbon Fiber Mesh * 1
-mods.gregtech.compressor.removeByInput(2, [metaitem('carbon.fibers') * 2], null)
-
 
 RecipeMaps.SIFTER_RECIPES
     .modifyMaxFluidInputs(1)
