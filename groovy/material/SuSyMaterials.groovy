@@ -789,6 +789,8 @@ class SuSyMaterials {
     public static Material ImpureAluminiumSoap
     public static Material WetAluminiumSoap
     public static Material NapalmGellingAgent
+    public static Material Ebonite
+    public static Material CompoundedEbonite
 
     // Petrochem Materials
 
@@ -1213,7 +1215,7 @@ class SuSyMaterials {
     public static Material SodiumArsenate
     public static Material SodiumStannate
     public static Material SaltyArsenicAcid
-    public static Material SaltyArsenicVOxide
+    public static Material SaltyArsenicPentoxide
     public static Material TinIVOxide
     public static Material AntimonyVOxide
     public static Material PartiallyDeionizedWater
