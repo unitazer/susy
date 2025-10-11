@@ -432,7 +432,8 @@ LCR.recipeBuilder()
     .fluidOutputs(fluid('wastewater') * 18500)
     .duration(200)
     .EUt(Globals.voltAmps[4])
-    
+    .buildAndRegister()
+
 // Pourous metal catalysts
 
 MIXER.recipeBuilder()
