@@ -55,7 +55,7 @@ for (quartz in quartz_dusts) {
         for (carbon in dusts()) {
                 ARC_FURNACE.recipeBuilder()
                         .circuitMeta(1)
-                        .notConsumable(fluid('air') * 1000)
+                        .notConsumable(fluid('air') * 100)
                         .inputs(ore(quartz) * 3)
                         .inputs(ore(carbon.name) * carbon.equivalent(2))
                         .outputs(metaitem('dustSilicon'))
@@ -66,7 +66,7 @@ for (quartz in quartz_dusts) {
                 
                 ADVANCED_ARC_FURNACE.recipeBuilder()
                         .circuitMeta(1)
-                        .notConsumable(fluid('air') * 10000)
+                        .notConsumable(fluid('air') * 100)
                         .inputs(ore(quartz) * 12)
                         .inputs(ore(carbon.name) * carbon.equivalent(8))
                         .outputs(metaitem('dustSilicon') * 4)
@@ -77,7 +77,7 @@ for (quartz in quartz_dusts) {
 
                 ARC_FURNACE.recipeBuilder()
                         .circuitMeta(2)
-                        .notConsumable(fluid('air') * 1000)
+                        .notConsumable(fluid('air') * 100)
                         .inputs(ore(quartz) * 3)
                         .inputs(ore(carbon.name) * carbon.equivalent(3))
                         .outputs(metaitem('dustSiliconCarbide') * 2)
