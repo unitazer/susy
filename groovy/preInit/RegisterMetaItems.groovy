@@ -391,7 +391,14 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10100, "turbojet.small")
         addItem(10101, "wing_panel.fiber_reinforced_epoxy")
         addItem(10102, "wing.small")
+
+        
+        // Parachutes 10200-10300
+        customMetaItems.addItem(10200, "parachute.drogue")
+        customMetaItems.addItem(10201, "parachute.main")
+        customMetaItems.addItem(10202, "parachute.supersonic_main")
+
     }
 
-    log.infoMC("Finished adding metaitems")
+        log.infoMC("Finished adding metaitems")
 }
