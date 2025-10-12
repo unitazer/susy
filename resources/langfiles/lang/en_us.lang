@@ -3158,6 +3158,10 @@ metaitem.display.moon.name=Moon
 metaitem.display.mercury.name=Mercury
 metaitem.display.mars.name=Mars
 
+metaitem.parachute.drogue.name=Drogue Parachute
+metaitem.parachute.main.name=Subsonic Main Parachute
+metaitem.parachute.supersonic_main.name=Supersonic Disk-Gap-Band Parachute
+
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
 tile.magma.name=Magma-Infused Netherrack

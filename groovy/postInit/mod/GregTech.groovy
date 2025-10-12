@@ -1431,27 +1431,11 @@ crafting.shapedBuilder()
 // NightVision Goggles with other batteries
 
 crafting.shapedBuilder()
-    .name('gregtech:nightvision_lithium')
-    .output(metaitem('nightvision_goggles').withNbt([MaxCharge: 120000L]))
+    .name('gregtech:nightvision_lead_acid')
+    .output(metaitem('nightvision_goggles').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
     .shape([
         [ore('circuitUlv'), metaitem('screwSteel'), ore('circuitUlv')],
-        [metaitem('ringRubber'), metaitem('battery.re.lv.lithium').mark('battery'), metaitem('ringRubber')],
-        [metaitem('lensGlass'), ore('toolScrewdriver'), metaitem('lensGlass')]
-    ])
-    .recipeFunction { output, inputs, info ->
-        def batteryTag = inputs['battery']?.getTagCompound()
-        if (batteryTag != null) {
-            output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-        }
-    }
-    .register()
-
-crafting.shapedBuilder()
-    .name('gregtech:nightvision_cadmium')
-    .output(metaitem('nightvision_goggles').withNbt([MaxCharge: 100000L]))
-    .shape([
-        [ore('circuitUlv'), metaitem('screwSteel'), ore('circuitUlv')],
-        [metaitem('ringRubber'), metaitem('battery.re.lv.cadmium').mark('battery'), metaitem('ringRubber')],
+        [metaitem('ringRubber'), metaitem('battery.lead_acid').mark('battery'), metaitem('ringRubber')],
         [metaitem('lensGlass'), ore('toolScrewdriver'), metaitem('lensGlass')]
     ])
     .recipeFunction { output, inputs, info ->
