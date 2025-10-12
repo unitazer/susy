@@ -30,7 +30,7 @@ MIXER_SETTLER.recipeBuilder()
     .chancedOutput(metaitem('dustMonaReHydroxides') * 4, 500, 0)
     .fluidOutputs(fluid('thorium_extract') * 6400)
     .duration(160)
-    .EUt(120)
+    .EUt(480)
     .requiredCells(6)
     .buildAndRegister()
 
