@@ -392,13 +392,20 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10101, "wing_panel.fiber_reinforced_epoxy")
         addItem(10102, "wing.small")
 
+        // Dimension Display items 10200-10250
+        addItem(10200, 'display.overworld')
+        addItem(10201, 'display.nether')
+        addItem(10202, 'display.beneath')
+        addItem(10203, 'display.moon')
+        addItem(10204, 'display.mercury')
+        addItem(10205, 'display.mars')
         
-        // Parachutes 10200-10300
-        customMetaItems.addItem(10200, "parachute.drogue")
-        customMetaItems.addItem(10201, "parachute.main")
-        customMetaItems.addItem(10202, "parachute.supersonic_main")
+        // Parachutes 10250-10300
+        customMetaItems.addItem(10250, "parachute.drogue")
+        customMetaItems.addItem(10251, "parachute.main")
+        customMetaItems.addItem(10252, "parachute.supersonic_main")
 
     }
 
-        log.infoMC("Finished adding metaitems")
+    log.infoMC("Finished adding metaitems")
 }
