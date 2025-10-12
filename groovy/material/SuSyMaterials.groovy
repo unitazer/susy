@@ -1143,6 +1143,7 @@ class SuSyMaterials {
     public static Material LithiumHexafluorophosphate
     public static Material NickelHydroxide
     public static Material NickelChloride
+    public static Material NickelChlorideSolution
     public static Material SilverNitrateSolution
     public static Material ChloroauricAcid
     public static Material SpentMoebiusElectrolyte

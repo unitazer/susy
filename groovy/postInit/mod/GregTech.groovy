@@ -1753,7 +1753,7 @@ crafting.addShaped('gregtech:electric_jetpack1', metaitem('gregtech:electric_jet
 
 crafting.addShaped('gregtech:electric_jetpack2', metaitem('gregtech:electric_jetpack'), [
     [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
-    [metaitem('power_thruster'), metaitem('battery.re.mv.sodium'), metaitem('power_thruster')],
+    [metaitem('power_thruster'), metaitem('battery.ni_fe'), metaitem('power_thruster')],
     [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
 ])
 

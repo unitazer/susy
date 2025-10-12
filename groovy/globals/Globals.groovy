@@ -81,7 +81,8 @@ class Globals {
     ]
 
     public static batteryCapacities = [
-        'lead_acid': 80000L
+        'lead_acid': 80000L,
+        'ni_fe': 320000L
     ]
 
     public static int determineTemperatureGas(Material material) {

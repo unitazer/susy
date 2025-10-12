@@ -219,6 +219,11 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(4002, "anode.lead");
         addItem(4003, "cathode.lead_paste");
         addItem(4004, "cathode.lead_frame");
+        addItem(4005, "battery.ni_fe")
+            .addComponents(ElectricStats.createRechargeableBattery(Globals.batteryCapacities['ni_fe'], GTValues.MV))
+            .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        addItem(4006, "electrode.steel_frame");
+        addItem(4007, "electrode.nickeled_steel_frame");
         // Battery hulls 4090-4100
         addItem(4090, "battery.primitivehull.lv");
         addItem(4091, "battery.primitivehull.mv");
