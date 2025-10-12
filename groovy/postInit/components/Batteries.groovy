@@ -65,9 +65,9 @@ crafting.addShaped("cathode_lead", metaitem('cathode.lead'), [
 // Lead-Acid Battery
 
 crafting.addShaped("battery_lead_acid", metaitem('battery.lead_acid'), [
-        [metaitem('plateGlass'), metaitem('cableGtSingleTin'), metaitem('plateGlass')],
+        [null,                     metaitem('cableGtSingleTin'),          null],
         [metaitem('cathode.lead'), fluid('diluted_sulfuric_acid') * 1000, metaitem('anode.lead')],
-        [metaitem('plateRubber'), metaitem('plateGlass'), metaitem('plateRubber')]
+        [null,                     metaitem('battery.primitivehull.lv'),  null]
 ]);
 
 ASSEMBLER.recipeBuilder()
