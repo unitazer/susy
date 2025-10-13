@@ -12,6 +12,8 @@ import gregtech.api.unification.stack.UnificationEntry
 
 import postInit.utils.RecyclingHelper
 
+log.infoMC("Running Batteries.groovy...")
+
 ASSEMBLER = recipemap('assembler')
 BCR = recipemap('bubble_column_reactor')
 BR = recipemap('batch_reactor')
