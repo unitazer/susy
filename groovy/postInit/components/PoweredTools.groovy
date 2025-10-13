@@ -1,81 +1,87 @@
 import globals.Globals
 import postInit.utils.RecyclingHelper
 
+import gregtech.api.capability.GregtechCapabilities
+import gregtech.api.capability.IElectricItem
+import gregtech.api.capability.impl.ElectricItem
+
 log.infoMC("Running PoweredTools.groovy...")
 
 ASSEMBLER = recipemap('assembler')
 
-// Item Magnet with Lead Acid battery
+ItemStack withMaxChargeFromBatteryItemStack(ItemStack tool, ItemStack battery) {
+    IElectricItem eiTool = tool?.getCapability(GregtechCapabilities.CAPABILITY_ELECTRIC_ITEM, null)
+    IElectricItem eiBattery = battery?.getCapability(GregtechCapabilities.CAPABILITY_ELECTRIC_ITEM, null)
+    if (eiTool == null || eiBattery == null)
+        return tool
 
-crafting.shapedBuilder()
-    .name('gregtech:lv_magnet_lead_acid')
-    .output(metaitem('item_magnet.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
-    .shape([
-        [ore('stickSteelMagnetic'), ore('toolWrench'), ore('stickSteelMagnetic')],
-        [ore('stickSteelMagnetic'), metaitem('battery.lead_acid').mark('battery'), ore('stickSteelMagnetic')],
-        [ore('cableGtSingleTin'), ore('plateSteel'), ore('cableGtSingleTin')]
-    ])
-    .recipeFunction { output, inputs, info ->
-        def batteryTag = inputs['battery']?.getTagCompound()
-        if (batteryTag != null) {
-            output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-        }
+    eiTool.setMaxChargeOverride(eiBattery.getMaxCharge())
+    return tool
+}
+
+ItemStack withMaxChargeFromBattery(String tool, String battery) {
+    return withMaxChargeFromBatteryItemStack(metaitem(tool), metaitem(battery))
+}
+
+def setChargeFromBatteryFn = { output, inputs, info ->
+    def batteryTag = inputs['battery']?.getTagCompound()
+    if (batteryTag != null) {
+        output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
     }
-    .register()
+}
 
-// Power Unit with Lead Acid Battery
+// Lead Acid powered items
+({ battery_type ->
+    def battery = "battery.$battery_type"
 
-crafting.shapedBuilder()
-    .name('gregtech:lv_power_unit_lead_acid')
-    .output(metaitem('power_unit.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
-    .shape([
-        [ore('screwSteel'), null, ore('toolScrewdriver')],
-        [ore('gearSmallSteel'), metaitem('electric.motor.lv'), ore('gearSmallSteel')],
-        [ore('plateSteel'), metaitem('battery.lead_acid').mark('battery'), ore('plateSteel')]
-    ])
-    .recipeFunction { output, inputs, info ->
-        def batteryTag = inputs['battery']?.getTagCompound()
-        if (batteryTag != null) {
-            output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-        }
-    }
-    .register()
-
-// Prospector's Scanner with Lead Acid battery
-
-crafting.shapedBuilder()
-        .name("gregtech:prospector_lead_acid")
-        .output(metaitem('prospector.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
+    // Item Magnet
+    crafting.shapedBuilder()
+        .name("gregtech:lv_magnet_$battery_type")
+        .output(withMaxChargeFromBattery('item_magnet.lv', battery))
         .shape([
-    [metaitem('emitter.lv'), ore('plateSteel'), metaitem('sensor.lv')],
-        [ore('circuitLv'), ore('plateGlass'), ore('circuitLv')],
-        [ore('plateSteel'), metaitem('battery.lead_acid').mark('battery'), ore('plateSteel')]
-    ])
-    .recipeFunction { output, inputs, info ->
-        def batteryTag = inputs['battery']?.getTagCompound()
-        if (batteryTag != null) {
-            output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-        }
-    }
-    .register()
+            [ore('stickSteelMagnetic'), ore('toolWrench'), ore('stickSteelMagnetic')],
+            [ore('stickSteelMagnetic'), metaitem(battery).mark('battery'), ore('stickSteelMagnetic')],
+            [ore('cableGtSingleTin'), ore('plateSteel'), ore('cableGtSingleTin')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
 
-// NightVision Goggles with other batteries
+    // Power Unit (manual craft)
+    crafting.shapedBuilder()
+        .name("gregtech:lv_power_unit_$battery_type")
+        .output(withMaxChargeFromBattery('power_unit.lv', battery))
+        .shape([
+            [ore('screwSteel'), null, ore('toolScrewdriver')],
+            [ore('gearSmallSteel'), metaitem('electric.motor.lv'), ore('gearSmallSteel')],
+            [ore('plateSteel'), metaitem(battery).mark('battery'), ore('plateSteel')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
 
-crafting.shapedBuilder()
-    .name('gregtech:nightvision_lead_acid')
-    .output(metaitem('nightvision_goggles').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
-    .shape([
-        [ore('circuitUlv'), metaitem('screwSteel'), ore('circuitUlv')],
-        [metaitem('ringRubber'), metaitem('battery.lead_acid').mark('battery'), metaitem('ringRubber')],
-        [metaitem('lensGlass'), ore('toolScrewdriver'), metaitem('lensGlass')]
-    ])
-    .recipeFunction { output, inputs, info ->
-        def batteryTag = inputs['battery']?.getTagCompound()
-        if (batteryTag != null) {
-            output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-        }
-    }
-    .register()
+    // Prospector's Scanner
+    crafting.shapedBuilder()
+        .name("gregtech:prospector_$battery_type")
+        .output(withMaxChargeFromBattery('prospector.lv', battery))
+        .shape([
+            [metaitem('emitter.lv'), ore('plateSteel'), metaitem('sensor.lv')],
+            [ore('circuitLv'), ore('plateGlass'), ore('circuitLv')],
+            [ore('plateSteel'), metaitem(battery).mark('battery'), ore('plateSteel')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+
+    // NightVision Goggles
+    crafting.shapedBuilder()
+        .name("gregtech:nightvision_$battery_type")
+        .output(withMaxChargeFromBattery('nightvision_goggles', battery))
+        .shape([
+            [ore('circuitUlv'), metaitem('screwSteel'), ore('circuitUlv')],
+            [metaitem('ringRubber'), metaitem(battery).mark('battery'), metaitem('ringRubber')],
+            [metaitem('lensGlass'), ore('toolScrewdriver'), metaitem('lensGlass')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+}).call('lead_acid')
 
 //Power Units
 
