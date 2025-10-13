@@ -363,7 +363,7 @@ MIXER_SETTLER.recipeBuilder()
         .buildAndRegister()
 
     BR.recipeBuilder()
-        .inputs(ore('dustSodiumHydroxide') * 6)
+        .inputs(ore('dustSodiumHydroxide') * 4)
         .fluidInputs(fluid('mona_y_concentrate') * 1000)
         .chancedOutput(metaitem('dustYttriumHydroxide') * 7, 4300, 0)
         .fluidOutputs(fluid('wastewater') * 1000)
