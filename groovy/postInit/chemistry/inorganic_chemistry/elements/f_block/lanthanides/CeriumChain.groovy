@@ -81,7 +81,7 @@ BR.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
-//For EV fuel cell to be crafted at EV
+//Cerium chloride (pre-IV)
 
 ROASTER.recipeBuilder()
     .inputs(ore('dustCerium'))
