@@ -118,7 +118,7 @@ FLUIDIZEDBR.recipeBuilder()
         .fluidOutputs(fluid('zinc_flue_gas') * 4000)
         .outputs(metaitem('dustZincite') * 8)
         .EUt(120)
-        .duration(40)
+        .duration(80)
         .buildAndRegister()     
 
 // Cadmium/Thallium chain for pyrometallurgy start
