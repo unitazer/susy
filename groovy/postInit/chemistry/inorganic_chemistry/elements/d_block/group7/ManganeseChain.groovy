@@ -161,14 +161,6 @@ MIXER.recipeBuilder()
 
 // MnCl2
 
-ROASTER.recipeBuilder()
-    .inputs(ore('dustAnyPurityManganese'))
-    .fluidInputs(fluid('chlorine') * 2000)
-    .outputs(metaitem('dustManganeseIiChloride') * 3)
-    .duration(100)
-    .EUt(120)
-    .buildAndRegister()
-
 BR.recipeBuilder()
     .inputs(ore('dustManganeseIiOxide') * 2)
     .fluidInputs(fluid('hydrochloric_acid') * 2000)
