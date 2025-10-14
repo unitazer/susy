@@ -195,7 +195,7 @@ BR.recipeBuilder()
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
-    .fluidInputs(fluid('diluted_manganese_ii_chloride_solution') * 3000)
+    .fluidInputs(fluid('diluted_manganese_ii_chloride_solution') * 6000)
     .outputs(metaitem('dustManganeseIiChloride') * 3)
     .fluidOutputs(fluid('water') * 6000)
     .duration(20)
