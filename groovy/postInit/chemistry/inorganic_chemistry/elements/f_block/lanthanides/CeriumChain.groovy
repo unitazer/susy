@@ -16,7 +16,7 @@ MIXER_SETTLER.recipeBuilder()
     .fluidOutputs(fluid('tributyl_phosphate_extraction_mixture') * 20000)
     .fluidOutputs(fluid('oxygen') * 1000)
     .duration(80)
-    .EUt(30)
+    .EUt(120)
     .requiredCells(2)
     .buildAndRegister()
 
