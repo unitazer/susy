@@ -378,22 +378,28 @@ mods.gregtech.assembler.recipeBuilder()
  * Remove legacy batteries
  */
 
- // Sodium Battery
+[
+    metaitem('battery.re.lv.sodium'),
+    metaitem('battery.re.lv.cadmium'),
+    metaitem('battery.re.lv.lithium'),
+    metaitem('battery.re.mv.sodium')
+].each { battery ->
+    crafting.removeByInput(battery)
+    mods.jei.ingredient.removeAndHide(battery)
+}
+
+// Sodium Battery
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustSodium') * 2], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustSodium') * 8], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustSodium') * 16], null)
-mods.jei.ingredient.removeAndHide(metaitem('battery.re.lv.sodium'))
-//mods.jei.ingredient.removeAndHide(metaitem('battery.re.mv.sodium'))
 // Lithium Battery
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustLithium') * 2], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustLithium') * 8], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustLithium') * 16], null)
-mods.jei.ingredient.removeAndHide(metaitem('battery.re.lv.lithium'))
 // Cadmium Battery
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustCadmium') * 2], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustCadmium') * 8], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustCadmium') * 16], null)
-mods.jei.ingredient.removeAndHide(metaitem('battery.re.lv.cadmium'))
 // Vanadium Battery
 // Naquadria Battery
 // Energy crystal

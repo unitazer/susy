@@ -1,5 +1,6 @@
-import globals.Globals
+import globals.BatteryGlobals
 import postInit.utils.RecyclingHelper
+import gregtech.api.GTValues
 
 import gregtech.api.capability.GregtechCapabilities
 import gregtech.api.capability.IElectricItem
@@ -9,7 +10,119 @@ log.infoMC("Running PoweredTools.groovy...")
 
 ASSEMBLER = recipemap('assembler')
 
-ItemStack withMaxChargeFromBatteryItemStack(ItemStack tool, ItemStack battery) {
+def setChargeFromBatteryFn = { output, inputs, info ->
+    def batteryTag = inputs['battery']?.getTagCompound()
+    if (batteryTag != null) {
+        output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
+    }
+}
+
+// LV Batteries
+BatteryGlobals.byTier(GTValues.LV).each { battery ->
+    // Item Magnet
+    crafting.shapedBuilder()
+        .name("gregtech:lv_magnet_${battery.name}")
+        .output(battery.imprintCapacity(metaitem('item_magnet.lv')))
+        .shape([
+            [ore('stickSteelMagnetic'), ore('toolWrench'), ore('stickSteelMagnetic')],
+            [ore('stickSteelMagnetic'), battery.fetchMetaitem().mark('battery'), ore('stickSteelMagnetic')],
+            [ore('cableGtSingleTin'), ore('plateSteel'), ore('cableGtSingleTin')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+    // Prospector's Scanner
+    crafting.shapedBuilder()
+        .name("gregtech:prospector_${battery.name}")
+        .output(battery.imprintCapacity(metaitem('prospector.lv')))
+        .shape([
+            [metaitem('emitter.lv'), ore('plateSteel'), metaitem('sensor.lv')],
+            [ore('circuitLv'), ore('plateGlass'), ore('circuitLv')],
+            [ore('plateSteel'), battery.fetchMetaitem().mark('battery'), ore('plateSteel')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+    // NightVision Goggles
+    crafting.shapedBuilder()
+        .name("gregtech:nightvision_${battery.name}")
+        .output(battery.imprintCapacity(metaitem('nightvision_goggles')))
+        .shape([
+            [ore('circuitUlv'), metaitem('screwSteel'), ore('circuitUlv')],
+            [metaitem('ringRubber'), battery.fetchMetaitem().mark('battery'), metaitem('ringRubber')],
+            [metaitem('lensGlass'), ore('toolScrewdriver'), metaitem('lensGlass')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+    // Power Unit (manual craft)
+    crafting.shapedBuilder()
+        .name("gregtech:lv_power_unit_${battery.name}")
+        .output(battery.imprintCapacity(metaitem('power_unit.lv')))
+        .shape([
+            [ore('screwSteel'), null, ore('toolScrewdriver')],
+            [ore('gearSmallSteel'), metaitem('electric.motor.lv'), ore('gearSmallSteel')],
+            [ore('plateSteel'), battery.fetchMetaitem().mark('battery'), ore('plateSteel')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+    // Power Unit
+    ASSEMBLER.recipeBuilder()
+        .inputs(ore('gearSmallSteel') * 2)
+        .inputs(ore('screwSteel'))
+        .inputs(ore('plateSteel') * 2)
+        .inputs(metaitem('electric.motor.lv'))
+        .inputs(battery.fetchMetaitem())
+        .outputs(battery.imprintCapacity(metaitem('power_unit.lv')))
+        .EUt(30)
+        .duration(150)
+        .buildAndRegister()
+}
+
+// MV Batteries
+BatteryGlobals.byTier(GTValues.MV).each { battery ->
+    // Tricorder Scanner
+    crafting.shapedBuilder()
+        .name("gregtech:tricorder_${battery.name}")
+        .output(battery.imprintCapacity(metaitem('tricorder_scanner')))
+        .shape([
+            [metaitem('emitter.mv'), metaitem('plateAluminium'), metaitem('sensor.mv')],
+            [ore('circuitHv'), metaitem('cover.screen'), ore('circuitHv')],
+            [metaitem('plateAluminium'), battery.fetchMetaitem().mark('battery'), metaitem('plateAluminium')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+    // Electric Jetpack (power capacity does not depend on battery)
+    crafting.addShaped("gregtech:electric_jetpack_${battery.name}", metaitem('gregtech:electric_jetpack'), [
+        [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
+        [metaitem('power_thruster'), battery.fetchMetaitem(), metaitem('power_thruster')],
+        [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
+    ])
+    // Power Unit (manual craft)
+    crafting.shapedBuilder()
+        .name("gregtech:mv_power_unit_${battery.name}")
+        .output(battery.imprintCapacity(metaitem('power_unit.mv')))
+        .shape([
+            [ore('screwAluminium'), null, ore('toolScrewdriver')],
+            [ore('gearSmallAluminium'), metaitem('electric.motor.mv'), ore('gearSmallAluminium')],
+            [ore('plateAluminium'), battery.fetchMetaitem().mark('battery'), ore('plateAluminium')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+    // Power Unit
+    ASSEMBLER.recipeBuilder()
+        .inputs(ore('gearSmallAluminium') * 2)
+        .inputs(ore('screwAluminium'))
+        .inputs(ore('plateAluminium') * 2)
+        .inputs(metaitem('electric.motor.mv'))
+        .inputs(battery.fetchMetaitem())
+        .outputs(battery.imprintCapacity(metaitem('power_unit.mv')))
+        .EUt(120)
+        .duration(150)
+        .buildAndRegister()
+}
+
+// Power Units from non-reworked batteries
+
+// Temporary function to set correct max charge of powered tool
+ItemStack withMaxChargeFromBattery(ItemStack tool, ItemStack battery) {
     IElectricItem eiTool = tool?.getCapability(GregtechCapabilities.CAPABILITY_ELECTRIC_ITEM, null)
     IElectricItem eiBattery = battery?.getCapability(GregtechCapabilities.CAPABILITY_ELECTRIC_ITEM, null)
     if (eiTool == null || eiBattery == null)
@@ -19,93 +132,18 @@ ItemStack withMaxChargeFromBatteryItemStack(ItemStack tool, ItemStack battery) {
     return tool
 }
 
-ItemStack withMaxChargeFromBattery(String tool, String battery) {
-    return withMaxChargeFromBatteryItemStack(metaitem(tool), metaitem(battery))
+[metaitem('battery.re.mv.lithium'), metaitem('battery.re.mv.cadmium')].each { battery ->
+    ASSEMBLER.recipeBuilder()
+        .inputs(ore('gearSmallAluminium') * 2)
+        .inputs(ore('screwAluminium'))
+        .inputs(ore('plateAluminium') * 2)
+        .inputs(metaitem('electric.motor.mv'))
+        .inputs(battery)
+        .outputs(withMaxChargeFromBattery(metaitem('power_unit.mv'), battery))
+        .EUt(120)
+        .duration(150)
+        .buildAndRegister()
 }
-
-def setChargeFromBatteryFn = { output, inputs, info ->
-    def batteryTag = inputs['battery']?.getTagCompound()
-    if (batteryTag != null) {
-        output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-    }
-}
-
-// Lead Acid powered items
-({ battery_type ->
-    def battery = "battery.$battery_type"
-
-    // Item Magnet
-    crafting.shapedBuilder()
-        .name("gregtech:lv_magnet_$battery_type")
-        .output(withMaxChargeFromBattery('item_magnet.lv', battery))
-        .shape([
-            [ore('stickSteelMagnetic'), ore('toolWrench'), ore('stickSteelMagnetic')],
-            [ore('stickSteelMagnetic'), metaitem(battery).mark('battery'), ore('stickSteelMagnetic')],
-            [ore('cableGtSingleTin'), ore('plateSteel'), ore('cableGtSingleTin')]
-        ])
-        .recipeFunction(setChargeFromBatteryFn)
-        .register()
-
-    // Power Unit (manual craft)
-    crafting.shapedBuilder()
-        .name("gregtech:lv_power_unit_$battery_type")
-        .output(withMaxChargeFromBattery('power_unit.lv', battery))
-        .shape([
-            [ore('screwSteel'), null, ore('toolScrewdriver')],
-            [ore('gearSmallSteel'), metaitem('electric.motor.lv'), ore('gearSmallSteel')],
-            [ore('plateSteel'), metaitem(battery).mark('battery'), ore('plateSteel')]
-        ])
-        .recipeFunction(setChargeFromBatteryFn)
-        .register()
-
-    // Prospector's Scanner
-    crafting.shapedBuilder()
-        .name("gregtech:prospector_$battery_type")
-        .output(withMaxChargeFromBattery('prospector.lv', battery))
-        .shape([
-            [metaitem('emitter.lv'), ore('plateSteel'), metaitem('sensor.lv')],
-            [ore('circuitLv'), ore('plateGlass'), ore('circuitLv')],
-            [ore('plateSteel'), metaitem(battery).mark('battery'), ore('plateSteel')]
-        ])
-        .recipeFunction(setChargeFromBatteryFn)
-        .register()
-
-    // NightVision Goggles
-    crafting.shapedBuilder()
-        .name("gregtech:nightvision_$battery_type")
-        .output(withMaxChargeFromBattery('nightvision_goggles', battery))
-        .shape([
-            [ore('circuitUlv'), metaitem('screwSteel'), ore('circuitUlv')],
-            [metaitem('ringRubber'), metaitem(battery).mark('battery'), metaitem('ringRubber')],
-            [metaitem('lensGlass'), ore('toolScrewdriver'), metaitem('lensGlass')]
-        ])
-        .recipeFunction(setChargeFromBatteryFn)
-        .register()
-}).call('lead_acid')
-
-//Power Units
-
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('gearSmallSteel') * 2)
-    .inputs(ore('screwSteel'))
-    .inputs(ore('plateSteel') * 2)
-    .inputs(metaitem('electric.motor.lv'))
-    .inputs(metaitem('battery.lead_acid'))
-    .outputs(metaitem('power_unit.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
-    .EUt(30)
-    .duration(150)
-    .buildAndRegister()
-
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('gearSmallAluminium') * 2)
-    .inputs(ore('screwAluminium'))
-    .inputs(ore('plateAluminium') * 2)
-    .inputs(metaitem('electric.motor.mv'))
-    .inputs(ore('batteryMv'))
-    .outputs(metaitem('power_unit.mv'))
-    .EUt(120)
-    .duration(150)
-    .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
     .inputs(ore('gearSmallStainlessSteel') * 2)
@@ -139,3 +177,29 @@ ASSEMBLER.recipeBuilder()
     .EUt(7680)
     .duration(150)
     .buildAndRegister()
+
+// Jetpacks from non-reworked batteries
+// Electric Jetpack with Li MV is in GT
+crafting.addShaped('gregtech:electric_jetpack1', metaitem('gregtech:electric_jetpack'), [
+    [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
+    [metaitem('power_thruster'), metaitem('battery.re.mv.cadmium'), metaitem('power_thruster')],
+    [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
+])
+
+crafting.replaceShaped('gregtech:electric_jetpack_advanced', metaitem('advanced_electric_jetpack'), [
+    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
+    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.sodium'), metaitem('power_thruster_advanced')],
+    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
+])
+
+crafting.addShaped('gregtech:electric_jetpack_advanced1', metaitem('advanced_electric_jetpack'), [
+    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
+    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.lithium'), metaitem('power_thruster_advanced')],
+    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
+])
+
+crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_electric_jetpack'), [
+    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
+    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.cadmium'), metaitem('power_thruster_advanced')],
+    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
+])

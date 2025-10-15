@@ -1673,36 +1673,6 @@ GroovyUtils.removeRecipesContainingFluid(mods.gregtech.autoclave, fluid('polyben
 GroovyUtils.removeRecipesContainingFluid(mods.gregtech.fluid_solidifier, fluid('polybenzimidazole'))
 GroovyUtils.removeRecipesContainingFluid(mods.gregtech.assembly_line, fluid('polybenzimidazole'))
 
-crafting.addShaped('gregtech:electric_jetpack1', metaitem('gregtech:electric_jetpack'), [
-    [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
-    [metaitem('power_thruster'), metaitem('battery.re.mv.cadmium'), metaitem('power_thruster')],
-    [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
-])
-
-crafting.addShaped('gregtech:electric_jetpack2', metaitem('gregtech:electric_jetpack'), [
-    [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
-    [metaitem('power_thruster'), metaitem('battery.ni_fe'), metaitem('power_thruster')],
-    [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
-])
-
-crafting.replaceShaped('gregtech:electric_jetpack_advanced', metaitem('advanced_electric_jetpack'), [
-    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
-    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.sodium'), metaitem('power_thruster_advanced')],
-    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
-])
-
-crafting.addShaped('gregtech:electric_jetpack_advanced1', metaitem('advanced_electric_jetpack'), [
-    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
-    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.lithium'), metaitem('power_thruster_advanced')],
-    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
-])
-
-crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_electric_jetpack'), [
-    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
-    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.cadmium'), metaitem('power_thruster_advanced')],
-    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
-])
-
 ASSEMBLER.recipeBuilder()
     .inputs(ore('plankWood') * 4)
     .inputs(ore('stickIronMagnetic') * 1)

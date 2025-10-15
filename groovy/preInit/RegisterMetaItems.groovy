@@ -1,15 +1,11 @@
 package preInit
 
-import globals.Globals
-import baubles.api.BaubleType
+import globals.BatteryGlobals
 import gregtech.api.GTValues
 import gregtech.api.GregTechAPI
 import gregtech.api.items.metaitem.ElectricStats
 import gregtech.api.items.metaitem.StandardMetaItem
-import gregtech.api.unification.material.MarkerMaterials
 import gregtech.api.unification.material.event.PostMaterialEvent
-import gregtech.api.unification.ore.OrePrefix
-import gregtech.integration.baubles.BaubleBehavior
 
 eventManager.listen { PostMaterialEvent event ->
 
@@ -212,16 +208,12 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(3500, "copra")
 
         //Batteries 4000-4100
-        addItem(4000, "battery.lead_acid")
-            .addComponents(ElectricStats.createRechargeableBattery(Globals.batteryCapacities['lead_acid'], GTValues.LV))
-            .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.LV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BatteryGlobals.byName('lead_acid').register(it, 4000);
         addItem(4001, "cathode.lead");
         addItem(4002, "anode.lead");
         addItem(4003, "cathode.lead_paste");
         addItem(4004, "cathode.lead_frame");
-        addItem(4005, "battery.ni_fe")
-            .addComponents(ElectricStats.createRechargeableBattery(Globals.batteryCapacities['ni_fe'], GTValues.MV))
-            .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BatteryGlobals.byName('ni_fe').register(it, 4005);
         addItem(4006, "electrode.steel_frame");
         addItem(4007, "electrode.nickeled_steel_frame");
         // Battery hulls 4090-4100
