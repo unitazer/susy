@@ -170,14 +170,14 @@ BR.recipeBuilder()
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
-        .fluidInputs(fluid('boron_trioxide') * 720)
-        .fluidInputs(fluid('chlorine') * 6000)
-        .inputs(metaitem('dustCarbon') * 3)
-        .fluidOutputs(fluid('boron_trichloride') * 2000)
-        .fluidOutputs(fluid('carbon_monoxide') * 3000)
-        .duration(2000)
-        .EUt(Globals.voltAmps[2])
-        .buildAndRegister()
+    .fluidInputs(fluid('boron_trioxide') * 720)
+    .fluidInputs(fluid('chlorine') * 6000)
+    .inputs(metaitem('dustCarbon') * 3)
+    .fluidOutputs(fluid('boron_trichloride') * 2000)
+    .fluidOutputs(fluid('carbon_monoxide') * 3000)
+    .duration(400)
+    .EUt(Globals.voltAmps[3])
+    .buildAndRegister()
 
 
 //Sodium Borohydride

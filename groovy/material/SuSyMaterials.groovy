@@ -1807,6 +1807,7 @@ class SuSyMaterials {
     public static Material AmmoniumPersulfateSolution
     public static Material YttriumChlorideSolution
     public static Material LanthanumNitrateSolution
+    public static Material DilutedLanthanumNitrateSolution
     public static Material CeriumIIIChlorideSolution
     public static Material PraseodymiumIIINitrateSolution
     public static Material GadoliniumChlorideSolution
