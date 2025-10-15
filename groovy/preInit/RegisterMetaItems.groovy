@@ -401,9 +401,9 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10205, 'display.mars')
         
         // Parachutes 10250-10300
-        customMetaItems.addItem(10250, "parachute.drogue")
-        customMetaItems.addItem(10251, "parachute.main")
-        customMetaItems.addItem(10252, "parachute.supersonic_main")
+        addItem(10250, "parachute.drogue")
+        addItem(10251, "parachute.main")
+        addItem(10252, "parachute.supersonic_main")
 
     }
 
