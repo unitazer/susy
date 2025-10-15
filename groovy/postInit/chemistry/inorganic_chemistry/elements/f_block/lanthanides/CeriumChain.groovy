@@ -5,6 +5,7 @@ REACTION_FURNACE = recipemap('reaction_furnace')
 ROASTER = recipemap('roaster')
 DISTILLERY = recipemap('distillery')
 MIXER_SETTLER = recipemap('mixer_settler')
+ROASTER = recipemap('roaster')
 
 // Cerium reductive stripping
 // 2Ce(NO3)4 + H2O2 -> 2Ce(NO3)3 + O2 + 2HNO3
@@ -15,7 +16,7 @@ MIXER_SETTLER.recipeBuilder()
     .fluidOutputs(fluid('tributyl_phosphate_extraction_mixture') * 20000)
     .fluidOutputs(fluid('oxygen') * 1000)
     .duration(80)
-    .EUt(30)
+    .EUt(120)
     .requiredCells(2)
     .buildAndRegister()
 
@@ -78,4 +79,14 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('salt_water') * 6000)
     .duration(80)
     .EUt(30)
+    .buildAndRegister()
+
+//Cerium chloride (pre-IV)
+
+ROASTER.recipeBuilder()
+    .inputs(ore('dustCerium'))
+    .fluidInputs(fluid('chlorine') * 3000)
+    .outputs(metaitem('dustCeriumIiiChloride') * 4)
+    .duration(80)
+    .EUt(1920)
     .buildAndRegister()

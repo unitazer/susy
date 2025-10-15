@@ -1038,5 +1038,11 @@ class SecondDegreeMaterials {
                 .components(Platinum, ActivatedCarbon * 10)
                 .colorAverage()
                 .build()
+
+        DilutedLanthanumNitrateSolution = new Material.Builder(13171, SuSyUtility.susyId('diluted_lanthanum_nitrate_solution'))
+                .liquid()
+                .components(LanthanumNitrate * 2, Water * 3)
+                .colorAverage()
+                .build()
     }
 }

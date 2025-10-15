@@ -96,6 +96,14 @@ mods.gregtech.assembler.removeByInput(7, [item('minecraft:wool', 13) * 3, metait
 mods.gregtech.assembler.removeByInput(7, [item('minecraft:wool', 14) * 3, metaitem('plateWood') * 3], null)
 // Black Bed * 1
 mods.gregtech.assembler.removeByInput(7, [item('minecraft:wool', 15) * 3, metaitem('plateWood') * 3], null)
+// BrainTech Aerospace Advanced Reinforced Duct Tape FAL-84 * 1
+mods.gregtech.assembler.removeByInput(30, [metaitem('foilPlastic') * 4, metaitem('carbon.mesh')], [fluid('plastic') * 288])
+// BrainTech Aerospace Advanced Reinforced Duct Tape FAL-84 * 2
+mods.gregtech.assembler.removeByInput(30, [metaitem('foilSiliconeRubber') * 2, metaitem('carbon.mesh')], [fluid('plastic') * 288])
+// BrainTech Aerospace Advanced Reinforced Duct Tape FAL-84 * 4
+mods.gregtech.assembler.removeByInput(30, [metaitem('foilPolycaprolactam') * 2, metaitem('carbon.mesh')], [fluid('plastic') * 144])
+// BrainTech Aerospace Advanced Reinforced Duct Tape FAL-84 * 8
+mods.gregtech.assembler.removeByInput(30, [metaitem('foilPolybenzimidazole'), metaitem('carbon.mesh')], [fluid('plastic') * 72])
 
 def name_removals = [
     'gregtech:cover_fluid_voiding',
@@ -1573,6 +1581,16 @@ ASSEMBLER.recipeBuilder()
     .outputs(metaitem('basic_tape') * 16)
     .duration(100)
     .EUt(7)
+    .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+    .inputs(ore('dustCarbon'))
+    .inputs(ore('foilPolycaprolactam') * 8)
+    .inputs(ore('foilPlastic') * 8)
+    .fluidInputs(fluid('glue') * 1000)
+    .outputs(metaitem('duct_tape') * 1)
+    .duration(80)
+    .EUt(30)
     .buildAndRegister()
 
 // Hatches

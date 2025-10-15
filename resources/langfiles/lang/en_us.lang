@@ -1225,7 +1225,7 @@ susy.material.barium_ferrite=Barium Ferrite
 susy.material.manganese_zinc_ferrite=Manganese Zinc Ferrite
 susy.material.strontium_carbonate=Strontium Carbonate
 susy.material.barium_carbonate=Barium Carbonate
-susy.material.lead_oxide=Lead Oxide
+susy.material.lead_ii_oxide=Lead II Oxide
 susy.material.tantalum_nitride=Tantalum Nitride
 susy.material.ruthenium_iv_oxide=Ruthenium IV Oxide
 susy.material.ruthenium_iii_chloride=Ruthenium III Chloride
@@ -2353,6 +2353,7 @@ susy.material.potassium_persulfate_solution=Potassium Persulfate Solution
 susy.material.ammonium_persulfate_solution=Ammonium Persulfate Solution
 susy.material.yttrium_chloride_solution=Yttrium Chloride Solution
 susy.material.lanthanum_nitrate_solution=Lanthanum Nitrate Solution
+susy.material.diluted_lanthanum_nitrate_solution=Diluted Lanthanum Nitrate Solution
 susy.material.cerium_iii_chloride_solution=Cerium III Chloride Solution
 susy.material.praseodymium_iii_nitrate_solution=Praseodymium III Nitrate Solution
 susy.material.gadolinium_chloride_solution=Gadolinium Chloride Solution
@@ -3153,6 +3154,18 @@ metaitem.nozzle.boron_nitride.name=Boron Nitride Nozzle
 metaitem.fiber.oxidized_polyacrylonitrile.name=Oxidized Polyacrylonitrile Fiber
 metaitem.carbon.mesh.treated.name=Treated Carbon Mesh
 metaitem.proton_exchange_membrane_fuel_cell.name=Proton Exchange Membrane Fuel Cell (PEMFC)
+
+## Dimension Display Items
+metaitem.display.overworld.name=Overworld
+metaitem.display.nether.name=Nether
+metaitem.display.beneath.name=Beneath
+metaitem.display.moon.name=Moon
+metaitem.display.mercury.name=Mercury
+metaitem.display.mars.name=Mars
+
+metaitem.parachute.drogue.name=Drogue Parachute
+metaitem.parachute.main.name=Subsonic Main Parachute
+metaitem.parachute.supersonic_main.name=Supersonic Disk-Gap-Band Parachute
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand

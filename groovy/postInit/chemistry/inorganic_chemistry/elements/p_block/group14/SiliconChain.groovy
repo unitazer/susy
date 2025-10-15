@@ -44,58 +44,48 @@ mods.gregtech.electric_blast_furnace.removeByInput(120, [metaitem('dustSiliconDi
 
 //Silicon & Graphite
 
-for (carbon in dusts()) {
-    ARC_FURNACE.recipeBuilder()
-            .notConsumable(fluid('air') * 1000)
-            .inputs(ore('dustSiliconDioxide') * 3)
-            .inputs(ore(carbon.name) * carbon.equivalent(2))
-            .outputs(metaitem('dustSilicon'))
-            .circuitMeta(1)
-            .fluidOutputs(fluid('carbon_monoxide') * 2000)
-            .EUt(30)
-            .duration(300)
-            .buildAndRegister()
+def quartz_dusts = [
+        'dustSiliconDioxide',
+        'dustCertusQuartz',
+        'dustNetherQuartz',
+        'dustQuartzite'
+]
 
-    ARC_FURNACE.recipeBuilder()
-            .notConsumable(fluid('air') * 1000)
-            .inputs(ore('dustQuartzite') * 3)
-            .inputs(ore(carbon.name) * carbon.equivalent(2))
-            .outputs(metaitem('dustSilicon'))
-            .fluidOutputs(fluid('carbon_monoxide') * 2000)
-            .EUt(30)
-            .duration(300)
-            .buildAndRegister()
+for (quartz in quartz_dusts) {
+        for (carbon in dusts()) {
+                ARC_FURNACE.recipeBuilder()
+                        .circuitMeta(1)
+                        .fluidInputs(fluid('air') * 100)
+                        .inputs(ore(quartz) * 3)
+                        .inputs(ore(carbon.name) * carbon.equivalent(2))
+                        .outputs(metaitem('dustSilicon'))
+                        .fluidOutputs(fluid('carbon_monoxide') * 2000)
+                        .EUt(30)
+                        .duration(320)
+                        .buildAndRegister()
+                
+                ADVANCED_ARC_FURNACE.recipeBuilder()
+                        .circuitMeta(1)
+                        .fluidInputs(fluid('air') * 100)
+                        .inputs(ore(quartz) * 12)
+                        .inputs(ore(carbon.name) * carbon.equivalent(8))
+                        .outputs(metaitem('dustSilicon') * 4)
+                        .fluidOutputs(fluid('carbon_monoxide') * 8000)
+                        .EUt(120)
+                        .duration(160)
+                        .buildAndRegister()
 
-    ARC_FURNACE.recipeBuilder()
-            .notConsumable(fluid('air') * 1000)
-            .inputs(ore('dustCertusQuartz') * 3)
-            .inputs(ore(carbon.name) * carbon.equivalent(2))
-            .outputs(metaitem('dustSilicon'))
-            .fluidOutputs(fluid('carbon_monoxide') * 2000)
-            .EUt(30)
-            .duration(300)
-            .buildAndRegister()
-
-    ARC_FURNACE.recipeBuilder()
-            .notConsumable(fluid('air') * 1000)
-            .inputs(ore('dustNetherQuartz') * 3)
-            .inputs(ore(carbon.name) * carbon.equivalent(2))
-            .outputs(metaitem('dustSilicon'))
-            .fluidOutputs(fluid('carbon_monoxide') * 2000)
-            .EUt(30)
-            .duration(300)
-            .buildAndRegister()
-
-    ARC_FURNACE.recipeBuilder()
-            .notConsumable(fluid('air') * 1000)
-            .inputs(ore('dustSiliconDioxide') * 3)
-            .inputs(ore(carbon.name) * carbon.equivalent(3))
-            .circuitMeta(2)
-            .outputs(metaitem('dustSiliconCarbide') * 2)
-            .fluidOutputs(fluid('carbon_monoxide') * 2000)
-            .EUt(60)
-            .duration(300)
-            .buildAndRegister()
+                ARC_FURNACE.recipeBuilder()
+                        .circuitMeta(2)
+                        .fluidInputs(fluid('air') * 100)
+                        .inputs(ore(quartz) * 3)
+                        .inputs(ore(carbon.name) * carbon.equivalent(3))
+                        .outputs(metaitem('dustSiliconCarbide') * 2)
+                        .fluidOutputs(fluid('carbon_monoxide') * 2000)
+                        .EUt(120)
+                        .duration(200)
+                        .buildAndRegister()
+        }
 }
 
 ARC_FURNACE.recipeBuilder()

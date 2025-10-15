@@ -9,6 +9,9 @@ TUBE_FURNACE = recipemap('tube_furnace')
 
 // PEMFCs
 
+// Carbon Fiber Mesh * 1
+mods.gregtech.compressor.removeByInput(2, [metaitem('carbon.fibers') * 2], null)
+
 SPINNING.recipeBuilder()
     .inputs(metaitem('carbon.fibers') * 16)
     .outputs(metaitem('carbon.mesh'))

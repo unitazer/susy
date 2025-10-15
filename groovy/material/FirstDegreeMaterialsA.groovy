@@ -3265,7 +3265,7 @@ class FirstDegreeMaterialsA {
         ManganeseIIChloride = new Material.Builder(8581, SuSyUtility.susyId("manganese_ii_chloride"))
                 .dust()
                 .components(Manganese, Chlorine * 2)
-                .colorAverage()
+                .color(0xe4aef2)
                 .build()
 
         ChloroplatinicAcidSolution = new Material.Builder(8582, SuSyUtility.susyId("chloroplatinic_acid_solution"))
