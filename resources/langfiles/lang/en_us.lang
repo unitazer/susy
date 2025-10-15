@@ -2062,6 +2062,7 @@ susy.material.heavy_atmospheric_overheads=Heavy Atmospheric Overheads
 susy.material.light_atmospheric_overheads=Light Atmospheric Overheads
 susy.material.hydrotreating_catalyst=Hydrotreating Catalyst
 susy.material.supported_nickel=Supported Nickel
+susy.material.watts_bath_electrolyte=Watts Bath Electrolyte
 susy.material.debutanized_naphtha=Debutanized Naphtha
 susy.material.sulfuric_debutanized_naphtha=Sulfuric Debutanized Naphtha
 susy.material.sulfuric_fuel_gas=Sulfuric Fuel Gas

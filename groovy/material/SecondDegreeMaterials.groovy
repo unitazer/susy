@@ -461,7 +461,13 @@ class SecondDegreeMaterials {
                 .flags(GENERATE_CATALYST_BED)
                 .build()
 
-        // FREE ID: 13073
+        WattsBathElectrolyte = new Material.Builder(13073, SuSyUtility.susyId('watts_bath_electrolyte'))
+                .liquid()
+                .components(NickelSulfateSolution * 6, NickelChlorideSolution * 1, BoricAcid * 1)
+                .colorAverage()
+                .build()
+
+        WattsBathElectrolyte.setFormula('(NiSO4)6(NiCl2)(H3BO3)(H2O)7', true)
 
         DilutedSodiumChlorateSolution = new Material.Builder(13074, SuSyUtility.susyId('diluted_sodium_chlorate_solution'))
                 .liquid()
