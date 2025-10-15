@@ -110,7 +110,17 @@ MIXER.recipeBuilder()
     .inputs(ore('dustBoron') * 1)
     .outputs(metaitem('dustNeodymiumAlloy') * 17)
     .duration(400)
-    .EUt(256)
+    .EUt(1920)
+    .buildAndRegister();
+
+// Samarium magnets (LuV)
+
+MIXER.recipeBuilder()
+    .inputs(ore('dustSamarium'))
+    .inputs(ore('dustCobalt') * 5)
+    .outputs(metaitem('dustSamariumAlloy') * 6)
+    .duration(400)
+    .EUt(7680)
     .buildAndRegister();
 
 ELECTROLYZER.recipeBuilder()

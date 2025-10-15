@@ -1440,7 +1440,9 @@ class OrganicChemistryMaterials {
                 .components(Carbon * 5, Hydrogen * 8)
                 .color(0x1f1f1f)
                 .build()
-
+        
+        Polyisoprene.setFormula('[C5H8]n', true)
+        
         Chloroethane = new Material.Builder(15229, SuSyUtility.susyId('chloroethane'))
                 .gas()
                 .components(Carbon * 2, Hydrogen * 5, Chlorine * 1)
@@ -2618,7 +2620,9 @@ class OrganicChemistryMaterials {
                 .components(Isoprene)
                 .color(0x121212)
                 .build()
-
+        
+        CompoundedPolyisoprene.setFormula('[C5H8]n', true)
+        
         CompoundedStyreneIsopreneRubber = new Material.Builder(15412, SuSyUtility.susyId('compounded_styrene_isoprene_rubber'))
                 .dust()
                 .components(Isoprene * 3, Styrene * 1)

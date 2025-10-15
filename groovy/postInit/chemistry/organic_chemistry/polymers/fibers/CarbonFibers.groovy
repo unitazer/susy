@@ -90,3 +90,10 @@ TUBE_FURNACE.recipeBuilder()
     .duration(300)
     .EUt(1920)
     .buildAndRegister()
+
+// Raw Carbon Fibers * 1
+mods.gregtech.autoclave.removeByInput(30, [metaitem('dustCarbon') * 4], [fluid('plastic') * 36])
+// Raw Carbon Fibers * 2
+mods.gregtech.autoclave.removeByInput(120, [metaitem('dustCarbon') * 4], [fluid('polytetrafluoroethylene') * 18])
+// Raw Carbon Fibers * 4
+mods.gregtech.autoclave.removeByInput(480, [metaitem('dustCarbon') * 4], [fluid('epoxy') * 9])

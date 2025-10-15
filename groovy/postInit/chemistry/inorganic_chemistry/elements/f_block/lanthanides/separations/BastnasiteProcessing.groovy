@@ -186,7 +186,7 @@ MIXER_SETTLER.recipeBuilder()
     // Pr: 0.04
     // Nd: 0.108
 
-    LCR.recipeBuilder()
+    CRYSTALLIZER.recipeBuilder()
         .inputs(ore('dustAmmoniumCarbonate') * 8)
         .fluidInputs(fluid('ammonia_solution') * 544)
         .fluidInputs(fluid('bast_lree_concentrate') * 1000)
