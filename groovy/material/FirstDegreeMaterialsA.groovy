@@ -3836,7 +3836,7 @@ class FirstDegreeMaterialsA {
 
         LEU235Dioxide.setFormula("UO2", true)
 
-        LEU235Dioxide.setProperty(SCPropertyKey.FISSION_FUEL, FissionFuelProperty.builder(LEU235Dioxide.getRegistryName(), 1500, 100000, 3.5)
+        LEU235Dioxide.setProperty(SCPropertyKey.FISSION_FUEL, FissionFuelProperty.builder(LEU235Dioxide.getRegistryName(), 1500, 22000000, 3.5)
                 .fastNeutronCaptureCrossSection(0.4)
                 .fastNeutronFissionCrossSection(0.2)
                 .slowNeutronCaptureCrossSection(1.8)
@@ -3856,7 +3856,7 @@ class FirstDegreeMaterialsA {
 
         HALEU235Dioxide.setFormula("UO2", true)
 
-        HALEU235Dioxide.setProperty(SCPropertyKey.FISSION_FUEL, FissionFuelProperty.builder(HALEU235Dioxide.getRegistryName(), 1600, 200000, 3)
+        HALEU235Dioxide.setProperty(SCPropertyKey.FISSION_FUEL, FissionFuelProperty.builder(HALEU235Dioxide.getRegistryName(), 1600, 44000000, 3)
                 .fastNeutronCaptureCrossSection(0.35)
                 .fastNeutronFissionCrossSection(0.175)
                 .slowNeutronCaptureCrossSection(1.9)
@@ -3877,7 +3877,7 @@ class FirstDegreeMaterialsA {
         HEU235Dioxide.setFormula("UO2", true)
 
         HEU235Dioxide.setProperty(SCPropertyKey.FISSION_FUEL,
-                FissionFuelProperty.builder(HEU235Dioxide.getRegistryName(), 1800, 400000, 2.5)
+                FissionFuelProperty.builder(HEU235Dioxide.getRegistryName(), 1800, 88000000, 2.5)
                         .fastNeutronCaptureCrossSection(0.3)
                         .fastNeutronFissionCrossSection(0.15)
                         .slowNeutronCaptureCrossSection(2)

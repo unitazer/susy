@@ -439,7 +439,7 @@ class FirstDegreeMaterialsB {
         MixedOxideFuel.setFormula("(U,Pu)O2", true)
 
         MixedOxideFuel.setProperty(SCPropertyKey.FISSION_FUEL,
-                FissionFuelProperty.builder(MixedOxideFuel.getRegistryName(), 1600, 60000, 1.5)
+                FissionFuelProperty.builder(MixedOxideFuel.getRegistryName(), 1600, 13200000, 1.5)
                         .fastNeutronCaptureCrossSection(0.5)
                         .fastNeutronFissionCrossSection(0.25)
                         .slowNeutronCaptureCrossSection(2.2)
