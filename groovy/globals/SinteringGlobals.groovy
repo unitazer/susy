@@ -1,11 +1,12 @@
 package globals
 
+import groovy.transform.TupleConstructor
+
 class SinteringGlobals {
 
-    public static void main (String[] args) {
+    public static void main (String[] args) {}
 
-    }
-
+    @TupleConstructor
     public static class Combustible {
         String name
         boolean isPlasma
@@ -13,39 +14,20 @@ class SinteringGlobals {
         int duration
         String byproduct
         int byproductAmount
-
-        Combustible(name, isPlasma, amountRequired, duration, byproduct, byproductAmount) {
-            this.name = name
-            this.isPlasma = isPlasma
-            this.amountRequired = amountRequired
-            this.duration = duration
-            this.byproduct = byproduct
-            this.byproductAmount = byproductAmount
-        }
     }
 
+    @TupleConstructor
     public static class Comburent {
         String name
         int amountRequired
         int duration
-
-        Comburent(name, amountRequired, duration) {
-            this.name = name
-            this.amountRequired = amountRequired
-            this.duration = duration
-        }
     }
 
+    @TupleConstructor
     public static class Blanket {
         String name
         int amountRequired
         int duration
-
-        Blanket(name, amountRequired, duration) {
-            this.name = name
-            this.amountRequired = amountRequired
-            this.duration = duration
-        }
     }
 
     public static sintering_fuels = [

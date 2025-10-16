@@ -1,19 +1,18 @@
 package globals
 
+import groovy.transform.TupleConstructor
+
 import com.cleanroommc.groovyscript.api.IIngredient
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.fluids.store.FluidStorage;
 import gregtech.api.unification.material.properties.*
 import gregtech.api.unification.material.Material;
 
-
 import static gregtech.api.fluids.FluidConstants.*;
 
 class Globals {
 
-    public static void main (String[] args) {
-
-    }
+    public static void main (String[] args) {}
 
     public static voltageTiers = ["ulv", "lv", "mv", "hv", "ev", "iv", "luv", "zpm", "uv", "uhv", "uev", "uiv", "uxv", "opv", "max"];
 
@@ -44,15 +43,11 @@ class Globals {
         "biomesoplenty"
     ]
 
+    @TupleConstructor
     public static class InertGas {
         String name
         int amount_required
         int duration
-        InertGas(name, amount_required, duration) {
-            this.name = name
-            this.amount_required = amount_required
-            this.duration = duration
-        }
     }
 
     public static inertGases = [
@@ -61,15 +56,11 @@ class Globals {
         new InertGas('argon', 1000, 1)
     ]
 
+    @TupleConstructor
     public static class Lubricant {
         String name
         int amount_required
         double boost
-        Lubricant(name, amount_required, boost) {
-            this.name = name
-            this.amount_required = amount_required
-            this.boost = boost
-        }
     }
 
     public static lubricants = [
