@@ -17,8 +17,8 @@ Carbons['dustCoal', 'gemCoal', 'dustCharcoal', 'gemCharcoal'].each { input ->
     int CARBON_PROCESSED = 1200
     def output = Carbons[input.pyrolysis_product]
     PYROLYSE_OVEN.recipeBuilder()
-        .inputs(ore(input.name) * input.num_items_by_carbon(CARBON_PROCESSED))
-        .outputs(metaitem(output.name) * output.num_items_by_carbon(CARBON_PROCESSED))
+        .inputs(ore(input.name) * input.numItemsByCarbon(CARBON_PROCESSED))
+        .outputs(metaitem(output.name) * output.numItemsByCarbon(CARBON_PROCESSED))
         .fluidOutputs(fluid('coal_gas') * 2500)
         .fluidOutputs(fluid('coal_tar') * 2500)
         .duration(20)
@@ -30,8 +30,8 @@ Carbons['dustAnthracite', 'gemAnthracite'].each { input ->
     int CARBON_PROCESSED = 1400
     def output = Carbons[input.pyrolysis_product]
     PYROLYSE_OVEN.recipeBuilder()
-        .inputs(ore(input.name) * input.num_items_by_carbon(CARBON_PROCESSED))
-        .outputs(metaitem(output.name) * output.num_items_by_carbon(CARBON_PROCESSED))
+        .inputs(ore(input.name) * input.numItemsByCarbon(CARBON_PROCESSED))
+        .outputs(metaitem(output.name) * output.numItemsByCarbon(CARBON_PROCESSED))
         .fluidOutputs(fluid('coal_gas') * 3200)
         .fluidOutputs(fluid('coal_tar') * 3200)
         .duration(20)
@@ -43,8 +43,8 @@ Carbons['dustLignite', 'gemLignite'].each { input ->
     int CARBON_PROCESSED = 400
     def output = Carbons[input.pyrolysis_product]
     PYROLYSE_OVEN.recipeBuilder()
-        .inputs(ore(input.name) * input.num_items_by_carbon(CARBON_PROCESSED))
-        .outputs(metaitem(output.name) * output.num_items_by_carbon(CARBON_PROCESSED))
+        .inputs(ore(input.name) * input.numItemsByCarbon(CARBON_PROCESSED))
+        .outputs(metaitem(output.name) * output.numItemsByCarbon(CARBON_PROCESSED))
         .fluidOutputs(fluid('creosote') * 1600)
         .fluidOutputs(fluid('monoxide_rich_syngas') * 2000)
         .duration(20)
