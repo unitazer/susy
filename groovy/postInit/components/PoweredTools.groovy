@@ -131,6 +131,7 @@ ItemStack withMaxChargeFromBattery(ItemStack tool, ItemStack battery) {
     return tool
 }
 
+// TODO: rework in future
 [metaitem('battery.re.mv.lithium'), metaitem('battery.re.mv.cadmium')].each { battery ->
     ASSEMBLER.recipeBuilder()
         .inputs(ore('gearSmallAluminium') * 2)
