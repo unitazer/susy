@@ -1,10 +1,9 @@
-import globals.BatteryGlobals
+import globals.Batteries
 import postInit.utils.RecyclingHelper
 import gregtech.api.GTValues
 
 import gregtech.api.capability.GregtechCapabilities
 import gregtech.api.capability.IElectricItem
-import gregtech.api.capability.impl.ElectricItem
 
 log.infoMC("Running PoweredTools.groovy...")
 
@@ -18,7 +17,7 @@ def setChargeFromBatteryFn = { output, inputs, info ->
 }
 
 // LV Batteries
-BatteryGlobals.byTier(GTValues.LV).each { battery ->
+Batteries[GTValues.LV].each { battery ->
     // Item Magnet
     crafting.shapedBuilder()
         .name("gregtech:lv_magnet_${battery.name}")
@@ -77,7 +76,7 @@ BatteryGlobals.byTier(GTValues.LV).each { battery ->
 }
 
 // MV Batteries
-BatteryGlobals.byTier(GTValues.MV).each { battery ->
+Batteries[GTValues.MV].each { battery ->
     // Tricorder Scanner
     crafting.shapedBuilder()
         .name("gregtech:tricorder_${battery.name}")

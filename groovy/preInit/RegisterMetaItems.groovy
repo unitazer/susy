@@ -1,6 +1,6 @@
 package preInit
 
-import globals.BatteryGlobals
+import globals.Batteries
 import gregtech.api.GTValues
 import gregtech.api.GregTechAPI
 import gregtech.api.items.metaitem.ElectricStats
@@ -208,12 +208,12 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(3500, "copra")
 
         //Batteries 4000-4100
-        BatteryGlobals.byName('lead_acid').register(it, 4000);
+        Batteries['lead_acid'].register(it, 4000);
         addItem(4001, "cathode.lead");
         addItem(4002, "anode.lead");
         addItem(4003, "cathode.lead_paste");
         addItem(4004, "cathode.lead_frame");
-        BatteryGlobals.byName('ni_fe').register(it, 4005);
+        Batteries['ni_fe'].register(it, 4005);
         addItem(4006, "electrode.steel_frame");
         addItem(4007, "electrode.nickeled_steel_frame");
         // Battery hulls 4090-4100
