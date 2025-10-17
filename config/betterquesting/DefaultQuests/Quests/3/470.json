@@ -1,15 +1,15 @@
 {
   "preRequisites:11": [
-    468
+    469
   ],
   "properties:10": {
     "betterquesting:10": {
       "desc:8": "susy.quest.db.470.desc",
       "icon:10": {
-        "Damage:2": 736,
-        "id:8": "gregtech:meta_item_1",
+        "Damage:2": 4007,
+        "id:8": "gregtech:meta_item_2",
         "tag:10": {
-          "Charge:4": 420000
+          "Charge:4": 320000
         }
       },
       "name:8": "susy.quest.db.470.title"
@@ -21,10 +21,10 @@
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "Damage:2": 736,
-          "id:8": "gregtech:meta_item_1",
+          "Damage:2": 4007,
+          "id:8": "gregtech:meta_item_2",
           "tag:10": {
-            "Charge:4": 420000
+            "Charge:4": 320000
           }
         }
       },
