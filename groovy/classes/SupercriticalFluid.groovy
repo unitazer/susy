@@ -1,22 +1,13 @@
 package classes
 
-class ISupercriticalFluid {
-
+class SupercriticalFluid {
     public String supercritical_fluid;
     public String starting_gas;
     public int critical_temp;
     public int EUt;
     public int duration;
 
-    public static void main(String[] args){
-        //this is needed for some reason, otherwise it will error
-    }
-
-    public ISupercriticalFluid() {
-        //this is needed for some reason, otherwise it will error
-    }
-
-    public ISupercriticalFluid(String gas_starting, String fluid_supercritical) {
+    public SupercriticalFluid(String gas_starting, String fluid_supercritical) {
         this.starting_gas = gas_starting;
         this.supercritical_fluid = fluid_supercritical;
     }

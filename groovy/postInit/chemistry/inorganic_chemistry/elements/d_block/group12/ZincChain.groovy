@@ -1,5 +1,5 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 import static globals.SinteringGlobals.*
 import gregtech.api.recipes.ingredients.GTRecipeItemInput;
 
@@ -149,7 +149,7 @@ FLUIDIZEDBR.recipeBuilder()
         .buildAndRegister()
 
 // Conversion to metal via pyrometallurgy
-for (combustible in combustibles()) {
+for (combustible in Carbons.combustibles()) {
     ROASTER.recipeBuilder()
             .inputs(ore('dustZincite') * 2)
             .inputs(ore(combustible.name) * combustible.equivalent(1))
@@ -161,7 +161,7 @@ for (combustible in combustibles()) {
             .buildAndRegister()
 }
 
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
         ROASTER.recipeBuilder()
             .inputs(ore('dustZincOxide') * 2)
             .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(1))

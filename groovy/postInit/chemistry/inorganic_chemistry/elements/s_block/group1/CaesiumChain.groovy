@@ -1,5 +1,5 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
 MIXER = recipemap('mixer')
 FLOTATION = recipemap('froth_flotation')
@@ -77,7 +77,7 @@ CRYSTALLIZER.recipeBuilder()
 
 // Refining into metal
 
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     ROASTER.recipeBuilder()
     .inputs(ore('dustCaesiumAlum') * 24)
     .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(2))

@@ -1,5 +1,5 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
 ROASTER = recipemap('roaster')
 EBF = recipemap('electric_blast_furnace')
@@ -67,7 +67,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .duration(240)
         .buildAndRegister()
 
-for (combustible in combustibles()) {
+for (combustible in Carbons.combustibles()) {
     EBF.recipeBuilder()
         .inputs(ore('dustCobaltOxide') * 2)
         .inputs(ore(combustible.name) * combustible.equivalent(1))
@@ -88,7 +88,7 @@ def cobalt_matte_recipes = [
 ]
 
 cobalt_matte_recipes.forEach { recipe ->
-    combustibles().forEach { combustible ->
+    Carbons.combustibles().forEach { combustible ->
         PBF_RECIPES.recipeBuilder()
                 .inputs(ore(recipe[0]))
                 .inputs(ore(combustible.name) * (combustible.equivalent(2)))
