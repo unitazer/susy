@@ -305,7 +305,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustIronIiChloride') * 3)
     .fluidInputs(fluid('water') * 2000)
     .fluidOutputs(fluid('iron_ii_chloride_solution') * 2000)
-    .duration(20)
+    .duration(80)
     .EUt(30)
     .buildAndRegister()
 

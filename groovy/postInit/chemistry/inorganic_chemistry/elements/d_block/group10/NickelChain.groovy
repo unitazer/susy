@@ -185,7 +185,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('nickel_chloride_solution') * 1000)
     .duration(80)
-    .EUt(30)
+    .EUt(7)
     .buildAndRegister()
 
 // Ni(OH)2
