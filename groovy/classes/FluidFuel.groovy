@@ -1,6 +1,6 @@
 package classes
 
-class IFluidFuel{
+class FluidFuel{
     public String liquid_fuel;
     public String byproduct;
 
@@ -13,7 +13,7 @@ class IFluidFuel{
     public boolean gas_turbine = true;
     public boolean fuel_cell = false;
 
-    public IFluidFuel(String fuel_liquid, String byproduct_liquid) {
+    public FluidFuel(String fuel_liquid, String byproduct_liquid) {
         this.liquid_fuel = fuel_liquid;
         this.byproduct = byproduct_liquid;
     }

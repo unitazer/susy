@@ -1,6 +1,6 @@
 package classes
 
-class IWorkingFluid{
+class WorkingFluid{
     public String normal_fluid;
     public String heated_fluid;
     public String leftover_fluid;
@@ -14,7 +14,7 @@ class IWorkingFluid{
 
     public int temp;
 
-    public IWorkingFluid(String fluid_normal, String fluid_heated, String fluid_leftover) {
+    public WorkingFluid(String fluid_normal, String fluid_heated, String fluid_leftover) {
         this.normal_fluid = fluid_normal;
         this.heated_fluid = fluid_heated;
         this.leftover_fluid = fluid_leftover;

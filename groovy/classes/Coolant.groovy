@@ -1,6 +1,6 @@
 package classes
 
-class ICoolant {
+class Coolant {
     public String cold_coolant = "";
     public String warm_coolant = "";
 
@@ -9,7 +9,7 @@ class ICoolant {
     public int hx_time_factor = 10;
     public int circuit = 0;
 
-    public ICoolant(String coolant_normal, String coolant_warm){
+    public Coolant(String coolant_normal, String coolant_warm){
         this.cold_coolant = coolant_normal;
         this.warm_coolant = coolant_warm;
     }

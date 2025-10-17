@@ -1,12 +1,12 @@
 package classes
 
-class ICryoGas {
+class CryoGas {
     public String normal_gas;
     public String hot_high_pressure_gas;
     public String high_pressure_gas;
     public String cold_high_pressure_gas;
     public String liquid_gas;
-    //public static ArrayList<ICryoGas> cryo_gases = new ArrayList<ICryoGas>();
+    //public static ArrayList<CryoGas> cryo_gases = new ArrayList<CryoGas>();
 
     public int amount_to_use = 10000;
 
@@ -20,7 +20,7 @@ class ICryoGas {
 
     public int fluid_temperature = 300;
 
-    public ICryoGas(String gas_normal, String gas_hot_hp, String gas_hp, String gas_cold_hp, String gas_liquid) {
+    public CryoGas(String gas_normal, String gas_hot_hp, String gas_hp, String gas_cold_hp, String gas_liquid) {
         normal_gas = gas_normal;
         hot_high_pressure_gas = gas_hot_hp;
         high_pressure_gas = gas_hp;

@@ -1,6 +1,6 @@
 package classes
 
-class IRefrigerant{
+class Refrigerant{
     String normal_refrigerant;
     String hot_refrigerant;
     String comp_refrigerant;
@@ -14,7 +14,7 @@ class IRefrigerant{
 
     int hx_time_factor = 10;
 
-    public IRefrigerant(String refrigerant_normal, String refrigerant_hot, String refrigerant_comp, String refrigerant_cold) {
+    public Refrigerant(String refrigerant_normal, String refrigerant_hot, String refrigerant_comp, String refrigerant_cold) {
         normal_refrigerant = refrigerant_normal;
         hot_refrigerant = refrigerant_hot;
         comp_refrigerant = refrigerant_comp;

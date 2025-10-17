@@ -1,13 +1,13 @@
 package classes
 
-class IOreRock{
+class OreRock{
     public String input_rock;
     public String input_fluid;
     public String output_fluid;
     public int starting_tier;
     public def ore_lists;
 
-    public IOreRock(String rock, String inputFluid, String outputFluid, def oreLists, int startingTier){
+    public OreRock(String rock, String inputFluid, String outputFluid, def oreLists, int startingTier){
         this.input_rock = rock;
         this.input_fluid = inputFluid;
         this.output_fluid = outputFluid;
