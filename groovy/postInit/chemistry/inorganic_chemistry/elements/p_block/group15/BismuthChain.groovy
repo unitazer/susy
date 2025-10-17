@@ -1,5 +1,5 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
 ROASTER = recipemap('roaster')
 BR = recipemap('batch_reactor')
@@ -17,7 +17,7 @@ ROASTER.recipeBuilder()
     .duration(120)
     .buildAndRegister()
 
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     ROASTER.recipeBuilder()
         .inputs(ore('dustBismuthIiiOxide') * 5)
         .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(3))

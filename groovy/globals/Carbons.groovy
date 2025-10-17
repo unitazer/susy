@@ -2,35 +2,16 @@ package globals
 
 import groovy.transform.TupleConstructor
 
-class CarbonGlobals {
+import static globals.GroovyUtils.numItemsByProvider
 
-    public static void main (String[] args) {}
-
+class Carbons {
     // Anthracite coal value, so most recipes would require
     // equal amount of carbon/coke/anthracite and 2x coal
     static final int UNIVERSAL_COAL_EQUIVALENT = 90
 
-    trait Combustible {
-        int duration
-    }
-
+    trait Combustible { int duration }
     trait HighPurityCombustible extends Combustible {}
-
-    trait Pyrolyzable {
-        String pyrolysis_product
-    }
-
-    // Get number of items which would contatin %required% amount of
-    // material if single item has %provider% amount
-    // E.g. for 90 carbon this would yield 1 for dustCarbon or
-    // dustAnthracite and 2 for dustCharcoal or gemLigniteCoke
-    static int num_item_by_provider(int required, int provider) {
-        int result = required.intdiv(provider)
-        if (required % provider > 0) {
-            result += 1
-        }
-        return result
-    }
+    trait Pyrolyzable { String pyrolysis_product }
 
     @TupleConstructor
     public static class CarbonSource {
@@ -38,14 +19,14 @@ class CarbonGlobals {
         int carbon
         String byproduct
 
-        public int num_items_by_carbon(int required_carbon) {
-            return num_item_by_provider(required_carbon, this.carbon)
+        public int numItemsByCarbon(int required_carbon) {
+            return numItemsByProvider(required_carbon, this.carbon)
         }
 
         // Return the number of CarbonSource items with summary carbon content
         // equal to carbon content of %required_carbon_items% anthracite items
         public int equivalent(int required_carbon_items) {
-            return num_item_by_provider(required_carbon_items * UNIVERSAL_COAL_EQUIVALENT, this.carbon)
+            return numItemsByProvider(required_carbon_items * UNIVERSAL_COAL_EQUIVALENT, this.carbon)
         }
     }
 
@@ -109,11 +90,10 @@ class CarbonGlobals {
     ]
 
     static Map sourcesMap = sources.collectEntries{[it.name, it]}
-    public static def byName(String name) {sourcesMap[name] }
-    public static List byNames(List names) { sourcesMap.subMap(names)*.value }
+    public static def getAt(String name) { sourcesMap[name] }
+    public static List getAt(List names) { names.collect { sourcesMap[it] } }
 
     public static List combustibles() { sources.grep(Combustible) }
     public static List highPurityCombustibles() { sources.grep(HighPurityCombustible) }
     public static List dusts() { sources.grep { it.name.startsWith('dust') } }
-
 }

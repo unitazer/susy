@@ -1,5 +1,5 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
 ROASTER = recipemap('roaster')
 EBF = recipemap('electric_blast_furnace')
@@ -49,7 +49,7 @@ EBF.recipeBuilder()
         .blastFurnaceTemp(1370)
         .buildAndRegister()
 
-for (combustible in combustibles()) {
+for (combustible in Carbons.combustibles()) {
     EBF.recipeBuilder()
         .inputs(ore('dustMagnesia') * 2)
         .inputs(ore(combustible.name) * combustible.equivalent(1))
@@ -71,7 +71,7 @@ ROASTER.recipeBuilder()
         .buildAndRegister()
 
 //IG FARBEN CHLORINATION
-for (combustible in combustibles()) {
+for (combustible in Carbons.combustibles()) {
     REACTION_FURNACE.recipeBuilder()
         .inputs(ore('dustMagnesia') * 2)
         .inputs(ore(combustible.name) * combustible.equivalent(1))

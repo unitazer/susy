@@ -1,6 +1,6 @@
 import globals.Globals
+import globals.Carbons
 import static globals.SinteringGlobals.*
-import static globals.CarbonGlobals.*
 
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.Materials;
@@ -52,7 +52,7 @@ def quartz_dusts = [
 ]
 
 for (quartz in quartz_dusts) {
-        for (carbon in dusts()) {
+        for (carbon in Carbons.dusts()) {
                 ARC_FURNACE.recipeBuilder()
                         .circuitMeta(1)
                         .fluidInputs(fluid('air') * 100)
