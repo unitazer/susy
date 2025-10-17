@@ -1,7 +1,5 @@
 package globals
 
-import groovy.transform.TupleConstructor
-
 import com.cleanroommc.groovyscript.api.IIngredient
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.fluids.store.FluidStorage;
@@ -16,7 +14,6 @@ class Globals {
     public static voltAmps =        [7, 30, 120, 480, 1920, 7680, 30720, 122880, 491520, 1966080, 7864320, 31457280, 125829120, 503316480, 2013265920];
 
     public static dimensions = ["Overworld": 0, "Beneath": 10, "Nether": -1]
-
 
     public static solders = [
         'tin': 144,
@@ -39,26 +36,14 @@ class Globals {
         "biomesoplenty"
     ]
 
-    @TupleConstructor
-    public static class InertGas {
-        String name
-        int amount_required
-        int duration
-    }
-
+    record InertGas(String name, int amount_required, int duration) {}
     public static inertGases = [
         new InertGas('nitrogen', 8000, 4),
         new InertGas('helium', 4000, 2),
         new InertGas('argon', 1000, 1)
     ]
 
-    @TupleConstructor
-    public static class Lubricant {
-        String name
-        int amount_required
-        double boost
-    }
-
+    record Lubricant (String name, int amount_required, double boost) {}
     public static lubricants = [
         new Lubricant('lubricating_oil', 1, 1.1),
         new Lubricant('lubricant', 2, 1.2),
@@ -72,35 +57,35 @@ class Globals {
     ]
 
     public static int determineTemperatureGas(Material material) {
-    	if (material.getProperty(PropertyKey.FLUID) != null && material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.GAS) != null) {
-    		def current = material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.GAS).temperature
-  		if (current != -1) {
-    			return current
-    		}
-    	}
+        if (material.getProperty(PropertyKey.FLUID) != null && material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.GAS) != null) {
+            def current = material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.GAS).temperature
+          if (current != -1) {
+                return current
+            }
+        }
         BlastProperty property = material.getProperty(PropertyKey.BLAST)
-       	if (property == null) {
-        	return ROOM_TEMPERATURE
-    	} else {
-        	return property.getBlastTemperature() + GAS_TEMPERATURE_OFFSET
-    	}
+           if (property == null) {
+            return ROOM_TEMPERATURE
+        } else {
+            return property.getBlastTemperature() + GAS_TEMPERATURE_OFFSET
+        }
     }
 
     private static int determineTemperatureLiquid(Material material) {
-    	if (material.getProperty(PropertyKey.FLUID) != null && material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.LIQUID) != null) {
-    		def current = material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.LIQUID).temperature
-  		if (current != -1) {
-    			return current
-    		}
-    	}
+        if (material.getProperty(PropertyKey.FLUID) != null && material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.LIQUID) != null) {
+            def current = material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.LIQUID).temperature
+          if (current != -1) {
+                return current
+            }
+        }
         BlastProperty property = material.getProperty(PropertyKey.BLAST);
         if (property == null) {
-        	if (material.hasProperty(PropertyKey.DUST)) {
-           		return SOLID_LIQUID_TEMPERATURE;
-        	}
-        	return ROOM_TEMPERATURE;
+            if (material.hasProperty(PropertyKey.DUST)) {
+                   return SOLID_LIQUID_TEMPERATURE;
+            }
+            return ROOM_TEMPERATURE;
         } else {
-        	return property.getBlastTemperature() + LIQUID_TEMPERATURE_OFFSET
+            return property.getBlastTemperature() + LIQUID_TEMPERATURE_OFFSET
         }
     }
 }
