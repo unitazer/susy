@@ -1,9 +1,6 @@
 package globals
 
 class Petrochemistry {
-
-    public static void main (String[] args) {}
-
     public static class Oil {
         String name
         String brine

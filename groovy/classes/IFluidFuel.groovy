@@ -1,7 +1,6 @@
 package classes
 
 class IFluidFuel{
-
     public String liquid_fuel;
     public String byproduct;
 
@@ -13,14 +12,6 @@ class IFluidFuel{
     public boolean refined_fuel = false;
     public boolean gas_turbine = true;
     public boolean fuel_cell = false;
-
-    public static void main(String[] args){
-        //this is needed for some reason, otherwise it will error
-    }
-
-    public IFluidFuel() {
-        //this is needed for some reason, otherwise it will error
-    }
 
     public IFluidFuel(String fuel_liquid, String byproduct_liquid) {
         this.liquid_fuel = fuel_liquid;

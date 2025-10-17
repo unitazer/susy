@@ -1,7 +1,6 @@
 package classes
 
 class ICryoGas {
-
     public String normal_gas;
     public String hot_high_pressure_gas;
     public String high_pressure_gas;
@@ -20,14 +19,6 @@ class ICryoGas {
     public int duration_radiator = 100;
 
     public int fluid_temperature = 300;
-
-    public static void main(String[] args){
-        //this is needed for some reason, otherwise it will error
-    }
-
-    public ICryoGas() {
-        //this is needed for some reason, otherwise it will error
-    }
 
     public ICryoGas(String gas_normal, String gas_hot_hp, String gas_hp, String gas_cold_hp, String gas_liquid) {
         normal_gas = gas_normal;

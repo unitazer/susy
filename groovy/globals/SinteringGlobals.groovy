@@ -3,9 +3,6 @@ package globals
 import groovy.transform.TupleConstructor
 
 class SinteringGlobals {
-
-    public static void main (String[] args) {}
-
     @TupleConstructor
     public static class Combustible {
         String name

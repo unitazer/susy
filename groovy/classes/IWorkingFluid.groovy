@@ -1,7 +1,6 @@
 package classes
 
 class IWorkingFluid{
-
     public String normal_fluid;
     public String heated_fluid;
     public String leftover_fluid;
@@ -14,14 +13,6 @@ class IWorkingFluid{
     public int efficiency = 1;
 
     public int temp;
-
-    public static void main(String[] args){
-        //this is needed for some reason, otherwise it will error
-    }
-
-    public IWorkingFluid() {
-        //this is needed for some reason, otherwise it will error
-    }
 
     public IWorkingFluid(String fluid_normal, String fluid_heated, String fluid_leftover) {
         this.normal_fluid = fluid_normal;

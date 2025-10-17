@@ -3,9 +3,6 @@ package globals
 import groovy.transform.TupleConstructor
 
 class CarbonGlobals {
-
-    public static void main (String[] args) {}
-
     // Anthracite coal value, so most recipes would require
     // equal amount of carbon/coke/anthracite and 2x coal
     static final int UNIVERSAL_COAL_EQUIVALENT = 90
