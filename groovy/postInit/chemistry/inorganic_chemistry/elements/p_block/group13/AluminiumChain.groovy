@@ -1,5 +1,5 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
 ROASTER = recipemap('roaster')
 CENTRIFUGE = recipemap('centrifuge')
@@ -102,27 +102,18 @@ EBF.recipeBuilder()
 
 // Electrolysis
 
-ELECTROLYTIC_CELL.recipeBuilder()
-    .notConsumable(fluid('cryolite') * 2880)
-    .inputs(ore('dustAlumina') * 10)
-    .notConsumable(ore('dustAluminiumTrifluoride') * 4)
-    .inputs(ore('dustCoke') * 3)
-    .fluidOutputs(fluid('carbon_dioxide') * 3000)
-    .outputs(metaitem('ingotAluminium') * 4)
-    .duration(300)
-    .EUt(40)
-    .buildAndRegister()
-
-ELECTROLYTIC_CELL.recipeBuilder()
-    .notConsumable(fluid('cryolite') * 2880)
-    .inputs(ore('dustAlumina') * 10)
-    .notConsumable(ore('dustAluminiumTrifluoride') * 4)
-    .inputs(ore('dustAnyPurityCarbon') * 3)
-    .fluidOutputs(fluid('carbon_dioxide') * 3000)
-    .outputs(metaitem('ingotAluminium') * 4)
-    .duration(100)
-    .EUt(40)
-    .buildAndRegister()
+Carbons.dusts().grep(Carbons.HighPurityCombustible).each { carbon ->
+    ELECTROLYTIC_CELL.recipeBuilder()
+        .notConsumable(fluid('cryolite') * 2880)
+        .inputs(ore('dustAlumina') * 10)
+        .notConsumable(ore('dustAluminiumTrifluoride') * 4)
+        .inputs(ore(carbon.name) * carbon.equivalent(3))
+        .fluidOutputs(fluid('carbon_dioxide') * 3000)
+        .outputs(metaitem('ingotAluminium') * 4)
+        .duration(200 * carbon.duration - 100) // makes 100 for carbon / high purity carbon and 200 for coke / green coke
+        .EUt(40)
+        .buildAndRegister()
+}
 
 // Production of cryolite
 
@@ -185,7 +176,7 @@ CENTRIFUGE.recipeBuilder()
     .outputs(metaitem('leached_red_mud_slag'))
     .duration(100)
     .EUt(Globals.voltAmps[3])
-.buildAndRegister()
+    .buildAndRegister()
 
 BR.recipeBuilder()
     .fluidInputs(fluid('sulfuric_acid') * 3000)

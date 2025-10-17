@@ -1,5 +1,5 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
 FORGE_HAMMER = recipemap('forge_hammer')
 RF = recipemap('reaction_furnace')
@@ -34,22 +34,13 @@ mods.gregtech.electric_blast_furnace.removeByInput(1920, [metaitem('dustWroughtI
 
 
 // Should replace inner classes with closures if possible
-class BlastableIron {
-    String name
-    int amount_required
-    int amount_produced
+record BlastableIron(
+    String name,
+    int amount_required,
+    int amount_produced,
     //In liters
-    int reductant_required
-    int duration
-
-    BlastableIron(name, amount_required, amount_produced, reductant_required, duration) {
-        this.name = name
-        this.amount_required = amount_required
-        this.amount_produced = amount_produced
-        this.reductant_required = reductant_required
-        this.duration = duration
-    }
-}
+    int reductant_required,
+    int duration) {}
 
 // Should replace inner classes with closures if possible
 class ReductantIron {
@@ -57,6 +48,7 @@ class ReductantIron {
     String byproduct
     int amount_required
     int byproduct_amount
+
     ReductantIron(name, byproduct, amount_required, byproduct_amount) {
         this.name = name
         this.byproduct = byproduct
@@ -89,15 +81,13 @@ def reductants = [
     new ReductantIron('hydrogen', 'dense_steam', 2, 1)
 ]
 
-def combustibles = combustibles()
-
 furnace.add(metaitem('dustBrownLimonite'), metaitem('dustBandedIron'))
 furnace.add(metaitem('dustYellowLimonite'), metaitem('dustBandedIron'))
 
 // Primary reduction
 
 for (blastable in blastables) {
-    for (combustible in combustibles) {
+    for (combustible in Carbons.combustibles()) {
         // Bessemer process
         PBF_RECIPES.recipeBuilder()
             .inputs(ore(blastable.name) * blastable.amount_required)
@@ -152,7 +142,7 @@ for (blastable in blastables) {
         .buildAndRegister()
 
     // Puddling
-    for (combustible in combustibles) {
+    for (combustible in Carbons.combustibles()) {
         REVERBERATORY_FURNACE.recipeBuilder()
             .inputs(ore('ingotPigIron') * 16)
             .inputs(ore(combustible.name) * combustible.equivalent(1))
@@ -162,7 +152,7 @@ for (blastable in blastables) {
     }
 
     // Cemented steel
-    for (combustible in combustibles) {
+    for (combustible in Carbons.combustibles()) {
         PBF_RECIPES.recipeBuilder()
             .inputs(item('minecraft:iron_ingot'))
             .inputs(ore(combustible.name) * combustible.equivalent(1))

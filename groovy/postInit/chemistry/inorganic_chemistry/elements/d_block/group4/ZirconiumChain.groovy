@@ -1,6 +1,7 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
+CVD = recipemap('cvd')
 MIXER = recipemap('mixer')
 FF = recipemap('froth_flotation')
 CLARIFIER = recipemap('clarifier')
@@ -84,7 +85,7 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .buildAndRegister()
 
 // Carbochlorination (100%)
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     FLUIDIZED_BED_REACTOR.recipeBuilder()
         .inputs(ore('dustConcentrateZircon'))
         .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(4))
@@ -146,7 +147,7 @@ BR.recipeBuilder()
     .buildAndRegister()
 
 // Carbochlorination (100%)
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     FLUIDIZED_BED_REACTOR.recipeBuilder()
         .inputs(ore('dustBaddeleyite'))
         .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(2))
@@ -207,7 +208,7 @@ BR.recipeBuilder()
     .duration(60)
     .buildAndRegister()
 
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     FLUIDIZED_BED_REACTOR.recipeBuilder()
         .inputs(ore('dustZirconiumDioxide') * 3)
         .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(2))

@@ -2,7 +2,7 @@ package globals
 
 import groovy.transform.TupleConstructor
 
-class CarbonGlobals {
+class Carbons {
     // Anthracite coal value, so most recipes would require
     // equal amount of carbon/coke/anthracite and 2x coal
     static final int UNIVERSAL_COAL_EQUIVALENT = 90

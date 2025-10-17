@@ -1,5 +1,5 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
 //REVERBERATORY_FURNACE = recipemap('reverberatory_furnace')
 EBF = recipemap('electric_blast_furnace')
@@ -175,7 +175,7 @@ CLARIFIER.recipeBuilder()
     .duration(20)
     .buildAndRegister()
 
-for (combustible in combustibles()) {
+for (combustible in Carbons.combustibles()) {
     REVERBERATORY_FURNACE.recipeBuilder()
         .inputs(ore('dustCopperConcentrate') * 4)
         .inputs(ore(combustible.name) * combustible.equivalent(1))

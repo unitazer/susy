@@ -1,6 +1,7 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
+CVD = recipemap('cvd')
 MIXER = recipemap('mixer')
 FF = recipemap('froth_flotation')
 CLARIFIER = recipemap('clarifier')
@@ -120,7 +121,7 @@ BR.recipeBuilder()
 
 // Chloride Ilmenite Process
 
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
         FLUIDIZED_BED_REACTOR.recipeBuilder()
         .fluidInputs(fluid('chlorine') * 3000)
         .inputs(ore('dustIlmenite'))

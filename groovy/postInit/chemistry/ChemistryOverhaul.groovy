@@ -1,5 +1,5 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
 import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.material.MarkerMaterials;
@@ -93,7 +93,7 @@ DISTILLERY.recipeBuilder()
 
 // Carbon Monoxide roaster
 // TODO: set output according to carbon amount?
-for (carbon in sources) {
+for (carbon in Carbons.sources) {
     ROASTER.recipeBuilder()
         .fluidInputs(fluid('oxygen') * 1000)
         .inputs(ore(carbon.name) * carbon.equivalent(1))
@@ -106,7 +106,7 @@ for (carbon in sources) {
 
 // Carbon Dioxide roaster
 // TODO: set output according to carbon amount?
-for (carbon in sources) {
+for (carbon in Carbons.sources) {
     ROASTER.recipeBuilder()
         .fluidInputs(fluid('oxygen') * 2000)
         .inputs(ore(carbon.name) * carbon.equivalent(1))
@@ -117,9 +117,8 @@ for (carbon in sources) {
         .buildAndRegister()
 }
 
-//CARBON DISULFIDE
-
-for (carbon in sources) {
+// CS2
+for (carbon in Carbons.sources) {
     ROASTER.recipeBuilder()
         .inputs(ore(carbon.name) * carbon.equivalent(1))
         .inputs(ore('dustAnyPuritySulfur') * 2)
@@ -1517,7 +1516,7 @@ DISTILLERY.recipeBuilder()
 
 //acetylene
 
-for (carbon in sources) {
+for (carbon in Carbons.sources) {
     ADVANCED_ARC_FURNACE.recipeBuilder()
         .inputs(ore('dustQuicklime') * 2)
         .inputs(ore(carbon.name) * carbon.equivalent(3))

@@ -6,7 +6,7 @@ import gregtech.api.unification.ore.OrePrefix;
 
 import static gregtech.api.unification.material.Materials.*;
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
 EBF = recipemap('electric_blast_furnace')
 ROASTER = recipemap('roaster')
@@ -18,7 +18,7 @@ ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
 
 //PYROMETALLUGRICAL METHODS (75%)
 
-for (combustible in combustibles()) {
+for (combustible in Carbons.combustibles()) {
     EBF.recipeBuilder()
         .inputs(ore('dustPyrolusite'))
         .inputs(ore(combustible.name) * combustible.equivalent(2))
@@ -39,7 +39,7 @@ ROASTER.recipeBuilder()
     .EUt(Globals.voltAmps[1])
     .buildAndRegister()
 
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     ROASTER.recipeBuilder()
         .inputs(ore('dustCrudeManganeseIiOxide') * 2)
         .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(1))
@@ -53,19 +53,11 @@ for (highPurityCombustible in highPurityCombustibles()) {
 
 //PARTIAL REDUCTION OF PYROLUSITE FOR SULFURIC ACID LEACH
 // Should replace inner classes with closures if possible
-class ReductantManganese {
-    String name
-    String byproduct
-    int amount_required
-    int byproduct_amount
-
-    ReductantManganese(name, byproduct, amount_required, byproduct_amount) {
-        this.name = name
-        this.byproduct = byproduct
-        this.amount_required = amount_required
-        this.byproduct_amount = byproduct_amount
-    }
-}
+record ReductantManganese(
+    String name,
+    String byproduct,
+    int amount_required,
+    int byproduct_amount) {}
 
 def hydrocarbonReductants = [
     new ReductantManganese('heavy_gas_oil', 'carbon_dioxide', 67, 288),

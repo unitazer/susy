@@ -1,23 +1,12 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
 
-MIXER = recipemap('mixer')
-FF = recipemap('froth_flotation')
-CLARIFIER = recipemap('clarifier')
-ELECTROMAGNETIC_SEPARATOR = recipemap('electromagnetic_separator')
 BR = recipemap('batch_reactor')
-CSTR = recipemap('continuous_stirred_tank_reactor')
-SIFTER = recipemap('sifter')
+CVD = recipemap('cvd')
 FLUIDIZED_BED_REACTOR = recipemap('fluidized_bed_reactor')
-VACUUM_FREEZER = recipemap('vacuum_freezer')
-DISTILLATION_TOWER = recipemap('distillation_tower')
 VACUUM_CHAMBER = recipemap('vacuum_chamber')
 MACERATOR = recipemap('macerator')
-FIXED_BED_REACTOR = recipemap('fixed_bed_reactor')
 EBF = recipemap('electric_blast_furnace')
-DISTILLERY = recipemap('distillery')
-GRAVITY_SEPARATOR = recipemap('gravity_separator')
-ADVANCED_ARC_FURNACE = recipemap('advanced_arc_furnace')
 ROASTER = recipemap('roaster')
 MIXER_SETTLER = recipemap('mixer_settler')
 
@@ -40,7 +29,7 @@ ROASTER.recipeBuilder()
     .duration(100)
     .buildAndRegister()
 
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     FLUIDIZED_BED_REACTOR.recipeBuilder()
         .inputs(ore('dustHafniumDioxide') * 3)
         .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(2))
