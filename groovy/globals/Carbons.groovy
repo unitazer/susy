@@ -106,8 +106,8 @@ class Carbons {
     ]
 
     static Map sourcesMap = sources.collectEntries{[it.name, it]}
-    public static def byName(String name) {sourcesMap[name] }
-    public static List byNames(List names) { sourcesMap.subMap(names)*.value }
+    public static def getAt(String name) { sourcesMap[name] }
+    public static List getAt(List names) { names.collect { sourcesMap[it] } }
 
     public static List combustibles() { sources.grep(Combustible) }
     public static List highPurityCombustibles() { sources.grep(HighPurityCombustible) }
