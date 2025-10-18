@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 FLBR = recipemap('fluidized_bed_reactor')
 PHASE_SEPARATOR = recipemap('phase_separator')
@@ -20,7 +20,7 @@ FLBR.recipeBuilder() // 100 -> acrylonitrile, 1 -> acetonitrile, 6 -> HCN in SOH
     .fluidInputs(fluid('oxygen') * (300 + 5 + 36))
     .fluidOutputs(fluid('propylene_ammoxidation_mixture') * (400 + 5 + 54))
     .duration(10)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 PHASE_SEPARATOR.recipeBuilder()
@@ -37,7 +37,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('acrylonitrile') * 1000)
     .fluidOutputs(fluid('gtfo_hydrogen_cyanide') * 180)
     .duration(10)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 // Polyacrylonitrile production
@@ -50,7 +50,7 @@ POLYMERIZATION.recipeBuilder()
     .outputs(metaitem('dustPolyacrylonitrile'))
     .fluidOutputs(fluid('wastewater') * 1000)
     .duration(100)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 SIFTER.recipeBuilder()
@@ -59,7 +59,7 @@ SIFTER.recipeBuilder()
     .fluidInputs(fluid('dimethylformamide') * 3000)
     .fluidOutputs(fluid('polyacrylonitrile_solution') * 3000)
     .duration(100)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 CHEMICAL_BATH.recipeBuilder()
@@ -70,7 +70,7 @@ CHEMICAL_BATH.recipeBuilder()
     .fluidOutputs(fluid('dimethylformamide') * 3000)
     .fluidOutputs(fluid('wastewater') * 100)
     .duration(300)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 // Conversion to carbon fibers
@@ -80,7 +80,7 @@ TUBE_FURNACE.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 2000)
     .outputs(metaitem('fiber.oxidized_polyacrylonitrile') * 16)
     .duration(300)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 TUBE_FURNACE.recipeBuilder()
@@ -88,7 +88,7 @@ TUBE_FURNACE.recipeBuilder()
     .inputs(metaitem('fiber.oxidized_polyacrylonitrile') * 16)
     .outputs(metaitem('carbon.fibers') * 16)
     .duration(300)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 // Raw Carbon Fibers * 1

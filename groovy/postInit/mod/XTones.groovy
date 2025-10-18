@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 crafting.replaceShaped('xtones:zome', item('xtones:zome') * 8, [
         [item('xtones:base'), item('xtones:base'), item('xtones:base')],
@@ -43,7 +43,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(item('minecraft:stone_slab') * 6)
         .outputs(item('xtones:base') * 32)
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 for (var i = 1; i < 17; i++) {
@@ -53,7 +53,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zyth', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -62,7 +62,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:ztyl', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -71,7 +71,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zorg', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -80,7 +80,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zone', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -89,7 +89,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zome', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -98,7 +98,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zoea', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -107,7 +107,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zkul', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -116,7 +116,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zion', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -125,7 +125,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zeta', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -134,7 +134,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zest', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -143,7 +143,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zech', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -152,7 +152,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:zane', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -161,7 +161,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:vena', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -170,7 +170,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:vect', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -179,7 +179,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:tank', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -188,7 +188,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:sync', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -197,7 +197,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:sols', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -206,7 +206,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:roen', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -215,7 +215,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:reed', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -224,7 +224,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:reds', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -233,7 +233,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:myst', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -242,7 +242,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:mint', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -251,7 +251,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:lave', i - 1) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -260,7 +260,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:lair', i - 17) * 8)
             .circuitMeta(i)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -269,7 +269,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:kryp', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -278,7 +278,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:korp', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -287,7 +287,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:jelt', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -296,7 +296,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:iszm', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -305,7 +305,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:glaxx', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -314,7 +314,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:fort', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -323,7 +323,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:cray', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -332,7 +332,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:bitt', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -341,7 +341,7 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:azur', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     ASSEMBLER.recipeBuilder()
@@ -350,6 +350,6 @@ for (var i = 1; i < 17; i++) {
             .outputs(item('xtones:agon', i - 17) * 8)
             .circuitMeta(i + 16)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 }

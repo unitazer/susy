@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 MACERATOR = recipemap('macerator');
 MIXER = recipemap('mixer');
@@ -11,7 +11,7 @@ MACERATOR.recipeBuilder()
     .inputs(item('susy:resource_block:1'))
     .outputs(metaitem('dustCaliche') * 4)
     .duration(80)
-    .EUt(GTValues.VA[GTValues.ULV])
+    .EUt(VA[ULV])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -20,7 +20,7 @@ MIXER.recipeBuilder()
     .outputs(metaitem('dustLimestoneTailings') * 2)
     .fluidOutputs(fluid('caliche_leach') * 500)
     .duration(80)
-    .EUt(GTValues.VA[GTValues.ULV])
+    .EUt(VA[ULV])
     .buildAndRegister()
 
 EVAPORATION_POOL.recipeBuilder()
@@ -36,7 +36,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('sodium_bisulfite_solution') * 150)
     .fluidOutputs(fluid('iodide_concentrate') * 275)
     .duration(5)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -45,12 +45,12 @@ BR.recipeBuilder()
     .outputs(metaitem('dustIodine') * 3)
     .fluidOutputs(fluid('acidic_wastewater') * 15750)
     .duration(100)
-    .EUt(GTValues.VA[GTValues.MV])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 FLUID_SOLIDIFIER.recipeBuilder()
     .fluidInputs(fluid('iodine') * 144)
     .outputs(metaitem('dustIodine'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()

@@ -1,5 +1,5 @@
 import postInit.utils.RecyclingHelper
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ingredients.nbtmatch.*
 
 import static gregtech.api.unification.material.Materials.*;
@@ -30,7 +30,7 @@ CUTTING_MACHINE = recipemap('cutter')
         .circuitMeta(22)
         .outputs(item('supercritical:gas_centrifuge_casing') * 5)
         .duration(240)
-        .EUt(GTValues.VA[GTValues.EV])
+        .EUt(VA[EV])
         .buildAndRegister()
 
     RecyclingHelper.handleRecycling(item('supercritical:gas_centrifuge_casing') * 5, [
@@ -53,7 +53,7 @@ CUTTING_MACHINE = recipemap('cutter')
         .outputs(item('supercritical:nuclear_casing', 1))
         .circuitMeta(22)
         .duration(240)
-        .EUt(GTValues.VA[GTValues.EV])
+        .EUt(VA[EV])
         .buildAndRegister()
 
     RecyclingHelper.handleRecycling(item('supercritical:nuclear_casing', 1), [
@@ -74,7 +74,7 @@ CUTTING_MACHINE = recipemap('cutter')
         .circuitMeta(22)
         .outputs(metaitem('supercritical:gas_centrifuge'))
         .duration(240)
-        .EUt(GTValues.VA[GTValues.EV])
+        .EUt(VA[EV])
         .buildAndRegister()
 
     RecyclingHelper.handleRecycling(metaitem('supercritical:gas_centrifuge'), [
@@ -101,7 +101,7 @@ def fuels = [
         .inputs(ore('roundStainlessSteel') * 2)
         .outputs(item('supercritical:supercritical_meta_item', 1))
         .duration(200)
-        .EUt(GTValues.VA[GTValues.MV])
+        .EUt(VA[MV])
         .buildAndRegister()
 
     RecyclingHelper.handleRecycling(item('supercritical:supercritical_meta_item', 1),
@@ -115,14 +115,14 @@ for (fuel in fuels) {
         .inputs(ore('dust' + fuel) * 3)
         .outputs(metaitem('fuelPelletRaw' + fuel))
         .duration(25)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister()
 
     SINTERING_OVEN.recipeBuilder()
         .inputs(ore('fuelPelletRaw' + fuel))
         .outputs(metaitem('fuelPellet' + fuel))
         .duration(15)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister()
 
     CANNER.recipeBuilder()
@@ -130,7 +130,7 @@ for (fuel in fuels) {
         .inputs(item('supercritical:supercritical_meta_item', 1))
         .outputs(metaitem('fuelRod' + fuel))
         .duration(300)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister()
 }
 
@@ -146,7 +146,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(31)
     .outputs(metaitem('supercritical:fission_reactor'))
     .duration(240)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('supercritical:fission_reactor'), [
@@ -166,7 +166,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('screwReactorSteel') * 24)
     .outputs(item('supercritical:fission_casing'))
     .duration(320)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(item('supercritical:fission_casing'), [
@@ -183,7 +183,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(1)
     .outputs(item('supercritical:fission_casing', 1))
     .duration(320)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(item('supercritical:fission_casing', 1), [
@@ -202,7 +202,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(2)
     .outputs(item('supercritical:fission_casing', 2))
     .duration(320)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(item('supercritical:fission_casing', 2), [
@@ -219,7 +219,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('frameGtInconel718'))
     .outputs(item('supercritical:fission_casing', 3))
     .duration(320)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(item('supercritical:fission_casing', 3), [
@@ -238,7 +238,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(3)
     .outputs(metaitem('supercritical:fuel_rod_input'))
     .duration(300)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('supercritical:fuel_rod_output'), [
@@ -260,7 +260,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(4)
     .outputs(metaitem('supercritical:fuel_rod_output'))
     .duration(300)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('supercritical:fuel_rod_input'), [
@@ -281,7 +281,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(1)
     .outputs(metaitem('supercritical:coolant_input'))
     .duration(300)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('supercritical:coolant_input'), [
@@ -301,7 +301,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(2)
     .outputs(metaitem('supercritical:coolant_output'))
     .duration(300)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('supercritical:coolant_output'), [ 
@@ -323,7 +323,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(1)
     .outputs(metaitem('supercritical:control_rod'))
     .duration(300)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('supercritical:control_rod'), [
@@ -347,7 +347,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(2)
     .outputs(metaitem('supercritical:control_rod_moderated'))
     .duration(300)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('supercritical:control_rod_moderated'), [
@@ -365,7 +365,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('stickTitanium') * 16)
     .outputs(metaitem('supercritical:basket.anode'))
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('supercritical:basket.anode'),
@@ -385,7 +385,7 @@ RecyclingHelper.handleRecycling(metaitem('supercritical:basket.anode'),
         .circuitMeta(30)
         .outputs(metaitem('supercritical:spent_fuel_pool'))
         .duration(120)
-        .EUt(GTValues.VA[GTValues.EV])
+        .EUt(VA[EV])
         .buildAndRegister()
 
     RecyclingHelper.handleRecycling(metaitem('supercritical:spent_fuel_pool'), [metaitem('hull.hv'),
@@ -431,7 +431,7 @@ RecyclingHelper.handleRecycling(metaitem('supercritical:basket.anode'),
         .inputs(ore('frameGtStainlessSteel'))
         .outputs(item('supercritical:nuclear_casing'))
         .duration(300)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister()
 
     RecyclingHelper.handleRecycling(item('supercritical:nuclear_casing'), [
@@ -446,13 +446,13 @@ for (fuel in fuels) {
         .inputs(metaitem('fuelRodHotDepleted' + fuel))
         .outputs(metaitem('fuelRodDepleted' + fuel))
         .duration(64000)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
     CUTTING_MACHINE.recipeBuilder()
         .inputs(metaitem('fuelRodDepleted' + fuel))
         .outputs(metaitem('fuelPelletDepleted' + fuel) * 16)
         .duration(200)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister()
 }

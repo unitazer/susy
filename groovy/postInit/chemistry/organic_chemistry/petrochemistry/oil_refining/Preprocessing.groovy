@@ -1,5 +1,5 @@
 import static globals.Petrochemistry.*
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 MIXER = recipemap('mixer')
 ELECTROSTATIC_SEPARATOR = recipemap('electrostatic_separator')
@@ -13,7 +13,7 @@ oils.each { _, oil -> {
             .fluidInputs(fluid('water') * 100)
             .fluidOutputs(oil.getDiluted(1100))
             .duration(20)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister()
         
         ELECTROSTATIC_SEPARATOR.recipeBuilder()
@@ -21,7 +21,7 @@ oils.each { _, oil -> {
             .fluidOutputs(oil.getBrine(100))
             .fluidOutputs(oil.getDesalted(980))
             .duration(20)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister()
 
         CENTRIFUGE.recipeBuilder()
@@ -29,7 +29,7 @@ oils.each { _, oil -> {
             .fluidOutputs(oil.getDesalted(200))
             .fluidOutputs(fluid('salt_water') * 1000)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister()
 
         // Preheating
@@ -37,7 +37,7 @@ oils.each { _, oil -> {
             .fluidInputs(oil.getDesalted(1000))
             .fluidOutputs(oil.getHeated(1000))
             .duration(20)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister()
     }
 }

@@ -1,6 +1,6 @@
 /*
 import pl.asie.computronics.integration.ModRecipes
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 ModRecipes.instance = null;
 
@@ -17,7 +17,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:audio_cable'))
             .circuitMeta([5])
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
             
     mods.gregtech.assembler.recipeBuilder()
@@ -26,7 +26,7 @@ for (solder in soldering_alloys) {
             .inputs(item('minecraft:noteblock'))
             .outputs(item('computronics:speaker'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.MV])
+            .EUt(VA[MV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -35,7 +35,7 @@ for (solder in soldering_alloys) {
             .inputs(ore('wireFineRedAlloy') * 4)
             .outputs(item('computronics:tape_reader'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -44,7 +44,7 @@ for (solder in soldering_alloys) {
             .inputs(metaitem('camera'))
             .outputs(item('computronics:camera'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -54,7 +54,7 @@ for (solder in soldering_alloys) {
             .inputs(ore('oc:ram3'))
             .outputs(item('computronics:chat_box'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -65,7 +65,7 @@ for (solder in soldering_alloys) {
             .inputs(ore('oc:ram3'))
             .outputs(item('computronics:cipher'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -76,7 +76,7 @@ for (solder in soldering_alloys) {
             .inputs(ore('oc:ram3'))
             .outputs(item('computronics:cipher_advanced'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -87,7 +87,7 @@ for (solder in soldering_alloys) {
             .inputs(ore('oc:ram3'))
             .outputs(item('computronics:radar'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -96,7 +96,7 @@ for (solder in soldering_alloys) {
             .inputs(item('gregtech:borderless_white_lamp') * 4)
             .outputs(item('computronics:colorful_lamp'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -104,7 +104,7 @@ for (solder in soldering_alloys) {
             .inputs(ore('dustTinyIronMagnetic'))
             .outputs(item('computronics:parts'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -114,7 +114,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:tape'))
             .circuitMeta([1])
             .duration(40)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -124,7 +124,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:tape', 1))
             .circuitMeta([2])
             .duration(80)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
             
     mods.gregtech.assembler.recipeBuilder()
@@ -134,7 +134,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:tape', 2))
             .circuitMeta([3])
             .duration(160)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -144,7 +144,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:tape', 3))
             .circuitMeta([4])
             .duration(320)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -154,7 +154,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:tape', 4))
             .circuitMeta([5])
             .duration(640)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -164,7 +164,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:tape', 5))
             .circuitMeta([6])
             .duration(20)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -174,7 +174,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:tape', 6))
             .circuitMeta([7])
             .duration(60)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -184,7 +184,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:tape', 7))
             .circuitMeta([8])
             .duration(160)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -195,7 +195,7 @@ for (solder in soldering_alloys) {
             .outputs(item('computronics:tape', 8))
             .circuitMeta([8])
             .duration(1280)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -204,7 +204,7 @@ for (solder in soldering_alloys) {
             .inputs(ore('wireFineRedAlloy') * 4)
             .outputs(item('computronics:portable_tape_drive'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -215,7 +215,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([1])
             .outputs(item('computronics:oc_parts'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.MV])
+            .EUt(VA[MV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -225,7 +225,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([10])
             .outputs(item('computronics:oc_parts', 1))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.MV])
+            .EUt(VA[MV])
             .buildAndRegister();
 
     mods.gregtech.assembler.recipeBuilder()
@@ -236,7 +236,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([10])
             .outputs(item('computronics:oc_parts', 2))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.MV])
+            .EUt(VA[MV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -247,7 +247,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([15])
             .outputs(item('computronics:oc_parts', 3))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -259,7 +259,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([15])
             .outputs(item('computronics:oc_parts', 4))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -270,7 +270,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([16])
             .outputs(item('computronics:oc_parts', 5))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
             
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -280,7 +280,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([20])
             .outputs(item('computronics:oc_parts', 6))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
             
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -291,7 +291,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([1])
             .outputs(item('computronics:oc_parts', 7))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -302,7 +302,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([17])
             .outputs(item('computronics:oc_parts', 8))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -313,7 +313,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([18])
             .outputs(item('computronics:oc_parts', 9))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -324,7 +324,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([1])
             .outputs(item('computronics:oc_parts', 10))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -335,7 +335,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([1])
             .outputs(item('computronics:oc_parts', 11))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -346,7 +346,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([1])
             .outputs(item('computronics:oc_parts', 12))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -357,7 +357,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([1])
             .outputs(item('computronics:oc_parts', 13))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -369,7 +369,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([1])
             .outputs(item('computronics:speech_box'))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 
     mods.gregtech.circuit_assembler.recipeBuilder()
@@ -380,7 +380,7 @@ for (solder in soldering_alloys) {
             .circuitMeta([1])
             .outputs(item('computronics:oc_parts', 14))
             .duration(400)
-            .EUt(GTValues.VA[GTValues.LV])
+            .EUt(VA[LV])
             .buildAndRegister();
 }
 

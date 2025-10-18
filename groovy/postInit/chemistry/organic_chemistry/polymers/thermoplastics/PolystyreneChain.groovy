@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 DISTILLATION_TOWER = recipemap('distillation_tower')
 DISTILLERY = recipemap('distillery')
@@ -16,7 +16,7 @@ FBR.recipeBuilder()
     .fluidOutputs(fluid('crude_styrene') * 50)
     .fluidOutputs(fluid('hydrogen') * 90)
     .duration(2)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -24,7 +24,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('styrene') * 900)
     .fluidOutputs(fluid('ethylbenzene') * 100)
     .duration(30)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Polysterene
@@ -34,7 +34,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('styrene_suspension') * 2000)
     .duration(200)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 POLYMERIZATION.recipeBuilder()
@@ -50,7 +50,7 @@ DRYER.recipeBuilder()
     .outputs(metaitem('dustPolystyrene'))
     .fluidOutputs(fluid('water') * 1000)
     .duration(260)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Polystyrene Sulfonate
@@ -59,5 +59,5 @@ BR.recipeBuilder()
     .fluidInputs(fluid('sulfur_trioxide') * 1000)
     .fluidOutputs(fluid('polystyrene_sulfonate') * 2304)
     .duration(300)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()

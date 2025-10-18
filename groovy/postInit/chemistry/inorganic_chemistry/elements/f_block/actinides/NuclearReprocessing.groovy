@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 MIXER_SETTLER = recipemap('mixer_settler')
 DISTILLERY = recipemap('distillery')
@@ -25,14 +25,14 @@ LCR.recipeBuilder()
     .fluidOutputs(fluid('spent_fuel_suspension') * 61600)
     .fluidOutputs(fluid('nitrogen_dioxide') * 30480)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister();
 
 CENTRIFUGE.recipeBuilder()
     .fluidInputs(fluid('spent_fuel_suspension') * 30800)
     .fluidOutputs(fluid('spent_fuel_solution') * 30800)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister();
 
 // Extraction
@@ -42,7 +42,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('kerosene') * 7000)
     .fluidOutputs(fluid('actinide_separation_mixture') * 10000)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .buildAndRegister();
 
 MIXER_SETTLER.recipeBuilder()
@@ -52,7 +52,7 @@ MIXER_SETTLER.recipeBuilder()
     .fluidOutputs(fluid('uranium_plutonium_extract') * 10656)
     .requiredCells(6)
     .duration(60)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister();
 
 // Pu reduction
@@ -67,7 +67,7 @@ MIXER_SETTLER.recipeBuilder()
         .fluidOutputs(fluid('ferrous_sulfamate_solution') * 11000)
         .fluidOutputs(fluid('carbon_dioxide') * 1000)
         .duration(400)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
     DT.recipeBuilder()
@@ -76,7 +76,7 @@ MIXER_SETTLER.recipeBuilder()
         .fluidOutputs(fluid('sulfuric_acid') * 9000)
         .fluidOutputs(fluid('water') * 2000)
         .duration(400)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
     MIXER.recipeBuilder()
@@ -84,7 +84,7 @@ MIXER_SETTLER.recipeBuilder()
         .fluidInputs(fluid('diluted_nitric_acid') * 2000)
         .fluidOutputs(fluid('plutonium_reduction_solution') * 2000)
         .duration(400)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
     // Startup
@@ -96,7 +96,7 @@ MIXER_SETTLER.recipeBuilder()
         .fluidOutputs(fluid('plutonium_concentrate') * 240)
         .requiredCells(6)
         .duration(1200)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
     // Looped
@@ -109,7 +109,7 @@ MIXER_SETTLER.recipeBuilder()
         .fluidOutputs(fluid('plutonium_concentrate') * 240)
         .requiredCells(6)
         .duration(120)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
     MIXER_SETTLER.recipeBuilder()
@@ -119,7 +119,7 @@ MIXER_SETTLER.recipeBuilder()
         .fluidOutputs(fluid('reprocessed_uranium_concentrate') * 2967)
         .requiredCells(6)
         .duration(120)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
     MIXER_SETTLER.recipeBuilder()
@@ -129,7 +129,7 @@ MIXER_SETTLER.recipeBuilder()
         .fluidOutputs(fluid('radioactive_wastewater') * 1000)
         .requiredCells(6)
         .duration(120)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 // Vitrification of HLW

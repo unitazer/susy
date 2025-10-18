@@ -1,5 +1,5 @@
 import globals.Globals
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.RecipeBuilder
 
 def DRONE_PAD = recipemap('drone_pad');
@@ -33,7 +33,7 @@ mods.gregtech.assembler.recipeBuilder()
     .inputs(ore('batteryLv'))
     .fluidInputs(fluid('soldering_alloy') * 72)
     .outputs(metaitem('drone.lv').withNbt(["Charge": 0L]))
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .duration(80)
     .buildAndRegister()
 

@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ModHandler
 import gregtech.api.unification.material.Materials
 import gregtech.api.unification.ore.OrePrefix
@@ -55,7 +55,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('creosote') * 250)
         .fluidOutputs(fluid('wood_gas') * 5000)
         .duration(20)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()

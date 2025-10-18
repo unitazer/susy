@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 def name_removals = [
     'quark:arrow_explosive',
@@ -64,7 +64,7 @@ for (i in 0..15) {
 		.fluidInputs(fluid('dye_' + dye_colors[i]) * 72)
 		.outputs(item('quark:stained_planks', i))
 		.duration(20)
-		.EUt(GTValues.VA[GTValues.ULV])
+		.EUt(VA[ULV])
 		.buildAndRegister();
 	
 }

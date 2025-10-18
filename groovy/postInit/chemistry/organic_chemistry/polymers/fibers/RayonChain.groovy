@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ModHandler
 import gregtech.api.unification.material.Materials
 import gregtech.api.unification.ore.OrePrefix
@@ -53,5 +53,5 @@ COMPRESSOR.recipeBuilder()
         .inputs(ore('threadRayon') * 8)
         .outputs(item('minecraft:wool'))
         .duration(100)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()

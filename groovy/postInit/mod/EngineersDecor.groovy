@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 def name_removals = [
 		"engineersdecor:alternative/small_electrical_furnace_recipe_standalone",
@@ -135,35 +135,35 @@ mods.gregtech.cutter.recipeBuilder()
 		.inputs(item('engineersdecor:rebar_concrete'))
 		.outputs(item('engineersdecor:rebar_concrete_slab') * 2)
 		.duration(25)
-		.EUt(GTValues.VA[GTValues.ULV])
+		.EUt(VA[ULV])
 		.buildAndRegister();
 
 mods.gregtech.cutter.recipeBuilder()
 		.inputs(item('engineersdecor:rebar_concrete_slab'))
 		.outputs(item('engineersdecor:halfslab_rebar_concrete') * 4)
 		.duration(25)
-		.EUt(GTValues.VA[GTValues.ULV])
+		.EUt(VA[ULV])
 		.buildAndRegister();
 
 mods.gregtech.cutter.recipeBuilder()
 		.inputs(item('engineersdecor:rebar_concrete_tile'))
 		.outputs(item('engineersdecor:rebar_concrete_tile_slab') * 2)
 		.duration(25)
-		.EUt(GTValues.VA[GTValues.ULV])
+		.EUt(VA[ULV])
 		.buildAndRegister();
 
 mods.gregtech.cutter.recipeBuilder()
 		.inputs(item('engineersdecor:gas_concrete'))
 		.outputs(item('engineersdecor:gas_concrete_slab') * 2)
 		.duration(25)
-		.EUt(GTValues.VA[GTValues.ULV])
+		.EUt(VA[ULV])
 		.buildAndRegister();
 
 mods.gregtech.cutter.recipeBuilder()
 		.inputs(item('engineersdecor:gas_concrete_slab'))
 		.outputs(item('engineersdecor:halfslab_gas_concrete') * 4)
 		.duration(25)
-		.EUt(GTValues.VA[GTValues.ULV])
+		.EUt(VA[ULV])
 		.buildAndRegister();
 
 for (name in oreRod) {
@@ -174,7 +174,7 @@ for (name in oreRod) {
 			.inputs(ore(name) * 4)
 			.outputs(item('engineersdecor:rebar_concrete') * 2)
 			.duration(40)
-			.EUt(GTValues.VA[GTValues.MV])
+			.EUt(VA[MV])
 			.buildAndRegister();
 }
 
@@ -184,5 +184,5 @@ mods.gregtech.autoclave.recipeBuilder()
 		.inputs(ore('dustTinyAluminium'))
 		.outputs(item('engineersdecor:gas_concrete') * 8)
 		.duration(80)
-		.EUt(GTValues.VA[GTValues.MV])
+		.EUt(VA[MV])
 		.buildAndRegister();

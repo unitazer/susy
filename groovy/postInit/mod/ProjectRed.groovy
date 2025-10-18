@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 ASSEMBLER = recipemap('assembler')
 CHEMICAL_BATH = recipemap('chemical_bath')
@@ -79,7 +79,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 
@@ -95,7 +95,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item:1'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Wired Plate
@@ -110,7 +110,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item:2'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Bundled Plate
@@ -125,7 +125,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item:3'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Platformed Plate
@@ -140,7 +140,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item:4'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Anode
@@ -155,7 +155,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item:10'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Cathode
@@ -170,7 +170,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item:11'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Pointer
@@ -185,7 +185,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item:12'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Bus Input Panel
@@ -200,7 +200,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-integration:gate:30'))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Infused Silicon
@@ -211,7 +211,7 @@ CHEMICAL_BATH.recipeBuilder()
     .fluidInputs(fluid('redstone') * 1152)
     .outputs(item('projectred-core:resource_item:320'))
     .duration(400)
-    .EUt(GTValues.VA[GTValues.ULV])
+    .EUt(VA[ULV])
     .buildAndRegister();
 
 // Energized Silicon
@@ -222,7 +222,7 @@ CHEMICAL_BATH.recipeBuilder()
     .fluidInputs(fluid('glowstone') * 1152)
     .outputs(item('projectred-core:resource_item:341'))
     .duration(400)
-    .EUt(GTValues.VA[GTValues.ULV])
+    .EUt(VA[ULV])
     .buildAndRegister();
 
 // Silicon Chip
@@ -231,7 +231,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item', 20))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Energized Silicon Chip
@@ -240,7 +240,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(7)
     .outputs(item('projectred-core:resource_item', 21))
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //Black Insulated Wire
@@ -271,27 +271,27 @@ for (i = 0; i < 15; i++) {
         .fluidInputs(fluid(chemical_dyes[i]) * 18)
         .outputs(item('projectred-transmission:wire', i+1))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
     CHEMICAL_BATH.recipeBuilder()
         .inputs(item('projectred-transmission:wire', i+18))
         .fluidInputs(fluid('acetone') * 100)
         .outputs(item('projectred-transmission:wire:17'))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
     CHEMICAL_BATH.recipeBuilder()
         .inputs(ore('projredBundledCable'))
         .fluidInputs(fluid(chemical_dyes[i]) * 18)
         .outputs(item('projectred-transmission:wire', i+18))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
     CHEMICAL_BATH.recipeBuilder()
         .inputs(ore('projredInsFramedWire'))
         .fluidInputs(fluid(chemical_dyes[i]) * 18)
         .outputs(item('projectred-transmission:framed_wire', i+1))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 }

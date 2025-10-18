@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 CSTR = recipemap('continuous_stirred_tank_reactor')
 TBR = recipemap('trickle_bed_reactor')
@@ -19,7 +19,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('chlorine') * 2000)
     .outputs(metaitem('dustMercuryIiChloride') * 3)
     .duration(200)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Klatte process
@@ -29,7 +29,7 @@ TBR.recipeBuilder()
     .fluidInputs(fluid('hydrogen_chloride') * 50)
     .fluidOutputs(fluid('vinyl_chloride') * 50)
     .duration(5)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Dehydrochlorination
@@ -37,7 +37,7 @@ PYROLYSE_OVEN.recipeBuilder()
     .fluidInputs(fluid('one_two_dichloroethane') * 1000)
     .fluidOutputs(fluid('cracked_one_two_dichloroethane_mix') * 2000)
     .duration(80)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // https://koreascience.kr/article/JAKO200211920879285.pdf
@@ -50,7 +50,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('ethylene') * 50)
     .fluidOutputs(fluid('one_two_dichloroethylene') * 50)
     .duration(80)
-    .EUt(GTValues.VA[GTValues.MV])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // PVC
@@ -60,7 +60,7 @@ AUTOCLAVE.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('vinyl_chloride_suspension') * 2000)
     .duration(160)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 POLYMERIZATION.recipeBuilder()
@@ -76,7 +76,7 @@ DRYER.recipeBuilder()
     .outputs(metaitem('dustPolyvinylChloride'))
     .fluidOutputs(fluid('water') * 1000)
     .duration(260)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Polyvinyl Acetate
@@ -86,7 +86,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('methanol') * 1000)
     .fluidOutputs(fluid('vinyl_acetate_suspension') * 1000)
     .duration(200)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 POLYMERIZATION.recipeBuilder()

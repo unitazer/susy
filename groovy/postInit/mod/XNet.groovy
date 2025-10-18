@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 def name_removals = [
         "xnet:netcable_0",
@@ -88,7 +88,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable'))
         .outputs(item('xnet:netcable', 2).withNbt(["display": ["LocName": "tile.xnet.netcable_yellow.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -96,7 +96,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable', 1))
         .outputs(item('xnet:netcable', 2).withNbt(["display": ["LocName": "tile.xnet.netcable_yellow.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -104,7 +104,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable', 3))
         .outputs(item('xnet:netcable', 2).withNbt(["display": ["LocName": "tile.xnet.netcable_yellow.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -112,7 +112,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable', 2))
         .outputs(item('xnet:netcable').withNbt(["display": ["LocName": "tile.xnet.netcable_blue.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -120,7 +120,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable', 1))
         .outputs(item('xnet:netcable').withNbt(["display": ["LocName": "tile.xnet.netcable_blue.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -128,7 +128,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable', 3))
         .outputs(item('xnet:netcable').withNbt(["display": ["LocName": "tile.xnet.netcable_blue.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -136,7 +136,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable', 2))
         .outputs(item('xnet:netcable', 1).withNbt(["display": ["LocName": "tile.xnet.netcable_red.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -144,7 +144,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable'))
         .outputs(item('xnet:netcable', 1).withNbt(["display": ["LocName": "tile.xnet.netcable_red.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -152,7 +152,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable', 3))
         .outputs(item('xnet:netcable', 1).withNbt(["display": ["LocName": "tile.xnet.netcable_red.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -160,7 +160,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable', 2))
         .outputs(item('xnet:netcable', 3).withNbt(["display": ["LocName": "tile.xnet.netcable_green.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -168,7 +168,7 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable'))
         .outputs(item('xnet:netcable', 3).withNbt(["display": ["LocName": "tile.xnet.netcable_green.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 mods.gregtech.chemical_bath.recipeBuilder()
@@ -176,5 +176,5 @@ mods.gregtech.chemical_bath.recipeBuilder()
         .inputs(item('xnet:netcable', 1))
         .outputs(item('xnet:netcable', 3).withNbt(["display": ["LocName": "tile.xnet.netcable_green.name"]]))
         .duration(20)
-        .EUt(GTValues.VA[GTValues.ULV])
+        .EUt(VA[ULV])
         .buildAndRegister();

@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 REACTION_FURNACE = recipemap('reaction_furnace')
 
@@ -10,5 +10,5 @@ REACTION_FURNACE.recipeBuilder()
     .outputs(metaitem('dustThulium') * 2)
     .outputs(metaitem('dustFluorite') * 9)
     .duration(200)
-    .EUt(GTValues.VA[GTValues.HV] * 2)
+    .EUt(VA[HV] * 2)
     .buildAndRegister()

@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 CSTR = recipemap('continuous_stirred_tank_reactor')
 FBR = recipemap('fixed_bed_reactor')
@@ -16,7 +16,7 @@ BR.recipeBuilder()
 .inputs(ore('dustSodiumHydroxide') * 3)
 .fluidOutputs(fluid('sodium_phenoxide_solution') * 1000)
 .duration(160)
-.EUt(GTValues.VA[GTValues.LV])
+.EUt(VA[LV])
 .buildAndRegister()
 
 CSTR.recipeBuilder()
@@ -25,7 +25,7 @@ CSTR.recipeBuilder()
 .fluidOutputs(fluid('diphenyl_isophthalate_solution') * 50)
 .fluidOutputs(fluid('salt_water') * 100)
 .duration(10)
-.EUt(GTValues.VA[GTValues.LV])
+.EUt(VA[LV])
 .buildAndRegister()
 
 // 3,3'-Dichlorobenzidine
@@ -37,7 +37,7 @@ FBR.recipeBuilder()
 .outputs(metaitem('dustTwoTwoDichlorohydrazobenzene'))
 .fluidOutputs(fluid('water') * 4000)
 .duration(300)
-.EUt(GTValues.VA[GTValues.MV])
+.EUt(VA[MV])
 .buildAndRegister()
 
 BR.recipeBuilder()
@@ -46,7 +46,7 @@ BR.recipeBuilder()
 .notConsumable(fluid('sulfuric_acid') * 50)
 .fluidOutputs(fluid('dichlorobenzidine_solution') * 1000)
 .duration(200)
-.EUt(GTValues.VA[GTValues.MV])
+.EUt(VA[MV])
 .buildAndRegister()
 
 // 3,3-Diaminobenzidine
@@ -87,7 +87,7 @@ MIXER.recipeBuilder()
 .inputs(ore('dustPbiPrepolymer'))
 .fluidOutputs(fluid('pbi_solution') * 1000)
 .duration(100)
-.EUt(GTValues.VA[GTValues.MV])
+.EUt(VA[MV])
 .buildAndRegister()
 
 CHEMICAL_BATH.recipeBuilder()
@@ -97,7 +97,7 @@ CHEMICAL_BATH.recipeBuilder()
 .outputs(metaitem('fiberPolybenzimidazole') * 8)
 .fluidOutputs(fluid('spent_pbi_solution') * 1000)
 .duration(100)
-.EUt(GTValues.VA[GTValues.HV])
+.EUt(VA[HV])
 .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -105,7 +105,7 @@ DISTILLERY.recipeBuilder()
 .outputs(metaitem('dustLithiumChloride') * 2)
 .fluidOutputs(fluid('dimethylacetamide') * 1000)
 .duration(20)
-.EUt(GTValues.VA[GTValues.LV])
+.EUt(VA[LV])
 .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()

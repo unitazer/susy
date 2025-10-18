@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ingredients.GTRecipeItemInput
 
 ASSEMBLER = recipemap('assembler')
@@ -102,7 +102,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('dustSmallGalena') * 1)
     .outputs(metaitem('component.diode'))
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -111,7 +111,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('dustSmallGalena') * 1)
     .outputs(metaitem('component.diode') * 2)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -120,7 +120,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('dustSmallGalliumArsenide') * 1)
     .outputs(metaitem('component.diode') * 3)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -129,7 +129,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('dustSmallGalliumArsenide') * 1)
     .outputs(metaitem('component.diode') * 4)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -138,7 +138,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('dustSmallGalliumArsenide') * 1)
     .outputs(metaitem('component.diode') * 6)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -147,7 +147,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('dustSmallGalliumArsenide') * 1)
     .outputs(metaitem('component.diode') * 8)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -156,7 +156,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('wafer.silicon') * 1)
     .outputs(metaitem('component.diode') * 12)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -165,7 +165,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('wafer.silicon') * 1)
     .outputs(metaitem('component.diode') * 16)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 MIXER.recipeBuilder()
@@ -210,7 +210,7 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .fluidInputs(fluid('nitrogen') * 4000)
     .fluidOutputs(fluid('kovar') * 576)
     .duration(45)
-    .EUt(GTValues.VA[GTValues.MV])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 ADVANCED_ARC_FURNACE.recipeBuilder()
@@ -220,6 +220,6 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .circuitMeta(9)
     .fluidOutputs(fluid('kovar') * 576)
     .duration(67)
-    .EUt(GTValues.VA[GTValues.MV])
+    .EUt(VA[MV])
     .buildAndRegister()
     

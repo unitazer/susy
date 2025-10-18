@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 DISTILLATION_TOWER = recipemap('distillation_tower')
 FLUIDIZED_BED_REACTOR = recipemap('fluidized_bed_reactor')
@@ -17,7 +17,7 @@ FLUIDIZED_BED_REACTOR.recipeBuilder()
     .inputs(ore('dustSilicon'))
     .fluidOutputs(fluid('organosilicon_mixture') * 2000)
     .duration(160)
-    .EUt(GTValues.VA[GTValues.LV] * 2)
+    .EUt(VA[LV] * 2)
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -27,7 +27,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('methyldichlorosilane') * 50)
     .fluidOutputs(fluid('chlorotrimethylsilane') * 50)
     .duration(400)
-    .EUt(GTValues.VA[GTValues.LV] * 2)
+    .EUt(VA[LV] * 2)
     .buildAndRegister()
 
 //Methyltrichlorosilane can be used as a water repellent when put on a surface with water
@@ -41,7 +41,7 @@ CSTR.recipeBuilder()
     .fluidOutputs(fluid('impure_polydimethylsiloxane_mixture') * 75)
     .fluidOutputs(fluid('hydrochloric_acid') * 50)
     .duration(10)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 PHASE_SEPARATOR.recipeBuilder()
@@ -57,7 +57,7 @@ MIXER.recipeBuilder()
     .fluidOutputs(fluid('hydrochloric_acid') * 500)
     .fluidOutputs(fluid('polydimethylsiloxane') * 1000)
     .duration(200)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 POLYMERIZATION.recipeBuilder()
@@ -66,7 +66,7 @@ POLYMERIZATION.recipeBuilder()
     .inputs(ore('dustSiliconDioxide'))
     .fluidOutputs(fluid('silicone_rubber') * 144)
     .duration(100)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 POLYMERIZATION.recipeBuilder()
@@ -75,7 +75,7 @@ POLYMERIZATION.recipeBuilder()
     .inputs(ore('dustCarbon'))
     .fluidOutputs(fluid('silicone_rubber') * 144)
     .duration(100)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 // Liquid Polydimethylsiloxane * 144

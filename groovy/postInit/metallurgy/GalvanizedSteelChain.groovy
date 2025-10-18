@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 FLUID_SOLIDIFIER = recipemap('fluid_solidifier')
 
@@ -7,5 +7,5 @@ FLUID_SOLIDIFIER.recipeBuilder()
     .fluidInputs(fluid('zinc') * 18)
     .outputs(metaitem('wireFineGalvanizedSteel') * 8)
     .duration(100)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()

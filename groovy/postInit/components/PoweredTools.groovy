@@ -1,5 +1,5 @@
 import globals.Batteries
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 import gregtech.api.capability.GregtechCapabilities
 import gregtech.api.capability.IElectricItem
 
@@ -15,7 +15,7 @@ def setChargeFromBatteryFn = { output, inputs, info ->
 }
 
 // LV Batteries
-Batteries[GTValues.LV].each { battery ->
+Batteries[LV].each { battery ->
     // Item Magnet
     crafting.shapedBuilder()
         .name("gregtech:lv_magnet_${battery.name}")
@@ -68,13 +68,13 @@ Batteries[GTValues.LV].each { battery ->
         .inputs(metaitem('electric.motor.lv'))
         .inputs(battery.fetchMetaitem())
         .outputs(battery.imprintCapacity(metaitem('power_unit.lv')))
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .duration(150)
         .buildAndRegister()
 }
 
 // MV Batteries
-Batteries[GTValues.MV].each { battery ->
+Batteries[MV].each { battery ->
     // Tricorder Scanner
     crafting.shapedBuilder()
         .name("gregtech:tricorder_${battery.name}")
@@ -111,7 +111,7 @@ Batteries[GTValues.MV].each { battery ->
         .inputs(metaitem('electric.motor.mv'))
         .inputs(battery.fetchMetaitem())
         .outputs(battery.imprintCapacity(metaitem('power_unit.mv')))
-        .EUt(GTValues.VA[GTValues.MV])
+        .EUt(VA[MV])
         .duration(150)
         .buildAndRegister()
 }
@@ -138,7 +138,7 @@ ItemStack withMaxChargeFromBattery(ItemStack tool, ItemStack battery) {
         .inputs(metaitem('electric.motor.mv'))
         .inputs(battery)
         .outputs(withMaxChargeFromBattery(metaitem('power_unit.mv'), battery))
-        .EUt(GTValues.VA[GTValues.MV])
+        .EUt(VA[MV])
         .duration(150)
         .buildAndRegister()
 }
@@ -150,7 +150,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('electric.motor.hv'))
     .inputs(ore('batteryHv'))
     .outputs(metaitem('power_unit.hv'))
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .duration(150)
     .buildAndRegister()
 
@@ -161,7 +161,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('electric.motor.ev'))
     .inputs(ore('batteryEv'))
     .outputs(metaitem('power_unit.ev'))
-    .EUt(GTValues.VA[GTValues.EV])
+    .EUt(VA[EV])
     .duration(150)
     .buildAndRegister()
 
@@ -172,7 +172,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('electric.motor.iv'))
     .inputs(ore('batteryIv'))
     .outputs(metaitem('power_unit.iv'))
-    .EUt(GTValues.VA[GTValues.IV])
+    .EUt(VA[IV])
     .duration(150)
     .buildAndRegister()
 

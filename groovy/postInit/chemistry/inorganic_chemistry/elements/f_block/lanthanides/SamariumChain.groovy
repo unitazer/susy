@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 ROASTER = recipemap('roaster')
 REACTION_FURNACE = recipemap('reaction_furnace')
@@ -8,7 +8,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustSamariumOxide') * 5)
     .fluidOutputs(fluid('dense_steam') * 3000)
     .duration(100)
-    .EUt(GTValues.VA[GTValues.MV])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -18,5 +18,5 @@ REACTION_FURNACE.recipeBuilder()
     .outputs(metaitem('dustSamarium') * 2)
     .outputs(metaitem('dustLanthanumOxide') * 5)
     .duration(200)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister()

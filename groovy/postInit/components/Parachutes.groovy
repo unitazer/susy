@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 ASSEMBLER = recipemap('assembler')
 
@@ -8,7 +8,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('threadKevlar') * 32)
         .outputs(metaitem('parachute.drogue'))
         .duration(200)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -22,7 +22,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('threadKevlar') * 32)
         .outputs(metaitem('parachute.main'))
         .duration(600)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -37,5 +37,5 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('threadKevlar') * 32)
         .outputs(metaitem('parachute.supersonic_main'))
         .duration(600)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();

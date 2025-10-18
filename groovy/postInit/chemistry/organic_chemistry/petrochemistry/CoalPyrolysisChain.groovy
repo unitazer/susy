@@ -1,6 +1,6 @@
 import globals.Carbons
 
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ModHandler
 import gregtech.api.unification.material.Materials
 import gregtech.api.unification.ore.OrePrefix
@@ -82,7 +82,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('monoxide_rich_syngas') * 10000)
         .fluidOutputs(fluid('ammonia_solution') * 1000)
         .duration(40)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -102,7 +102,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('creosote') * 100)
         .fluidOutputs(fluid('alkaline_naphthalene_oil') * 1000)
         .duration(100)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 CENTRIFUGE.recipeBuilder()
@@ -111,7 +111,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('sodium_sulfate_solution') * 100)
         .fluidOutputs(fluid('purified_naphthalene_oil') * 1000)
         .duration(100)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -128,7 +128,7 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('sulfuric_acid') * 100)
         .fluidOutputs(fluid('acidic_light_oil') * 1000)
         .duration(120)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 CENTRIFUGE.recipeBuilder()
@@ -137,7 +137,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('btex_extract') * 600)
         .fluidOutputs(fluid('crude_pyridinium_sulfate') * 250)
         .duration(120)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 CSTR.recipeBuilder()
@@ -145,7 +145,7 @@ CSTR.recipeBuilder()
         .fluidInputs(fluid('ammonia') * 100)
         .fluidOutputs(fluid('impure_pyridine') * 50)
         .duration(1)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -162,7 +162,7 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('sulfuric_acid') * 100)
         .fluidOutputs(fluid('acidic_anthracene_oil') * 1000)
         .duration(120)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 CENTRIFUGE.recipeBuilder()
@@ -171,7 +171,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('anthracene_extract') * 750)
         .fluidOutputs(fluid('crude_quinolinium_sulfate') * 250)
         .duration(120)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -188,7 +188,7 @@ CSTR.recipeBuilder()
         .fluidInputs(fluid('ammonia') * 100)
         .fluidOutputs(fluid('impure_quinoline') * 50)
         .duration(1)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()

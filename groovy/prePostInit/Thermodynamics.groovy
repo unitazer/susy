@@ -2,7 +2,7 @@ package prePostInit
 
 import classes.*
 import globals.Globals
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 import java.lang.Math
 
@@ -305,7 +305,7 @@ recipemap('natural_draft_cooling_tower').recipeBuilder()
         .fluidInputs(liquid('warm_water') * 1536)
         .fluidOutputs(liquid('chilled_water') * 1536)
         .duration(1)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 recipemap('natural_draft_cooling_tower').recipeBuilder()
@@ -313,14 +313,14 @@ recipemap('natural_draft_cooling_tower').recipeBuilder()
         .fluidInputs(liquid('warm_water') * 1536)
         .fluidOutputs(liquid('water') * 1536)
         .duration(1)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 recipemap('natural_draft_cooling_tower').recipeBuilder()
         .fluidInputs(liquid('water') * 1536)
         .fluidOutputs(liquid('chilled_water') * 1536)
         .duration(1)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 //Refrigerant recipes generation
@@ -337,7 +337,7 @@ for (refrigerant in Refrigerants) {
     recipemap('fluid_decompressor').recipeBuilder()
             .fluidInputs(liquid(refrigerant.comp_refrigerant) * refrigerant.amount_to_use)
             .fluidOutputs(liquid(refrigerant.cold_refrigerant) * refrigerant.amount_to_use)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .duration(refrigerant.duration)
             .buildAndRegister();
 
@@ -355,7 +355,7 @@ for (refrigerant in Refrigerants) {
             .fluidOutputs(liquid(refrigerant.comp_refrigerant) * refrigerant.amount_to_use)
             .fluidOutputs(liquid('warm_water') * (int)(refrigerant.amount_to_use * 0.384))
             .duration((int) (refrigerant.duration_radiator / 2))
-            .EUt(GTValues.VA[GTValues.HV])
+            .EUt(VA[HV])
             .buildAndRegister();
 }
 
@@ -412,7 +412,7 @@ for (cryogas in CryoGases) {
             .fluidInputs(liquid(cryogas.cold_high_pressure_gas) * 1280)
             .fluidOutputs(liquid(cryogas.liquid_gas) * 20)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     //Reheating
@@ -421,7 +421,7 @@ for (cryogas in CryoGases) {
             .fluidInputs(liquid(cryogas.liquid_gas) * 20)
             .fluidOutputs(liquid(cryogas.cold_high_pressure_gas) * 1280)
             .duration(20)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     //Boiling
@@ -430,7 +430,7 @@ for (cryogas in CryoGases) {
             .fluidInputs(liquid(cryogas.liquid_gas) * 20)
             .fluidOutputs(liquid(cryogas.normal_gas) * 1280)
             .duration(2)
-            .EUt(GTValues.VA[GTValues.HV])
+            .EUt(VA[HV])
             .buildAndRegister();
 
     //Radiative Cooling
@@ -784,7 +784,7 @@ for (fluid_fuel in FluidFuels) {
             .inputs(item('techguns:itemshared', 28))
             .outputs(item('techguns:itemshared', 27))
             .duration(80)
-            .EUt(GTValues.VA[GTValues.ULV])
+            .EUt(VA[ULV])
             .buildAndRegister();
 
     if (fluid_fuel.fuel_cell) {
@@ -811,7 +811,7 @@ recipemap('fluid_heater').recipeBuilder()
         .fluidInputs(fluid('air') * 1000)
         .fluidOutputs(fluid('preheated_air') * 1000)
         .duration(5)
-        .EUt(GTValues.VA[GTValues.EV])
+        .EUt(VA[EV])
         .buildAndRegister();
 
 for (working_fluid in WorkingFluids) {
@@ -886,7 +886,7 @@ recipemap('natural_draft_cooling_tower').recipeBuilder()
         .fluidInputs(liquid('exhaust_steam') * (6 * 160 * 64))
         .fluidOutputs(liquid('water') * (6 * 64))
         .duration(1)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 // Supercritical fluid compression
@@ -906,14 +906,14 @@ recipemap('fluid_compressor').recipeBuilder()
         .fluidInputs(liquid('benzene') * 1280)
         .fluidOutputs(liquid('hot_hp_benzene') * 1280)
         .duration(100)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister();
 
 recipemap('fluid_compressor').recipeBuilder()
         .fluidInputs(liquid('propene') * 1280)
         .fluidOutputs(liquid('hot_hp_propene') * 1280)
         .duration(100)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister();
 
 recipemap('heat_exchanger').recipeBuilder()
@@ -929,7 +929,7 @@ recipemap('fluid_heater').recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('dense_steam') * 1000)
     .duration(20)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 recipemap('condenser').recipeBuilder()
@@ -947,14 +947,14 @@ recipemap('fluid_compressor').recipeBuilder()
         .fluidInputs(fluid('hp_steam') * 20)
         .fluidOutputs(liquid('pressurized_water') * 1536)
         .duration(1)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 recipemap('fluid_heater').recipeBuilder()
         .fluidInputs(liquid('heavy_water') * 1536)
         .fluidOutputs(liquid('pressurized_heavy_water') * 1536)
         .duration(2000)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 recipemap('heat_exchanger').recipeBuilder()
@@ -979,7 +979,7 @@ recipemap('fluid_compressor').recipeBuilder()
         .fluidInputs(fluid('dense_steam') * 1536)
         .fluidOutputs(fluid('hp_steam') * 1536)
         .duration(2000)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 // BWR bootstrap
@@ -989,7 +989,7 @@ recipemap('fluid_heater').recipeBuilder()
         .fluidInputs(liquid('water') * 1536)
         .fluidOutputs(liquid('boiling_water') * 1536)
         .duration(2000)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 // HPAST
@@ -1020,7 +1020,7 @@ recipemap('natural_draft_cooling_tower').recipeBuilder()
         .fluidInputs(liquid('hp_exhaust_steam') * 1536)
         .fluidOutputs(liquid('water') * 1152)
         .duration(1) // prevent overclocking, should limit 1 cooling tower per steam turbine.
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 recipemap('heat_exchanger').recipeBuilder()
@@ -1028,7 +1028,7 @@ recipemap('heat_exchanger').recipeBuilder()
         .fluidInputs(liquid('chilled_water') * 192)
         .fluidOutputs(liquid('boiling_water') * 1536)
         .duration(1)
-        .EUt(GTValues.VA[GTValues.HV])
+        .EUt(VA[HV])
         .buildAndRegister();
 
 //Hot Air
@@ -1038,5 +1038,5 @@ recipemap('fluid_heater').recipeBuilder()
         .fluidInputs(liquid('air') * 1000)
         .fluidOutputs(liquid('hot_air') * 1000)
         .duration(40)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister();

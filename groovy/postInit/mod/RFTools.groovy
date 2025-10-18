@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 ASSEMBLER = recipemap('assembler')
 
@@ -281,7 +281,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(ore('screwSteel') * 4)
         .outputs(item('rftools:screen'))
         .duration(100)
-	.EUt(GTValues.VA[GTValues.LV])
+	.EUt(VA[LV])
 	.buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
@@ -289,7 +289,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(item('minecraft:stone_button') * 4)
         .outputs(item('rftools:elevator_button_module'))
         .duration(100)
-	.EUt(GTValues.VA[GTValues.LV])
+	.EUt(VA[LV])
 	.buildAndRegister()
 
 crafting.replaceShaped('rftools:elevator', item('rftools:elevator'), [

@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 ASSEMBLER = recipemap('assembler')
 CHEMICAL_BATH = recipemap('chemical_bath')
@@ -63,7 +63,7 @@ for (i = 1; i < 16; i++) {
 			.fluidInputs(fluid('dye_' + dye_colors[i]) * 18)
 			.outputs(item('projectred-illumination:' + light, i))
 			.duration(20)
-			.EUt(GTValues.VA[GTValues.ULV])
+			.EUt(VA[ULV])
 			.buildAndRegister();
 	}
 	
@@ -73,7 +73,7 @@ for (i = 1; i < 16; i++) {
 		.fluidInputs(fluid('dye_' + dye_colors[i]) * 18)
 		.outputs(item('projectred-illumination:lamp', 16 + i))
 		.duration(20)
-		.EUt(GTValues.VA[GTValues.ULV])
+		.EUt(VA[ULV])
 		.buildAndRegister();	
 			
 }
@@ -85,7 +85,7 @@ ASSEMBLER.recipeBuilder()
 	.inputs(ore('plateGlass') * 3)
 	.outputs(item('projectred-illumination:light_button') * 3)
 	.duration(40)
-	.EUt(GTValues.VA[GTValues.ULV])
+	.EUt(VA[ULV])
 	.buildAndRegister();
 	
 ASSEMBLER.recipeBuilder()
@@ -96,7 +96,7 @@ ASSEMBLER.recipeBuilder()
 	.outputs(item('projectred-illumination:lamp') * 3)
 	.circuitMeta(2)
 	.duration(40)
-	.EUt(GTValues.VA[GTValues.ULV])
+	.EUt(VA[ULV])
 	.buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -107,7 +107,7 @@ ASSEMBLER.recipeBuilder()
 	.outputs(item('projectred-illumination:lamp', 16) * 3)
 	.circuitMeta(3)
 	.duration(40)
-	.EUt(GTValues.VA[GTValues.ULV])
+	.EUt(VA[ULV])
 	.buildAndRegister();
 
 crafting.addShaped("projectred-illumination:lantern", item('projectred-illumination:lantern'), [

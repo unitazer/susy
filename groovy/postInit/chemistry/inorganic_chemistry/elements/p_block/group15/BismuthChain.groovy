@@ -1,5 +1,5 @@
 import globals.Carbons
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 ROASTER = recipemap('roaster')
 BR = recipemap('batch_reactor')
@@ -13,7 +13,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 9000)
     .outputs(metaitem('dustBismuthIiiOxide') * 5)
     .fluidOutputs(fluid('sulfur_dioxide') * 3000)
-    .EUt(GTValues.VA[GTValues.MV])
+    .EUt(VA[MV])
     .duration(120)
     .buildAndRegister()
 
@@ -23,7 +23,7 @@ for (highPurityCombustible in Carbons.highPurityCombustibles()) {
         .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(3))
         .outputs(metaitem('dustBismuth') * 2)
         .fluidOutputs(fluid('carbon_monoxide') * 3000)
-        .EUt(GTValues.VA[GTValues.MV])
+        .EUt(VA[MV])
         .duration(120)
         .buildAndRegister()
 }
@@ -34,6 +34,6 @@ BR.recipeBuilder()
     .inputs(ore('dustBismuthIiiOxide') * 5)
     .fluidInputs(fluid('nitric_acid') * 6000)
     .fluidOutputs(fluid('bismuth_iii_nitrate_solution') * 3000)
-    .EUt(GTValues.VA[GTValues.MV])
+    .EUt(VA[MV])
     .duration(120)
     .buildAndRegister()

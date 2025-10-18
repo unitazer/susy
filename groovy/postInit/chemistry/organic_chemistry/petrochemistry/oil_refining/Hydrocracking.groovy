@@ -1,5 +1,5 @@
 import static globals.Petrochemistry.*
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 CRACKER = recipemap('cracker')
 DT = recipemap('sieve_distillation')
@@ -13,7 +13,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(crackable.getHydro(4000))
             .fluidOutputs(fluid('fuel_gas') * (4 * crackable.gas_produced))
             .duration(200)
-            .EUt(GTValues.VA[GTValues.MV])
+            .EUt(VA[MV])
             .buildAndRegister()  
     }
 }
@@ -23,7 +23,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('light_gas_oil') * 320)
     .fluidOutputs(fluid('naphtha') * 1780)
     .duration(50)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -32,7 +32,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('naphtha') * 450)
     .fluidOutputs(fluid('btex_extract') * 320)
     .duration(50)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -41,7 +41,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('light_gas_oil') * 500)
     .fluidOutputs(fluid('naphtha') * 710)
     .duration(50)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -51,7 +51,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('light_gas_oil') * 895)
     .fluidOutputs(fluid('naphtha') * 480)
     .duration(50)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -61,7 +61,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('light_gas_oil') * 900)
     .fluidOutputs(fluid('naphtha') * 455)
     .duration(50)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -71,5 +71,5 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('kerosene') * 185)
     .fluidOutputs(fluid('naphtha') * 1605)
     .duration(50)
-    .EUt(GTValues.VA[GTValues.LV])
+    .EUt(VA[LV])
     .buildAndRegister()

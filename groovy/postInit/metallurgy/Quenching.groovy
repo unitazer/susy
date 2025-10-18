@@ -1,6 +1,6 @@
 import classes.*
 
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 import gregtech.api.unification.ore.OrePrefix
 import gregtech.api.unification.material.Material
 import gregtech.api.unification.material.properties.PropertyKey
@@ -120,7 +120,7 @@ for (fluid in QuenchingFluid.quenching_fluids) {
         .outputs(metaitem('ingotKanthal'))
         .fluidOutputs(liquid(fluid.getHotFluid()) * fluid.amount)
         .duration((int) fluid.getDuration() * 4)
-        .EUt(GTValues.VA[GTValues.MV])
+        .EUt(VA[MV])
         .buildAndRegister();
 
     CHEMICAL_BATH.recipeBuilder()
@@ -129,7 +129,7 @@ for (fluid in QuenchingFluid.quenching_fluids) {
         .outputs(metaitem('ingotAlnico'))
         .fluidOutputs(liquid(fluid.getHotFluid()) * fluid.amount)
         .duration((int) fluid.getDuration() * 4)
-        .EUt(GTValues.VA[GTValues.MV])
+        .EUt(VA[MV])
         .buildAndRegister();
 
     QUENCHER.recipeBuilder()
@@ -139,7 +139,7 @@ for (fluid in QuenchingFluid.quenching_fluids) {
         .outputs(metaitem('ingotStainlessSteel') * 20)
         .fluidOutputs(liquid(fluid.getHotFluid()) * fluid.amount)
         .duration((int) fluid.getDuration() * 1)
-        .EUt(GTValues.VA[GTValues.MV])
+        .EUt(VA[MV])
         .buildAndRegister();
 }
 
@@ -151,7 +151,7 @@ for (entry in ingotMap) {
             .outputs(metaitem('ingot' + entry.key))
             .fluidOutputs(liquid(fluid.getHotFluid()) * fluid.amount)
             .duration((int) (fluid.getDuration() * (float) (entry.value / 2000)))
-            .EUt(GTValues.VA[GTValues.MV])
+            .EUt(VA[MV])
             .buildAndRegister();
     }
 }
@@ -165,7 +165,7 @@ for (entry in electrodeMap) {
             .outputs(metaitem('electrode' + entry.key))
             .fluidOutputs(liquid(quenching_fluid.getHotFluid()) * quenching_fluid.amount)
             .duration((int) (quenching_fluid.getDuration() * (float) (entry.value / 2000)))
-            .EUt(GTValues.VA[GTValues.MV])
+            .EUt(VA[MV])
             .buildAndRegister();
         
         QUENCHER.recipeBuilder()
@@ -175,7 +175,7 @@ for (entry in electrodeMap) {
             .outputs(metaitem('electrode' + entry.key))
             .fluidOutputs(liquid(quenching_fluid.getHotFluid()) * quenching_fluid.amount)
             .duration((int) (quenching_fluid.getDuration() * (float) (entry.value / 2000)))
-            .EUt(GTValues.VA[GTValues.MV])
+            .EUt(VA[MV])
             .buildAndRegister();
     }
 }
@@ -239,7 +239,7 @@ for (entry in fluidMap) {
             .outputs(metaitem('ingot' + entry.value))
             .fluidOutputs(liquid(fluid.getHotFluid()) * fluid.amount)
             .duration((int) ((int) fluid.getDuration() * (int) 2))
-            .EUt(GTValues.VA[GTValues.MV])
+            .EUt(VA[MV])
             .buildAndRegister();
     }
 }
@@ -255,5 +255,5 @@ COOLING_UNIT.recipeBuilder()
     .fluidInputs(fluid('hot_air') * 1000)
     .fluidOutputs(liquid('air') * 1000)
     .duration(50)
-    .EUt(GTValues.VA[GTValues.HV])
+    .EUt(VA[HV])
     .buildAndRegister();

@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 
 REACTION_FURNACE = recipemap('reaction_furnace')
 
@@ -38,6 +38,6 @@ for (feedstock in feedstocks.values()) {
         .fluidInputs(fluid(feedstock.name) * 1000)
         .fluidOutputs(fluid('monoxide_rich_syngas') * feedstock.gas_produced)
         .duration(feedstock.duration)
-        .EUt(GTValues.VA[GTValues.MV])
+        .EUt(VA[MV])
         .buildAndRegister()
 }

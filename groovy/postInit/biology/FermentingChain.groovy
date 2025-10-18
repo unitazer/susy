@@ -1,4 +1,4 @@
-import gregtech.api.GTValues
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ModHandler
 import gregtech.api.unification.material.Materials
 import gregtech.api.unification.ore.OrePrefix
@@ -25,7 +25,7 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('water') * 1000)
         .fluidOutputs(fluid('biomass') * 1000)
         .duration(80)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 FERMENTER.recipeBuilder()
@@ -41,7 +41,7 @@ AUTOCLAVE.recipeBuilder()
         .fluidInputs(fluid('water') * 1000)
         .outputs(metaitem('malted_grain') * 4)
         .duration(200)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 AUTOCLAVE.recipeBuilder()
@@ -50,7 +50,7 @@ AUTOCLAVE.recipeBuilder()
         .fluidInputs(fluid('water') * 1000)
         .fluidOutputs(fluid('mash') * 2000)
         .duration(100)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 AUTOCLAVE.recipeBuilder()
@@ -59,7 +59,7 @@ AUTOCLAVE.recipeBuilder()
         .fluidInputs(fluid('water') * 1000)
         .fluidOutputs(fluid('mash') * 1000)
         .duration(100)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -68,7 +68,7 @@ MIXER.recipeBuilder()
         .fluidOutputs(fluid('grain_solution') * 1000)
         .circuitMeta(4)
         .duration(100)
-        .EUt(GTValues.VA[GTValues.LV])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 FERMENTER.recipeBuilder()
