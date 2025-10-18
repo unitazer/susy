@@ -1,7 +1,7 @@
 import gregtech.api.GTValues
-import static gregtech.api.unification.material.Materials.*;
-import gregtech.api.unification.material.MarkerMaterials;
-import static gregtech.api.unification.ore.OrePrefix.dye;
+import static gregtech.api.unification.material.Materials.*
+import gregtech.api.unification.material.MarkerMaterials
+import static gregtech.api.unification.ore.OrePrefix.dye
 
 ROASTER = recipemap('roaster')
 ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
@@ -34,7 +34,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .fluidInputs(fluid('hydrogen_fluoride') * 2000)
         .fluidOutputs(fluid('fluorine') * 1000)
         .fluidOutputs(fluid('hydrogen') * 1000)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .duration(720)
         .buildAndRegister()
 

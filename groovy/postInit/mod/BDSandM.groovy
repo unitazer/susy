@@ -1,3 +1,5 @@
+import gregtech.api.GTValues
+
 def name_removals = [
     'bdsandm:upgrade_void',
 ]
@@ -90,7 +92,7 @@ recipemap('assembler').recipeBuilder()
 	.inputs(ore('ingotIron'))
 	.outputs(item('bdsandm:upgrade') * 4)
 	.duration(10)
-	.EUt(7)
+	.EUt(GTValues.VA[GTValues.ULV])
 	.buildAndRegister()
 
 recipemap('assembler').recipeBuilder()
@@ -100,7 +102,7 @@ recipemap('assembler').recipeBuilder()
 	.inputs(ore('ingotIron'))
 	.outputs(item('bdsandm:upgrade', 1))
 	.duration(20)
-	.EUt(7)
+	.EUt(GTValues.VA[GTValues.ULV])
 	.buildAndRegister()
 
 recipemap('assembler').recipeBuilder()
@@ -110,7 +112,7 @@ recipemap('assembler').recipeBuilder()
 	.inputs(ore('ingotIron') * 4)
 	.outputs(item('bdsandm:upgrade', 2))
 	.duration(40)
-	.EUt(7)
+	.EUt(GTValues.VA[GTValues.ULV])
 	.buildAndRegister()
 
 recipemap('assembler').recipeBuilder()
@@ -120,5 +122,5 @@ recipemap('assembler').recipeBuilder()
 	.inputs(ore('ingotIron') * 16)
 	.outputs(item('bdsandm:upgrade', 3))
 	.duration(80)
-	.EUt(7)
+	.EUt(GTValues.VA[GTValues.ULV])
 	.buildAndRegister()

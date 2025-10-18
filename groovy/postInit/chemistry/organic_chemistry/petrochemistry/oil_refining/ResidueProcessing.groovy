@@ -18,7 +18,7 @@ VACUUM_DT.recipeBuilder()
     .fluidOutputs(fractions.light_gas_oil.getSulfuric(150))
     .circuitMeta(1)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 // Slack wax Processing
@@ -28,7 +28,7 @@ CRYSTALLIZER.recipeBuilder()
     .fluidOutputs(fluid('lubricating_oil') * 250)
     .outputs(metaitem('paraffin_wax') * 4)
     .duration(300)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 crafting.addShaped("treated_wood_planks_paraffin", item('gregtech:planks', 1) * 8, [
@@ -42,7 +42,7 @@ EXTRACTOR.recipeBuilder()
     .circuitMeta(1)
     .fluidOutputs(fluid('lubricating_oil') * 250)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 EXTRACTOR.recipeBuilder()
@@ -50,7 +50,7 @@ EXTRACTOR.recipeBuilder()
     .circuitMeta(2)
     .fluidOutputs(fluid('resin') * 1000)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 // Deasphalting
@@ -98,7 +98,7 @@ for (residue in residues) {
         .outputs(metaitem('dustCarbonBlack') * 30)
         .fluidOutputs(fluid('flue_gas') * 1000)
         .duration(80)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     ROTARY_KILN.recipeBuilder()
@@ -108,7 +108,7 @@ for (residue in residues) {
         .outputs(metaitem('dustCarbonBlack') * 30)
         .fluidOutputs(fluid('carbon_dioxide') * 10000)
         .duration(100)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 }
 

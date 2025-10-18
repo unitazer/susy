@@ -1,3 +1,5 @@
+import gregtech.api.GTValues
+
 def name_removals = [
         'elevatorid:redye_white',
         'elevatorid:redye_orange',
@@ -66,7 +68,7 @@ for (dye in dyes) {
         	.inputs(ore('blockElevator'))
         	.outputs(item('elevatorid:elevator_' + dye))
         	.duration(20)
-        	.EUt(7)
+        	.EUt(GTValues.VA[GTValues.ULV])
         	.buildAndRegister();
 }
 
@@ -75,5 +77,5 @@ CHEMICAL_BATH.recipeBuilder()
         .inputs(ore('blockElevator'))
         .outputs(item('elevatorid:elevator_silver'))
         .duration(20)
-        .EUt(7)
+        .EUt(GTValues.VA[GTValues.ULV])
         .buildAndRegister();

@@ -14,7 +14,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('distilled_water') * 1000)
     .fluidOutputs(fluid('polyvinyl_alcohol_binder') * 1000)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 // Alumina

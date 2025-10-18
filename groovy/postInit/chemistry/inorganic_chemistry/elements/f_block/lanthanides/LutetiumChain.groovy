@@ -12,7 +12,7 @@ ION_EXCHANGE.recipeBuilder()
     .fluidOutputs(fluid('lutetium_chloride_solution') * 30)
     .fluidOutputs(fluid('ammonium_sulfate_solution') * 15)
     .duration(80)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 BR.recipeBuilder()

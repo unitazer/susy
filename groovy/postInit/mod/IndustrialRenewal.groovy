@@ -550,7 +550,7 @@ mods.gregtech.mixer.recipeBuilder()
 	.inputs(ore('wireFineSteel') * 8)
 	.outputs(item('industrialrenewal:concrete') * 2)
 	.duration(60)
-	.EUt(7)
+	.EUt(GTValues.VA[GTValues.ULV])
 	.buildAndRegister();
 
 mods.gregtech.assembler.recipeBuilder()
@@ -994,7 +994,7 @@ crafting.addShaped("irw_electric_gate", item('industrialrenewal:electric_gate'),
 		[ore('stickSteel'), ore('wireGtSingleSteel'), ore('stickSteel')]
 ]);
 
-mods.gregtech.canner.recipeBuilder().EUt(30).duration(20)
+mods.gregtech.canner.recipeBuilder().EUt(GTValues.VA[GTValues.LV]).duration(20)
 		.inputs(item('techguns:itemshared:24'))
 		.fluidInputs(liquid('carbon_dioxide')*1000)
 		.outputs(item('industrialrenewal:item_fire_extinguisher'))
@@ -1002,7 +1002,7 @@ mods.gregtech.canner.recipeBuilder().EUt(30).duration(20)
 ]);
 
 for (solder in soldering_alloys) {
-	mods.gregtech.assembler.recipeBuilder().EUt(30).duration(20)
+	mods.gregtech.assembler.recipeBuilder().EUt(GTValues.VA[GTValues.LV]).duration(20)
 			.inputs(metaitem('sensor.lv'))
 			.inputs(ore('wireFineRedAlloy')*4)
 			.inputs(ore('stickSteel'))

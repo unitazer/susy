@@ -1,7 +1,5 @@
 import globals.Batteries
-import postInit.utils.RecyclingHelper
 import gregtech.api.GTValues
-
 import gregtech.api.capability.GregtechCapabilities
 import gregtech.api.capability.IElectricItem
 
@@ -70,7 +68,7 @@ Batteries[GTValues.LV].each { battery ->
         .inputs(metaitem('electric.motor.lv'))
         .inputs(battery.fetchMetaitem())
         .outputs(battery.imprintCapacity(metaitem('power_unit.lv')))
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .duration(150)
         .buildAndRegister()
 }
@@ -113,7 +111,7 @@ Batteries[GTValues.MV].each { battery ->
         .inputs(metaitem('electric.motor.mv'))
         .inputs(battery.fetchMetaitem())
         .outputs(battery.imprintCapacity(metaitem('power_unit.mv')))
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .duration(150)
         .buildAndRegister()
 }
@@ -140,7 +138,7 @@ ItemStack withMaxChargeFromBattery(ItemStack tool, ItemStack battery) {
         .inputs(metaitem('electric.motor.mv'))
         .inputs(battery)
         .outputs(withMaxChargeFromBattery(metaitem('power_unit.mv'), battery))
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .duration(150)
         .buildAndRegister()
 }
@@ -152,7 +150,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('electric.motor.hv'))
     .inputs(ore('batteryHv'))
     .outputs(metaitem('power_unit.hv'))
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .duration(150)
     .buildAndRegister()
 
@@ -163,7 +161,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('electric.motor.ev'))
     .inputs(ore('batteryEv'))
     .outputs(metaitem('power_unit.ev'))
-    .EUt(1920)
+    .EUt(GTValues.VA[GTValues.EV])
     .duration(150)
     .buildAndRegister()
 
@@ -174,7 +172,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('electric.motor.iv'))
     .inputs(ore('batteryIv'))
     .outputs(metaitem('power_unit.iv'))
-    .EUt(7680)
+    .EUt(GTValues.VA[GTValues.IV])
     .duration(150)
     .buildAndRegister()
 

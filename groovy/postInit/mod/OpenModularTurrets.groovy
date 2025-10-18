@@ -1,6 +1,5 @@
 import gregtech.api.recipes.ingredients.nbtmatch.*
-
-
+import gregtech.api.GTValues
 
 def soldering_alloys = [
         liquid('tin') * 144,
@@ -65,7 +64,7 @@ for (solder in soldering_alloys) {
             .fluidInputs(solder)
             .outputs(item('openmodularturrets:turret_base:1'))
             .duration(200)
-            .EUt(30)
+            .EUt(GTValues.VA[GTValues.LV])
             .buildAndRegister();
 
     recipemap('weapons_factory').recipeBuilder()
@@ -78,7 +77,7 @@ for (solder in soldering_alloys) {
             .fluidInputs(solder)
             .outputs(item('openmodularturrets:turret_base:2'))
             .duration(200)
-            .EUt(120)
+            .EUt(GTValues.VA[GTValues.MV])
             .buildAndRegister();
 
     recipemap('weapons_factory').recipeBuilder()
@@ -91,7 +90,7 @@ for (solder in soldering_alloys) {
             .fluidInputs(solder)
             .outputs(item('openmodularturrets:turret_base:3'))
             .duration(200)
-            .EUt(480)
+            .EUt(GTValues.VA[GTValues.HV])
             .buildAndRegister();
 
     recipemap('weapons_factory').recipeBuilder()
@@ -298,7 +297,7 @@ recipemap('mixer').recipeBuilder()
         .fluidInputs(liquid('gasoline')*1000)
         .outputs(item('openmodularturrets:ammo_meta:0')*32)
         .duration(20)
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
 crafting.replaceShaped("openmodularturrets:addon_meta_5_vanilla", item('openmodularturrets:addon_meta', 5), [

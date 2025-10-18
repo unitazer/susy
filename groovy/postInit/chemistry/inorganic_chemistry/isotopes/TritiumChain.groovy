@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 PHASE_SEPARATOR = recipemap('phase_separator')
 FIXED_BED_REACTOR = recipemap('fixed_bed_reactor')
@@ -17,7 +17,7 @@ FIXED_BED_REACTOR.recipeBuilder()
     .fluidInputs(fluid('tritiated_steam'))
     .fluidOutputs(fluid('deuterium_tritium_mixture') * 2)
     .fluidOutputs(fluid('dense_steam'))
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .duration(100)
     .buildAndRegister()
 
@@ -25,6 +25,6 @@ SINGLE_COLUMN_CRYOGENIC_DISTILLATION.recipeBuilder()
     .fluidInputs(fluid('deuterium_tritium_mixture') * 100)
     .fluidOutputs(fluid('tritium') * 1)
     .fluidOutputs(fluid('deuterium') * 99)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .duration(100)
     .buildAndRegister()

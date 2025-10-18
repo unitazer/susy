@@ -94,7 +94,7 @@ for (i = 0; i < 6; i++) {
             .inputs(ore('foilCopper'))
             .outputs(metaitem('assembly' + lowTempSuperconductorsLowerCase[i]))
             .duration(200)
-            .EUt(30)
+            .EUt(GTValues.VA[GTValues.LV])
             .buildAndRegister();
 
     EXTRUDER.recipeBuilder()
@@ -102,7 +102,7 @@ for (i = 0; i < 6; i++) {
             .notConsumable(metaitem('shape.extruder.wire'))
             .outputs(metaitem('base' + lowTempSuperconductorsLowerCase[i]) * 16)
             .duration(200)
-            .EUt(30)
+            .EUt(GTValues.VA[GTValues.LV])
             .buildAndRegister();
 }
 
@@ -246,7 +246,7 @@ TUBE_FURNACE.recipeBuilder()
         .fluidInputs(fluid('nitrogen') * 500)
         .outputs(metaitem('tubemagnesiumdiboride'))
         .duration(1006)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
 TUBE_FURNACE.recipeBuilder()
@@ -254,7 +254,7 @@ TUBE_FURNACE.recipeBuilder()
         .fluidInputs(fluid('argon') * 50)
         .outputs(metaitem('tubemagnesiumdiboride'))
         .duration(670)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
 TUBE_FURNACE.recipeBuilder()
@@ -262,7 +262,7 @@ TUBE_FURNACE.recipeBuilder()
         .fluidInputs(fluid('nitrogen') * 500)
         .outputs(metaitem('tubemercurybariumcalciumcuprate'))
         .duration(1500)
-        .EUt(480)
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
 TUBE_FURNACE.recipeBuilder()
@@ -270,7 +270,7 @@ TUBE_FURNACE.recipeBuilder()
         .fluidInputs(fluid('argon') * 50)
         .outputs(metaitem('tubemercurybariumcalciumcuprate'))
         .duration(1005)
-        .EUt(480)
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
 TUBE_FURNACE.recipeBuilder()
@@ -287,7 +287,7 @@ for (i = 0; i < 3; i++) {
             .inputs(ore('dust' + highTempSuperconductors[i]))
             .outputs(metaitem('canned' + highTempSuperconductorsLowerCase[i]))
             .duration(200)
-            .EUt(30)
+            .EUt(GTValues.VA[GTValues.LV])
             .buildAndRegister();
 
     EXTRUDER.recipeBuilder()
@@ -295,7 +295,7 @@ for (i = 0; i < 3; i++) {
             .notConsumable(metaitem('shape.extruder.wire'))
             .outputs(metaitem('base' + highTempSuperconductorsLowerCase[i]) * 16)
             .duration(200)
-            .EUt(30)
+            .EUt(GTValues.VA[GTValues.LV])
             .buildAndRegister();
 }
 
@@ -347,7 +347,7 @@ ROASTER.recipeBuilder()
         .fluidInputs(liquid('oxygen') * 1000)
         .outputs(metaitem('dustBariumOxide') * 2)
         .duration(200)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
 ROASTER.recipeBuilder()
@@ -355,7 +355,7 @@ ROASTER.recipeBuilder()
         .fluidInputs(liquid('oxygen') * 1000)
         .outputs(metaitem('dustMercuryOxide') * 2)
         .duration(200)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
 MIXER.recipeBuilder()
@@ -375,7 +375,7 @@ TUBE_FURNACE.recipeBuilder()
         .fluidInputs(fluid('oxygen') * 1000)
         .outputs(metaitem('dustSamariumIronArsenicOxide') * 4)
         .duration(600)
-        .EUt(1920)
+        .EUt(GTValues.VA[GTValues.EV])
         .buildAndRegister();
 
 
@@ -385,7 +385,7 @@ TUBE_FURNACE.recipeBuilder()
         .fluidInputs(fluid('nitrogen') * 1000)
         .outputs(metaitem('dustManganesePhosphide') * 4)
         .duration(200)
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
 MIXER.recipeBuilder()
@@ -394,7 +394,7 @@ MIXER.recipeBuilder()
         .inputs(ore('dustCupricOxide') * 12)
         .outputs(metaitem('dustYttriumBariumCuprate') * 25)
         .duration(600)
-        .EUt(7680)
+        .EUt(GTValues.VA[GTValues.IV])
         .buildAndRegister();
 
 ROASTER.recipeBuilder()
@@ -402,7 +402,7 @@ ROASTER.recipeBuilder()
         .fluidInputs(liquid('chlorine') * 3000)
         .outputs(metaitem('dustIndiumChloride') * 4)
         .duration(200)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
 BR.recipeBuilder()
@@ -411,7 +411,7 @@ BR.recipeBuilder()
         .outputs(metaitem('dustIndiumHydroxide') * 7)
         .fluidOutputs(liquid('salt_water') * 3000)
         .duration(200)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
 ROASTER.recipeBuilder()
@@ -419,7 +419,7 @@ ROASTER.recipeBuilder()
         .outputs(metaitem('dustIndiumOxide') * 5)
         .fluidOutputs(liquid('dense_steam') * 3000)
         .duration(200)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
 MIXER.recipeBuilder()
@@ -430,5 +430,5 @@ MIXER.recipeBuilder()
         .inputs(ore('dustCupricOxide') * 14)
         .outputs(metaitem('dustIndiumTinBariumTitaniumCuprate') * 16)
         .duration(600)
-        .EUt(30720)
+        .EUt(GTValues.VA[GTValues.LuV])
         .buildAndRegister();

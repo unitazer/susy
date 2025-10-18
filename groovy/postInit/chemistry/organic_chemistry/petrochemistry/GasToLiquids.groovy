@@ -98,7 +98,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .notConsumable(ore('dustLtftCatalyst'))
         .fluidOutputs(fluid('raw_lt_syncrude') * 1000)
         .duration(20)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     CENTRIFUGE.recipeBuilder()
@@ -107,7 +107,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('lt_syncrude') * 1930)
         .fluidOutputs(fluid('oxygenate_solution') * 140)
         .duration(40)
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
     SIEVE_DT.recipeBuilder()
@@ -118,7 +118,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('naphtha') * 260)
         .fluidOutputs(fluid('lt_light_gases') * 1490)
         .duration(40)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
@@ -132,7 +132,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('methane') * 320)
         .fluidOutputs(fluid('hydrogen') * 870)
         .duration(40)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     // HT Fischer Tropsch
@@ -142,7 +142,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .notConsumable(ore('dustHtftCatalyst'))
         .fluidOutputs(fluid('raw_ht_syncrude') * 5000)
         .duration(20)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     CENTRIFUGE.recipeBuilder()
@@ -151,7 +151,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('ht_syncrude') * 4910)
         .fluidOutputs(fluid('oxygenate_solution') * 180)
         .duration(20)
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
     SIEVE_DT.recipeBuilder()
@@ -162,7 +162,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('naphtha') * 365)
         .fluidOutputs(fluid('ht_light_gases') * 4480)
         .duration(20)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
@@ -176,7 +176,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('methane') * 620)
         .fluidOutputs(fluid('hydrogen') * 2500)
         .duration(20)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     // Product treatment
@@ -186,7 +186,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('water') * 1000)
         .fluidOutputs(fluid('oxygenates') * 1000)
         .duration(10)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     // Hydrogen separation
@@ -199,7 +199,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
             .notConsumable(ore('catalystBedLtsCatalyst'))
             .fluidOutputs(fluid('reformed_hydrogen_rich_syngas') * 8000)
             .duration(100)
-            .EUt(30)
+            .EUt(GTValues.VA[GTValues.LV])
             .buildAndRegister()
 
         REACTION_FURNACE.recipeBuilder()
@@ -208,7 +208,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
             .notConsumable(metaitem('catalystBedHtsCatalyst'))
             .fluidOutputs(fluid('reformed_hydrogen_rich_syngas') * 8000)
             .duration(30)
-            .EUt(120)
+            .EUt(GTValues.VA[GTValues.MV])
             .buildAndRegister()
 
         REACTION_FURNACE.recipeBuilder()
@@ -217,7 +217,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
             .notConsumable(ore('catalystBedLtsCatalyst'))
             .fluidOutputs(fluid('reformed_monoxide_rich_syngas') * 7000)
             .duration(100)
-            .EUt(30)
+            .EUt(GTValues.VA[GTValues.LV])
             .buildAndRegister()
 
         REACTION_FURNACE.recipeBuilder()
@@ -226,7 +226,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
             .notConsumable(metaitem('catalystBedHtsCatalyst'))
             .fluidOutputs(fluid('reformed_monoxide_rich_syngas') * 7000)
             .duration(30)
-            .EUt(120)
+            .EUt(GTValues.VA[GTValues.MV])
             .buildAndRegister()
 
         // Separation
@@ -237,7 +237,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
             .fluidOutputs(fluid('hydrogen') * 7000)
             .fluidOutputs(fluid('carbon_dioxide') * 1000)
             .duration(80)
-            .EUt(120)
+            .EUt(GTValues.VA[GTValues.MV])
             .buildAndRegister()
 
         PSA.recipeBuilder()
@@ -246,7 +246,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
             .fluidOutputs(fluid('hydrogen') * 5000)
             .fluidOutputs(fluid('carbon_monoxide') * 1000)
             .duration(80)
-            .EUt(120)
+            .EUt(GTValues.VA[GTValues.MV])
             .buildAndRegister()
 
         PSA.recipeBuilder()
@@ -255,7 +255,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
             .fluidOutputs(fluid('hydrogen') * 6000)
             .fluidOutputs(fluid('carbon_dioxide') * 1000)
             .duration(80)
-            .EUt(120)
+            .EUt(GTValues.VA[GTValues.MV])
             .buildAndRegister()
 
         PSA.recipeBuilder()
@@ -264,7 +264,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
             .fluidOutputs(fluid('hydrogen') * 4000)
             .fluidOutputs(fluid('carbon_monoxide') * 1000)
             .duration(80)
-            .EUt(120)
+            .EUt(GTValues.VA[GTValues.MV])
             .buildAndRegister()
 
     // Methanol to gasoline
@@ -276,7 +276,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('naphtha') * 420)
         .fluidOutputs(fluid('water') * 4460)
         .duration(20)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
@@ -289,5 +289,5 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('ethane') * 65)
         .fluidOutputs(fluid('methane') * 100)
         .duration(20)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()

@@ -1,5 +1,4 @@
-import globals.Globals
-
+import gregtech.api.GTValues
 import gregtech.api.recipes.recipeproperties.RecipeProperty;
 import gregtech.api.recipes.RecipeBuilder;
 
@@ -41,7 +40,7 @@ VACUUM_CHAMBER.recipeBuilder()
     .inputs(metaitem('vacuum_tube_components'))
     .inputs(ore('ringKovar'))
     .outputs(metaitem('circuit.vacuum_tube'))
-    .EUt(7)
+    .EUt(GTValues.VA[GTValues.ULV])
     .duration(200)
     .buildAndRegister()
 

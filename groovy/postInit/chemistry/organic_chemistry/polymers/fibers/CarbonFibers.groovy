@@ -70,7 +70,7 @@ CHEMICAL_BATH.recipeBuilder()
     .fluidOutputs(fluid('dimethylformamide') * 3000)
     .fluidOutputs(fluid('wastewater') * 100)
     .duration(300)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister()
 
 // Conversion to carbon fibers
@@ -80,7 +80,7 @@ TUBE_FURNACE.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 2000)
     .outputs(metaitem('fiber.oxidized_polyacrylonitrile') * 16)
     .duration(300)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister()
 
 TUBE_FURNACE.recipeBuilder()
@@ -88,7 +88,7 @@ TUBE_FURNACE.recipeBuilder()
     .inputs(metaitem('fiber.oxidized_polyacrylonitrile') * 16)
     .outputs(metaitem('carbon.fibers') * 16)
     .duration(300)
-    .EUt(1920)
+    .EUt(GTValues.VA[GTValues.EV])
     .buildAndRegister()
 
 // Raw Carbon Fibers * 1

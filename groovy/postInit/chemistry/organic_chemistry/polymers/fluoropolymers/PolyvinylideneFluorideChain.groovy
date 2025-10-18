@@ -84,7 +84,7 @@ PYROLYSE_OVEN.recipeBuilder()
     .fluidInputs(fluid('tetrafluoroethylene') * 1500)
     .fluidOutputs(fluid('hexafluoropropylene') * 1000)
     .duration(200)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();
 
 POLYMERIZATION_TANK.recipeBuilder()
@@ -94,7 +94,7 @@ POLYMERIZATION_TANK.recipeBuilder()
     .fluidInputs(fluid('vinylidene_fluoride_surfactant_mixture') * 500)
     .fluidOutputs(fluid('viton_solution') * 500)
     .duration(200)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 DRYER.recipeBuilder()
@@ -102,5 +102,5 @@ DRYER.recipeBuilder()
     .outputs(metaitem('dustViton'))
     .fluidOutputs(fluid('vinylidene_fluoride_surfactant_mixture') * 500)
     .duration(300)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();

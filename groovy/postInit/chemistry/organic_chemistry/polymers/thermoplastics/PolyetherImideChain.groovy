@@ -120,7 +120,7 @@ POLYMERIZATION_TANK.recipeBuilder()
     .outputs(metaitem('dustUltem'))
     .fluidOutputs(fluid('dense_steam') * 2000)
     .duration(300)
-    .EUt(1920)
+    .EUt(GTValues.VA[GTValues.EV])
     .buildAndRegister();
 
 // Pyromellitic Dianhydride
@@ -132,7 +132,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustDurene') * 24)
     .fluidOutputs(fluid('hydrogen_chloride') * 2000)
     .duration(300)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()

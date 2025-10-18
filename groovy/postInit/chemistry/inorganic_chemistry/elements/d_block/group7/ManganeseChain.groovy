@@ -1,12 +1,12 @@
 import globals.Carbons
 
 import gregtech.api.GTValues
-import gregtech.api.unification.material.properties.*;
-import gregtech.api.GregTechAPI;
-import gregtech.api.unification.material.Material;
-import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.ore.OrePrefix;
-import static gregtech.api.unification.material.Materials.*;
+import gregtech.api.unification.material.properties.*
+import gregtech.api.GregTechAPI
+import gregtech.api.unification.material.Material
+import gregtech.api.unification.OreDictUnifier
+import gregtech.api.unification.ore.OrePrefix
+import static gregtech.api.unification.material.Materials.*
 
 EBF = recipemap('electric_blast_furnace')
 ROASTER = recipemap('roaster')
@@ -132,7 +132,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid('manganese_ii_sulfate_solution') * 1000)
     .duration(80)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -140,7 +140,7 @@ DISTILLERY.recipeBuilder()
     .fluidOutputs(fluid('water') * 1000)
     .outputs(metaitem('dustManganeseIiSulfate') * 6)
     .duration(80)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -148,7 +148,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('manganese_ii_sulfate_solution') * 1000)
     .duration(80)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 // MnCl2
@@ -158,7 +158,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('hydrochloric_acid') * 2000)
     .fluidOutputs(fluid('manganese_ii_chloride_solution') * 3000)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -166,7 +166,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustManganeseIiChloride') * 3)
     .fluidOutputs(fluid('water') * 3000)
     .duration(20)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -175,7 +175,7 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('diluted_manganese_ii_chloride_solution') * 6000)
     .fluidOutputs(fluid('chlorine') * 2000)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -183,7 +183,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustManganeseIiChloride') * 3)
     .fluidOutputs(fluid('water') * 6000)
     .duration(20)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 // Manganese Nitrate process developed by IG Farbenindustrie
@@ -195,7 +195,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('crude_manganese_ii_nitrate_solution') * 1000)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -204,7 +204,7 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('nitrogen_dioxide') * 2000)
     .fluidOutputs(fluid('dense_steam') * 1000)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 // MnO2 & Mn(NO3)2
@@ -214,7 +214,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('nitrogen_dioxide') * 2000)
     .outputs(metaitem('dustManganeseIiNitrate') * 9)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -222,7 +222,7 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('nitrogen_dioxide') * 2000)
     .outputs(metaitem('dustManganeseDioxide') * 3)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -231,7 +231,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 2000)
     .outputs(metaitem('dustManganeseDioxide') * 3)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 // MnO
@@ -241,7 +241,7 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('dense_steam') * 1000)
     .outputs(metaitem('dustManganeseIiOxide') * 2)
     .duration(200)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -250,7 +250,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 1000)
     .outputs(metaitem('dustManganeseIiOxide') * 2)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -259,7 +259,7 @@ REACTION_FURNACE.recipeBuilder()
     .outputs(metaitem('dustManganeseIiOxide') * 2)
     .fluidOutputs(fluid('dense_steam') * 1000)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -268,7 +268,7 @@ REACTION_FURNACE.recipeBuilder()
     .outputs(metaitem('dustManganeseIiOxide') * 2)
     .fluidOutputs(fluid('carbon_dioxide') * 1000)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 // MnO & Mn(NO3)2
@@ -278,7 +278,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('nitric_acid') * 2000)
     .fluidOutputs(fluid('manganese_ii_nitrate_solution') * 1000)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -286,7 +286,7 @@ DISTILLERY.recipeBuilder()
     .fluidOutputs(fluid('water') * 1000)
     .outputs(metaitem('dustManganeseIiNitrate') * 9)
     .duration(80)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 // Potassium permanganate
@@ -298,7 +298,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustPotassiumManganate') * 7)
     .fluidOutputs(fluid('dense_steam') * 1000)
     .duration(200)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 ELECTROLYTIC_CELL.recipeBuilder()
@@ -309,7 +309,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
     .fluidOutputs(fluid('oxidized_manganate_solution') * 1000)
     .fluidOutputs(fluid('hydrogen') * 1000)
     .duration(200)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 CRYSTALLIZER.recipeBuilder()
@@ -317,7 +317,7 @@ CRYSTALLIZER.recipeBuilder()
     .outputs(metaitem('dustPotassiumPermanganate') * 6)
     .fluidOutputs(fluid('potassium_hydroxide_solution') * 1000)
     .duration(200)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 // Manganese carbonate
@@ -329,5 +329,5 @@ BR.recipeBuilder()
     .outputs(metaitem('dustManganeseIiCarbonate') * 5)
     .fluidOutputs(fluid('sodium_nitrate_solution') * 2000)
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()

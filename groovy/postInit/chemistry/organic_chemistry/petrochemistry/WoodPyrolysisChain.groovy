@@ -1,9 +1,8 @@
-import globals.Globals
-
-import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.api.GTValues
+import gregtech.api.recipes.ModHandler
+import gregtech.api.unification.material.Materials
+import gregtech.api.unification.ore.OrePrefix
+import gregtech.api.unification.stack.UnificationEntry
 
 def PYROLYSE_OVEN = recipemap('pyrolyse_oven');
 def DISTILLATION_TOWER = recipemap('distillation_tower');
@@ -56,7 +55,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('creosote') * 250)
         .fluidOutputs(fluid('wood_gas') * 5000)
         .duration(20)
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()

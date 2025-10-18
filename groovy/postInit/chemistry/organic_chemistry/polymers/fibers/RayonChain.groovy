@@ -1,9 +1,8 @@
-import globals.Globals
-
-import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.api.GTValues
+import gregtech.api.recipes.ModHandler
+import gregtech.api.unification.material.Materials
+import gregtech.api.unification.ore.OrePrefix
+import gregtech.api.unification.stack.UnificationEntry
 
 def POLYMERIZATION = recipemap('polymerization_tank');
 def CHEMICAL_BATH = recipemap('chemical_bath');
@@ -54,5 +53,5 @@ COMPRESSOR.recipeBuilder()
         .inputs(ore('threadRayon') * 8)
         .outputs(item('minecraft:wool'))
         .duration(100)
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()

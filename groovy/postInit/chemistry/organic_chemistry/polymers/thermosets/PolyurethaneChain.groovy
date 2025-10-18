@@ -1,18 +1,17 @@
-import globals.Globals
+import gregtech.api.GTValues
+import gregtech.api.recipes.ModHandler
+import gregtech.api.unification.material.Materials
+import gregtech.api.unification.ore.OrePrefix
+import gregtech.api.unification.stack.UnificationEntry
 
-import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.unification.stack.UnificationEntry;
-
-def LCR = recipemap('large_chemical_reactor');
-def FBR = recipemap('fluidized_bed_reactor');
-def CSTR = recipemap('continuous_stirred_tank_reactor');
-def POLYMERIZATION = recipemap('polymerization_tank');
-def DISTILLATION_TOWER = recipemap('distillation_tower');
-def MIXER = recipemap('mixer');
-def CHEMICAL_BATH = recipemap('chemical_bath');
-def FLUID_COMPRESSOR = recipemap('fluid_compressor');
+def LCR = recipemap('large_chemical_reactor')
+def FBR = recipemap('fluidized_bed_reactor')
+def CSTR = recipemap('continuous_stirred_tank_reactor')
+def POLYMERIZATION = recipemap('polymerization_tank')
+def DISTILLATION_TOWER = recipemap('distillation_tower')
+def MIXER = recipemap('mixer')
+def CHEMICAL_BATH = recipemap('chemical_bath')
+def FLUID_COMPRESSOR = recipemap('fluid_compressor')
 
 LCR.recipeBuilder()
         .fluidInputs(fluid('formaldehyde') * 2000)
@@ -29,7 +28,7 @@ DISTILLATION_TOWER.recipeBuilder()
         .fluidOutputs(fluid('hydrochloric_acid') * 250)
         .fluidOutputs(fluid('water') * 250)
         .duration(50)
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
 FBR.recipeBuilder()
@@ -46,7 +45,7 @@ CSTR.recipeBuilder()
         .fluidInputs(fluid('ammonia') * 300)
         .fluidOutputs(fluid('ethanolamine_mix') * 150)
         .duration(1)
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -55,7 +54,7 @@ DISTILLATION_TOWER.recipeBuilder()
         .fluidOutputs(fluid('diethanolamine') * 1000)
         .fluidOutputs(fluid('ethanolamine') * 1000)
         .duration(200)
-        .EUt(120)
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
 FBR.recipeBuilder()
@@ -111,7 +110,7 @@ CHEMICAL_BATH.recipeBuilder()
         .fluidInputs(fluid('dye_yellow') * 288)
         .outputs(item('minecraft:sponge'))
         .duration(100)
-        .EUt(30)
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
 // Adipic acid for Spandex
@@ -153,6 +152,6 @@ DRYER.recipeBuilder()
         .outputs(metaitem('fiberSpandex') * 8)
         .fluidOutputs(fluid('air') * 1000)
         .fluidOutputs(fluid('dimethylacetamide') * 3500)
-        .EUt(480)
+        .EUt(GTValues.VA[GTValues.HV])
         .duration(100)
         .buildAndRegister()

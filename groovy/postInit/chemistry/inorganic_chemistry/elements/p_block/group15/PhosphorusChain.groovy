@@ -112,7 +112,7 @@ for (apatite in apatites) {
         .inputs(ore('dustStone'))
         .outputs(metaitem('gregtechfoodoption:bone_china_clay_dust') * 4)
         .duration(40)
-        .EUt(7)
+        .EUt(GTValues.VA[GTValues.ULV])
         .buildAndRegister()
 }
 
@@ -169,7 +169,7 @@ ROASTER.recipeBuilder()
     .notConsumable(ore('dustVanadiumPentoxide'))
     .fluidOutputs(fluid('sulfur_trioxide') * 1000)
     .duration(200)
-    .EUt(7)
+    .EUt(GTValues.VA[GTValues.ULV])
     .buildAndRegister()
 
 //THERMAL PROCESS
@@ -358,7 +358,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('ammonia_solution') * 50)
     .fluidOutputs(fluid('ammonium_dihydrogen_phosphate_solution') * 50)
     .duration(200)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 DISTILLERY.recipeBuilder()
@@ -366,7 +366,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustAmmoniumDihydrogenPhosphate') * 12)
     .fluidOutputs(fluid('water') * 1000)
     .duration(200)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 CSTR.recipeBuilder()
@@ -375,7 +375,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('ammonia_solution') * 100)
     .fluidOutputs(fluid('diammonium_hydrogen_phosphate_solution') * 100)
     .duration(200)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 DISTILLERY.recipeBuilder()
@@ -383,5 +383,5 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustDiammoniumHydrogenPhosphate') * 15)
     .fluidOutputs(fluid('water') * 2000)
     .duration(200)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();

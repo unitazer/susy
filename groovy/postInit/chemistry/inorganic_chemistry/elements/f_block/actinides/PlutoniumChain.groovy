@@ -1,3 +1,5 @@
+import gregtech.api.GTValues
+
 MIXER_SETTLER = recipemap('mixer_settler')
 BR = recipemap('batch_reactor')
 MIXER = recipemap('mixer')
@@ -13,7 +15,7 @@ MIXER_SETTLER.recipeBuilder()
     .fluidOutputs(fluid('purified_plutonium_concentrate') * 240) // 0.03 mol Pu(III), 0.09 mol Fe(II), 0.03 mol Fe(III), 0.12 mol NH2SO3-, 0.24 mol NO3-, 0.12 mol H+, 0.12 mol H2O
     .requiredCells(4)
     .duration(120)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 // Reoxidation
@@ -26,7 +28,7 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('nitrogen') * 240)
     .fluidOutputs(fluid('nitric_oxide') * 120)
     .duration(120)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 // Reextraction
@@ -37,7 +39,7 @@ MIXER_SETTLER.recipeBuilder()
     .fluidOutputs(fluid('plutonium_extract') * 5000)
     .requiredCells(4)
     .duration(120)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 // Reduction
@@ -46,7 +48,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('diluted_nitric_acid') * 2000)
     .fluidOutputs(fluid('hydroxylammonium_nitrate_solution') * 1000)
     .duration(20)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 MIXER_SETTLER.recipeBuilder()
@@ -56,7 +58,7 @@ MIXER_SETTLER.recipeBuilder()
     .fluidOutputs(fluid('plutonium_iii_nitrate_solution') * 9000)
     .requiredCells(4)
     .duration(120)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 DT.recipeBuilder()
@@ -65,7 +67,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('nitric_acid') * 1000)
     .fluidOutputs(fluid('water') * 2000)
     .duration(120)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 ROTARY_KILN.recipeBuilder()
@@ -74,7 +76,7 @@ ROTARY_KILN.recipeBuilder()
     .fluidOutputs(fluid('nitrogen_dioxide') * 3000)
     .fluidOutputs(fluid('oxygen') * 1000)
     .duration(120)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 // Metal production
@@ -86,7 +88,7 @@ REACTION_FURNACE.recipeBuilder()
     .outputs(metaitem('dustReactorGradePlutonium'))
     .outputs(metaitem('dustQuicklime') * 4)
     .duration(120)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 // MOX
@@ -96,7 +98,7 @@ BLENDER.recipeBuilder()
     .inputs(metaitem('dustUraniumDioxide') * 19)
     .outputs(metaitem('dustMixedOxideFuel') * 20)
     .duration(200)
-    .EUt(1920)
+    .EUt(GTValues.VA[GTValues.EV])
     .buildAndRegister();
 
 // Pu-Ga
@@ -106,5 +108,5 @@ MIXER.recipeBuilder()
     .inputs(metaitem('dustGallium'))
     .outputs(metaitem('dustPlutoniumGallium') * 30)
     .duration(200)
-    .EUt(1920)
+    .EUt(GTValues.VA[GTValues.EV])
     .buildAndRegister();

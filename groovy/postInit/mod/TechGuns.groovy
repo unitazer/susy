@@ -859,7 +859,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .circuitMeta(1)
     .outputs(item('techguns:itemshared', 5) * 4)
     .duration(80)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -871,7 +871,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .circuitMeta(2)
     .outputs(item('techguns:fraggrenade') * 4)
     .duration(80)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -950,7 +950,7 @@ CHEMICAL_BATH.recipeBuilder()
     .fluidInputs(fluid('glyceryl_trinitrate') * 250)
     .outputs(item('techguns:itemshared', 144) * 4)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 CANNER.recipeBuilder()
@@ -958,7 +958,7 @@ CANNER.recipeBuilder()
     .inputs(ore('dustPhosphorus'))
     .outputs(item('techguns:itemshared', 106) * 4)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 CANNER.recipeBuilder()
@@ -966,7 +966,7 @@ CANNER.recipeBuilder()
     .inputs(ore('dustPhosphorus'))
     .outputs(item('techguns:itemshared', 108) * 4)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 CANNER.recipeBuilder()
@@ -974,7 +974,7 @@ CANNER.recipeBuilder()
     .inputs(ore('dustPhosphorus'))
     .outputs(item('techguns:itemshared', 109) * 6)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 CANNER.recipeBuilder()
@@ -982,7 +982,7 @@ CANNER.recipeBuilder()
     .inputs(ore('dustPhosphorus'))
     .outputs(item('techguns:itemshared', 110) * 4)
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 crafting.replaceShaped("techguns:riot_shield", item('techguns:riot_shield'), [
@@ -1210,7 +1210,7 @@ FORMING_PRESS.recipeBuilder()
     .inputs(item('techguns:itemshared:38'))
     .outputs(item('techguns:itemshared:39'))
     .duration(30)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 ROASTER.recipeBuilder()
@@ -1218,7 +1218,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .outputs(item('techguns:itemshared:77'))
     .duration(85)
-    .EUt(7)
+    .EUt(GTValues.VA[GTValues.ULV])
     .buildAndRegister();
 
 crafting.addShaped("bound_leather", metaitem('bound_leather')*8, [
@@ -1306,7 +1306,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .inputs(ore('plateSteel') * 4)
     .outputs(item('techguns:itemshared:147'))
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -1315,7 +1315,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .inputs(ore('platePolycaprolactam') * 2)
     .outputs(item('techguns:itemshared:150'))
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -1324,7 +1324,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .inputs(ore('plateKevlar') * 2)
     .outputs(item('techguns:itemshared:153'))
     .duration(100)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -1332,7 +1332,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .inputs(ore('plateSteel') * 4)
     .outputs(item('techguns:itemshared:148'))
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -1341,7 +1341,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .inputs(ore('platePolycaprolactam') * 2)
     .outputs(item('techguns:itemshared:151'))
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -1350,7 +1350,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .inputs(ore('plateKevlar') * 2)
     .outputs(item('techguns:itemshared:154'))
     .duration(100)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -1358,7 +1358,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .inputs(ore('plateSteel') * 4)
     .outputs(item('techguns:itemshared:149'))
     .duration(100)
-    .EUt(30)
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -1367,7 +1367,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .inputs(ore('platePolycaprolactam') * 2)
     .outputs(item('techguns:itemshared:152'))
     .duration(100)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -1376,7 +1376,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .inputs(ore('plateKevlar') * 2)
     .outputs(item('techguns:itemshared:155'))
     .duration(100)
-    .EUt(480)
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 //Compressed air
@@ -1386,7 +1386,7 @@ CANNER.recipeBuilder()
     .fluidInputs(fluid('hp_air') * 1000)
     .outputs(item('techguns:itemshared:23'))
     .duration(100)
-    .EUt(7)
+    .EUt(GTValues.VA[GTValues.ULV])
     .buildAndRegister();
 
 //-------------------Change TechGuns damage values to be better suited with SUSY progression----------------

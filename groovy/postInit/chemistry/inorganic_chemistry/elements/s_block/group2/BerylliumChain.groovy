@@ -27,7 +27,7 @@ REACTION_FURNACE.recipeBuilder()
     .inputs(ore('dustEmerald'))
     .inputs(ore('dustSodaAsh') * 6)
     .outputs(metaitem('dustAlkaliFusedBeryl') * 2)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .duration(100)
     .buildAndRegister()
 
@@ -39,7 +39,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustSiliconDioxide') * 18)
     .fluidOutputs(fluid('carbon_dioxide') * 1000)
     .fluidOutputs(fluid('dissolved_beryl') * 1000)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .duration(100)
     .buildAndRegister()
 
@@ -54,7 +54,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustPotassiumAlum') * 24)
     .fluidOutputs(fluid('impure_beryllium_sulfate_solution') * 1500)
     //Beryllium, 3, Sodium, 2, Sulfur, 4, Oxygen, 16, Water, 8 + Iron/Manganese sulfate impurities
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .duration(200)
     .buildAndRegister()
 
@@ -65,7 +65,7 @@ BR.recipeBuilder() //Potassium permangante is typically added to oxidize iron II
     .outputs(metaitem('dustTinyChromiumIiiHydroxide'))
     .outputs(metaitem('dustTinyGypsum') * 8)
     .fluidOutputs(fluid('beryllium_sulfate_solution') * 1000)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .duration(100)
     .buildAndRegister()
 
@@ -75,7 +75,7 @@ BR.recipeBuilder() //75%
     .fluidInputs(fluid('beryllium_sulfate_solution') * 1000)
     .outputs(metaitem('dustBerylliumHydroxide') * 9)
     .fluidOutputs(fluid('sodium_sulfate_solution') * 8000)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .duration(100)
     .buildAndRegister()
 
@@ -85,7 +85,7 @@ BR.recipeBuilder() //100% (Technically, it makes a little bit of ferric EDTA but
     .fluidInputs(fluid('beryllium_sulfate_solution') * 1000)
     .outputs(metaitem('dustBerylliumHydroxide') * 12)
     .fluidOutputs(fluid('sodium_sulfate_solution') * 8000)
-    .EUt(120)
+    .EUt(GTValues.VA[GTValues.MV])
     .duration(100)
     .buildAndRegister()
 
