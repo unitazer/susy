@@ -1931,8 +1931,8 @@ ASSEMBLER.recipeBuilder()
     .EUt(7)
     .buildAndRegister()
 
-for(color in lamp_colors) {
-    for(int i = 0; i < 8; i++) {
+for (color in lamp_colors) {
+    for (int i = 0; i < 8; i++) {
         mods.gregtech.assembler.removeByInput(7, [metaitem('plateGlass') * 6, item('minecraft:glowstone_dust'), metaitem('circuit.integrated').withNbt(['Configuration': i+1])], [fluid('dye_'+color) * 144 * 144])
         mods.gregtech.assembler.removeByInput(7, [metaitem('plateGlass') * 6, item('minecraft:glowstone_dust'), metaitem('circuit.integrated').withNbt(['Configuration': i+9])], [fluid('dye_'+color) * 144 * 144])
     }
@@ -1949,7 +1949,7 @@ for(color in lamp_colors) {
 
 
 //do this separately for light gray lamps because they are called silver for some reason?
-for(int i = 0; i < 8; i++) {
+for (int i = 0; i < 8; i++) {
     mods.gregtech.assembler.removeByInput(7, [metaitem('plateGlass') * 6, item('minecraft:glowstone_dust'), metaitem('circuit.integrated').withNbt(['Configuration': i+1])], [fluid('dye_light_gray') * 144 * 144])
     mods.gregtech.assembler.removeByInput(7, [metaitem('plateGlass') * 6, item('minecraft:glowstone_dust'), metaitem('circuit.integrated').withNbt(['Configuration': i+9])], [fluid('dye_light_gray') * 144 * 144])
 }

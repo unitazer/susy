@@ -1,5 +1,5 @@
-import globals.Globals
 import globals.Carbons
+import gregtech.api.GTValues
 
 PRIMITIVEBLASTFURNACE = recipemap('primitive_blast_furnace')
 EBF = recipemap('electric_blast_furnace')
@@ -19,7 +19,7 @@ GRAVITY_SEPARATOR.recipeBuilder()
     .inputs(ore('dustPentlandite'))
     .outputs(metaitem('dustSiftedPentlandite'))
     .chancedOutput(metaitem('dustUltramaficTailings'), 2500, 0)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .duration(40)
     .buildAndRegister()
 
@@ -27,7 +27,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustSiftedPentlandite') * 8)
     .fluidInputs(fluid('distilled_water') * 2000)
     .fluidOutputs(fluid('impure_pentlandite_slurry') * 2000)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .duration(80)
     .buildAndRegister()
 
@@ -38,7 +38,7 @@ FF.recipeBuilder()
     .notConsumable(fluid('cresol') * 100)
     .fluidOutputs(fluid('pentlandite_slurry') * 1000)
     .fluidOutputs(fluid('ultramafic_tailing_slurry') * 1000)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .duration(80)
     .buildAndRegister()
 
@@ -47,7 +47,7 @@ CLARIFIER.recipeBuilder()
     .outputs(metaitem('dustFlotatedPentlandite') * 16)
     .fluidOutputs(fluid('wastewater') * 1000)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Furnace conversion
@@ -119,7 +119,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
     .fluidOutputs(fluid('diluted_sulfuric_acid') * 2000)
     .fluidOutputs(fluid('oxygen') * 1000)
     .duration(240)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 ELECTROLYTIC_CELL.recipeBuilder()
@@ -131,7 +131,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
     .fluidOutputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid('oxygen') * 1000)
     .duration(240)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 //MOND PROCESS

@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 BCR = recipemap('bubble_column_reactor')
@@ -82,7 +82,7 @@ ROASTER.recipeBuilder()
     .inputs(metaitem('anode_slime.lead'))
     .fluidInputs(fluid('sulfuric_acid') * 150)
     .outputs(metaitem('dustSulfatizedLeadSlime'))
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .duration(200)
     .buildAndRegister()
 

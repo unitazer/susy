@@ -1,5 +1,5 @@
-import globals.Globals
-import classes.*;
+import classes.*
+import gregtech.api.GTValues
 
 def recipesToRemove = [
         'gregtech:manganese_phosphide_wire_single',
@@ -10,7 +10,7 @@ def recipesToRemove = [
         'gregtech:ruthenium_trinium_americium_neutronate_wire_single'
 ]
 
-for(name in recipesToRemove) {
+for (name in recipesToRemove) {
     crafting.remove(name)
 }
 
@@ -336,7 +336,7 @@ for (def i = 0; i < 9; i++) {
                         .fluidInputs(liquid(key) * 1)
                         .outputs(metaitem('wireGtSingle' + allSuperconductors[i]))
                         .duration(50)
-                        .EUt(Globals.voltAmps[i + 1])
+                        .EUt(GTValues.VA[i + 1])
                         .buildAndRegister();
                 }
         }

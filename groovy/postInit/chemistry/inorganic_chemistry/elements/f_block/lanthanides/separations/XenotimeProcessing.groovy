@@ -1,5 +1,5 @@
-import globals.Globals
 import static globals.SinteringGlobals.*
+import gregtech.api.GTValues
 
 GRAVITY_SEPARATOR = recipemap('gravity_separator')
 MIXER = recipemap('mixer')
@@ -71,7 +71,7 @@ for (fuel in sintering_fuels) {
             .outputs(metaitem('dustRoastedXenotime'))
             .fluidOutputs(fluid('carbon_dioxide') * 3000)
             .duration(160)
-            .EUt(Globals.voltAmps[2])
+            .EUt(GTValues.VA[2])
             .buildAndRegister()
     }
 }

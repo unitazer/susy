@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 ROASTER = recipemap('roaster')
@@ -78,5 +78,5 @@ EBF.recipeBuilder()
     .fluidOutputs(fluid('magnesium_chloride') * 864)
     .blastFurnaceTemp(1200)
     .duration(100)
-    .EUt(Globals.voltAmps[3] * 2)
+    .EUt(GTValues.VA[3] * 2)
     .buildAndRegister()

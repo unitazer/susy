@@ -1,5 +1,5 @@
 import classes.*
-import globals.Globals
+import gregtech.api.GTValues
 
 log.infoMC("Running OreSorting.groovy...")
 
@@ -418,7 +418,7 @@ for (rock in rocks) {
             }
         }
         recipe.duration(20);
-        recipe.EUt(Globals.voltAmps[rock.starting_tier + a]);
+        recipe.EUt(GTValues.VA[rock.starting_tier + a]);
         recipe.buildAndRegister();
         a += 1;
     }

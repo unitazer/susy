@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 ASSEMBLER = recipemap('assembler')
 PSA = recipemap('pressure_swing_adsorption')
@@ -26,7 +26,7 @@ REACTION_FURNACE.recipeBuilder()
     .notConsumable(ore('dustWustiteCatalyst'))
     .fluidOutputs(fluid('ammonia_rich_gas') * 4000)
     .duration(160)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -35,7 +35,7 @@ REACTION_FURNACE.recipeBuilder()
     .notConsumable(ore('dustWustiteCatalyst'))
     .fluidOutputs(fluid('ammonia_rich_gas') * 4000)
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -43,7 +43,7 @@ REACTION_FURNACE.recipeBuilder()
     .notConsumable(ore('dustWustiteCatalyst'))
     .fluidOutputs(fluid('ammonia_rich_gas') * 4000)
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -52,7 +52,7 @@ MIXER.recipeBuilder()
     .fluidOutputs(fluid('ammonia_solution') * 500)
     .fluidOutputs(fluid('ammonia_reaction_mix') * 2000)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -72,7 +72,7 @@ REACTION_FURNACE.recipeBuilder()
     .fluidOutputs(fluid('nitric_oxide') * 4000)
     .fluidOutputs(fluid('water') * 6000)
     .duration(200)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -82,7 +82,7 @@ REACTION_FURNACE.recipeBuilder()
     .fluidOutputs(fluid('nitric_oxide') * 3000)
     .fluidOutputs(fluid('water') * 6000)
     .duration(200)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 // Birkeland–Eyde Process
@@ -93,7 +93,7 @@ REACTION_FURNACE.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 1500)
     .fluidOutputs(fluid('hot_nitrogen_oxide_mixture') * 1000) //500L NO,500L NO2
     .duration(1200)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 RADIATOR.recipeBuilder()
@@ -116,7 +116,7 @@ REACTION_FURNACE.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 2800) //8000L N, 4800L O
     .fluidOutputs(fluid('hot_nitrogen_oxide_mixture_rich_air') * 10400) //8000L Air, 800L O, 800L NO, 800L NO2
     .duration(400)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 RADIATOR.recipeBuilder()

@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 import static globals.SinteringGlobals.*
 
 class CoolantGases {
@@ -28,7 +28,7 @@ for (fuel in sintering_fuels) {
         .outputs(metaitem('hot.cement.clinker'))
         .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
         .duration(fuel.duration)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .buildAndRegister()
 
         SINTERING_RECIPES.recipeBuilder()
@@ -41,7 +41,7 @@ for (fuel in sintering_fuels) {
         .chancedOutput(metaitem('hot.cement.clinker'), 5000, 0)
         .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
         .duration(fuel.duration)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .buildAndRegister()
 
     } else {
@@ -55,7 +55,7 @@ for (fuel in sintering_fuels) {
             .outputs(metaitem('hot.cement.clinker'))
             .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
             .duration(fuel.duration + comburent.duration)
-            .EUt(Globals.voltAmps[0])
+            .EUt(GTValues.VA[0])
             .buildAndRegister()
 
             SINTERING_RECIPES.recipeBuilder()
@@ -69,7 +69,7 @@ for (fuel in sintering_fuels) {
             .chancedOutput(metaitem('hot.cement.clinker'), 5000, 0)
             .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
             .duration(fuel.duration + comburent.duration)
-            .EUt(Globals.voltAmps[0])
+            .EUt(GTValues.VA[0])
             .buildAndRegister()
         }
     }
@@ -87,7 +87,7 @@ for (gas in gases) {
         .outputs(metaitem('cement.clinker'))
         .fluidOutputs(fluid(gas.byproduct) * gas.amount)
         .duration(gas.duration)
-        .EUt(Globals.voltAmps[0])
+        .EUt(GTValues.VA[0])
         .buildAndRegister()
 }
 
@@ -95,7 +95,7 @@ mods.gregtech.macerator.recipeBuilder()
     .inputs(metaitem('cement.clinker'))
     .outputs(metaitem('cement.dust') * 16)
     .duration(20)
-    .EUt(Globals.voltAmps[0])
+    .EUt(GTValues.VA[0])
     .buildAndRegister()
 
 def stones = [
@@ -112,7 +112,7 @@ for (stone in stones) {
         .fluidInputs(fluid('water') * 500)
         .fluidOutputs(fluid('concrete') * 576)
         .duration(20)
-        .EUt(Globals.voltAmps[0])
+        .EUt(GTValues.VA[0])
         .buildAndRegister()
 }
 
@@ -141,7 +141,7 @@ for (int i = 0; i < 16; i++) {
         .fluidInputs(fluid(dyes[i]) * 18)
         .outputs(item('minecraft:concrete_powder', i))
         .duration(20)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     mods.gregtech.chemical_bath.recipeBuilder()
@@ -149,7 +149,7 @@ for (int i = 0; i < 16; i++) {
         .fluidInputs(fluid(dyes[i]) * 18)
         .outputs(item('minecraft:concrete', i))
         .duration(20)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 }
 

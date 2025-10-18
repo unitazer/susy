@@ -1,5 +1,4 @@
-import globals.Globals
-
+import gregtech.api.GTValues
 import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.material.MarkerMaterials;
 import static gregtech.api.unification.ore.OrePrefix.dye;
@@ -30,7 +29,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
     .fluidOutputs(fluid('impure_lithium_carbonate') * 1008)
     .fluidOutputs(fluid('acidic_argon_hydrogen_mixture') * 2000)
     .duration(600)
-    .EUt(Globals.voltAmps[4])
+    .EUt(GTValues.VA[4])
     .buildAndRegister()
 
 FLUID_SOLIDIFIER.recipeBuilder()
@@ -46,7 +45,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('distilled_water') * 1000)
     .fluidOutputs(fluid('impure_lithium_carbonate_solution') * 1000)
     .duration(80)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 SIFTER.recipeBuilder()
@@ -54,21 +53,21 @@ SIFTER.recipeBuilder()
     .outputs(metaitem('dustWashedGraphene') * 10)
     .fluidOutputs(fluid('lithium_carbonate_solution') * 10000)
     .duration(160)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 VACUUM_DT.recipeBuilder()
     .inputs(ore('dustWashedGraphene'))
     .outputs(metaitem('dustDistilledGraphene'))
     .duration(20)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 DRYER.recipeBuilder()
     .inputs(ore('dustDistilledGraphene'))
     .outputs(metaitem('dustDriedGraphene'))
     .duration(400)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 TUBE_FURNACE.recipeBuilder()
@@ -76,7 +75,7 @@ TUBE_FURNACE.recipeBuilder()
     .fluidInputs(fluid('argon') * 50)
     .outputs(metaitem('dustGraphene'))
     .duration(100)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -84,7 +83,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('gregtechfoodoption:lithium_carbonate_dust') * 6)
     .fluidOutputs(fluid('water') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //Argon preparation and recycling
@@ -103,7 +102,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustAmmoniumChloride') * 6)
     .fluidOutputs(fluid('ammoniacal_argon_hydrogen_mixture') * 2000)
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 VACUUM_FREEZER.recipeBuilder()
@@ -124,7 +123,7 @@ VACUUM_FREEZER.recipeBuilder()
     .fluidInputs(fluid('cold_argon_hydrogen_mixture') * 1280)
     .fluidOutputs(fluid('partially_liquefied_argon_hydrogen_mixture') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister();
 
 SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.recipeBuilder()
@@ -132,5 +131,5 @@ SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.recipeBuilder()
     .fluidOutputs(fluid('liquid_argon') * 125)
     .fluidOutputs(fluid('hydrogen') * 16000)
     .duration(40)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()

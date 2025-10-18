@@ -1,5 +1,5 @@
-import globals.Globals
 import static globals.SinteringGlobals.*
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 ROASTER = recipemap('roaster')
@@ -21,7 +21,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustSodiumTetraborate') * 13)
     .fluidOutputs(fluid('dense_steam') * 10000)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //DISSOLUTION OF TETRABORATE
@@ -31,17 +31,17 @@ BR.recipeBuilder()
     .outputs(metaitem('dustTinyClay'))
     .fluidOutputs(fluid('borate_liquor') * 2000)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //PRECIPITATION OF BORIC ACID
 BR.recipeBuilder()
     .fluidInputs(fluid('borate_liquor') * 2000)
     .fluidInputs(fluid('hydrochloric_acid') * 2000)
-    .outputs(metaitem('dustBoricAcid') * 28)
+    .outputs(metaitem('dustBoricAcid') * 31)
     .fluidOutputs(fluid('salt_water') * 2000)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //CALCINATION OF BORIC ACID
@@ -50,7 +50,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustBoronTrioxide') * 5)
     .fluidOutputs(fluid('dense_steam') * 3000)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //REDUCTION OF BORON TRIOXIDE
@@ -60,14 +60,14 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustAmorphousBoron') * 2)
     .outputs(metaitem('dustMagnesia') * 6)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 MACERATOR.recipeBuilder()
     .inputs(ore('dustAmorphousBoron') * 2)
     .outputs(metaitem('dustBoron'))
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //MAGNESIUM REGERNATION
@@ -80,7 +80,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
     .duration(100)
     .outputs(metaitem('dustMagnesium'))
     .fluidOutputs(fluid('oxygen') * 1000)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 ELECTROLYTIC_CELL.recipeBuilder()
@@ -92,7 +92,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
     .duration(400)
     .outputs(metaitem('dustMagnesium'))
     .fluidOutputs(fluid('oxygen') * 1000)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //PRODUCTION OF KBF4
@@ -101,7 +101,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('hydrofluoric_acid') * 4000)
     .fluidOutputs(fluid('tetrafluoroboric_acid') * 1000)
     .duration(600)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -110,7 +110,7 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('potassium_tetrafluoroborate_solution') * 1000)
     .fluidOutputs(fluid('carbon_dioxide') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -118,7 +118,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustPotassiumTetrafluoroborate') * 12)
     .fluidOutputs(fluid('water') * 7000)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //ELECTROLYSIS OF B2O3
@@ -138,7 +138,7 @@ MACERATOR.recipeBuilder()
     .inputs(ore('dustElectrolyticBoron') * 4)
     .outputs(metaitem('dustBoron') * 3)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //PURIFICATION OF SEMICONDUCTOR-GRADE BORON
@@ -148,7 +148,7 @@ FLUIDIZEDBR.recipeBuilder()
     .chancedOutput(metaitem('dustMagnesiumChloride') * 3, 600, 0)
     .fluidOutputs(fluid('boron_trichloride') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 FLUIDIZEDBR.recipeBuilder()
@@ -157,7 +157,7 @@ FLUIDIZEDBR.recipeBuilder()
     .chancedOutput(metaitem('dustMagnesiumChloride') * 3, 600, 0)
     .fluidOutputs(fluid('boron_trichloride') * 1000)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -166,7 +166,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustHighPurityBoron'))
     .fluidOutputs(fluid('hydrogen_chloride') * 3000)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -176,7 +176,7 @@ REACTION_FURNACE.recipeBuilder()
     .fluidOutputs(fluid('boron_trichloride') * 2000)
     .fluidOutputs(fluid('carbon_monoxide') * 3000)
     .duration(400)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 

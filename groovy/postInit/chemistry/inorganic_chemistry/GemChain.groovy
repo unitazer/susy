@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 CVD = recipemap('cvd')
 CUTTER = recipemap('cutter')
@@ -133,7 +133,7 @@ TUBE_FURNACE.recipeBuilder()
         .inputs(ore('dustLithiumOxide') * 32)
         .chancedOutput(metaitem('seed_crystal.lithium_niobate'), 5000, 1000)
         .duration(200)
-        .EUt(Globals.voltAmps[4])
+        .EUt(GTValues.VA[4])
         .buildAndRegister()
 
 CRYSTALLIZER.recipeBuilder()
@@ -177,7 +177,7 @@ REACTION_FURNACE.recipeBuilder()
         .inputs(ore('dustZirconiumDioxide') * 3)
         .outputs(metaitem('dustLeadZirconateTitanate') * 10)
         .duration(200)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .buildAndRegister()
 
 FORMING_PRESS.recipeBuilder()
@@ -185,5 +185,5 @@ FORMING_PRESS.recipeBuilder()
         .notConsumable(metaitem('shape.mold.ball'))
         .outputs(metaitem('gemLeadZirconateTitanate'))
         .duration(500)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()

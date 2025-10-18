@@ -105,7 +105,7 @@ def recipesToRemove = [
 
 ]
 
-for(name in recipesToRemove) {
+for (name in recipesToRemove) {
     crafting.remove(name)
 }
 

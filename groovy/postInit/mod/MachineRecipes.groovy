@@ -1,5 +1,6 @@
 import globals.Globals
 import postInit.utils.RecyclingHelper
+import gregtech.api.GTValues
 
 ASSEMBLER = recipemap('assembler')
 MIXER = recipemap('mixer')
@@ -782,7 +783,7 @@ for (i = 1; i <= 3; i++) {
         .circuitMeta(4)
         .fluidInputs(fluid('plastic') * 576)
         .outputs(metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i]))
-        .EUt(Globals.voltAmps[i])
+        .EUt(GTValues.VA[i])
         .duration(300)
         .buildAndRegister()
 
@@ -792,7 +793,7 @@ for (i = 1; i <= 3; i++) {
         .circuitMeta(4)
         .fluidInputs(fluid('plastic') * 576)
         .outputs(metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]))
-        .EUt(Globals.voltAmps[i])
+        .EUt(GTValues.VA[i])
         .duration(300)
         .buildAndRegister()
 
@@ -802,7 +803,7 @@ for (i = 1; i <= 3; i++) {
         .circuitMeta(4)
         .fluidInputs(fluid('plastic') * 1296)
         .outputs(metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]))
-        .EUt(Globals.voltAmps[i])
+        .EUt(GTValues.VA[i])
         .duration(600)
         .buildAndRegister()
 
@@ -812,7 +813,7 @@ for (i = 1; i <= 3; i++) {
         .circuitMeta(4)
         .fluidInputs(fluid('plastic') * 1296)
         .outputs(metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]))
-        .EUt(Globals.voltAmps[i])
+        .EUt(GTValues.VA[i])
         .duration(600)
         .buildAndRegister()
 

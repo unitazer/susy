@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 EBF = recipemap('electric_blast_furnace')
 FBR = recipemap('fluidized_bed_reactor')
@@ -29,7 +29,7 @@ PYROLYSE.recipeBuilder()
     .inputs(ore('dustAnyPurityBismuth'))
     .outputs(metaitem('dustSpentBismuthCatalyst') * 2)
     .duration(10)
-    .EUt(Globals.voltAmps[3] * 2)
+    .EUt(GTValues.VA[3] * 2)
     .buildAndRegister()
 
 ELECTROMAGNETIC_SEPARATOR.recipeBuilder()

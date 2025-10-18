@@ -1,12 +1,12 @@
+import globals.Carbons
+
+import gregtech.api.GTValues
 import gregtech.api.unification.material.properties.*;
 import gregtech.api.GregTechAPI;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.ore.OrePrefix;
-
 import static gregtech.api.unification.material.Materials.*;
-import globals.Globals
-import globals.Carbons
 
 EBF = recipemap('electric_blast_furnace')
 ROASTER = recipemap('roaster')
@@ -27,7 +27,7 @@ for (combustible in Carbons.combustibles()) {
         .fluidOutputs(fluid('carbon_dioxide') * 1000)
         .blastFurnaceTemp(1200)
         .duration(120)
-        .EUt(Globals.voltAmps[2])
+        .EUt(GTValues.VA[2])
         .buildAndRegister()
 }
 
@@ -36,7 +36,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustManganeseIiOxide') * 2)
     .fluidOutputs(fluid('carbon_dioxide') * 1000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 for (highPurityCombustible in Carbons.highPurityCombustibles()) {
@@ -47,7 +47,7 @@ for (highPurityCombustible in Carbons.highPurityCombustibles()) {
         .chancedOutput(metaitem(highPurityCombustible.byproduct), 1000, 0)
         .fluidOutputs(fluid('carbon_monoxide') * 1000)
         .duration(120 * highPurityCombustible.duration)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 }
 
@@ -82,7 +82,7 @@ for (reductant in hydrocarbonReductants) {
         .fluidOutputs(fluid(reductant.byproduct) * reductant.byproduct_amount)
         .fluidOutputs(fluid('dense_steam') * (1000 - reductant.byproduct_amount))
         .duration(120)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .buildAndRegister()
 }
 
@@ -93,7 +93,7 @@ for (reductant in reductants) {
         .outputs(metaitem('dustCrudeManganeseIiOxide') * 2)
         .fluidOutputs(fluid(reductant.byproduct) * reductant.byproduct_amount)
         .duration(120)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .buildAndRegister()
 }
 
@@ -103,7 +103,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid('crude_manganese_ii_sulfate_solution') * 1000)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -112,7 +112,7 @@ BR.recipeBuilder()
     .chancedOutput(metaitem('dustIronIiiHydroxide') * 7, 500, 0)
     .fluidOutputs(fluid('manganese_ii_sulfate_solution') * 4000)
     .duration(200)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 ELECTROLYTIC_CELL.recipeBuilder()
@@ -122,7 +122,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
     .outputs(metaitem('dustManganese'))
     .fluidOutputs(fluid('sulfuric_acid') * 1000)
     .duration(480)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 // MnSO4

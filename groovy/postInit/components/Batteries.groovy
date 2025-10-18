@@ -1,5 +1,4 @@
-import globals.Globals
-
+import gregtech.api.GTValues
 import gregtech.api.recipes.recipeproperties.RecipeProperty
 import gregtech.api.recipes.RecipeBuilder
 import static gregtech.api.recipes.RecipeMaps.*
@@ -38,7 +37,7 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('diluted_sulfuric_acid') * 1000)
         .outputs(metaitem('cathode.lead_paste'))
         .duration(80)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 crafting.addShaped("cathode_lead_frame", metaitem('cathode.lead_frame'), [
@@ -52,7 +51,7 @@ FORMING_PRESS.recipeBuilder()
         .inputs(ore('plateLead'))
         .outputs(metaitem('cathode.lead_frame'))
         .duration(80)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 crafting.addShaped("cathode_lead", metaitem('cathode.lead'), [
@@ -74,7 +73,7 @@ FORMING_PRESS.recipeBuilder()
         .inputs(ore('plateSteel'))
         .outputs(metaitem('electrode.steel_frame'))
         .duration(80)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 // Watts Bath Nickel Electroplating
@@ -85,7 +84,7 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('distilled_water') * 1000)
         .fluidOutputs(fluid('watts_bath_electrolyte') * 1000)
         .duration(160)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 ELECTROLYTIC_CELL.recipeBuilder()
@@ -94,7 +93,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .inputs(metaitem('electrode.steel_frame'))
         .outputs(metaitem('electrode.nickeled_steel_frame'))
         .duration(160)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 /*
@@ -117,7 +116,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('diluted_sulfuric_acid') * 1000)
         .outputs(metaitem('battery.lead_acid'))
         .duration(200)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('battery.lead_acid'), [ore('plateLead') * 2])
@@ -132,7 +131,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('potassium_hydroxide_solution') * 1000)
         .outputs(metaitem('battery.ni_fe'))
         .duration(200)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('battery.ni_fe'), [ore('plateSteel') * 2])
@@ -254,7 +253,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('plastic') * 144)
         .outputs(metaitem('battery.primitivehull.lv'))
         .duration(80)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 // Primitive MV Battery Hull
@@ -271,7 +270,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('plastic') * 288)
         .outputs(metaitem('battery.primitivehull.mv'))
         .duration(80)
-        .EUt(Globals.voltAmps[2])
+        .EUt(GTValues.VA[2])
         .buildAndRegister()
 
 /* Old recipes */

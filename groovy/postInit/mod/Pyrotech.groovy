@@ -4,16 +4,19 @@ import com.cleanroommc.groovyscript.api.IIngredient
 import com.codetaylor.mc.pyrotech.library.spi.block.IBlockIgnitableWithIgniterItem
 import com.codetaylor.mc.pyrotech.modules.tech.basic.ModuleTechBasic
 import com.codetaylor.mc.pyrotech.modules.tech.basic.block.BlockKilnPit
-import globals.Globals
-import postInit.utils.RecyclingHelper
+
+import gregtech.api.GTValues
 import gregtech.api.items.metaitem.MetaItem
 import gregtech.api.items.metaitem.stats.IItemBehaviour
 import gregtech.api.util.GTUtility
 import gregtech.common.items.behaviors.LighterBehaviour
+
 import net.minecraft.util.EnumHand
 import net.minecraftforge.event.entity.player.PlayerInteractEvent
 import net.minecraftforge.event.world.BlockEvent
 import net.minecraftforge.fml.common.eventhandler.Event
+
+import postInit.utils.RecyclingHelper
 
 log.infoMC("Running Pyrotech.groovy...")
 
@@ -1380,7 +1383,7 @@ ALLOY_SMELTER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.block'))
         .outputs(item('pyrotech:slag_glass'))
         .duration(100)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister();
 
 ALLOY_SMELTER.recipeBuilder()
@@ -1388,7 +1391,7 @@ ALLOY_SMELTER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.block'))
         .outputs(item('pyrotech:slag_glass'))
         .duration(100)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister();
 
 // Recycling

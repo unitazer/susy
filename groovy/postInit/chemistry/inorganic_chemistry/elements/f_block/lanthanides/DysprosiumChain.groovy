@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 REACTION_FURNACE = recipemap('reaction_furnace')
@@ -29,5 +29,5 @@ REACTION_FURNACE.recipeBuilder()
     .outputs(metaitem('dustDysprosium') * 2)
     .outputs(metaitem('dustFluorite') * 9)
     .duration(200)
-    .EUt(Globals.voltAmps[3] * 2)
+    .EUt(GTValues.VA[3] * 2)
     .buildAndRegister()

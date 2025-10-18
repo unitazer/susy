@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 ROASTER = recipemap('roaster')
@@ -15,7 +15,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('lithium_hydroxide_solution') * 1000)
     .fluidOutputs(fluid('vinylidene_fluoride_surfactant_mixture') * 2000)
     .duration(200)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister();
 
 // Vinylidene Fluoride
@@ -26,7 +26,7 @@ BCR.recipeBuilder()
     .fluidInputs(fluid('hydrogen_chloride') * 50)
     .fluidOutputs(fluid('one_one_dichloroethane') * 50)
     .duration(2)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BCR.recipeBuilder()
@@ -36,7 +36,7 @@ BCR.recipeBuilder()
     .fluidOutputs(fluid('one_one_one_trichloroethane') * 50)
     .fluidOutputs(fluid('hydrogen') * 100)
     .duration(4)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister();
 
 ROASTER.recipeBuilder()
@@ -46,7 +46,7 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('one_chloro_two_two_difluoroethane') * 1000)
     .fluidOutputs(fluid('hydrochloric_acid') * 2000)
     .duration(200)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister();
 
 PYROLYSE_OVEN.recipeBuilder()
@@ -55,7 +55,7 @@ PYROLYSE_OVEN.recipeBuilder()
     .fluidOutputs(fluid('vinylidene_fluoride') * 1000)
     .fluidOutputs(fluid('hydrochloric_acid') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister();
 
 // Polymerization
@@ -66,7 +66,7 @@ POLYMERIZATION_TANK.recipeBuilder()
     .fluidInputs(fluid('vinylidene_fluoride_surfactant_mixture') * 500)
     .fluidOutputs(fluid('polyvinylidene_fluoride_solution') * 500)
     .duration(300)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister();
 
 DRYER.recipeBuilder()
@@ -74,7 +74,7 @@ DRYER.recipeBuilder()
     .outputs(metaitem('dustPolyvinylideneFluoride'))
     .fluidOutputs(fluid('vinylidene_fluoride_surfactant_mixture') * 500)
     .duration(300)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister();
 
 // FKM/Viton production

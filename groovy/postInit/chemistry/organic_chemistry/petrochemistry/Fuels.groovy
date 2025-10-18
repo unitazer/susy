@@ -1,4 +1,5 @@
 import globals.Globals
+import gregtech.api.GTValues
 
 CSTR = recipemap('continuous_stirred_tank_reactor')
 TBR = recipemap('trickle_bed_reactor')
@@ -467,7 +468,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 250)
             .fluidOutputs(fluid('lubricity_additive') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(GTValues.VA[2])
             .buildAndRegister()
     
         BLENDER.recipeBuilder()
@@ -476,7 +477,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 500)
             .fluidOutputs(fluid('antistatic_additive') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(GTValues.VA[2])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -485,7 +486,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 500)
             .fluidOutputs(fluid('metal_deactivator') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(GTValues.VA[2])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -494,7 +495,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 250)
             .fluidOutputs(fluid('ignition_improver') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(GTValues.VA[2])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -504,7 +505,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 500)
             .fluidOutputs(fluid('cold_flow_improver') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(GTValues.VA[2])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -513,7 +514,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 250)
             .fluidOutputs(fluid('antifoaming_additive') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(GTValues.VA[2])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -523,7 +524,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 2000)
             .fluidOutputs(fluid('cold_flow_improver') * 8000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(GTValues.VA[2])
             .buildAndRegister()
 
         AntiknockMap.each { key, val ->

@@ -62,10 +62,10 @@ mods.gregtech.extruder.recipeBuilder()
 
 //add variants to chisel group
 mods.chisel.carving.addGroup("susy_structural_blocks")
-for(int i = 0; i<16;i++){ 
+for (int i = 0; i<16; i++) { 
 	mods.chisel.carving.addVariation("susy_structural_blocks", item('susy:structural_block', i))
 }
-for(int i = 0; i<10;i++){ 
+for (int i = 0; i<10; i++) { 
 	mods.chisel.carving.addVariation("susy_structural_blocks", item('susy:structural_block_1', i))
 }
 

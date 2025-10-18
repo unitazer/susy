@@ -1,6 +1,6 @@
-import globals.Globals
 import globals.Carbons
 import static globals.SinteringGlobals.*
+import gregtech.api.GTValues
 import gregtech.api.recipes.ingredients.GTRecipeItemInput;
 
 FLOTATION = recipemap('froth_flotation')
@@ -42,7 +42,7 @@ MIXER.recipeBuilder()
         .inputs(ore('dustImpureSphalerite') * 4)
         .fluidInputs(fluid('distilled_water') * 2000)
         .fluidOutputs(fluid('impure_sphalerite_slurry') * 2000)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .duration(80)
         .buildAndRegister()
 
@@ -53,7 +53,7 @@ FLOTATION.recipeBuilder()
         .notConsumable(fluid('soda_ash_solution') * 1000)
         .fluidOutputs(fluid('galena_slurry') * 3000)
         .fluidOutputs(fluid('unprocessed_sphalerite_slurry') * 16000)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .duration(80)
         .buildAndRegister()
 
@@ -79,7 +79,7 @@ MIXER.recipeBuilder()
         .inputs(ore('dustImpureSmithsonite') * 4)
         .fluidInputs(fluid('water') * 2000)
         .fluidOutputs(fluid('impure_smithsonite_slurry') * 2000)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .duration(80)
         .buildAndRegister()
 
@@ -89,7 +89,7 @@ FLOTATION.recipeBuilder()
         .notConsumable(fluid('cresol') * 100)
         .notConsumable(fluid('soda_ash_solution') * 1000)
         .fluidOutputs(fluid('smithsonite_slurry') * 16000)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .duration(80)
         .buildAndRegister()
 

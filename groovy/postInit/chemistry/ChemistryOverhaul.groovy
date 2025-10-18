@@ -1,6 +1,6 @@
-import globals.Globals
 import globals.Carbons
 
+import gregtech.api.GTValues
 import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.material.MarkerMaterials;
 import static gregtech.api.unification.ore.OrePrefix.dye;
@@ -1052,7 +1052,7 @@ TBR.recipeBuilder()
         .notConsumable(ore('dustActivatedRaneyNickel') * 1)
     .fluidOutputs(fluid('cyclohexane') * 50)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Fluoroantimonic Acid
@@ -1205,7 +1205,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('hydrogen') * 2000)
     .notConsumable(metaitem('susy:hv_catalyst_bed_reduction'))
     .fluidOutputs(fluid('isobutyl_alcohol') * 1000)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .duration(80)
     .buildAndRegister()
 
@@ -1214,7 +1214,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('hydrogen') * 2000)
     .notConsumable(ore('catalystBedPlatinum'))
     .fluidOutputs(fluid('isobutyl_alcohol') * 1000)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .duration(80)
     .buildAndRegister()
 
@@ -1521,7 +1521,7 @@ FLUIDIZEDBR.recipeBuilder()
     .notConsumable(ore('dustImpregnatedAluminaCatalyst') * 1)
     .fluidOutputs(fluid('methylamine_mix') * 450)
     .duration(8)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 
@@ -1564,7 +1564,7 @@ FBR.recipeBuilder()
     .fluidOutputs(fluid('formaldehyde') * 100)
     .fluidOutputs(fluid('water') * 100)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //gamma-Butyrolactone
@@ -1576,7 +1576,7 @@ FBR.recipeBuilder()
     .fluidOutputs(fluid('gamma_butyrolactone') * 50)
     .fluidOutputs(fluid('hydrogen') * 200)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //N-methyl-2-pyrrolidone
@@ -1728,7 +1728,7 @@ BCR.recipeBuilder()
     .fluidInputs(fluid('hydrogen_chloride') * 50)
     .fluidOutputs(fluid('diluted_salt_water') * 100)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -1797,7 +1797,7 @@ FLUID_HEATER.recipeBuilder()
     .fluidInputs(fluid('air') * 1000)
     .fluidOutputs(fluid('hot_air') * 1000)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DRYER.recipeBuilder()
@@ -1828,7 +1828,7 @@ DISTILLERY.recipeBuilder()
     .circuitMeta(1)
     .fluidOutputs(fluid('distilled_water') * 260)
     .duration(160)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Furfural
@@ -1838,7 +1838,7 @@ BR.recipeBuilder()
     .inputs(ore('dustWood') * 4)
     .fluidOutputs(fluid('acidic_furfural_solution') * 5000)
     .duration(180)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -1847,7 +1847,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('furfural') * 1000)
     .fluidOutputs(fluid('water') * 3000)
     .duration(240)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Butadiene without oil
@@ -1859,7 +1859,7 @@ FBR.recipeBuilder()
     .fluidOutputs(fluid('butadiene') * 50)
     .fluidOutputs(fluid('water') * 100)
     .duration(5)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Ethanol from ethylene
@@ -1878,7 +1878,7 @@ FLUIDIZEDBR.recipeBuilder()
     .notConsumable(metaitem('dustPhosphoricAcidSilicaGel'))
     .fluidOutputs(fluid('ethanol') * 50)
     .duration(5)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 // Wacker Process
@@ -1888,7 +1888,7 @@ ROASTER.recipeBuilder()
     .inputs(ore('dustAnyPurityPalladium'))
     .outputs(metaitem('dustPalladiumChloride') * 3)
     .duration(280)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -1896,7 +1896,7 @@ ROASTER.recipeBuilder()
     .inputs(ore('dustAnyPurityCopper'))
     .outputs(metaitem('dustCopperIiChloride') * 3)
     .duration(280)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -1904,7 +1904,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustCopperIiChloride') * 3)
     .outputs(metaitem('dustWackerCatalyst'))
     .duration(160)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -1912,7 +1912,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustWackerCatalyst') * 6)
     .fluidOutputs(fluid('wacker_catalyst_solution') * 1000)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 
@@ -1922,7 +1922,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 50)
     .fluidOutputs(fluid('impure_acetaldehyde') * 50)
     .duration(5)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -1930,7 +1930,7 @@ DISTILLERY.recipeBuilder()
     .fluidOutputs(fluid('gtfo_acetaldehyde') * 900)
     .outputs(metaitem('dustWackerCatalyst') * 6)
     .duration(400)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Dimethylformamide
@@ -1940,7 +1940,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('dimethylamine') * 50)
     .fluidOutputs(fluid('dimethylformamide') * 50)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Cumene rearranging
@@ -1950,7 +1950,7 @@ BR.recipeBuilder()
     .inputs(ore('dustPolyphosphoricAcid'))
     .outputs(metaitem('dustSupportedPolyphosphoricAcid'))
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 FBR.recipeBuilder()
@@ -1959,14 +1959,14 @@ FBR.recipeBuilder()
     .fluidInputs(fluid('hot_hp_benzene') * 50)
     .fluidOutputs(fluid('crude_cumene') * 50)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
     .fluidInputs(fluid('crude_cumene') * 1000)
     .fluidOutputs(fluid('cumene') * 980)
     .fluidOutputs(fluid('diisopropylbenzene_mixture') * 20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .duration(10)
     .buildAndRegister()
 
@@ -1976,7 +1976,7 @@ BCR.recipeBuilder()
     .fluidInputs(fluid('cumene') * 50)
     .fluidOutputs(fluid('cumene_hydroperoxide') * 50)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 CSTR.recipeBuilder()
@@ -1984,7 +1984,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('cumene_hydroperoxide') * 50)
     .fluidOutputs(fluid('cleaved_cumene_mixture') * 110)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -1994,7 +1994,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('acetone') * 1000)
     .disableDistilleryRecipes()
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -2002,7 +2002,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('para_diisopropylbenzene') * 500)
     .fluidOutputs(fluid('meta_diisopropylbenzene') * 500)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Isobutylene
@@ -2013,7 +2013,7 @@ FBR.recipeBuilder()
     .fluidOutputs(fluid('isobutylene') * 50)
     .fluidOutputs(fluid('hydrogen') * 100)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -2022,7 +2022,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustChromiumTrioxide') * 8)
     .fluidOutputs(fluid('sodium_sulfate_solution') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -2030,7 +2030,7 @@ DISTILLERY.recipeBuilder()
     .fluidOutputs(fluid('water') * 1000)
     .outputs(metaitem('dustSodiumSulfate') * 7)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -2039,7 +2039,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 1000)
     .outputs(metaitem('dustCupricOxide') * 2)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -2048,7 +2048,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 1000)
     .outputs(metaitem('dustCopperIOxide') * 3)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Copper Bismuth
@@ -2058,7 +2058,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustAnyPurityCopper') * 1)
     .outputs(metaitem('dustBismuthCopper') * 2)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // 2-EAQ
@@ -2069,7 +2069,7 @@ BR.recipeBuilder()
     .fluidOutputs(fluid("two_ethylanthraquinone") * 1000)
     .fluidOutputs(fluid("water") * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister();
 
 // 2-EAHQ
@@ -2080,7 +2080,7 @@ FBR.recipeBuilder()
     .notConsumable(ore('catalystBedPalladium') * 1)
     .fluidOutputs(fluid('two_ethylanthrahydroquinone') * 50)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Hydrogen Peroxide
@@ -2090,7 +2090,7 @@ BCR.recipeBuilder()
     .fluidInputs(fluid("hot_hp_oxygen") * 100)
     .fluidOutputs(fluid("two_ethylanthraquinone_solution") * 200)
     .duration(100) // Adjust the duration as needed
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister();
 
 CSTR.recipeBuilder()
@@ -2099,7 +2099,7 @@ CSTR.recipeBuilder()
     .fluidOutputs(fluid("two_ethylanthraquinone") * 50)
     .fluidOutputs(fluid("hydrogen_peroxide_solution") * 300)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 VACUUM_DT.recipeBuilder()
@@ -2107,7 +2107,7 @@ VACUUM_DT.recipeBuilder()
     .fluidOutputs(fluid('hydrogen_peroxide') * 1000)
     .fluidOutputs(fluid('water') * 1000)
     .duration(40)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -2126,7 +2126,7 @@ FBR.recipeBuilder()
     .fluidOutputs(fluid('butanone') * 50)
     .fluidOutputs(fluid('hydrogen') * 100)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Aluminium Chloride
@@ -2138,7 +2138,7 @@ TBR.recipeBuilder()
     .fluidOutputs(fluid('bromobenzene') * 50)
     .fluidOutputs(fluid('hydrogen') * 50)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister();
 
 // Philips catalyst
@@ -2148,7 +2148,7 @@ ALLOY_SMELTER.recipeBuilder()
     .inputs(ore('dustChromiumTrioxide') * 4)
     .outputs(metaitem('dustPhilipsCatalyst') * 7)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister();
 
 // Ziegler-Natta
@@ -2158,7 +2158,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('chlorine') * 3000)
     .outputs(metaitem('dustAluminiumChloride') * 4)
     .duration(100) // Adjust the duration as needed
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister();
 
 BR.recipeBuilder()
@@ -2175,7 +2175,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('titanium_tetrachloride') * 1000)
     .outputs(metaitem('dustZieglerNattaCatalyst') * 10)
     .duration(160)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister();
 
 // Bromomethane
@@ -2187,7 +2187,7 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('bromomethane') * 6000)
     .fluidOutputs(fluid('very_diluted_sulfuric_acid') * 3000)
     .duration(60) // Adjust the duration as needed
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister();
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -2195,7 +2195,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid('water') * 2000)
     .duration(60)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister();
 
 // Hydrazine
@@ -2707,7 +2707,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('diluted_ammonia_solution') * 1000)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 
@@ -3051,7 +3051,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('ortho_xylene') * 375)
     .fluidOutputs(fluid('meta_xylene') * 50)
     .duration(100)
-    .EUt(Globals.voltAmps[1] * 2)
+    .EUt(GTValues.VA[1] * 2)
     .buildAndRegister()
 
 //XYLENE FROM TOLUENE
@@ -3072,7 +3072,7 @@ CRACKER.recipeBuilder()
     .fluidInputs(fluid('hydrogen') * 4000)
     .fluidOutputs(fluid('hydrodealkylated_toluene_mixture') * 1000)
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder()
@@ -3149,7 +3149,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustZincChloride') * 3)
     .fluidOutputs(fluid('water') * 3000)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //ZIEGLER-ALFOL PROCESS
@@ -3159,7 +3159,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('diethyl_ether') * 50)
     .fluidOutputs(fluid('alfol_trialkylaluminium_mixture') * 50)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -3167,7 +3167,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 3000)
     .fluidOutputs(fluid('aluminium_alkoxide_solution') * 1000)
     .duration(500)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -3175,7 +3175,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustAluminiumAlkoxideMixture'))
     .fluidOutputs(fluid('diethyl_ether') * 1000)
     .duration(500)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -3184,7 +3184,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustAluminiumHydroxide') * 7)
     .fluidOutputs(fluid('ziegler_alfol_mixture') * 3000)
     .duration(500)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder() //SCHULZ FLORY DISTRIBUTION, p = 0.73, ROUNDED TO NEAREST 5s, TRUNCATED
@@ -3198,7 +3198,7 @@ DISTILLATION_TOWER.recipeBuilder() //SCHULZ FLORY DISTRIBUTION, p = 0.73, ROUNDE
     .fluidOutputs(fluid('n_butanol') * 215)
     .fluidOutputs(fluid('ethanol') * 295)
     .duration(166)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 
@@ -3210,7 +3210,7 @@ BR.recipeBuilder()
     .notConsumable(fluid('acetic_acid') * 1000)
     .outputs(metaitem('dustDichlorobistriphenylphosphinenickelIi'))
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -3221,7 +3221,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustDicarbonylbistriphenylphosphinenickelZero'))
     .outputs(metaitem('dustZincChloride') * 3)
     .duration(200)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 TBR.recipeBuilder()
@@ -3229,7 +3229,7 @@ TBR.recipeBuilder()
     .fluidInputs(fluid('butadiene') * 100)
     .fluidOutputs(fluid('cyclooctadiene') * 50)
     .duration(10)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 //ETHENONE
@@ -3285,7 +3285,7 @@ BR.recipeBuilder()
     .notConsumable(fluid('shell_higher_olefin_catalyst_solution') * 1000)
     .fluidOutputs(fluid('alpha_olefin_mixture') * 1000)
     .duration(125)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 DISTILLATION_TOWER.recipeBuilder() // SCHULZ-FLORY, p = 0.82, ROUNDED TO NEAREST 5
@@ -3303,7 +3303,7 @@ DISTILLATION_TOWER.recipeBuilder() // SCHULZ-FLORY, p = 0.82, ROUNDED TO NEAREST
     .fluidOutputs(fluid('one_butene') * 160)
     .fluidOutputs(fluid('ethylene') * 200)
     .duration(125)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 //OXALIC ACID
@@ -3316,7 +3316,7 @@ LCR.recipeBuilder()
     .outputs(metaitem('dustOxalicAcid'))
     .fluidOutputs(fluid('water') * 2000)
     .duration(120)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 //ANILINE
@@ -3325,7 +3325,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('nitration_mixture') * 100)
     .fluidOutputs(fluid('acidic_nitrobenzene_mixture') * 150)
     .duration(5)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 PHASE_SEPARATOR.recipeBuilder()
@@ -3342,7 +3342,7 @@ FBR.recipeBuilder()
     .fluidOutputs(fluid('gtfo_aniline') * 50)
     .fluidOutputs(fluid('water') * 100)
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 // Heated water
@@ -3351,7 +3351,7 @@ FLUID_HEATER.recipeBuilder()
     .fluidInputs(fluid('distilled_water') * 1000)
     .fluidOutputs(fluid('gtfo_heated_water') * 1000)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Soda Ash Solution
@@ -3626,7 +3626,7 @@ DISTILLERY.recipeBuilder()
     .fluidOutputs(fluid('water') * 2000)
     .outputs(metaitem('dustSodiumSulfate') * 7)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Nitration Mixture * 2000
@@ -3805,7 +3805,7 @@ BR.recipeBuilder()
     .inputs(ore('dustCupricOxide') * 2)
     .fluidInputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid("copper_sulfate_solution") * 1000)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .duration(100)
     .buildAndRegister()
 
@@ -3813,7 +3813,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustCopperSulfate') * 6)
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('copper_sulfate_solution') * 1000)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .duration(60)
     .buildAndRegister()
 
@@ -3853,7 +3853,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustLithiumHydroxide') * 3)
     .fluidOutputs(fluid('water') * 1000)
     .duration(60)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister();
 
 MIXER.recipeBuilder()

@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 ADVANCED_ARC_FURNACE = recipemap('advanced_arc_furnace')
 
@@ -11,7 +11,7 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .inputs(ore('dustVanadium') * 1)
     .inputs(ore('dustMolybdenum') * 2)  
     .fluidOutputs(fluid('molten.tungsten_steel') * 10656) // 74 ingot 
-    .EUt(Globals.voltAmps[5])
+    .EUt(GTValues.VA[5])
     .duration(22000) 
     .buildAndRegister()
 
@@ -24,6 +24,6 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .inputs(ore('dustVanadium') * 1)
     .inputs(ore('dustMolybdenum') * 2)  
     .fluidOutputs(fluid('molten.tungsten_steel') * 10656) // 74 ingot 
-    .EUt(Globals.voltAmps[5])
+    .EUt(GTValues.VA[5])
     .duration(17000) 
     .buildAndRegister()

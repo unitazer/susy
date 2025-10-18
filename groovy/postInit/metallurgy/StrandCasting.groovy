@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 import postInit.utils.RecyclingHelper
 
 POLISHING = recipemap('polishing_machine')
@@ -243,7 +243,7 @@ MIXER.recipeBuilder()
 EBF.recipeBuilder()
     .inputs(ore('dustKyanite'))
     .outputs(metaitem('dustMullitizedKyanite'))
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .blastFurnaceTemp(1200)
     .duration(100)
     .buildAndRegister()
@@ -253,14 +253,14 @@ MIXER.recipeBuilder()
     .inputs(ore('dustBauxite'))
     .inputs(ore('dustClay'))
     .outputs(metaitem('dustHighAluminaRefractory') * 4)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .duration(200)
     .buildAndRegister()
 
 SINTERING_OVEN.recipeBuilder()
     .inputs(metaitem('dustHighAluminaRefractory'))
     .outputs(metaitem('ingotHighAluminaRefractory'))
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .duration(50)
     .buildAndRegister()
 

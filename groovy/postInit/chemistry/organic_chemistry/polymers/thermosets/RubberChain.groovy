@@ -1,5 +1,4 @@
-import globals.Globals
-
+import gregtech.api.GTValues
 import gregtech.api.recipes.ModHandler
 import gregtech.api.unification.material.Materials
 import gregtech.api.unification.ore.OrePrefix
@@ -140,7 +139,7 @@ for (rubber in rubbers) {
                     }
                     .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
                     .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
-                    .EUt(Globals.voltAmps[0])
+                    .EUt(GTValues.VA[0])
                     .buildAndRegister()
             }
         }
@@ -165,7 +164,7 @@ for (rubber in rubbers) {
             .inputs(ore('dustCoal') * coal_amount)
             .outputs(metaitem('dustCompoundedEbonite') * (rubber.yield * 2))
             .duration(40 * rubber.yield)
-            .EUt(Globals.voltAmps[1])
+            .EUt(GTValues.VA[1])
             .buildAndRegister()
     }
 }
@@ -185,7 +184,7 @@ for (catalyst in catalysts) {
             }
         }
         .outputs(metaitem('plateEbonite'))
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 }
 

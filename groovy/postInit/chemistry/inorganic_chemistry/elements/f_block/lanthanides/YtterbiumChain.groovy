@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 REACTION_FURNACE = recipemap('reaction_furnace')
 ROASTER = recipemap('roaster')
@@ -11,7 +11,7 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('hydrogen') * 5000)
     .fluidOutputs(fluid('ytterbium_chloride_solution') * 5000)
     .duration(80)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -21,7 +21,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustYtterbiumHydroxide') * 7)
     .fluidOutputs(fluid('diluted_salt_water') * 6000)
     .duration(80)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()

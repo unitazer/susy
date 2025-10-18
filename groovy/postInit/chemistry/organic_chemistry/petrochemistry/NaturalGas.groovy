@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 MIXER = recipemap('mixer')
 FLUID_HEATER = recipemap('fluid_heater')
@@ -53,7 +53,7 @@ DT.recipeBuilder()
 .fluidOutputs(fluid('ethane') * 100)
 .fluidOutputs(fluid('methane') * 750)
 .duration(400)
-.EUt(Globals.voltAmps[1] * 2)
+.EUt(GTValues.VA[1] * 2)
 .buildAndRegister()
 
 HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
@@ -64,5 +64,5 @@ HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
 .fluidOutputs(fluid('methane') * 960)
 .fluidOutputs(fluid('helium') * 24)
 .duration(100)
-.EUt(Globals.voltAmps[2] * 2)
+.EUt(GTValues.VA[2] * 2)
 .buildAndRegister()

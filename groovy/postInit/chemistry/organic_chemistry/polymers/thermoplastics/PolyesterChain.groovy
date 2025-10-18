@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 POLYMERIZATION = recipemap('polymerization_tank')
 BR = recipemap('batch_reactor')
@@ -9,7 +9,7 @@ POLYMERIZATION.recipeBuilder()
     .fluidInputs(fluid('terephthalic_acid') * 2592)
     .outputs(metaitem('dustPolyethyleneTerephthalate') * 2)
     .fluidOutputs(fluid('water') * 2000)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .duration(80)
     .buildAndRegister()
 
@@ -18,7 +18,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('acetic_acid') * 2000)
     .fluidInputs(fluid('distilled_water') * 3000)
     .outputs(metaitem('dustCobaltIiAcetate') * 18)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .duration(80)
     .buildAndRegister()
 
@@ -28,7 +28,7 @@ POLYMERIZATION.recipeBuilder()
     .fluidInputs(fluid('dimethyl_terephthalate') * 3456)
     .outputs(metaitem('dustPolyethyleneTerephthalate') * 2)
     .fluidOutputs(fluid('methanol') * 2000)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .duration(80)
     .buildAndRegister()
 

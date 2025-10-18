@@ -34,11 +34,11 @@ class FluidFuel{
         this.refined_fuel = b;
     }
 
-    public void setIsGasTurbineFuel(boolean b){
+    public void setIsGasTurbineFuel(boolean b) {
         this.gas_turbine = b;
     }
 
-    public void setIsFuelCellFuel(boolean b){
+    public void setIsFuelCellFuel(boolean b) {
         this.fuel_cell = b;
     }
 }

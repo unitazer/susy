@@ -20,7 +20,7 @@ def dye_colors = [
     'black'
 ]
 
-for (color in dye_colors){
+for (color in dye_colors) {
 	def color_name_removals = [
 		  "lamp/${color}_lamp",
 		  "lamp/${color}_lamp_inverted",
@@ -55,7 +55,7 @@ def colored_lights = [
 ]
 
 for (i = 1; i < 16; i++) {
-	for(light in colored_lights){
+	for (light in colored_lights) {
 		CHEMICAL_BATH.recipeBuilder()
 			.inputs(item('projectred-illumination:' + light))
 			.fluidInputs(fluid('dye_' + dye_colors[i]) * 18)

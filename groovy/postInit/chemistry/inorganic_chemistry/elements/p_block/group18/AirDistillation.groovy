@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 SIFTER = recipemap('sifter')
 VACUUM_CHAMBER = recipemap('vacuum_chamber')
@@ -32,7 +32,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidInputs(fluid('air') * 6000)
         .fluidOutputs(fluid('compressed_air') * 1000)
         .duration(31)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     //WATER COOLING
@@ -59,7 +59,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidOutputs(fluid('chilled_air') * 1000)
         .fluidOutputs(fluid('water') * 640)
         .duration(31)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()*/
 
     //CO2 REMOVAL
@@ -69,7 +69,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidOutputs(fluid('decarburized_air') * 12000)
         .outputs(metaitem('dustCarbonatedMolecularSieveX'))
         .duration(4)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     //VACUUM REHEATING FOR REGENERATION
@@ -80,7 +80,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .outputs(metaitem('dustMolecularSieveX'))
         .fluidOutputs(fluid('carbon_dioxide') * 20)
         .duration(4)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     VACUUM_CHAMBER.recipeBuilder()
@@ -90,7 +90,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .outputs(metaitem('dustMolecularSieveX') * 36)
         .fluidOutputs(fluid('carbon_dioxide') * 1280)
         .duration(10)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     HEAT_EXCHANGER.recipeBuilder()
@@ -108,7 +108,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidOutputs(fluid('decarburized_air') * 12000)
         .outputs(metaitem('dustNetherMolecularSieveX'))
         .duration(4)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     VACUUM_CHAMBER.recipeBuilder()
@@ -117,7 +117,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .outputs(metaitem('dustMolecularSieveX'))
         .fluidOutputs(fluid('heavy_nether_gases') * 2000)
         .duration(4)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     DT.recipeBuilder()
@@ -134,7 +134,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidInputs(fluid('purified_air') * 1000)
         .fluidOutputs(fluid('boosted_air') * 300)
         .duration(114)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     //FIVE LANE HEAT EXCHANGER
@@ -185,7 +185,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidInputs(fluid('chilled_boosted_air') * 150)
         .fluidOutputs(fluid('gaseous_air_feedstock') * 500)
         .duration(114)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     PHASE_SEPARATOR.recipeBuilder()
@@ -205,7 +205,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidOutputs(fluid('oxygen_rich_gas') * 200)
         .fluidOutputs(fluid('nitrogen_rich_gas') * 1560)
         .duration(20)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .buildAndRegister()
 
     //REFLUXED DISTILLATION RECIPE
@@ -224,7 +224,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidOutputs(fluid('oxygen_rich_gas') * 200)
         .fluidOutputs(fluid('nitrogen_rich_gas') * 1760)
         .duration(5)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .buildAndRegister()
 
     //UPPER COLUMN FOR FINAL AIR SEPARATION
@@ -238,7 +238,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidOutputs(fluid('argon_rich_gas') * 1200)
         .fluidOutputs(fluid('cold_waste_gaseous_nitrogen') * 9360)
         .duration(20)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .buildAndRegister()
 
     //SUBCOOLED
@@ -271,7 +271,7 @@ HIGH PRESSURE OUTPUT GAS: 6L OF REGULAR GAS
         .fluidOutputs(fluid('cold_waste_gaseous_nitrogen') * 240)
         .fluidOutputs(fluid('liquid_nitrogen_product') * 190)
         .duration(5)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .buildAndRegister()
 
 //INTERMEDIATES --> PRODUCTS
@@ -279,14 +279,14 @@ CENTRIFUGE.recipeBuilder()
     .fluidInputs(fluid('liquid_nitrogen_product') * 100)
     .fluidOutputs(fluid('liquid_nitrogen') * 75)
     .duration(1)
-    .EUt(Globals.voltAmps[0])
+    .EUt(GTValues.VA[0])
     .buildAndRegister()
 
 CENTRIFUGE.recipeBuilder()
     .fluidInputs(fluid('liquid_oxygen_product') * 100)
     .fluidOutputs(fluid('liquid_oxygen') * 75)
     .duration(1)
-    .EUt(Globals.voltAmps[0])
+    .EUt(GTValues.VA[0])
     .buildAndRegister()
 
 //TIER TWO: ADDED ARGON
@@ -300,7 +300,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('oxygen_rich_liquid') * 150)
     .fluidOutputs(fluid('nitrogen_rich_gas') * 3520)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //ARGON COARSE SEPARATION
@@ -311,7 +311,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
         .fluidOutputs(fluid('oxygen_rich_liquid') * 45)
         .fluidOutputs(fluid('crude_argon_vapor') * 240)
         .duration(40)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     //REFLUXED DISTILLATION
@@ -322,7 +322,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
         .fluidOutputs(fluid('oxygen_rich_liquid') * 45)
         .fluidOutputs(fluid('crude_argon_vapor') * 480)
         .duration(10)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     //CONDENSATION
@@ -343,7 +343,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
         .chancedOutput(metaitem('dustIce'), 120, 0)
         .fluidOutputs(fluid('liquid_deoxygenated_argon') * 50)
         .duration(20)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 //ARGON PURIFICATION
@@ -354,7 +354,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
         .fluidOutputs(fluid('liquid_argon_product') * 200)
         .fluidOutputs(fluid('cold_waste_gaseous_nitrogen') * 96)
         .duration(400)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     //REFLUXED DISTILLATION
@@ -373,7 +373,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
         .fluidOutputs(fluid('liquid_argon_product') * 250)
         .fluidOutputs(fluid('cold_waste_gaseous_nitrogen') * 144)
         .duration(100)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
     //STARTUP SUBCOOLING
@@ -399,14 +399,14 @@ HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
         .fluidOutputs(fluid('argon') * 2400)
         .fluidOutputs(fluid('liquid_argon_product') * 200)
         .duration(100)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
     
     CENTRIFUGE.recipeBuilder()
         .fluidInputs(fluid('liquid_argon_product') * 100)
         .fluidOutputs(fluid('liquid_argon') * 75)
         .duration(1)
-        .EUt(Globals.voltAmps[0])
+        .EUt(GTValues.VA[0])
         .buildAndRegister()
 
 //ADAPTED LOW PRESSURE RECIPE
@@ -421,7 +421,7 @@ LOW_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('cold_waste_gaseous_nitrogen') * 480) 
     .fluidOutputs(fluid('liquid_nitrogen_product') * 380)
     .duration(5)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //ADAPTED HEAT EXCHANGE (SUBCOOLING)
@@ -459,7 +459,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('oxygen_rich_liquid') * 150)
     .fluidOutputs(fluid('nitrogen_rich_gas') * 3520)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 HEAT_EXCHANGER.recipeBuilder()
@@ -486,7 +486,7 @@ SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.recipeBuilder()
     .fluidOutputs(fluid('treated_liquid_nitrogen') * 199)
     .fluidOutputs(fluid('helium_neon_concentrate') * 48)
     .duration(5)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 //DEHYDROGENATION
@@ -496,7 +496,7 @@ FBR.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 4)
     .fluidOutputs(fluid('dehydrogenated_helium_neon_concentrate') * 6000)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 SIFTER.recipeBuilder()
@@ -505,14 +505,14 @@ SIFTER.recipeBuilder()
     .outputs(metaitem('dustWetMolecularSieveA'))
     .fluidOutputs(fluid('demoisturized_helium_neon_concentrate') * 6000)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 FLUID_COMPRESSOR.recipeBuilder()
     .fluidInputs(fluid('demoisturized_helium_neon_concentrate') * 6000)
     .fluidOutputs(fluid('compressed_helium_neon_concentrate') * 250)
     .duration(500)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 BATH_CONDENSER.recipeBuilder()
@@ -530,7 +530,7 @@ PSA.recipeBuilder()
     .fluidOutputs(fluid('helium') * 54)
     .fluidOutputs(fluid('neon') * 15)
     .duration(500)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
     
 //KRYPTON & XENON
@@ -539,7 +539,7 @@ SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.recipeBuilder()
     .fluidOutputs(fluid('krypton_xenon_rich_liquid')) // Contains 0.0264 Kr and 0.00216 Xe gas
     .fluidOutputs(fluid('treated_liquid_oxygen') * 105)
     .duration(5)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -547,7 +547,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 10)
     .fluidOutputs(fluid('combusted_krypton_xenon_concentrate') * 48)
     .duration(5)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 PSA.recipeBuilder()
@@ -555,7 +555,7 @@ PSA.recipeBuilder()
     .fluidInputs(fluid('combusted_krypton_xenon_concentrate') * 22224)
     .fluidOutputs(fluid('purified_krypton_xenon_concentrate') * 22224)
     .duration(100)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.recipeBuilder()
@@ -564,7 +564,7 @@ SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.recipeBuilder()
     .chancedFluidOutput(fluid('krypton'), 2222, 0)
     .fluidOutputs(fluid('liquid_crude_xenon'))
     .duration(100)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -572,7 +572,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 10)
     .fluidOutputs(fluid('oxidized_xenon'))
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 PSA.recipeBuilder()
@@ -580,5 +580,5 @@ PSA.recipeBuilder()
     .fluidInputs(fluid('oxidized_xenon'))
     .fluidOutputs(fluid('xenon'))
     .duration(100)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()

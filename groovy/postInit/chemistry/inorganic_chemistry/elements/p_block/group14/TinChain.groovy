@@ -1,5 +1,5 @@
-import globals.Globals
 import globals.Carbons
+import gregtech.api.GTValues
 
 AUTOCLAVE = recipemap('autoclave')
 ROASTER = recipemap('roaster')
@@ -21,7 +21,7 @@ MIXER.recipeBuilder()
         .inputs(ore('dustImpureCassiterite') * 8)
         .fluidInputs(fluid('distilled_water') * 2000)
         .fluidOutputs(fluid('impure_cassiterite_slurry') * 2000)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .duration(80)
         .buildAndRegister()
 
@@ -32,7 +32,7 @@ FLOTATION.recipeBuilder()
         .notConsumable(fluid('methyl_isobutyl_carbinol') * 100)
         .fluidOutputs(fluid('cassiterite_slurry') * 1000)
         .fluidOutputs(fluid('limestone_tailing_slurry') * 1000)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .duration(80)
         .buildAndRegister()
 
@@ -40,7 +40,7 @@ CLARIFIER.recipeBuilder()
         .fluidInputs(fluid('cassiterite_slurry') * 1000)
         .outputs(metaitem('dustCassiterite') * 16)
         .fluidOutputs(fluid('wastewater') * 1000)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .duration(20)
         .buildAndRegister()
 
@@ -48,7 +48,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidInputs(fluid('limestone_tailing_slurry') * 1000)
         .outputs(metaitem('dustLimestoneTailings') * 2)
         .fluidOutputs(fluid('wastewater') * 1000)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .duration(20)
         .buildAndRegister()
 

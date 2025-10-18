@@ -32,7 +32,7 @@ class SupercriticalFluid {
         return duration;
     }
 
-    public void setCriticalTemperature(int temp){
+    public void setCriticalTemperature(int temp) {
         critical_temp = temp;
     }
 

@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 import gregtech.api.metatileentity.multiblock.CleanroomType
 
 ASSEMBLER = recipemap('assembler')
@@ -207,7 +207,7 @@ def generatePatterningRecipes(input, product, mask, voltageTier, timeMultiplier,
                     .outputs(metaitem(product) * outputMultiplier)
                     .duration(photoresist.timeUsed * timeMultiplier)
                     .cleanroom(CleanroomType.CLEANROOM)
-                    .EUt(Globals.voltAmps[voltageTier])
+                    .EUt(GTValues.VA[voltageTier])
                     .buildAndRegister()
 
             LASER_ENGRAVER.recipeBuilder()
@@ -217,7 +217,7 @@ def generatePatterningRecipes(input, product, mask, voltageTier, timeMultiplier,
                     .outputs(metaitem(product) * outputMultiplier)
                     .duration((int) (photoresist.timeUsed * timeMultiplier / 10))
                     .cleanroom(CleanroomType.CLEANROOM)
-                    .EUt(Globals.voltAmps[voltageTier])
+                    .EUt(GTValues.VA[voltageTier])
                     .buildAndRegister()
         } else {
             UV_LIGHT_BOX.recipeBuilder()
@@ -226,7 +226,7 @@ def generatePatterningRecipes(input, product, mask, voltageTier, timeMultiplier,
                     .fluidInputs(fluid(photoresist.fluidName) * photoresist.amountUsed)
                     .outputs(metaitem(product) * outputMultiplier)
                     .duration(photoresist.timeUsed * timeMultiplier)
-                    .EUt(Globals.voltAmps[voltageTier])
+                    .EUt(GTValues.VA[voltageTier])
                     .buildAndRegister()
 
             LASER_ENGRAVER.recipeBuilder()
@@ -235,7 +235,7 @@ def generatePatterningRecipes(input, product, mask, voltageTier, timeMultiplier,
                     .fluidInputs(fluid(photoresist.fluidName) * (photoresist.amountUsed / 4))
                     .outputs(metaitem(product) * outputMultiplier)
                     .duration((int) (photoresist.timeUsed * timeMultiplier / 10))
-                    .EUt(Globals.voltAmps[voltageTier])
+                    .EUt(GTValues.VA[voltageTier])
                     .buildAndRegister()
         }
     }
@@ -253,7 +253,7 @@ def generateEtchingRecipes(input, product, materialEtched, voltageTier, timeMult
                         .outputs(metaitem(product))
                         .duration(etchant.timeUsed * timeMultiplier)
                         .cleanroom(CleanroomType.CLEANROOM)
-                        .EUt(Globals.voltAmps[voltageTier])
+                        .EUt(GTValues.VA[voltageTier])
                         .buildAndRegister()
             } else {
                 CHEMICAL_BATH.recipeBuilder()
@@ -261,7 +261,7 @@ def generateEtchingRecipes(input, product, materialEtched, voltageTier, timeMult
                         .fluidInputs(fluid(etchant.fluidName) * etchant.amountUsed)
                         .outputs(metaitem(product))
                         .duration(etchant.timeUsed * timeMultiplier)
-                        .EUt(Globals.voltAmps[voltageTier])
+                        .EUt(GTValues.VA[voltageTier])
                         .buildAndRegister()
             }
         }
@@ -276,7 +276,7 @@ def generateCuttingRecipes(input, product, productMultiplier, voltageTier, boole
                 .outputs(metaitem(product) * productMultiplier)
                 .duration(450)
                 .cleanroom(CleanroomType.CLEANROOM)
-                .EUt(Globals.voltAmps[voltageTier])
+                .EUt(GTValues.VA[voltageTier])
                 .buildAndRegister()
 
         LASER_ENGRAVER.recipeBuilder()
@@ -284,7 +284,7 @@ def generateCuttingRecipes(input, product, productMultiplier, voltageTier, boole
                 .outputs(metaitem(product) * productMultiplier)
                 .duration(60)
                 .cleanroom(CleanroomType.CLEANROOM)
-                .EUt(Globals.voltAmps[voltageTier])
+                .EUt(GTValues.VA[voltageTier])
                 .buildAndRegister()
     } else {
         CUTTER.recipeBuilder()
@@ -292,14 +292,14 @@ def generateCuttingRecipes(input, product, productMultiplier, voltageTier, boole
                 .inputs(metaitem(input))
                 .outputs(metaitem(product) * productMultiplier)
                 .duration(450)
-                .EUt(Globals.voltAmps[voltageTier])
+                .EUt(GTValues.VA[voltageTier])
                 .buildAndRegister()
 
         LASER_ENGRAVER.recipeBuilder()
                 .inputs(metaitem(input))
                 .outputs(metaitem(product) * productMultiplier)
                 .duration(60)
-                .EUt(Globals.voltAmps[voltageTier])
+                .EUt(GTValues.VA[voltageTier])
                 .buildAndRegister()
     }
 }

@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 REACTION_FURNACE = recipemap('reaction_furnace')
@@ -75,7 +75,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('distilled_water') * 5000)
     .outputs(metaitem('dustLanthanumCarbonate') * 14)
     .fluidOutputs(fluid('sodium_nitrate_solution') * 6000)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .duration(100)
     .buildAndRegister()
 

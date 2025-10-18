@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 ION_EXCHANGE = recipemap('ion_exchange_column')
@@ -21,7 +21,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustLutetiumFluoride') * 4)
     .fluidOutputs(fluid('diluted_hydrochloric_acid') * 6000)
     .duration(80)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -32,5 +32,5 @@ REACTION_FURNACE.recipeBuilder()
     .outputs(metaitem('dustLutetium') * 2)
     .outputs(metaitem('dustFluorite') * 9)
     .duration(200)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()

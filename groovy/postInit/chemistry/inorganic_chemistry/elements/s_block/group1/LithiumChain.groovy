@@ -1,5 +1,5 @@
-import globals.Globals
 import static globals.SinteringGlobals.*
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 FLUIDIZEDBR = recipemap('fluidized_bed_reactor')
@@ -23,7 +23,7 @@ MIXER.recipeBuilder()
         .inputs(ore('dustImpureSpodumene') * 8)
         .fluidInputs(fluid('distilled_water') * 2000)
         .fluidOutputs(fluid('impure_spodumene_slurry') * 2000)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .duration(80)
         .buildAndRegister()
 
@@ -32,7 +32,7 @@ FLOTATION.recipeBuilder()
         .notConsumable(fluid('alkaline_sodium_oleate_solution') * 1000)
         .fluidOutputs(fluid('spodumene_slurry') * 1000)
         .fluidOutputs(fluid('pegmatite_tailing_slurry') * 1000)
-        .EUt(Globals.voltAmps[3])
+        .EUt(GTValues.VA[3])
         .duration(80)
         .buildAndRegister()
 
@@ -40,7 +40,7 @@ CLARIFIER.recipeBuilder()
         .fluidInputs(fluid('spodumene_slurry') * 1000)
         .outputs(metaitem('dustSpodumene') * 16)
         .fluidOutputs(fluid('wastewater') * 1000)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .duration(20)
         .buildAndRegister()
 
@@ -48,7 +48,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidInputs(fluid('pegmatite_tailing_slurry') * 1000)
         .outputs(metaitem('dustPegmatiteTailings') * 2)
         .fluidOutputs(fluid('wastewater') * 1000)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .duration(20)
         .buildAndRegister()
 

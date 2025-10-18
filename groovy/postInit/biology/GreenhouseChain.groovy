@@ -1,9 +1,9 @@
-import globals.Globals
+import gregtech.api.GTValues
+import gregtech.api.recipes.ModHandler
+import gregtech.api.unification.material.Materials
+import gregtech.api.unification.ore.OrePrefix
+import gregtech.api.unification.stack.UnificationEntry
 
-import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.unification.stack.UnificationEntry;
 MIXER = recipemap('mixer')
 FLUID_HEATER = recipemap('fluid_heater')
 CENTRIFUGE = recipemap('centrifuge')
@@ -46,7 +46,7 @@ MACERATOR.recipeBuilder()
         .inputs(ore('threadCotton') * 2)
         .outputs(metaitem('dustCellulose'))
         .duration(100)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 //GREENHOUSE

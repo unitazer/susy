@@ -1,5 +1,5 @@
-import globals.Globals
 import static globals.Petrochemistry.*
+import gregtech.api.GTValues
 
 VACUUM_DT = recipemap('vacuum_distillation')
 CRYSTALLIZER = recipemap('crystallizer')
@@ -61,7 +61,7 @@ MIXER.recipeBuilder()
     .fluidOutputs(fluid('asphaltene_extract') * 300)
     .fluidOutputs(fluid('deasphalted_oil') * 250)
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 PHASE_SEPARATOR.recipeBuilder()
@@ -69,7 +69,7 @@ PHASE_SEPARATOR.recipeBuilder()
     .outputs(metaitem('dustAsphalt') * 4)
     .fluidOutputs(fluid('supercritical_propane') * 300)
     .duration(150)
-    .EUt(Globals.voltAmps[0])
+    .EUt(GTValues.VA[0])
     .buildAndRegister()
 
 MIXER.recipeBuilder()

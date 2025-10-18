@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 LCR = recipemap('large_chemical_reactor')
 CSTR = recipemap('continuous_stirred_tank_reactor')
@@ -39,5 +39,5 @@ POLYMERIZATION.recipeBuilder()
     .inputs(ore('dustSodiumBisphenolate') * 33)
     .outputs(metaitem('dustPolysulfone'))
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()

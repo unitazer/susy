@@ -1,5 +1,5 @@
-import globals.Globals
 import static globals.SinteringGlobals.*
+import gregtech.api.GTValues
 
 MIXER = recipemap('mixer')
 SPINNING = recipemap('spinning')
@@ -16,7 +16,7 @@ SPINNING.recipeBuilder()
     .inputs(metaitem('carbon.fibers') * 16)
     .outputs(metaitem('carbon.mesh'))
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -24,7 +24,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('cyclohexane') * 1000)
     .fluidOutputs(fluid('polytetrafluoroethylene_coating_solution') * 1000)
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 CHEMICAL_BATH.recipeBuilder()
@@ -32,7 +32,7 @@ CHEMICAL_BATH.recipeBuilder()
     .fluidInputs(fluid('polytetrafluoroethylene_coating_solution') * 50)
     .outputs(metaitem('carbon.mesh.treated'))
     .duration(1000)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -41,7 +41,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('isopropyl_alcohol') * 1000)
     .fluidOutputs(fluid('fuel_cell_catalyst_solution') * 1000)
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
@@ -56,7 +56,7 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('fuel_cell_catalyst_solution') * 1000)
     .outputs(metaitem('proton_exchange_membrane_fuel_cell'))
     .duration(1000)
-    .EUt(Globals.voltAmps[4])
+    .EUt(GTValues.VA[4])
     .buildAndRegister()
 
 // SOFCs
@@ -72,7 +72,7 @@ TUBE_FURNACE.recipeBuilder()
     .fluidInputs(fluid('argon') * 50)
     .outputs(metaitem('plateLanthanumStrontiumManganite') * 5)
     .duration(1000)
-    .EUt(Globals.voltAmps[4])
+    .EUt(GTValues.VA[4])
     .buildAndRegister()
 
 // GDC electrolyte
@@ -85,7 +85,7 @@ TUBE_FURNACE.recipeBuilder() // no pores to prevent fuel-air crossover
     .fluidInputs(fluid('argon') * 100)
     .outputs(metaitem('plateGadoliniumDopedCeria') * 10)
     .duration(2000)
-    .EUt(Globals.voltAmps[4])
+    .EUt(GTValues.VA[4])
     .buildAndRegister()
 
 // Ni-GDC anode
@@ -100,7 +100,7 @@ TUBE_FURNACE.recipeBuilder()
     .fluidInputs(fluid('argon') * 100)
     .outputs(metaitem('plateNickelGadoliniumDopedCeria') * 20)
     .duration(2000)
-    .EUt(Globals.voltAmps[4])
+    .EUt(GTValues.VA[4])
     .buildAndRegister()
 
 // YSZ electrolyte
@@ -113,7 +113,7 @@ for (blanket in sintering_blankets) {
         .fluidInputs(fluid('polyvinyl_alcohol_binder') * 50)
         .outputs(metaitem('plateYttriaStabilizedZirconia'))
         .duration(blanket.duration)
-        .EUt(Globals.voltAmps[2])
+        .EUt(GTValues.VA[2])
         .buildAndRegister()
 }
 
@@ -128,7 +128,7 @@ for (blanket in sintering_blankets) {
         .fluidInputs(fluid('polyvinyl_alcohol_binder') * 400)
         .outputs(metaitem('plateNickelYttriaStabilizedZirconia') * 8)
         .duration(blanket.duration)
-        .EUt(Globals.voltAmps[2])
+        .EUt(GTValues.VA[2])
         .buildAndRegister()
 }
 
@@ -142,7 +142,7 @@ TUBE_FURNACE.recipeBuilder()
     .fluidInputs(fluid('argon') * 50)
     .outputs(metaitem('plateLanthanumStrontiumChromite') * 5)
     .duration(1000)
-    .EUt(Globals.voltAmps[4])
+    .EUt(GTValues.VA[4])
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
@@ -156,7 +156,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('hull.ev'))
     .outputs(metaitem('susy:fuel_cell.ev'))
     .duration(1000)
-    .EUt(Globals.voltAmps[4])
+    .EUt(GTValues.VA[4])
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
@@ -170,5 +170,5 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('hull.iv'))
     .outputs(metaitem('susy:fuel_cell.iv'))
     .duration(1000)
-    .EUt(Globals.voltAmps[4])
+    .EUt(GTValues.VA[4])
     .buildAndRegister()

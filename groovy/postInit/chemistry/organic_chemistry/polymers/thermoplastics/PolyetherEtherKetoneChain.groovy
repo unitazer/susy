@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 BCR = recipemap('bubble_column_reactor')
@@ -133,7 +133,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('para_diisopropylbenzene') * 1000)
     .outputs(metaitem('dustParaDiisopropylbenzeneDihydroperoxide') * 34)
     .duration(10)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 BR.recipeBuilder()

@@ -1,6 +1,6 @@
-import globals.Globals
 import globals.Carbons
 
+import gregtech.api.GTValues
 import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.material.MarkerMaterials;
 import static gregtech.api.unification.ore.OrePrefix.dye;
@@ -30,7 +30,7 @@ EBF.recipeBuilder()
     .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
     .blastFurnaceTemp(1400)
     .duration(3200)
-    .EUt(Globals.voltAmps[2] * 2)
+    .EUt(GTValues.VA[2] * 2)
     .buildAndRegister()
 
 EBF.recipeBuilder()
@@ -40,7 +40,7 @@ EBF.recipeBuilder()
     .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
     .blastFurnaceTemp(1400)
     .duration(3200)
-    .EUt(Globals.voltAmps[2] * 2)
+    .EUt(GTValues.VA[2] * 2)
     .buildAndRegister()
 
 EBF.recipeBuilder()
@@ -50,7 +50,7 @@ EBF.recipeBuilder()
     .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
     .blastFurnaceTemp(1400)
     .duration(3200)
-    .EUt(Globals.voltAmps[2] * 2)
+    .EUt(GTValues.VA[2] * 2)
     .buildAndRegister()
 
 EBF.recipeBuilder()
@@ -60,7 +60,7 @@ EBF.recipeBuilder()
     .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
     .blastFurnaceTemp(1400)
     .duration(3200)
-    .EUt(Globals.voltAmps[2] * 2)
+    .EUt(GTValues.VA[2] * 2)
     .buildAndRegister()
 
 EBF.recipeBuilder()
@@ -70,7 +70,7 @@ EBF.recipeBuilder()
     .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
     .blastFurnaceTemp(1400)
     .duration(3200)
-    .EUt(Globals.voltAmps[2] * 2)
+    .EUt(GTValues.VA[2] * 2)
     .buildAndRegister()   
 
 // VACUUM.recipeBuilder()
@@ -82,7 +82,7 @@ EBF.recipeBuilder()
 //    .inputs(ore('dustSmallFluorite'))
 //     .fluidOutputs(fluid('stainless_steel') * 1440)
 //     .duration(400)
-//     .EUt(Globals.voltAmps[3])
+//     .EUt(GTValues.VA[3])
 //     .buildAndRegister()
 
 for (highPurityCombustible in Carbons.highPurityCombustibles()) {
@@ -94,7 +94,7 @@ for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     .fluidOutputs(fluid('carbon_monoxide') * 6000)
     .blastFurnaceTemp(1400)
     .duration(200 * highPurityCombustible.duration)
-    .EUt(Globals.voltAmps[1] * 2)
+    .EUt(GTValues.VA[1] * 2)
     .buildAndRegister()
 }
 
@@ -104,7 +104,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustChrome') * 2)
     .outputs(metaitem('dustFerrochromium') * 3)
     .duration(100)
-    .EUt(Globals.voltAmps[1] * 2)
+    .EUt(GTValues.VA[1] * 2)
     .buildAndRegister()
 
 // AOD Process
@@ -118,7 +118,7 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .inputs(ore('dustFluorite'))
     .fluidOutputs(fluid('stainless_steel') * 5760)
     .duration(1600)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 ADVANCED_ARC_FURNACE.recipeBuilder()
@@ -131,7 +131,7 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .inputs(ore('dustFluorite'))
     .fluidOutputs(fluid('stainless_steel') * 5760)
     .duration(2400)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 // Vanadiumsteel
@@ -146,6 +146,6 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .inputs(ore('dustSmallQuicklime'))
     .fluidOutputs(fluid('stainless_steel') * 2592) //this isn't vanadiumsteel?
     .duration(600)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()'
 */

@@ -1,5 +1,5 @@
-import globals.Globals
 import static globals.Petrochemistry.*
+import gregtech.api.GTValues
 
 CRACKER = recipemap('cracker')
 DT = recipemap('distillation_tower')
@@ -15,7 +15,7 @@ crackables.each { _, crackable ->
             .fluidInputs(crackable.get(1000))
             .fluidOutputs(crackable.getThermallyCracked(700))
             .duration(800)
-            .EUt(Globals.voltAmps[2])
+            .EUt(GTValues.VA[2])
             .buildAndRegister()
 
         CRACKER.recipeBuilder()
@@ -23,7 +23,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(crackable.getThermallyCracked(4000))
             .circuitMeta(1)
             .duration(200)
-            .EUt(Globals.voltAmps[2] * 2)
+            .EUt(GTValues.VA[2] * 2)
             .buildAndRegister()
 
         // Visbreaking

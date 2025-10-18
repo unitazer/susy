@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 REACTION_FURNACE = recipemap('reaction_furnace')
@@ -27,7 +27,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustNeodymiumOxide') * 5)
     .fluidOutputs(fluid('dense_steam') * 3000)
     .duration(100)
-    .EUt(Globals.voltAmps[2])
+    .EUt(GTValues.VA[2])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()

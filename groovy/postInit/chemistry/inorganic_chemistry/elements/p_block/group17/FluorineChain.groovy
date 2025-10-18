@@ -1,5 +1,4 @@
-import globals.Globals
-
+import gregtech.api.GTValues
 import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.material.MarkerMaterials;
 import static gregtech.api.unification.ore.OrePrefix.dye;
@@ -15,7 +14,7 @@ ROASTER.recipeBuilder()
         .fluidOutputs(fluid('carbon_dioxide') * 1000)
         .fluidOutputs(fluid('dense_steam') * 1000)
         .duration(200)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -24,7 +23,7 @@ DISTILLERY.recipeBuilder()
         .fluidOutputs(fluid('water') * 1000)
         .outputs(metaitem('dustPotassiumFluoride') * 2)
         .duration(200)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 
 //HYDROFLUORIC ACID ELECTROLYSIS

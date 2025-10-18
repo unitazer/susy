@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 MACERATOR = recipemap('macerator');
 MIXER = recipemap('mixer');
@@ -52,5 +52,5 @@ FLUID_SOLIDIFIER.recipeBuilder()
     .fluidInputs(fluid('iodine') * 144)
     .outputs(metaitem('dustIodine'))
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()

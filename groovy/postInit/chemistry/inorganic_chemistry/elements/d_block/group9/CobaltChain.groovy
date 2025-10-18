@@ -1,5 +1,5 @@
-import globals.Globals
 import globals.Carbons
+import gregtech.api.GTValues
 
 ROASTER = recipemap('roaster')
 EBF = recipemap('electric_blast_furnace')
@@ -20,7 +20,7 @@ EBF.recipeBuilder()
         .outputs(metaitem('dustCobaltOxide') * 2)
         .chancedOutput(metaitem('dustArsenicTrioxide') * 5, 7500, 0)
         .fluidOutputs(fluid('sulfur_dioxide') * 2000)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .blastFurnaceTemp(1023)
         .duration(240)
         .buildAndRegister()
@@ -31,7 +31,7 @@ FLUIDIZEDBR.recipeBuilder()
         .outputs(metaitem('dustCobaltOxide') * 4)
         .chancedOutput(metaitem('dustArsenicTrioxide') * 5, 9000, 0)
         .fluidOutputs(fluid('sulfur_dioxide') * 2000)
-        .EUt(Globals.voltAmps[2])
+        .EUt(GTValues.VA[2])
         .duration(120)
         .buildAndRegister()
 
@@ -39,7 +39,7 @@ BR.recipeBuilder()
         .inputs(ore('dustCobaltOxide') * 2)
         .fluidInputs(fluid('sulfuric_acid') * 1000)
         .fluidOutputs(fluid('cobalt_sulfate_solution') * 1000)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .duration(240)
         .buildAndRegister()
 
@@ -51,7 +51,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .outputs(metaitem('dustCobalt'))
         .fluidOutputs(fluid('sulfuric_acid') * 1000)
         .fluidOutputs(fluid('oxygen') * 1000)
-        .EUt(Globals.voltAmps[2])
+        .EUt(GTValues.VA[2])
         .duration(240)
         .buildAndRegister()
 
@@ -63,7 +63,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .outputs(metaitem('dustHighPurityCobalt'))
         .fluidOutputs(fluid('sulfuric_acid') * 1000)
         .fluidOutputs(fluid('oxygen') * 1000)
-        .EUt(Globals.voltAmps[2])
+        .EUt(GTValues.VA[2])
         .duration(240)
         .buildAndRegister()
 
@@ -75,7 +75,7 @@ for (combustible in Carbons.combustibles()) {
         .fluidOutputs(fluid('carbon_monoxide') * 1000)
         .blastFurnaceTemp(1200)
         .duration(240)
-        .EUt(Globals.voltAmps[1])
+        .EUt(GTValues.VA[1])
         .buildAndRegister()
 }
 

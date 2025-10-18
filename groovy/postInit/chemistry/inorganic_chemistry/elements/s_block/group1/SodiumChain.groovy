@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 ROASTER = recipemap('roaster')
 ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
@@ -43,7 +43,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .fluidOutputs(fluid('oxygen') * 1000)
         .fluidOutputs(fluid('hydrogen') * 1000)
         .duration(200)
-        .EUt(Globals.voltAmps[1] * 2)
+        .EUt(GTValues.VA[1] * 2)
         .buildAndRegister()
 
 //DOWNS CELL PROCESSES
@@ -114,5 +114,5 @@ ROASTER.recipeBuilder()
         .outputs(metaitem('dustSodiumOxide') * 6)
         .fluidOutputs(fluid('sulfur_trioxide_reaction_mixture') * 2000)
         .duration(400)
-        .EUt(Globals.voltAmps[2])
+        .EUt(GTValues.VA[2])
         .buildAndRegister()

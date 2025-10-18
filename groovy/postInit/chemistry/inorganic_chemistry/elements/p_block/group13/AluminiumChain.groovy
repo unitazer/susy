@@ -1,5 +1,5 @@
-import globals.Globals
 import globals.Carbons
+import gregtech.api.GTValues
 
 ROASTER = recipemap('roaster')
 CENTRIFUGE = recipemap('centrifuge')
@@ -166,7 +166,7 @@ EBF.recipeBuilder()
     .outputs(metaitem('red_mud_slag'))
     .blastFurnaceTemp(1600)
     .duration(300)
-    .EUt(Globals.voltAmps[2] * 2)
+    .EUt(GTValues.VA[2] * 2)
     .buildAndRegister()
 
 CENTRIFUGE.recipeBuilder()
@@ -175,7 +175,7 @@ CENTRIFUGE.recipeBuilder()
     .chancedOutput(metaitem('dustRutile'), 3333, 0)
     .outputs(metaitem('leached_red_mud_slag'))
     .duration(100)
-    .EUt(Globals.voltAmps[3])
+    .EUt(GTValues.VA[3])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -217,7 +217,7 @@ ROASTER.recipeBuilder()
 // .inputs(metaitem('leached_red_mud_slag'))
 // .fluidOutputs(fluid('acidic_ree_solution') * 500)
 // .duration(100)
-// .EUt(Globals.voltAmps[4])
+// .EUt(GTValues.VA[4])
 // .buildAndRegister()
 
 BR.recipeBuilder()      

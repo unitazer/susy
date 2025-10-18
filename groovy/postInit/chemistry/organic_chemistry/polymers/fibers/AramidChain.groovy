@@ -1,4 +1,4 @@
-import globals.Globals
+import gregtech.api.GTValues
 
 BR = recipemap('batch_reactor')
 LCR = recipemap('large_chemical_reactor')
@@ -124,7 +124,7 @@ BR.recipeBuilder()
     .notConsumable(ore('dustActivatedRaneyNickel') * 1)
     .outputs(metaitem('dustMetaPhenylenediamine') * 16)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(GTValues.VA[1])
     .buildAndRegister()
 
 // Nomex

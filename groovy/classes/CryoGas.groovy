@@ -76,7 +76,7 @@ class CryoGas {
         return duration;
     }
 
-    public void setTemperature(int temp){
+    public void setTemperature(int temp) {
         this.fluid_temperature = temp;
     }
 
