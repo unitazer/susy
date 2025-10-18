@@ -52,10 +52,6 @@ class Globals {
         new Lubricant('supreme_lubricant', 1, 1.5)
     ]
 
-    public static batteryCapacities = [
-        'lead_acid': 80000L
-    ]
-
     public static int determineTemperatureGas(Material material) {
         if (material.getProperty(PropertyKey.FLUID) != null && material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.GAS) != null) {
             def current = material.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.GAS).temperature

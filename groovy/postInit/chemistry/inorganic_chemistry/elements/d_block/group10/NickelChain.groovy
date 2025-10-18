@@ -171,6 +171,22 @@ ROASTER.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('nickel_chloride_solution') * 1000)
+    .fluidOutputs(fluid('water') * 1000)
+    .outputs(metaitem('dustNickelChloride') * 3)
+    .duration(80)
+    .EUt(30)
+    .buildAndRegister()
+
+MIXER.recipeBuilder()
+    .inputs(ore('dustNickelChloride') * 3)
+    .fluidInputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('nickel_chloride_solution') * 1000)
+    .duration(80)
+    .EUt(7)
+    .buildAndRegister()
+
 // Ni(OH)2
 
 BR.recipeBuilder()

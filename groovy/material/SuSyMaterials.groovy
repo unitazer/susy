@@ -1143,6 +1143,7 @@ class SuSyMaterials {
     public static Material LithiumHexafluorophosphate
     public static Material NickelHydroxide
     public static Material NickelChloride
+    public static Material NickelChlorideSolution
     public static Material SilverNitrateSolution
     public static Material ChloroauricAcid
     public static Material SpentMoebiusElectrolyte
@@ -1788,6 +1789,7 @@ class SuSyMaterials {
     public static Material SodiumAlumSolution
     public static Material OxidizedManganateSolution
     public static Material SupportedNickel
+    public static Material WattsBathElectrolyte
     public static Material AmmoniumMetatungstateSolution
     public static Material CobaltNitrateSolution
     public static Material GalvanizedSteel

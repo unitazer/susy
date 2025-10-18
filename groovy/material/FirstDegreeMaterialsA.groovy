@@ -1373,7 +1373,13 @@ class FirstDegreeMaterialsA {
 
         NickelHydroxide.setFormula("Ni(OH)2", true)
 
-        // FREE ID: 8292
+        NickelChlorideSolution = new Material.Builder(8292, SuSyUtility.susyId('nickel_chloride_solution'))
+                .liquid()
+                .components(NickelChloride, Water)
+                .colorAverage()
+                .build()
+
+        NickelChlorideSolution.setFormula("(NiCl2)(H2O)", true)
 
         SilverNitrateSolution = new Material.Builder(8293, SuSyUtility.susyId('silver_nitrate_solution'))
                 .liquid()

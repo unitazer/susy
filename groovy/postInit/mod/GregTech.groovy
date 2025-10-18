@@ -1382,78 +1382,6 @@ RecyclingHelper.replaceShaped('gregtech:distillation_tower', metaitem('distillat
     [ore('circuitHv'), metaitem('pipeLargeFluidStainlessSteel'), ore('circuitHv')]
 ])
 
-// Item Magnet with Lead Acid battery
-
-crafting.shapedBuilder()
-    .name('gregtech:lv_magnet_lead_acid')
-    .output(metaitem('item_magnet.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
-    .shape([
-        [ore('stickSteelMagnetic'), ore('toolWrench'), ore('stickSteelMagnetic')],
-        [ore('stickSteelMagnetic'), metaitem('battery.lead_acid').mark('battery'), ore('stickSteelMagnetic')],
-        [ore('cableGtSingleTin'), ore('plateSteel'), ore('cableGtSingleTin')]
-    ])
-    .recipeFunction { output, inputs, info ->
-        def batteryTag = inputs['battery']?.getTagCompound()
-        if (batteryTag != null) {
-            output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-        }
-    }
-    .register()
-
-// Power Unit with Lead Acid Battery
-
-crafting.shapedBuilder()
-    .name('gregtech:lv_power_unit_lead_acid')
-    .output(metaitem('power_unit.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
-    .shape([
-        [ore('screwSteel'), null, ore('toolScrewdriver')],
-        [ore('gearSmallSteel'), metaitem('electric.motor.lv'), ore('gearSmallSteel')],
-        [ore('plateSteel'), metaitem('battery.lead_acid').mark('battery'), ore('plateSteel')]
-    ])
-    .recipeFunction { output, inputs, info ->
-        def batteryTag = inputs['battery']?.getTagCompound()
-        if (batteryTag != null) {
-            output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-        }
-    }
-    .register()
-
-// Prospector's Scanner with Lead Acid battery
-
-crafting.shapedBuilder()
-        .name("gregtech:prospector_lead_acid")
-        .output(metaitem('prospector.lv').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
-        .shape([
-    [metaitem('emitter.lv'), ore('plateSteel'), metaitem('sensor.lv')],
-        [ore('circuitLv'), ore('plateGlass'), ore('circuitLv')],
-        [ore('plateSteel'), metaitem('battery.lead_acid').mark('battery'), ore('plateSteel')]
-    ])
-    .recipeFunction { output, inputs, info ->
-        def batteryTag = inputs['battery']?.getTagCompound()
-        if (batteryTag != null) {
-            output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-        }
-    }
-    .register()
-
-// NightVision Goggles with other batteries
-
-crafting.shapedBuilder()
-    .name('gregtech:nightvision_lead_acid')
-    .output(metaitem('nightvision_goggles').withNbt(['MaxCharge': Globals.batteryCapacities['lead_acid']]))
-    .shape([
-        [ore('circuitUlv'), metaitem('screwSteel'), ore('circuitUlv')],
-        [metaitem('ringRubber'), metaitem('battery.lead_acid').mark('battery'), metaitem('ringRubber')],
-        [metaitem('lensGlass'), ore('toolScrewdriver'), metaitem('lensGlass')]
-    ])
-    .recipeFunction { output, inputs, info ->
-        def batteryTag = inputs['battery']?.getTagCompound()
-        if (batteryTag != null) {
-            output.getTagCompound().setLong("Charge", batteryTag.getLong("Charge"))
-        }
-    }
-    .register()
-
 // Stone oredict stuff
 
 // Stone Dust * 1
@@ -1762,36 +1690,6 @@ GroovyUtils.removeRecipesContainingFluid(mods.gregtech.assembler, fluid('polyben
 GroovyUtils.removeRecipesContainingFluid(mods.gregtech.autoclave, fluid('polybenzimidazole'))
 GroovyUtils.removeRecipesContainingFluid(mods.gregtech.fluid_solidifier, fluid('polybenzimidazole'))
 GroovyUtils.removeRecipesContainingFluid(mods.gregtech.assembly_line, fluid('polybenzimidazole'))
-
-crafting.addShaped('gregtech:electric_jetpack1', metaitem('gregtech:electric_jetpack'), [
-    [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
-    [metaitem('power_thruster'), metaitem('battery.re.mv.cadmium'), metaitem('power_thruster')],
-    [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
-])
-
-crafting.addShaped('gregtech:electric_jetpack2', metaitem('gregtech:electric_jetpack'), [
-    [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
-    [metaitem('power_thruster'), metaitem('battery.re.mv.sodium'), metaitem('power_thruster')],
-    [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
-])
-
-crafting.replaceShaped('gregtech:electric_jetpack_advanced', metaitem('advanced_electric_jetpack'), [
-    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
-    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.sodium'), metaitem('power_thruster_advanced')],
-    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
-])
-
-crafting.addShaped('gregtech:electric_jetpack_advanced1', metaitem('advanced_electric_jetpack'), [
-    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
-    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.lithium'), metaitem('power_thruster_advanced')],
-    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
-])
-
-crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_electric_jetpack'), [
-    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
-    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.cadmium'), metaitem('power_thruster_advanced')],
-    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
-])
 
 ASSEMBLER.recipeBuilder()
     .inputs(ore('plankWood') * 4)
