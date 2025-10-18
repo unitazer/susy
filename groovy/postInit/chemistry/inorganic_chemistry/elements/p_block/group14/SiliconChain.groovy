@@ -179,7 +179,7 @@ ZONEREFINER.recipeBuilder()
         .inputs(metaitem('unrefined_boule.silicon'))
         .outputs(metaitem('boule.silicon'))
         .duration(120)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
 CUTTER.recipeBuilder()
@@ -235,7 +235,7 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('ultrapure_water') * 10000)
         .fluidOutputs(fluid('silicon_dioxide_slurry') * 10000)
         .duration(200)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
 POLISHING_MACHINE.recipeBuilder()
@@ -320,7 +320,7 @@ for (fuel in sintering_fuels) {
                 .outputs(metaitem('plateSiliconCarbide'))
                 .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
                 .duration(fuel.duration)
-                .EUt(GTValues.VA[3])
+                .EUt(GTValues.VA[GTValues.HV])
                 .buildAndRegister()
 
     } else {
@@ -333,7 +333,7 @@ for (fuel in sintering_fuels) {
                     .outputs(metaitem('plateSiliconCarbide'))
                     .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
                     .duration(fuel.duration + comburent.duration)
-                    .EUt(GTValues.VA[1])
+                    .EUt(GTValues.VA[GTValues.LV])
                     .buildAndRegister()
         }
     }
@@ -358,5 +358,5 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustCalcite') * 5)
     .outputs(metaitem('dustSiliconDioxide') * 3)
     .duration(120)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()

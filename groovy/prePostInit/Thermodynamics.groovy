@@ -305,7 +305,7 @@ recipemap('natural_draft_cooling_tower').recipeBuilder()
         .fluidInputs(liquid('warm_water') * 1536)
         .fluidOutputs(liquid('chilled_water') * 1536)
         .duration(1)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
 recipemap('natural_draft_cooling_tower').recipeBuilder()
@@ -313,14 +313,14 @@ recipemap('natural_draft_cooling_tower').recipeBuilder()
         .fluidInputs(liquid('warm_water') * 1536)
         .fluidOutputs(liquid('water') * 1536)
         .duration(1)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
 recipemap('natural_draft_cooling_tower').recipeBuilder()
         .fluidInputs(liquid('water') * 1536)
         .fluidOutputs(liquid('chilled_water') * 1536)
         .duration(1)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
 //Refrigerant recipes generation
@@ -337,7 +337,7 @@ for (refrigerant in Refrigerants) {
     recipemap('fluid_decompressor').recipeBuilder()
             .fluidInputs(liquid(refrigerant.comp_refrigerant) * refrigerant.amount_to_use)
             .fluidOutputs(liquid(refrigerant.cold_refrigerant) * refrigerant.amount_to_use)
-            .EUt(GTValues.VA[0])
+            .EUt(GTValues.VA[GTValues.ULV])
             .duration(refrigerant.duration)
             .buildAndRegister();
 
@@ -355,7 +355,7 @@ for (refrigerant in Refrigerants) {
             .fluidOutputs(liquid(refrigerant.comp_refrigerant) * refrigerant.amount_to_use)
             .fluidOutputs(liquid('warm_water') * (int)(refrigerant.amount_to_use * 0.384))
             .duration((int) (refrigerant.duration_radiator / 2))
-            .EUt(GTValues.VA[3])
+            .EUt(GTValues.VA[GTValues.HV])
             .buildAndRegister();
 }
 
@@ -412,7 +412,7 @@ for (cryogas in CryoGases) {
             .fluidInputs(liquid(cryogas.cold_high_pressure_gas) * 1280)
             .fluidOutputs(liquid(cryogas.liquid_gas) * 20)
             .duration(20)
-            .EUt(GTValues.VA[0])
+            .EUt(GTValues.VA[GTValues.ULV])
             .buildAndRegister();
 
     //Reheating
@@ -421,7 +421,7 @@ for (cryogas in CryoGases) {
             .fluidInputs(liquid(cryogas.liquid_gas) * 20)
             .fluidOutputs(liquid(cryogas.cold_high_pressure_gas) * 1280)
             .duration(20)
-            .EUt(GTValues.VA[0])
+            .EUt(GTValues.VA[GTValues.ULV])
             .buildAndRegister();
 
     //Boiling
@@ -430,7 +430,7 @@ for (cryogas in CryoGases) {
             .fluidInputs(liquid(cryogas.liquid_gas) * 20)
             .fluidOutputs(liquid(cryogas.normal_gas) * 1280)
             .duration(2)
-            .EUt(GTValues.VA[3])
+            .EUt(GTValues.VA[GTValues.HV])
             .buildAndRegister();
 
     //Radiative Cooling
@@ -811,7 +811,7 @@ recipemap('fluid_heater').recipeBuilder()
         .fluidInputs(fluid('air') * 1000)
         .fluidOutputs(fluid('preheated_air') * 1000)
         .duration(5)
-        .EUt(GTValues.VA[4])
+        .EUt(GTValues.VA[GTValues.EV])
         .buildAndRegister();
 
 for (working_fluid in WorkingFluids) {

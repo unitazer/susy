@@ -107,7 +107,7 @@ for (blastable in blastables) {
             .outputs(metaitem(combustible.byproduct) * (combustible.equivalent(1) * blastable.reductant_required))
             .duration((int) (combustible.duration * blastable.amount_produced * blastable.duration / 2))
             .blastFurnaceTemp(1750)
-            .EUt(GTValues.VA[1])
+            .EUt(GTValues.VA[GTValues.LV])
             .buildAndRegister()
     }
 
@@ -121,7 +121,7 @@ for (blastable in blastables) {
             .duration((int)(blastable.amount_produced * blastable.duration / 4))
             .blastFurnaceTemp(1750)
             .circuitMeta(2)
-            .EUt(GTValues.VA[3])
+            .EUt(GTValues.VA[GTValues.HV])
             .buildAndRegister()
     }
 }
@@ -138,7 +138,7 @@ for (blastable in blastables) {
         .inputs(ore('ingotPigIron'))
         .outputs(metaitem('ingotWroughtIron'))
         .duration(60)
-        .EUt(GTValues.VA[0])
+        .EUt(GTValues.VA[GTValues.ULV])
         .buildAndRegister()
 
     // Puddling
@@ -177,7 +177,7 @@ for (blastable in blastables) {
         .fluidInputs(fluid('oxygen') * 500)
         .outputs(metaitem('ingotSteel') * 10)
         .blastFurnaceTemp(1750)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .duration(100)
         .circuitMeta(1)
         .buildAndRegister()
@@ -188,7 +188,7 @@ for (blastable in blastables) {
         .fluidInputs(fluid('oxygen') * 500)
         .outputs(item('minecraft:iron_ingot') * 10)
         .blastFurnaceTemp(1750)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .duration(100)
         .circuitMeta(2)
         .buildAndRegister()
@@ -340,7 +340,7 @@ ROASTER.recipeBuilder()
     .inputs(ore('dustIronIiHydroxide') * 5)
     .outputs(metaitem('dustIronIiOxide') * 2)
     .fluidOutputs(fluid('dense_steam') * 1000)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .duration(200)
     .buildAndRegister()
 

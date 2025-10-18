@@ -13,7 +13,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 50)
     .fluidOutputs(fluid('hexafluoropropylene_oxide') * 50)
     .duration(5)
-    .EUt(GTValues.VA[2])
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();
 
 CSTR.recipeBuilder()
@@ -22,7 +22,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('sulfur_trioxide') * 50)
     .fluidOutputs(fluid('fluorosulfonyl_difluoroacetyl_fluoride') * 50)
     .duration(5)
-    .EUt(GTValues.VA[2])
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();
 
 LCR.recipeBuilder()
@@ -33,7 +33,7 @@ LCR.recipeBuilder()
     .fluidOutputs(fluid('perfluorovinyl_sulfonyl_ether_solution') * 3000)
     .fluidOutputs(fluid('carbon_dioxide') * 2000)
     .duration(100)
-    .EUt(GTValues.VA[4])
+    .EUt(GTValues.VA[GTValues.EV])
     .buildAndRegister();
 
 DT.recipeBuilder()

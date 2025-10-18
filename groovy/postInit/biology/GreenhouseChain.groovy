@@ -46,7 +46,7 @@ MACERATOR.recipeBuilder()
         .inputs(ore('threadCotton') * 2)
         .outputs(metaitem('dustCellulose'))
         .duration(100)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
 //GREENHOUSE

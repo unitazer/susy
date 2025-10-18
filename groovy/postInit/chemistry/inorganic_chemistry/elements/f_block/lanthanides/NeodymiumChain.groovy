@@ -27,7 +27,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustNeodymiumOxide') * 5)
     .fluidOutputs(fluid('dense_steam') * 3000)
     .duration(100)
-    .EUt(GTValues.VA[2])
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()

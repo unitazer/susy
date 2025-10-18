@@ -33,7 +33,7 @@ mods.gregtech.assembler.recipeBuilder()
     .inputs(ore('batteryLv'))
     .fluidInputs(fluid('soldering_alloy') * 72)
     .outputs(metaitem('drone.lv').withNbt(["Charge": 0L]))
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .duration(80)
     .buildAndRegister()
 

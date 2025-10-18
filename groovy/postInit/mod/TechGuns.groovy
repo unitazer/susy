@@ -435,7 +435,7 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('soldering_alloy') * 72)
     .outputs(item('techguns:basicmachine', 3))
     .duration(100)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 Globals.solders.each { key, val ->
@@ -449,7 +449,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared', 33))
         .duration(100)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -462,7 +462,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:34'))
         .duration(80)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -475,7 +475,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:35'))
         .duration(80)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -488,7 +488,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:36'))
         .duration(80)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -500,7 +500,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:pistol'))
         .duration(300)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -510,7 +510,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:12') * 4)
         .duration(10)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -520,7 +520,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:10') * 4)
         .duration(20)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -530,7 +530,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:14') * 4)
         .duration(20)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -540,7 +540,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:16'))
         .duration(20)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -550,7 +550,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:18'))
         .duration(20)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -560,7 +560,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:20') * 2)
         .duration(20)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -570,7 +570,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:itemshared:22') * 4)
         .duration(20)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -583,7 +583,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:revolver'))
         .duration(20)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -596,7 +596,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:boltaction'))
         .duration(20)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -608,7 +608,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:thompson'))
         .duration(200)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -620,7 +620,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:ak47'))
         .duration(200)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -634,7 +634,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:m4'))
         .duration(200)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -649,7 +649,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:m4_infiltrator'))
         .duration(200)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -662,7 +662,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:combatshotgun'))
         .duration(400)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -674,7 +674,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:sawedoff'))
         .duration(400)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -685,7 +685,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:mac10'))
         .duration(200)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -697,7 +697,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:flamethrower'))
         .duration(200)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -710,7 +710,7 @@ Globals.solders.each { key, val ->
         .outputs(item('techguns:rocketlauncher'))
         .circuitMeta(1)
         .duration(200)
-        .EUt(GTValues.VA[4])
+        .EUt(GTValues.VA[GTValues.EV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -725,7 +725,7 @@ Globals.solders.each { key, val ->
         .outputs(item('techguns:guidedmissilelauncher'))
         .circuitMeta(2)
         .duration(200)
-        .EUt(GTValues.VA[4])
+        .EUt(GTValues.VA[GTValues.EV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -740,7 +740,7 @@ Globals.solders.each { key, val ->
         .outputs(item('techguns:grimreaper'))
         .circuitMeta(3)
         .duration(200)
-        .EUt(GTValues.VA[5])
+        .EUt(GTValues.VA[GTValues.IV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -752,7 +752,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:grenadelauncher'))
         .duration(200)
-        .EUt(GTValues.VA[4])
+        .EUt(GTValues.VA[GTValues.EV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -766,7 +766,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:aug'))
         .duration(200)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -779,7 +779,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:lmg'))
         .duration(200)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -790,7 +790,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:minigun'))
         .duration(200)
-        .EUt(GTValues.VA[4])
+        .EUt(GTValues.VA[GTValues.EV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -802,7 +802,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:as50'))
         .duration(200)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -815,7 +815,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:vector'))
         .duration(200)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 
     WEAPONS_FACTORY.recipeBuilder()
@@ -829,7 +829,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('techguns:scar'))
         .duration(200)
-        .EUt(GTValues.VA[3])
+        .EUt(GTValues.VA[GTValues.HV])
         .buildAndRegister();
 }
 
@@ -879,7 +879,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .circuitMeta(1)
     .outputs(item('techguns:itemshared', 43))
     .duration(200)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -889,7 +889,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .circuitMeta(1)
     .outputs(item('techguns:itemshared', 1) * 12)
     .duration(10)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 WEAPONS_FACTORY.recipeBuilder()
@@ -899,7 +899,7 @@ WEAPONS_FACTORY.recipeBuilder()
     .circuitMeta(2)
     .outputs(item('techguns:itemshared', 2) * 5)
     .duration(10)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -907,7 +907,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('ringTin') * 2)
     .outputs(item('techguns:itemshared', 28))
     .duration(200)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -916,7 +916,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('platePlastic') * 4)
     .outputs(item('techguns:itemshared', 72))
     .duration(200)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 FORMING_PRESS.recipeBuilder()
@@ -928,21 +928,21 @@ FORMING_PRESS.recipeBuilder()
     .inputs(ore('boltBrass'))
     .outputs(item('techguns:itemshared', 45))
     .duration(60)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 LATHE.recipeBuilder()
     .inputs(ore('stickIron'))
     .outputs(item('techguns:itemshared', 38))
     .duration(80)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 LATHE.recipeBuilder()
     .inputs(ore('stickSteel'))
     .outputs(metaitem('gun.barrel.steel'))
     .duration(80)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 CHEMICAL_BATH.recipeBuilder()

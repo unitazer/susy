@@ -99,7 +99,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustIron') * 11)
     .outputs(metaitem('dustAlnico') * 24)
     .duration(400)
-    .EUt(GTValues.VA[2])
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();
 
 // Neodymium magnets (IV)
@@ -110,7 +110,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustBoron') * 1)
     .outputs(metaitem('dustNeodymiumAlloy') * 17)
     .duration(400)
-    .EUt(GTValues.VA[4])
+    .EUt(GTValues.VA[GTValues.EV])
     .buildAndRegister();
 
 // Samarium magnets (LuV)
@@ -120,7 +120,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustCobalt') * 5)
     .outputs(metaitem('dustSamariumAlloy') * 6)
     .duration(400)
-    .EUt(GTValues.VA[5])
+    .EUt(GTValues.VA[GTValues.IV])
     .buildAndRegister();
 
 def materials = [
@@ -139,7 +139,7 @@ for (material in materials) {
         .inputs(ore('dustBoricAcid'))
         .outputs(metaitem(material + 'TreatedNeodymiumAlloy') * 8)
         .duration(960)
-        .EUt(GTValues.VA[4])
+        .EUt(GTValues.VA[GTValues.EV])
         .buildAndRegister();
 
     ELECTROLYTIC_CELL.recipeBuilder()
@@ -149,7 +149,7 @@ for (material in materials) {
         .inputs(ore('dustBoricAcid'))
         .outputs(metaitem(material + 'TreatedSamariumAlloy') * 8)
         .duration(960)
-        .EUt(GTValues.VA[5])
+        .EUt(GTValues.VA[GTValues.IV])
         .buildAndRegister();
     
     // Magnetization
@@ -158,21 +158,21 @@ for (material in materials) {
         .inputs(ore(material + 'Alnico'))
         .outputs(metaitem(material + 'AlnicoMagnetic'))
         .duration(80)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister();
 
     POLARIZER.recipeBuilder()
         .inputs(ore(material + 'TreatedNeodymiumAlloy'))
         .outputs(metaitem(material + 'NeodymiumAlloyMagnetic'))
         .duration(80)
-        .EUt(GTValues.VA[4])
+        .EUt(GTValues.VA[GTValues.EV])
         .buildAndRegister();
 
     POLARIZER.recipeBuilder()
         .inputs(ore(material + 'TreatedSamariumAlloy'))
         .outputs(metaitem(material + 'SamariumAlloyMagnetic'))
         .duration(80)
-        .EUt(GTValues.VA[5])
+        .EUt(GTValues.VA[GTValues.IV])
         .buildAndRegister();
 }
 
@@ -183,7 +183,7 @@ HOT_ISOSTATIC_PRESS.recipeBuilder()
     .inputs(ore('dustSamariumAlloy'))
     .outputs(metaitem('ingotSamariumAlloy'))
     .duration(200)
-    .EUt(GTValues.VA[5])
+    .EUt(GTValues.VA[GTValues.IV])
     .buildAndRegister()
 
 HOT_ISOSTATIC_PRESS.recipeBuilder()
@@ -191,7 +191,7 @@ HOT_ISOSTATIC_PRESS.recipeBuilder()
     .inputs(ore('dustSamariumAlloy'))
     .outputs(metaitem('plateSamariumAlloy'))
     .duration(200)
-    .EUt(GTValues.VA[5])
+    .EUt(GTValues.VA[GTValues.IV])
     .buildAndRegister()
 
 HOT_ISOSTATIC_PRESS.recipeBuilder()
@@ -199,7 +199,7 @@ HOT_ISOSTATIC_PRESS.recipeBuilder()
     .inputs(ore('dustSamariumAlloy'))
     .outputs(metaitem('stickLongSamariumAlloy'))
     .duration(200)
-    .EUt(GTValues.VA[5])
+    .EUt(GTValues.VA[GTValues.IV])
     .buildAndRegister()
 
 HOT_ISOSTATIC_PRESS.recipeBuilder()
@@ -207,7 +207,7 @@ HOT_ISOSTATIC_PRESS.recipeBuilder()
     .inputs(ore('dustSamariumAlloy'))
     .outputs(metaitem('stickSamariumAlloy') * 2)
     .duration(200)
-    .EUt(GTValues.VA[5])
+    .EUt(GTValues.VA[GTValues.IV])
     .buildAndRegister()
 
 HOT_ISOSTATIC_PRESS.recipeBuilder()
@@ -215,7 +215,7 @@ HOT_ISOSTATIC_PRESS.recipeBuilder()
     .inputs(ore('dustSamariumAlloy'))
     .outputs(metaitem('ringSamariumAlloy') * 4)
     .duration(200)
-    .EUt(GTValues.VA[5])
+    .EUt(GTValues.VA[GTValues.IV])
     .buildAndRegister()
 
 // Replace magnetic component recipes
@@ -298,7 +298,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('wireFinePlatinum') * 16)
     .outputs(metaitem('voltage_coil.ev'))
     .duration(200)
-    .EUt(GTValues.VA[4])
+    .EUt(GTValues.VA[GTValues.EV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -306,7 +306,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('wireFineIridium') * 16)
     .outputs(metaitem('voltage_coil.iv'))
     .duration(200)
-    .EUt(GTValues.VA[5])
+    .EUt(GTValues.VA[GTValues.IV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -314,7 +314,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('wireFineOsmiridium') * 16)
     .outputs(metaitem('voltage_coil.luv'))
     .duration(200)
-    .EUt(GTValues.VA[6])
+    .EUt(GTValues.VA[GTValues.LuV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -322,7 +322,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('wireFineEuropium') * 16)
     .outputs(metaitem('voltage_coil.zpm'))
     .duration(200)
-    .EUt(GTValues.VA[7])
+    .EUt(GTValues.VA[GTValues.ZPM])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -330,5 +330,5 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('wireFineTritanium') * 16)
     .outputs(metaitem('voltage_coil.uv'))
     .duration(200)
-    .EUt(GTValues.VA[8])
+    .EUt(GTValues.VA[GTValues.UV])
     .buildAndRegister();

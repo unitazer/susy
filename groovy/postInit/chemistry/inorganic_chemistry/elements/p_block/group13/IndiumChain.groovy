@@ -82,7 +82,7 @@ ROASTER.recipeBuilder()
     .inputs(metaitem('anode_slime.lead'))
     .fluidInputs(fluid('sulfuric_acid') * 150)
     .outputs(metaitem('dustSulfatizedLeadSlime'))
-    .EUt(GTValues.VA[3])
+    .EUt(GTValues.VA[GTValues.HV])
     .duration(200)
     .buildAndRegister()
 

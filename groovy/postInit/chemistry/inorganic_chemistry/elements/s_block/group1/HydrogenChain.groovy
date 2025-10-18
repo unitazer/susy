@@ -29,7 +29,7 @@ PYROLYSE.recipeBuilder()
     .inputs(ore('dustAnyPurityBismuth'))
     .outputs(metaitem('dustSpentBismuthCatalyst') * 2)
     .duration(10)
-    .EUt(GTValues.VA[3] * 2)
+    .EUt(GTValues.VA[GTValues.HV] * 2)
     .buildAndRegister()
 
 ELECTROMAGNETIC_SEPARATOR.recipeBuilder()

@@ -1383,7 +1383,7 @@ ALLOY_SMELTER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.block'))
         .outputs(item('pyrotech:slag_glass'))
         .duration(100)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
 ALLOY_SMELTER.recipeBuilder()
@@ -1391,7 +1391,7 @@ ALLOY_SMELTER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.block'))
         .outputs(item('pyrotech:slag_glass'))
         .duration(100)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister();
 
 // Recycling

@@ -23,7 +23,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .notConsumable(ore('catalystBedSupportedNickel'))
         .fluidOutputs(fluid('raw_hydrogen_rich_syngas') * 5000)
         .duration(10)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     REACTION_FURNACE.recipeBuilder()
@@ -34,7 +34,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .notConsumable(ore('catalystBedSupportedNickel'))
         .fluidOutputs(fluid('raw_monoxide_rich_syngas') * 6360)
         .duration(10)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     REACTION_FURNACE.recipeBuilder()
@@ -45,7 +45,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .notConsumable(ore('catalystBedSupportedNickel'))
         .fluidOutputs(fluid('raw_hydrogen_rich_syngas') * 13610)
         .duration(20)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     REACTION_FURNACE.recipeBuilder()
@@ -56,7 +56,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .notConsumable(ore('catalystBedSupportedNickel'))
         .fluidOutputs(fluid('raw_monoxide_rich_syngas') * 18020)
         .duration(30)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     REACTION_FURNACE.recipeBuilder()
@@ -66,7 +66,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .notConsumable(ore('catalystBedSupportedNickel'))
         .fluidOutputs(fluid('raw_monoxide_rich_syngas') * 10180)
         .duration(20)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     // Purification
@@ -77,7 +77,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('hydrogen_rich_syngas') * 11280)
         .outputs(metaitem('dustCarbonatedMolecularSieveX') * 36)
         .duration(4)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
     SIFTER.recipeBuilder()
@@ -86,7 +86,7 @@ HIGH_PRESSURE_DISTILLATION_TOWER = recipemap('high_pressure_cryogenic_distillati
         .fluidOutputs(fluid('monoxide_rich_syngas') * 11280)
         .outputs(metaitem('dustCarbonatedMolecularSieveX') * 36)
         .duration(4)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
 // Syngas utilization

@@ -75,7 +75,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('distilled_water') * 5000)
     .outputs(metaitem('dustLanthanumCarbonate') * 14)
     .fluidOutputs(fluid('sodium_nitrate_solution') * 6000)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .duration(100)
     .buildAndRegister()
 

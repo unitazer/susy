@@ -12,7 +12,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('toluene') * 1000)
     .fluidOutputs(fluid('xylenol_solution') * 2000)
     .duration(60)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 POLYMERIZATION_TANK.recipeBuilder()
@@ -24,7 +24,7 @@ POLYMERIZATION_TANK.recipeBuilder()
     .fluidOutputs(fluid('impure_ppo_solution') * 1000)
     .fluidOutputs(fluid('wastewater') * 1000)
     .duration(180)
-    .EUt(GTValues.VA[3])
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister();
 
 MIXER.recipeBuilder()
@@ -33,7 +33,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('ethylenediamine_solution') * 2000)
     .duration(80)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister();
 
 CENTRIFUGE.recipeBuilder()
@@ -42,7 +42,7 @@ CENTRIFUGE.recipeBuilder()
     .fluidOutputs(fluid('ppo_solution') * 1000)
     .fluidOutputs(fluid('wastewater') * 50)
     .duration(120)
-    .EUt(GTValues.VA[2])
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();
 
 BR.recipeBuilder()
@@ -52,7 +52,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustPolyphenyleneOxide') * 2)
     .fluidOutputs(fluid('ppo_waste') * 2000)
     .duration(120)
-    .EUt(GTValues.VA[2])
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();
 
 SIEVE_DT.recipeBuilder()
@@ -61,5 +61,5 @@ SIEVE_DT.recipeBuilder()
     .fluidOutputs(fluid('toluene') * 1000)
     .fluidOutputs(fluid('methanol') * 1000)
     .duration(40)
-    .EUt(GTValues.VA[2])
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister();

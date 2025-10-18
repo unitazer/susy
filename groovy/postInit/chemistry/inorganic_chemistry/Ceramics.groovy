@@ -27,7 +27,7 @@ for (blanket in sintering_blankets) {
         .fluidInputs(fluid(blanket.name) * blanket.amountRequired)
         .outputs(metaitem('sintered_alumina.insulator'))
         .duration(blanket.duration)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 }
 
@@ -37,7 +37,7 @@ SINTERING_OVEN.recipeBuilder()
         .notConsumable(metaitem('shape.mold.plate'))
         .outputs(metaitem('membrane.support.alumina'))
         .duration(300)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 
 // Boron carbide
@@ -48,7 +48,7 @@ ARC_FURNACE.recipeBuilder()
     .outputs(metaitem('dustBoronCarbide') * 5)
     .fluidOutputs(fluid('carbon_monoxide') * 6000)
     .duration(300)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 for (blanket in sintering_blankets) {
@@ -60,7 +60,7 @@ for (blanket in sintering_blankets) {
         .outputs(metaitem('stickBoronCarbide') * 2)
         .circuitMeta(1)
         .duration(blanket.duration)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 }
 
@@ -76,7 +76,7 @@ for (blanket in sintering_blankets) {
         .outputs(metaitem('stickLongBoronCarbide'))
         .circuitMeta(2)
         .duration(blanket.duration)
-        .EUt(GTValues.VA[2])
+        .EUt(GTValues.VA[GTValues.MV])
         .buildAndRegister()
 }
 
@@ -88,7 +88,7 @@ CVD.recipeBuilder()
     .outputs(metaitem('dustBoronNitride') * 2)
     .fluidOutputs(fluid('hydrogen_chloride') * 3000)
     .duration(120)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 FORMING_PRESS.recipeBuilder()
@@ -96,12 +96,12 @@ FORMING_PRESS.recipeBuilder()
     .notConsumable(metaitem('shape.mold.crucible'))
     .outputs(metaitem('crucible.boron.nitride'))
     .duration(2000)
-    .EUt(GTValues.VA[2])
+    .EUt(GTValues.VA[GTValues.MV])
     .buildAndRegister()
 
 HOT_ISOSTATIC_PRESS.recipeBuilder()
     .inputs(ore('dustBoronNitride') * 12)
     .outputs(metaitem('nozzle.boron_nitride'))
     .duration(600)
-    .EUt(GTValues.VA[3])
+    .EUt(GTValues.VA[GTValues.HV])
     .buildAndRegister()

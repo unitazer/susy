@@ -139,7 +139,7 @@ for (rubber in rubbers) {
                     }
                     .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
                     .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
-                    .EUt(GTValues.VA[0])
+                    .EUt(GTValues.VA[GTValues.ULV])
                     .buildAndRegister()
             }
         }
@@ -164,7 +164,7 @@ for (rubber in rubbers) {
             .inputs(ore('dustCoal') * coal_amount)
             .outputs(metaitem('dustCompoundedEbonite') * (rubber.yield * 2))
             .duration(40 * rubber.yield)
-            .EUt(GTValues.VA[1])
+            .EUt(GTValues.VA[GTValues.LV])
             .buildAndRegister()
     }
 }
@@ -184,7 +184,7 @@ for (catalyst in catalysts) {
             }
         }
         .outputs(metaitem('plateEbonite'))
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 }
 

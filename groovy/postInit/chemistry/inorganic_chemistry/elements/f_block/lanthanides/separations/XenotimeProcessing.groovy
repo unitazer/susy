@@ -71,7 +71,7 @@ for (fuel in sintering_fuels) {
             .outputs(metaitem('dustRoastedXenotime'))
             .fluidOutputs(fluid('carbon_dioxide') * 3000)
             .duration(160)
-            .EUt(GTValues.VA[2])
+            .EUt(GTValues.VA[GTValues.MV])
             .buildAndRegister()
     }
 }

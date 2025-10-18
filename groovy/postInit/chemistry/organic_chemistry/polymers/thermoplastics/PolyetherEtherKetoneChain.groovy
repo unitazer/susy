@@ -133,7 +133,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('para_diisopropylbenzene') * 1000)
     .outputs(metaitem('dustParaDiisopropylbenzeneDihydroperoxide') * 34)
     .duration(10)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 BR.recipeBuilder()

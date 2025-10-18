@@ -14,7 +14,7 @@ ROASTER.recipeBuilder()
         .fluidOutputs(fluid('carbon_dioxide') * 1000)
         .fluidOutputs(fluid('dense_steam') * 1000)
         .duration(200)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -23,7 +23,7 @@ DISTILLERY.recipeBuilder()
         .fluidOutputs(fluid('water') * 1000)
         .outputs(metaitem('dustPotassiumFluoride') * 2)
         .duration(200)
-        .EUt(GTValues.VA[1])
+        .EUt(GTValues.VA[GTValues.LV])
         .buildAndRegister()
 
 //HYDROFLUORIC ACID ELECTROLYSIS

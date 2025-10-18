@@ -124,7 +124,7 @@ BR.recipeBuilder()
     .notConsumable(ore('dustActivatedRaneyNickel') * 1)
     .outputs(metaitem('dustMetaPhenylenediamine') * 16)
     .duration(20)
-    .EUt(GTValues.VA[1])
+    .EUt(GTValues.VA[GTValues.LV])
     .buildAndRegister()
 
 // Nomex

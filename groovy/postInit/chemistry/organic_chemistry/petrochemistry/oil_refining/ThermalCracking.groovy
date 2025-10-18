@@ -15,7 +15,7 @@ crackables.each { _, crackable ->
             .fluidInputs(crackable.get(1000))
             .fluidOutputs(crackable.getThermallyCracked(700))
             .duration(800)
-            .EUt(GTValues.VA[2])
+            .EUt(GTValues.VA[GTValues.MV])
             .buildAndRegister()
 
         CRACKER.recipeBuilder()
@@ -23,7 +23,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(crackable.getThermallyCracked(4000))
             .circuitMeta(1)
             .duration(200)
-            .EUt(GTValues.VA[2] * 2)
+            .EUt(GTValues.VA[GTValues.MV] * 2)
             .buildAndRegister()
 
         // Visbreaking
