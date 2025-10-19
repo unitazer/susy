@@ -1,4 +1,4 @@
-import globals.Globals
+import static gregtech.api.GTValues.*
 
 POLYMERIZATION = recipemap('polymerization_tank')
 DISTILLERY = recipemap('distillery')
@@ -20,5 +20,5 @@ DISTILLERY.recipeBuilder()
     .fluidOutputs(fluid('n_methyl_two_pyrrolidone') * 1000)
     .outputs(metaitem('dustSalt') * 4)
     .duration(400)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()

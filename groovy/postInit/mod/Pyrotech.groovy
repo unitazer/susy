@@ -4,16 +4,19 @@ import com.cleanroommc.groovyscript.api.IIngredient
 import com.codetaylor.mc.pyrotech.library.spi.block.IBlockIgnitableWithIgniterItem
 import com.codetaylor.mc.pyrotech.modules.tech.basic.ModuleTechBasic
 import com.codetaylor.mc.pyrotech.modules.tech.basic.block.BlockKilnPit
-import globals.Globals
-import postInit.utils.RecyclingHelper
+
+import static gregtech.api.GTValues.*
 import gregtech.api.items.metaitem.MetaItem
 import gregtech.api.items.metaitem.stats.IItemBehaviour
 import gregtech.api.util.GTUtility
 import gregtech.common.items.behaviors.LighterBehaviour
+
 import net.minecraft.util.EnumHand
 import net.minecraftforge.event.entity.player.PlayerInteractEvent
 import net.minecraftforge.event.world.BlockEvent
 import net.minecraftforge.fml.common.eventhandler.Event
+
+import postInit.utils.RecyclingHelper
 
 log.infoMC("Running Pyrotech.groovy...")
 
@@ -650,7 +653,7 @@ CUTTER.recipeBuilder()
         .outputs(item('pyrotech:material', 38))
         .chancedOutput(item('pyrotech:material', 38), 5000, 0)
         .duration(80)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // Leather Strap
@@ -662,7 +665,7 @@ CUTTER.recipeBuilder()
         .inputs(item('pyrotech:material', 38))
         .outputs(item('pyrotech:material', 39) * 4)
         .duration(50)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // Leather Cord
@@ -676,7 +679,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(item('pyrotech:material', 39) * 2)
         .outputs(item('pyrotech:material', 40))
         .duration(100)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // Durable Leather ingredients
@@ -686,7 +689,7 @@ CHEMICAL_BATH.recipeBuilder()
         .fluidInputs(fluid('creosote') * 200)
         .outputs(item('pyrotech:material', 41))
         .duration(100)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 // Durable Leather Sheet
@@ -708,7 +711,7 @@ CHEMICAL_BATH.recipeBuilder()
         .fluidInputs(fluid('creosote') * 200)
         .outputs(item('pyrotech:material', 42))
         .duration(80)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 // Durable Leather Strap
@@ -728,7 +731,7 @@ CHEMICAL_BATH.recipeBuilder()
         .fluidInputs(fluid('creosote') * 50)
         .outputs(item('pyrotech:material', 43))
         .duration(50)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // Durable Leather Cord
@@ -1380,7 +1383,7 @@ ALLOY_SMELTER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.block'))
         .outputs(item('pyrotech:slag_glass'))
         .duration(100)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister();
 
 ALLOY_SMELTER.recipeBuilder()
@@ -1388,7 +1391,7 @@ ALLOY_SMELTER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.block'))
         .outputs(item('pyrotech:slag_glass'))
         .duration(100)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister();
 
 // Recycling

@@ -1,3 +1,4 @@
+import static gregtech.api.GTValues.*
 import gregtech.api.unification.material.properties.*;
 import gregtech.api.GregTechAPI;
 import gregtech.api.unification.material.Material;
@@ -5,7 +6,6 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.ore.OrePrefix;
 
 import static gregtech.api.unification.material.Materials.*;
-import globals.Globals
 import static RegisterOres;
 import static RegisterSolids;
 
@@ -25,7 +25,7 @@ MIXER.recipeBuilder()
 	.inputs(ore('dustImpureArsenopyrite') * 8)
 	.fluidInputs(fluid('distilled_water') * 2000)
 	.fluidOutputs(fluid('impure_arsenopyrite_slurry') * 2000)
-	.EUt(Globals.voltAmps[3])
+	.EUt(VA[HV])
 	.duration(80)
 	.buildAndRegister()
 
@@ -35,7 +35,7 @@ FLOTATION.recipeBuilder()
 	.notConsumable(metaitem('dustPotassiumPermanganate') * 6)
 	.fluidOutputs(fluid('arsenopyrite_slurry') * 1000)
 	.fluidOutputs(fluid('pyrite_slurry') * 1000)
-	.EUt(Globals.voltAmps[3])
+	.EUt(VA[HV])
 	.duration(80)
 	.buildAndRegister()
 
@@ -43,7 +43,7 @@ CLARIFIER.recipeBuilder()
 	.fluidInputs(fluid('arsenopyrite_slurry') * 1000)
 	.outputs(metaitem('dustArsenopyrite') * 16)
 	.fluidOutputs(fluid('wastewater') * 1000)
-	.EUt(Globals.voltAmps[1])
+	.EUt(VA[LV])
 	.duration(20)
 	.buildAndRegister()
 
@@ -55,7 +55,7 @@ EBF.recipeBuilder()
     .chancedOutput(metaitem('dustArsenicTrioxide') * 5, 7500, 0)
     .blastFurnaceTemp(1200)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 //REALGAR ROASTING
@@ -66,7 +66,7 @@ EBF.recipeBuilder()
     .fluidOutputs(fluid('sulfur_dioxide') * 4000)
     .blastFurnaceTemp(1200)
     .duration(240)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 //ARSENOPYRITE ROASTING
@@ -78,7 +78,7 @@ EBF.recipeBuilder()
     .fluidOutputs(fluid('sulfur_dioxide') * 2000)
     .blastFurnaceTemp(1200)
     .duration(240)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 //ENARGITE SMELTING
@@ -89,7 +89,7 @@ EBF.recipeBuilder()
     .outputs(metaitem('dustArsenicTrioxide') * 5)
     .fluidOutputs(fluid('sulfur_dioxide') * 8000)
     .blastFurnaceTemp(1200)
-    .EUt(480)
+    .EUt(VA[HV])
     .duration(40)
     .buildAndRegister()
 
@@ -101,8 +101,8 @@ for (ore in tab_MAsS) {
     def metal = null
 
     for (mat in material(ore.toLowerCase()).getMaterialComponents()) {
-        if (mat.material == Cobalt){metal = "Cobalt"; break}
-        if (mat.material == Iron){metal = "Iron"; break}
+        if (mat.material == Cobalt) {metal = "Cobalt"; break}
+        if (mat.material == Iron) {metal = "Iron"; break}
     }
 
     BATCH_REACTOR.recipeBuilder()
@@ -113,7 +113,7 @@ for (ore in tab_MAsS) {
         .fluidOutputs(fluid(ore.toLowerCase() + "_leach_solution") * 1000)
         .fluidOutputs(fluid('nitric_oxide') * 7000)
         .duration(240)
-        .EUt(Globals.voltAmps[3])
+        .EUt(VA[HV])
         .buildAndRegister();
 
     ELECTROLYTIC_CELL.recipeBuilder()
@@ -124,7 +124,7 @@ for (ore in tab_MAsS) {
         .fluidOutputs(fluid('oxygen') * 3000)
         .fluidOutputs(fluid('acidic_arsenate_v_solution') * 1000)
         .duration(240)
-        .EUt(Globals.voltAmps[3])
+        .EUt(VA[HV])
         .buildAndRegister();
 }
 
@@ -146,7 +146,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustArsenic') * 2)
     .fluidOutputs(fluid('carbon_monoxide') * 3000)
     .duration(60)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -155,7 +155,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustArsenic') * 2)
     .fluidOutputs(fluid('carbon_monoxide') * 5000)
     .duration(60)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //PROUSTITE ALKALINE LEACHING (90% EFFICIENT)
@@ -168,7 +168,7 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustSilverChloride') * 6) //TO SILVER PROCESSING
     .fluidOutputs(fluid('proustite_alkaline_leach_solution') * 1000)
     .duration(240)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //ENARGITE ALKALINE SULFIDE LEACHING
@@ -180,7 +180,7 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustEnargiteResidue') * 9)
     .fluidOutputs(fluid('enargite_sulfide_leach_solution') * 2000)
     .duration(240)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //SEPARATION OF ARSENIC FROM ANTIMONY
@@ -191,7 +191,7 @@ BATCH_REACTOR.recipeBuilder()
     .fluidOutputs(fluid('hydrogen_sulfide') * 3000)
     .fluidOutputs(fluid('diluted_salt_water') * 6000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 BATCH_REACTOR.recipeBuilder()
@@ -200,7 +200,7 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustArsenicVSulfide') * 7)
     .fluidOutputs(fluid('hydrogen_sulfide') * 4500)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //REDUCTION OF ARSENIC SULFIDES
@@ -210,7 +210,7 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustArsenic') * 2)
     .fluidOutputs(fluid('hydrogen_sulfide') * 3000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 BATCH_REACTOR.recipeBuilder()
@@ -219,7 +219,7 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustArsenic') * 2)
     .fluidOutputs(fluid('hydrogen_sulfide') * 5000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -228,7 +228,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustArsenicVOxide') * 7)
     .fluidOutputs(fluid('sulfur_dioxide') * 3000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -237,7 +237,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustArsenicTrioxide') * 5)
     .fluidOutputs(fluid('sulfur_dioxide') * 3000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //SEMICONDUCTOR GRADE ARSENIC
@@ -248,7 +248,7 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('crude_arsenic_trichloride') * 2000)
     .fluidOutputs(fluid('water') * 3000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -256,7 +256,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('chlorine') * 3250)
     .fluidOutputs(fluid('crude_arsenic_trichloride') * 1000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -264,7 +264,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('arsenic_trichloride') * 2000)
     .fluidOutputs(fluid('sulfur_dichloride') * 250)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 BATCH_REACTOR.recipeBuilder()
@@ -273,7 +273,7 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustSulfur'))
     .fluidOutputs(fluid('hydrogen_chloride') * 2000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 BATCH_REACTOR.recipeBuilder()
@@ -282,7 +282,7 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustHighPurityArsenic'))
     .fluidOutputs(fluid('hydrogen_chloride') * 3000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ARC_FURNACE.recipeBuilder()
@@ -290,7 +290,7 @@ ARC_FURNACE.recipeBuilder()
     .inputs(ore('dustHighPurityArsenic'))
     .outputs(metaitem('dustSodiumArsenide') * 4)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 //Arsine gas is used for chemical vapor deposition of high purity arsenic.
@@ -300,7 +300,7 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustSodiumHydroxide') * 9)
     .fluidOutputs(fluid('arsine') * 1000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //BROMINE REGENERATION
@@ -309,7 +309,7 @@ BATCH_REACTOR.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)
     .fluidOutputs(fluid('sodium_bromide_solution') * 2000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 CSTR.recipeBuilder()
@@ -318,7 +318,7 @@ CSTR.recipeBuilder()
     .fluidOutputs(fluid('bromine') * 100)
     .fluidOutputs(fluid('salt_water') * 100)
     .duration(6)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //ROASTED ORE PROCESSING
@@ -328,7 +328,7 @@ BATCH_REACTOR.recipeBuilder()
     .outputs(metaitem('dustPlatinum'))
     .fluidOutputs(fluid('sperrylite_waste') * 750)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 ELECTROLYZER.recipeBuilder()
@@ -340,7 +340,7 @@ ELECTROLYZER.recipeBuilder()
     .fluidOutputs(fluid('chlorine') * 4000)
     .fluidOutputs(fluid('water') * 6000)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 //LEACH RESIDUE PROCESSING
@@ -351,7 +351,7 @@ BATCH_REACTOR.recipeBuilder()
     .fluidOutputs(fluid('nitrogen_dioxide') * 10000)
     .fluidOutputs(fluid('acidic_copper_solution') * 7000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -362,5 +362,5 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('oxygen') * 2000)
     .fluidOutputs(fluid('nitrogen_dioxide') * 4000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()

@@ -1,4 +1,4 @@
-import globals.Globals
+import static gregtech.api.GTValues.*
 
 CSTR = recipemap('continuous_stirred_tank_reactor')
 LCR = recipemap('large_chemical_reactor')
@@ -13,7 +13,7 @@ ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 50)
     .fluidOutputs(fluid('hexafluoropropylene_oxide') * 50)
     .duration(5)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister();
 
 CSTR.recipeBuilder()
@@ -22,7 +22,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('sulfur_trioxide') * 50)
     .fluidOutputs(fluid('fluorosulfonyl_difluoroacetyl_fluoride') * 50)
     .duration(5)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister();
 
 LCR.recipeBuilder()
@@ -33,7 +33,7 @@ LCR.recipeBuilder()
     .fluidOutputs(fluid('perfluorovinyl_sulfonyl_ether_solution') * 3000)
     .fluidOutputs(fluid('carbon_dioxide') * 2000)
     .duration(100)
-    .EUt(Globals.voltAmps[4])
+    .EUt(VA[EV])
     .buildAndRegister();
 
 DT.recipeBuilder()
@@ -60,7 +60,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustRawNafion'))
     .fluidOutputs(fluid('fluorinated_surfactant_mixture') * 500)
     .duration(40)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -69,5 +69,5 @@ BR.recipeBuilder()
     .outputs(metaitem('dustNafion'))
     .fluidOutputs(fluid('hydrofluoric_acid') * 1000)
     .duration(40)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()

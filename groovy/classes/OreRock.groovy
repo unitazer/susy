@@ -7,7 +7,7 @@ class OreRock{
     public int starting_tier;
     public def ore_lists;
 
-    public OreRock(String rock, String inputFluid, String outputFluid, def oreLists, int startingTier){
+    public OreRock(String rock, String inputFluid, String outputFluid, def oreLists, int startingTier) {
         this.input_rock = rock;
         this.input_fluid = inputFluid;
         this.output_fluid = outputFluid;

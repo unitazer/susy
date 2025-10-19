@@ -1,12 +1,14 @@
 package classes
 
+import gregtech.api.GTValues
+
 class Refrigerant{
     String normal_refrigerant;
     String hot_refrigerant;
     String comp_refrigerant;
     String cold_refrigerant;
 
-    int EUt = 30;
+    int EUt = GTValues.LV;
     int duration = 20;
 
     int duration_radiator = 20;

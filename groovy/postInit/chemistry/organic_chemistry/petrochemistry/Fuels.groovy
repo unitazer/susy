@@ -1,4 +1,5 @@
 import globals.Globals
+import static gregtech.api.GTValues.*
 
 CSTR = recipemap('continuous_stirred_tank_reactor')
 TBR = recipemap('trickle_bed_reactor')
@@ -55,7 +56,7 @@ def minor_solvents = [
         .fluidInputs(fluid('butane') * 50)
         .fluidOutputs(fluid('isobutane') * 50)
         .duration(5)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
     CSTR.recipeBuilder()
@@ -63,7 +64,7 @@ def minor_solvents = [
         .fluidInputs(fluid('isobutylene') * 50)
         .fluidOutputs(fluid('methyl_tert_butyl_ether') * 50)
         .duration(5)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 // Antioxidant active ingredients
@@ -76,7 +77,7 @@ def minor_solvents = [
         .notConsumable(fluid('sulfuric_acid') * 50)
         .fluidOutputs(fluid('tert_butyl_alcohol') * 50)
         .duration(5)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     // 2,4,6-tri-tert-butylphenol (BHT)
@@ -87,7 +88,7 @@ def minor_solvents = [
         .notConsumable(fluid('sulfuric_acid') * 50)
         .fluidOutputs(fluid('butylated_hydroxytoluene') * 50)
         .duration(5)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     // 2,4/5-Dimethyl-6-tert-butylphenol
@@ -98,7 +99,7 @@ def minor_solvents = [
         .notConsumable(fluid('sulfuric_acid') * 50)
         .fluidOutputs(fluid('dimethyl_tert_butylphenol') * 50)
         .duration(5)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     // 2,6-Di-tert-butylphenol
@@ -109,7 +110,7 @@ def minor_solvents = [
         .outputs(metaitem('dustAluminiumPhenolate'))
         .fluidOutputs(fluid('hydrogen') * 3000)
         .duration(200)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     CSTR.recipeBuilder()
@@ -118,7 +119,7 @@ def minor_solvents = [
         .fluidInputs(fluid('phenol') * 50)
         .fluidOutputs(fluid('di_tert_butylphenol') * 50)
         .duration(5)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     // N-substituted p-Phenylenediamine
@@ -130,7 +131,7 @@ def minor_solvents = [
         .fluidInputs(fluid('acetone') * 2000)
         .fluidOutputs(fluid('diisopropyl_para_phenylenediamine_solution') * 2000)
         .duration(200)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     DISTILLERY.recipeBuilder()
@@ -138,7 +139,7 @@ def minor_solvents = [
         .outputs(metaitem('dustDiisopropylParaPhenylenediamine') * 36)
         .fluidOutputs(fluid('wastewater') * 2000)
         .duration(20)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()        
 
 // Fuel system icing inhibitor & diglyme
@@ -151,7 +152,7 @@ CSTR.recipeBuilder()
     .fluidOutputs(fluid('diglyme') * 50)
     .fluidOutputs(fluid('very_diluted_sulfuric_acid') * 150)
     .duration(5)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 CSTR.recipeBuilder()
@@ -162,7 +163,7 @@ CSTR.recipeBuilder()
     .fluidOutputs(fluid('methyl_carbitol') * 50)
     .fluidOutputs(fluid('diluted_sulfuric_acid') * 100)
     .duration(5)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // Antiknock active ingredients
@@ -175,7 +176,7 @@ CSTR.recipeBuilder()
         .notConsumable(fluid('sulfuric_acid') * 50)
         .fluidOutputs(fluid('isooctane') * 50)
         .duration(5)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     // Ferrocene
@@ -187,7 +188,7 @@ CSTR.recipeBuilder()
         .fluidOutputs(fluid('carbon_monoxide') * 5000)
         .fluidOutputs(fluid('hydrogen') * 2000)
         .duration(300)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     // Methylcyclopentadienylmanganese tricarbonyl
@@ -198,7 +199,7 @@ CSTR.recipeBuilder()
         .fluidOutputs(fluid('methylcyclopentadiene_solution') * 100)
         .fluidOutputs(fluid('hydrogen') * 1000)
         .duration(5)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     DT.recipeBuilder()
@@ -207,7 +208,7 @@ CSTR.recipeBuilder()
         .fluidOutputs(fluid('methylcyclopentadiene') * 1000)
         .fluidOutputs(fluid('tetrahydrofuran') * 1000)
         .duration(20)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
     BR.recipeBuilder()
@@ -217,7 +218,7 @@ CSTR.recipeBuilder()
         .fluidInputs(fluid('diglyme') * 1000)
         .fluidOutputs(fluid('bismethylcyclopentadienylmanganese_solution') * 1000)
         .duration(100)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
     
     DT.recipeBuilder()
@@ -226,7 +227,7 @@ CSTR.recipeBuilder()
         .fluidOutputs(fluid('diglyme') * 1000)
         .fluidOutputs(fluid('bismethylcyclopentadienylmanganese') * 1000)
         .duration(100)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     BR.recipeBuilder()
@@ -236,7 +237,7 @@ CSTR.recipeBuilder()
         .fluidOutputs(fluid('methylcyclopentadienylmanganese_tricarbonyl') * 1000)
         .fluidOutputs(fluid('methylcyclopentadiene') * 1000)
         .duration(100)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     // Tetraethyl Lead
@@ -246,7 +247,7 @@ CSTR.recipeBuilder()
         .inputs(ore('dustAnyPurityLead'))
         .outputs(metaitem('ingotSodiumLeadAlloy') * 2)
         .duration(300)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
     ALLOY_SMELTER.recipeBuilder()
@@ -254,7 +255,7 @@ CSTR.recipeBuilder()
         .inputs(ore('ingotLead'))
         .outputs(metaitem('ingotSodiumLeadAlloy') * 2)
         .duration(300)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
     BCR.recipeBuilder()
@@ -262,7 +263,7 @@ CSTR.recipeBuilder()
         .fluidInputs(fluid('ethylene') * 50)
         .fluidOutputs(fluid('chloroethane') * 50)
         .duration(5)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     BR.recipeBuilder()
@@ -270,7 +271,7 @@ CSTR.recipeBuilder()
         .inputs(ore('dustSodiumLeadAlloy') * 8)
         .fluidOutputs(fluid('tetraethyllead_sludge') * 2000)
         .duration(200)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     DT.recipeBuilder()
@@ -279,7 +280,7 @@ CSTR.recipeBuilder()
         .fluidOutputs(fluid('lead') * 432)
         .fluidOutputs(fluid('tetraethyllead') * 1000)
         .duration(200)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 // Cetane improver (2-ethylhexyl nitrate)
@@ -289,7 +290,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('nitration_mixture') * 100)
     .fluidOutputs(fluid('diluted_two_ethylhexyl_nitrate') * 150)
     .duration(5)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -298,7 +299,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('water') * 1000)
     .fluidOutputs(fluid('sulfuric_acid') * 1000)
     .duration(200)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // Metal deactivator (N,N’-Disalicylidene-1,2-propanediamine, SALPN)
@@ -308,7 +309,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('ammonia') * 50)
     .fluidOutputs(fluid('propanolamine_mix') * 50)
     .duration(5)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 FBR.recipeBuilder()
@@ -317,7 +318,7 @@ FBR.recipeBuilder()
     .fluidInputs(fluid('ammonia') * 50)
     .fluidOutputs(fluid('one_two_diaminopropane_solution') * 100)
     .duration(5)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister();
 
 BR.recipeBuilder()
@@ -328,7 +329,7 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('salicylaldehyde') * 1000)
     .fluidOutputs(fluid('potassium_chloride_solution') * 3000)
     .duration(200)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -338,7 +339,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustSalicylideneOneTwoPropanediamine'))
     .fluidOutputs(fluid('diluted_hydrochloric_acid') * 2000)
     .duration(200)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // Cold flow improvers
@@ -353,7 +354,7 @@ BR.recipeBuilder()
         .inputs(ore('dustTinyPotassiumPersulfate'))
         .fluidOutputs(fluid('ethylene_isobutylene_vinyl_acetate_suspension') * 2000)
         .duration(200)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     PHASE_SEPARATOR.recipeBuilder()
@@ -372,7 +373,7 @@ BR.recipeBuilder()
         .fluidOutputs(fluid('dihexadecylamine') * 50)
         .fluidOutputs(fluid('water') * 100)
         .duration(5)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister();
 
     BR.recipeBuilder()
@@ -381,7 +382,7 @@ BR.recipeBuilder()
         .notConsumable(fluid('sulfuric_acid') * 50)
         .outputs(metaitem('dustDihexadecylaminePhthalateAmide'))
         .duration(200)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 // Corrosion inhibitors
@@ -392,7 +393,7 @@ for (inertGas in Globals.inertGases) {
         .fluidInputs(fluid('linoleic_acid') * 2000)
         .fluidOutputs(fluid('corrosion_inhibitor') * 2000)
         .duration(200 * inertGas.duration)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     REACTION_FURNACE.recipeBuilder()
@@ -401,7 +402,7 @@ for (inertGas in Globals.inertGases) {
         .fluidInputs(fluid('oleic_acid') * 2000)
         .fluidOutputs(fluid('corrosion_inhibitor') * 2000)
         .duration(200 * inertGas.duration)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 }
 def OxygenateMap = [
@@ -467,7 +468,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 250)
             .fluidOutputs(fluid('lubricity_additive') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(VA[MV])
             .buildAndRegister()
     
         BLENDER.recipeBuilder()
@@ -476,7 +477,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 500)
             .fluidOutputs(fluid('antistatic_additive') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(VA[MV])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -485,7 +486,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 500)
             .fluidOutputs(fluid('metal_deactivator') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(VA[MV])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -494,7 +495,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 250)
             .fluidOutputs(fluid('ignition_improver') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(VA[MV])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -504,7 +505,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 500)
             .fluidOutputs(fluid('cold_flow_improver') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(VA[MV])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -513,7 +514,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 250)
             .fluidOutputs(fluid('antifoaming_additive') * 2000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(VA[MV])
             .buildAndRegister()
 
         BLENDER.recipeBuilder()
@@ -523,7 +524,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 2000)
             .fluidOutputs(fluid('cold_flow_improver') * 8000)
             .duration(200)
-            .EUt(Globals.voltAmps[2])
+            .EUt(VA[MV])
             .buildAndRegister()
 
         AntiknockMap.each { key, val ->
@@ -533,7 +534,7 @@ for (major_solvent in major_solvents) {
                 .fluidInputs(fluid(minor_solvent) * (500 - val))
                 .fluidOutputs(fluid('antiknock') * 1000)
                 .duration(200)
-                .EUt(120)
+                .EUt(VA[MV])
                 .buildAndRegister()
         }
 
@@ -543,7 +544,7 @@ for (major_solvent in major_solvents) {
             .fluidInputs(fluid(minor_solvent) * 500)
             .fluidOutputs(fluid('antiknock') * 1000)
             .duration(200)
-            .EUt(120)
+            .EUt(VA[MV])
             .buildAndRegister()
 
 
@@ -557,7 +558,7 @@ for (major_solvent in major_solvents) {
                 .fluidInputs(fluid(minor_solvent) * 200)
                 .fluidOutputs(fluid('antioxidants') * 2000)
                 .duration(200)
-                .EUt(120)
+                .EUt(VA[MV])
                 .buildAndRegister()
         }
         
@@ -569,7 +570,7 @@ for (major_solvent in major_solvents) {
                     .fluidInputs(fluid(minor_solvent) * 400)
                     .fluidOutputs(fluid('antioxidants') * 4000)
                     .duration(200)
-                    .EUt(120)
+                    .EUt(VA[MV])
                     .buildAndRegister()
         }
     }
@@ -583,7 +584,7 @@ for (pair in oxygenatePairs) {
         .fluidInputs(fluid(pair[1].getKey()) * pair[1].getValue())
         .fluidOutputs(fluid('oxygenates') * 2000)
         .duration(200)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 }
 
@@ -610,7 +611,7 @@ GasolineFeedstocks.each { key, val ->
         .fluidOutputs(fluid('gasoline') * ((int)(1000 * val)))
         .circuitMeta(10)
         .duration(4)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
     MIXER.recipeBuilder()
@@ -618,7 +619,7 @@ GasolineFeedstocks.each { key, val ->
         .fluidOutputs(fluid('gasoline') * ((int)(10000 * val)))
         .circuitMeta(11)
         .duration(40)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 }
 
@@ -628,7 +629,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('antiknock') * 50)
     .fluidOutputs(fluid('midgrade_gasoline') * 1000)
     .duration(10)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 BLENDER.recipeBuilder()
@@ -637,7 +638,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('corrosion_inhibitor') * 50)
     .fluidOutputs(fluid('premium_gasoline') * 1000)
     .duration(10)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 BLENDER.recipeBuilder()
@@ -646,7 +647,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('metal_deactivator') * 50)
     .fluidOutputs(fluid('supreme_gasoline') * 1000)
     .duration(10)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // Diesel final blending
@@ -663,7 +664,7 @@ MIXER.recipeBuilder()
     .fluidOutputs(fluid('diesel') * 1000)
     .circuitMeta(1)
     .duration(2)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 for (diesel in dieselFeedstocks) {
@@ -673,7 +674,7 @@ for (diesel in dieselFeedstocks) {
         .fluidOutputs(fluid('diesel') * 1000)
         .circuitMeta(2)
         .duration(2)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 }
 
@@ -683,7 +684,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('cold_flow_improver') * 75)
     .fluidOutputs(fluid('midgrade_diesel') * 1000)
     .duration(10)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 BLENDER.recipeBuilder()
@@ -692,7 +693,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('lubricity_additive') * 75)
     .fluidOutputs(fluid('premium_diesel') * 1000)
     .duration(10)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 BLENDER.recipeBuilder()
@@ -701,7 +702,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('antifoaming_additive') * 75)
     .fluidOutputs(fluid('supreme_diesel') * 1000)
     .duration(10)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // Kerosene final blending
@@ -712,7 +713,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('antistatic_additive') * 25)
     .fluidOutputs(fluid('midgrade_kerosene') * 1000)
     .duration(10)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 BLENDER.recipeBuilder()
@@ -721,7 +722,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('antioxidants') * 25)
     .fluidOutputs(fluid('premium_kerosene') * 1000)
     .duration(10)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 BLENDER.recipeBuilder()
@@ -730,7 +731,7 @@ BLENDER.recipeBuilder()
     .fluidInputs(fluid('metal_deactivator') * 25)
     .fluidOutputs(fluid('supreme_kerosene') * 1000)
     .duration(10)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // RP-1
@@ -741,7 +742,7 @@ FBR.recipeBuilder()
     .notConsumable(metaitem('catalystBedHydrotreatingCatalyst'))
     .fluidOutputs(fluid('rp_one') * 1000)
     .duration(100)
-    .EUt(480)
+    .EUt(VA[HV])
     .buildAndRegister()
 
 // Diesel * 6000
@@ -762,7 +763,7 @@ MIXER.recipeBuilder()
     .fluidOutputs(fluid('fuel_oil') * 1000)
     .circuitMeta(1)
     .duration(2)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 for (residue in residueFeedstocks) {
@@ -772,6 +773,6 @@ for (residue in residueFeedstocks) {
         .fluidOutputs(fluid('fuel_oil') * 1000)
         .circuitMeta(2)
         .duration(2)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 }

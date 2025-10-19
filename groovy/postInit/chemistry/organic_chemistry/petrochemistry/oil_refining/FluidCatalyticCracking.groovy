@@ -1,5 +1,5 @@
-import globals.Globals
 import static globals.Petrochemistry.*
+import static gregtech.api.GTValues.*
 
 BCR = recipemap("bubble_column_reactor")
 CRACKER = recipemap("cracker")
@@ -21,7 +21,7 @@ crackables.each { _, crackable ->
             .inputs(metaitem('cracking_catalyst'))
             .fluidOutputs(crackable.getCrudeCatalyticallyCracked(4000))
             .duration(200)
-            .EUt(Globals.voltAmps[1] * 2)
+            .EUt(VA[LV] * 2)
             .buildAndRegister()
 
         DT.recipeBuilder()
@@ -30,7 +30,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(crackable.getCatalyticallyCracked(4000))
             .outputs(metaitem('spent_cracking_catalyst'))
             .duration(200)
-            .EUt(Globals.voltAmps[1])
+            .EUt(VA[LV])
             .buildAndRegister()
     }
 }
@@ -41,7 +41,7 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('flue_gas') * 1000)
     .outputs(metaitem('cracking_catalyst'))
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -50,7 +50,7 @@ DT.recipeBuilder()
     .fluidOutputs(fractions.naphtha.get(2015))
     .fluidOutputs(fluid('catalytic_overheads') * 1580)
     .duration(50)
-    .EUt(Globals.voltAmps[1] * 2)
+    .EUt(VA[LV] * 2)
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -60,7 +60,7 @@ DT.recipeBuilder()
     .fluidOutputs(fractions.naphtha.getCrude(1690))
     .fluidOutputs(fluid('sulfuric_catalytic_overheads') * 1180)
     .duration(50)
-    .EUt(Globals.voltAmps[1] * 2)
+    .EUt(VA[LV] * 2)
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -70,12 +70,12 @@ DT.recipeBuilder()
     .fluidOutputs(fractions.naphtha.getCrude(1195))
     .fluidOutputs(fluid('sulfuric_catalytic_overheads') * 1092)
     .duration(50)
-    .EUt(Globals.voltAmps[1] * 2)
+    .EUt(VA[LV] * 2)
     .buildAndRegister()
 
 ELECTROSTATIC_SEPARATOR.recipeBuilder()
     .fluidInputs(fluid('slurry_oil') * 1000)
     .fluidOutputs(fluid('clarified_slurry_oil') * 1000)
     .duration(80)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()

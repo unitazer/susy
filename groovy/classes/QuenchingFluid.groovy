@@ -9,7 +9,7 @@ class QuenchingFluid{
     public boolean has_recipe;
     public static ArrayList<QuenchingFluid> quenching_fluids = new ArrayList<QuenchingFluid>();
 
-    public QuenchingFluid(String ColdFluid2, String HotFluid2, int amount, float time, boolean inert){
+    public QuenchingFluid(String ColdFluid2, String HotFluid2, int amount, float time, boolean inert) {
         this.cold_fluid = ColdFluid2;
         this.hot_fluid = HotFluid2;
         this.amount = amount;
@@ -18,19 +18,19 @@ class QuenchingFluid{
         quenching_fluids.add(this);
     }
 
-    public String getColdFluid(){
+    public String getColdFluid() {
         return this.cold_fluid;
     }
 
-    public String getHotFluid(){
+    public String getHotFluid() {
         return this.hot_fluid;
     }
 
-    public float getDuration(){
+    public float getDuration() {
         return this.time;
     }
 
-    public boolean isInert(){
+    public boolean isInert() {
         return this.inert;
     }
 }

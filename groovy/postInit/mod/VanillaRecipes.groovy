@@ -1,5 +1,5 @@
 import classes.*;
-import globals.Globals
+import static gregtech.api.GTValues.*
 
 def circuit(x) {
     return metaitem('circuit.integrated').withNbt([Configuration: x])
@@ -105,7 +105,7 @@ def recipesToRemove = [
 
 ]
 
-for(name in recipesToRemove) {
+for (name in recipesToRemove) {
     crafting.remove(name)
 }
 
@@ -409,7 +409,7 @@ mods.gregtech.assembler.recipeBuilder()
     .inputs(ore('wireFineRedAlloy'))
     .outputs(item('minecraft:golden_rail') * 12)
     .duration(100)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 mods.gregtech.arc_furnace.recipeBuilder()
@@ -418,7 +418,7 @@ mods.gregtech.arc_furnace.recipeBuilder()
     .outputs(metaitem('ingotBrass') * 6)
     .outputs(metaitem('nuggetRedAlloy'))
     .duration(100)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 mods.gregtech.assembler.recipeBuilder()
@@ -514,7 +514,7 @@ mods.gregtech.centrifuge.recipeBuilder()
 		.outputs(metaitem('dustWood') * 1)
 		.fluidOutputs(fluid('sugary_water') * 250)
 		.duration(100)
-		.EUt(7)
+		.EUt(VA[ULV])
 		.buildAndRegister()
 
 //Chemical bath
@@ -561,14 +561,14 @@ recipemap('crystallizer').recipeBuilder()
 		.fluidInputs(fluid('clarified_sugary_water') * 1000)
 		.outputs(item('minecraft:sugar') * 6)
 		.duration(200)
-		.EUt(7)
+		.EUt(VA[ULV])
 		.buildAndRegister()
 
 recipemap('crystallizer').recipeBuilder()
 		.fluidInputs(fluid('sugary_water') * 1000)
 		.outputs(item('minecraft:sugar') * 3)
 		.duration(300)
-		.EUt(7)
+		.EUt(VA[ULV])
 		.buildAndRegister()
 
 //Extractor
@@ -576,7 +576,7 @@ mods.gregtech.extractor.recipeBuilder()
     .inputs(item('quark:glass_shards:0'))
     .fluidOutputs(fluid('glass') * 36)
     .duration(20)
-    .EUt(7)
+    .EUt(VA[ULV])
     .buildAndRegister()
 
 //Macerator
@@ -607,7 +607,7 @@ mods.gregtech.mixer.recipeBuilder()
     .inputs(ore('dustMagnesium'))
     .outputs(item('minecraft:fire_charge') * 3)
     .duration(20)
-    .EUt(7)
+    .EUt(VA[ULV])
     .buildAndRegister()
 
 mods.gregtech.mixer.recipeBuilder()
@@ -615,7 +615,7 @@ mods.gregtech.mixer.recipeBuilder()
 		.fluidInputs(fluid('sugary_water') * 10000)
 		.fluidOutputs(fluid('clarified_sugary_water') * 10000)
 		.duration(400)
-		.EUt(7)
+		.EUt(VA[ULV])
 		.buildAndRegister()
 
 crafting.replaceShaped('minecraft:cobblestone_slab', item('minecraft:stone_slab', 3) * 6, [
@@ -820,7 +820,7 @@ mods.gregtech.mixer.recipeBuilder()
     .fluidInputs(fluid('salt_water') * 1000)
     .outputs(item('minecraft:slime_ball') * 9)
     .duration(100)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 mods.gregtech.mixer.recipeBuilder()
@@ -829,7 +829,7 @@ mods.gregtech.mixer.recipeBuilder()
     .fluidInputs(fluid('salt_water') * 1000)
     .outputs(item('minecraft:slime_ball') * 3)
     .duration(100)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 crafting.addShaped("tnt_block", item('minecraft:tnt'), [

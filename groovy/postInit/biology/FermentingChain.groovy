@@ -1,17 +1,15 @@
-import globals.Globals
+import static gregtech.api.GTValues.*
+import gregtech.api.recipes.ModHandler
+import gregtech.api.unification.material.Materials
+import gregtech.api.unification.ore.OrePrefix
+import gregtech.api.unification.stack.UnificationEntry
 
-import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.unification.stack.UnificationEntry;
-
-def PYROLYSE_OVEN = recipemap('pyrolyse_oven');
-def DISTILLERY = recipemap('distillery');
-def MIXER = recipemap('mixer');
-
-def DISTILLATION_TOWER = recipemap('distillation_tower');
-def AUTOCLAVE = recipemap('autoclave');
-def FERMENTER = recipemap('vat_fermentation');
+def PYROLYSE_OVEN = recipemap('pyrolyse_oven')
+def DISTILLERY = recipemap('distillery')
+def MIXER = recipemap('mixer')
+def DISTILLATION_TOWER = recipemap('distillation_tower')
+def AUTOCLAVE = recipemap('autoclave')
+def FERMENTER = recipemap('vat_fermentation')
 
 //GENERIC BIOMASS CHAIN
 PYROLYSE_OVEN.recipeBuilder()
@@ -27,7 +25,7 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('water') * 1000)
         .fluidOutputs(fluid('biomass') * 1000)
         .duration(80)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 FERMENTER.recipeBuilder()
@@ -43,7 +41,7 @@ AUTOCLAVE.recipeBuilder()
         .fluidInputs(fluid('water') * 1000)
         .outputs(metaitem('malted_grain') * 4)
         .duration(200)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 AUTOCLAVE.recipeBuilder()
@@ -52,7 +50,7 @@ AUTOCLAVE.recipeBuilder()
         .fluidInputs(fluid('water') * 1000)
         .fluidOutputs(fluid('mash') * 2000)
         .duration(100)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 AUTOCLAVE.recipeBuilder()
@@ -61,7 +59,7 @@ AUTOCLAVE.recipeBuilder()
         .fluidInputs(fluid('water') * 1000)
         .fluidOutputs(fluid('mash') * 1000)
         .duration(100)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -70,7 +68,7 @@ MIXER.recipeBuilder()
         .fluidOutputs(fluid('grain_solution') * 1000)
         .circuitMeta(4)
         .duration(100)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 FERMENTER.recipeBuilder()

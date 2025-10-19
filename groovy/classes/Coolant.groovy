@@ -9,7 +9,7 @@ class Coolant {
     public int hx_time_factor = 10;
     public int circuit = 0;
 
-    public Coolant(String coolant_normal, String coolant_warm){
+    public Coolant(String coolant_normal, String coolant_warm) {
         this.cold_coolant = coolant_normal;
         this.warm_coolant = coolant_warm;
     }

@@ -2,16 +2,15 @@ package globals
 
 import com.cleanroommc.groovyscript.api.IIngredient
 import gregtech.api.GTValues
-import gregtech.api.fluids.store.FluidStorageKeys;
-import gregtech.api.fluids.store.FluidStorage;
+import gregtech.api.fluids.store.FluidStorageKeys
+import gregtech.api.fluids.store.FluidStorage
 import gregtech.api.unification.material.properties.*
-import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.Material
 
-import static gregtech.api.fluids.FluidConstants.*;
+import static gregtech.api.fluids.FluidConstants.*
 
 class Globals {
     public static voltageTiers = GTValues.VN.collect { it.toLowerCase() }
-    public static voltAmps = GTValues.VA
 
     public static dimensions = ["Overworld": 0, "Beneath": 10, "Nether": -1]
 

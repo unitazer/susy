@@ -1,5 +1,7 @@
 package classes
 
+import gregtech.api.GTValues
+
 class CryoGas {
     public String normal_gas;
     public String hot_high_pressure_gas;
@@ -10,7 +12,7 @@ class CryoGas {
 
     public int amount_to_use = 10000;
 
-    public int EUt = 30;
+    public int EUt = GTValues.LV;
     public int duration = 20;
 
     public int power_heat_exchanger = 20;
@@ -76,7 +78,7 @@ class CryoGas {
         return duration;
     }
 
-    public void setTemperature(int temp){
+    public void setTemperature(int temp) {
         this.fluid_temperature = temp;
     }
 

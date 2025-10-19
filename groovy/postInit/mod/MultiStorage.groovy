@@ -1,3 +1,5 @@
+import static gregtech.api.GTValues.*
+
 def name_removals = [
         'multistorage:vault-bucket-gray',
         'multistorage:vault-bucket-cyan',
@@ -98,7 +100,7 @@ recipemap('assembler').recipeBuilder()
         .inputs(ore('screwSteel') * 8)
         .outputs(item('multistorage:vault'))
         .duration(200)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 recipemap('assembler').recipeBuilder()
@@ -108,7 +110,7 @@ recipemap('assembler').recipeBuilder()
         .inputs(ore('plateSteel') * 6)
         .outputs(item('multistorage:vault', 1).withNbt(["color": "silver", "cvalue": 10329495]) * 2)
         .duration(200)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 recipemap('assembler').recipeBuilder()
@@ -118,7 +120,7 @@ recipemap('assembler').recipeBuilder()
         .inputs(ore('stickSteel') * 6)
         .outputs(item('multistorage:vault', 13).withNbt(["color": "silver", "cvalue": 10329495]) * 2)
         .duration(200)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 recipemap('assembler').recipeBuilder()
@@ -129,7 +131,7 @@ recipemap('assembler').recipeBuilder()
         .inputs(ore('plateSteel') * 4)
         .outputs(item('multistorage:vault', 2).withNbt(["color": "silver", "cvalue": 10329495]))
         .duration(200)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 recipemap('assembler').recipeBuilder()
@@ -140,7 +142,7 @@ recipemap('assembler').recipeBuilder()
         .inputs(ore('plateSteel') * 4)
         .outputs(item('multistorage:vault', 3).withNbt(["color": "silver", "cvalue": 10329495]))
         .duration(200)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 recipemap('assembler').recipeBuilder()
@@ -151,7 +153,7 @@ recipemap('assembler').recipeBuilder()
         .inputs(ore('plateSteel') * 4)
         .outputs(item('multistorage:vault', 4).withNbt(["color": "silver", "cvalue": 10329495]))
         .duration(200)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 recipemap('assembler').recipeBuilder()
@@ -162,7 +164,7 @@ recipemap('assembler').recipeBuilder()
         .inputs(ore('plateSteel') * 4)
         .outputs(item('multistorage:vault', 5).withNbt(["color": "silver", "cvalue": 10329495]))
         .duration(200)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 for (int i = 1; i < 16; i++) {
@@ -171,7 +173,7 @@ for (int i = 1; i < 16; i++) {
             .inputs(item('multistorage:vault', 1).withNbt(["color": "silver", "cvalue": 10329495]))
             .outputs(item('multistorage:vault', 1).withNbt(["color": vaultcolors[i], "cvalue": cvalues[i]]))
             .duration(20)
-            .EUt(7)
+            .EUt(VA[ULV])
             .buildAndRegister()
 }
 
@@ -181,7 +183,7 @@ for (int i = 1; i < 16; i++) {
             .inputs(item('multistorage:vault', 2).withNbt(["color": "silver", "cvalue": 10329495]))
             .outputs(item('multistorage:vault', 2).withNbt(["color": vaultcolors[i], "cvalue": cvalues[i]]))
             .duration(20)
-            .EUt(7)
+            .EUt(VA[ULV])
             .buildAndRegister()
 }
 
@@ -191,7 +193,7 @@ for (int i = 1; i < 16; i++) {
             .inputs(item('multistorage:vault', 3).withNbt(["color": "silver", "cvalue": 10329495]))
             .outputs(item('multistorage:vault', 3).withNbt(["color": vaultcolors[i], "cvalue": cvalues[i]]))
             .duration(20)
-            .EUt(7)
+            .EUt(VA[ULV])
             .buildAndRegister()
 }
 
@@ -201,7 +203,7 @@ for (int i = 1; i < 16; i++) {
             .inputs(item('multistorage:vault', 4).withNbt(["color": "silver", "cvalue": 10329495]))
             .outputs(item('multistorage:vault', 4).withNbt(["color": vaultcolors[i], "cvalue": cvalues[i]]))
             .duration(20)
-            .EUt(7)
+            .EUt(VA[ULV])
             .buildAndRegister()
 }
 
@@ -211,7 +213,7 @@ for (int i = 1; i < 16; i++) {
             .inputs(item('multistorage:vault', 5).withNbt(["color": "silver", "cvalue": 10329495]))
             .outputs(item('multistorage:vault', 5).withNbt(["color": vaultcolors[i], "cvalue": cvalues[i]]))
             .duration(20)
-            .EUt(7)
+            .EUt(VA[ULV])
             .buildAndRegister()
 }
 
@@ -221,6 +223,6 @@ for (int i = 1; i < 16; i++) {
             .inputs(item('multistorage:vault', 13).withNbt(["color": "silver", "cvalue": 10329495]))
             .outputs(item('multistorage:vault', 13).withNbt(["color": vaultcolors[i], "cvalue": cvalues[i]]))
             .duration(20)
-            .EUt(7)
+            .EUt(VA[ULV])
             .buildAndRegister()
 }
