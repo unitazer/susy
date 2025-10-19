@@ -78,31 +78,26 @@ MIXER.recipeBuilder()
     .buildAndRegister()
 
 // AOD Process
-ADVANCED_ARC_FURNACE.recipeBuilder()
-    .fluidInputs(fluid('oxygen') * 8000)
-    .fluidInputs(fluid('argon') * 2000)
-    .fluidInputs(fluid('carburized_stainless_steel') * 5760)
-    .inputs(ore('dustFerrosilicon') * 2)
-    .inputs(ore('dustFerrochromium') * 12)
-    .inputs(ore('dustQuicklime'))
-    .inputs(ore('dustFluorite'))
-    .fluidOutputs(fluid('stainless_steel') * 5760)
-    .duration(1600)
-    .EUt(VA[MV])
-    .buildAndRegister()
 
-ADVANCED_ARC_FURNACE.recipeBuilder()
-    .fluidInputs(fluid('oxygen') * 8000)
-    .fluidInputs(fluid('nitrogen') * 4000)
-    .fluidInputs(fluid('carburized_stainless_steel') * 5760)
-    .inputs(ore('dustFerrosilicon') * 2)
-    .inputs(ore('dustFerrochromium') * 12)
-    .inputs(ore('dustQuicklime'))
-    .inputs(ore('dustFluorite'))
-    .fluidOutputs(fluid('stainless_steel') * 5760)
-    .duration(2400)
-    .EUt(VA[MV])
-    .buildAndRegister()
+def gases = [
+    'argon'   : [amount: 2000, duration: 1600],
+    'nitrogen': [amount: 4000, duration: 2400]
+]
+
+gases.each { gas, data ->
+    ADVANCED_ARC_FURNACE.recipeBuilder()
+        .fluidInputs(fluid('oxygen') * 8000)
+        .fluidInputs(fluid(gas) * data.amount)
+        .fluidInputs(fluid('carburized_stainless_steel') * 5760)
+        .inputs(ore('dustFerrosilicon') * 2)
+        .inputs(ore('dustFerrochromium') * 12)
+        .inputs(ore('dustQuicklime'))
+        .inputs(ore('dustFluorite'))
+        .fluidOutputs(fluid('stainless_steel') * 5760)
+        .duration(data.duration)
+        .EUt(VA[MV])
+        .buildAndRegister()
+}
 
 // Vanadiumsteel
 /*
