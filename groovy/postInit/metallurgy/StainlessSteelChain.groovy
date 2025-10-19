@@ -23,55 +23,25 @@ EBF = recipemap('electric_blast_furnace')
 MIXER = recipemap('mixer')
 ADVANCED_ARC_FURNACE = recipemap('advanced_arc_furnace')
 
-EBF.recipeBuilder()
-    .inputs(ore('dustIron') * 24)
-    .inputs(ore('dustNickel') * 4)
-    .inputs(ore('dustManganese'))
-    .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
-    .blastFurnaceTemp(1400)
-    .duration(3200)
-    .EUt(VA[MV] * 2)
-    .buildAndRegister()
+def iron_sources = [
+    'dustIron'               : 24,
+    'dustMagnetite'          : 8,
+    'dustBandedIron'         : 12,
+    'dustIronIiiOxide'       : 60,
+    'dustGraniticMineralSand': 8
+]
 
-EBF.recipeBuilder()
-    .inputs(ore('dustMagnetite') * 8)
-    .inputs(ore('dustNickel') * 4)
-    .inputs(ore('dustManganese'))
-    .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
-    .blastFurnaceTemp(1400)
-    .duration(3200)
-    .EUt(VA[MV] * 2)
-    .buildAndRegister()
-
-EBF.recipeBuilder()
-    .inputs(ore('dustBandedIron') * 12)
-    .inputs(ore('dustNickel') * 4)
-    .inputs(ore('dustManganese'))
-    .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
-    .blastFurnaceTemp(1400)
-    .duration(3200)
-    .EUt(VA[MV] * 2)
-    .buildAndRegister()
-
-EBF.recipeBuilder()
-    .inputs(ore('dustIronIiiOxide') * 60)
-    .inputs(ore('dustNickel') * 4)
-    .inputs(ore('dustManganese'))
-    .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
-    .blastFurnaceTemp(1400)
-    .duration(3200)
-    .EUt(VA[MV] * 2)
-    .buildAndRegister()
-
-EBF.recipeBuilder()
-    .inputs(ore('dustGraniticMineralSand') * 8)
-    .inputs(ore('dustNickel') * 4)
-    .inputs(ore('dustManganese'))
-    .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
-    .blastFurnaceTemp(1400)
-    .duration(3200)
-    .EUt(VA[MV] * 2)
-    .buildAndRegister()   
+iron_sources.each { iron, amount ->
+    EBF.recipeBuilder()
+        .inputs(ore(iron) * amount)
+        .inputs(ore('dustNickel') * 4)
+        .inputs(ore('dustManganese'))
+        .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
+        .blastFurnaceTemp(1400)
+        .duration(3200)
+        .EUt(VA[MV] * 2)
+        .buildAndRegister()
+}
 
 // VACUUM.recipeBuilder()
 //     .fluidInputs(fluid('oxygen') * 2000)
