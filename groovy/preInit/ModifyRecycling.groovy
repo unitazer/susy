@@ -36,6 +36,11 @@ event_manager.listen { RecyclingManager.PreRecyclingEvent event ->
         ore('wireGtDoubleGraphene') * 4
     ])
 
+    RecyclingManager.addRecyclingGroovy(metaitem('voltage_coil.ev'), [
+            ore('stickAlnicoMagnetic'),
+            ore('wireFinePlatinum') * 16
+    ])
+
     RecyclingManager.addRecyclingGroovy(item('gregtech:metal_casing', 4) * 4, [
         ore('ingotSteel') * 8
     ])
