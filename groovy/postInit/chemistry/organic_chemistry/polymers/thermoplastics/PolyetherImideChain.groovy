@@ -1,4 +1,4 @@
-import globals.Globals
+import static gregtech.api.GTValues.*
 
 CSTR = recipemap('continuous_stirred_tank_reactor')
 CRYSTALLIZER = recipemap('crystallizer')
@@ -20,7 +20,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustPhthalimide') * 16)
     .fluidOutputs(fluid('ammonia_solution') * 1000)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister();
 
 BR.recipeBuilder()
@@ -29,7 +29,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('ethanol') * 1000)
     .fluidOutputs(fluid('potassium_phthalimide_solution') * 1000)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister();
 
 DISTILLERY.recipeBuilder()
@@ -37,7 +37,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustPotassiumPhthalimide') * 16)
     .fluidOutputs(fluid('ethanol') * 1000)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 BR.recipeBuilder()
@@ -46,7 +46,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('dimethylformamide') * 1000)
     .fluidOutputs(fluid('n_methyl_phthalimide_solution') * 1000)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister();
 
 DISTILLERY.recipeBuilder()
@@ -54,7 +54,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustNMethylPhthalimide') * 19)
     .fluidOutputs(fluid('dimethylformamide') * 1000)
     .duration(20)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 BR.recipeBuilder()
@@ -62,7 +62,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('nitration_mixture') * 2000)
     .fluidOutputs(fluid('four_nitro_n_methyl_phthalimide_solution') * 2000)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister();
 
 PHASE_SEPARATOR.recipeBuilder()
@@ -77,7 +77,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustSodiumBisphenolate') * 33)
     .fluidOutputs(fluid('water') * 2000)
     .duration(60)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 BR.recipeBuilder()
@@ -86,7 +86,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('n_methyl_two_pyrrolidone') * 1000)
     .fluidOutputs(fluid('bisphenol_a_diimide_solution') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister();
 
 BR.recipeBuilder()
@@ -94,7 +94,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('bisphenol_a_diimide_solution') * 1000)
     .fluidOutputs(fluid('bisphenol_a_dianhydride_solution') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister();
 
 DISTILLERY.recipeBuilder()
@@ -102,7 +102,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustImpureBisphenolADianhydride') * 3)
     .fluidOutputs(fluid('n_methyl_two_pyrrolidone') * 1000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 CRYSTALLIZER.recipeBuilder()
@@ -110,7 +110,7 @@ CRYSTALLIZER.recipeBuilder()
     .outputs(metaitem('dustBisphenolADianhydride'))
     .fluidOutputs(fluid('phthalimide') * 288)
     .duration(160)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister();
 
 POLYMERIZATION_TANK.recipeBuilder()
@@ -120,7 +120,7 @@ POLYMERIZATION_TANK.recipeBuilder()
     .outputs(metaitem('dustUltem'))
     .fluidOutputs(fluid('dense_steam') * 2000)
     .duration(300)
-    .EUt(1920)
+    .EUt(VA[EV])
     .buildAndRegister();
 
 // Pyromellitic Dianhydride
@@ -132,7 +132,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustDurene') * 24)
     .fluidOutputs(fluid('hydrogen_chloride') * 2000)
     .duration(300)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -141,7 +141,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustPyromelliticDianhydride') * 3)
     .fluidOutputs(fluid('dense_steam') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 // Kapton K
@@ -152,7 +152,7 @@ POLYMERIZATION.recipeBuilder()
     .fluidInputs(fluid('acetone') * 2000)
     .fluidOutputs(fluid('impure_kapton_k') * 2000)
     .duration(400) 
-    .EUt(Globals.voltAmps[3] * 2)
+    .EUt(VA[HV] * 2)
     .buildAndRegister();
 
 DISTILLERY.recipeBuilder()
@@ -160,7 +160,7 @@ DISTILLERY.recipeBuilder()
     .fluidOutputs(fluid('acetone') * 1000)
     .outputs(metaitem('dustKaptonK'))
     .duration(200)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister();
 
 // Kapton E
@@ -173,14 +173,14 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('acetone') * 4000)
     .fluidOutputs(fluid('kapton_e_preparation') * 4000)
     .duration(800)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister();
 
 POLYMERIZATION.recipeBuilder()
     .fluidInputs(fluid('kapton_e_preparation') * 1000)
     .fluidOutputs(fluid('impure_kapton_e') * 1000)
     .duration(200)
-    .EUt(Globals.voltAmps[2] * 2)
+    .EUt(VA[MV] * 2)
     .buildAndRegister();
 
 DRYER.recipeBuilder()
@@ -188,5 +188,5 @@ DRYER.recipeBuilder()
     .fluidOutputs(fluid('acetone') * 1000)
     .outputs(metaitem('dustKaptonE'))
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister();

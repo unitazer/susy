@@ -6,11 +6,8 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.469.desc",
       "icon:10": {
-        "Damage:2": 733,
-        "id:8": "gregtech:meta_item_1",
-        "tag:10": {
-          "Charge:4": 360000
-        }
+        "Damage:2": 4009,
+        "id:8": "gregtech:meta_item_2"
       },
       "name:8": "susy.quest.db.469.title"
     }
@@ -21,11 +18,8 @@
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "Damage:2": 733,
-          "id:8": "gregtech:meta_item_1",
-          "tag:10": {
-            "Charge:4": 360000
-          }
+          "Damage:2": 4009,
+          "id:8": "gregtech:meta_item_2"
         }
       },
       "taskID:8": "bq_standard:retrieval"

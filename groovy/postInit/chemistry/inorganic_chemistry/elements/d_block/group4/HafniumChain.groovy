@@ -1,23 +1,13 @@
 import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
+import static gregtech.api.GTValues.*
 
-MIXER = recipemap('mixer')
-FF = recipemap('froth_flotation')
-CLARIFIER = recipemap('clarifier')
-ELECTROMAGNETIC_SEPARATOR = recipemap('electromagnetic_separator')
 BR = recipemap('batch_reactor')
-CSTR = recipemap('continuous_stirred_tank_reactor')
-SIFTER = recipemap('sifter')
+CVD = recipemap('cvd')
 FLUIDIZED_BED_REACTOR = recipemap('fluidized_bed_reactor')
-VACUUM_FREEZER = recipemap('vacuum_freezer')
-DISTILLATION_TOWER = recipemap('distillation_tower')
 VACUUM_CHAMBER = recipemap('vacuum_chamber')
 MACERATOR = recipemap('macerator')
-FIXED_BED_REACTOR = recipemap('fixed_bed_reactor')
 EBF = recipemap('electric_blast_furnace')
-DISTILLERY = recipemap('distillery')
-GRAVITY_SEPARATOR = recipemap('gravity_separator')
-ADVANCED_ARC_FURNACE = recipemap('advanced_arc_furnace')
 ROASTER = recipemap('roaster')
 MIXER_SETTLER = recipemap('mixer_settler')
 
@@ -26,7 +16,7 @@ MIXER_SETTLER.recipeBuilder()
     .fluidInputs(fluid('diluted_sulfuric_acid') * 80)
     .fluidOutputs(fluid('hafnium_extraction_mixture') * 1000)
     .fluidOutputs(fluid('hafnium_sulfate_solution') * 40)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .requiredCells(2)
     .duration(40)
     .buildAndRegister()
@@ -36,11 +26,11 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustHafniumDioxide') * 3)
     .fluidOutputs(fluid('dense_steam') * 2000)
     .fluidOutputs(fluid('sulfur_trioxide') * 2000)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .duration(100)
     .buildAndRegister()
 
-for (highPurityCombustible in highPurityCombustibles()) {
+for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     FLUIDIZED_BED_REACTOR.recipeBuilder()
         .inputs(ore('dustHafniumDioxide') * 3)
         .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(2))
@@ -48,7 +38,7 @@ for (highPurityCombustible in highPurityCombustibles()) {
         .outputs(metaitem('dustImpureHafniumTetrachloride') * 5)
         .fluidOutputs(fluid('carbon_monoxide') * 2000)
         .duration(200 * highPurityCombustible.duration)
-        .EUt(Globals.voltAmps[3])
+        .EUt(VA[HV])
         .buildAndRegister()
 }
 
@@ -58,7 +48,7 @@ REACTION_FURNACE.recipeBuilder()
     .notConsumable(fluid('hydrogen') * 1000)
     .fluidOutputs(fluid('hafnium_tetrachloride') * 720)
     .duration(100)
-    .EUt(Globals.voltAmps[4])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 for (inertGas in Globals.inertGases) {
@@ -71,7 +61,7 @@ for (inertGas in Globals.inertGases) {
         .fluidOutputs(fluid('magnesium_chloride') * 864)
         .blastFurnaceTemp(2150)
         .duration(100 * inertGas.duration)
-        .EUt(Globals.voltAmps[4])
+        .EUt(VA[EV])
         .buildAndRegister()
 }
 
@@ -79,14 +69,14 @@ VACUUM_CHAMBER.recipeBuilder()
     .inputs(metaitem('sponge.hafnium.crude'))
     .outputs(metaitem('sponge.hafnium'))
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 MACERATOR.recipeBuilder()
     .inputs(metaitem('sponge.hafnium'))
     .outputs(metaitem('dustHafnium'))
     .duration(100)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //VAN ARKEL-DE BOER
@@ -96,7 +86,7 @@ BR.recipeBuilder()
     .inputs(ore('dustAnyPurityIodine') * 4)
     .outputs(metaitem('dustHafniumIodide') * 5)
     .duration(360)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 CVD.recipeBuilder()
@@ -105,5 +95,5 @@ CVD.recipeBuilder()
     .outputs(metaitem('dustHighPurityHafnium'))
     .fluidOutputs(fluid('iodine') * 576)
     .duration(180)
-    .EUt(Globals.voltAmps[4])
+    .EUt(VA[EV])
     .buildAndRegister()

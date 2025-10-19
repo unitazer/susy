@@ -1,5 +1,5 @@
-import globals.Globals
 import static globals.Petrochemistry.*
+import static gregtech.api.GTValues.*
 
 CRACKER = recipemap('cracker')
 DT = recipemap('distillation_tower')
@@ -15,7 +15,7 @@ crackables.each { _, crackable ->
             .fluidInputs(crackable.get(1000))
             .fluidOutputs(crackable.getThermallyCracked(700))
             .duration(800)
-            .EUt(Globals.voltAmps[2])
+            .EUt(VA[MV])
             .buildAndRegister()
 
         CRACKER.recipeBuilder()
@@ -23,7 +23,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(crackable.getThermallyCracked(4000))
             .circuitMeta(1)
             .duration(200)
-            .EUt(Globals.voltAmps[2] * 2)
+            .EUt(VA[MV] * 2)
             .buildAndRegister()
 
         // Visbreaking
@@ -33,7 +33,7 @@ crackables.each { _, crackable ->
             .fluidInputs(fractions.heavy_gas_oil.getCrude(150))
             .fluidOutputs(crackable.getQuenched(1000))
             .duration(40)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
     }
 }
@@ -47,7 +47,7 @@ crackables.each { _, crackable ->
         .fluidOutputs(fractions.naphtha.getCrude(385))
         .fluidOutputs(fluid('sulfuric_fuel_gas') * 275)
         .duration(100)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
     DT.recipeBuilder()
@@ -58,7 +58,7 @@ crackables.each { _, crackable ->
         .fluidOutputs(fractions.naphtha.getCrude(305))
         .fluidOutputs(fluid('sulfuric_fuel_gas') * 225)
         .duration(100)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 // Coking
@@ -73,7 +73,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(fluid('sulfuric_fuel_gas') * 1365)
             .circuitMeta(2)
             .duration(200)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
 
         VACUUM_DT.recipeBuilder()
@@ -86,7 +86,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(fluid('sulfuric_fuel_gas') * 1365)
             .circuitMeta(2)
             .duration(200)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
 
         VACUUM_DT.recipeBuilder()
@@ -98,7 +98,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(fractions.naphtha.getCrude(1560))
             .fluidOutputs(fluid('sulfuric_fuel_gas') * 1365)
             .duration(200)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
 
         VACUUM_DT.recipeBuilder()
@@ -110,21 +110,21 @@ crackables.each { _, crackable ->
             .fluidOutputs(fractions.naphtha.getCrude(1560))
             .fluidOutputs(fluid('sulfuric_fuel_gas') * 1365)
             .duration(200)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
 
         TUBE_FURNACE.recipeBuilder()
             .fluidInputs(fluid('coking_residue') * 1000)
             .fluidOutputs(fluid('heated_coking_residue') * 1000)
             .duration(200)
-            .EUt(480)
+            .EUt(VA[HV])
             .buildAndRegister()
 
         TUBE_FURNACE.recipeBuilder() // Startup
             .fluidInputs(crackables.atmospheric_oil_residue.get(1000))
             .fluidOutputs(fluid('heated_coking_residue') * 1000)
             .duration(1000)
-            .EUt(480)
+            .EUt(VA[HV])
             .buildAndRegister()
 
         COKING.recipeBuilder()
@@ -133,7 +133,7 @@ crackables.each { _, crackable ->
             .outputs(metaitem('dustGreenCoke') * 32)
             .fluidOutputs(fluid('coking_effluents') * 1000)
             .duration(200)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
             
     // Fluid Coking
@@ -142,7 +142,7 @@ crackables.each { _, crackable ->
             .inputs(ore('dustHeatedGreenCoke') * 4)
             .fluidOutputs(fluid('coke_fines') * 1000)
             .duration(50)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
 
         FLBR.recipeBuilder()
@@ -150,7 +150,7 @@ crackables.each { _, crackable ->
             .inputs(ore('dustHeatedGreenCoke') * 4)
             .fluidOutputs(fluid('coke_fines') * 1000)
             .duration(50)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
 
         FLBR.recipeBuilder()
@@ -158,7 +158,7 @@ crackables.each { _, crackable ->
             .inputs(ore('dustHeatedGreenCoke') * 4)
             .fluidOutputs(fluid('coke_fines') * 1000)
             .duration(50)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
 
         FLBR.recipeBuilder()
@@ -166,7 +166,7 @@ crackables.each { _, crackable ->
             .inputs(ore('dustHeatedGreenCoke') * 4)
             .fluidOutputs(fluid('coke_fines') * 1000)
             .duration(50)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
 
         PHASE_SEPARATOR.recipeBuilder()
@@ -183,7 +183,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(fractions.naphtha.getCrude(1150))
             .fluidOutputs(fluid('sulfuric_fuel_gas') * 1580)
             .duration(50)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()
 
     // Flexicoking
@@ -193,5 +193,5 @@ crackables.each { _, crackable ->
             .outputs(metaitem('dustHeatedGreenCoke') * 1)
             .fluidOutputs(fluid('monoxide_rich_syngas') * 10000)
             .duration(10)
-            .EUt(30)
+            .EUt(VA[LV])
             .buildAndRegister()

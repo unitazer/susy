@@ -1,4 +1,4 @@
-import globals.Globals
+import static gregtech.api.GTValues.*
 
 EBF = recipemap('electric_blast_furnace')
 MIXER = recipemap('mixer')
@@ -9,7 +9,7 @@ ALLOY_SMELTER.recipeBuilder()
     .inputs(ore('dustTin') * 4)
     .outputs(metaitem('ingotLeadFreeSolder') * 10)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 ALLOY_SMELTER.recipeBuilder()
@@ -17,7 +17,7 @@ ALLOY_SMELTER.recipeBuilder()
     .inputs(ore('ingotTin') * 4)
     .outputs(metaitem('ingotLeadFreeSolder') * 10)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 ALLOY_SMELTER.recipeBuilder()
@@ -25,7 +25,7 @@ ALLOY_SMELTER.recipeBuilder()
     .inputs(ore('dustTin') * 4)
     .outputs(metaitem('ingotLeadFreeSolder') * 10)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 ALLOY_SMELTER.recipeBuilder()
@@ -33,7 +33,7 @@ ALLOY_SMELTER.recipeBuilder()
     .inputs(ore('ingotTin') * 4)
     .outputs(metaitem('ingotLeadFreeSolder') * 10)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -41,7 +41,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustTinySilver'))
     .outputs(metaitem('dustCryogenicSolder') * 3)
     .duration(120)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
     .buildAndRegister()
 
 crafting.addShaped("susy:cryogenic_solder", metaitem('dustCryogenicSolder') * 3, [

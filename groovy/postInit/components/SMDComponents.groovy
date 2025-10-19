@@ -1,5 +1,5 @@
-import globals.Globals
 import static globals.SinteringGlobals.*
+import static gregtech.api.GTValues.*
 import gregtech.api.metatileentity.multiblock.CleanroomType
 
 SINTERING_RECIPES = recipemap("sintering_oven")
@@ -80,7 +80,7 @@ mods.gregtech.blender.removeByInput(120, [metaitem('dustNickel'), metaitem('dust
 // Nickel Zinc Ferrite Ingot * 1
 mods.gregtech.electric_blast_furnace.removeByInput(120, [metaitem('dustFerriteMixture')], [fluid('oxygen') * 2000])
 // Liquid Nickel Zinc Ferrite * 864
-mods.gregtech.advanced_arc_furnace.removeByInput(120, [metaitem('dustNickel'), metaitem('dustZinc'), metaitem('dustIron') * 4, metaitem('circuit.integrated').withNbt(['Configuration': 6])], [fluid('oxygen') * 8000 * 8000, fluid('refractory_gunning_mixture') * 50 * 50])
+mods.gregtech.advanced_arc_furnace.removeByInput(120, [metaitem('dustNickel'), metaitem('dustZinc'), metaitem('dustIron') * 4, metaitem('circuit.integrated').withNbt(['Configuration': 6])], [fluid('oxygen') * 8000 * 8000, fluid('refractory_gunning_mixture') * 100])
 
 // Alumina Plate * 1
 mods.gregtech.fluid_solidifier.removeByInput(7, [metaitem('shape.mold.plate')], [fluid('alumina') * 144])
@@ -706,7 +706,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(ore('wireFineCopper') * 2)
         .outputs(metaitem('component.inductor') * 4)
         .duration(320)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
@@ -715,7 +715,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(ore('wireFineAnnealedCopper') * 2)
         .outputs(metaitem('component.inductor') * 8)
         .duration(320)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
@@ -800,7 +800,7 @@ CUTTER.recipeBuilder()
         .outputs(metaitem('chip.n_doped_silicon') * 16)
         .cleanroom(CleanroomType.CLEANROOM)
         .duration(200)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 CUTTER.recipeBuilder()
@@ -809,7 +809,7 @@ CUTTER.recipeBuilder()
         .outputs(metaitem('chip.silicon_dioxide') * 16)
         .cleanroom(CleanroomType.CLEANROOM)
         .duration(500)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 CUTTER.recipeBuilder()
@@ -818,7 +818,7 @@ CUTTER.recipeBuilder()
         .outputs(metaitem('chip.insulated_silicon') * 24)
         .cleanroom(CleanroomType.CLEANROOM)
         .duration(200)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 CUTTER.recipeBuilder()
@@ -826,7 +826,7 @@ CUTTER.recipeBuilder()
         .fluidInputs(fluid('ultrapure_water') * 100)
         .outputs(metaitem('chip.insulated_silicon_germanium') * 32)
         .duration(80)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
@@ -1100,7 +1100,7 @@ CRYSTALLIZER.recipeBuilder()
         .inputs(metaitem('seed_crystal.silicon'))
         .outputs(metaitem('boule.silicon_germanium'))
         .duration(9000)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 CUTTER.recipeBuilder()

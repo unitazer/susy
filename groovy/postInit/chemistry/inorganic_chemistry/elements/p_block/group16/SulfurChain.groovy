@@ -1,4 +1,4 @@
-import globals.Globals
+import static gregtech.api.GTValues.*
 
 ROASTER = recipemap('roaster');
 REACTION_FURNACE = recipemap('reaction_furnace')
@@ -9,7 +9,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustIronIiiSulfate'))
     .outputs(metaitem('dustSulfur'))
     .duration(80)
-    .EUt(7)
+    .EUt(VA[ULV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -17,7 +17,7 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustBandedIron'))
     .fluidOutputs(fluid('sulfur_trioxide') * 3000)
     .duration(160)
-    .EUt(7)
+    .EUt(VA[ULV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -26,7 +26,7 @@ REACTION_FURNACE.recipeBuilder()
     .fluidOutputs(fluid('uncatalyzed_sulfurous_gases') * 3000)
     .outputs(metaitem('dustSulfur'))
     .duration(40)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -35,7 +35,7 @@ REACTION_FURNACE.recipeBuilder()
     .fluidOutputs(fluid('uncatalyzed_sulfurous_gases') * 3000)
     .outputs(metaitem('dustSulfur'))
     .duration(40)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -44,7 +44,7 @@ REACTION_FURNACE.recipeBuilder()
     .fluidOutputs(fluid('dense_steam') * 3000)
     .outputs(metaitem('dustSulfur') * 2)
     .duration(40)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Sodium bisulfite
@@ -54,5 +54,5 @@ BCR.recipeBuilder()
     .fluidInputs(fluid('sodium_hydroxide_solution') * 50)
     .fluidOutputs(fluid('sodium_bisulfite_solution') * 50)
     .duration(4)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()

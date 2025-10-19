@@ -1,5 +1,5 @@
-import globals.Globals
-import static globals.CarbonGlobals.*
+import globals.Carbons
+import static gregtech.api.GTValues.*
 
 ROASTER = recipemap('roaster')
 EBF = recipemap('electric_blast_furnace')
@@ -20,7 +20,7 @@ EBF.recipeBuilder()
         .outputs(metaitem('dustCobaltOxide') * 2)
         .chancedOutput(metaitem('dustArsenicTrioxide') * 5, 7500, 0)
         .fluidOutputs(fluid('sulfur_dioxide') * 2000)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .blastFurnaceTemp(1023)
         .duration(240)
         .buildAndRegister()
@@ -31,7 +31,7 @@ FLUIDIZEDBR.recipeBuilder()
         .outputs(metaitem('dustCobaltOxide') * 4)
         .chancedOutput(metaitem('dustArsenicTrioxide') * 5, 9000, 0)
         .fluidOutputs(fluid('sulfur_dioxide') * 2000)
-        .EUt(Globals.voltAmps[2])
+        .EUt(VA[MV])
         .duration(120)
         .buildAndRegister()
 
@@ -39,7 +39,7 @@ BR.recipeBuilder()
         .inputs(ore('dustCobaltOxide') * 2)
         .fluidInputs(fluid('sulfuric_acid') * 1000)
         .fluidOutputs(fluid('cobalt_sulfate_solution') * 1000)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .duration(240)
         .buildAndRegister()
 
@@ -51,7 +51,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .outputs(metaitem('dustCobalt'))
         .fluidOutputs(fluid('sulfuric_acid') * 1000)
         .fluidOutputs(fluid('oxygen') * 1000)
-        .EUt(Globals.voltAmps[2])
+        .EUt(VA[MV])
         .duration(240)
         .buildAndRegister()
 
@@ -63,11 +63,11 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .outputs(metaitem('dustHighPurityCobalt'))
         .fluidOutputs(fluid('sulfuric_acid') * 1000)
         .fluidOutputs(fluid('oxygen') * 1000)
-        .EUt(Globals.voltAmps[2])
+        .EUt(VA[MV])
         .duration(240)
         .buildAndRegister()
 
-for (combustible in combustibles()) {
+for (combustible in Carbons.combustibles()) {
     EBF.recipeBuilder()
         .inputs(ore('dustCobaltOxide') * 2)
         .inputs(ore(combustible.name) * combustible.equivalent(1))
@@ -75,7 +75,7 @@ for (combustible in combustibles()) {
         .fluidOutputs(fluid('carbon_monoxide') * 1000)
         .blastFurnaceTemp(1200)
         .duration(240)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister()
 }
 
@@ -88,7 +88,7 @@ def cobalt_matte_recipes = [
 ]
 
 cobalt_matte_recipes.forEach { recipe ->
-    combustibles().forEach { combustible ->
+    Carbons.combustibles().forEach { combustible ->
         PBF_RECIPES.recipeBuilder()
                 .inputs(ore(recipe[0]))
                 .inputs(ore(combustible.name) * (combustible.equivalent(2)))
@@ -105,7 +105,7 @@ ROASTER.recipeBuilder()
         .fluidInputs(fluid('oxygen') * 1000)
         .outputs(metaitem('dustCobaltOxide') * 2)
         .duration(120)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -113,7 +113,7 @@ ROASTER.recipeBuilder()
         .fluidInputs(fluid('oxygen') * 1000)
         .outputs(metaitem('dustHighPurityCobaltOxide') * 2)
         .duration(120)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 // CoSO4
@@ -123,7 +123,7 @@ DISTILLERY.recipeBuilder()
         .outputs(metaitem('dustCobaltSulfate') * 6)
         .fluidOutputs(fluid('water') * 1000)
         .duration(80)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -131,5 +131,5 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('water') * 1000)
         .fluidOutputs(fluid('cobalt_sulfate_solution') * 1000)
         .duration(80)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()

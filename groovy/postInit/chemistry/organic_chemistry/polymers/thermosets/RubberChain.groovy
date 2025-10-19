@@ -1,5 +1,4 @@
-import globals.Globals
-
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ModHandler
 import gregtech.api.unification.material.Materials
 import gregtech.api.unification.ore.OrePrefix
@@ -140,7 +139,7 @@ for (rubber in rubbers) {
                     }
                     .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
                     .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
-                    .EUt(Globals.voltAmps[0])
+                    .EUt(VA[ULV])
                     .buildAndRegister()
             }
         }
@@ -165,7 +164,7 @@ for (rubber in rubbers) {
             .inputs(ore('dustCoal') * coal_amount)
             .outputs(metaitem('dustCompoundedEbonite') * (rubber.yield * 2))
             .duration(40 * rubber.yield)
-            .EUt(Globals.voltAmps[1])
+            .EUt(VA[LV])
             .buildAndRegister()
     }
 }
@@ -185,7 +184,7 @@ for (catalyst in catalysts) {
             }
         }
         .outputs(metaitem('plateEbonite'))
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister()
 }
 
@@ -211,7 +210,7 @@ POLYMERIZATION_TANK.recipeBuilder()
     .outputs(metaitem('dustPolyisoprene') * 4)
     .notConsumable(metaitem('dustZieglerNattaCatalyst'))
     .duration(200)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 POLYMERIZATION_TANK.recipeBuilder()
@@ -219,7 +218,7 @@ POLYMERIZATION_TANK.recipeBuilder()
     .outputs(metaitem('dustPolyisoprene') * 6)
     .notConsumable(fluid('butyllithium') * 100)
     .duration(200)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 POLYMERIZATION_TANK.recipeBuilder()
@@ -227,7 +226,7 @@ POLYMERIZATION_TANK.recipeBuilder()
     .outputs(metaitem('dustPolyisoprene') * 6)
     .notConsumable(metaitem('dustZieglerNattaCatalyst'))
     .duration(200)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 POLYMERIZATION_TANK.recipeBuilder()
@@ -235,14 +234,14 @@ POLYMERIZATION_TANK.recipeBuilder()
     .outputs(metaitem('dustPolyisoprene') * 8)
     .notConsumable(fluid('butyllithium') * 100)
     .duration(200)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 MIXER.recipeBuilder()
     .inputs(ore('dustPolyisoprene') * 8)
     .inputs(ore('dustCarbonBlack') * 2)
     .outputs(metaitem('dustCompoundedPolyisoprene') * 10)
-    .EUt(120)
+    .EUt(VA[MV])
     .duration(250)
     .buildAndRegister()
 
@@ -261,7 +260,7 @@ POLYMERIZATION.recipeBuilder()
     .fluidInputs(fluid('styrene_isoprene_solution') * 5000)
     .notConsumable(fluid('butyllithium') * 100)
     .fluidOutputs(fluid('polymerized_styrene_isoprene_solution') * 5000)
-    .EUt(120)
+    .EUt(VA[MV])
     .duration(533)
     .buildAndRegister()
 
@@ -269,7 +268,7 @@ DRYER.recipeBuilder()
     .fluidInputs(fluid('polymerized_styrene_isoprene_solution') * 5000)
     .fluidOutputs(fluid('ethanol') * 1000)
     .outputs(metaitem('dustRawStyreneIsopreneRubber') * 16)
-    .EUt(120)
+    .EUt(VA[MV])
     .duration(533)
     .buildAndRegister()
 
@@ -277,7 +276,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustRawStyreneIsopreneRubber') * 8)
     .inputs(ore('dustCarbonBlack') * 2)
     .outputs(metaitem('dustCompoundedStyreneIsopreneRubber') * 10)
-    .EUt(120)
+    .EUt(VA[MV])
     .duration(250)
     .buildAndRegister()
 
@@ -296,7 +295,7 @@ POLYMERIZATION.recipeBuilder()
     .fluidInputs(fluid('styrene_butadiene_solution') * 5000)
     .notConsumable(fluid('butyllithium') * 100)
     .fluidOutputs(fluid('polymerized_styrene_butadiene_solution') * 5000)
-    .EUt(120)
+    .EUt(VA[MV])
     .duration(533)
     .buildAndRegister()
 
@@ -304,7 +303,7 @@ DRYER.recipeBuilder()
     .fluidInputs(fluid('polymerized_styrene_butadiene_solution') * 5000)
     .fluidOutputs(fluid('ethanol') * 1000)
     .outputs(metaitem('dustRawStyreneButadieneRubber') * 16)
-    .EUt(120)
+    .EUt(VA[MV])
     .duration(533)
     .buildAndRegister()
 
@@ -312,6 +311,6 @@ MIXER.recipeBuilder()
     .inputs(ore('dustRawStyreneButadieneRubber') * 8)
     .inputs(ore('dustCarbonBlack') * 2)
     .outputs(metaitem('dustCompoundedStyreneButadieneRubber') * 10)
-    .EUt(120)
+    .EUt(VA[MV])
     .duration(250)
     .buildAndRegister()

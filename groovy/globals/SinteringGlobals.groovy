@@ -1,52 +1,18 @@
 package globals
 
 class SinteringGlobals {
-
-    public static void main (String[] args) {
-
-    }
-
-    public static class Combustible {
-        String name
-        boolean isPlasma
-        int amountRequired
-        int duration
-        String byproduct
+    record Combustible(
+        String name,
+        boolean isPlasma,
+        int amountRequired,
+        int duration,
+        String byproduct,
         int byproductAmount
+    ) {}
 
-        Combustible(name, isPlasma, amountRequired, duration, byproduct, byproductAmount) {
-            this.name = name
-            this.isPlasma = isPlasma
-            this.amountRequired = amountRequired
-            this.duration = duration
-            this.byproduct = byproduct
-            this.byproductAmount = byproductAmount
-        }
-    }
+    record Comburent(String name, int amountRequired, int duration) {}
 
-    public static class Comburent {
-        String name
-        int amountRequired
-        int duration
-
-        Comburent(name, amountRequired, duration) {
-            this.name = name
-            this.amountRequired = amountRequired
-            this.duration = duration
-        }
-    }
-
-    public static class Blanket {
-        String name
-        int amountRequired
-        int duration
-
-        Blanket(name, amountRequired, duration) {
-            this.name = name
-            this.amountRequired = amountRequired
-            this.duration = duration
-        }
-    }
+    record Blanket(String name, int amountRequired, int duration) {}
 
     public static sintering_fuels = [
         new Combustible('methane', false, 10, 50, 'carbon_dioxide', 5),

@@ -1,5 +1,6 @@
-import classes.*;
+import classes.*
 import globals.Globals
+import static gregtech.api.GTValues.*
 
 LARGE_WEAPON_FACTORY = recipemap('large_weapons_factory');
 WEAPON_FACTORY = recipemap('weapons_factory');
@@ -122,7 +123,7 @@ for (var i = 0; i < 8; i++) {
         ])
         .outputs(item('icbmclassic:grenade', i))
         .duration(80)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister();
 }
 
@@ -436,7 +437,7 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('soldering_alloy') * 72)
     .outputs(item('icbmclassic:launcherbase:0'))
     .duration(400)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -449,7 +450,7 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('soldering_alloy') * 72)
     .outputs(item('icbmclassic:launcherscreen:0'))
     .duration(400)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -461,7 +462,7 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('soldering_alloy') * 72)
     .outputs(item('icbmclassic:launcherframe:0'))
     .duration(400)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 //Missiles
@@ -514,7 +515,7 @@ Globals.solders.each { key, val ->
                     .fluidInputs(fluid(key) * val)
                     .outputs(item('icbmclassic:explosive_missile:' + i))
                     .duration(200)
-                    .EUt(30)
+                    .EUt(VA[LV])
                     .buildAndRegister();
             }
 
@@ -589,7 +590,7 @@ Globals.solders.each { key, val ->
                     .fluidInputs(l_oxy * 2000)
                     .outputs(item('icbmclassic:explosive_missile:' + j))
                     .duration(200)
-                    .EUt(120)
+                    .EUt(VA[MV])
                     .buildAndRegister();
             }
         }
@@ -629,7 +630,7 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('soldering_alloy') * 72)
     .outputs(item('icbmclassic:launcher_connector') * 4)
     .duration(400)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 
@@ -645,7 +646,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('icbmclassic:empty_bomblet'))
         .duration(300)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister();
 }
 
@@ -658,7 +659,7 @@ for (var i = 0; i < 15; i++) {
         ])
         .outputs(item('icbmclassic:explosive_bomblet', i))
         .duration(300)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister();
 }
 
@@ -671,7 +672,7 @@ ASSEMBLER.recipeBuilder()
     ])
     .outputs(item('icbmclassic:parachute'))
     .duration(200)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 //payload baloon
@@ -683,7 +684,7 @@ ASSEMBLER.recipeBuilder()
     ])
     .outputs(item('icbmclassic:balloon'))
     .duration(50)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 //missile module (empty missile)
@@ -699,7 +700,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('icbmclassic:explosive_missile:' + 24))
         .duration(300)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister();
 }
 //cluster missile
@@ -713,6 +714,6 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid(key) * val)
         .outputs(item('icbmclassic:cluster_missile'))
         .duration(400)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister();
 }

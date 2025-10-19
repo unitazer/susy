@@ -1,4 +1,4 @@
-import globals.Globals
+import static gregtech.api.GTValues.*
 
 BR = recipemap('batch_reactor')
 REACTION_FURNACE = recipemap('reaction_furnace')
@@ -9,7 +9,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustDysprosiumChloride') * 4)
     .fluidOutputs(fluid('water') * 6000)
     .duration(20)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -18,7 +18,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustDysprosiumFluoride') * 4)
     .fluidOutputs(fluid('acidic_wastewater') * 9000)
     .duration(80)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -29,5 +29,5 @@ REACTION_FURNACE.recipeBuilder()
     .outputs(metaitem('dustDysprosium') * 2)
     .outputs(metaitem('dustFluorite') * 9)
     .duration(200)
-    .EUt(Globals.voltAmps[3] * 2)
+    .EUt(VA[HV] * 2)
     .buildAndRegister()

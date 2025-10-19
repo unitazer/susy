@@ -1,3 +1,5 @@
+import static gregtech.api.GTValues.*
+
 crafting.replaceShaped('chisel:chisel_iron', item('chisel:chisel_iron'), [
     [null, null, ore('plateIron')],
     [null, ore('plateIron'), null],
@@ -106,7 +108,7 @@ ASSEMBLER.recipeBuilder()
         .outputs(item('chisel:factory') * 32)
         .circuitMeta(1)
         .duration(20)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -115,7 +117,7 @@ ASSEMBLER.recipeBuilder()
         .outputs(item('chisel:tyrian') * 32)
         .circuitMeta(2)
         .duration(20)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -124,5 +126,5 @@ ASSEMBLER.recipeBuilder()
         .outputs(item('chisel:temple') * 32)
         .circuitMeta(3)
         .duration(20)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister();

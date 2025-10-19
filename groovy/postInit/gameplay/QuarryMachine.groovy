@@ -37,7 +37,7 @@ def beneath_ores = [
 ]
 
 //overworld rocks:
-for(entry in overworld_ores){
+for (entry in overworld_ores) {
     QUARRY.recipeBuilder()
         .notConsumable(entry)
         .outputs(entry)
@@ -84,7 +84,7 @@ QUARRY.recipeBuilder()
 
 
 //beneath rocks:
-for(entry in beneath_ores){
+for (entry in beneath_ores) {
     QUARRY.recipeBuilder()
         .notConsumable(entry)
         .outputs(entry)
