@@ -48,7 +48,7 @@ for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     .fluidOutputs(fluid('carbon_monoxide') * 6000)
     .blastFurnaceTemp(1400)
     .duration(200 * highPurityCombustible.duration)
-    .EUt(VA[MV])
+    .EUt(VA[LV] * 2)
     .buildAndRegister()
 }
 
@@ -58,7 +58,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustChrome') * 2)
     .outputs(metaitem('dustFerrochromium') * 3)
     .duration(100)
-    .EUt(VA[MV])
+    .EUt(VA[LV] * 2)
     .buildAndRegister()
 
 // AOD Process
