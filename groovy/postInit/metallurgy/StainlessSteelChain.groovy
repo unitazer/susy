@@ -19,10 +19,6 @@ mods.gregtech.advanced_arc_furnace.removeByInput(480, [metaitem('dustIron') * 6,
 // Liquid Stainless Steel * 1296
 mods.gregtech.advanced_arc_furnace.removeByInput(480, [metaitem('dustIron') * 6, metaitem('dustChrome'), metaitem('dustManganese'), metaitem('dustNickel'), metaitem('circuit.integrated').withNbt(['Configuration': 4])], [fluid('refractory_gunning_mixture') * 800])
 
-EBF = recipemap('electric_blast_furnace')
-MIXER = recipemap('mixer')
-ADVANCED_ARC_FURNACE = recipemap('advanced_arc_furnace')
-
 def iron_sources = [
     'dustIron'               : 24,
     'dustMagnetite'          : 8,
@@ -39,21 +35,9 @@ iron_sources.each { iron, amount ->
         .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
         .blastFurnaceTemp(1400)
         .duration(3200)
-        .EUt(VA[MV] * 2)
+        .EUt(VA[HV])
         .buildAndRegister()
 }
-
-// VACUUM.recipeBuilder()
-//     .fluidInputs(fluid('oxygen') * 2000)
-//     .fluidInputs(fluid('carburized_stainless_steel') * 1440)
-//     .inputs(ore('dustSmallFerrosilicon') * 2)
-//    .inputs(ore('dustFerrochromium') * 3)
-//    .inputs(ore('dustSmallQuicklime'))
-//    .inputs(ore('dustSmallFluorite'))
-//     .fluidOutputs(fluid('stainless_steel') * 1440)
-//     .duration(400)
-//     .EUt(VA[HV])
-//     .buildAndRegister()
 
 for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     ERF.recipeBuilder()
@@ -64,7 +48,7 @@ for (highPurityCombustible in Carbons.highPurityCombustibles()) {
     .fluidOutputs(fluid('carbon_monoxide') * 6000)
     .blastFurnaceTemp(1400)
     .duration(200 * highPurityCombustible.duration)
-    .EUt(VA[LV] * 2)
+    .EUt(VA[MV])
     .buildAndRegister()
 }
 
@@ -74,7 +58,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustChrome') * 2)
     .outputs(metaitem('dustFerrochromium') * 3)
     .duration(100)
-    .EUt(VA[LV] * 2)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // AOD Process
@@ -98,19 +82,3 @@ gases.each { gas, data ->
         .EUt(VA[MV])
         .buildAndRegister()
 }
-
-// Vanadiumsteel
-/*
-ADVANCED_ARC_FURNACE.recipeBuilder()
-    .fluidInputs(fluid('oxygen') * 2000)
-    .fluidInputs(fluid('argon') * 500)
-    .fluidInputs(fluid('carburized_stainless_steel') * 1440)
-    .inputs(ore('dustVanadium') * 2)
-    .inputs(ore('dustFerrochromium') * 3)
-    .inputs(ore('dustIron') * 6)
-    .inputs(ore('dustSmallQuicklime'))
-    .fluidOutputs(fluid('stainless_steel') * 2592) //this isn't vanadiumsteel?
-    .duration(600)
-    .EUt(VA[MV])
-    .buildAndRegister()'
-*/
