@@ -1,3 +1,4 @@
+import static prePostInit.Recipemaps.*
 import globals.Carbons
 
 import static gregtech.api.GTValues.*
@@ -17,7 +18,6 @@ mods.gregtech.blender.removeByInput(120, [metaitem('dustIron') * 4, metaitem('du
 mods.gregtech.advanced_arc_furnace.removeByInput(480, [metaitem('dustIron') * 6, metaitem('dustChrome'), metaitem('dustManganese'), metaitem('dustNickel'), metaitem('circuit.integrated').withNbt(['Configuration': 14])], [fluid('nitrogen') * 9000 * 9000, fluid('refractory_gunning_mixture') * 500])
 // Liquid Stainless Steel * 1296
 mods.gregtech.advanced_arc_furnace.removeByInput(480, [metaitem('dustIron') * 6, metaitem('dustChrome'), metaitem('dustManganese'), metaitem('dustNickel'), metaitem('circuit.integrated').withNbt(['Configuration': 4])], [fluid('refractory_gunning_mixture') * 800])
-
 
 EBF = recipemap('electric_blast_furnace')
 MIXER = recipemap('mixer')
@@ -56,7 +56,7 @@ iron_sources.each { iron, amount ->
 //     .buildAndRegister()
 
 for (highPurityCombustible in Carbons.highPurityCombustibles()) {
-    EBF.recipeBuilder()
+    ERF.recipeBuilder()
     .inputs(ore('dustSiliconDioxide') * 9)
     .inputs(ore('dustIron'))
     .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(6))

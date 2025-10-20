@@ -1,11 +1,6 @@
-import static globals.SinteringGlobals.*
+import static prePostInit.Recipemaps.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
-
-SINTERING_OVEN = recipemap('sintering_oven')
-HOT_ISOSTATIC_PRESS = recipemap('hot_isostatic_press')
-MIXER = recipemap('mixer')
-FORMING_PRESS = recipemap('forming_press')
-CVD = recipemap('cvd')
 
 // PVA binder
 
@@ -19,7 +14,7 @@ MIXER.recipeBuilder()
 
 // Alumina
 
-for (blanket in sintering_blankets) {
+Sintering.blankets.each { blanket ->
     SINTERING_OVEN.recipeBuilder()
         .inputs(ore('dustAlumina') * 10)
         .fluidInputs(fluid('polyvinyl_alcohol_binder') * 200)
@@ -51,7 +46,7 @@ ARC_FURNACE.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-for (blanket in sintering_blankets) {
+Sintering.blankets.each { blanket ->
     SINTERING_OVEN.recipeBuilder()
         .inputs(ore('dustBoronCarbide'))
         .fluidInputs(fluid('novolacs') * 100)
@@ -67,7 +62,7 @@ for (blanket in sintering_blankets) {
 // Long Boron Carbide Rod * 1
 mods.gregtech.forge_hammer.removeByInput(16, [metaitem('stickBoronCarbide') * 2], null)
 
-for (blanket in sintering_blankets) {
+Sintering.blankets.each { blanket ->
     SINTERING_OVEN.recipeBuilder()
         .inputs(ore('dustBoronCarbide'))
         .fluidInputs(fluid('novolacs') * 100)

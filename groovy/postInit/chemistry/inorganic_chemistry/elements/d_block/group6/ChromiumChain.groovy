@@ -1,21 +1,10 @@
-import static globals.SinteringGlobals.*
+import static prePostInit.Recipemaps.*
+import globals.Sintering
 
 import static gregtech.api.GTValues.*
 import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.material.MarkerMaterials;
 import static gregtech.api.unification.ore.OrePrefix.dye;
-
-ROTARY_KILN = recipemap('rotary_kiln')
-ADVANCED_ARC_FURNACE = recipemap('advanced_arc_furnace')
-BR = recipemap('batch_reactor')
-REACTION_FURNACE = recipemap('reaction_furnace')
-CRYSTALLIZER = recipemap('crystallizer')
-BCR = recipemap('bubble_column_reactor')
-ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
-VACUUM_CHAMBER = recipemap('vacuum_chamber')
-ROASTER = recipemap('roaster')
-CSTR = recipemap('continuous_stirred_tank_reactor')
-MIXER = recipemap('mixer')
 
 ADVANCED_ARC_FURNACE.recipeBuilder()
     .inputs(ore('dustChromite'))
@@ -27,19 +16,17 @@ ADVANCED_ARC_FURNACE.recipeBuilder()
     .EUt(VA[MV])
     .buildAndRegister()
 
-for (fuel in sintering_fuels) {
-    if (!fuel.isPlasma) {
-        ROTARY_KILN.recipeBuilder()
-            .inputs(ore('dustChromite') * 2)
-            .inputs(ore('dustSodaAsh') * 24)
-            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-            .fluidInputs(fluid('oxygen') * 7010)
-            .outputs(metaitem('dustSodiumChromateMixture') * 5)
-            .fluidOutputs(fluid('carbon_dioxide') * 4000)
-            .duration(400)
-            .EUt(VA[MV])
-            .buildAndRegister()
-    }
+Sintering.nonPlasmaFuels().each { fuel ->
+    ROTARY_KILN.recipeBuilder()
+        .inputs(ore('dustChromite') * 2)
+        .inputs(ore('dustSodaAsh') * 24)
+        .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+        .fluidInputs(fluid('oxygen') * 7010)
+        .outputs(metaitem('dustSodiumChromateMixture') * 5)
+        .fluidOutputs(fluid('carbon_dioxide') * 4000)
+        .duration(400)
+        .EUt(VA[MV])
+        .buildAndRegister()
 }
 
 BR.recipeBuilder()
