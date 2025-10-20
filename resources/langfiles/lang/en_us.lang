@@ -2807,9 +2807,13 @@ metaitem.battery.lead_acid.name=Lead-Acid Battery
 metaitem.battery.ni_fe.name=Nickel-Iron Battery
 metaitem.electrode.steel_frame.name=Steel Electrode Frame
 metaitem.electrode.nickeled_steel_frame.name=Nickel-plated Steel Electrode Frame
+metaitem.battery.ni_zn.mv.name=Nickel-Zinc MV Battery
+metaitem.battery.ni_zn.hv.name=Nickel-Zinc HV Battery
 
 metaitem.battery.primitivehull.lv.name=Primitive LV Battery Hull
 metaitem.battery.primitivehull.mv.name=Primitive MV Battery Hull
+metaitem.battery.hull.mv.name=MV Battery Hull
+metaitem.battery.hull.hv.name=HV Battery Hull
 
 metaitem.steam.piston.name=Steam Piston
 metaitem.steam.motor.name=Steam Motor

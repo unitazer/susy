@@ -208,19 +208,21 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(3500, "copra")
 
         //Batteries 4000-4100
-        Batteries['lead_acid'].register(it, 4000);
-        addItem(4001, "cathode.lead");
-        addItem(4002, "anode.lead");
-        addItem(4003, "cathode.lead_paste");
-        addItem(4004, "cathode.lead_frame");
-        Batteries['ni_fe'].register(it, 4005);
-        addItem(4006, "electrode.steel_frame");
-        addItem(4007, "electrode.nickeled_steel_frame");
+        Batteries['lead_acid'].register(it, 4000)
+        addItem(4001, "cathode.lead")
+        addItem(4002, "anode.lead")
+        addItem(4003, "cathode.lead_paste")
+        addItem(4004, "cathode.lead_frame")
+        Batteries['ni_fe'].register(it, 4005)
+        addItem(4006, "electrode.steel_frame")
+        addItem(4007, "electrode.nickeled_steel_frame")
+        Batteries['ni_zn.mv'].register(it, 4008)
+        Batteries['ni_zn.hv'].register(it, 4009)
         // Battery hulls 4090-4100
-        addItem(4090, "battery.primitivehull.lv");
-        addItem(4091, "battery.primitivehull.mv");
+        addItem(4090, "battery.primitivehull.lv")
+        addItem(4091, "battery.primitivehull.mv")
 
-        addItem(4101, "vacuum_tube_components");
+        addItem(4101, "vacuum_tube_components")
 
         //Dusts & Pulps 4500-4999
 
