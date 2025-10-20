@@ -1,6 +1,6 @@
 import static prePostInit.Recipemaps.*
 import globals.Carbons
-import static globals.SinteringGlobals.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ingredients.GTRecipeItemInput;
 
@@ -82,7 +82,7 @@ ROASTER.recipeBuilder()
         .buildAndRegister()
 
 FLUIDIZED_BR.recipeBuilder()
-		.notConsumable(metaitem('springKanthal'))
+        .notConsumable(metaitem('springKanthal'))
         .inputs(ore('dustSphalerite') * 8)
         .fluidInputs(fluid('oxygen') * 16000)
         .fluidOutputs(fluid('zinc_flue_gas') * 8000)
@@ -110,7 +110,7 @@ ROASTER.recipeBuilder()
         .buildAndRegister()
 
 FLUIDIZED_BR.recipeBuilder()
-		.notConsumable(metaitem('springKanthal'))
+        .notConsumable(metaitem('springKanthal'))
         .inputs(ore('dustSmithsonite') * 8)
         .fluidOutputs(fluid('carbon_dioxide') * 8000)
         .outputs(metaitem('dustZincite') * 16)
@@ -318,20 +318,20 @@ carbons = new ItemStack[]{
         metaitem('dustCoke')
 }
 
-for (fuel in rotary_kiln_fuels) {
-	for (comburent in rotary_kiln_comburents) {
-		ROTARY_KILN.recipeBuilder()
-			.inputs(ore('dustZincOxideFume') * 2)
-			.input(new GTRecipeItemInput(carbons, 1))
-			.outputs(metaitem('dustWaelzOxide'))
-			.outputs(metaitem('dustWaelzSlag'))
-			.fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-			.fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-			.fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-			.duration(fuel.duration + comburent.duration)
-			.EUt(VA[MV])
-			.buildAndRegister()
-	}
+Sintering.RotaryKiln.fuels.each { fuel ->
+    Sintering.RotaryKiln.comburents.each { comburent ->
+        ROTARY_KILN.recipeBuilder()
+            .inputs(ore('dustZincOxideFume') * 2)
+            .input(new GTRecipeItemInput(carbons, 1))
+            .outputs(metaitem('dustWaelzOxide'))
+            .outputs(metaitem('dustWaelzSlag'))
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[MV])
+            .buildAndRegister()
+    }
 }
 
 CENTRIFUGE.recipeBuilder()

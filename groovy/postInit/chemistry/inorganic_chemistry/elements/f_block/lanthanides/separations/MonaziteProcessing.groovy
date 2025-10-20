@@ -1,5 +1,4 @@
 import static prePostInit.Recipemaps.*
-import static globals.SinteringGlobals.*
 import static gregtech.api.GTValues.*
 
 // Monazite Dust * 1

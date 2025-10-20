@@ -1,5 +1,4 @@
 import static prePostInit.Recipemaps.*
-import globals.SinteringGlobals
 import static gregtech.api.GTValues.*
 
 // Iron & steel magnets (LV-MV)

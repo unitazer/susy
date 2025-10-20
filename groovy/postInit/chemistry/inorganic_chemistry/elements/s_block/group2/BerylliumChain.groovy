@@ -1,5 +1,4 @@
 import static prePostInit.Recipemaps.*
-import static globals.SinteringGlobals.*
 import static gregtech.api.GTValues.*
 
 //Emerald: 3BeO · Al2O3 · 6SiO2

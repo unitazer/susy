@@ -1,5 +1,5 @@
 import static prePostInit.Recipemaps.*
-import static globals.SinteringGlobals.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
 
 // PEMFCs
@@ -100,7 +100,7 @@ TUBE_FURNACE.recipeBuilder()
 
 // YSZ electrolyte
 
-for (blanket in sintering_blankets) {
+Sintering.blankets.each { blanket ->
     SINTERING_OVEN.recipeBuilder()
         .circuitMeta(1)
         .notConsumable(metaitem('shape.extruder.plate'))
@@ -114,7 +114,7 @@ for (blanket in sintering_blankets) {
 
 // Ni-YSZ anode
 
-for (blanket in sintering_blankets) {
+Sintering.blankets.each { blanket ->
     SINTERING_OVEN.recipeBuilder()
         .circuitMeta(2)
         .notConsumable(metaitem('shape.extruder.plate'))

@@ -1,5 +1,5 @@
 import static prePostInit.Recipemaps.*
-import static globals.SinteringGlobals.*
+import globals.Sintering
 
 import static gregtech.api.GTValues.*
 import gregtech.api.GregTechAPI
@@ -153,44 +153,42 @@ MIXER.recipeBuilder()
         .duration(300)
         .buildAndRegister()
 
-for (fuel in sintering_fuels) {
-    if (!fuel.isPlasma) {
-        for (comburent in sintering_comburents) {
-            ROTARY_KILN.recipeBuilder()
-                    .inputs(ore('dustFlotatedVanadiferousTitanomagnetite') * 11)
-                    .inputs(ore('dustCoke') * 7)
-                    .inputs(ore('dustDolomite'))
-                    .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                    .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                    .outputs(metaitem('vti_rich_pig_iron') * 4)
-                    .fluidOutputs(fluid('carbon_monoxide') * 7000)
-                    .duration(fuel.duration + comburent.duration)
-                    .EUt(VA[MV])
-                    .buildAndRegister()
+Sintering.nonPlasmaFuels().each { fuel ->
+    Sintering.comburents.each { comburent ->
+        ROTARY_KILN.recipeBuilder()
+            .inputs(ore('dustFlotatedVanadiferousTitanomagnetite') * 11)
+            .inputs(ore('dustCoke') * 7)
+            .inputs(ore('dustDolomite'))
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .outputs(metaitem('vti_rich_pig_iron') * 4)
+            .fluidOutputs(fluid('carbon_monoxide') * 7000)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[MV])
+            .buildAndRegister()
 
-            ROTARY_KILN.recipeBuilder()
-                    .inputs(ore('dustFlotatedVanadiferousTitanomagnetite') * 11)
-                    .inputs(ore('dustAnyPurityCarbon') * 7)
-                    .inputs(ore('dustDolomite'))
-                    .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                    .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                    .outputs(metaitem('vti_rich_pig_iron') * 4)
-                    .fluidOutputs(fluid('carbon_monoxide') * 7000)
-                    .duration(fuel.duration + comburent.duration)
-                    .EUt(VA[MV])
-                    .buildAndRegister()
+        ROTARY_KILN.recipeBuilder()
+            .inputs(ore('dustFlotatedVanadiferousTitanomagnetite') * 11)
+            .inputs(ore('dustAnyPurityCarbon') * 7)
+            .inputs(ore('dustDolomite'))
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .outputs(metaitem('vti_rich_pig_iron') * 4)
+            .fluidOutputs(fluid('carbon_monoxide') * 7000)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[MV])
+            .buildAndRegister()
 
-            ROTARY_KILN.recipeBuilder()
-                    .inputs(ore('dustVtSlag'))
-                    .inputs(ore('dustSodaAsh') * 5)
-                    .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                    .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                    .outputs(metaitem('dustAlkaliVtSlag'))
-                    .fluidOutputs(fluid('carbon_dioxide') * 1000)
-                    .duration(fuel.duration + comburent.duration)
-                    .EUt(VA[MV])
-                    .buildAndRegister()
-        }
+        ROTARY_KILN.recipeBuilder()
+            .inputs(ore('dustVtSlag'))
+            .inputs(ore('dustSodaAsh') * 5)
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .outputs(metaitem('dustAlkaliVtSlag'))
+            .fluidOutputs(fluid('carbon_dioxide') * 1000)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[MV])
+            .buildAndRegister()
     }
 }
 

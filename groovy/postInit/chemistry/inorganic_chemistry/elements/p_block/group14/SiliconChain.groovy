@@ -1,6 +1,6 @@
 import static prePostInit.Recipemaps.*
 import globals.Carbons
-import static globals.SinteringGlobals.*
+import globals.Sintering
 
 import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ModHandler
@@ -295,31 +295,29 @@ DT.recipeBuilder()
         .EUt(VA[MV])
         .buildAndRegister()
 
-for (fuel in sintering_fuels) {
-    if (fuel.isPlasma) {
+Sintering.plasmaFuels().each { fuel ->
+    SINTERING_OVEN.recipeBuilder()
+        .notConsumable(metaitem('shape.mold.plate'))
+        .inputs(ore('dustSiliconCarbide'))
+        .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+        .outputs(metaitem('plateSiliconCarbide'))
+        .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+        .duration(fuel.duration)
+        .EUt(VA[HV])
+        .buildAndRegister()
+}
+Sintering.nonPlasmaFuels().each { fuel ->
+    Sintering.comburents.each { comburent ->
         SINTERING_OVEN.recipeBuilder()
-                .notConsumable(metaitem('shape.mold.plate'))
-                .inputs(ore('dustSiliconCarbide'))
-                .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                .outputs(metaitem('plateSiliconCarbide'))
-                .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-                .duration(fuel.duration)
-                .EUt(VA[HV])
-                .buildAndRegister()
-
-    } else {
-        for (comburent in sintering_comburents) {
-            SINTERING_OVEN.recipeBuilder()
-                    .notConsumable(metaitem('shape.mold.plate'))
-                    .inputs(ore('dustSiliconCarbide'))
-                    .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                    .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                    .outputs(metaitem('plateSiliconCarbide'))
-                    .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-                    .duration(fuel.duration + comburent.duration)
-                    .EUt(VA[LV])
-                    .buildAndRegister()
-        }
+            .notConsumable(metaitem('shape.mold.plate'))
+            .inputs(ore('dustSiliconCarbide'))
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .outputs(metaitem('plateSiliconCarbide'))
+            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[LV])
+            .buildAndRegister()
     }
 }
 
