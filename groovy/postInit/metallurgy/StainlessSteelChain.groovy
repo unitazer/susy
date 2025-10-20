@@ -28,7 +28,7 @@ def iron_sources = [
 ]
 
 iron_sources.each { iron, amount ->
-    EBF.recipeBuilder()
+    ERF.recipeBuilder()
         .inputs(ore(iron) * amount)
         .inputs(ore('dustNickel') * 4)
         .inputs(ore('dustManganese'))
