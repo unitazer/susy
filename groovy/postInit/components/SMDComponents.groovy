@@ -1,5 +1,5 @@
 import static prePostInit.Recipemaps.*
-import static globals.SinteringGlobals.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
 import gregtech.api.metatileentity.multiblock.CleanroomType
 
@@ -78,77 +78,71 @@ CUTTER.recipeBuilder()
         .EUt(240)
         .buildAndRegister()
 
-for (fuel in sintering_fuels) {
+Sintering.plasmaFuels().each { fuel ->
+    SINTERING_OVEN.recipeBuilder()
+        .inputs(ore('dustAlumina'))
+        .notConsumable(metaitem('shape.mold.plate'))
+        .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+        .outputs(metaitem('plateAlumina'))
+        .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+        .duration(fuel.duration)
+        .EUt(240)
+        .buildAndRegister()
 
-    if (fuel.isPlasma) {
+    SINTERING_OVEN.recipeBuilder()
+        .inputs(ore('dustBerylliumOxide'))
+        .notConsumable(metaitem('shape.mold.plate'))
+        .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+        .outputs(metaitem('plateBerylliumOxide'))
+        .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+        .duration(fuel.duration)
+        .EUt(240)
+        .buildAndRegister()
+
+    SINTERING_OVEN.recipeBuilder()
+        .inputs(ore('dustTantalum'))
+        .notConsumable(metaitem('shape.mold.nugget'))
+        .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+        .outputs(metaitem('tantalum_chip') * 32)
+        .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+        .duration(fuel.duration)
+        .EUt(240)
+        .buildAndRegister()
+}
+Sintering.nonPlasmaFuels().each { fuel ->
+    Sintering.comburents.each { comburent ->
+        SINTERING_OVEN.recipeBuilder()
+            .inputs(ore('dustAlumina'))
+            .notConsumable(metaitem('shape.mold.plate'))
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .outputs(metaitem('plateAlumina'))
+            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(240)
+            .buildAndRegister()
 
         SINTERING_OVEN.recipeBuilder()
-                .inputs(ore('dustAlumina'))
-                .notConsumable(metaitem('shape.mold.plate'))
-                .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                .outputs(metaitem('plateAlumina'))
-                .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-                .duration(fuel.duration)
-                .EUt(240)
-                .buildAndRegister()
+            .inputs(ore('dustBerylliumOxide'))
+            .notConsumable(metaitem('shape.mold.plate'))
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .outputs(metaitem('plateBerylliumOxide'))
+            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(240)
+            .buildAndRegister()
 
         SINTERING_OVEN.recipeBuilder()
-                .inputs(ore('dustBerylliumOxide'))
-                .notConsumable(metaitem('shape.mold.plate'))
-                .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                .outputs(metaitem('plateBerylliumOxide'))
-                .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-                .duration(fuel.duration)
-                .EUt(240)
-                .buildAndRegister()
-
-        SINTERING_OVEN.recipeBuilder()
-                .inputs(ore('dustTantalum'))
-                .notConsumable(metaitem('shape.mold.nugget'))
-                .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                .outputs(metaitem('tantalum_chip') * 32)
-                .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-                .duration(fuel.duration)
-                .EUt(240)
-                .buildAndRegister()
-
-    } else {
-
-        for (comburent in sintering_comburents) {
-
-            SINTERING_OVEN.recipeBuilder()
-                    .inputs(ore('dustAlumina'))
-                    .notConsumable(metaitem('shape.mold.plate'))
-                    .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                    .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                    .outputs(metaitem('plateAlumina'))
-                    .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-                    .duration(fuel.duration + comburent.duration)
-                    .EUt(240)
-                    .buildAndRegister()
-
-            SINTERING_OVEN.recipeBuilder()
-                    .inputs(ore('dustBerylliumOxide'))
-                    .notConsumable(metaitem('shape.mold.plate'))
-                    .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                    .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                    .outputs(metaitem('plateBerylliumOxide'))
-                    .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-                    .duration(fuel.duration + comburent.duration)
-                    .EUt(240)
-                    .buildAndRegister()
-
-            SINTERING_OVEN.recipeBuilder()
-                    .inputs(ore('dustTantalum'))
-                    .notConsumable(metaitem('shape.mold.nugget'))
-                    .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                    .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                    .outputs(metaitem('tantalum_chip') * 32)
-                    .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-                    .duration(fuel.duration + comburent.duration)
-                    .EUt(240)
-                    .buildAndRegister()
-        }
+            .inputs(ore('dustTantalum'))
+            .notConsumable(metaitem('shape.mold.nugget'))
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .outputs(metaitem('tantalum_chip') * 32)
+            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(240)
+            .buildAndRegister()
     }
 }
 

@@ -1,6 +1,6 @@
 import static prePostInit.Recipemaps.*
 import globals.Carbons
-import static globals.SinteringGlobals.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
 
 //REMOVAL
@@ -112,37 +112,37 @@ CLARIFIER.recipeBuilder()
         .buildAndRegister()
 
 //CONCENTRATE SINTERING
-for (fuel in rotary_kiln_fuels) {
-    for (comburent in rotary_kiln_comburents) {
+Sintering.RotaryKiln.fuels.each { fuel ->
+    Sintering.RotaryKiln.comburents.each { comburent ->
         ROTARY_KILN.recipeBuilder()
-                .inputs(ore('dustMassicot') * 2)
-                .outputs(metaitem('dustSinteredLeadConcentrate') * 2)
-                .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-                .duration(fuel.duration + comburent.duration)
-                .EUt(VA[MV])
-                .buildAndRegister()
+            .inputs(ore('dustMassicot') * 2)
+            .outputs(metaitem('dustSinteredLeadConcentrate') * 2)
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[MV])
+            .buildAndRegister()
 
         ROTARY_KILN.recipeBuilder()
-                .inputs(ore('dustGalena') * 1)
-                .outputs(metaitem('dustSinteredLeadConcentrate') * 2)
-                .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                .fluidOutputs(fluid('sulfur_dioxide') * 1000)
-                .duration(fuel.duration + comburent.duration)
-                .EUt(VA[MV])
-                .buildAndRegister()
+            .inputs(ore('dustGalena') * 1)
+            .outputs(metaitem('dustSinteredLeadConcentrate') * 2)
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .fluidOutputs(fluid('sulfur_dioxide') * 1000)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[MV])
+            .buildAndRegister()
 
         ROTARY_KILN.recipeBuilder()
-                .inputs(ore('dustAnglesite') * 1)
-                .outputs(metaitem('dustSinteredLeadConcentrate') * 2)
-                .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-                .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-                .fluidOutputs(fluid('sulfur_trioxide') * 1000)
-                .duration(fuel.duration + comburent.duration)
-                .EUt(VA[MV])
-                .buildAndRegister()
+            .inputs(ore('dustAnglesite') * 1)
+            .outputs(metaitem('dustSinteredLeadConcentrate') * 2)
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .fluidOutputs(fluid('sulfur_trioxide') * 1000)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[MV])
+            .buildAndRegister()
     }
 }
 

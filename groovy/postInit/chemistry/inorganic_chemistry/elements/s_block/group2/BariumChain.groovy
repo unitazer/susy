@@ -1,5 +1,5 @@
 import static prePostInit.Recipemaps.*
-import static globals.SinteringGlobals.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
 
 //OPTIONAL FLOTATION
@@ -38,8 +38,8 @@ CENTRIFUGE.recipeBuilder()
     .duration(20)
     .buildAndRegister()
 
-for (fuel in rotary_kiln_fuels) {
-    for (comburent in rotary_kiln_comburents) {
+Sintering.RotaryKiln.fuels.each { fuel ->
+    Sintering.RotaryKiln.comburents.each { comburent ->
         ROTARY_KILN.recipeBuilder()
             .inputs(ore('dustBarite'))
             .inputs(ore('dustAnyPurityCarbon') * 2)

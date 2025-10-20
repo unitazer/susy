@@ -1,5 +1,5 @@
 import static prePostInit.Recipemaps.*
-import static globals.SinteringGlobals.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
 
 /* REE Data (%mol)
@@ -44,19 +44,17 @@ ELECTROMAGNETIC_SEPARATOR.recipeBuilder()
     .buildAndRegister()
 
 // 2 (REE)PO4 + 3 Na2CO3 -> 2 Na3PO4 + (REE)2O3 + 3 CO2
-for (fuel in sintering_fuels) {
-    if (!fuel.isPlasma) {
-        ROTARY_KILN.recipeBuilder()
-            .inputs(ore('dustSodaAsh') * 18)
-            .inputs(ore('dustConcentrateXenotime') * 2)
-            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-            .fluidInputs(fluid('oxygen') * 50)
-            .outputs(metaitem('dustRoastedXenotime'))
-            .fluidOutputs(fluid('carbon_dioxide') * 3000)
-            .duration(160)
-            .EUt(VA[MV])
-            .buildAndRegister()
-    }
+Sintering.nonPlasmaFuels().each { fuel ->
+    ROTARY_KILN.recipeBuilder()
+        .inputs(ore('dustSodaAsh') * 18)
+        .inputs(ore('dustConcentrateXenotime') * 2)
+        .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+        .fluidInputs(fluid('oxygen') * 50)
+        .outputs(metaitem('dustRoastedXenotime'))
+        .fluidOutputs(fluid('carbon_dioxide') * 3000)
+        .duration(160)
+        .EUt(VA[MV])
+        .buildAndRegister()
 }
 
 MIXER.recipeBuilder()

@@ -1,5 +1,5 @@
 import static prePostInit.Recipemaps.*
-import static globals.SinteringGlobals.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
 
 // Bastnasite Dust * 1
@@ -66,22 +66,20 @@ CLARIFIER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-for (fuel in sintering_fuels) {
-    if (!fuel.isPlasma) {
-        ROTARY_KILN.recipeBuilder()
-            .inputs(ore('dustFlotatedBastnasite') * 2)
-            .fluidInputs(fluid('sulfuric_acid') * 3000)
-            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-            .fluidInputs(fluid('oxygen') * 50)
-            .outputs(metaitem('dustRoastedBastnasite') * 2)
-            .fluidOutputs(fluid('hydrogen_fluoride') * 2000)
-            .fluidOutputs(fluid('carbon_dioxide') * 2000)
-            .fluidOutputs(fluid('dense_steam') * 2000)
-            .duration(80)
-            .EUt(VA[HV])
-            .buildAndRegister()
-    }
-}   
+Sintering.nonPlasmaFuels().each { fuel ->
+    ROTARY_KILN.recipeBuilder()
+        .inputs(ore('dustFlotatedBastnasite') * 2)
+        .fluidInputs(fluid('sulfuric_acid') * 3000)
+        .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+        .fluidInputs(fluid('oxygen') * 50)
+        .outputs(metaitem('dustRoastedBastnasite') * 2)
+        .fluidOutputs(fluid('hydrogen_fluoride') * 2000)
+        .fluidOutputs(fluid('carbon_dioxide') * 2000)
+        .fluidOutputs(fluid('dense_steam') * 2000)
+        .duration(80)
+        .EUt(VA[HV])
+        .buildAndRegister()
+}
 
 AUTOCLAVE.recipeBuilder()
     .inputs(ore('dustRoastedBastnasite'))
