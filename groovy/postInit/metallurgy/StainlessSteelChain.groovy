@@ -35,7 +35,7 @@ iron_sources.each { iron, amount ->
         .fluidOutputs(fluid('carburized_stainless_steel') * 5760)
         .blastFurnaceTemp(1400)
         .duration(3200)
-        .EUt(VA[HV])
+        .EUt(VA[MV] * 2)
         .buildAndRegister()
 }
 
