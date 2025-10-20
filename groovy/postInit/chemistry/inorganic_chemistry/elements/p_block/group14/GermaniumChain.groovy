@@ -1,18 +1,7 @@
+import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
-import static globals.SinteringGlobals.*
+import globals.Sintering
 import gregtech.api.recipes.ingredients.GTRecipeItemInput;
-
-AUTOCLAVE = recipemap('autoclave')
-CHEMICAL_BATH = recipemap('chemical_bath')
-ROTARY_KILN = recipemap('rotary_kiln')
-DT = recipemap('distillation_tower')
-BR = recipemap('batch_reactor')
-TUBE_FURNACE = recipemap('tube_furnace')
-ZONE_REFINER = recipemap('zone_refiner')
-MIXER = recipemap('mixer')
-BLENDER = recipemap('blender')
-ROASTER = recipemap('roaster')
-MIXER_SETTLER = recipemap('mixer_settler')
 
 // Tannic acid for Ge precipitation
 
@@ -35,20 +24,20 @@ carbons = new ItemStack[]{
         metaitem('dustCoke')
 }
 
-for (fuel in rotary_kiln_fuels) {
-	for (comburent in rotary_kiln_comburents) {
-		ROTARY_KILN.recipeBuilder()
-			.inputs(ore('dustZincResidues') * 8)
-			.input(new GTRecipeItemInput(carbons, 1))
-			.outputs(metaitem('dustGermaniumRichOxide') )
-			.outputs(metaitem('dustWaelzSlag'))
-			.fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-			.fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-			.fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-			.duration(fuel.duration + comburent.duration)
-			.EUt(VA[MV])
-			.buildAndRegister()
-	}
+Sintering.RotaryKiln.fuels.each { fuel ->
+    Sintering.RotaryKiln.comburents.each { comburent ->
+        ROTARY_KILN.recipeBuilder()
+            .inputs(ore('dustZincResidues') * 8)
+            .input(new GTRecipeItemInput(carbons, 1))
+            .outputs(metaitem('dustGermaniumRichOxide') )
+            .outputs(metaitem('dustWaelzSlag'))
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[MV])
+            .buildAndRegister()
+    }
 }
 
 AUTOCLAVE.recipeBuilder()

@@ -1,5 +1,6 @@
+import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
-import static globals.SinteringGlobals.*
+import globals.Sintering
 
 class CoolantGases {
     String name
@@ -15,12 +16,8 @@ class CoolantGases {
     }
 }
 
-
-def SINTERING_RECIPES = recipemap("sintering_oven")
-for (fuel in sintering_fuels) {
-
-    if (fuel.isPlasma) {
-        SINTERING_RECIPES.recipeBuilder()
+Sintering.plasmaFuels().each { fuel ->
+    SINTERING_OVEN.recipeBuilder()
         .inputs(ore('dustClay'))
         .inputs(ore('dustLimestone'))
         .circuitMeta(1)
@@ -31,7 +28,7 @@ for (fuel in sintering_fuels) {
         .EUt(VA[HV])
         .buildAndRegister()
 
-        SINTERING_RECIPES.recipeBuilder()
+    SINTERING_OVEN.recipeBuilder()
         .inputs(ore('dustClay'))
         .inputs(ore('dustLimestone'))
         .inputs(ore('dustTinyGypsum'))
@@ -43,10 +40,10 @@ for (fuel in sintering_fuels) {
         .duration(fuel.duration)
         .EUt(VA[HV])
         .buildAndRegister()
-
-    } else {
-        for (comburent in sintering_comburents) {
-            SINTERING_RECIPES.recipeBuilder()
+}
+Sintering.nonPlasmaFuels().each { fuel ->
+    Sintering.comburents.each { comburent ->
+        SINTERING_OVEN.recipeBuilder()
             .inputs(ore('dustClay'))
             .inputs(ore('dustLimestone'))
             .circuitMeta(1)
@@ -58,7 +55,7 @@ for (fuel in sintering_fuels) {
             .EUt(VA[ULV])
             .buildAndRegister()
 
-            SINTERING_RECIPES.recipeBuilder()
+        SINTERING_OVEN.recipeBuilder()
             .inputs(ore('dustClay'))
             .inputs(ore('dustLimestone'))
             .inputs(ore('dustTinyGypsum'))
@@ -71,9 +68,7 @@ for (fuel in sintering_fuels) {
             .duration(fuel.duration + comburent.duration)
             .EUt(VA[ULV])
             .buildAndRegister()
-        }
     }
-
 }
 
 def gases = [
