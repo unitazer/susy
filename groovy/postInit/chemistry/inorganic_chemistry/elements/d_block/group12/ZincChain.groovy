@@ -83,12 +83,12 @@ ROASTER.recipeBuilder()
 
 FLUIDIZED_BR.recipeBuilder()
         .notConsumable(metaitem('springKanthal'))
-        .inputs(ore('dustSphalerite') * 8)
-        .fluidInputs(fluid('oxygen') * 16000)
-        .fluidOutputs(fluid('zinc_flue_gas') * 8000)
-        .outputs(metaitem('dustZincite') * 16)
+        .inputs(ore('dustSphalerite'))
+        .fluidInputs(fluid('oxygen') * 2000)
+        .fluidOutputs(fluid('zinc_flue_gas') * 1000)
+        .outputs(metaitem('dustZincite') * 2)
         .EUt(VA[MV])
-        .duration(160)
+        .duration(20)
         .buildAndRegister()     
 
 // Cadmium/Thallium chain for pyrometallurgy start
@@ -111,11 +111,11 @@ ROASTER.recipeBuilder()
 
 FLUIDIZED_BR.recipeBuilder()
         .notConsumable(metaitem('springKanthal'))
-        .inputs(ore('dustSmithsonite') * 8)
-        .fluidOutputs(fluid('carbon_dioxide') * 8000)
-        .outputs(metaitem('dustZincite') * 16)
+        .inputs(ore('dustSmithsonite'))
+        .fluidOutputs(fluid('carbon_dioxide') * 1000)
+        .outputs(metaitem('dustZincite') * 2)
         .EUt(VA[MV])
-        .duration(160)
+        .duration(20)
         .buildAndRegister()
 
 // Conversion to metal via pyrometallurgy

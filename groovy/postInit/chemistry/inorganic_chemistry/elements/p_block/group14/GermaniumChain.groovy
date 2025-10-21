@@ -85,7 +85,7 @@ AUTOCLAVE.recipeBuilder()
     .buildAndRegister()
 
 BR.recipeBuilder()
-    .inputs(ore('dustSmallIron') * 2)
+    .inputs(ore('dustIron'))
     .fluidInputs(fluid('germanium_oxalate_leach') * 8000)
     .outputs(metaitem('dustIronOxalateDihydrate') * 9)
     .fluidOutputs(fluid('purified_germanium_oxalate_leach') * 6000)
@@ -135,7 +135,7 @@ MIXER_SETTLER.recipeBuilder()
     .buildAndRegister()
 
 // 1 Ga2(SO4)3, 3 H2O, 6 oxalic acid
-ELECTROLYZER.recipeBuilder()
+ELECTROLYTIC_CELL.recipeBuilder()
     .notConsumable(ore('stickSteel'))
     .notConsumable(metaitem('graphite_electrode'))
     .fluidInputs(fluid('gallium_sulfate_solution') * 3000)

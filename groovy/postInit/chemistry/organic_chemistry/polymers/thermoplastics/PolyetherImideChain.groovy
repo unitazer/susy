@@ -102,6 +102,13 @@ CRYSTALLIZER.recipeBuilder()
     .EUt(VA[MV])
     .buildAndRegister();
 
+SOLIDIFIER.recipeBuilder()
+    .fluidInputs(fluid('phthalimide') * 144)
+    .outputs(metaitem('dustPhthalimide'))
+    .duration(40)
+    .EUt(Globals.voltAmps[2])
+    .buildAndRegister();
+
 POLYMERIZATION_TANK.recipeBuilder()
     .notConsumable(fluid('nitrogen') * 8000)
     .fluidInputs(fluid('bisphenol_a_dianhydride') * 144)
