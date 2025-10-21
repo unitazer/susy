@@ -2314,7 +2314,7 @@ class SuSyMaterials {
     public static Material NButylIodide
     public static Material AluminiumIsopropoxide
     public static Material HexafluoropropyleneOxide
-    public static Material FluorosulfonylDifluoroacetylFluorideMix
+    public static Material FluorosulfonylDifluoroacetylFluoride
     public static Material PerfluorovinylSulfonylEther
     public static Material RawNafion
     public static Material Nafion
