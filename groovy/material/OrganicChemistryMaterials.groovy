@@ -3052,7 +3052,7 @@ class OrganicChemistryMaterials {
                 .color(0x37877f)
                 .build()
 
-        FluorosulfonylDifluoroacetylFluorideMix.setFormula('(C2F4O3S)(NaF)2', true)
+        FluorosulfonylDifluoroacetylFluoride.setFormula('(C2F4O3S)(NaF)2', true)
 
         PerfluorovinylSulfonylEther = new Material.Builder(15481, SuSyUtility.susyId('perfluorovinyl_sulfonyl_ether'))
                 .liquid()
