@@ -781,6 +781,7 @@ class SuSyMaterials {
     public static Material CrudeAcrylonitrile
     public static Material Ebonite
     public static Material CompoundedEbonite
+    public static Material CeramicCoatingSlurry
 
     // Petrochem Materials
 
