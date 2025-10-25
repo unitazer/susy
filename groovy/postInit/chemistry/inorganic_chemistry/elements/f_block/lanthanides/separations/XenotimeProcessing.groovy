@@ -1,23 +1,6 @@
-import static globals.SinteringGlobals.*
+import static prePostInit.Recipemaps.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
-
-GRAVITY_SEPARATOR = recipemap('gravity_separator')
-MIXER = recipemap('mixer')
-FROTH_FLOTATION = recipemap('froth_flotation')
-CLARIFIER = recipemap('clarifier')
-ROASTER = recipemap('roaster')
-ROTARY_KILN = recipemap('rotary_kiln')
-BR = recipemap('batch_reactor')
-BLENDER = recipemap('blender')
-FLUIDIZED_BED_REACTOR = recipemap('fluidized_bed_reactor')
-ION_EXCHANGE = recipemap('ion_exchange_column')
-LCR = recipemap('large_chemical_reactor')
-ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
-SIFTER = recipemap('sifter')
-VACUUM_CHAMBER = recipemap('vacuum_chamber')
-CRYSTALLIZER = recipemap('crystallizer')
-MACERATOR = recipemap('macerator')
-MIXER_SETTLER = recipemap('mixer_settler')
 
 /* REE Data (%mol)
 La: 0.5
@@ -61,19 +44,17 @@ ELECTROMAGNETIC_SEPARATOR.recipeBuilder()
     .buildAndRegister()
 
 // 2 (REE)PO4 + 3 Na2CO3 -> 2 Na3PO4 + (REE)2O3 + 3 CO2
-for (fuel in sintering_fuels) {
-    if (!fuel.isPlasma) {
-        ROTARY_KILN.recipeBuilder()
-            .inputs(ore('dustSodaAsh') * 18)
-            .inputs(ore('dustConcentrateXenotime') * 2)
-            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-            .fluidInputs(fluid('oxygen') * 50)
-            .outputs(metaitem('dustRoastedXenotime'))
-            .fluidOutputs(fluid('carbon_dioxide') * 3000)
-            .duration(160)
-            .EUt(VA[MV])
-            .buildAndRegister()
-    }
+Sintering.nonPlasmaFuels().each { fuel ->
+    ROTARY_KILN.recipeBuilder()
+        .inputs(ore('dustSodaAsh') * 18)
+        .inputs(ore('dustConcentrateXenotime') * 2)
+        .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+        .fluidInputs(fluid('oxygen') * 50)
+        .outputs(metaitem('dustRoastedXenotime'))
+        .fluidOutputs(fluid('carbon_dioxide') * 3000)
+        .duration(160)
+        .EUt(VA[MV])
+        .buildAndRegister()
 }
 
 MIXER.recipeBuilder()

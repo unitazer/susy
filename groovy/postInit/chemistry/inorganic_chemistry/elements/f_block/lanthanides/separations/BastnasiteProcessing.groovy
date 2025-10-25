@@ -1,23 +1,6 @@
-import static globals.SinteringGlobals.*
+import static prePostInit.Recipemaps.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
-
-GRAVITY_SEPARATOR = recipemap('gravity_separator')
-MIXER = recipemap('mixer')
-FROTH_FLOTATION = recipemap('froth_flotation')
-CLARIFIER = recipemap('clarifier')
-ROASTER = recipemap('roaster')
-ROTARY_KILN = recipemap('rotary_kiln')
-BR = recipemap('batch_reactor')
-FLUIDIZED_BED_REACTOR = recipemap('fluidized_bed_reactor')
-ION_EXCHANGE = recipemap('ion_exchange_column')
-LCR = recipemap('large_chemical_reactor')
-ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
-SIFTER = recipemap('sifter')
-VACUUM_CHAMBER = recipemap('vacuum_chamber')
-CRYSTALLIZER = recipemap('crystallizer')
-MACERATOR = recipemap('macerator')
-AUTOCLAVE = recipemap('autoclave')
-MIXER_SETTLER = recipemap('mixer_settler') 
 
 // Bastnasite Dust * 1
 mods.gregtech.electromagnetic_separator.removeByInput(24, [metaitem('dustPureBastnasite')], null)
@@ -83,22 +66,20 @@ CLARIFIER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-for (fuel in sintering_fuels) {
-    if (!fuel.isPlasma) {
-        ROTARY_KILN.recipeBuilder()
-            .inputs(ore('dustFlotatedBastnasite') * 2)
-            .fluidInputs(fluid('sulfuric_acid') * 3000)
-            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-            .fluidInputs(fluid('oxygen') * 50)
-            .outputs(metaitem('dustRoastedBastnasite') * 2)
-            .fluidOutputs(fluid('hydrogen_fluoride') * 2000)
-            .fluidOutputs(fluid('carbon_dioxide') * 2000)
-            .fluidOutputs(fluid('dense_steam') * 2000)
-            .duration(80)
-            .EUt(VA[HV])
-            .buildAndRegister()
-    }
-}   
+Sintering.nonPlasmaFuels().each { fuel ->
+    ROTARY_KILN.recipeBuilder()
+        .inputs(ore('dustFlotatedBastnasite') * 2)
+        .fluidInputs(fluid('sulfuric_acid') * 3000)
+        .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+        .fluidInputs(fluid('oxygen') * 50)
+        .outputs(metaitem('dustRoastedBastnasite') * 2)
+        .fluidOutputs(fluid('hydrogen_fluoride') * 2000)
+        .fluidOutputs(fluid('carbon_dioxide') * 2000)
+        .fluidOutputs(fluid('dense_steam') * 2000)
+        .duration(80)
+        .EUt(VA[HV])
+        .buildAndRegister()
+}
 
 AUTOCLAVE.recipeBuilder()
     .inputs(ore('dustRoastedBastnasite'))

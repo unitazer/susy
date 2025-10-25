@@ -1,36 +1,8 @@
-import static globals.SinteringGlobals.*
-
+import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
 import static gregtech.api.unification.material.Materials.*;
 import gregtech.api.unification.material.MarkerMaterials;
 import static gregtech.api.unification.ore.OrePrefix.dye;
-
-BR = recipemap('batch_reactor')
-MIXER = recipemap('mixer')
-ELECTROSTATIC_SEPARATOR = recipemap('electrostatic_separator')
-CENTRIFUGE = recipemap('centrifuge')
-DT = recipemap('distillation_tower')
-ROASTER = recipemap('roaster')
-VACUUM_DT = recipemap('vacuum_distillation')
-CRYSTALLIZER = recipemap('crystallizer')
-EXTRACTOR = recipemap('extractor')
-ROTARY_KILN = recipemap('rotary_kiln')
-CSTR = recipemap('continuous_stirred_tank_reactor')
-EBF = recipemap('electric_blast_furnace')
-REFORMER = recipemap('catalytic_reformer_recipes')
-REACTION_FURNACE = recipemap('reaction_furnace')
-FBR = recipemap('fixed_bed_reactor')
-SIFTER = recipemap('sifter')
-ALLOY_SMELTER = recipemap('alloy_smelter')
-POLYMERIZATION_TANK = recipemap('polymerization_tank')
-BCR = recipemap('bubble_column_reactor')
-TBR = recipemap('trickle_bed_reactor')
-LCR = recipemap('large_chemical_reactor')
-AUTOCLAVE = recipemap('autoclave')
-HEAT_EXCHANGER = recipemap('heat_exchanger')
-UV_LIGHT_BOX = recipemap('uv_light_box')
-BLENDER = recipemap('blender')
-PHASE_SEPARATOR = recipemap('phase_separator')
 
 // Lubricant base oils
 
@@ -93,7 +65,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 
         // Hydrodewaxing
 
-        FBR.recipeBuilder()
+        FIXED_BR.recipeBuilder()
             .fluidInputs(fluid('crude_lubricating_oil') * 850)
             .fluidInputs(fluid('hydrogen') * 315)
             .notConsumable(metaitem('catalystBedPlatinumSapoEleven'))
@@ -103,7 +75,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
             .EUt(VA[LV])
             .buildAndRegister()
 
-        FBR.recipeBuilder()
+        FIXED_BR.recipeBuilder()
             .fluidInputs(fluid('deasphalted_oil') * 850)
             .fluidInputs(fluid('hydrogen') * 315)
             .notConsumable(metaitem('catalystBedPlatinumSapoEleven'))
@@ -115,7 +87,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 
         // Hydrofinishing
 
-        FBR.recipeBuilder()
+        FIXED_BR.recipeBuilder()
             .fluidInputs(fluid('sulfuric_lubricating_oil') * 850)
             .fluidInputs(fluid('hydrogen') * 100)
             .notConsumable(metaitem('catalystBedHydrotreatingCatalyst'))
@@ -204,7 +176,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
         .EUt(VA[MV])
         .buildAndRegister()
 
-    DISTILLATION_TOWER.recipeBuilder()
+    DT.recipeBuilder()
         .fluidInputs(fluid('n_butanol_waste') * 1250)
         .fluidOutputs(fluid('n_butanol') * 250)
         .fluidOutputs(fluid('wastewater') * 1000)
@@ -212,7 +184,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
         .EUt(VA[MV])
         .buildAndRegister()
 
-    FBR.recipeBuilder()
+    FIXED_BR.recipeBuilder()
         .fluidInputs(fluid('unsaturated_polyalphaolefin') * 50)
         .fluidInputs(fluid('hydrogen') * 100)
         .notConsumable(metaitem('catalystBedSupportedPalladium'))
@@ -224,7 +196,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 
     // Polybutenes
 
-    POLYMERIZATION.recipeBuilder()
+    POLYMERIZATION_TANK.recipeBuilder()
         .fluidInputs(fluid('butene') * 4000)
         .fluidInputs(fluid('olefin_polymerization_initiator') * 500)
         .fluidOutputs(fluid('polybutene_mixture') * 4125)
@@ -418,7 +390,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
         .EUt(VA[MV])
         .buildAndRegister()
 
-    FBR.recipeBuilder()
+    FIXED_BR.recipeBuilder()
         .inputs(ore('dustOneNitronaphthalene'))
         .notConsumable(ore('catalystBedNickel'))
         .fluidInputs(fluid('hydrogen') * 6000)
@@ -439,7 +411,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 // Pour point depressants
 
     // Polyisobutene
-    POLYMERIZATION.recipeBuilder()
+    POLYMERIZATION_TANK.recipeBuilder()
         .fluidInputs(fluid('isobutylene') * 4000)
         .fluidInputs(fluid('olefin_polymerization_initiator') * 500)
         .fluidOutputs(fluid('polyisobutene_mixture') * 4125)
@@ -458,7 +430,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 
     // Ethylene propylene copolymer
 
-    POLYMERIZATION.recipeBuilder()
+    POLYMERIZATION_TANK.recipeBuilder()
         .circuitMeta(2)
         .notConsumable(metaitem('dustKaminskyCatalyst'))
         .fluidInputs(fluid('ethylene') * 1000)
@@ -498,7 +470,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
         .EUt(VA[LV])
         .buildAndRegister()
 
-    POLYMERIZATION.recipeBuilder()
+    POLYMERIZATION_TANK.recipeBuilder()
         .fluidInputs(fluid('alkyl_methacrylate_emulsion') * 2000)
         .inputs(ore('dustTinyPotassiumPersulfate'))
         .fluidOutputs(fluid('polyalkyl_methacrylate_solution') * 2000)
@@ -624,7 +596,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 
     // Polyisobutene succinic anhydride
 
-    FLUIDIZEDBR.recipeBuilder()
+    FLUIDIZED_BR.recipeBuilder()
         .fluidInputs(fluid('butane') * 1000)
         .fluidInputs(fluid('oxygen') * 7000)
         .notConsumable(ore('dustVanadiumPentoxide'))
@@ -657,7 +629,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 
     // Polyethylene glycol
 
-    POLYMERIZATION.recipeBuilder()
+    POLYMERIZATION_TANK.recipeBuilder()
         .fluidInputs(fluid('ethylene_oxide') * 1000)
         .fluidInputs(fluid('boron_trifluoride') * 10)
         .fluidOutputs(fluid('polyethylene_glycol') * 1000)
@@ -669,7 +641,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 
     // Tri-(m/p)-cresylphosphate
 
-    DISTILLATION_TOWER.recipeBuilder()
+    DT.recipeBuilder()
         .fluidInputs(fluid('cresol') * 1000)
         .fluidOutputs(fluid('meta_para_cresol_mixture') * 700) // needs to be slightly higher than SATP
         .fluidOutputs(fluid('ortho_cresol') * 300)
@@ -752,7 +724,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 
     // Zinc-bis(diethyldithiocarbamate)
 
-    FBR.recipeBuilder()
+    FIXED_BR.recipeBuilder()
         .notConsumable(metaitem('catalystBedAlumina'))
         .fluidInputs(fluid('n_pentanol') * 100)
         .fluidInputs(fluid('ammonia') * 50)
@@ -891,7 +863,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
         .EUt(VA[LV])
         .buildAndRegister()
 
-    DISTILLATION_TOWER.recipeBuilder()
+    DT.recipeBuilder()
         .fluidInputs(fluid('ortho_phenylenediamine_slurry') * 3000)
         .fluidOutputs(fluid('toluene') * 1000)
         .fluidOutputs(fluid('water') * 2000)

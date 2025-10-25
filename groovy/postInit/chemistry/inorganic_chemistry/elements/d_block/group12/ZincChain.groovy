@@ -1,38 +1,8 @@
+import static prePostInit.Recipemaps.*
 import globals.Carbons
-import static globals.SinteringGlobals.*
+import globals.Sintering
 import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ingredients.GTRecipeItemInput;
-
-FLOTATION = recipemap('froth_flotation')
-CLARIFIER = recipemap('clarifier')
-CSTR = recipemap('continuous_stirred_tank_reactor')
-TBR = recipemap('trickle_bed_reactor')
-FBR = recipemap('fixed_bed_reactor')
-BCR = recipemap('bubble_column_reactor')
-BR = recipemap('batch_reactor')
-FLUIDIZEDBR = recipemap('fluidized_bed_reactor')
-HT_DISTILLATION_TOWER = recipemap('high_temperature_distillation')
-DISTILLERY = recipemap('distillery')
-ROASTER = recipemap('roaster')
-MIXER = recipemap('mixer')
-DRYER = recipemap('dryer')
-SIFTER = recipemap('sifter')
-CENTRIFUGE = recipemap('centrifuge')
-PYROLYSE = recipemap('pyrolyse_oven')
-LCR = recipemap('large_chemical_reactor')
-EBF = recipemap('electric_blast_furnace')
-VULCANIZER = recipemap('vulcanizing_press')
-ALLOY_SMELTER = recipemap('alloy_smelter')
-ARC_FURNACE = recipemap('arc_furnace')
-AUTOCLAVE = recipemap('autoclave')
-CHEMICAL_BATH = recipemap('chemical_bath')
-ASSEMBLER = recipemap('assembler')
-ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
-REACTION_FURNACE = recipemap('reaction_furnace')
-ELECTROMAGNETIC_SEPARATOR = recipemap('electromagnetic_separator')
-FLUID_HEATER = recipemap('fluid_heater')
-ROTARY_KILN = recipemap('rotary_kiln')
-FLUID_SOLIDIFIER = recipemap('fluid_solidifier')
 
 // Zincite Dust * 1
 mods.gregtech.electric_blast_furnace.removeByInput(120, [metaitem('dustSphalerite')], [fluid('oxygen') * 3000])
@@ -46,7 +16,7 @@ MIXER.recipeBuilder()
         .duration(80)
         .buildAndRegister()
 
-FLOTATION.recipeBuilder()
+FROTH_FLOTATION.recipeBuilder()
         .fluidInputs(fluid('impure_sphalerite_slurry') * 16000)
         .notConsumable(metaitem('dustSodiumEthylXanthate'))
         .notConsumable(fluid('cresol') * 100)
@@ -57,7 +27,7 @@ FLOTATION.recipeBuilder()
         .duration(80)
         .buildAndRegister()
 
-FLOTATION.recipeBuilder()
+FROTH_FLOTATION.recipeBuilder()
         .fluidInputs(fluid('unprocessed_sphalerite_slurry') * 16000)
         .notConsumable(metaitem('dustPotassiumAmylXanthate'))
         .notConsumable(fluid('soda_ash_solution') * 1000)
@@ -83,7 +53,7 @@ MIXER.recipeBuilder()
         .duration(80)
         .buildAndRegister()
 
-FLOTATION.recipeBuilder()
+FROTH_FLOTATION.recipeBuilder()
         .fluidInputs(fluid('impure_smithsonite_slurry') * 16000)
         .notConsumable(metaitem('dustSodiumEthylXanthate'))
         .notConsumable(fluid('cresol') * 100)
@@ -111,8 +81,8 @@ ROASTER.recipeBuilder()
         .duration(200)
         .buildAndRegister()
 
-FLUIDIZEDBR.recipeBuilder()
-		.notConsumable(metaitem('springKanthal'))
+FLUIDIZED_BR.recipeBuilder()
+        .notConsumable(metaitem('springKanthal'))
         .inputs(ore('dustSphalerite') * 8)
         .fluidInputs(fluid('oxygen') * 16000)
         .fluidOutputs(fluid('zinc_flue_gas') * 8000)
@@ -139,8 +109,8 @@ ROASTER.recipeBuilder()
         .duration(200)
         .buildAndRegister()
 
-FLUIDIZEDBR.recipeBuilder()
-		.notConsumable(metaitem('springKanthal'))
+FLUIDIZED_BR.recipeBuilder()
+        .notConsumable(metaitem('springKanthal'))
         .inputs(ore('dustSmithsonite') * 8)
         .fluidOutputs(fluid('carbon_dioxide') * 8000)
         .outputs(metaitem('dustZincite') * 16)
@@ -172,7 +142,7 @@ for (highPurityCombustible in Carbons.highPurityCombustibles()) {
             .buildAndRegister()
 }
 
-FLUID_SOLIDIFIER.recipeBuilder()
+SOLIDIFIER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.ingot'))
         .fluidInputs(fluid('crude_zinc') * 216)
         .outputs(metaitem('ingotZinc'))
@@ -180,7 +150,7 @@ FLUID_SOLIDIFIER.recipeBuilder()
         .duration(20)
         .buildAndRegister()
 
-FLUID_SOLIDIFIER.recipeBuilder()
+SOLIDIFIER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.ingot'))
         .fluidInputs(fluid('cadmium_rich_zinc') * 180)
         .outputs(metaitem('ingotZinc'))
@@ -188,7 +158,7 @@ FLUID_SOLIDIFIER.recipeBuilder()
         .duration(20)
         .buildAndRegister()
 
-HT_DISTILLATION_TOWER.recipeBuilder()
+HIGH_TEMP_DT.recipeBuilder()
         .fluidInputs(fluid('crude_zinc') * 2160)
         .chancedOutput(metaitem('dustIron'), 200, 100)
         .fluidOutputs(fluid('cadmium_rich_zinc') * 2160)
@@ -199,7 +169,7 @@ HT_DISTILLATION_TOWER.recipeBuilder()
         .duration(300)
         .buildAndRegister()
 
-HT_DISTILLATION_TOWER.recipeBuilder()
+HIGH_TEMP_DT.recipeBuilder()
         .fluidInputs(fluid('cadmium_rich_zinc') * 2160)
         .fluidOutputs(fluid('zinc') * 2160)
         .fluidOutputs(fluid('cadmium') * 144)
@@ -348,20 +318,20 @@ carbons = new ItemStack[]{
         metaitem('dustCoke')
 }
 
-for (fuel in rotary_kiln_fuels) {
-	for (comburent in rotary_kiln_comburents) {
-		ROTARY_KILN.recipeBuilder()
-			.inputs(ore('dustZincOxideFume') * 2)
-			.input(new GTRecipeItemInput(carbons, 1))
-			.outputs(metaitem('dustWaelzOxide'))
-			.outputs(metaitem('dustWaelzSlag'))
-			.fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-			.fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-			.fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-			.duration(fuel.duration + comburent.duration)
-			.EUt(VA[MV])
-			.buildAndRegister()
-	}
+Sintering.RotaryKiln.fuels.each { fuel ->
+    Sintering.RotaryKiln.comburents.each { comburent ->
+        ROTARY_KILN.recipeBuilder()
+            .inputs(ore('dustZincOxideFume') * 2)
+            .input(new GTRecipeItemInput(carbons, 1))
+            .outputs(metaitem('dustWaelzOxide'))
+            .outputs(metaitem('dustWaelzSlag'))
+            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+            .duration(fuel.duration + comburent.duration)
+            .EUt(VA[MV])
+            .buildAndRegister()
+    }
 }
 
 CENTRIFUGE.recipeBuilder()
