@@ -10,11 +10,11 @@ ROASTER.recipeBuilder()
     .buildAndRegister();
 
 CSTR.recipeBuilder()
-    .inputs(ore('dustSodiumFluoride') * 4)
-    .fluidInputs(fluid('tetrafluoroethylene') * 1000)
-    .fluidInputs(fluid('sulfur_trioxide') * 1000)
-    .fluidOutputs(fluid('fluorosulfonyl_difluoroacetyl_fluoride') * 1000)
-    .duration(100)
+    .notConsumable(ore('dustSodiumFluoride') * 2)
+    .fluidInputs(fluid('tetrafluoroethylene') * 50)
+    .fluidInputs(fluid('sulfur_trioxide') * 50)
+    .fluidOutputs(fluid('fluorosulfonyl_difluoroacetyl_fluoride') * 50)
+    .duration(5)
     .EUt(VA[HV])
     .buildAndRegister();
 
