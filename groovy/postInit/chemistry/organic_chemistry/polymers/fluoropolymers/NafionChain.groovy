@@ -31,7 +31,6 @@ LCR.recipeBuilder()
 
 DT.recipeBuilder()
     .fluidInputs(fluid('perfluorovinyl_sulfonyl_ether_solution') * 3000)
-    .outputs(metaitem('dustSodiumFluoride') * 4)
     .fluidOutputs(fluid('perfluorovinyl_sulfonyl_ether') * 1000)
     .fluidOutputs(fluid('dimethylformamide') * 2000)
     .duration(100)
