@@ -295,6 +295,14 @@ for (solder in soldering_alloys) {
 
 MIXER.recipeBuilder()
         .inputs(ore('dustClay'))
+        .fluidInputs(liquid('gasoline') * 1000)
+        .outputs(item('openmodularturrets:ammo_meta:0')*32)
+        .duration(20)
+        .EUt(VA[LV])
+        .buildAndRegister();
+
+MIXER.recipeBuilder()
+        .inputs(ore('dustClay'))
         .fluidInputs(liquid('napalm') * 1000)
         .outputs(item('openmodularturrets:ammo_meta:0')*32)
         .duration(20)
