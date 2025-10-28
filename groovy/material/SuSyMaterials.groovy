@@ -781,6 +781,7 @@ class SuSyMaterials {
     public static Material CrudeAcrylonitrile
     public static Material Ebonite
     public static Material CompoundedEbonite
+    public static Material CeramicCoatingSlurry
 
     // Petrochem Materials
 
@@ -1603,6 +1604,8 @@ class SuSyMaterials {
     public static Material YttriaStabilizedZirconia
     public static Material BismuthIIINitrateSolution
     public static Material LeadIVOxide
+    public static Material AluminiumAlloy6061
+    public static Material AluminiumAlloy7075
 
     // HP Materials
 

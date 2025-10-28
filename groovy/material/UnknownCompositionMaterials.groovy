@@ -3154,5 +3154,11 @@ class UnknownCompositionMaterials {
                 .flags(NO_UNIFICATION)
                 .color(0x2b1e0c)
                 .build()
+
+        CeramicCoatingSlurry = new Material.Builder(4686, SuSyUtility.susyId('ceramic_coating_slurry'))
+                .fluid()
+                .flags(NO_UNIFICATION)
+                .color(0xc9c6b8)
+                .build()
     }
 }

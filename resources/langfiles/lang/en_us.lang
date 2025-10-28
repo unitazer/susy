@@ -2698,6 +2698,9 @@ susy.material.fuel_cell_catalyst_solution=Fuel Cell Catalyst Solution
 susy.material.polytetrafluoroethylene_coating_solution=Polytetrafluoroethylene Coating Solution
 susy.material.acetonitrile=Acetonitrile
 susy.material.lead_iv_oxide=Lead IV Oxide
+susy.material.aluminium_alloy_6061=6061 Aluminium Alloy
+susy.material.aluminium_alloy_7075=7075 Aluminium Alloy
+susy.material.ceramic_coating_slurry=Ceramic-Coating Slurry
 
 # Isotopes
 
@@ -3167,6 +3170,10 @@ metaitem.display.mars.name=Mars
 metaitem.parachute.drogue.name=Drogue Parachute
 metaitem.parachute.main.name=Subsonic Main Parachute
 metaitem.parachute.supersonic_main.name=Supersonic Disk-Gap-Band Parachute
+
+metaitem.coated_copper_coil.name=Ceramic-Coated Copper Tubing
+metaitem.cured_coated_coil.name=Cured Ceramic-Coated Copper Tubing
+metaitem.induction_coil.name=Induction Coil
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
