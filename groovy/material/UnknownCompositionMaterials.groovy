@@ -3157,53 +3157,17 @@ class UnknownCompositionMaterials {
 
         NaphthenicAcid = new Material.Builder(4686, SuSyUtility.susyId('naphthenic_acid'))
                 .liquid()
-                .color(0x5E5925)
+                .color(0x5e5925)
                 .build()
 
-        ImpureSodiumSoapSolution = new Material.Builder(4687, SuSyUtility.susyId('impure_sodium_soap_solution'))
-                .liquid()
-                .color(0xC8C9B4)
-                .build()
-
-        ClarifiedSodiumSoapSolution = new Material.Builder(4688, SuSyUtility.susyId('clarified_sodium_soap_solution'))
-                .liquid()
-                .color(0xF3F3EF)
-                .build()
-
-        SodiumSoapSolution = new Material.Builder(4689, SuSyUtility.susyId('sodium_soap_solution'))
-                .liquid()
-                .color(0xBAD4E8)
-                .build()
-
-        ClearSodiumSoapSolution = new Material.Builder(4690, SuSyUtility.susyId('clear_sodium_soap_solution'))
-                .liquid()
-                .color(0xE6F2FD)
-                .build()
-
-        ColloidalAluminiumSoap = new Material.Builder(4691, SuSyUtility.susyId('colloidal_aluminium_soap'))
-                .liquid()
-                .color(0xAC75B6)
-                .build()
-
-        Napalm = new Material.Builder(4692, SuSyUtility.susyId('napalm'))
-                .liquid()
-                .color(0xFEF7BA)
-                .flags(FLAMMABLE)
-                .build()
-
-        ImpureAluminiumSoap = new Material.Builder(4693, SuSyUtility.susyId('impure_aluminium_soap'))
+        NapalmGellingAgent = new Material.Builder(4687, SuSyUtility.susyId('napalm_gelling_agent'))
                 .dust()
-                .color(0xC8CAA5)
+                .color(0xf3e997)
                 .build()
 
-        WetAluminiumSoap = new Material.Builder(4694, SuSyUtility.susyId('wet_aluminium_soap'))
-                .dust()
-                .color(0xDCDFB0)
-                .build()
-
-        NapalmGellingAgent = new Material.Builder(4695, SuSyUtility.susyId('napalm_gelling_agent'))
-                .dust()
-                .color(0xF3E997)
+        SodiumNaphthenateSolution = new Material.Builder(4688, SuSyUtility.susyId('sodium_naphthenate_solution'))
+                .liquid()
+                .color(0x073017)
                 .build()
     }
 }

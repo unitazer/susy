@@ -782,14 +782,7 @@ class SuSyMaterials {
     public static Material Ebonite
     public static Material CompoundedEbonite
     public static Material NaphthenicAcid
-    public static Material ImpureSodiumSoapSolution
-    public static Material ClarifiedSodiumSoapSolution
-    public static Material SodiumSoapSolution
-    public static Material ClearSodiumSoapSolution
-    public static Material ColloidalAluminiumSoap
     public static Material Napalm
-    public static Material ImpureAluminiumSoap
-    public static Material WetAluminiumSoap
     public static Material NapalmGellingAgent
 
     // Petrochem Materials
@@ -829,12 +822,14 @@ class SuSyMaterials {
     public static Material Kerosene
     public static Material CrudeKerosene
     public static Material SulfuricKerosene
+    public static Material AlkaliTreatedKerosene
     public static Material HeatedKerosene
     public static Material TreatedSulfuricKerosene
 
     public static Material LightGasOil
     public static Material CrudeLightGasOil
     public static Material SulfuricLightGasOil
+    public static Material AlkaliTreatedLightGasOil
     public static Material HeatedLightGasOil
     public static Material TreatedSulfuricLightGasOil
     public static Material SteamcrackedLightGasOil
@@ -2340,6 +2335,7 @@ class SuSyMaterials {
     public static Material DichlorodiphenylSulfone
     public static Material Polysulfone
     public static Material Acetonitrile
+    public static Material MyristicAcid
     
     // Third Degree Materials
 
