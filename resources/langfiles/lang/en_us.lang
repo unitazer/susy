@@ -2705,6 +2705,9 @@ susy.material.alkali_treated_kerosene=Alkali Treated Kerosene
 susy.material.alkali_treated_light_gas_oil=Alkali Treated Light Gas Oil
 susy.material.sodium_naphthenate_solution=Sodium Naphthenate Solution
 susy.material.napalm_gelling_agent=Napalm Gelling Agent
+susy.material.aluminium_alloy_6061=6061 Aluminium Alloy
+susy.material.aluminium_alloy_7075=7075 Aluminium Alloy
+susy.material.ceramic_coating_slurry=Ceramic-Coating Slurry
 
 # Isotopes
 
@@ -3174,6 +3177,10 @@ metaitem.display.mars.name=Mars
 metaitem.parachute.drogue.name=Drogue Parachute
 metaitem.parachute.main.name=Subsonic Main Parachute
 metaitem.parachute.supersonic_main.name=Supersonic Disk-Gap-Band Parachute
+
+metaitem.coated_copper_coil.name=Ceramic-Coated Copper Tubing
+metaitem.cured_coated_coil.name=Cured Ceramic-Coated Copper Tubing
+metaitem.induction_coil.name=Induction Coil
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
