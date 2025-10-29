@@ -314,7 +314,7 @@ Globals.solders.each { key, val ->
     }
 
     for (fuel in thermobaric_fuels) {
-        LARGE_WEAPONS_FACTORY.recipeBuilder()
+        WEAPONS_FACTORY.recipeBuilder()
             .inputs([
                 metaitem('fluid_cell') * 8,
                 item('icbmclassic:explosives:6') * 8,
@@ -330,7 +330,7 @@ Globals.solders.each { key, val ->
 
     //Explosives tier 4
     //Nuclear explosive
-    LARGE_WEAPONS_FACTORY.recipeBuilder()
+    WEAPONS_FACTORY.recipeBuilder()
         .inputs([
             ore('componentCapacitor') * 8,
             ore('wireFinePlatinum') * 32,
@@ -348,7 +348,7 @@ Globals.solders.each { key, val ->
         .EUt(1200)
         .buildAndRegister();
 
-    LARGE_WEAPONS_FACTORY.recipeBuilder()
+    WEAPONS_FACTORY.recipeBuilder()
         .inputs([
             ore('componentCapacitor') * 8,
             ore('wireFinePlatinum') * 8,
