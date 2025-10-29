@@ -1,0 +1,17 @@
+{
+  "preRequisites:11": [
+    593
+  ],
+  "properties:10": {
+    "betterquesting:10": {
+      "desc:8": "susy.quest.db.1234205834.desc",
+      "icon:10": {
+        "Damage:2": 150,
+        "id:8": "techguns:itemshared"
+      },
+      "name:8": "susy.quest.db.1234205834.title"
+    }
+  },
+  "questID:3": 1234205834,
+  "tasks:9": {}
+}

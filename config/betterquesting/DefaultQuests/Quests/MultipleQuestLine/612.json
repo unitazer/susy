@@ -4,24 +4,24 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.626.desc",
+      "desc:8": "susy.quest.db.612.desc",
       "icon:10": {
-        "id:8": "openmodularturrets:rocket_turret"
+        "id:8": "openmodularturrets:grenade_turret"
       },
-      "name:8": "susy.quest.db.626.title"
+      "name:8": "susy.quest.db.612.title"
     }
   },
-  "questID:3": 626,
+  "questID:3": 612,
   "tasks:9": {
     "0:10": {
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "id:8": "openmodularturrets:rocket_turret"
+          "id:8": "openmodularturrets:grenade_turret"
         },
         "1:10": {
           "Count:3": 1,
-          "Damage:2": 4,
+          "Damage:2": 3,
           "id:8": "openmodularturrets:ammo_meta"
         }
       },
