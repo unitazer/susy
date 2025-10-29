@@ -4,13 +4,13 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "No Description",
+      "desc:8": "susy.quest.db.375402176.desc",
       "icon:10": {
         "Count:3": 1,
         "Damage:2": 18502,
         "id:8": "gregtech:machine"
       },
-      "name:8": "Induction Furnace"
+      "name:8": "susy.quest.db.375402176.title"
     }
   },
   "questID:3": 375402176,
