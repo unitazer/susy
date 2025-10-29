@@ -513,7 +513,7 @@ Globals.solders.each { key, val ->
 
             WEAPONS_FACTORY.recipeBuilder()
                 .inputs([
-                    ore('plateStainlessSteel') * 2,
+                    ore('plateTungstenSteel') * 2,
                     s_oxy,
                     s_fuel,
                     ore('wireFineRedAlloy')
@@ -522,7 +522,7 @@ Globals.solders.each { key, val ->
                 .fluidInputs(fluid(key) * val)
                 .outputs(item('openmodularturrets:ammo_meta:4') * 8)
                 .duration(20)
-                .EUt(200)
+                .EUt(VA[EV])
                 .buildAndRegister();
 
             WEAPONS_FACTORY.recipeBuilder()
