@@ -2703,6 +2703,8 @@ susy.material.lead_iv_oxide=Lead IV Oxide
 susy.material.myristic_acid=Myristic Acid
 susy.material.alkali_treated_kerosene=Alkali Treated Kerosene
 susy.material.alkali_treated_light_gas_oil=Alkali Treated Light Gas Oil
+susy.material.sodium_naphthenate_solution=Sodium Naphthenate Solution
+susy.material.napalm_gelling_agent=Napalm Gelling Agent
 
 # Isotopes
 

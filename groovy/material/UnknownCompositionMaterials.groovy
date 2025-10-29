@@ -3169,5 +3169,11 @@ class UnknownCompositionMaterials {
                 .liquid()
                 .color(0x073017)
                 .build()
+
+        Napalm = new Material.Builder(4689, SuSyUtility.susyId('napalm'))
+                .liquid()
+                .color(0xFEF7BA)
+                .flags(FLAMMABLE)
+                .build()
     }
 }

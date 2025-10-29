@@ -4,25 +4,25 @@ import static gregtech.api.GTValues.*
 
 fractions.each { _, fraction ->
     if (fraction.sulfuric) {
-        if (!fraction.naphthenic) {
-            FLUID_HEATER.recipeBuilder()
-                .fluidInputs(fraction.getSulfuric(1000))
-                .fluidOutputs(fraction.getHeated(1000))
-                .duration(40)
-                .EUt(VA[LV])
-                .buildAndRegister()
-        } else {
+        if (fraction.naphthenic) {
             CENTRIFUGE.recipeBuilder()
                 .fluidInputs(fraction.getSulfuric(1000))
-                .fluidInputs(fluid('diluted_sodium_hydroxide_solution') * fraction.naphthenic_acid_content * 2)
+                .fluidInputs(fluid('diluted_sodium_hydroxide_solution') * (fraction.naphthenic_acid_content * 2))
                 .fluidOutputs(fraction.getAlkaliTreated(1000))
-                .fluidOutputs(fluid('sodium_naphthenate_solution') * fraction.naphthenic_acid_content * 2)
+                .fluidOutputs(fluid('sodium_naphthenate_solution') * (fraction.naphthenic_acid_content * 2))
                 .duration(60)
                 .EUt(VA[LV])
                 .buildAndRegister()
 
             FLUID_HEATER.recipeBuilder()
                 .fluidInputs(fraction.getAlkaliTreated(1000))
+                .fluidOutputs(fraction.getHeated(1000))
+                .duration(40)
+                .EUt(VA[LV])
+                .buildAndRegister()
+        } else {
+            FLUID_HEATER.recipeBuilder()
+                .fluidInputs(fraction.getSulfuric(1000))
                 .fluidOutputs(fraction.getHeated(1000))
                 .duration(40)
                 .EUt(VA[LV])

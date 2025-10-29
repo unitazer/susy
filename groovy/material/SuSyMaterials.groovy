@@ -784,6 +784,7 @@ class SuSyMaterials {
     public static Material NaphthenicAcid
     public static Material Napalm
     public static Material NapalmGellingAgent
+    public static Material SodiumNaphthenateSolution
 
     // Petrochem Materials
 

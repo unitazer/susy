@@ -112,6 +112,7 @@ class Petrochemistry {
         String name
         boolean strippable = false
         boolean sulfuric = false
+        boolean naphthenic = false
 
         OilFraction(String name) {
             this.name = name
