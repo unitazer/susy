@@ -3154,5 +3154,11 @@ class OrganicChemistryMaterials {
                 .components(Carbon * 2, Hydrogen * 3, Nitrogen)
                 .color(0x275e75)
                 .build()
+
+        MyristicAcid = new Material.Builder(15496, SuSyUtility.susyId('myristic_acid'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .components(Carbon * 14, Hydrogen * 28, Oxygen * 2)
+                .color(0xd99441)
+                .build()
     }
 }
