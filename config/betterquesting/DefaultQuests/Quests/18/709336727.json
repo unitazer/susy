@@ -1,0 +1,45 @@
+{
+  "preRequisites:11": [
+    222
+  ],
+  "properties:10": {
+    "betterquesting:10": {
+      "desc:8": "Does Light Concrete sound §7§ounderqualified §ffor your Industrial Factory?\n\nThen reinforce your walls with §bIndustrial Concrete!\n\n§fYou can make Industrial concrete by adding §6Steel Frames §fto your normal concrete, if not you can craft §bIndustrial Cinder Bricks §fand §bSmooth Industrial Concrete §fto add more design.\n\nAside from these, you can compliment your buildings with §eDotted Panels§f, craftable with Wrought Iron.\n\nNow these are materials §bQualified§f for your factory.",
+      "icon:10": {
+        "Count:3": 1,
+        "Damage:2": 9,
+        "id:8": "susy:susy_stone_bricks"
+      },
+      "name:8": "INDUSTRIAL Concrete and Dotted Panels"
+    }
+  },
+  "questID:3": 709336727,
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 9,
+          "id:8": "susy:susy_stone_smooth"
+        },
+        "1:10": {
+          "Count:3": 1,
+          "Damage:2": 4,
+          "id:8": "susy:random_concrete"
+        },
+        "2:10": {
+          "Count:3": 1,
+          "Damage:2": 8,
+          "id:8": "susy:random_concrete"
+        },
+        "3:10": {
+          "Count:3": 1,
+          "Damage:2": 14,
+          "id:8": "susy:random_concrete"
+        }
+      },
+      "taskID:8": "bq_standard:retrieval"
+    }
+  }
+}
