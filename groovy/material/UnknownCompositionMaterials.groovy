@@ -3155,7 +3155,28 @@ class UnknownCompositionMaterials {
                 .color(0x2b1e0c)
                 .build()
 
-        CeramicCoatingSlurry = new Material.Builder(4686, SuSyUtility.susyId('ceramic_coating_slurry'))
+        NaphthenicAcid = new Material.Builder(4686, SuSyUtility.susyId('naphthenic_acid'))
+                .liquid()
+                .color(0x5e5925)
+                .build()
+
+        NapalmGellingAgent = new Material.Builder(4687, SuSyUtility.susyId('napalm_gelling_agent'))
+                .dust()
+                .color(0xf3e997)
+                .build()
+
+        SodiumNaphthenateSolution = new Material.Builder(4688, SuSyUtility.susyId('sodium_naphthenate_solution'))
+                .liquid()
+                .color(0x073017)
+                .build()
+
+        Napalm = new Material.Builder(4689, SuSyUtility.susyId('napalm'))
+                .liquid()
+                .color(0xFEF7BA)
+                .flags(FLAMMABLE)
+                .build()
+
+        CeramicCoatingSlurry = new Material.Builder(4690, SuSyUtility.susyId('ceramic_coating_slurry'))
                 .fluid()
                 .flags(NO_UNIFICATION)
                 .color(0xc9c6b8)
