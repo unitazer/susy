@@ -410,15 +410,6 @@ dyes.each { dye, number ->
 //Custom Susy Blocks for Black Mesa style Research Facility
 
 //Industrial Concrete
-ASSEMBLER.recipeBuilder()
-    .inputs(metaitem('frameSteel')) 
-    .inputs(metaitem('dustStone'))
-    .fluidInputs(fluid('concrete') * 144) 
-    .outputs(item('susy:random_concrete') * 8) 
-    .duration(80)
-    .EUt(VA[LV])
-    .buildAndRegister()
-
 def concretes = [1, 2, 3]
 
 concretes.each { number ->
@@ -435,6 +426,16 @@ concretes.each { number ->
 
 ASSEMBLER.recipeBuilder()
     .circuitMeta(4)
+    .inputs(metaitem('frameSteel')) 
+    .inputs(metaitem('dustStone'))
+    .fluidInputs(fluid('concrete') * 144) 
+    .outputs(item('susy:random_concrete') * 8) 
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+    .circuitMeta(5)
     .inputs(metaitem('frameSteel')) 
     .inputs(metaitem('dustStone'))
     .fluidInputs(fluid('concrete') * 144) 
