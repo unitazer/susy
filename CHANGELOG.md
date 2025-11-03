@@ -1,3 +1,47 @@
+# UPDATE 0.1.15.9
+## Changes
+### New Features
+- 6061 and 7075 Aluminium Alloys are now craftable! I wonder what you'll need this for. (#1710 by @Fiery36)
+- More decoration blocks, like asbestos wool, are now available for you to craft! (#1711 by @Rick8484)
+- The NiFe MV battery has now replaced the MV sodium battery. (#1689 by @trexxet)
+### Changed Features
+- Techbro houses no longer spawn quite as often as before, and the loot tables are now correct. (#1696 by @oliwier509)
+- Stainless steel no longer uses small dusts. (#1700 by @Rick8484)
+### Fixes
+- Resolve the conflict between LT and Universal Tweaks (#1692 by @Rick8484)
+- Sodium sulfate solution can now be made from sodium sulfate dust. (#1699 by @Fiery36)
+Many more bugfixes were made by @Rick8484, @Fiery36, and @trexxet. Thank you for keeping the pack stable!
+### TODO: Uncategorized Changes (Please Categorize)
+- updating PR (#1677 by @oliwier509)
+# UPDATE 0.1.15.8
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.78 → v0.1.79
+- Universal Mod Core 1.12.2-forge-1.2.1 → 1.12.2-forge-1.2.2-3d12767
+- GroovyScript 1.2.5 → 1.3.1
+- ModularUI 2.5.0 → 3.0.3
+- Inventory Bogo Sorter 1.4.11 → 1.5.0
+- Fixeroo 2.3.6b → 2.3.6
+- Fugue 0.20.4 → 0.21.0
+- SussyPatches 1.6.4 → 1.8.0
+### Mod Additions
+- Key Binding Patch → 1.12.2] Key Binding Patch v1.3.3.3 - 2024-12-1
+- Aqua Acrobatics [Forge] → 1.15.4
+## Changes
+### New Features
+- Parachute items are now craftable; you'll need them eventually... (#1671 by @lemonelk)
+- Ore vein displays are now much easier to read! (#1688 by @MCTian-mi)
+- Aqua Acrobatics is now available! (#1690 by @MCTian-mi)
+### Changed Features
+- Batteries now require specialized hardened rubber! (#1687 by @trexxet)
+- [Susy-Core] Refractory gunning mixture usage has been balanced for longer recipes. (#561 by @trainvoi)
+- Bastnasitic Pr-Nd Hydroxides now just need a crystallizer rather than an LCR. (#1676 by @Rick8484)
+### Fixes
+Many small issues and dupes have been fixed, including: 
+- Fix machine block items being invisible (#1686 by @MCTian-mi)
+- Allow quarry to mine infinite limestone (#1680 by @trainvoi)
+- Moved ULPIC quest out of MV (#1683 by @Fiery36)
+Thanks to @trainvoi and @Rick8484 for further changes.
 # UPDATE 0.1.15.7.1
 ## Mod Changes
 ### Mod Updates

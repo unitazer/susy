@@ -1,15 +1,11 @@
 package preInit
 
-import globals.Globals
-import baubles.api.BaubleType
+import globals.Batteries
 import gregtech.api.GTValues
 import gregtech.api.GregTechAPI
 import gregtech.api.items.metaitem.ElectricStats
 import gregtech.api.items.metaitem.StandardMetaItem
-import gregtech.api.unification.material.MarkerMaterials
 import gregtech.api.unification.material.event.PostMaterialEvent
-import gregtech.api.unification.ore.OrePrefix
-import gregtech.integration.baubles.BaubleBehavior
 
 eventManager.listen { PostMaterialEvent event ->
 
@@ -212,13 +208,14 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(3500, "copra")
 
         //Batteries 4000-4100
-        addItem(4000, "battery.lead_acid")
-            .addComponents(ElectricStats.createRechargeableBattery(Globals.batteryCapacities['lead_acid'], GTValues.LV))
-            .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.LV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        Batteries['lead_acid'].register(it, 4000);
         addItem(4001, "cathode.lead");
         addItem(4002, "anode.lead");
         addItem(4003, "cathode.lead_paste");
         addItem(4004, "cathode.lead_frame");
+        Batteries['ni_fe'].register(it, 4005);
+        addItem(4006, "electrode.steel_frame");
+        addItem(4007, "electrode.nickeled_steel_frame");
         // Battery hulls 4090-4100
         addItem(4090, "battery.primitivehull.lv");
         addItem(4091, "battery.primitivehull.mv");
@@ -401,9 +398,14 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10205, 'display.mars')
         
         // Parachutes 10250-10300
-        customMetaItems.addItem(10250, "parachute.drogue")
-        customMetaItems.addItem(10251, "parachute.main")
-        customMetaItems.addItem(10252, "parachute.supersonic_main")
+        addItem(10250, "parachute.drogue")
+        addItem(10251, "parachute.main")
+        addItem(10252, "parachute.supersonic_main")
+
+        // Induction Furnace
+        addItem(10301, "coated_copper_coil")
+        addItem(10302, "cured_coated_coil")
+        addItem(10303, "induction_coil")
 
     }
 

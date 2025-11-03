@@ -1,5 +1,5 @@
-import globals.Globals
-
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.recipeproperties.RecipeProperty
 import gregtech.api.recipes.RecipeBuilder
 import static gregtech.api.recipes.RecipeMaps.*
@@ -12,13 +12,7 @@ import gregtech.api.unification.stack.UnificationEntry
 
 import postInit.utils.RecyclingHelper
 
-ASSEMBLER = recipemap('assembler')
-BCR = recipemap('bubble_column_reactor')
-BR = recipemap('batch_reactor')
-CSTR = recipemap('continuous_stirred_tank_reactor')
-EXTRACTOR = recipemap('extractor')
-FORMING_PRESS = recipemap('forming_press')
-ROASTER = recipemap('roaster')
+log.infoMC("Running Batteries.groovy...")
 
 /*
  * Components
@@ -35,10 +29,10 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('diluted_sulfuric_acid') * 1000)
         .outputs(metaitem('cathode.lead_paste'))
         .duration(80)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister()
 
-RecyclingHelper.addShaped("cathode_lead_frame", metaitem('cathode.lead_frame'), [
+crafting.addShaped("cathode_lead_frame", metaitem('cathode.lead_frame'), [
         [null, null, null],
         [ore('craftingToolWireCutter'), ore('plateLead'), null],
         [null, null, null]
@@ -49,7 +43,7 @@ FORMING_PRESS.recipeBuilder()
         .inputs(ore('plateLead'))
         .outputs(metaitem('cathode.lead_frame'))
         .duration(80)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 crafting.addShaped("cathode_lead", metaitem('cathode.lead'), [
@@ -57,6 +51,42 @@ crafting.addShaped("cathode_lead", metaitem('cathode.lead'), [
         [null, metaitem('cathode.lead_frame'), null],
         [ore('craftingToolRollingPin'), metaitem('cathode.lead_paste'), null]
 ]);
+
+// Nickeled steel electrode frames (NiFe)
+
+crafting.addShaped("electrode_steel_frame", metaitem('electrode.steel_frame'), [
+        [null, null, null],
+        [null, ore('plateSteel'), null],
+        [ore('craftingToolHardHammer'), null, null]
+]);
+
+FORMING_PRESS.recipeBuilder()
+        .notConsumable(metaitem('electrode.steel_frame'))
+        .inputs(ore('plateSteel'))
+        .outputs(metaitem('electrode.steel_frame'))
+        .duration(80)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+// Watts Bath Nickel Electroplating
+MIXER.recipeBuilder()
+        .inputs(ore('dustNickelSulfate') * 30)
+        .inputs(ore('dustNickelChloride') * 3)
+        .inputs(ore('dustBoricAcid') * 14)
+        .fluidInputs(fluid('distilled_water') * 1000)
+        .fluidOutputs(fluid('watts_bath_electrolyte') * 1000)
+        .duration(160)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+ELECTROLYTIC_CELL.recipeBuilder()
+        .notConsumable(fluid('watts_bath_electrolyte') * 1000)
+        .inputs(ore('foilNickel'))
+        .inputs(metaitem('electrode.steel_frame'))
+        .outputs(metaitem('electrode.nickeled_steel_frame'))
+        .duration(160)
+        .EUt(VA[LV])
+        .buildAndRegister()
 
 /*
  * Batteries
@@ -78,26 +108,25 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('diluted_sulfuric_acid') * 1000)
         .outputs(metaitem('battery.lead_acid'))
         .duration(200)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister()
 
-EXTRACTOR.recipeBuilder()
-        .inputs(metaitem('battery.lead_acid'))
-        .outputs(metaitem('battery.primitivehull.lv'))
-        .duration(200)
-        .EUt(Globals.voltAmps[1])
-        .buildAndRegister()
+RecyclingHelper.handleRecycling(metaitem('battery.lead_acid'), [ore('plateLead') * 2])
 
-// Temporary allow to craft old sodium MV battery with primitive hull
+// Nickel-Iron Battery
+
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('battery.primitivehull.mv'))
-        .inputs(ore('dustCarbon') * 2)
-        .inputs(ore('dustSodiumCathodeAlloy') * 2)
-        .fluidInputs(fluid('dimethyl_carbonate') * 200)
-        .outputs(metaitem('battery.re.mv.sodium'))
+        .inputs(metaitem('electrode.nickeled_steel_frame') * 2)
+        .inputs(ore('dustNickelHydroxide') * 5)
+        .inputs(ore('dustIronTwoThreeOxide') * 7)
+        .fluidInputs(fluid('potassium_hydroxide_solution') * 1000)
+        .outputs(metaitem('battery.ni_fe'))
         .duration(200)
-        .EUt(16)
+        .EUt(VA[LV])
         .buildAndRegister()
+
+RecyclingHelper.handleRecycling(metaitem('battery.ni_fe'), [ore('plateSteel') * 2])
 
 /*
  * Hulls
@@ -121,7 +150,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('plastic') * 144)
         .outputs(metaitem('battery.hull.lv'))
         .duration(80)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
         
 RecyclingHelper.handleRecycling(metaitem('battery.hull.lv'),
@@ -141,7 +170,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('plastic') * 432)
         .outputs(metaitem('battery.hull.mv'))
         .duration(160)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('battery.hull.mv'),
@@ -162,7 +191,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('polypropylene') * 1296)
         .outputs(metaitem('battery.hull.hv'))
         .duration(240)
-        .EUt(120)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('battery.hull.hv'),
@@ -179,7 +208,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('polytetrafluoroethylene') * 144)
         .outputs(metaitem('battery.hull.ev'))
         .duration(240)
-        .EUt(480)
+        .EUt(VA[HV])
         .buildAndRegister()
         
 RecyclingHelper.handleRecycling(metaitem('battery.hull.ev'),
@@ -196,7 +225,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('polytetrafluoroethylene') * 432)
         .outputs(metaitem('battery.hull.iv'))
         .duration(240)
-        .EUt(1920)
+        .EUt(VA[EV])
         .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('battery.hull.iv'),
@@ -216,7 +245,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('plastic') * 144)
         .outputs(metaitem('battery.primitivehull.lv'))
         .duration(80)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister()
 
 // Primitive MV Battery Hull
@@ -233,7 +262,7 @@ ASSEMBLER.recipeBuilder()
         .fluidInputs(fluid('plastic') * 288)
         .outputs(metaitem('battery.primitivehull.mv'))
         .duration(80)
-        .EUt(Globals.voltAmps[2])
+        .EUt(VA[MV])
         .buildAndRegister()
 
 /* Old recipes */
@@ -242,7 +271,7 @@ MIXER_RECIPES.recipeBuilder()
         .fluidInputs(Materials.SulfurTrioxide.getFluid(1000))
         .fluidInputs(Materials.Water.getFluid(1000))
         .fluidOutputs(Materials.SulfuricAcid.getFluid(1000))
-        .EUt(7)
+        .EUt(VA[ULV])
         .duration(40)
         .buildAndRegister()
 
@@ -254,7 +283,7 @@ mods.gregtech.electric_blast_furnace.recipeBuilder()
         .outputs(metaitem('dustSodiumCathodeAlloy') * 10)
         .blastFurnaceTemp(1250)
         .duration(300)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -264,7 +293,7 @@ ROASTER.recipeBuilder()
         .fluidOutputs(fluid('carbon_dioxide') * 1000)
         .outputs(metaitem('dustLithiumFluoride') * 4)
         .duration(140)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 BR.recipeBuilder()
@@ -274,7 +303,7 @@ BR.recipeBuilder()
         .fluidOutputs(fluid('hydrogen_chloride') * 5000)
         .outputs(metaitem('dustLithiumHexafluorophosphate') * 8)
         .duration(140)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 MIXER_RECIPES.recipeBuilder()
@@ -282,7 +311,7 @@ MIXER_RECIPES.recipeBuilder()
         .fluidInputs(fluid('ethylene_carbonate') * 1000)
         .fluidOutputs(fluid('lithium_hexafluorophosphate_electrolyte') * 1000)
         .duration(400)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -291,7 +320,7 @@ ROASTER.recipeBuilder()
         .fluidOutputs(fluid('carbon_monoxide') * 1000)
         .outputs(metaitem('dustLithiumCobaltOxide') * 8)
         .duration(140)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 mods.gregtech.assembler.recipeBuilder()
@@ -348,21 +377,28 @@ mods.gregtech.assembler.recipeBuilder()
  * Remove legacy batteries
  */
 
- // Sodium Battery
+[
+    metaitem('battery.re.lv.sodium'),
+    metaitem('battery.re.lv.cadmium'),
+    metaitem('battery.re.lv.lithium'),
+    metaitem('battery.re.mv.sodium')
+].each { battery ->
+    crafting.removeByInput(battery)
+    mods.jei.ingredient.removeAndHide(battery)
+}
+
+// Sodium Battery
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustSodium') * 2], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustSodium') * 8], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustSodium') * 16], null)
-mods.jei.ingredient.removeAndHide(metaitem('battery.re.lv.sodium'))
 // Lithium Battery
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustLithium') * 2], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustLithium') * 8], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustLithium') * 16], null)
-mods.jei.ingredient.removeAndHide(metaitem('battery.re.lv.lithium'))
 // Cadmium Battery
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustCadmium') * 2], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustCadmium') * 8], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustCadmium') * 16], null)
-mods.jei.ingredient.removeAndHide(metaitem('battery.re.lv.cadmium'))
 // Vanadium Battery
 // Naquadria Battery
 // Energy crystal

@@ -1440,7 +1440,9 @@ class OrganicChemistryMaterials {
                 .components(Carbon * 5, Hydrogen * 8)
                 .color(0x1f1f1f)
                 .build()
-
+        
+        Polyisoprene.setFormula('[C5H8]n', true)
+        
         Chloroethane = new Material.Builder(15229, SuSyUtility.susyId('chloroethane'))
                 .gas()
                 .components(Carbon * 2, Hydrogen * 5, Chlorine * 1)
@@ -2618,7 +2620,9 @@ class OrganicChemistryMaterials {
                 .components(Isoprene)
                 .color(0x121212)
                 .build()
-
+        
+        CompoundedPolyisoprene.setFormula('[C5H8]n', true)
+        
         CompoundedStyreneIsopreneRubber = new Material.Builder(15412, SuSyUtility.susyId('compounded_styrene_isoprene_rubber'))
                 .dust()
                 .components(Isoprene * 3, Styrene * 1)
@@ -3149,6 +3153,12 @@ class OrganicChemistryMaterials {
                 .liquid()
                 .components(Carbon * 2, Hydrogen * 3, Nitrogen)
                 .color(0x275e75)
+                .build()
+
+        MyristicAcid = new Material.Builder(15496, SuSyUtility.susyId('myristic_acid'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .components(Carbon * 14, Hydrogen * 28, Oxygen * 2)
+                .color(0xd99441)
                 .build()
     }
 }

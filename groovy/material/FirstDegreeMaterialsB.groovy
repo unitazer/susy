@@ -439,7 +439,7 @@ class FirstDegreeMaterialsB {
         MixedOxideFuel.setFormula("(U,Pu)O2", true)
 
         MixedOxideFuel.setProperty(SCPropertyKey.FISSION_FUEL,
-                FissionFuelProperty.builder(MixedOxideFuel.getRegistryName(), 1600, 60000, 1.5)
+                FissionFuelProperty.builder(MixedOxideFuel.getRegistryName(), 1600, 13200000, 1.5)
                         .fastNeutronCaptureCrossSection(0.5)
                         .fastNeutronFissionCrossSection(0.25)
                         .slowNeutronCaptureCrossSection(2.2)
@@ -641,7 +641,20 @@ class FirstDegreeMaterialsB {
                 .components(Lead, Oxygen * 2)
                 .color(0x1d0b25)
                 .build()
-                .setFormula("PbO2", true) 
+                .setFormula("PbO2", true)
 
+        AluminiumAlloy6061 = new Material.Builder(8759, SuSyUtility.susyId('aluminium_alloy_6061'))
+                .ingot().liquid(new FluidBuilder().temperature(923))
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium * 634, Magnesium * 8, Silicon * 4, Copper * 1, Chrome * 1)
+                .colorAverage()
+                .build()
+
+        AluminiumAlloy7075 = new Material.Builder(8760, SuSyUtility.susyId('aluminium_alloy_7075'))
+                .ingot().liquid(new FluidBuilder().temperature(913))
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium * 678, Zinc * 17, Magnesium * 20, Copper * 4, Chrome * 1)
+                .colorAverage()
+                .build()
     }
 }

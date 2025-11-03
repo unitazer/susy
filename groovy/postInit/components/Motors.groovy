@@ -1,6 +1,6 @@
+import static prePostInit.Recipemaps.*
 import postInit.utils.RecyclingHelper
-
-ASSEMBLER = recipemap('assembler')
+import static gregtech.api.GTValues.*
 
 // LV Electric Motor * 1
 mods.gregtech.assembler.removeByInput(30, [metaitem('cableGtSingleTin') * 2, metaitem('stickIron') * 2, metaitem('stickIronMagnetic'), metaitem('wireGtSingleCopper') * 4], null)
@@ -61,7 +61,7 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('glue') * 100)
     .outputs(metaitem('commutator') * 4)
     .duration(120)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -69,7 +69,7 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('glue') * 100)
     .outputs(metaitem('brush.unfired') * 2)
     .duration(80)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -77,7 +77,7 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('glue') * 100)
     .outputs(metaitem('plateMica'))
     .duration(80)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -89,7 +89,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('brush') * 2)
     .outputs(metaitem('electric.motor.lv'))
     .duration(80)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -101,7 +101,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('brush') * 2)
     .outputs(metaitem('electric.motor.mv'))
     .duration(80)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -113,7 +113,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('brush') * 2)
     .outputs(metaitem('electric.motor.hv'))
     .duration(80)
-    .EUt(480)
+    .EUt(VA[HV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -125,7 +125,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('brush') * 2)
     .outputs(metaitem('electric.motor.ev'))
     .duration(80)
-    .EUt(480)
+    .EUt(VA[HV])
     .buildAndRegister();
 
 // Brushless DC Motors
@@ -140,7 +140,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('circuit_board.basic'))
     .outputs(metaitem('electric.motor.lv') * 6)
     .duration(160)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -153,7 +153,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('circuit_board.good'))
     .outputs(metaitem('electric.motor.mv') * 6)
     .duration(160)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -166,7 +166,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('circuit_board.plastic'))
     .outputs(metaitem('electric.motor.hv') * 6)
     .duration(160)
-    .EUt(480)
+    .EUt(VA[HV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -179,7 +179,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('circuit_board.advanced'))
     .outputs(metaitem('electric.motor.ev') * 6)
     .duration(160)
-    .EUt(1920)
+    .EUt(VA[EV])
     .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -192,7 +192,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('circuit_board.extreme'))
     .outputs(metaitem('electric.motor.iv') * 3)
     .duration(80)
-    .EUt(1920)
+    .EUt(VA[EV])
     .buildAndRegister();
 
 // TEMPORARY: TO BE MODIFIED LATER
@@ -251,5 +251,5 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('lubricant') * 500)
     .outputs(item('susy:conveyor_belt'))
     .duration(120)
-    .EUt(120)
+    .EUt(VA[MV])
     .buildAndRegister();

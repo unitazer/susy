@@ -367,6 +367,8 @@ mods.gregtech.extruder.removeByInput(42, [metaitem('dustEthyleneVinylAcetate'), 
 // Polysulfone Bar * 1
 mods.gregtech.extruder.removeByInput(28, [metaitem('dustPolysulfone'), metaitem('shape.extruder.ingot')], null)
 // Polysulfone Rod * 2
+mods.gregtech.lathe.removeByInput(16, [metaitem('ingotPolysulfone')], null)
+// Polysulfone Rod * 2
 mods.gregtech.extruder.removeByInput(42, [metaitem('ingotPolysulfone'), metaitem('shape.extruder.rod')], null)
 // Viton Ring * 4
 mods.gregtech.extruder.removeByInput(42, [metaitem('ingotViton'), metaitem('shape.extruder.ring')], null)
@@ -386,7 +388,6 @@ mods.gregtech.bender.removeByInput(24, [metaitem('platePolyphenyleneSulfide'), m
 mods.gregtech.bender.removeByInput(24, [metaitem('ingotPolyphenyleneSulfide'), metaitem('circuit.integrated').withNbt(['Configuration': 10])], null)
 // Ethenone * 100
 mods.gregtech.fluid_heater.removeByInput(30, [metaitem('circuit.integrated').withNbt(['Configuration': 1])], [fluid('acetone') * 100])
-
 
 RecipeMaps.SIFTER_RECIPES
     .modifyMaxFluidInputs(1)

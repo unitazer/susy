@@ -1,6 +1,5 @@
-import globals.Globals;
-
-ASSEMBLER = recipemap('assembler')
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
 
 ASSEMBLER.recipeBuilder()
         .circuitMeta(2)
@@ -8,7 +7,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('threadKevlar') * 32)
         .outputs(metaitem('parachute.drogue'))
         .duration(200)
-        .EUt(480)
+        .EUt(VA[HV])
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -22,7 +21,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('threadKevlar') * 32)
         .outputs(metaitem('parachute.main'))
         .duration(600)
-        .EUt(480)
+        .EUt(VA[HV])
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -37,5 +36,5 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('threadKevlar') * 32)
         .outputs(metaitem('parachute.supersonic_main'))
         .duration(600)
-        .EUt(480)
+        .EUt(VA[HV])
         .buildAndRegister();
