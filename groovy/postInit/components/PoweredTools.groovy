@@ -115,6 +115,60 @@ Batteries[MV].each { battery ->
         .buildAndRegister()
 }
 
+// HV Batteries
+Batteries[HV].each { battery ->
+    // Electric Jetpack (power capacity does not depend on battery)
+    crafting.addShaped("gregtech:electric_jetpack_advanced_${battery.name}", metaitem('gregtech:advanced_electric_jetpack'), [
+        [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
+        [metaitem('power_thruster_advanced'), battery.fetchMetaitem(), metaitem('power_thruster_advanced')],
+        [ore('wireGtQuadrupleGold'), ore('circuitHv'), ore('wireGtQuadrupleGold')]
+    ])
+    // Item Magnet
+    crafting.shapedBuilder()
+        .name("gregtech:hv_magnet_${battery.name}")
+        .output(battery.imprintCapacity(metaitem('item_magnet.hv')))
+        .shape([
+            [ore('stickNeodymiumAlloyMagnetic'), ore('toolWrench'), ore('stickNeodymiumAlloyMagnetic')],
+            [ore('stickNeodymiumAlloyMagnetic'), battery.fetchMetaitem().mark('battery'), ore('stickNeodymiumAlloyMagnetic')],
+            [ore('wireGtSingleGold'), ore('plateStainlessSteel'), ore('wireGtSingleGold')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+    // Prospector's Scanner
+    crafting.shapedBuilder()
+        .name("gregtech:prospector_${battery.name}")
+        .output(battery.imprintCapacity(metaitem('prospector.hv')))
+        .shape([
+            [metaitem('emitter.hv'), ore('plateStainlessSteel'), metaitem('sensor.hv')],
+            [ore('circuitHv'), metaitem('cover.screen'), ore('circuitHv')],
+            [ore('plateStainlessSteel'), battery.fetchMetaitem().mark('battery'), ore('plateStainlessSteel')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+    // Power Unit (manual craft)
+    crafting.shapedBuilder()
+        .name("gregtech:hv_power_unit_${battery.name}")
+        .output(battery.imprintCapacity(metaitem('power_unit.hv')))
+        .shape([
+            [ore('screwStainlessSteel'), null, ore('toolScrewdriver')],
+            [ore('gearSmallStainlessSteel'), metaitem('electric.motor.hv'), ore('gearSmallStainlessSteel')],
+            [ore('plateStainlessSteel'), battery.fetchMetaitem().mark('battery'), ore('plateStainlessSteel')]
+        ])
+        .recipeFunction(setChargeFromBatteryFn)
+        .register()
+    // Power Unit
+    ASSEMBLER.recipeBuilder()
+        .inputs(ore('gearSmallStainlessSteel') * 2)
+        .inputs(ore('screwStainlessSteel'))
+        .inputs(ore('plateStainlessSteel') * 2)
+        .inputs(metaitem('electric.motor.hv'))
+        .inputs(battery.fetchMetaitem())
+        .outputs(battery.imprintCapacity(metaitem('power_unit.hv')))
+        .EUt(VA[HV])
+        .duration(150)
+        .buildAndRegister()
+}
+
 // Power Units from non-reworked batteries
 
 // Temporary function to set correct max charge of powered tool
@@ -142,16 +196,19 @@ ItemStack withMaxChargeFromBattery(ItemStack tool, ItemStack battery) {
         .buildAndRegister()
 }
 
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('gearSmallStainlessSteel') * 2)
-    .inputs(ore('screwStainlessSteel'))
-    .inputs(ore('plateStainlessSteel') * 2)
-    .inputs(metaitem('electric.motor.hv'))
-    .inputs(ore('batteryHv'))
-    .outputs(metaitem('power_unit.hv'))
-    .EUt(VA[HV])
-    .duration(150)
-    .buildAndRegister()
+// TODO: rework in future
+[metaitem('battery.re.hv.lithium'), metaitem('battery.re.hv.cadmium')].each { battery ->
+    ASSEMBLER.recipeBuilder()
+        .inputs(ore('gearSmallStainlessSteel') * 2)
+        .inputs(ore('screwStainlessSteel'))
+        .inputs(ore('plateStainlessSteel') * 2)
+        .inputs(metaitem('electric.motor.hv'))
+        .inputs(battery)
+        .outputs(withMaxChargeFromBattery(metaitem('power_unit.hv'), battery))
+        .EUt(VA[HV])
+        .duration(150)
+        .buildAndRegister()
+}
 
 ASSEMBLER.recipeBuilder()
     .inputs(ore('gearSmallTitanium') * 2)
