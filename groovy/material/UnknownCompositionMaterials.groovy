@@ -3181,5 +3181,15 @@ class UnknownCompositionMaterials {
                 .flags(NO_UNIFICATION)
                 .color(0xc9c6b8)
                 .build()
+
+        SodiumCMCSuspension = new Material.Builder(4691, SuSyUtility.susyId('sodium_cmc_suspension'))
+                .liquid()
+                .color(0xe9e7e9)
+                .build()
+
+        CMCWaste = new Material.Builder(4692, SuSyUtility.susyId('cmc_waste'))
+                .liquid()
+                .color(0xe7e3eb)
+                .build()
     }
 }
