@@ -1723,7 +1723,6 @@ class SuSyMaterials {
     public static Material SodiumSulfiteSolution
     public static Material PhosphorusSolution
     public static Material SodiumCyanideSolution
-    public static Material BrominatedSulfurDioxide
     public static Material SodiumThiosulfateSolution
     public static Material DilutedIronIIIChlorideSolution
     public static Material SodiumPerchlorateSolution
