@@ -183,20 +183,6 @@ ItemStack withMaxChargeFromBattery(ItemStack tool, ItemStack battery) {
 }
 
 // TODO: rework in future
-[metaitem('battery.re.mv.cadmium')].each { battery ->
-    ASSEMBLER.recipeBuilder()
-        .inputs(ore('gearSmallAluminium') * 2)
-        .inputs(ore('screwAluminium'))
-        .inputs(ore('plateAluminium') * 2)
-        .inputs(metaitem('electric.motor.mv'))
-        .inputs(battery)
-        .outputs(withMaxChargeFromBattery(metaitem('power_unit.mv'), battery))
-        .EUt(VA[MV])
-        .duration(150)
-        .buildAndRegister()
-}
-
-// TODO: rework in future
 [metaitem('battery.re.hv.lithium'), metaitem('battery.re.hv.cadmium')].each { battery ->
     ASSEMBLER.recipeBuilder()
         .inputs(ore('gearSmallStainlessSteel') * 2)
@@ -233,12 +219,6 @@ ASSEMBLER.recipeBuilder()
     .buildAndRegister()
 
 // Jetpacks from non-reworked batteries
-// Electric Jetpack with Li MV is in GT
-crafting.addShaped('gregtech:electric_jetpack1', metaitem('gregtech:electric_jetpack'), [
-    [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
-    [metaitem('power_thruster'), metaitem('battery.re.mv.cadmium'), metaitem('power_thruster')],
-    [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
-])
 
 crafting.addShaped('gregtech:electric_jetpack_advanced1', metaitem('advanced_electric_jetpack'), [
     [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],

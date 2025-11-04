@@ -359,16 +359,6 @@ mods.gregtech.assembler.recipeBuilder()
         .buildAndRegister()
 
 mods.gregtech.assembler.recipeBuilder()
-        .inputs(metaitem('battery.hull.mv'))
-        .inputs(ore('dustCadmium') * 2)
-        .inputs(ore('dustNickelHydroxide') * 5)
-        .fluidInputs(fluid('potassium_hydroxide_solution') * 200)
-        .outputs(metaitem('battery.re.mv.cadmium'))
-        .duration(200)
-        .EUt(16)
-        .buildAndRegister()
-
-mods.gregtech.assembler.recipeBuilder()
         .inputs(metaitem('battery.hull.hv'))
         .inputs(ore('dustCadmium') * 4)
         .inputs(ore('dustNickelHydroxide') * 10)
@@ -387,6 +377,7 @@ mods.gregtech.assembler.recipeBuilder()
     metaitem('battery.re.lv.cadmium'),
     metaitem('battery.re.lv.lithium'),
     metaitem('battery.re.mv.sodium'),
+    metaitem('battery.re.mv.cadmium'),
     metaitem('battery.re.mv.lithium'),
     metaitem('battery.re.hv.sodium')
 ].each { battery ->
