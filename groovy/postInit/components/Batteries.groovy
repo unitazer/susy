@@ -349,15 +349,6 @@ ROASTER.recipeBuilder()
         .buildAndRegister()
 
 mods.gregtech.assembler.recipeBuilder()
-        .inputs(metaitem('battery.hull.hv'))
-        .inputs(ore('dustCarbon') * 4)
-        .fluidInputs(fluid('dimethyl_carbonate') * 500)
-        .outputs(metaitem('battery.re.hv.sodium'))
-        .duration(400)
-        .EUt(16)
-        .buildAndRegister()
-
-mods.gregtech.assembler.recipeBuilder()
         .inputs(metaitem('battery.hull.mv'))
         .inputs(ore('dustGraphite') * 2)
         .inputs(ore('dustLithiumCobaltOxide') * 2)
@@ -405,7 +396,8 @@ mods.gregtech.assembler.recipeBuilder()
     metaitem('battery.re.lv.sodium'),
     metaitem('battery.re.lv.cadmium'),
     metaitem('battery.re.lv.lithium'),
-    metaitem('battery.re.mv.sodium')
+    metaitem('battery.re.mv.sodium'),
+    metaitem('battery.re.hv.sodium')
 ].each { battery ->
     crafting.removeByInput(battery)
     mods.jei.ingredient.removeAndHide(battery)
