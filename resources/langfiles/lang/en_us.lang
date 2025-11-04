@@ -2822,6 +2822,8 @@ metaitem.electrode.steel_frame.name=Steel Electrode Frame
 metaitem.electrode.nickeled_steel_frame.name=Nickel-plated Steel Electrode Frame
 metaitem.battery.ni_zn.mv.name=Nickel-Zinc MV Battery
 metaitem.battery.ni_zn.hv.name=Nickel-Zinc HV Battery
+metaitem.anode.zinc_oxide.name=Zinc Oxide Anode
+metaitem.cathode.nioh2.name=Nickel Hydroxide Cathode
 
 metaitem.battery.primitivehull.lv.name=Primitive LV Battery Hull
 metaitem.battery.primitivehull.mv.name=Primitive MV Battery Hull

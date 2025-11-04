@@ -18,7 +18,7 @@ log.infoMC("Running Batteries.groovy...")
  * Components
  */
 
-// Pb anode & PbO2 cathode line
+// Pb anode & PbO2 cathode
 
 crafting.addShapeless("anode_lead", metaitem('anode.lead'), [
         metaitem('plateLead'), metaitem('cableGtSingleTin')
@@ -88,6 +88,31 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .EUt(VA[LV])
         .buildAndRegister()
 
+// Zinc Oxide Anode
+
+ASSEMBLER.recipeBuilder()
+        .inputs(ore('foilNickel') * 2)
+        .inputs(ore('dustZincOxide') * 4)
+        .inputs(ore('dustCalciumHydroxide') * 5)
+        .inputs(ore('dustSodiumCarboxymethylCellulose') * 1)
+        .fluidInputs(fluid('glue') * 200)
+        .outputs(metaitem('anode.zinc_oxide') * 2)
+        .duration(200)
+        .EUt(VA[MV])
+        .buildAndRegister()
+
+// Nickel Hydroxide Cathode
+
+ASSEMBLER.recipeBuilder()
+        .inputs(ore('foilNickel') * 2)
+        .inputs(ore('dustNickelHydroxide') * 10)
+        .inputs(ore('dustSodiumCarboxymethylCellulose') * 1)
+        .fluidInputs(fluid('glue') * 200)
+        .outputs(metaitem('cathode.nioh2') * 2)
+        .duration(200)
+        .EUt(VA[MV])
+        .buildAndRegister()
+
 /*
  * Batteries
  */
@@ -110,7 +135,6 @@ ASSEMBLER.recipeBuilder()
         .duration(200)
         .EUt(VA[LV])
         .buildAndRegister()
-
 RecyclingHelper.handleRecycling(metaitem('battery.lead_acid'), [ore('plateLead') * 2])
 
 // Nickel-Iron Battery
@@ -125,8 +149,33 @@ ASSEMBLER.recipeBuilder()
         .duration(200)
         .EUt(VA[LV])
         .buildAndRegister()
-
 RecyclingHelper.handleRecycling(metaitem('battery.ni_fe'), [ore('plateSteel') * 2])
+
+// Nickel-Zinc Battery
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('battery.hull.mv'))
+        .inputs(metaitem('anode.zinc_oxide') * 1)
+        .inputs(metaitem('cathode.nioh2') * 1)
+        .inputs(ore('foilPlastic') * 1)
+        .fluidInputs(fluid('potassium_hydroxide_solution') * 1000)
+        .outputs(metaitem('battery.ni_zn.mv'))
+        .duration(120)
+        .EUt(VA[MV])
+        .buildAndRegister()
+RecyclingHelper.handleRecycling(metaitem('battery.ni_zn.mv'), [metaitem('battery.hull.mv')])
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('battery.hull.hv'))
+        .inputs(metaitem('anode.zinc_oxide') * 4)
+        .inputs(metaitem('cathode.nioh2') * 4)
+        .inputs(ore('foilPlastic') * 4)
+        .fluidInputs(fluid('potassium_hydroxide_solution') * 4000)
+        .outputs(metaitem('battery.ni_zn.hv'))
+        .duration(480)
+        .EUt(VA[MV])
+        .buildAndRegister()
+RecyclingHelper.handleRecycling(metaitem('battery.ni_zn.hv'), [metaitem('battery.hull.hv')])
 
 /*
  * Hulls
