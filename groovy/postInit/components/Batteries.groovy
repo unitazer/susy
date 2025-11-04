@@ -210,7 +210,7 @@ mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.mv.sodium')], nul
 ASSEMBLER.recipeBuilder()
         .circuitMeta(5)
         .inputs(ore('plateSteel') * 4)
-        .inputs(metaitem('cableGtSingleCopper') * 2)
+        .inputs(metaitem('cableGtSingleAnnealedCopper') * 2)
         .fluidInputs(fluid('plastic') * 432)
         .outputs(metaitem('battery.hull.mv'))
         .duration(160)
@@ -218,7 +218,7 @@ ASSEMBLER.recipeBuilder()
         .buildAndRegister()
 
 RecyclingHelper.handleRecycling(metaitem('battery.hull.mv'),
-        [ore('plateSteel') * 4, metaitem('cableGtSingleCopper') * 2, ore('dustPlastic') * 3])
+        [ore('plateSteel') * 4, metaitem('cableGtSingleAnnealedCopper') * 2, ore('dustPlastic') * 3])
 
 // HV Battery Hull
 mods.gregtech.assembler.removeByInput(4, [metaitem('cableGtSingleGold') * 4, metaitem('plateBatteryAlloy') * 9], [fluid('plastic') * 1296 * 1296])
