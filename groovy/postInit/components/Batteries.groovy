@@ -163,7 +163,6 @@ ASSEMBLER.recipeBuilder()
         .duration(120)
         .EUt(VA[MV])
         .buildAndRegister()
-RecyclingHelper.handleRecycling(metaitem('battery.ni_zn.mv'), [metaitem('battery.hull.mv')])
 
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('battery.hull.hv'))
@@ -175,13 +174,21 @@ ASSEMBLER.recipeBuilder()
         .duration(480)
         .EUt(VA[MV])
         .buildAndRegister()
-RecyclingHelper.handleRecycling(metaitem('battery.ni_zn.hv'), [metaitem('battery.hull.hv')])
+
+['mv', 'hv'].each { voltage ->
+    EXTRACTOR.recipeBuilder()
+        .inputs(metaitem('battery.ni_zn.' + voltage))
+        .outputs(metaitem('battery.hull.' + voltage))
+        .duration(20)
+        .EUt(VA[LV])
+        .buildAndRegister()
+}
 
 /*
  * Hulls
 */
 
-for (voltage in ['lv', 'mv', 'hv', 'ev', 'iv']) {
+['lv', 'mv', 'hv', 'ev', 'iv'].each { voltage ->
     crafting.remove('gregtech:battery_hull_' + voltage)
     RecyclingHelper.removeRecyclingRecipes(metaitem('battery.hull.' + voltage))
 }
