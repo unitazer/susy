@@ -349,16 +349,6 @@ ROASTER.recipeBuilder()
         .buildAndRegister()
 
 mods.gregtech.assembler.recipeBuilder()
-        .inputs(metaitem('battery.hull.mv'))
-        .inputs(ore('dustGraphite') * 2)
-        .inputs(ore('dustLithiumCobaltOxide') * 2)
-        .fluidInputs(fluid('lithium_hexafluorophosphate_electrolyte') * 200)
-        .outputs(metaitem('battery.re.mv.lithium'))
-        .duration(200)
-        .EUt(16)
-        .buildAndRegister()
-
-mods.gregtech.assembler.recipeBuilder()
         .inputs(metaitem('battery.hull.hv'))
         .inputs(ore('dustGraphite') * 4)
         .inputs(ore('dustLithiumCobaltOxide') * 4)
@@ -397,6 +387,7 @@ mods.gregtech.assembler.recipeBuilder()
     metaitem('battery.re.lv.cadmium'),
     metaitem('battery.re.lv.lithium'),
     metaitem('battery.re.mv.sodium'),
+    metaitem('battery.re.mv.lithium'),
     metaitem('battery.re.hv.sodium')
 ].each { battery ->
     crafting.removeByInput(battery)
