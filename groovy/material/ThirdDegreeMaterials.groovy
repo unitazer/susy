@@ -880,6 +880,5 @@ class ThirdDegreeMaterials {
                 .components(MethylVinylEther, Methanol)
                 .colorAverage()
                 .build()
-
     }
 }

@@ -27,7 +27,6 @@ import static gregtech.api.GTValues.*
         .outputs(metaitem('dustNAcetylsulfanilylChloride') * 22)
         .fluidOutputs(fluid('diluted_hydrochloric_acid') * 2000)
         .fluidOutputs(fluid('sulfur_trioxide') * 1000)
-        .fluidOutputs(fli)
         .duration(200)
         .EUt(VA[MV])
         .buildAndRegister()
