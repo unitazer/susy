@@ -3191,5 +3191,20 @@ class UnknownCompositionMaterials {
                 .liquid()
                 .color(0xe7e3eb)
                 .build()
+
+        CyanamideSlurry = new Material.Builder(4693, SuSyUtility.susyId('cyanamide_slurry'))
+                .liquid()
+                .color(0x213766)
+                .build()
+
+        CrudeCyanamideSolution = new Material.Builder(4694, SuSyUtility.susyId('crude_cyanamide_solution'))
+                .liquid()
+                .color(0x1e4585)
+                .build()
+
+        CyanamideSolution = new Material.Builder(4695, SuSyUtility.susyId('cyanamide_solution'))
+                .liquid()
+                .color(0x2b5599)
+                .build()
     }
 }

@@ -856,5 +856,30 @@ class ThirdDegreeMaterials {
                 .components(Polytetrafluoroethylene * 2, Cyclohexane)
                 .colorAverage()
                 .build()
+
+        AcetanilideSolution = new Material.Builder(24139, SuSyUtility.susyId('acetanilide_solution'))
+                .liquid()
+                .components(Acetanilide, AceticAcid)
+                .colorAverage()
+                .build()
+
+        GuanidiniumNitrateSolution = new Material.Builder(24140, SuSyUtility.susyId('guanidinium_nitrate_solution'))
+                .liquid()
+                .components(GuanidiniumNitrate, Water * 2)
+                .colorAverage()
+                .build()
+
+        CrudeTrimethylOrthoformate = new Material.Builder(24141, SuSyUtility.susyId('crude_trimethyl_orthoformate'))
+                .liquid()
+                .components(TrimethylOrthoformate, Methanol)
+                .colorAverage()
+                .build()
+
+        CrudeMethylVinylEther = new Material.Builder(24142, SuSyUtility.susyId('crude_methyl_vinyl_ether'))
+                .liquid()
+                .components(MethylVinylEther, Methanol)
+                .colorAverage()
+                .build()
+
     }
 }

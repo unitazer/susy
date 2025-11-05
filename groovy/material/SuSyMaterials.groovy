@@ -788,6 +788,9 @@ class SuSyMaterials {
     public static Material CeramicCoatingSlurry
     public static Material SodiumCMCSuspension
     public static Material CMCWaste
+    public static Material CyanamideSlurry
+    public static Material CrudeCyanamideSolution
+    public static Material CyanamideSolution
 
     // Petrochem Materials
 
@@ -2324,19 +2327,6 @@ class SuSyMaterials {
     public static Material DibutylButylphosphonate
     public static Material TributylPhosphite
     public static Material NButylIodide
-    public static Material Acetanilide
-    public static Material NAcetylsulfanilylChloride
-    public static Material Guanidine
-    public static Material GuanidiniumChloride
-    public static Material Tetramethoxypropane
-    public static Material TrimethylOrthoformate
-    public static Material MethylVinylEther
-    public static Material TwoAminopyrimidine
-    public static Material SulfonamideIntermediate
-    public static Material Sulfadiazine
-    public static Material SodiumAcetate
-    public static Material SodiumAcetateSolution
-    public static Material SilverSulfadiazine
     public static Material AluminiumIsopropoxide
     public static Material HexafluoropropyleneOxide
     public static Material FluorosulfonylDifluoroacetylFluoride
@@ -2357,6 +2347,17 @@ class SuSyMaterials {
     public static Material Acetonitrile
     public static Material MyristicAcid
     public static Material SodiumCarboxymethylCellulose
+    public static Material Acetanilide
+    public static Material NAcetylsulfanilylChloride
+    public static Material GuanidiniumNitrate
+    public static Material Tetramethoxypropane
+    public static Material TrimethylOrthoformate
+    public static Material MethylVinylEther
+    public static Material TwoAminopyrimidine
+    public static Material SodiumSulfadiazine
+    public static Material SilverSulfadiazine
+    public static Material Dicyanamide
+    public static Material PotassiumMethoxide
 
     // Third Degree Materials
 
@@ -2497,6 +2498,11 @@ class SuSyMaterials {
     public static Material DichlorodiphenylSulfoneSolution
     public static Material FuelCellCatalystSolution
     public static Material PolytetrafluoroethyleneCoatingSolution
+    public static Material AcetanilideSolution
+    public static Material GuanidiniumNitrateSolution
+    public static Material CrudeTrimethylOrthoformate
+    public static Material CrudeMethylVinylEther
+
 
     // Thermodynamics Materials
 
