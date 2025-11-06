@@ -101,6 +101,7 @@ Carbons.dusts().grep(Carbons.HighPurityCombustible).each { carbon ->
         .inputs(ore(carbon.name) * carbon.equivalent(3))
         .fluidOutputs(fluid('carbon_dioxide') * 3000)
         .outputs(metaitem('ingotAluminium') * 4)
+        .info('recipe.hall-heroult')
         .duration(200 * carbon.duration - 100) // makes 100 for carbon / high purity carbon and 200 for coke / green coke
         .EUt(40)
         .buildAndRegister()
