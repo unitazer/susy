@@ -70,9 +70,9 @@ for (solder in soldering_alloys) {
 
     WEAPONS_FACTORY.recipeBuilder()
             .inputs([
-                    ore('plateAluminium')*4,
-                    metaitem('hull.mv'),
-                    ore('circuitMv'),
+                    ore('plateStainlessSteel')*4,
+                    metaitem('hull.hv'),
+                    ore('circuitHv'),
                     item('openmodularturrets:intermediate_regular:0')*2
             ])
             .fluidInputs(solder)
@@ -83,9 +83,9 @@ for (solder in soldering_alloys) {
 
     WEAPONS_FACTORY.recipeBuilder()
             .inputs([
-                    ore('plateStainlessSteel')*4,
-                    metaitem('hull.hv'),
-                    ore('circuitHv'),
+                    ore('plateTitanium')*4,
+                    metaitem('hull.ev'),
+                    ore('circuitEv'),
                     item('openmodularturrets:intermediate_regular:0')*2
             ])
             .fluidInputs(solder)
@@ -157,7 +157,7 @@ for (solder in soldering_alloys) {
                     item('openmodularturrets:intermediate_tiered:8'),
                     item('openmodularturrets:intermediate_tiered:13'),
                     item('openmodularturrets:intermediate_regular:0'),
-                    ore('plateTungstenSteel')*4,
+                    ore('plateTitanium')*4,
                     ore('circuitEv'),
                     metaitem('electric.motor.ev') * 2,
             ])
@@ -219,10 +219,10 @@ for (solder in soldering_alloys) {
 
     WEAPONS_FACTORY.recipeBuilder()
             .inputs([
-                    ore('plateAluminium')*10,
+                    ore('plateStainlessSteel')*10,
                     ore('wireFineRedAlloy'),
                     ore('springSteel'),
-                    ore('gearAluminium')
+                    ore('gearStainlessSteel')
             ])
             .fluidInputs(solder)
             .outputs(item('openmodularturrets:intermediate_tiered:7'))
@@ -232,10 +232,10 @@ for (solder in soldering_alloys) {
 
     WEAPONS_FACTORY.recipeBuilder()
             .inputs([
-                    ore('plateStainlessSteel')*10,
+                    ore('plateTitanium')*10,
                     ore('wireFineRedAlloy'),
                     ore('springSteel'),
-                    ore('gearStainlessSteel')
+                    ore('gearTitanium')
             ])
             .fluidInputs(solder)
             .outputs(item('openmodularturrets:intermediate_tiered:8'))
@@ -270,7 +270,7 @@ for (solder in soldering_alloys) {
 
     WEAPONS_FACTORY.recipeBuilder()
             .inputs([
-                    ore('plateAluminium')*6,
+                    ore('plateStainlessSteel')*6,
                     item('techguns:itemshared:39')
             ])
             .circuitMeta(1)
@@ -282,7 +282,7 @@ for (solder in soldering_alloys) {
 
     WEAPONS_FACTORY.recipeBuilder()
             .inputs([
-                    ore('plateStainlessSteel')*6,
+                    ore('plateTitanium')*6,
                     item('techguns:itemshared:39')
             ])
             .circuitMeta(1)

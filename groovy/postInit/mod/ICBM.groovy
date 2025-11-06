@@ -520,7 +520,7 @@ Globals.solders.each { key, val ->
 
             WEAPONS_FACTORY.recipeBuilder()
                 .inputs([
-                    ore('plateTungstenSteel') * 2,
+                    ore('plateTitanium') * 2,
                     s_oxy,
                     s_fuel,
                     ore('wireFineRedAlloy')
