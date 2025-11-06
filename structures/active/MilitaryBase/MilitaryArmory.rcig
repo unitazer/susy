@@ -3,7 +3,7 @@
   "inventoryGeneratorID": "MilitaryArmory",
   "items": [
     {
-      "weight": 2.9194812774658203,
+      "weight": 3.5707483291625977,
       "min": 1,
       "max": 1,
       "item": {
@@ -30,36 +30,9 @@
       }
     },
     {
-      "weight": 2.0475566387176514,
-      "min": 1,
-      "max": 1,
-      "item": {
-        "id": "techguns:m4_infiltrator",
-        "damage": 0,
-        "count": 1,
-        "tag": {
-          "nbtType": "compound",
-          "nbt": {
-            "camo": {
-              "nbtType": "byte",
-              "nbt": 0
-            },
-            "ammovariant": {
-              "nbtType": "string",
-              "nbt": "default"
-            },
-            "ammo": {
-              "nbtType": "short",
-              "nbt": 30
-            }
-          }
-        }
-      }
-    },
-    {
-      "weight": 1.9013646841049194,
-      "min": 24,
-      "max": 40,
+      "weight": 2.540874481201172,
+      "min": 31,
+      "max": 52,
       "item": {
         "id": "techguns:itemshared",
         "damage": 13,
@@ -67,7 +40,7 @@
       }
     },
     {
-      "weight": 1.5121370553970337,
+      "weight": 1.290178656578064,
       "min": 1,
       "max": 1,
       "item": {
@@ -94,9 +67,9 @@
       }
     },
     {
-      "weight": 1.5121370553970337,
-      "min": 8,
-      "max": 28,
+      "weight": 1.290178656578064,
+      "min": 18,
+      "max": 36,
       "item": {
         "id": "techguns:itemshared",
         "damage": 15,
@@ -104,7 +77,7 @@
       }
     },
     {
-      "weight": 1.39763605594635,
+      "weight": 1.0068187713623047,
       "min": 1,
       "max": 1,
       "item": {
@@ -131,9 +104,9 @@
       }
     },
     {
-      "weight": 1.39763605594635,
-      "min": 7,
-      "max": 22,
+      "weight": 1.0068187713623047,
+      "min": 14,
+      "max": 32,
       "item": {
         "id": "techguns:itemshared",
         "damage": 19,
@@ -141,8 +114,8 @@
       }
     },
     {
-      "weight": 0.9243392944335938,
-      "min": 3,
+      "weight": 0.646636426448822,
+      "min": 6,
       "max": 16,
       "item": {
         "id": "techguns:itemshared",
@@ -151,9 +124,9 @@
       }
     },
     {
-      "weight": 1.0950840711593628,
-      "min": 5,
-      "max": 14,
+      "weight": 0.646636426448822,
+      "min": 10,
+      "max": 23,
       "item": {
         "id": "techguns:itemshared",
         "damage": 144,
@@ -162,8 +135,8 @@
     },
     {
       "weight": 1.1894346475601196,
-      "min": 13,
-      "max": 22,
+      "min": 20,
+      "max": 38,
       "item": {
         "id": "techguns:itemshared",
         "damage": 4,
@@ -171,9 +144,9 @@
       }
     },
     {
-      "weight": 1.39763605594635,
-      "min": 16,
-      "max": 30,
+      "weight": 1.9013646841049194,
+      "min": 33,
+      "max": 53,
       "item": {
         "id": "techguns:itemshared",
         "damage": 3,
@@ -181,9 +154,9 @@
       }
     },
     {
-      "weight": 0.8473554849624634,
-      "min": 8,
-      "max": 21,
+      "weight": 1.6340234279632568,
+      "min": 25,
+      "max": 43,
       "item": {
         "id": "techguns:itemshared",
         "damage": 8,
@@ -191,17 +164,7 @@
       }
     },
     {
-      "weight": 1.6340234279632568,
-      "min": 7,
-      "max": 25,
-      "item": {
-        "id": "techguns:itemshared",
-        "damage": 14,
-        "count": 1
-      }
-    },
-    {
-      "weight": 0.3978064954280853,
+      "weight": 0.5354365706443787,
       "min": 1,
       "max": 1,
       "item": {
@@ -228,9 +191,9 @@
       }
     },
     {
-      "weight": 1.290178656578064,
+      "weight": 1.9013646841049194,
       "min": 6,
-      "max": 18,
+      "max": 22,
       "item": {
         "id": "techguns:itemshared",
         "damage": 5,
@@ -238,9 +201,9 @@
       }
     },
     {
-      "weight": 1.6340234279632568,
+      "weight": 1.9013646841049194,
       "min": 3,
-      "max": 7,
+      "max": 6,
       "item": {
         "id": "techguns:fraggrenade",
         "damage": 0,
@@ -248,7 +211,7 @@
       }
     },
     {
-      "weight": 1.0950840711593628,
+      "weight": 1.1894346475601196,
       "min": 1,
       "max": 1,
       "item": {
@@ -267,9 +230,9 @@
       }
     },
     {
-      "weight": 0.646636426448822,
+      "weight": 0.7755888104438782,
       "min": 1,
-      "max": 2,
+      "max": 4,
       "item": {
         "id": "techguns:itemshared",
         "damage": 29,
@@ -277,7 +240,7 @@
       }
     },
     {
-      "weight": 0.7755888104438782,
+      "weight": 1.0068187713623047,
       "min": 1,
       "max": 1,
       "item": {
@@ -287,7 +250,7 @@
       }
     },
     {
-      "weight": 0.18405085802078247,
+      "weight": 0.12706157565116882,
       "min": 1,
       "max": 1,
       "item": {
@@ -306,7 +269,7 @@
       }
     },
     {
-      "weight": 0.18405085802078247,
+      "weight": 0.12706157565116882,
       "min": 1,
       "max": 1,
       "item": {
@@ -325,7 +288,7 @@
       }
     },
     {
-      "weight": 0.18405085802078247,
+      "weight": 0.12706157565116882,
       "min": 1,
       "max": 1,
       "item": {
@@ -344,7 +307,7 @@
       }
     },
     {
-      "weight": 0.18405085802078247,
+      "weight": 0.12706157565116882,
       "min": 1,
       "max": 1,
       "item": {
@@ -403,17 +366,54 @@
       }
     },
     {
-      "weight": 0.4858947992324829,
-      "min": 6,
-      "max": 17,
+      "weight": 1.763644814491272,
+      "min": 1,
+      "max": 1,
+      "item": {
+        "id": "techguns:vector",
+        "damage": 0,
+        "count": 1,
+        "tag": {
+          "nbtType": "compound",
+          "nbt": {
+            "camo": {
+              "nbtType": "byte",
+              "nbt": 0
+            },
+            "ammovariant": {
+              "nbtType": "string",
+              "nbt": "default"
+            },
+            "ammo": {
+              "nbtType": "short",
+              "nbt": 25
+            }
+          }
+        }
+      }
+    },
+    {
+      "weight": 1.290178656578064,
+      "min": 22,
+      "max": 30,
       "item": {
         "id": "techguns:itemshared",
-        "damage": 7,
+        "damage": 9,
         "count": 1
       }
     },
     {
-      "weight": 0.0010694180382415652,
+      "weight": 0.8473554849624634,
+      "min": 7,
+      "max": 18,
+      "item": {
+        "id": "techguns:itemshared",
+        "damage": 112,
+        "count": 1
+      }
+    },
+    {
+      "weight": 0.05511390045285225,
       "min": 1,
       "max": 1,
       "item": {
@@ -434,6 +434,43 @@
             "ammo": {
               "nbtType": "short",
               "nbt": 4
+            }
+          }
+        }
+      }
+    },
+    {
+      "weight": 1.39763605594635,
+      "min": 8,
+      "max": 24,
+      "item": {
+        "id": "techguns:itemshared",
+        "damage": 7,
+        "count": 1
+      }
+    },
+    {
+      "weight": 0.0019995670299977064,
+      "min": 1,
+      "max": 1,
+      "item": {
+        "id": "techguns:gaussrifle",
+        "damage": 0,
+        "count": 1,
+        "tag": {
+          "nbtType": "compound",
+          "nbt": {
+            "camo": {
+              "nbtType": "byte",
+              "nbt": 0
+            },
+            "ammovariant": {
+              "nbtType": "string",
+              "nbt": "default"
+            },
+            "ammo": {
+              "nbtType": "short",
+              "nbt": 8
             }
           }
         }

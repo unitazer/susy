@@ -4,8 +4,8 @@
   "items": [
     {
       "weight": 1.0068187713623047,
-      "min": 14,
-      "max": 28,
+      "min": 8,
+      "max": 22,
       "item": {
         "id": "appliedenergistics2:part",
         "damage": 36,
@@ -23,9 +23,9 @@
       }
     },
     {
-      "weight": 0.12706157565116882,
+      "weight": 0.3978064954280853,
       "min": 1,
-      "max": 1,
+      "max": 2,
       "item": {
         "id": "appliedenergistics2:drive",
         "damage": 0,
@@ -43,26 +43,7 @@
       }
     },
     {
-      "weight": 1.290178656578064,
-      "min": 1,
-      "max": 1,
-      "item": {
-        "id": "gregtech:meta_item_1",
-        "damage": 737,
-        "count": 1,
-        "tag": {
-          "nbtType": "compound",
-          "nbt": {
-            "Charge": {
-              "nbtType": "long",
-              "nbt": 1800000
-            }
-          }
-        }
-      }
-    },
-    {
-      "weight": 0.16315889358520508,
+      "weight": 0.5889394283294678,
       "min": 1,
       "max": 1,
       "item": {
@@ -81,17 +62,7 @@
       }
     },
     {
-      "weight": 1.1894346475601196,
-      "min": 27,
-      "max": 44,
-      "item": {
-        "id": "gregtech:meta_item_2",
-        "damage": 5909,
-        "count": 1
-      }
-    },
-    {
-      "weight": 0.1442086547613144,
+      "weight": 0.2900550961494446,
       "min": 1,
       "max": 1,
       "item": {
@@ -110,31 +81,12 @@
       }
     },
     {
-      "weight": 1.1894346475601196,
-      "min": 1,
-      "max": 1,
-      "item": {
-        "id": "gregtech:meta_item_2",
-        "damage": 214,
-        "count": 1,
-        "tag": {
-          "nbtType": "compound",
-          "nbt": {
-            "Charge": {
-              "nbtType": "long",
-              "nbt": 10000
-            }
-          }
-        }
-      }
-    },
-    {
-      "weight": 1.5121370553970337,
-      "min": 25,
-      "max": 46,
+      "weight": 2.540874481201172,
+      "min": 35,
+      "max": 52,
       "item": {
         "id": "gregtech:meta_item_1",
-        "damage": 566,
+        "damage": 627,
         "count": 1
       }
     },
@@ -149,7 +101,7 @@
       }
     },
     {
-      "weight": 1.0,
+      "weight": 1.0068187713623047,
       "min": 1,
       "max": 1,
       "item": {
@@ -163,47 +115,17 @@
       }
     },
     {
-      "weight": 0.646636426448822,
-      "min": 18,
-      "max": 36,
+      "weight": 2.540874481201172,
+      "min": 26,
+      "max": 43,
       "item": {
         "id": "gregtech:meta_item_1",
-        "damage": 575,
+        "damage": 628,
         "count": 1
       }
     },
     {
-      "weight": 1.39763605594635,
-      "min": 13,
-      "max": 32,
-      "item": {
-        "id": "gregtech:meta_item_1",
-        "damage": 629,
-        "count": 1
-      }
-    },
-    {
-      "weight": 1.1894346475601196,
-      "min": 1,
-      "max": 16,
-      "item": {
-        "id": "gregtech:meta_item_1",
-        "damage": 630,
-        "count": 1
-      }
-    },
-    {
-      "weight": 0.5889394283294678,
-      "min": 1,
-      "max": 4,
-      "item": {
-        "id": "gregtech:meta_item_1",
-        "damage": 631,
-        "count": 1
-      }
-    },
-    {
-      "weight": 0.5354365706443787,
+      "weight": 0.25986868143081665,
       "min": 1,
       "max": 1,
       "item": {
@@ -217,7 +139,7 @@
       }
     },
     {
-      "weight": 0.5889394283294678,
+      "weight": 0.7755888104438782,
       "min": 1,
       "max": 1,
       "item": {
@@ -231,9 +153,9 @@
       }
     },
     {
-      "weight": 1.1894346475601196,
-      "min": 23,
-      "max": 46,
+      "weight": 1.763644814491272,
+      "min": 36,
+      "max": 50,
       "item": {
         "id": "gregtech:meta_item_1",
         "damage": 523,
@@ -241,9 +163,9 @@
       }
     },
     {
-      "weight": 1.1894346475601196,
-      "min": 23,
-      "max": 46,
+      "weight": 1.763644814491272,
+      "min": 36,
+      "max": 50,
       "item": {
         "id": "gregtech:meta_item_1",
         "damage": 524,
@@ -251,9 +173,9 @@
       }
     },
     {
-      "weight": 1.1894346475601196,
-      "min": 22,
-      "max": 46,
+      "weight": 1.763644814491272,
+      "min": 36,
+      "max": 50,
       "item": {
         "id": "gregtech:meta_item_1",
         "damage": 525,
@@ -261,9 +183,9 @@
       }
     },
     {
-      "weight": 1.1894346475601196,
-      "min": 23,
-      "max": 46,
+      "weight": 1.763644814491272,
+      "min": 36,
+      "max": 50,
       "item": {
         "id": "gregtech:meta_item_1",
         "damage": 526,
@@ -271,9 +193,9 @@
       }
     },
     {
-      "weight": 1.1894346475601196,
-      "min": 23,
-      "max": 46,
+      "weight": 1.763644814491272,
+      "min": 36,
+      "max": 50,
       "item": {
         "id": "gregtech:meta_item_1",
         "damage": 527,
@@ -281,29 +203,59 @@
       }
     },
     {
-      "weight": 0.9243392944335938,
-      "min": 1,
-      "max": 2,
+      "weight": 1.1894346475601196,
+      "min": 16,
+      "max": 32,
       "item": {
-        "id": "opencomputers:component",
-        "damage": 5,
+        "id": "gregtech:meta_item_1",
+        "damage": 632,
         "count": 1
       }
     },
     {
-      "weight": 0.9243392944335938,
-      "min": 1,
-      "max": 4,
+      "weight": 1.0950840711593628,
+      "min": 18,
+      "max": 30,
       "item": {
-        "id": "opencomputers:component",
-        "damage": 10,
+        "id": "gregtech:meta_item_1",
+        "damage": 633,
         "count": 1
       }
     },
     {
-      "weight": 1.290178656578064,
-      "min": 2,
-      "max": 4,
+      "weight": 0.4858947992324829,
+      "min": 4,
+      "max": 8,
+      "item": {
+        "id": "gregtech:meta_item_1",
+        "damage": 634,
+        "count": 1
+      }
+    },
+    {
+      "weight": 0.08515378087759018,
+      "min": 1,
+      "max": 1,
+      "item": {
+        "id": "appliedenergistics2:energy_acceptor",
+        "damage": 0,
+        "count": 1
+      }
+    },
+    {
+      "weight": 0.646636426448822,
+      "min": 1,
+      "max": 3,
+      "item": {
+        "id": "opencomputers:component",
+        "damage": 4,
+        "count": 1
+      }
+    },
+    {
+      "weight": 0.646636426448822,
+      "min": 1,
+      "max": 3,
       "item": {
         "id": "opencomputers:component",
         "damage": 1,
@@ -311,11 +263,31 @@
       }
     },
     {
-      "weight": 8.315798913827166E-5,
+      "weight": 0.646636426448822,
       "min": 1,
-      "max": 1,
+      "max": 3,
       "item": {
-        "id": "appliedenergistics2:energy_acceptor",
+        "id": "opencomputers:card",
+        "damage": 2,
+        "count": 1
+      }
+    },
+    {
+      "weight": 0.646636426448822,
+      "min": 1,
+      "max": 12,
+      "item": {
+        "id": "opencomputers:component",
+        "damage": 8,
+        "count": 1
+      }
+    },
+    {
+      "weight": 0.3978064954280853,
+      "min": 8,
+      "max": 14,
+      "item": {
+        "id": "appliedenergistics2:controller",
         "damage": 0,
         "count": 1
       }

@@ -1,11 +1,6 @@
-import globals.Globals
-import static globals.SinteringGlobals.*
-
-SINTERING_OVEN = recipemap('sintering_oven')
-HOT_ISOSTATIC_PRESS = recipemap('hot_isostatic_press')
-MIXER = recipemap('mixer')
-FORMING_PRESS = recipemap('forming_press')
-CVD = recipemap('cvd')
+import static prePostInit.Recipemaps.*
+import globals.Sintering
+import static gregtech.api.GTValues.*
 
 // PVA binder
 
@@ -14,29 +9,31 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('distilled_water') * 1000)
     .fluidOutputs(fluid('polyvinyl_alcohol_binder') * 1000)
     .duration(100)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Alumina
 
-HOT_ISOSTATIC_PRESS.recipeBuilder()
-    .inputs(ore('dustAlumina') * 10)
-    .fluidInputs(fluid('polyvinyl_alcohol_binder') * 200)
-    .notConsumable(metaitem('shape.mold.ring'))
-    .outputs(metaitem('sintered_alumina.insulator'))
-    .duration(500)
-    .EUt(Globals.voltAmps[1])
-    .buildAndRegister()
+Sintering.blankets.each { blanket ->
+    SINTERING_OVEN.recipeBuilder()
+        .inputs(ore('dustAlumina') * 10)
+        .fluidInputs(fluid('polyvinyl_alcohol_binder') * 200)
+        .notConsumable(metaitem('shape.mold.ring'))
+        .fluidInputs(fluid(blanket.name) * blanket.amountRequired)
+        .outputs(metaitem('sintered_alumina.insulator'))
+        .duration(blanket.duration)
+        .EUt(VA[MV])
+        .buildAndRegister()
+}
 
-// Zirconia
-
-HOT_ISOSTATIC_PRESS.recipeBuilder()
-    .inputs(ore('dustBoronNitride') * 12)
-    .fluidInputs(fluid('polyvinyl_alcohol_binder') * 400)
-    .outputs(metaitem('nozzle.boron_nitride'))
-    .duration(600)
-    .EUt(Globals.voltAmps[3])
-    .buildAndRegister()
+SINTERING_OVEN.recipeBuilder()
+        .inputs(ore('dustAlumina') * 5)
+        .inputs(ore('dustSmallGraphite'))    
+        .notConsumable(metaitem('shape.mold.plate'))
+        .outputs(metaitem('membrane.support.alumina'))
+        .duration(300)
+        .EUt(VA[MV])
+        .buildAndRegister()
 
 // Boron carbide
 
@@ -46,35 +43,33 @@ ARC_FURNACE.recipeBuilder()
     .outputs(metaitem('dustBoronCarbide') * 5)
     .fluidOutputs(fluid('carbon_monoxide') * 6000)
     .duration(300)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
-for (blanket in sintering_blankets) {
+Sintering.blankets.each { blanket ->
     SINTERING_OVEN.recipeBuilder()
         .inputs(ore('dustBoronCarbide'))
         .fluidInputs(fluid('novolacs') * 100)
         .notConsumable(metaitem('shape.mold.rod'))
         .fluidInputs(fluid(blanket.name) * blanket.amountRequired)
         .outputs(metaitem('stickBoronCarbide') * 2)
-        .circuitMeta(1)
         .duration(blanket.duration)
-        .EUt(Globals.voltAmps[2])
+        .EUt(VA[MV])
         .buildAndRegister()
 }
 
 // Long Boron Carbide Rod * 1
 mods.gregtech.forge_hammer.removeByInput(16, [metaitem('stickBoronCarbide') * 2], null)
 
-for (blanket in sintering_blankets) {
+Sintering.blankets.each { blanket ->
     SINTERING_OVEN.recipeBuilder()
         .inputs(ore('dustBoronCarbide'))
         .fluidInputs(fluid('novolacs') * 100)
-        .notConsumable(metaitem('shape.mold.rod'))
+        .notConsumable(metaitem('shape.mold.long_rod'))
         .fluidInputs(fluid(blanket.name) * blanket.amountRequired)
         .outputs(metaitem('stickLongBoronCarbide'))
-        .circuitMeta(2)
         .duration(blanket.duration)
-        .EUt(Globals.voltAmps[2])
+        .EUt(VA[MV])
         .buildAndRegister()
 }
 
@@ -86,7 +81,7 @@ CVD.recipeBuilder()
     .outputs(metaitem('dustBoronNitride') * 2)
     .fluidOutputs(fluid('hydrogen_chloride') * 3000)
     .duration(120)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 FORMING_PRESS.recipeBuilder()
@@ -94,5 +89,12 @@ FORMING_PRESS.recipeBuilder()
     .notConsumable(metaitem('shape.mold.crucible'))
     .outputs(metaitem('crucible.boron.nitride'))
     .duration(2000)
-    .EUt(Globals.voltAmps[2])
+    .EUt(VA[MV])
+    .buildAndRegister()
+
+HOT_ISOSTATIC_PRESS.recipeBuilder()
+    .inputs(ore('dustBoronNitride') * 12)
+    .outputs(metaitem('nozzle.boron_nitride'))
+    .duration(600)
+    .EUt(VA[HV])
     .buildAndRegister()

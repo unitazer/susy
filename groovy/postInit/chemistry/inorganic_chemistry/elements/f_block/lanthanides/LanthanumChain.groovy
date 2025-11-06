@@ -1,9 +1,5 @@
-import globals.Globals
-
-BR = recipemap('batch_reactor')
-REACTION_FURNACE = recipemap('reaction_furnace')
-CENTRIFUGE = recipemap('centrifuge')
-DISTILLERY = recipemap('distillery')
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
 
 // Tier 1
 BR.recipeBuilder()
@@ -14,7 +10,7 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('diluted_hydrochloric_acid') * 12000)
     .fluidOutputs(fluid('carbon_dioxide') * 3000)
     .duration(80)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -29,13 +25,14 @@ REACTION_FURNACE.recipeBuilder()
     .buildAndRegister()
 
 // Tier 2
-CENTRIFUGE.recipeBuilder()
+MIXER_SETTLER.recipeBuilder()
     .fluidInputs(fluid('distilled_water') * 1000)
     .fluidInputs(fluid('lanthanum_extract') * 10000)
     .fluidOutputs(fluid('lanthanum_nitrate_solution') * 1000)
     .fluidOutputs(fluid('aliquat_336_extraction_mixture') * 10000)
     .duration(80)
-    .EUt(120)
+    .EUt(VA[MV])
+    .requiredCells(2)
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -43,7 +40,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustLanthanumNitrate') * 13)
     .fluidOutputs(fluid('water') * 1000)
     .duration(20)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -52,10 +49,10 @@ BR.recipeBuilder()
     .outputs(metaitem('dustLanthanumFluoride') * 4)
     .fluidOutputs(fluid('diluted_nitric_acid') * 6000)
     .duration(80)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
-// Lanthanothermy Recycing
+// Lanthanothermy Recycling
 BR.recipeBuilder()
     .inputs(ore('dustLanthanumOxide') * 5)
     .fluidInputs(fluid('hydrofluoric_acid') * 6000)
@@ -63,4 +60,48 @@ BR.recipeBuilder()
     .fluidOutputs(fluid('water') * 9000)
     .duration(80)
     .EUt(60)
+    .buildAndRegister()
+
+// Lanthanum carbonate
+BR.recipeBuilder()
+    .inputs(ore('dustSodaAsh') * 18)
+    .fluidInputs(fluid('lanthanum_nitrate_solution') * 1000)
+    .fluidInputs(fluid('distilled_water') * 5000)
+    .outputs(metaitem('dustLanthanumCarbonate') * 14)
+    .fluidOutputs(fluid('sodium_nitrate_solution') * 6000)
+    .EUt(VA[LV])
+    .duration(100)
+    .buildAndRegister()
+
+//Lanthanum nitrate (pre-IV)
+ROASTER.recipeBuilder()
+    .inputs(ore('dustLanthanum') * 2)
+    .fluidInputs(fluid('oxygen') * 3000)
+    .outputs(metaitem('dustLanthanumOxide') * 5)
+    .duration(120)
+    .EUt(VA[EV])
+    .buildAndRegister()
+
+BR.recipeBuilder()
+    .inputs(ore('dustLanthanumOxide') * 5)
+    .fluidInputs(fluid('nitric_acid') * 6000)
+    .fluidOutputs(fluid('diluted_lanthanum_nitrate_solution') * 3000)
+    .duration(80)
+    .EUt(VA[MV])
+    .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('diluted_lanthanum_nitrate_solution') * 3000)
+    .outputs(metaitem('dustLanthanumNitrate') * 13)
+    .fluidOutputs(fluid('water') * 3000)
+    .duration(80)
+    .EUt(VA[MV])
+    .buildAndRegister()
+
+MIXER.recipeBuilder()
+    .inputs(ore('dustLanthanumNitrate') * 13)
+    .fluidInputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('lanthanum_nitrate_solution') * 1000)
+    .duration(120)
+    .EUt(VA[HV])
     .buildAndRegister()

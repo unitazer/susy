@@ -1,17 +1,14 @@
-import globals.Globals
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
 
-BR = recipemap('batch_reactor')
-REACTION_FURNACE = recipemap('reaction_furnace')
-CENTRIFUGE = recipemap('centrifuge')
-DISTILLERY = recipemap('distillery')
-
-CENTRIFUGE.recipeBuilder()
+MIXER_SETTLER.recipeBuilder()
     .fluidInputs(fluid('hydrochloric_acid') * 3625)
     .fluidInputs(fluid('gadolinium_extract') * 25000)
     .fluidOutputs(fluid('gadolinium_chloride_solution') * 3625)
     .fluidOutputs(fluid('spent_p_five_zero_seven_extraction_mixture') * 25000)
     .duration(80)
-    .EUt(120)
+    .EUt(VA[MV])
+    .requiredCells(2)
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
@@ -19,7 +16,7 @@ DISTILLERY.recipeBuilder()
     .outputs(metaitem('dustGadoliniumChloride') * 4)
     .fluidOutputs(fluid('water') * 3625)
     .duration(20)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 BR.recipeBuilder()
@@ -28,7 +25,7 @@ BR.recipeBuilder()
     .outputs(metaitem('dustGadoliniumFluoride') * 4)
     .fluidOutputs(fluid('hydrochloric_acid') * 3000)
     .duration(80)
-    .EUt(30)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
@@ -40,4 +37,16 @@ REACTION_FURNACE.recipeBuilder()
     .outputs(metaitem('dustFluorite') * 9)
     .duration(200)
     .EUt(960)
+    .buildAndRegister()
+
+// Gadolinium carbonate
+
+BR.recipeBuilder()
+    .inputs(ore('dustGadoliniumChloride') * 8)
+    .inputs(ore('dustSodaAsh') * 18)
+    .fluidInputs(fluid('deionized_water') * 6000)
+    .outputs(metaitem('dustGadoliniumCarbonate') * 14)
+    .fluidOutputs(fluid('salt_water') * 6000)
+    .duration(80)
+    .EUt(VA[LV])
     .buildAndRegister()

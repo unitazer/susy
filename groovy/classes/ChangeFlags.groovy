@@ -21,6 +21,9 @@ import static gregtech.api.unification.material.Materials.*
 import static gregtech.api.unification.material.info.MaterialFlags.*
 import static material.SuSyMaterials.*
 
+import supercritical.api.unification.material.properties.FissionFuelProperty
+import supercritical.api.unification.material.properties.SCPropertyKey
+
 //eventManager.listen(EventPriority.LOWEST)
 class ChangeFlags {
     private static void setupSlurries(Material mat) {
@@ -62,6 +65,7 @@ class ChangeFlags {
         log.infoMC("Modifying flags...")
 
         RecipeMaps.BLAST_RECIPES.setMaxFluidInputs(2);
+        RecipeMaps.PYROLYSE_RECIPES.setMaxFluidInputs(2);
         SuSyRecipeMaps.RAILROAD_ENGINEERING_STATION_RECIPES.setMaxFluidInputs(3);
         SuSyRecipeMaps.RAILROAD_ENGINEERING_STATION_RECIPES.setMaxInputs(12);
 
@@ -74,9 +78,10 @@ class ChangeFlags {
         Asbestos.setProperty(PropertyKey.INGOT, new IngotProperty());
 
         BisphenolA.setProperty(PropertyKey.DUST, new DustProperty());
+        Polonium.setProperty(PropertyKey.DUST, new DustProperty());
 
         Silver.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(1234, 50, false, false, true, false));
-        Rubber.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(593, 50, true, false, false, false));
+        Rubber.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(593, 6, true, false, false, false));
 
         
         setupFluidType(AntimonyTrifluoride, FluidStorageKeys.LIQUID, 565)
@@ -117,6 +122,7 @@ class ChangeFlags {
 
         Polybenzimidazole.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, true))
         Polytetrafluoroethylene.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, false))
+        Asbestos.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, true))
         //Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder()));
 
         Tantalum.setProperty(PropertyKey.BLAST, new BlastProperty(3293, GasTier.MID, 480, 240, -1, -1));
@@ -171,6 +177,7 @@ class ChangeFlags {
         Silver.addFlags("generate_catalyst_bed");
         Nickel.addFlags("generate_catalyst_bed");
         Magnesia.addFlags("generate_catalyst_bed");
+        CupricOxide.addFlags("generate_catalyst_bed");
         Brass.addFlags("generate_ring");
         Indium.addFlags("generate_plate");
         BisphenolA.addFlags("no_unification");
@@ -181,8 +188,9 @@ class ChangeFlags {
         SteelMagnetic.addFlags("generate_plate")
         StainlessSteel.addFlags("generate_round");
         Hafnium.addFlags("generate_long_rod", "generate_rod");
-        VanadiumSteel.addFlags("generate_round")
-        Mica.addFlags(GENERATE_PLATE, NO_UNIFICATION)
+        VanadiumSteel.addFlags("generate_round");
+        Mica.addFlags("generate_plate", "no_unification");
+        Rubber.addFlags("generate_plate");
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")
@@ -226,6 +234,18 @@ class ChangeFlags {
         Bastnasite.setFormula("(REE)CO3F", true);
         Monazite.setFormula("(REE,Th)PO4", true);
         Gypsum.setFormula("(CaSO4)(H2O)2", true);
+        Polyethylene.setFormula("[C2H4]n", true);
+        PolyvinylChloride.setFormula("[C2H3Cl]n", true);
+        Rubber.setFormula("[C5H8]n", true);
+        Polycaprolactam.setFormula("[C6H11NO]n", true);
+        Polytetrafluoroethylene.setFormula("[C2F4]n", true);
+        SiliconeRubber.setFormula("[SiC2H6O]n", true);
+        StyreneButadieneRubber.setFormula("[C40H44]n", true);
+        PolyphenyleneSulfide.setFormula("[C6H4S]n", true);
+        Polybenzimidazole.setFormula("[C20H12N4]n", true);
+        PolyvinylAcetate.setFormula("[C4H6O2]n", true);
+        PolyvinylButyral.setFormula("[C8H14O2]n", true);
+        TungstenSteel.setFormula("Fe60W8Cr3Mo2V", true);
 
         // Ore Processing
         
@@ -831,5 +851,14 @@ class ChangeFlags {
         Methanol.addFlags("flammable");
         Ethanol.addFlags("flammable");
         log.infoMC("Finished modifying flags")
+
+        // Nuclear
+
+        Bismuth.setProperty(SCPropertyKey.FISSION_FUEL, FissionFuelProperty.builder(Bismuth.getRegistryName(), 560, 5000, 5)
+                .slowNeutronCaptureCrossSection(0.2)
+                .requiredNeutrons(1)
+                .releasedNeutrons(0)
+                .releasedHeatEnergy(0.005)
+                .build())
     }
 }
