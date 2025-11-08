@@ -427,6 +427,10 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10302, "cured_coated_coil")
         addItem(10303, "induction_coil")
 
+        // Resistance Furnace
+        addItem(10304, "carbon_electrode")
+        addItem(10305, "raw_carbon_crucible")
+        addItem(10306, "carbon_crucible")
     }
 
     log.infoMC("Finished adding metaitems")

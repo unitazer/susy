@@ -79,7 +79,9 @@ def nonMetals = [
         [input: metaitem('brush.unfired'), output: metaitem('brush')],
         [input: item('minecraft:cactus'), output: item('minecraft:dye', 2)],
         [input: item('biomesoplenty:plant_1', 6), output: item('minecraft:dye', 2)],
-        [input: metaitem('gregtechfoodoption:component.coconut'), output: metaitem('copra')]
+        [input: metaitem('gregtechfoodoption:component.coconut'), output: metaitem('copra')],
+        [input: metaitem('raw_electrode'), output: metaitem('carbon_electrode')],
+        [input: metaitem('raw_carbon_crucible'), output: metaitem('carbon_crucible')]
 ]
 
 def metals = [
@@ -127,3 +129,80 @@ heatingElements.each { heatingElement ->
                 .buildAndRegister()
     }
 }
+
+
+def silicaSand = [
+        metaitem('dustQuartzite'),
+        metaitem('dustCertusQuartz'),
+        metaitem('dustNetherQuartz'),
+        metaitem('dustSiliconDioxide')
+]
+
+for (silica in silicaSand) {
+    ore('silicaSand').add(silica)
+}
+
+// Acheson Process
+
+def carbonSource = [
+        metaitem('dustCharcoal'),
+        metaitem('dustGreenCoke'),
+        metaitem('dustCarbonBlack')
+]
+
+for (carbon in carbonSource) {
+    ore('carbonSource').add(carbon)
+}
+
+RESISTANCE_FURNACE.recipeBuilder()
+        .notConsumable(metaitem('graphite_electrode'))
+        .notConsumable(ore('silicaSand') )
+        .notConsumable(ore('carbonSource') * 3)
+        .inputs(ore('silicaSand') * 2)
+        .inputs(ore('carbonSource') * 6)
+        .outputs(metaitem('dustSiliconCarbide'))
+        .fluidOutputs(fluid('carbon_monoxide') * 1000)
+        .duration(240)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+def insulatingCarbon = [
+        metaitem('dustCoke'),
+        metaitem('dustAnthracite'),
+        metaitem('dustHeatedGreenCoke'),
+        metaitem('dustGraphite')
+]
+
+for (carbon in insulatingCarbon) {
+    ore('insulatingCarbon').add(carbon)
+}
+
+RESISTANCE_FURNACE.recipeBuilder()
+        .inputs(metaitem('carbon_electrode'))
+        .notConsumable(ore('insulatingCarbon') * 16)
+        .inputs(ore('insulatingCarbon') * 4)
+        .inputs(metaitem('carbon_electrode'))
+        .outputs(metaitem('graphite_electrode'))
+        .duration(320)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+RESISTANCE_FURNACE.recipeBuilder()
+        .notConsumable(metaitem('graphite_electrode'))
+        .notConsumable(ore('insulatingCarbon') * 16)
+        .inputs(ore('insulatingCarbon') * 4)
+        .inputs(metaitem('carbon_electrode'))
+        .outputs(metaitem('graphite_electrode'))
+        .duration(240)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+RESISTANCE_FURNACE.recipeBuilder()
+        .notConsumable(metaitem('graphite_electrode'))
+        .notConsumable(ore('insulatingCarbon') * 16)
+        .inputs(ore('insulatingCarbon') * 4)
+        .inputs(metaitem('carbon_crucible'))
+        .outputs(metaitem('crucible.graphite'))
+        .duration(240)
+        .EUt(VA[LV])
+        .buildAndRegister()

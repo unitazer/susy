@@ -2950,8 +2950,12 @@ metaitem.hydrocracking_catalyst.name=Hydrocracking Catalyst
 metaitem.red_mud_slag.name=Red Mud Slag
 metaitem.leached_red_mud_slag.name=Leached Red Mud Slag
 metaitem.pitch_binder.name=Pitch Binder
-metaitem.raw_electrode.name=Raw Electrode
+metaitem.raw_electrode.name=Raw Carbon Electrode
+metaitem.carbon_electrode.name=Carbon Electrode
 metaitem.graphite_electrode.name=Graphite Electrode
+
+metaitem.raw_carbon_crucible.name=Raw Carbon Crucible
+metaitem.carbon_crucible.name=Carbon Crucible
 
 metaitem.rydberg_atom_array.name=Rydberg Atom Array
 metaitem.malted_grain.name=Malted Grain
