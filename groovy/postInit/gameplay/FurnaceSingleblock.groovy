@@ -1,0 +1,129 @@
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
+
+def heatingElements = [
+        [material: metaitem('springCupronickel'), duration: 100],
+        [material: metaitem('springNichrome'), duration: 75],
+        [material: metaitem('springKanthal'), duration: 60]
+]
+
+def nonMetals = [
+        [input: item('minecraft:cobblestone'), output: item('minecraft:stone')],
+        [input: item('minecraft:stone_slab', 3), output: item('minecraft:stone_slab')],
+        [input: item('minecraft:stonebrick'), output: item('minecraft:stonebrick', 2)],
+        [input: item('pyrotech:cobblestone', 0), output: item('minecraft:stone', 5)],
+        [input: item('pyrotech:cobblestone', 1), output: item('minecraft:stone', 3)],
+        [input: item('pyrotech:cobblestone', 2), output: item('minecraft:stone', 1)],
+        [input: item('gregtech:stone_cobble'), output: item('gregtech:stone_smooth')],
+        [input: item('susy:susy_stone_cobble'), output: item('susy:susy_stone_smooth')],
+        [input: item('susy:susy_stone_cobble', 1), output: item('susy:susy_stone_smooth', 1)],
+        [input: item('susy:susy_stone_cobble', 2), output: item('susy:susy_stone_smooth', 2)],
+        [input: item('susy:susy_stone_cobble', 3), output: item('susy:susy_stone_smooth', 3)],
+        [input: item('susy:susy_stone_cobble', 4), output: item('susy:susy_stone_smooth', 4)],
+        [input: item('susy:susy_stone_cobble', 5), output: item('susy:susy_stone_smooth', 5)],
+        [input: item('susy:susy_stone_cobble', 6), output: item('susy:susy_stone_smooth', 6)],
+        [input: item('susy:susy_stone_cobble', 7), output: item('susy:susy_stone_smooth', 7)],
+        [input: item('susy:susy_stone_cobble', 8), output: item('susy:susy_stone_smooth', 8)],
+        [input: item('susy:susy_stone_cobble', 9), output: item('susy:susy_stone_smooth', 9)],
+        [input: item('susy:susy_stone_cobble', 10), output: item('susy:susy_stone_smooth', 10)],
+        [input: item('susy:susy_stone_cobble', 11), output: item('susy:susy_stone_smooth', 11)],
+        [input: item('gregtech:stone_cobble', 1), output: item('gregtech:stone_smooth', 1)],
+        [input: item('gregtech:stone_cobble', 2), output: item('gregtech:stone_smooth', 2)],
+        [input: item('gregtech:stone_cobble', 3), output: item('gregtech:stone_smooth', 3)],
+        [input: item('gregtech:stone_cobble', 4), output: item('gregtech:stone_smooth', 4)],
+        [input: item('gregtech:stone_cobble', 5), output: item('gregtech:stone_smooth', 5)],
+        [input: item('gregtech:stone_smooth', 1), output: item('gregtech:stone_polished', 1)],
+        [input: item('gregtech:stone_smooth', 2), output: item('gregtech:stone_polished', 2)],
+        [input: item('gregtech:stone_smooth', 3), output: item('gregtech:stone_polished', 3)],
+        [input: item('gregtech:stone_smooth', 4), output: item('gregtech:stone_polished', 4)],
+        [input: item('gregtech:stone_smooth', 5), output: item('gregtech:stone_polished', 5)],
+        [input: metaitem('dustSienna'), output: metaitem('dustBurntSienna')],
+        [input: ore('blockClay'), output: item('minecraft:hardened_clay')],
+        [input: item('minecraft:stained_hardened_clay'), output: item('minecraft:white_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 1), output: item('minecraft:orange_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 2), output: item('minecraft:magenta_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 3), output: item('minecraft:light_blue_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 4), output: item('minecraft:yellow_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 5), output: item('minecraft:lime_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 6), output: item('minecraft:pink_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 7), output: item('minecraft:gray_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 8), output: item('minecraft:silver_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 9), output: item('minecraft:cyan_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 10), output: item('minecraft:purple_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 11), output: item('minecraft:blue_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 12), output: item('minecraft:brown_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 13), output: item('minecraft:green_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 14), output: item('minecraft:red_glazed_terracotta')],
+        [input: item('minecraft:stained_hardened_clay', 15), output: item('minecraft:black_glazed_terracotta')],
+        [input: item('biomesoplenty:mudball'), output: item('biomesoplenty:mud_brick')],
+        [input: item('biomesoplenty:mud'), output: item('minecraft:dirt')],
+        [input: metaitem('gregtechfoodoption:brick.adobe_fired'), output: metaitem('gregtechfoodoption:brick.adobe')],
+        [input: metaitem('compressed.clay'), output: item('minecraft:brick')],
+        [input: metaitem('compressed.coke_clay'), output: metaitem('brick.coke')],
+        [input: metaitem('compressed.fireclay'), output: metaitem('brick.fireclay')],
+        [input: item('pyrotech:bucket_clay_unfired'), output: item('pyrotech:bucket_clay')],
+        [input: item('minecraft:dye', 15), output: metaitem('gregtechfoodoption:bone_ash_dust')],
+        [input: metaitem('dustLimestone'), output: metaitem('dustQuicklime')],
+        [input: item('projectred-core:resource_item', 250), output: item('projectred-core:resource_item', 300)],
+        [input: item('projectred-core:resource_item', 251), output: item('projectred-core:resource_item', 103)],
+        [input: item('projectred-core:resource_item', 252), output: item('projectred-core:resource_item', 104)],
+        [input: item('projectred-core:resource_item', 310), output: item('projectred-core:resource_item', 320)],
+        [input: item('projectred-core:resource_item', 311), output: item('projectred-core:resource_item', 341)],
+        [input: metaitem('ingotIronMagnetic'), output: item('minecraft:iron_ingot')],
+        [input: metaitem('stickIronMagnetic'), output: metaitem('stickIron')],
+        [input: metaitem('ingotSteelMagnetic'), output: metaitem('ingotSteel')],
+        [input: metaitem('stickSteelMagnetic'), output: metaitem('stickSteel')],
+        [input: metaitem('stickIron'), output: metaitem('hot_iron_rod')],
+        [input: metaitem('stickSteel'), output: metaitem('hot_steel_rod')],
+        [input: metaitem('plateSteel'), output: metaitem('hot_steel_plate')],
+        [input: metaitem('brush.unfired'), output: metaitem('brush')],
+        [input: item('minecraft:cactus'), output: item('minecraft:dye', 2)],
+        [input: item('biomesoplenty:plant_1', 6), output: item('minecraft:dye', 2)],
+        [input: metaitem('gregtechfoodoption:component.coconut'), output: metaitem('copra')]
+]
+
+def metals = [
+        [input: metaitem('dustTin'), output: fluid('tin')],
+        [input: metaitem('dustLead'), output: fluid('lead')],
+        [input: metaitem('dustZinc'), output: fluid('zinc')],
+        [input: metaitem('dustAntimony'), output: fluid('antimony')],
+        [input: metaitem('dustBismuth'), output: fluid('bismuth')],
+        [input: metaitem('dustBatteryAlloy'), output: fluid('battery_alloy')],
+        [input: metaitem('dustSolderingAlloy'), output: fluid('soldering_alloy')],
+        [input: metaitem('dustCopper'), output: fluid('copper')],
+        [input: metaitem('dustBronze'), output: fluid('bronze')],
+        [input: metaitem('dustBrass'), output: fluid('brass')],
+        [input: metaitem('dustCupronickel'), output: fluid('cupronickel')],
+        [input: metaitem('dustPotin'), output: fluid('potin')],
+        [input: metaitem('dustGold'), output: fluid('gold')],
+        [input: metaitem('dustSilver'), output: fluid('silver')],
+        [input: metaitem('dustAluminium'), output: fluid('aluminium')],
+        [input: metaitem('dustAluminiumAlloy6061'), output: fluid('aluminium_alloy_6061')],
+        [input: metaitem('dustAluminiumAlloy7075'), output: fluid('aluminium_alloy_7075')],
+        [input: metaitem('dustCadmium'), output: fluid('cadmium')],
+        [input: metaitem('dustIndium'), output: fluid('indium')],
+        [input: metaitem('dustRedAlloy'), output: fluid('red_alloy')]
+]
+
+heatingElements.each { heatingElement ->
+    nonMetals.each {nonMetal ->
+        RESISTANCE_FURNACE.recipeBuilder()
+                .notConsumable(heatingElement.material)
+                .inputs(nonMetal.input)
+                .outputs(nonMetal.output)
+                .duration(heatingElement.duration)
+                .EUt(4)
+                .buildAndRegister()
+    }
+
+    metals.each {metal ->
+        RESISTANCE_FURNACE.recipeBuilder()
+                .notConsumable(heatingElement.material)
+                .notConsumable(metaitem('crucible.graphite')) // sub in for clay-graphite crucible
+                .inputs(metal.input)
+                .fluidOutputs(metal.output * 144)
+                .duration(heatingElement.duration)
+                .EUt(4)
+                .buildAndRegister()
+    }
+}
