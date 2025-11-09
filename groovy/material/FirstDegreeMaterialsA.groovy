@@ -2119,7 +2119,7 @@ class FirstDegreeMaterialsA {
         SamariumAlloy = new Material.Builder(8403, SuSyUtility.susyId('samarium_alloy'))
                 .dust().ingot().liquid(new FluidBuilder().temperature(1600))
                 .color(0xb3d683).iconSet(METALLIC)
-                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_PLATE, NO_UNIFICATION)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_PLATE, NO_UNIFICATION, HIP_PRESSED)
                 .components(Samarium, Cobalt * 5)
                 .build()
 

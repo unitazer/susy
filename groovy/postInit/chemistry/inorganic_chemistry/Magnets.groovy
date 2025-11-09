@@ -172,46 +172,6 @@ for (material in materials) {
 
 // Samarium-cobalt magnets (LuV)
 
-HOT_ISOSTATIC_PRESS.recipeBuilder()
-    .notConsumable(metaitem('shape.mold.ingot'))
-    .inputs(ore('dustSamariumAlloy'))
-    .outputs(metaitem('ingotSamariumAlloy'))
-    .duration(200)
-    .EUt(VA[IV])
-    .buildAndRegister()
-
-HOT_ISOSTATIC_PRESS.recipeBuilder()
-    .notConsumable(metaitem('shape.mold.plate'))
-    .inputs(ore('dustSamariumAlloy'))
-    .outputs(metaitem('plateSamariumAlloy'))
-    .duration(200)
-    .EUt(VA[IV])
-    .buildAndRegister()
-
-HOT_ISOSTATIC_PRESS.recipeBuilder()
-    .notConsumable(metaitem('shape.mold.long_rod'))
-    .inputs(ore('dustSamariumAlloy'))
-    .outputs(metaitem('stickLongSamariumAlloy'))
-    .duration(200)
-    .EUt(VA[IV])
-    .buildAndRegister()
-
-HOT_ISOSTATIC_PRESS.recipeBuilder()
-    .notConsumable(metaitem('shape.mold.rod'))
-    .inputs(ore('dustSamariumAlloy'))
-    .outputs(metaitem('stickSamariumAlloy') * 2)
-    .duration(200)
-    .EUt(VA[IV])
-    .buildAndRegister()
-
-HOT_ISOSTATIC_PRESS.recipeBuilder()
-    .notConsumable(metaitem('shape.mold.ring'))
-    .inputs(ore('dustSamariumAlloy'))
-    .outputs(metaitem('ringSamariumAlloy') * 4)
-    .duration(200)
-    .EUt(VA[IV])
-    .buildAndRegister()
-
 // Replace magnetic component recipes
 
 // Extreme Voltage Coil * 1
