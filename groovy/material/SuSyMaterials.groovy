@@ -790,6 +790,7 @@ class SuSyMaterials {
     public static Material CrudeCyanamideSolution
     public static Material CyanamideSolution
     public static Material GreenEpoxyPCBCoating
+    public static Material CoalTarPitch
 
     // Petrochem Materials
 
