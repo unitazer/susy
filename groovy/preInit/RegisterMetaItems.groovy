@@ -397,10 +397,14 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10204, 'display.mercury')
         addItem(10205, 'display.mars')
         
-        // Parachutes 10250-10300
+        // Space Components 10250-10300
         addItem(10250, "parachute.drogue")
         addItem(10251, "parachute.main")
         addItem(10252, "parachute.supersonic_main")
+        addItem(10253, "carbon.mesh.phenolic.moist")
+        addItem(10254, "carbon.mesh.phenolic.treated")
+        addItem(10255, "carbon.tile.phenolic.treated")
+        addItem(10256, "heat_shield.pica")
 
         // Induction Furnace
         addItem(10301, "coated_copper_coil")

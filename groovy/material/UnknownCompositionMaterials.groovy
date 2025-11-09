@@ -3191,5 +3191,16 @@ class UnknownCompositionMaterials {
                 .liquid()
                 .color(0xe7e3eb)
                 .build()
+        
+        DilutedPhenolicCresolInfiltrant = new Material.Builder(4693, SuSyUtility.susyId('diluted_phenolic_cresol_infiltrant'))
+                .liquid()
+                .color(0xAD9478)
+                .build()
+        
+        PhenolicCresolInfiltrant = new Material.Builder(4694, SuSyUtility.susyId('phenolic_cresol_infiltrant'))
+                .liquid()
+                .color(0x4E2F0A)
+                .build()
+        
     }
 }
