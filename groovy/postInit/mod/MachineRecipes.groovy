@@ -257,9 +257,16 @@ RecyclingHelper.addShaped("gregtech:coagulation_tank_wall", item('susy:coagulati
 ])
 
 //Nerf arc furnaces, add graphite rod chain
+
+ore('carbon').add(
+        metaitem('dustCoalTarPitch'),
+        metaitem('dustGreenCoke'),
+        metaitem('dustHeatedGreenCoke')
+)
+
 MIXER.recipeBuilder()
     .fluidInputs(fluid('coal_tar') * 500)
-    .inputs(metaitem('dustCoalTarPitch'))
+    .inputs(ore('carbon'))
     .outputs(metaitem('pitch_binder'))
     .EUt(VA[LV])
     .duration(50)
