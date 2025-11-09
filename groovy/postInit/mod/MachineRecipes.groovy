@@ -289,6 +289,25 @@ SINTERING_OVEN.recipeBuilder()
     .duration(1440)
     .buildAndRegister()
 
+MIXER.recipeBuilder()
+        .fluidInputs(fluid('water') * 100)
+        .inputs(metaitem('dustFireclay'))
+        .inputs(metaitem('dustGraphite'))
+        .outputs(metaitem('clay_graphite_paste'))
+        .EUt(VA[LV])
+        .duration(50)
+        .buildAndRegister()
+
+SINTERING_OVEN.recipeBuilder()
+        .inputs(metaitem('clay_graphite_paste') * 7)
+        .notConsumable(metaitem('shape.mold.crucible'))
+        .outputs(metaitem('raw_clay_graphite_crucible'))
+        .EUt(VA[LV])
+        .duration(1440)
+        .buildAndRegister()
+
+
+
 for (i = 1; i <= 8; i++) {
     RecyclingHelper.removeByOutput(metaitem('arc_furnace.' + Globals.voltageTiers[i]))
 

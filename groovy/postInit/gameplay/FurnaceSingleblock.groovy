@@ -81,7 +81,9 @@ def nonMetals = [
         [input: item('biomesoplenty:plant_1', 6), output: item('minecraft:dye', 2)],
         [input: metaitem('gregtechfoodoption:component.coconut'), output: metaitem('copra')],
         [input: metaitem('raw_electrode'), output: metaitem('carbon_electrode')],
-        [input: metaitem('raw_carbon_crucible'), output: metaitem('carbon_crucible')]
+        [input: metaitem('raw_carbon_crucible'), output: metaitem('carbon_crucible')],
+        [input: metaitem('raw_clay_graphite_crucible'), output: metaitem('clay_graphite_crucible')]
+
 ]
 
 def metals = [
@@ -120,8 +122,8 @@ heatingElements.each { heatingElement ->
 
     metals.each {metal ->
         RESISTANCE_FURNACE.recipeBuilder()
+                .notConsumable(metaitem('clay_graphite_crucible'))
                 .notConsumable(heatingElement.material)
-                .notConsumable(metaitem('crucible.graphite')) // sub in for clay-graphite crucible
                 .inputs(metal.input)
                 .fluidOutputs(metal.output * 144)
                 .duration(heatingElement.duration)

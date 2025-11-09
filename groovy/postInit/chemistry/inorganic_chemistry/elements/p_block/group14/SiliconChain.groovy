@@ -61,14 +61,6 @@ for (quartz in quartz_dusts) {
         }
 }
 
-ARC_FURNACE.recipeBuilder()
-        .inputs(ore('dustSiliconCarbide') * 2)
-        .outputs(metaitem('dustSilicon'))
-        .outputs(metaitem('dustGraphite'))
-        .EUt(60)
-        .duration(270)
-        .buildAndRegister()
-
 ROASTER.recipeBuilder()
         .inputs(ore('dustSilicon'))
         .fluidInputs(fluid('chlorine') * 4000)
