@@ -1403,7 +1403,7 @@ RecyclingHelper.addShaped("gregtech:locomotive_controller", metaitem('susy:stock
 
 // Curtain Coater
 
-RecyclingHelper.addShaped("gregtech:curtain_coater", metaitem('curtain_coater'), [
+RecyclingHelper.addShaped("gregtech:curtain_coater", metaitem('susy:curtain_coater'), [
     [metaitem('electric.pump.hv'), metaitem('frameStainlessSteel'), metaitem('electric.pump.hv')],
     [ore('circuitHv'), metaitem('hull.Hv'), ore('circuitHv')],
     [metaitem('pipeLargeFluidStainlessSteel'), ore('circuitHv'), metaitem('pipeLargeFluidStainlessSteel')]
@@ -1420,7 +1420,7 @@ ASSEMBLER.recipeBuilder()
 
 // Precise Milling Machine
 
-RecyclingHelper.addShaped("gregtech:milling", metaitem('milling'), [
+RecyclingHelper.addShaped("gregtech:milling", metaitem('susy:milling'), [
     [ore('circuitHv'), metaitem('conveyor.module.hv'), ore('circuitHv')],
     [metaitem('robot.arm.hv'), metaitem('hull.Hv'), metaitem('robot.arm.hv')],
     [ore('circuitHv'), metaitem('conveyor.module.hv'), ore('circuitHv')]

@@ -656,21 +656,5 @@ class FirstDegreeMaterialsB {
                 .components(Aluminium * 678, Zinc * 17, Magnesium * 20, Copper * 4, Chrome * 1)
                 .colorAverage()
                 .build()
-
-        ElectrodepositedCopper = new Material.Builder(8761, SuSyUtility.susyId('electrodeposited_copper'))
-                .ingot(1)
-                .color(0xFF8000)
-                .iconSet(SHINY)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_FOIL)
-                .components(Copper)
-                .build();
-
-        SodiumFormateSolution = new Material.Builder(8762, SuSyUtility.susyId('sodium_formate_solution'))
-                .liquid()
-                .components(Sodium, Carbon, Hydrogen, Oxygen * 2)
-                .color(0xC9C9A5)
-                .build();
-                
-        SodiumFormateSolution.setFormula("(HCOONa)(H2O)", true)
     }
 }

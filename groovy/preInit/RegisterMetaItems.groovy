@@ -106,7 +106,7 @@ eventManager.listen { PostMaterialEvent event ->
 
         addItem(212, "drone.lv").setMaxStackSize(1).addComponents(ElectricStats.createRechargeableBattery(10000, GTValues.LV)).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
         addItem(213, "glass_fibers")
-        addItem(215, "titanium_cylinder");
+        addItem(214, "titanium_cylinder");
 
         addItem(215, "commutator")
         addItem(216, "brush.unfired")
@@ -274,9 +274,8 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(5805, "board.epoxy.electroless");
         addItem(5806, "board.epoxy.electrolytic");
         addItem(5807, "board.epoxy.wet_masked");
-        addItem(5808, "board.epoxy.masked");
-        addItem(5809, "board.epoxy.mask_affixed"); 
-        addItem(5810, "circuit_board.fr4");
+        addItem(5808, "board.epoxy.mask_affixed"); 
+        addItem(5809, "circuit_board.fr4");
 
 
         //Good Circuit Components 5900-6000

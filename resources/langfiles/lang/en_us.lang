@@ -122,9 +122,7 @@ susy.material.acidic_chloronitrobenzene_mixture=Acidic Chloronitrobenzene Mixtur
 susy.material.mixed_dichlorobenzene_solution=Mixed Dichlorobenzene Solution
 susy.material.two_butanol_solution=2-Butanol Solution
 susy.material.DilutedSodiumCarbonateSolution=Diluted Sodium Carbonate Solution
-susy.material.sodium_formate_solution=Sodium Formate Solution
 susy.material.green_epoxy_pcb_coating=Green Epoxy PCB Coating
-susy.material.formic_acid_sodium_sulfate_solution=Formic Acid Sodium Sulfate Solution
 susy.material.four_nitrophenol=4-Nitrophenol
 susy.material.four_aminophenol_solution=4-Aminophenol Solution
 susy.material.four_aminophenol=4-Aminophenol
@@ -308,7 +306,6 @@ susy.material.sodium_tetraborate=Sodium Tetraborate
 susy.material.boron_carbide=Boron Carbide
 susy.material.potassium_tetrafluoroborate=Potassium Tetrafluoroborate
 susy.material.electrolytic_boron=Electrolytic Boron
-susy.material.electrodeposited_copper=Electrodeposited (ED) Copper
 
 susy.material.methylenedianiline=Methylenedianiline
 susy.material.methylene_diphenyl_diisocyanate=Methylene Diphenyl Diisocyanate
@@ -2715,6 +2712,10 @@ susy.material.ceramic_coating_slurry=Ceramic-Coating Slurry
 susy.material.sodium_carboxymethyl_cellulose=Sodium Carboxymethyl Cellulose (CMC)
 susy.material.sodium_cmc_suspension=Sodium CMC Suspension
 susy.material.cmc_waste=CMC Waste
+susy.material.tetrahydrobenzaldehyde=Tetrahydrobenzaldehyde
+susy.material.peracetic_acid_solution=Peracetic Acid Solution
+susy.material.epoxycyclohexane_carboxylate=3,4-Epoxycyclohexylmethyl-3',4'-Epoxycyclohexane Carboxylate (ECC)
+susy.material.tetrasodium_ethylenediaminetetraacetate_solution=Tetrasodium EDTA Solution
 
 # Isotopes
 

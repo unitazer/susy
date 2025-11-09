@@ -3169,5 +3169,25 @@ class OrganicChemistryMaterials {
                 .build()
 
         SodiumCarboxymethylCellulose.setFormula('[C6H7O2(OH)2OCH2COONa]n', true)
+
+        Tetrahydrobenzaldehyde = new Material.Builder(15498, SuSyUtility.susyId('tetrahydrobenzaldehyde'))
+                .liquid()
+                .components(Carbon * 7, Hydrogen * 10, Oxygen)
+                .color(0xe08043)
+                .build()
+
+        PeraceticAcidSolution = new Material.Builder(15499, SuSyUtility.susyId('peracetic_acid_solution'))
+                .liquid()
+                .components(Carbon * 2, Hydrogen * 4, Oxygen, 3, Water)
+                .color(0x97bd28)
+                .build()
+
+        PeraceticAcidSolution.setFormula('(CH3CO3H)(H2O)', true)
+
+        EpoxycyclohexaneCarboxylate = new Material.Builder(15500, SuSyUtility.susyId('epoxycyclohexane_carboxylate'))
+                .liquid()
+                .components(Carbon * 14, Hydrogen * 20, Oxygen * 4)
+                .color(0x2dad80)
+                .build()
     }
 }

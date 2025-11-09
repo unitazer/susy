@@ -1,6 +1,9 @@
 package globals
 import globals.Globals
 
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
+
 import gregtech.api.metatileentity.multiblock.CleanroomType
 
 /*
@@ -119,12 +122,12 @@ class Etchants {
             return;
         }
         for (etchant in etchants[materialEtched]) {
-            def baseRecipeBuilder = recipemap('chemical_bath').recipeBuilder()
+            def baseRecipeBuilder = CHEMICAL_BATH.recipeBuilder()
                         .inputs(metaitem(input))
                         .fluidInputs(fluid(etchant.fluidName) * etchant.amountUsed)
                         .outputs(metaitem(product))
                         .duration(etchant.timeUsed * timeMultiplier)
-                        .EUt(Globals.voltAmps[voltageTier]);
+                        .EUt(VA[voltageTier]);
             if (cleanroom) {
                 baseRecipeBuilder = baseRecipeBuilder.cleanroom(CleanroomType.CLEANROOM)
             }

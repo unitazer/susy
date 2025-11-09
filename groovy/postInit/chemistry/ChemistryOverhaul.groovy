@@ -3844,25 +3844,6 @@ MIXER.recipeBuilder()
     .EUt(128)
     .buildAndRegister()
 
-// Sodium Formate Solution Recycle
-
-BR.recipeBuilder()
-    .fluidInputs(fluid('sodium_formate_solution') * 2000)
-    .fluidInputs(fluid('sulfuric_acid') * 1000)
-    .fluidOutputs(fluid('formic_acid_sodium_sulfate_solution') * 4000)
-    .duration(100)
-    .EUt(30)
-    .buildAndRegister()
-    
-VACUUM_DT.recipeBuilder()
-    .fluidInputs(fluid('formic_acid_sodium_sulfate_solution') * 4000)
-    .outputs(metaitem('dustSodiumSulfate') * 7)
-    .fluidOutputs(fluid('formic_acid') * 2000)
-    .fluidOutputs(fluid('water') * 2000)
-    .duration(240)
-    .EUt(30)
-    .buildAndRegister()
-
 // p-Nitrotoluene
 
 CSTR.recipeBuilder()
@@ -3889,4 +3870,13 @@ CRYSTALLIZER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
+// Peracetic acid
 
+CSTR.recipeBuilder()
+    .notConsumable(fluid('sulfuric_acid') * 1000)
+    .fluidInputs(fluid('acetic_acid') * 1000)
+    .fluidInputs(fluid('hydrogen_peroxide_solution') * 1000)
+    .fluidOutputs(fluid('peracetic_acid_solution') * 2000)  
+    .duration(20)
+    .EUt(VA[LV])
+    .buildAndRegister()

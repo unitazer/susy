@@ -307,7 +307,6 @@ elements.each { element ->
     ore(anyPurityTinyDust).add(metaitem(highPurityTinyDust))
     ore(anyPurityTinyDust).add(metaitem(normalTinyDust))
 }
-ore('dustAnyPurityCopper').add(metaitem('dustElectrodepositedCopper'))
 
 //NTP knives
 /* //custom oredicts break with custom transforms, will report this bug today

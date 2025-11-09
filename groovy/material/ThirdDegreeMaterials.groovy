@@ -858,10 +858,10 @@ class ThirdDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        FormicAcidSodiumSulfateSolution = new Material.Builder(24139, SuSyUtility.susyId('formic_acid_sodium_sulfate_solution'))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(FormicAcid * 2, SodiumSulfate * 1, Water * 2)
-                .color(0xe35fa8)
+        TetrasodiumEthylenediaminetetraacetateSolution = new Material.Builder(24139, SuSyUtility.susyId('tetrasodium_ethylenediaminetetraacetate_solution'))
+                .liquid()
+                .components(TetrasodiumEthylenediaminetetraacetate, Water)
+                .colorAverage()
                 .build()
     }
 }

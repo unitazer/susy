@@ -1,6 +1,9 @@
 package globals
 import globals.Globals
 
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
+
 import gregtech.api.metatileentity.multiblock.CleanroomType
 
 class Photoresists {
@@ -28,20 +31,20 @@ class Photoresists {
                                          int voltageTier, int timeMultiplier, int outputMultiplier, 
                                          int circ, boolean cleanroom) {
         for (photoresist in photoresists) {
-            def uvLightBoxRecipe = recipemap("uv_light_box").recipeBuilder()
+            def uvLightBoxRecipe = UV_LIGHT_BOX.recipeBuilder()
                         .inputs(metaitem(input))
                         .notConsumable(metaitem(mask))
                         .fluidInputs(fluid(photoresist.fluidName) * photoresist.amountUsed)
                         .outputs(metaitem(product) * outputMultiplier)
                         .duration(photoresist.timeUsed * timeMultiplier)
-                        .EUt(Globals.voltAmps[voltageTier]);
-            def laserEngraverRecipe = recipemap('laser_engraver').recipeBuilder()
+                        .EUt(VA[voltageTier]);
+            def laserEngraverRecipe = LASER_ENGRAVER.recipeBuilder()
                         .inputs(metaitem(input))
                         .circuitMeta(circ)
                         .fluidInputs(fluid(photoresist.fluidName) * (photoresist.amountUsed / 4))
                         .outputs(metaitem(product) * outputMultiplier)
                         .duration((int) (photoresist.timeUsed * timeMultiplier / 10))
-                        .EUt(Globals.voltAmps[voltageTier]);
+                        .EUt(VA[voltageTier]);
 
             if (cleanroom) {
                 uvLightBoxRecipe = uvLightBoxRecipe.cleanroom(CleanroomType.CLEANROOM);
