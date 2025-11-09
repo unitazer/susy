@@ -3,21 +3,14 @@ import globals.Globals
 import postInit.utils.RecyclingHelper
 import static gregtech.api.GTValues.*
 
-def name_removals = [
-    'gregtech:gregtech.machine.fisher.lv',
-    'gregtech:gregtech.machine.fisher.mv',
-    'gregtech:gregtech.machine.fisher.hv',
-    'gregtech:gregtech.machine.fisher.ev',
-    'gregtech:diesel_generator_lv',
-    'gregtech:diesel_generator_mv',
-    'gregtech:diesel_generator_hv'
-]
-
-for (name in name_removals) {
-    crafting.remove(name)
-}
-
 mods.jei.ingredient.yeet(
+    metaitem('fisher.lv'),
+    metaitem('fisher.mv'),
+    metaitem('fisher.hv'),
+    metaitem('fisher.ev'),
+    metaitem('combustion_generator.lv'),
+    metaitem('combustion_generator.mv'),
+    metaitem('combustion_generator.hv'),
     metaitem('steam_turbine.mv'),
     metaitem('steam_turbine.hv'),
     metaitem('gas_turbine.lv'),
@@ -43,7 +36,11 @@ mods.jei.ingredient.yeet(
 
 for (i = 1; i <= 13; i++) {
     mods.jei.ingredient.yeet(
-        metaitem('chemical_reactor.' + Globals.voltageTiers[i])
+        metaitem('chemical_reactor.' + Globals.voltageTiers[i]),
+        metaitem('fermenter.' + Globals.voltageTiers[i]),
+        metaitem('brewery.' + Globals.voltageTiers[i]),
+        metaitem('electric_furnace.' + Globals.voltageTiers[i])
+
     )
 }
 for (i = 1; i <= 8; i++) {
@@ -169,6 +166,9 @@ def tieredPipes = [metaitem('pipeLargeFluidSteel'), metaitem('pipeLargeFluidStee
 def tieredMagnets = [metaitem('stickIronMagnetic'), metaitem('stickSteelMagnetic'), metaitem('stickSteelMagnetic'), metaitem('stickAlnicoMagnetic'),
                      metaitem('stickAlnicoMagnetic'), metaitem('stickNeodymiumAlloyMagnetic'), metaitem('stickSamariumAlloyMagnetic'),
                      metaitem('stickSamariumAlloyMagnetic'), metaitem('stickSamariumAlloyMagnetic')];
+
+def refractories = [item('gregtech:metal_casing', 1), item('gregtech:metal_casing', 1), item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9),
+                    item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9)]
 
 log.infoMC("Adding Vulcanizing Press Craft")
 
@@ -510,11 +510,7 @@ for (i = 1; i <= 8; i++) {
     ])
 }
 
-//Fermentation Vat (and also remove old fermenters)
-
-for (i = 1; i <= 8; i++) {
-    crafting.remove("gregtech:gregtech.machine.fermenter." + Globals.voltageTiers[i])
-}
+//Fermentation Vat
 
 RecyclingHelper.addShaped("gregtech:fermentation_vat", metaitem('susy:fermentation_vat'), [
     [tieredCables[1], pumps[1], tieredCables[1]],
@@ -539,6 +535,17 @@ for (i = 1; i <= 8; i++) {
         [circuits[i], tieredGlass[i], circuits[i]],
         [tieredMagnets[i], hulls[i], tieredMagnets[i]],
         [tieredCables[i], tieredSprings[i], tieredCables[i]]
+    ])
+}
+
+//Resistance Furnace
+
+for (i = 1; i <= 5; i++) {
+    mods.jei.ingredient.yeet(metaitem('electric_furnace.' + Globals.voltageTiers[i]))
+    RecyclingHelper.addShaped("gregtech:resistance_furnace." + Globals.voltageTiers[i], metaitem('susy:resistance_furnace.' + Globals.voltageTiers[i]), [
+            [circuits[i], refractories[i], circuits[i]],
+            [refractories[i], hulls[i], refractories[i]],
+            [tieredCables[i], refractories[i], tieredCables[i]]
     ])
 }
 
