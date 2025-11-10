@@ -786,6 +786,8 @@ class SuSyMaterials {
     public static Material NapalmGellingAgent
     public static Material SodiumNaphthenateSolution
     public static Material CeramicCoatingSlurry
+    public static Material SodiumCMCSuspension
+    public static Material CMCWaste
 
     // Petrochem Materials
 
@@ -2340,7 +2342,8 @@ class SuSyMaterials {
     public static Material Polysulfone
     public static Material Acetonitrile
     public static Material MyristicAcid
-    
+    public static Material SodiumCarboxymethylCellulose
+
     // Third Degree Materials
 
     public static Material FurfuralSolution
@@ -2480,7 +2483,6 @@ class SuSyMaterials {
     public static Material DichlorodiphenylSulfoneSolution
     public static Material FuelCellCatalystSolution
     public static Material PolytetrafluoroethyleneCoatingSolution
-
 
     // Thermodynamics Materials
 
