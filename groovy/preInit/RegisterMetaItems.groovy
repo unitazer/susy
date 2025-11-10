@@ -407,6 +407,17 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10302, "cured_coated_coil")
         addItem(10303, "induction_coil")
 
+        // Lighting Components
+
+        addItem(10401, "carbon_filament")
+        addItem(10402, "gallium_nitride_buffer_wafer")
+        addItem(10403, "raw_LED_wafer")
+        addItem(10404, "patterned_LED_wafer")
+        addItem(10405, "etched_LED_wafer")
+        addItem(10406, "metallized_LED_wafer")
+        addItem(10407, "LED_chip")
+        
+        
     }
 
     log.infoMC("Finished adding metaitems")

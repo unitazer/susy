@@ -2626,6 +2626,13 @@ susy.material.perfluorovinyl_sulfonyl_ether_solution=Perfluorovinyl Sulfonyl Eth
 susy.material.nafion_solution=Nafion Solution
 susy.material.partially_deionized_water=Partially Deionized Water
 susy.material.stabilized_sodium_silicate_solution=Stabilized Sodium Silicate Solution
+susy.material.halophosphate_phosphor=Halophosphate Phosphor
+susy.material.halophosphate_phosphor_solution=Halophosphate Phosphor Solution
+susy.material.trimethyl_gallium_solution=Trimethylgallium Solution
+susy.material.trimethyl_indium_solution=Trimethylindium Solution
+susy.material.trimethyl_gallium=Trimethylgallium
+susy.material.trimethyl_indium=Trimethylindium
+susy.material.yttrium_aluminium_garnet_cerium=Ce-Doped Yttrium Aluminium Garnet
 
 # Isotopes
 
@@ -3184,6 +3191,14 @@ metaitem.parachute.supersonic_main.name=Supersonic Disk-Gap-Band Parachute
 metaitem.coated_copper_coil.name=Ceramic-Coated Copper Tubing
 metaitem.cured_coated_coil.name=Cured Ceramic-Coated Copper Tubing
 metaitem.induction_coil.name=Induction Coil
+
+metaitem.carbon_filament.name=Carbon Filament
+metaitem.gallium_nitride_buffer_wafer.name=Gallium Nitride Buffer Wafer
+metaitem.raw_LED_wafer.name=Raw LED Wafer
+metaitem.patterned_LED_wafer.name=Patterned LED Wafer
+metaitem.etched_LED_wafer.name=Etched LED Wafer
+metaitem.metallized_LED_wafer.name=Metallized LED Wafer
+metaitem.LED_chip.name=LED Chip
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand

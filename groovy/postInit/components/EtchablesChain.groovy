@@ -374,6 +374,7 @@ generatePatterningRecipes('wafer.polysilicon', 'patterned.polysilicon', 'mask.ad
 generatePatterningRecipes('wafer.silicon_nitride', 'patterned.silicon_nitride', 'mask.advanced', HV, 4, 1, 1, true)
 generatePatterningRecipes('wafer.nickel', 'patterned.nand', 'mask.nand', HV, 4, 1, 1, true)
 generatePatterningRecipes('wafer.nickel', 'patterned.nor', 'mask.nor', HV, 4, 1, 2, true)
+generatePatterningRecipes('raw_LED_wafer', 'patterned_LED_wafer', 'mask.advanced', HV, 4, 1, 2, true)
 
 generateEtchingRecipes('patterned.ic', 'etched.ic', 'silicon', LV, 1, false)
 generateEtchingRecipes('patterned.cpu', 'etched.cpu', 'silicon', LV, 1,false)
@@ -386,6 +387,7 @@ generateEtchingRecipes('patterned.polysilicon', 'etched.polysilicon', 'silicon',
 generateEtchingRecipes('patterned.silicon_nitride', 'etched.silicon_nitride', 'silicon_nitride', MV, 1, true)
 generateEtchingRecipes('patterned.nand', 'wafer.nand_memory_chip', 'nickel', MV, 1, true)
 generateEtchingRecipes('patterned.nor', 'wafer.nor_memory_chip', 'nickel', MV, 1, true)
+generateEtchingRecipes('patterned_LED_wafer', 'etched_LED_wafer', 'gallium_arsenide', HV, 1, true)
 
 ELECTROLYZER.recipeBuilder()
         .inputs(metaitem('etched.ic'))
@@ -440,6 +442,7 @@ generateCuttingRecipes('wafer.low_power_integrated_circuit', 'plate.low_power_in
 generateCuttingRecipes('wafer.power_integrated_circuit', 'plate.power_integrated_circuit', 4, EV, true)
 generateCuttingRecipes('wafer.nand_memory_chip', 'plate.nand_memory_chip', 32, HV, true)
 generateCuttingRecipes('wafer.nor_memory_chip', 'plate.nor_memory_chip', 16, HV, true)
+generateCuttingRecipes('metallized_LED_wafer', 'LED_chip', 32, HV, true)
 
 //PHENOLIC BOARD (TIER 2)
 
@@ -564,3 +567,50 @@ ASSEMBLER.recipeBuilder()
         .duration(120)
         .EUt(VA[LV])
         .buildAndRegister()
+
+// LED wafer
+
+CVD.recipeBuilder()
+    .inputs(metaitem('wafer.alumina'))
+    .fluidInputs(fluid('ammonia') * 1000)
+    .fluidInputs(fluid('trimethyl_gallium') * 1000) 
+    .outputs(metaitem('gallium_nitride_buffer_wafer'))
+    .fluidOutputs(fluid('methane') * 3000)
+    .cleanroom(CleanroomType.CLEANROOM)
+    .duration(600)
+    .EUt(VA[HV])
+    .buildAndRegister()
+
+//This stel should take 200mb trimethyl indium, 200mb trimethyl gallium and 400mb methane to show the layering quantum wells/barriers
+//Just waiting till someone adds an extra fluid input to the CVD machine
+CVD.recipeBuilder()
+    .inputs(metaitem('gallium_nitride_buffer_wafer'))
+    .fluidInputs(fluid('ammonia') * 200)
+    .fluidInputs(fluid('trimethyl_indium') * 200) 
+    .outputs(metaitem('raw_LED_wafer'))
+    .fluidOutputs(fluid('methane') * 200)
+    .cleanroom(CleanroomType.CLEANROOM)
+    .duration(800)
+    .EUt(VA[HV])
+    .buildAndRegister()
+
+CVD.recipeBuilder()
+    .inputs(metaitem('gallium_nitride_buffer_wafer'))
+    .fluidInputs(fluid('ammonia') * 200)
+    .fluidInputs(fluid('trimethyl_indium') * 200) 
+    .outputs(metaitem('raw_LED_wafer'))
+    .fluidOutputs(fluid('methane') * 200)
+    .cleanroom(CleanroomType.CLEANROOM)
+    .duration(800)
+    .EUt(VA[HV])
+    .buildAndRegister()
+
+//Gotta move this to a Physical Vapor Deposition machine when that's available
+CVD.recipeBuilder()
+    .inputs(metaitem('etched_LED_wafer'))
+    .inputs(metaitem('foilHighPurityAluminium'))
+    .outputs(metaitem('metallized_LED_wafer'))
+    .cleanroom(CleanroomType.CLEANROOM)
+    .duration(400)
+    .EUt(VA[HV])
+    .buildAndRegister()
