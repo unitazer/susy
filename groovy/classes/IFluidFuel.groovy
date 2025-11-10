@@ -6,7 +6,6 @@ class IFluidFuel{
 
     public int duration;
     public int fuel_amount;
-    public int air_amount;
     public int flue_amount;
 
     public boolean gaseous = false;
@@ -31,10 +30,6 @@ class IFluidFuel{
 
     public void setFuelAmount(int fuel_amount) {
         this.fuel_amount = fuel_amount;
-    }
-
-    public void setAirAmount(int air_amount) {
-        this.air_amount = air_amount;
     }
 
     public void setFlueAmount(int flue_amount) {
