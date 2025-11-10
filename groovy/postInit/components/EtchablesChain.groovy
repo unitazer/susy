@@ -594,17 +594,6 @@ CVD.recipeBuilder()
     .EUt(VA[HV])
     .buildAndRegister()
 
-CVD.recipeBuilder()
-    .inputs(metaitem('gallium_nitride_buffer_wafer'))
-    .fluidInputs(fluid('ammonia') * 200)
-    .fluidInputs(fluid('trimethyl_indium') * 200) 
-    .outputs(metaitem('raw_LED_wafer'))
-    .fluidOutputs(fluid('methane') * 200)
-    .cleanroom(CleanroomType.CLEANROOM)
-    .duration(800)
-    .EUt(VA[HV])
-    .buildAndRegister()
-
 //Gotta move this to a Physical Vapor Deposition machine when that's available
 CVD.recipeBuilder()
     .inputs(metaitem('etched_LED_wafer'))
