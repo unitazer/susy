@@ -667,22 +667,25 @@ for (fluid_fuel in FluidFuels) {
         if (fluid_fuel.gaseous) {
                 GAS_TURBINE.recipeBuilder()
                         .fluidInputs(liquid(fluid_fuel.liquid_fuel) * fluid_fuel.amount_to_burn)
-                        .fluidOutputs(fluid('flue_gas') * int(fluid_fuel.byproduct_amount * 1.5))
+                        .fluidOutputs(fluid('flue_gas') * (int) (fluid_fuel.byproduct_amount * 1.5))
                         .duration(int(fluid_fuel.duration * 1.5))
                         .EUt(32)
+                        .info('recipe.power_generation.multiblock_rotation')
                         .buildAndRegister();
         } else {
                 COMBUSTION_GENERATOR.recipeBuilder()
                         .fluidInputs(liquid(fluid_fuel.liquid_fuel) * fluid_fuel.amount_to_burn)
                         .duration(fluid_fuel.duration)
                         .EUt(32)
+                        .info('recipe.power_generation.combustion')
                         .buildAndRegister();
 
                 GAS_TURBINE.recipeBuilder()
                         .fluidInputs(liquid(fluid_fuel.liquid_fuel) * fluid_fuel.amount_to_burn)
-                        .fluidOutputs(fluid('flue_gas') * int(fluid_fuel.byproduct_amount * 1.5))
-                        .duration(int(fluid_fuel.duration * 1.5))
+                        .fluidOutputs(fluid('flue_gas') * (int) (fluid_fuel.byproduct_amount * 1.5))
+                        .duration((int) (fluid_fuel.duration * 1.5))
                         .EUt(32)
+                        .info('recipe.power_generation.multiblock_rotation')
                         .buildAndRegister();
         }
 
@@ -692,6 +695,7 @@ for (fluid_fuel in FluidFuels) {
                         .fluidInputs(fluid('preheated_air') * 100)
                         .duration(fluid_fuel.duration * 2)
                         .EUt(32)
+                        .info('recipe.power_generation.fuel_cell')
                         .buildAndRegister();
         }
 }
@@ -707,19 +711,21 @@ FLUID_HEATER.recipeBuilder()
 // Combined Cycle
 // Flue gas is 10,000 EU/mol or 10 EU/L
 HEAT_EXCHANGER.recipeBuilder()
-        .fluidInputs(fluid('deionized_water') * 250) 
-        .fluidInputs(fluid('desulfurized_flue_gas') * 12800)
-        .fluidOutputs(fluid('hp_steam') * 250)
-        .fluidOutputs(fluid('chilled_flue_gas') * 12800)
+        .fluidInputs(fluid('deionized_water') * 1280) 
+        .fluidInputs(fluid('desulfurized_flue_gas') * 65536)
+        .fluidOutputs(fluid('hp_steam') * 1280)
+        .fluidOutputs(fluid('chilled_flue_gas') * 65536)
         .duration((int) (working_fluid.duration * 0.75))
+        .info('recipe.power_generation.combined_cycle')
         .buildAndRegister();
 
 HEAT_EXCHANGER.recipeBuilder()
-        .fluidInputs(fluid('deionized_water') * 250) 
-        .fluidInputs(fluid('flue_gas') * 12800)
-        .fluidOutputs(fluid('hp_steam') * 250)
-        .fluidOutputs(fluid('chilled_flue_gas') * 12800)
+        .fluidInputs(fluid('deionized_water') * 1280) 
+        .fluidInputs(fluid('flue_gas') * 65536)
+        .fluidOutputs(fluid('hp_steam') * 1280)
+        .fluidOutputs(fluid('chilled_flue_gas') * 65536)
         .duration(working_fluid.duration)
+        .info('recipe.power_generation.combined_cycle')
         .buildAndRegister();
 
 for (working_fluid in WorkingFluids) {
@@ -735,6 +741,7 @@ for (working_fluid in WorkingFluids) {
                 .fluidOutputs(liquid(working_fluid.leftover_fluid) * (working_fluid.amount_to_use * working_fluid.conversion_factor))
                 .duration(working_fluid.duration * working_fluid.efficiency)
                 .EUt(32)
+                .info('recipe.power_generation.multiblock_rotation')
                 .buildAndRegister()
 
         RADIATOR.recipeBuilder()
@@ -857,7 +864,7 @@ FLUID_HEATER.recipeBuilder()
         .EUt(VA[HV])
         .buildAndRegister();
 
-// HPAST
+// AST
 
 // PWR
 HIGH_PRESSURE_ADV_STEAM_TURBINE.recipeBuilder()

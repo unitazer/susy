@@ -38,7 +38,7 @@ SIFTER.recipeBuilder()
         .inputs(ore('dustTinyCalcite'))
         .fluidOutputs(fluid('desulfurized_flue_gas') * 16000)
         .outputs(metaitem('dustTinyCalciumSulfite'))
-        .duration(5)
+        .duration(4)
         .EUt(VA[LV])
         .buildAndRegister()
 
