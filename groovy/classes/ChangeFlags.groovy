@@ -81,7 +81,7 @@ class ChangeFlags {
         Polonium.setProperty(PropertyKey.DUST, new DustProperty());
 
         Silver.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(1234, 50, false, false, true, false));
-        Rubber.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(593, 50, true, false, false, false));
+        Rubber.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(593, 6, true, false, false, false));
 
         
         setupFluidType(AntimonyTrifluoride, FluidStorageKeys.LIQUID, 565)
@@ -122,6 +122,7 @@ class ChangeFlags {
 
         Polybenzimidazole.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, true))
         Polytetrafluoroethylene.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, false))
+        Asbestos.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, true))
         //Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder()));
 
         Tantalum.setProperty(PropertyKey.BLAST, new BlastProperty(3293, GasTier.MID, 480, 240, -1, -1));
@@ -176,6 +177,7 @@ class ChangeFlags {
         Silver.addFlags("generate_catalyst_bed");
         Nickel.addFlags("generate_catalyst_bed");
         Magnesia.addFlags("generate_catalyst_bed");
+        CupricOxide.addFlags("generate_catalyst_bed");
         Brass.addFlags("generate_ring");
         Indium.addFlags("generate_plate");
         BisphenolA.addFlags("no_unification");
@@ -186,8 +188,9 @@ class ChangeFlags {
         SteelMagnetic.addFlags("generate_plate")
         StainlessSteel.addFlags("generate_round");
         Hafnium.addFlags("generate_long_rod", "generate_rod");
-        VanadiumSteel.addFlags("generate_round")
-        Mica.addFlags(GENERATE_PLATE, NO_UNIFICATION)
+        VanadiumSteel.addFlags("generate_round");
+        Mica.addFlags("generate_plate", "no_unification");
+        Rubber.addFlags("generate_plate");
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")
@@ -242,7 +245,9 @@ class ChangeFlags {
         Polybenzimidazole.setFormula("[C20H12N4]n", true);
         PolyvinylAcetate.setFormula("[C4H6O2]n", true);
         PolyvinylButyral.setFormula("[C8H14O2]n", true);
-
+        TungstenSteel.setFormula("Fe60W8Cr3Mo2V", true);
+        StainlessSteel.setFormula("Fe28Cr8Ni4Si2Mn", true);
+        
         // Ore Processing
         
         Pitchblende.addFlags("disable_decomposition")

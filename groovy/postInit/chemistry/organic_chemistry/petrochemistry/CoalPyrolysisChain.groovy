@@ -1,25 +1,18 @@
-import globals.Globals
-import static globals.CarbonGlobals.*
+import static prePostInit.Recipemaps.*
+import globals.Carbons
 
-import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.unification.stack.UnificationEntry;
+import static gregtech.api.GTValues.*
+import gregtech.api.recipes.ModHandler
+import gregtech.api.unification.material.Materials
+import gregtech.api.unification.ore.OrePrefix
+import gregtech.api.unification.stack.UnificationEntry
 
-def PYROLYSE_OVEN = recipemap('pyrolyse_oven');
-def DISTILLATION_TOWER = recipemap('distillation_tower');
-def CENTRIFUGE = recipemap('centrifuge');
-def MIXER = recipemap('mixer');
-def CSTR = recipemap('continuous_stirred_tank_reactor');
-def DISTILLERY = recipemap('distillery');
-def FLBR = recipemap('fluidized_bed_reactor');
-
-byNames(['dustCoal', 'gemCoal', 'dustCharcoal', 'gemCharcoal']).each { input ->
+Carbons['dustCoal', 'gemCoal', 'dustCharcoal', 'gemCharcoal'].each { input ->
     int CARBON_PROCESSED = 1200
-    def output = byName(input.pyrolysis_product)
+    def output = Carbons[input.pyrolysis_product]
     PYROLYSE_OVEN.recipeBuilder()
-        .inputs(ore(input.name) * input.num_items_by_carbon(CARBON_PROCESSED))
-        .outputs(metaitem(output.name) * output.num_items_by_carbon(CARBON_PROCESSED))
+        .inputs(ore(input.name) * input.numItemsByCarbon(CARBON_PROCESSED))
+        .outputs(metaitem(output.name) * output.numItemsByCarbon(CARBON_PROCESSED))
         .fluidOutputs(fluid('coal_gas') * 2500)
         .fluidOutputs(fluid('coal_tar') * 2500)
         .duration(20)
@@ -27,12 +20,12 @@ byNames(['dustCoal', 'gemCoal', 'dustCharcoal', 'gemCharcoal']).each { input ->
         .buildAndRegister()
 }
 
-byNames(['dustAnthracite', 'gemAnthracite']).each { input ->
+Carbons['dustAnthracite', 'gemAnthracite'].each { input ->
     int CARBON_PROCESSED = 1400
-    def output = byName(input.pyrolysis_product)
+    def output = Carbons[input.pyrolysis_product]
     PYROLYSE_OVEN.recipeBuilder()
-        .inputs(ore(input.name) * input.num_items_by_carbon(CARBON_PROCESSED))
-        .outputs(metaitem(output.name) * output.num_items_by_carbon(CARBON_PROCESSED))
+        .inputs(ore(input.name) * input.numItemsByCarbon(CARBON_PROCESSED))
+        .outputs(metaitem(output.name) * output.numItemsByCarbon(CARBON_PROCESSED))
         .fluidOutputs(fluid('coal_gas') * 3200)
         .fluidOutputs(fluid('coal_tar') * 3200)
         .duration(20)
@@ -48,12 +41,12 @@ byNames(['dustAnthracite', 'gemAnthracite']).each { input ->
         .buildAndRegister()
 }
 
-byNames(['dustLignite', 'gemLignite']).each { input ->
+Carbons['dustLignite', 'gemLignite'].each { input ->
     int CARBON_PROCESSED = 400
-    def output = byName(input.pyrolysis_product)
+    def output = Carbons[input.pyrolysis_product]
     PYROLYSE_OVEN.recipeBuilder()
-        .inputs(ore(input.name) * input.num_items_by_carbon(CARBON_PROCESSED))
-        .outputs(metaitem(output.name) * output.num_items_by_carbon(CARBON_PROCESSED))
+        .inputs(ore(input.name) * input.numItemsByCarbon(CARBON_PROCESSED))
+        .outputs(metaitem(output.name) * output.numItemsByCarbon(CARBON_PROCESSED))
         .fluidOutputs(fluid('creosote') * 1600)
         .fluidOutputs(fluid('monoxide_rich_syngas') * 2000)
         .duration(20)
@@ -61,8 +54,8 @@ byNames(['dustLignite', 'gemLignite']).each { input ->
         .buildAndRegister()
 }
 
-byNames(['dustCoke', 'gemCoke']).each { input ->
-    def output = byName(input.pyrolysis_product)
+Carbons['dustCoke', 'gemCoke'].each { input ->
+    def output = Carbons[input.pyrolysis_product]
     PYROLYSE_OVEN.recipeBuilder()
         .inputs(ore(input.name) * 16)
         .outputs(metaitem(output.name) * 12)
@@ -82,8 +75,8 @@ byNames(['dustCoke', 'gemCoke']).each { input ->
         .buildAndRegister()
 }
 
-byNames(['dustLigniteCoke', 'gemLigniteCoke']).each { input ->
-    def output = byName(input.pyrolysis_product)
+Carbons['dustLigniteCoke', 'gemLigniteCoke'].each { input ->
+    def output = Carbons[input.pyrolysis_product]
     PYROLYSE_OVEN.recipeBuilder()
         .inputs(ore(input.name) * 16)
         .outputs(metaitem(output.name) * 9)
@@ -100,10 +93,10 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('monoxide_rich_syngas') * 10000)
         .fluidOutputs(fluid('ammonia_solution') * 1000)
         .duration(40)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
-DISTILLATION_TOWER.recipeBuilder()
+DT.recipeBuilder()
         .chancedOutput(metaitem('dustAsphalt'), 5000, 0)
         .fluidInputs(fluid('coal_tar') * 1000)
         .fluidOutputs(fluid('anthracene_oil') * 100)
@@ -120,7 +113,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('creosote') * 100)
         .fluidOutputs(fluid('alkaline_naphthalene_oil') * 1000)
         .duration(100)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 CENTRIFUGE.recipeBuilder()
@@ -129,10 +122,10 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('sodium_sulfate_solution') * 100)
         .fluidOutputs(fluid('purified_naphthalene_oil') * 1000)
         .duration(100)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
-DISTILLATION_TOWER.recipeBuilder()
+DT.recipeBuilder()
         .fluidInputs(fluid('purified_naphthalene_oil') * 1000)
         .fluidOutputs(fluid('anthracene_oil') * 100)
         .fluidOutputs(fluid('naphthalene') * 800)
@@ -146,7 +139,7 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('sulfuric_acid') * 100)
         .fluidOutputs(fluid('acidic_light_oil') * 1000)
         .duration(120)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 CENTRIFUGE.recipeBuilder()
@@ -155,7 +148,7 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('btex_extract') * 600)
         .fluidOutputs(fluid('crude_pyridinium_sulfate') * 250)
         .duration(120)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 CSTR.recipeBuilder()
@@ -163,10 +156,10 @@ CSTR.recipeBuilder()
         .fluidInputs(fluid('ammonia') * 100)
         .fluidOutputs(fluid('impure_pyridine') * 50)
         .duration(1)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
-DISTILLATION_TOWER.recipeBuilder()
+DT.recipeBuilder()
         .fluidInputs(fluid('impure_pyridine') * 1000)
         .outputs(metaitem('dustAmmoniumSulfate') * 15)
         .fluidOutputs(fluid('gtfo_aniline') * 250)
@@ -180,7 +173,7 @@ MIXER.recipeBuilder()
         .fluidInputs(fluid('sulfuric_acid') * 100)
         .fluidOutputs(fluid('acidic_anthracene_oil') * 1000)
         .duration(120)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 CENTRIFUGE.recipeBuilder()
@@ -189,10 +182,10 @@ CENTRIFUGE.recipeBuilder()
         .fluidOutputs(fluid('anthracene_extract') * 750)
         .fluidOutputs(fluid('crude_quinolinium_sulfate') * 250)
         .duration(120)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
-DISTILLATION_TOWER.recipeBuilder()
+DT.recipeBuilder()
         .fluidInputs(fluid('anthracene_extract') * 1000)
         .chancedOutput(metaitem('dustAnthracene'), 8000, 0)
         .fluidOutputs(fluid('ethylene_glycol') * 100)
@@ -206,10 +199,10 @@ CSTR.recipeBuilder()
         .fluidInputs(fluid('ammonia') * 100)
         .fluidOutputs(fluid('impure_quinoline') * 50)
         .duration(1)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
-DISTILLATION_TOWER.recipeBuilder()
+DT.recipeBuilder()
         .fluidInputs(fluid('impure_quinoline') * 1000)
         .outputs(metaitem('dustAmmoniumSulfate') * 15)
         .fluidOutputs(fluid('quinoline') * 800)

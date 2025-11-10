@@ -776,6 +776,15 @@ class SuSyMaterials {
     public static Material AmmoxidationCatalyst
     public static Material PropyleneAmmoxidationMixture
     public static Material CrudeAcrylonitrile
+    public static Material Ebonite
+    public static Material CompoundedEbonite
+    public static Material NaphthenicAcid
+    public static Material Napalm
+    public static Material NapalmGellingAgent
+    public static Material SodiumNaphthenateSolution
+    public static Material CeramicCoatingSlurry
+    public static Material SodiumCMCSuspension
+    public static Material CMCWaste
 
     // Petrochem Materials
 
@@ -814,12 +823,14 @@ class SuSyMaterials {
     public static Material Kerosene
     public static Material CrudeKerosene
     public static Material SulfuricKerosene
+    public static Material AlkaliTreatedKerosene
     public static Material HeatedKerosene
     public static Material TreatedSulfuricKerosene
 
     public static Material LightGasOil
     public static Material CrudeLightGasOil
     public static Material SulfuricLightGasOil
+    public static Material AlkaliTreatedLightGasOil
     public static Material HeatedLightGasOil
     public static Material TreatedSulfuricLightGasOil
     public static Material SteamcrackedLightGasOil
@@ -1137,7 +1148,7 @@ class SuSyMaterials {
     public static Material LithiumHexafluorophosphate
     public static Material NickelHydroxide
     public static Material NickelChloride
-    public static Material NickelOxideHydroxide
+    public static Material NickelChlorideSolution
     public static Material SilverNitrateSolution
     public static Material ChloroauricAcid
     public static Material SpentMoebiusElectrolyte
@@ -1230,7 +1241,7 @@ class SuSyMaterials {
     public static Material ManganeseZincFerrite
     public static Material StrontiumCarbonate
     public static Material BariumCarbonate
-    public static Material LeadOxide
+    public static Material LeadIIOxide
     public static Material TantalumNitride
     public static Material RutheniumIIIChloride
     public static Material BismuthIridate
@@ -1596,6 +1607,9 @@ class SuSyMaterials {
     public static Material LanthanumStrontiumChromite
     public static Material YttriaStabilizedZirconia
     public static Material BismuthIIINitrateSolution
+    public static Material LeadIVOxide
+    public static Material AluminiumAlloy6061
+    public static Material AluminiumAlloy7075
 
     // HP Materials
 
@@ -1782,6 +1796,7 @@ class SuSyMaterials {
     public static Material SodiumAlumSolution
     public static Material OxidizedManganateSolution
     public static Material SupportedNickel
+    public static Material WattsBathElectrolyte
     public static Material AmmoniumMetatungstateSolution
     public static Material CobaltNitrateSolution
     public static Material GalvanizedSteel
@@ -1801,6 +1816,7 @@ class SuSyMaterials {
     public static Material AmmoniumPersulfateSolution
     public static Material YttriumChlorideSolution
     public static Material LanthanumNitrateSolution
+    public static Material DilutedLanthanumNitrateSolution
     public static Material CeriumIIIChlorideSolution
     public static Material PraseodymiumIIINitrateSolution
     public static Material GadoliniumChlorideSolution
@@ -2321,7 +2337,9 @@ class SuSyMaterials {
     public static Material DichlorodiphenylSulfone
     public static Material Polysulfone
     public static Material Acetonitrile
-    
+    public static Material MyristicAcid
+    public static Material SodiumCarboxymethylCellulose
+
     // Third Degree Materials
 
     public static Material FurfuralSolution
@@ -2461,7 +2479,6 @@ class SuSyMaterials {
     public static Material DichlorodiphenylSulfoneSolution
     public static Material FuelCellCatalystSolution
     public static Material PolytetrafluoroethyleneCoatingSolution
-
 
     // Thermodynamics Materials
 
