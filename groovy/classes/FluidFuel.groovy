@@ -15,11 +15,11 @@ class FluidFuel{
         //this is needed for some reason, otherwise it will error
     }
 
-    public IFluidFuel() {
+    public FluidFuel() {
         //this is needed for some reason, otherwise it will error
     }
 
-    public IFluidFuel(String fuel_liquid) {
+    public FluidFuel(String fuel_liquid) {
         this.liquid_fuel = fuel_liquid;
     }
 
