@@ -353,12 +353,19 @@ ASSEMBLER.recipeBuilder()
     .EUt(VA[EV])
     .buildAndRegister()
 
+//Industrial Concrete
+SOLIDIFIER.recipeBuilder()
+    .inputs(ore('frameGtSteel'))
+    .fluidInputs(fluid('concrete') * 576)
+    .outputs(item('susy:susy_stone_smooth', 9) * 32)
+    .duration(100)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
 // Concrete Dust * 1 (remove Industrial Concrete recycling)
 mods.gregtech.macerator.removeByInput(2, [item('susy:susy_stone_smooth', 9)], null)
 // Concrete Dust * 1
 mods.gregtech.macerator.removeByInput(2, [item('susy:susy_stone_cobble', 9)], null)
-
-//Custom Susy Blocks for Nether Complex structure
 
 // Asbestos Fiber
 EXTRUDER.recipeBuilder()
@@ -407,12 +414,9 @@ dyes.each { dye, number ->
         .buildAndRegister()
 }
 
-//Custom Susy Blocks for Black Mesa style Research Facility
-
-//Industrial Concrete
-ASSEMBLER.recipeBuilder()
-    .inputs(metaitem('frameSteel')) 
-    .inputs(metaitem('dustStone'))
+//Custom Susy Blocks for Black Mesa Research Facility
+MIXER.recipeBuilder() 
+    .inputs(metaitem('dustStone')) 
     .fluidInputs(fluid('concrete') * 144) 
     .outputs(item('susy:random_concrete') * 8) 
     .duration(80)
@@ -422,9 +426,8 @@ ASSEMBLER.recipeBuilder()
 def concretes = [1, 2, 3]
 
 concretes.each { number ->
-    ASSEMBLER.recipeBuilder()
+    MIXER.recipeBuilder()
         .circuitMeta(number)
-        .inputs(metaitem('frameSteel'))
         .inputs(metaitem('dustStone'))
         .fluidInputs(fluid('concrete') * 144)
         .outputs(item('susy:random_concrete', number) * 8)
@@ -433,17 +436,6 @@ concretes.each { number ->
         .buildAndRegister()
 }
 
-ASSEMBLER.recipeBuilder()
-    .circuitMeta(4)
-    .inputs(metaitem('frameSteel')) 
-    .inputs(metaitem('dustStone'))
-    .fluidInputs(fluid('concrete') * 144) 
-    .outputs(item('susy:susy_stone_smooth', 9) * 8)
-    .duration(80)
-    .EUt(VA[LV])
-    .buildAndRegister()
-
-//Dotted Panels
 def panels = [4, 5, 6, 7]
 
 panels.each { number ->
@@ -457,7 +449,6 @@ panels.each { number ->
         .buildAndRegister()
 }
 
-//Industrial Cinder Bricks
 def cinders = [8, 9, 10, 11, 12, 13]
 
 cinders.each { number ->
@@ -471,7 +462,6 @@ cinders.each { number ->
         .buildAndRegister()
 } 
 
-//Smooth Industrial Concretes
 def smooths = [14, 15]
 
 smooths.each { number ->
