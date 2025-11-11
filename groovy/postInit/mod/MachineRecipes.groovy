@@ -523,9 +523,17 @@ RecyclingHelper.addShaped("gregtech:fermentation_vat", metaitem('susy:fermentati
 
 //UV Light Box
 
-for (i = 1; i <= 8; i++) {
+for (i = 1; i <= 2; i++) {
     RecyclingHelper.addShaped("gregtech:uv_light_box." + Globals.voltageTiers[i], metaitem('susy:uv_light_box.' + Globals.voltageTiers[i]), [
         [tieredCables[i], metaitem('carbon_arc_lamp'), tieredCables[i]],
+        [circuits[i], hulls[i], circuits[i]],
+        [tieredPlates[i], tieredPlates[i], tieredPlates[i]]
+    ])
+}
+
+for (i = 3; i <= 8; i++) {
+    RecyclingHelper.addShaped("gregtech:uv_light_box." + Globals.voltageTiers[i], metaitem('susy:uv_light_box.' + Globals.voltageTiers[i]), [
+        [tieredCables[i], metaitem('lamp.mercury.lp'), tieredCables[i]],
         [circuits[i], hulls[i], circuits[i]],
         [tieredPlates[i], tieredPlates[i], tieredPlates[i]]
     ])

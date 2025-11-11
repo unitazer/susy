@@ -8115,7 +8115,7 @@ hash = "3cfe111f0952264052f3a1c105867e6283abc56a5624f9ee65d46d21871a1f26"
 
 [[files]]
 file = "groovy/classes/ChangeFlags.groovy"
-hash = "e7d540452941c815f32680a609885382835ade3ce62629a49d35d6ffa5b8aa84"
+hash = "f782f7d00b35b39fd4987e32f20afa9d0d9227c4cc5c7ee7a70f11133590253c"
 
 [[files]]
 file = "groovy/classes/Coolant.groovy"
@@ -8823,7 +8823,7 @@ hash = "1bcb6f86abf734b11eb1fcec9fbd25bf40e5fadeae349945103d57f7cb8479da"
 
 [[files]]
 file = "groovy/postInit/components/EtchablesChain.groovy"
-hash = "c96b3fe7173b0c9f849454cddad676bba66a075d99a4da7d54fd2015c1efa1e1"
+hash = "915c32f5c096f527ab12ac1eba020969b9f0102a005cb97aab2c2644cb5a7233"
 
 [[files]]
 file = "groovy/postInit/components/FieldGenerators.groovy"
@@ -9059,7 +9059,7 @@ hash = "5f9bd2743ba8308518d2962926449a3df0e1a7082c19e0a895cfcd1e62076e83"
 
 [[files]]
 file = "groovy/postInit/mod/GregTech.groovy"
-hash = "4a88f9bf65f423bf8e9f350c9c16f7526d9a8fbed92e1860c856335bc13511f7"
+hash = "b72ea9358765a19c25810f9bf0bcc89498a6fb8e1a5182d0dcaf7a1a1f03e5cd"
 
 [[files]]
 file = "groovy/postInit/mod/GregTechFoodOption.groovy"
@@ -9087,7 +9087,7 @@ hash = "dec2614f1f07bf6ad0a614c0584f887e1a94368b2e25b7e9d3d5c919a86e9f87"
 
 [[files]]
 file = "groovy/postInit/mod/MachineRecipes.groovy"
-hash = "c287ee8ff6c0cd054bc561187e90cdd1d2eacdcc777f20785b50381978f221f7"
+hash = "5f8d3208c706dd739e06977605a45a9e650a6e24a8d89a2b3ad842a0eb521e45"
 
 [[files]]
 file = "groovy/postInit/mod/MiscRecipes.groovy"
@@ -9231,7 +9231,7 @@ hash = "33cd6deb54a63d100a4aca88186deebccfd83d671c543b31ea20bd9d7e73557a"
 
 [[files]]
 file = "groovy/preInit/RegisterMetaItems.groovy"
-hash = "2af3732932cbe4a4eb479a80828dfd88711e06fb9213412c85de1c3844f58439"
+hash = "3dbc0680719d8b14fbf6f10ed25ac5d3f2cbf2dca56c6f18f19fa33082adf4eb"
 
 [[files]]
 file = "groovy/prePostInit/ModifyRecipeMaps.groovy"
@@ -9247,7 +9247,7 @@ hash = "0e12df6766d72a14247252679856158f119e8a2976664fd06822ccf8d981967a"
 
 [[files]]
 file = "groovy/prePostInit/oreDict.groovy"
-hash = "bae7a47dd5400b1667beb538999e189b3b38ae23e63da30f0c7ef8af27b5f708"
+hash = "10a52a0fcb62f393b883c32a7f3aff8082b6b125f3dac72442889c6c1bd1306b"
 
 [[files]]
 file = "groovy/runConfig.json"
@@ -11016,6 +11016,10 @@ file = "resources/gregtech/models/item/metaitems/fused_quartz.json"
 hash = "d4f5c6bf7fc9910113b3387dd897013afbe95478e5e0967b6fdd8958f83f0c9e"
 
 [[files]]
+file = "resources/gregtech/models/item/metaitems/fused_quartz_bulb.json"
+hash = "af1c1e751d82ba2651b73372c752f0da64139a17f772f53a02061c1a787899d0"
+
+[[files]]
 file = "resources/gregtech/models/item/metaitems/gallium_nitride_buffer_wafer.json"
 hash = "6d5b289a54ffd9eb251eba5b977daeda3802ecd8167c4c2cc4a2b0a16494d95c"
 
@@ -11074,6 +11078,18 @@ hash = "1797a1112dbd1e84a2ed17698499fec574a89e0126303ac5c6e828534ec38bb5"
 [[files]]
 file = "resources/gregtech/models/item/metaitems/laminated.board.phenolic.json"
 hash = "75cb4a0eb2d9b430cec4907d1f94d8e600dff78380d281ea15ebb12486831072"
+
+[[files]]
+file = "resources/gregtech/models/item/metaitems/lamp.mercury.hp.json"
+hash = "5a38dc2863d2ef1b63c24473d5c0294e13e7734f746c088fcd0fa50354069c05"
+
+[[files]]
+file = "resources/gregtech/models/item/metaitems/lamp.mercury.hp.unfilled.json"
+hash = "a080d8695fabac333becaeeb59ac0b98f7fbb482520ec0e7f45c78e79efe55af"
+
+[[files]]
+file = "resources/gregtech/models/item/metaitems/lamp.mercury.lp.json"
+hash = "f5197de2ef365c18c8dc1c538672267b475b8a7067eeb93062d97d21d71f5c4d"
 
 [[files]]
 file = "resources/gregtech/models/item/metaitems/leached_red_mud_slag.json"
@@ -12944,6 +12960,10 @@ file = "resources/gregtech/textures/items/metaitems/fused_quartz.png"
 hash = "bc941a6ec5863589acb2976685075ee7acd0ca34c50f99e9b9ba371bf9e99337"
 
 [[files]]
+file = "resources/gregtech/textures/items/metaitems/fused_quartz_bulb.png"
+hash = "f7d09c7ca2b48c858c1be8d7759f4e67f672bb0d103b6ea321b2c478ce4d11ea"
+
+[[files]]
 file = "resources/gregtech/textures/items/metaitems/gallium_nitride_buffer_wafer.png"
 hash = "ce58dffdc5c4b60c6f6ba54b6bc2bd45eb7b851fcaa8867703565b6a736f2241"
 
@@ -13002,6 +13022,26 @@ hash = "10d1f9d8d4f76e0bd2b879f4530ad0b80f684b8e41efcc975203dccf7edd2a53"
 [[files]]
 file = "resources/gregtech/textures/items/metaitems/laminated.board.phenolic.png"
 hash = "093ab188227ae45d3fcf8b87222bc7fd18eded3f7fdf7d4ae96176f093df78bd"
+
+[[files]]
+file = "resources/gregtech/textures/items/metaitems/lamp.mercury.hp.png"
+hash = "c8427d8e7f5d38299f6a094bdacc34f5aee1f5894bdb5cd3681e06ed7ebd811c"
+
+[[files]]
+file = "resources/gregtech/textures/items/metaitems/lamp.mercury.hp.unfilled.png"
+hash = "949851e2e46f428ca291208d59f35fc1d36ce90434602d700cbd6a381dfff1f2"
+
+[[files]]
+file = "resources/gregtech/textures/items/metaitems/lamp.mercury.hp.unfilled.png~"
+hash = "949851e2e46f428ca291208d59f35fc1d36ce90434602d700cbd6a381dfff1f2"
+
+[[files]]
+file = "resources/gregtech/textures/items/metaitems/lamp.mercury.lp.png"
+hash = "eccbc288a08cd5099fed2806cfa013b959c5e2333929225e56409284640d868a"
+
+[[files]]
+file = "resources/gregtech/textures/items/metaitems/lamp.mercury.lp.png-autosave.kra"
+hash = "b574c7e44363995054e2e9fe6ce8063f7f59fb626ed7025817948b364cf58c9a"
 
 [[files]]
 file = "resources/gregtech/textures/items/metaitems/leached_red_mud_slag.png"
@@ -13653,7 +13693,7 @@ hash = "f9d601479db1427b80cecb5dbf186ab9bf6c2276cacfe6b238f49dca6023d11f"
 
 [[files]]
 file = "resources/langfiles/lang/en_us.lang"
-hash = "00a92d53c8dd8a79d8a3d47246eb1731c6dc2db1283dfbe730d2d24e1551240f"
+hash = "edd578b9f5ad8f3c8169bbe9f3d0d7da37d1d24c45f01436c71e3336e1c79693"
 
 [[files]]
 file = "resources/langfiles/lang/fr_fr.lang"
