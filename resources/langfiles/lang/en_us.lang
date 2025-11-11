@@ -2711,6 +2711,11 @@ susy.material.ceramic_coating_slurry=Ceramic-Coating Slurry
 susy.material.sodium_carboxymethyl_cellulose=Sodium Carboxymethyl Cellulose (CMC)
 susy.material.sodium_cmc_suspension=Sodium CMC Suspension
 susy.material.cmc_waste=CMC Waste
+susy.material.resol_resin_infiltrant=Resol Resin Infiltrant
+susy.material.resol_resin_mixture=Resol Resin Mixture
+metaitem.carbon.mesh.phenolic.moist.name=Moist Phenolic Carbon Mesh
+metaitem.carbon.mesh.phenolic.treated.name=Treated Phenolic Carbon Mesh
+metaitem.carbon.tile.phenolic.treated.name=Treated Phenolic Carbon Tile
 
 # Isotopes
 
