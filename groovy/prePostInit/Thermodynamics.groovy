@@ -398,6 +398,7 @@ for (cryogas in CryoGases) {
                 .fluidInputs(liquid(refrigerant.cold_refrigerant) * refrigerant.amount_to_use)
                 .fluidOutputs(liquid(refrigerant.normal_refrigerant) * refrigerant.amount_to_use)
                 .fluidOutputs(liquid(cryogas.cold_high_pressure_gas) * cryogas.amount_to_use)
+                .info('recipe.refrigeration')
                 .duration((int)((cryogas.duration_heat_exchanger + refrigerant.hx_time_factor) / 2))
                 .buildAndRegister();
     }
