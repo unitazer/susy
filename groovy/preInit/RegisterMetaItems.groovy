@@ -404,7 +404,6 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10253, "carbon.mesh.phenolic.moist")
         addItem(10254, "carbon.mesh.phenolic.treated")
         addItem(10255, "carbon.tile.phenolic.treated")
-        addItem(10256, "heat_shield.pica")
 
         // Induction Furnace
         addItem(10301, "coated_copper_coil")

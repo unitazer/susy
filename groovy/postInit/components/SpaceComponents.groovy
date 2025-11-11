@@ -79,7 +79,7 @@ CUTTER.recipeBuilder()
         .EUt(VA[MV])
         .buildAndRegister();
 
-ASSEMBLER.recipeBuilder()
+/*ASSEMBLER.recipeBuilder()
         .inputs(metaitem('carbon.tile.phenolic.treated') * 64)
         .inputs(metaitem('carbon.tile.phenolic.treated') * 64)
         .inputs(metaitem('carbon.tile.phenolic.treated') * 64)
@@ -89,6 +89,6 @@ ASSEMBLER.recipeBuilder()
         .outputs(metaitem('heat_shield.pica'))
         .duration(600)
         .EUt(VA[EV])
-        .buildAndRegister();
+        .buildAndRegister();*/
 
 
