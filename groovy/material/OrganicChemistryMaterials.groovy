@@ -3178,7 +3178,7 @@ class OrganicChemistryMaterials {
 
         PeraceticAcidSolution = new Material.Builder(15499, SuSyUtility.susyId('peracetic_acid_solution'))
                 .liquid()
-                .components(Carbon * 2, Hydrogen * 4, Oxygen, 3, Water)
+                .components(Carbon * 2, Hydrogen * 4, Oxygen * 3, Water)
                 .color(0x97bd28)
                 .build()
 
