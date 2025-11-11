@@ -2109,6 +2109,14 @@ TUBE_FURNACE.recipeBuilder()
     .duration(400)
     .buildAndRegister()
 
+ROASTER.recipeBuilder()
+    .fluidInputs(fluid('oxygen') * 2000)
+    .inputs(metaitem('dustCerium'))
+    .outputs(metaitem('dustCeriumIvOxide'))
+    .duration(20)
+    .EUt(VA[LV])
+    .buildAndRegister();
+    
 ASSEMBLER.recipeBuilder()
     .inputs(metaitem('LED_chip') * 32)
     .inputs(metaitem('dustYttriumAluminiumGarnetCerium'))
