@@ -208,3 +208,13 @@ VACUUM_CHAMBER.recipeBuilder()
     .duration(160)
     .EUt(VA[HV])
     .buildAndRegister();
+
+VACUUM_CHAMBER.recipeBuilder()
+    .inputs(metaitem('fused_quartz_bulb') * 2)
+    .inputs(ore('wireGtSingleSteel') * 2)
+    .inputs(metaitem('wireFineNickel') * 2)
+    .fluidInputs(fluid('mercury') * 10)
+    .chancedOutput(metaitem('lamp.mercury.lp') * 1, 1000, 0)
+    .duration(160)
+    .EUt(VA[HV])
+    .buildAndRegister();
