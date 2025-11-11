@@ -3199,10 +3199,7 @@ metaitem.patterned_LED_wafer.name=Patterned LED Wafer
 metaitem.etched_LED_wafer.name=Etched LED Wafer
 metaitem.metallized_LED_wafer.name=Metallized LED Wafer
 metaitem.LED_chip.name=LED Chip
-metaitem.fused_quartz_bulb.name=Fused Quartz Bulb
-metaitem.lamp.mercury.hp.unfilled.name=Unfilled Mercury Vapor Lamp
-metaitem.lamp.mercury.hp.name=High Pressure Mercury Vapor Lamp
-metaitem.lamp.mercury.lp.name=Ultraviolet Mercury Vapor Lamp
+
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
 tile.magma.name=Magma-Infused Netherrack

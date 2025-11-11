@@ -8823,7 +8823,7 @@ hash = "1bcb6f86abf734b11eb1fcec9fbd25bf40e5fadeae349945103d57f7cb8479da"
 
 [[files]]
 file = "groovy/postInit/components/EtchablesChain.groovy"
-hash = "915c32f5c096f527ab12ac1eba020969b9f0102a005cb97aab2c2644cb5a7233"
+hash = "c96b3fe7173b0c9f849454cddad676bba66a075d99a4da7d54fd2015c1efa1e1"
 
 [[files]]
 file = "groovy/postInit/components/FieldGenerators.groovy"
@@ -13693,7 +13693,7 @@ hash = "f9d601479db1427b80cecb5dbf186ab9bf6c2276cacfe6b238f49dca6023d11f"
 
 [[files]]
 file = "resources/langfiles/lang/en_us.lang"
-hash = "edd578b9f5ad8f3c8169bbe9f3d0d7da37d1d24c45f01436c71e3336e1c79693"
+hash = "00a92d53c8dd8a79d8a3d47246eb1731c6dc2db1283dfbe730d2d24e1551240f"
 
 [[files]]
 file = "resources/langfiles/lang/fr_fr.lang"
