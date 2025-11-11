@@ -3192,14 +3192,14 @@ class UnknownCompositionMaterials {
                 .color(0xe7e3eb)
                 .build()
         
-        DilutedPhenolicCresolInfiltrant = new Material.Builder(4693, SuSyUtility.susyId('diluted_phenolic_cresol_infiltrant'))
+        ResolResinMixture = new Material.Builder(4693, SuSyUtility.susyId('resol_resin_mixture'))
                 .liquid()
-                .color(0xAD9478)
+                .color(0xad9478)
                 .build()
         
-        PhenolicCresolInfiltrant = new Material.Builder(4694, SuSyUtility.susyId('phenolic_cresol_infiltrant'))
+        ResolResinInfiltrant = new Material.Builder(4694, SuSyUtility.susyId('resol_resin_infiltrant'))
                 .liquid()
-                .color(0x4E2F0A)
+                .color(0x4e2f0a)
                 .build()
         
     }

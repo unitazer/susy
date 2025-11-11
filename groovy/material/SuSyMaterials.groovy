@@ -591,8 +591,8 @@ class SuSyMaterials {
     public static Material OrthoCresylicAcidMixture
     public static Material CresolNovolacsOligomer
     public static Material EpoxyCresolNovolacs
-    public static Material DilutedPhenolicCresolInfiltrant
-    public static Material PhenolicCresolInfiltrant
+    public static Material ResolResinMixture
+    public static Material ResolResinInfiltrant
     public static Material OsmiumRutheniumTetroxideMixture
     public static Material OsmiumRutheniumSolution
     public static Material ChlorinatedRhodiumIridiumSolution
