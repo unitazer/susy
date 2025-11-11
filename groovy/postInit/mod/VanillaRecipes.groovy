@@ -7,6 +7,34 @@ def circuit(x) {
     return metaitem('circuit.integrated').withNbt([Configuration: x])
 }
 
+mods.jei.ingredient.yeet(
+        item('minecraft:iron_sword'),
+        item('minecraft:iron_shovel'),
+        item('minecraft:iron_pickaxe'),
+        item('minecraft:iron_axe'),
+        item('minecraft:iron_hoe'),
+        item('minecraft:wooden_sword'),
+        item('minecraft:wooden_shovel'),
+        item('minecraft:wooden_pickaxe'),
+        item('minecraft:wooden_axe'),
+        item('minecraft:wooden_hoe'),
+        item('minecraft:stone_sword'),
+        item('minecraft:stone_shovel'),
+        item('minecraft:stone_pickaxe'),
+        item('minecraft:stone_axe'),
+        item('minecraft:stone_hoe'),
+        item('minecraft:diamond_sword'),
+        item('minecraft:diamond_shovel'),
+        item('minecraft:diamond_pickaxe'),
+        item('minecraft:diamond_axe'),
+        item('minecraft:diamond_hoe'),
+        item('minecraft:golden_sword'),
+        item('minecraft:golden_shovel'),
+        item('minecraft:golden_pickaxe'),
+        item('minecraft:golden_axe'),
+        item('minecraft:golden_hoe')
+)
+
 def recipesToRemove = [
     'minecraft:dispenser',
     'gregtech:piston_bronze',
@@ -17,16 +45,6 @@ def recipesToRemove = [
     'quark:gravisand',
     'quark:ender_watcher',
     'quark:redstone_inductor',
-    'minecraft:stone_sword',
-    'minecraft:stone_shovel',
-    'minecraft:stone_pickaxe',
-    'minecraft:stone_axe',
-    'minecraft:stone_hoe',
-    'minecraft:wooden_sword',
-    'minecraft:wooden_shovel',
-    'minecraft:wooden_pickaxe',
-    'minecraft:wooden_axe',
-    'minecraft:wooden_hoe',
     'minecraft:fermented_spider_eye',
     'minecraft:speckled_melon',
     'minecraft:magma_cream',
