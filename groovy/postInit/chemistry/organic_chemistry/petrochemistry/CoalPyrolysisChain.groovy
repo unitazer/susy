@@ -32,7 +32,7 @@ Carbons['dustAnthracite', 'gemAnthracite'].each { input ->
         .EUt(60)
         .buildAndRegister()
 
-    FLBR.recipeBuilder()
+    FLUIDIZED_BR.recipeBuilder()
         .inputs(ore(input.name) * 10)
         .fluidInputs(fluid('dense_steam') * 4000)
         .fluidOutputs(fluid('monoxide_rich_syngas') * 10000)
@@ -65,7 +65,7 @@ Carbons['dustCoke', 'gemCoke'].each { input ->
         .EUt(60)
         .buildAndRegister()
 
-    FLBR.recipeBuilder()
+    FLUIDIZED_BR.recipeBuilder()
         .inputs(ore(input.name) * 16)
         .outputs(metaitem(output.name) * 12)
         .fluidInputs(fluid('dense_steam') * 4000)

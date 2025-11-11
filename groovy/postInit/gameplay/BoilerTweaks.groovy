@@ -11,7 +11,7 @@ RecyclingHelper.addShaped('susy:large_steel_boiler', metaitem('susy:large_boiler
 RecyclingHelper.addShaped('susy:large_bronze_boiler', metaitem('susy:large_boiler.bronze'), [
     [ore('cableGtSingleTin'), ore('circuitLv'), ore('cableGtSingleTin')],
     [metaitem('electric.pump.lv'), item('gregtech:boiler_firebox_casing', 0), metaitem('electric.pump.lv')],
-    [ore('cableGtSingleTin'), ore('pipeFluidBronze'), ore('cableGtSingleTin')]
+    [ore('cableGtSingleTin'), ore('pipeNormalFluidBronze'), ore('cableGtSingleTin')]
 ])
 
 RecyclingHelper.addShaped('susy:steam_boiler_coal_bronze', metaitem('susy:steam_boiler_coal.bronze'), [

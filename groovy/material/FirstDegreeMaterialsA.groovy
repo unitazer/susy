@@ -3595,7 +3595,7 @@ class FirstDegreeMaterialsA {
         ReneN5 = new Material.Builder(8630, SuSyUtility.susyId("rene_n_5"))
                 .ingot().liquid(new FluidBuilder().temperature(1780))
                 .iconSet(SHINY)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_ROTOR, SUPERALLOY)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROTOR, SUPERALLOY)
                 .components(Nickel * 22, Cobalt * 4, Chrome * 3, Aluminium * 3, Tungsten * 2, Hafnium, Rhenium * 2, Tantalum * 3)
                 .colorAverage()
                 .blastTemp(3000, GasTier.HIGH, GTValues.VA[GTValues.EV])
