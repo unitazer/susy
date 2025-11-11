@@ -8115,7 +8115,7 @@ hash = "3cfe111f0952264052f3a1c105867e6283abc56a5624f9ee65d46d21871a1f26"
 
 [[files]]
 file = "groovy/classes/ChangeFlags.groovy"
-hash = "f782f7d00b35b39fd4987e32f20afa9d0d9227c4cc5c7ee7a70f11133590253c"
+hash = "e7d540452941c815f32680a609885382835ade3ce62629a49d35d6ffa5b8aa84"
 
 [[files]]
 file = "groovy/classes/Coolant.groovy"
@@ -8383,7 +8383,7 @@ hash = "a84179eb56e8bd5d057057c3f4694035b494f0e1e92931b8d26245c9af40615b"
 
 [[files]]
 file = "groovy/postInit/chemistry/inorganic_chemistry/elements/f_block/lanthanides/CeriumChain.groovy"
-hash = "b9ddf18203ab0f01dc04d233adf23188134bb1e1b862a316544a2d735a366a9e"
+hash = "92089ce8feb345c6b22951a80671277dbd610bd332e9264feab589ff9e051af9"
 
 [[files]]
 file = "groovy/postInit/chemistry/inorganic_chemistry/elements/f_block/lanthanides/DysprosiumChain.groovy"
@@ -8823,7 +8823,7 @@ hash = "1bcb6f86abf734b11eb1fcec9fbd25bf40e5fadeae349945103d57f7cb8479da"
 
 [[files]]
 file = "groovy/postInit/components/EtchablesChain.groovy"
-hash = "c96b3fe7173b0c9f849454cddad676bba66a075d99a4da7d54fd2015c1efa1e1"
+hash = "915c32f5c096f527ab12ac1eba020969b9f0102a005cb97aab2c2644cb5a7233"
 
 [[files]]
 file = "groovy/postInit/components/FieldGenerators.groovy"
@@ -8836,6 +8836,10 @@ hash = "4ce0f97ef89d1a9ebe4cf81bb7ba734fcb3b5b571a1320248cf366d6f2e717b4"
 [[files]]
 file = "groovy/postInit/components/IntegratedCircuits.groovy"
 hash = "aab55dd64649dc1221f99ffd7536289ed51c0ea40eb50678db8b15c2dd031710"
+
+[[files]]
+file = "groovy/postInit/components/Lights.groovy"
+hash = "22b6cf145da5f70133fd5f88564d3672b12650607e8d29db7183350d08f4ba5f"
 
 [[files]]
 file = "groovy/postInit/components/Motors.groovy"
@@ -9059,7 +9063,7 @@ hash = "5f9bd2743ba8308518d2962926449a3df0e1a7082c19e0a895cfcd1e62076e83"
 
 [[files]]
 file = "groovy/postInit/mod/GregTech.groovy"
-hash = "b72ea9358765a19c25810f9bf0bcc89498a6fb8e1a5182d0dcaf7a1a1f03e5cd"
+hash = "0683edf2a430259e00dc1d94acab1167374a1065f343b5ce7c9ff734f5221d30"
 
 [[files]]
 file = "groovy/postInit/mod/GregTechFoodOption.groovy"
@@ -9087,7 +9091,7 @@ hash = "dec2614f1f07bf6ad0a614c0584f887e1a94368b2e25b7e9d3d5c919a86e9f87"
 
 [[files]]
 file = "groovy/postInit/mod/MachineRecipes.groovy"
-hash = "5f8d3208c706dd739e06977605a45a9e650a6e24a8d89a2b3ad842a0eb521e45"
+hash = "02808c0300048f81c38bd39831242da90fbc6e4f3350810d876b6559551e88da"
 
 [[files]]
 file = "groovy/postInit/mod/MiscRecipes.groovy"
@@ -9247,7 +9251,7 @@ hash = "0e12df6766d72a14247252679856158f119e8a2976664fd06822ccf8d981967a"
 
 [[files]]
 file = "groovy/prePostInit/oreDict.groovy"
-hash = "10a52a0fcb62f393b883c32a7f3aff8082b6b125f3dac72442889c6c1bd1306b"
+hash = "bae7a47dd5400b1667beb538999e189b3b38ae23e63da30f0c7ef8af27b5f708"
 
 [[files]]
 file = "groovy/runConfig.json"
@@ -13032,16 +13036,8 @@ file = "resources/gregtech/textures/items/metaitems/lamp.mercury.hp.unfilled.png
 hash = "949851e2e46f428ca291208d59f35fc1d36ce90434602d700cbd6a381dfff1f2"
 
 [[files]]
-file = "resources/gregtech/textures/items/metaitems/lamp.mercury.hp.unfilled.png~"
-hash = "949851e2e46f428ca291208d59f35fc1d36ce90434602d700cbd6a381dfff1f2"
-
-[[files]]
 file = "resources/gregtech/textures/items/metaitems/lamp.mercury.lp.png"
 hash = "eccbc288a08cd5099fed2806cfa013b959c5e2333929225e56409284640d868a"
-
-[[files]]
-file = "resources/gregtech/textures/items/metaitems/lamp.mercury.lp.png-autosave.kra"
-hash = "b574c7e44363995054e2e9fe6ce8063f7f59fb626ed7025817948b364cf58c9a"
 
 [[files]]
 file = "resources/gregtech/textures/items/metaitems/leached_red_mud_slag.png"
@@ -13693,7 +13689,7 @@ hash = "f9d601479db1427b80cecb5dbf186ab9bf6c2276cacfe6b238f49dca6023d11f"
 
 [[files]]
 file = "resources/langfiles/lang/en_us.lang"
-hash = "00a92d53c8dd8a79d8a3d47246eb1731c6dc2db1283dfbe730d2d24e1551240f"
+hash = "edd578b9f5ad8f3c8169bbe9f3d0d7da37d1d24c45f01436c71e3336e1c79693"
 
 [[files]]
 file = "resources/langfiles/lang/fr_fr.lang"
