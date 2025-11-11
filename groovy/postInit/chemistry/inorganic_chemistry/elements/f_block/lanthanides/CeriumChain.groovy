@@ -90,7 +90,7 @@ ROASTER.recipeBuilder()
 ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 2000)
     .inputs(metaitem('dustCerium'))
-    .outputs(metaitem('dustCeriumIvOxide'))
+    .outputs(metaitem('dustCeriumIvOxide') * 3)
     .duration(20)
     .EUt(VA[LV])
     .buildAndRegister();
