@@ -212,7 +212,7 @@ class ThirdDegreeMaterials {
 
         FluorinatedSurfactantMixture = new Material.Builder(24032, SuSyUtility.susyId('fluorinated_surfactant_mixture'))
                 .liquid()
-                .components(PerfluorooctanoicAcid * 1, Water * 1)
+                .components(PerfluorooctanoicAcid * 1, Water * 1, Ammonia * 1)
                 .colorAverage()
                 .build()
 
@@ -602,7 +602,7 @@ class ThirdDegreeMaterials {
 
         SpentPBISolution = new Material.Builder(24096, SuSyUtility.susyId('spent_pbi_solution'))
                 .liquid()
-                .components(Dimethylacetamide * 1)
+                .components(Dimethylacetamide * 1, LithiumChloride * 1)
                 .colorAverage()
                 .build()
 
