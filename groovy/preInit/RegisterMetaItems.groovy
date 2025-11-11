@@ -416,8 +416,10 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10405, "etched_LED_wafer")
         addItem(10406, "metallized_LED_wafer")
         addItem(10407, "LED_chip")
-        
-        
+        addItem(10408, "fused_quartz_bulb")
+        addItem(10409, "lamp.mercury.hp.unfilled")
+        addItem(10410, "lamp.mercury.hp")
+        addItem(10411, "lamp.mercury.lp")
     }
 
     log.infoMC("Finished adding metaitems")
