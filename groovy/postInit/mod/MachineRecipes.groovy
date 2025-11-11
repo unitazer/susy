@@ -525,7 +525,7 @@ RecyclingHelper.addShaped("gregtech:fermentation_vat", metaitem('susy:fermentati
 
 for (i = 1; i <= 8; i++) {
     RecyclingHelper.addShaped("gregtech:uv_light_box." + Globals.voltageTiers[i], metaitem('susy:uv_light_box.' + Globals.voltageTiers[i]), [
-        [tieredCables[i], metaitem('carbon_arc_lamp'), tieredCables[i]],
+        [tieredCables[i], metaitem('lamp.mercury.lp'), tieredCables[i]],
         [circuits[i], hulls[i], circuits[i]],
         [tieredPlates[i], tieredPlates[i], tieredPlates[i]]
     ])
