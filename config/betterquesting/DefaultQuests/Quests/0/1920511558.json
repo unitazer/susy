@@ -4,19 +4,17 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "Throughout your journey, you will stumble upon §4increasingly complex §frecipes.\nThis is where §bHEI Autocrafting §fwill come in handy.\n§6\nHow can you use autocrafting?§f\nFirst, open your specific recipe by pressing §6§bR §fon the item. §bYou can either bookmark the recipe immediately §for f§favorite it§f to cause HEI to automatically add that recipe into chains. Once you do bookmark a recipe, you should see a §agreen§f bracket on the left. \n\nOnce you have your recipe bookmark, you can hold §b[ctrl] §fand use §b[scroll wheel]§f on any of the crafted items on the left to change the amount of items you want to craft. \n\nYou can also add additional bookmarked recipes for items required in your main recipe by §b[ctrl + left-click] §fand drag the recipes into the bracket (as an alternative to favoriting).\n\nFinally, you can craft everything within the recipe bracket by pressing §b[shift + c]§f if you have the required items and tools. The item will be crafted into your inventory.§8\n\nCurrently, this only works on vanilla crafting tables, but it is a viable alternative to the crafting station.",
+      "desc:8": "susy.quest.db.1920511558.desc",
       "icon:10": {
-        "Count:3": 1,
         "Damage:2": 11,
         "id:8": "opencomputers:upgrade"
       },
-      "name:8": "HEI Autocrafting"
+      "name:8": "susy.quest.db.1920511558.title"
     }
   },
   "questID:3": 1920511558,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "taskID:8": "bq_standard:checkbox"
     }
   }

@@ -4,19 +4,17 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "§6Asbestos fibers §fcan be made into §9§k§eblocks§f, which will be a great choice to use for your buildings that tend to §ccatch fire§f because they are §n§9§n§9§nfireproof!§f",
+      "desc:8": "susy.quest.db.762134374.desc",
       "icon:10": {
-        "Count:3": 1,
         "Damage:2": 253,
         "id:8": "gregtech:meta_fiber"
       },
-      "name:8": "Asbestos Fiber"
+      "name:8": "susy.quest.db.762134374.title"
     }
   },
   "questID:3": 762134374,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 4,
