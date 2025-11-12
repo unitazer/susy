@@ -29,7 +29,6 @@ def ingotMap = [
     'Niobium':2750,
     'Osmium':4500,
     'Palladium':1828,
-    'Platinum':2045,
     'Rhodium':2237,
     'Ruthenium':2607,
     'Samarium':5400,

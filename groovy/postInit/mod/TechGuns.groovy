@@ -3,6 +3,8 @@ import globals.Globals
 import static gregtech.api.GTValues.*
 import techguns.items.guns.GenericGun
 import techguns.plugins.crafttweaker.EnumGunStat
+import techguns.TGArmors
+import techguns.TGItems
 
 def name_removals = [
     "techguns:basicmachine_0_ammo_press",
@@ -1365,6 +1367,33 @@ WEAPONS_FACTORY.recipeBuilder()
     .duration(100)
     .EUt(VA[HV])
     .buildAndRegister();
+
+// Repair bench materials
+
+TGArmors.t1_miner_Helmet.setRepairMats(item('gregtech:meta_plate', 51), TGItems.HEAVY_CLOTH, 0.5f, 2)
+TGArmors.t1_miner_Chestplate.setRepairMats(item('gregtech:meta_plate', 51), TGItems.HEAVY_CLOTH, 0.5f, 4)
+TGArmors.t1_miner_Leggings.setRepairMats(item('gregtech:meta_plate', 51), TGItems.HEAVY_CLOTH, 0.333f, 2)
+TGArmors.t1_miner_Boots.setRepairMats(item('gregtech:meta_plate', 51), TGItems.HEAVY_CLOTH, 0.5f, 2)
+
+TGArmors.t1_combat_Helmet.setRepairMats(item('gregtech:meta_plate', 324), TGItems.HEAVY_CLOTH, 0.5f, 2)
+TGArmors.t1_combat_Chestplate.setRepairMats(item('gregtech:meta_plate', 324), TGItems.HEAVY_CLOTH, 0.5f, 4)
+TGArmors.t1_combat_Leggings.setRepairMats(item('gregtech:meta_plate', 324), TGItems.HEAVY_CLOTH, 0.333f, 3)
+TGArmors.t1_combat_Boots.setRepairMats(item('gregtech:meta_plate', 324), TGItems.HEAVY_CLOTH, 0.5f, 2)
+
+TGArmors.t2_combat_Helmet.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15154),  0.5f, 2)
+TGArmors.t2_combat_Chestplate.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15154),  0.5f, 4)
+TGArmors.t2_combat_Leggings.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15154),  0.333f, 3)
+TGArmors.t2_combat_Boots.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15154),  0.5f, 2)
+
+TGArmors.t2_riot_Helmet.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15154),  0.5f, 2)
+TGArmors.t2_riot_Chestplate.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15154),  0.5f,  4)
+TGArmors.t2_riot_Leggings.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15154),  0.333f, 3)
+TGArmors.t2_riot_Boots.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15154),  0.5f, 2)
+
+TGArmors.t2_commando_Helmet.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15380), 0.5f, 2)
+TGArmors.t2_commando_Chestplate.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15380), 0.5f, 4)
+TGArmors.t2_commando_Leggings.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15380), 0.333f, 3)
+TGArmors.t2_commando_Boots.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15380), 0.5f, 2)
 
 //Compressed air
 
