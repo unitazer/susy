@@ -122,6 +122,7 @@ susy.material.acidic_chloronitrobenzene_mixture=Acidic Chloronitrobenzene Mixtur
 susy.material.mixed_dichlorobenzene_solution=Mixed Dichlorobenzene Solution
 susy.material.two_butanol_solution=2-Butanol Solution
 susy.material.DilutedSodiumCarbonateSolution=Diluted Sodium Carbonate Solution
+susy.material.green_epoxy_pcb_coating=Green Epoxy PCB Coating
 susy.material.four_nitrophenol=4-Nitrophenol
 susy.material.four_aminophenol_solution=4-Aminophenol Solution
 susy.material.four_aminophenol=4-Aminophenol
@@ -2709,11 +2710,12 @@ susy.material.ceramic_coating_slurry=Ceramic-Coating Slurry
 susy.material.sodium_carboxymethyl_cellulose=Sodium Carboxymethyl Cellulose (CMC)
 susy.material.sodium_cmc_suspension=Sodium CMC Suspension
 susy.material.cmc_waste=CMC Waste
+susy.material.tetrahydrobenzaldehyde=Tetrahydrobenzaldehyde
+susy.material.peracetic_acid_solution=Peracetic Acid Solution
+susy.material.epoxycyclohexane_carboxylate=3,4-Epoxycyclohexylmethyl-3',4'-Epoxycyclohexane Carboxylate (ECC)
+susy.material.tetrasodium_ethylenediaminetetraacetate_solution=Tetrasodium EDTA Solution
 susy.material.resol_resin_infiltrant=Resol Resin Infiltrant
 susy.material.resol_resin_mixture=Resol Resin Mixture
-metaitem.carbon.mesh.phenolic.moist.name=Moist Phenolic Carbon Mesh
-metaitem.carbon.mesh.phenolic.treated.name=Treated Phenolic Carbon Mesh
-metaitem.carbon.tile.phenolic.treated.name=Treated Phenolic Carbon Tile
 
 # Isotopes
 
@@ -3127,7 +3129,6 @@ metaitem.sponge.rhodium.name=Rhodium Sponge
 metaitem.drone.lv.name=Basic Drone
 
 metaitem.glass_fibers.name=Glass Fibers
-metaitem.epoxy_lamina.name=Epoxy Lamina
 metaitem.stem.cotton.name=Cotton Stem
 metaitem.spinneret.name=Spinneret
 
@@ -3136,6 +3137,7 @@ metaitem.engine.spark_plug.iridium.name=Iridium-Tipped Spark Plug
 metaitem.engine.piston.name=Piston
 metaitem.engine.crankshaft.name=Crankshaft
 metaitem.sintered_alumina.insulator.name=Sintered Alumina Insulator
+metaitem.titanium_cylinder.name=Titanium Cylinder
 
 metaitem.rubylith.name=Rubylith
 metaitem.rubylith_film.name=Rubylith Film
@@ -3174,6 +3176,19 @@ metaitem.brush.unfired.name=Unfired Brush
 metaitem.work_roll.unfinished.name=Unfinished Work Roll
 metaitem.nozzle.boron_nitride.name=Boron Nitride Nozzle
 
+metaitem.board.epoxy.prepreg.name=FR-4 Epoxy Prepreg
+metaitem.board.epoxy.copper_clad.name=FR-4 Copper Clad Laminate
+metaitem.board.epoxy.patterned.name=Patterned FR-4 Circuit Board
+metaitem.board.epoxy.etched.name=Etched FR-4 Circuit Board
+metaitem.board.epoxy.drilled.name=Drilled FR-4 Circuit Board
+metaitem.board.epoxy.electroless.name=Electroless Plated FR-4 Circuit Board
+metaitem.board.epoxy.electrolytic.name=Electrolytic Plated FR-4 Circuit Board
+metaitem.board.epoxy.wet_masked.name=Wet Masked FR-4 Circuit Board
+metaitem.board.epoxy.masked.name=Masked FR-4 Circuit Board
+metaitem.board.epoxy.mask_affixed.name=Mask-Affixed FR-4 Circuit Board
+metaitem.circuit_board.fr4.name=Advanced Circuit Board
+metaitem.circuit_board.fr4.tooltip=An Advanced Circuit Board/nDouble-sided FR-4 Printed Circuit Board
+
 metaitem.fiber.oxidized_polyacrylonitrile.name=Oxidized Polyacrylonitrile Fiber
 metaitem.carbon.mesh.treated.name=Treated Carbon Mesh
 metaitem.proton_exchange_membrane_fuel_cell.name=Proton Exchange Membrane Fuel Cell (PEMFC)
@@ -3193,6 +3208,10 @@ metaitem.parachute.supersonic_main.name=Supersonic Disk-Gap-Band Parachute
 metaitem.coated_copper_coil.name=Ceramic-Coated Copper Tubing
 metaitem.cured_coated_coil.name=Cured Ceramic-Coated Copper Tubing
 metaitem.induction_coil.name=Induction Coil
+
+metaitem.carbon.mesh.phenolic.moist.name=Moist Phenolic Carbon Mesh
+metaitem.carbon.mesh.phenolic.treated.name=Treated Phenolic Carbon Mesh
+metaitem.carbon.tile.phenolic.treated.name=Treated Phenolic Carbon Tile
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand

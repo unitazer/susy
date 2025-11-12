@@ -2578,7 +2578,7 @@ metaitem.sponge.rhodium.name=Родиевая губка
 metaitem.drone.lv.name=Базовый дрон
 
 metaitem.glass_fibers.name=Стекловолокно
-metaitem.epoxy_lamina.name=Эпоксидная ламина
+metaitem.board.epoxy.prepreg.name=Эпоксидная ламина
 metaitem.stem.cotton.name=Хлопковый стебель
 metaitem.spinneret.name=Фильера
 

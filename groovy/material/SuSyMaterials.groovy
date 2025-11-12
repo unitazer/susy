@@ -787,6 +787,7 @@ class SuSyMaterials {
     public static Material CeramicCoatingSlurry
     public static Material SodiumCMCSuspension
     public static Material CMCWaste
+    public static Material GreenEpoxyPCBCoating
 
     // Petrochem Materials
 
@@ -2339,6 +2340,9 @@ class SuSyMaterials {
     public static Material Acetonitrile
     public static Material MyristicAcid
     public static Material SodiumCarboxymethylCellulose
+    public static Material Tetrahydrobenzaldehyde
+    public static Material PeraceticAcidSolution
+    public static Material EpoxycyclohexaneCarboxylate
 
     // Third Degree Materials
 
@@ -2479,6 +2483,7 @@ class SuSyMaterials {
     public static Material DichlorodiphenylSulfoneSolution
     public static Material FuelCellCatalystSolution
     public static Material PolytetrafluoroethyleneCoatingSolution
+    public static Material TetrasodiumEthylenediaminetetraacetateSolution
 
     // Thermodynamics Materials
 

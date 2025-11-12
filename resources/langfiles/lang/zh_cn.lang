@@ -2909,7 +2909,7 @@ metaitem.sponge.rhodium.name=海绵铑
 metaitem.drone.lv.name=基础无人机
 
 metaitem.glass_fibers.name=玻璃纤维
-metaitem.epoxy_lamina.name=层压环氧树脂
+metaitem.board.epoxy.prepreg.name=层压环氧树脂
 metaitem.stem.cotton.name=棉花茎
 metaitem.spinneret.name=喷丝头
 

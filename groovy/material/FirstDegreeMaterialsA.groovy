@@ -70,7 +70,7 @@ class FirstDegreeMaterialsA {
         HighPurityIron = generatePurifiedElement(Iron, 8017, false, false)
         HighPurityNickel = generatePurifiedElement(Cobalt, 8018, false, false)
         HighPurityCobalt = generatePurifiedElement(Nickel, 8019, false, false)
-        HighPurityCopper = generatePurifiedElement(Copper, 8020, false, false)
+        HighPurityCopper = generatePurifiedElement(Copper, 8020, false, false).addFlags(GENERATE_FOIL)
         HighPurityZinc = generatePurifiedElement(Zinc, 8021, false, false)
         HighPurityGallium = generatePurifiedElement(Gallium, 8022, true, false)
         HighPurityGermanium = generatePurifiedElement(Germanium, 8023, true, true)

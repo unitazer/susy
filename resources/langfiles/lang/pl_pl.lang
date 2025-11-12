@@ -2226,7 +2226,7 @@ metaitem.sponge.hafnium.crude.name=Crude Hafnium Sponge
 metaitem.drone.lv.name=Basic Drone
 
 metaitem.glass_fibers.name=Glass Fibers
-metaitem.epoxy_lamina.name=Epoxy Lamina
+metaitem.board.epoxy.prepreg.name=Epoxy Lamina
 metaitem.stem.cotton.name=Cotton Stem
 metaitem.spinneret.name=Spinneret
 
