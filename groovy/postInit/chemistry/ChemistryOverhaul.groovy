@@ -14,6 +14,16 @@ ASSEMBLER.recipeBuilder()
     .duration(160)
     .buildAndRegister()
 
+// H2SO4
+
+MIXER.recipeBuilder()
+    .fluidInputs(fluid('sulfur_trioxide') * 1000)
+    .fluidInputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('sulfuric_acid') * 1000)
+    .EUt(VA[ULV])
+    .duration(40)
+    .buildAndRegister()
+
 // Ammonium Chloride
 
 BCR.recipeBuilder()
@@ -199,6 +209,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid('hydrogen_fluoride') * 2000)
     .outputs(metaitem('dustCalciumSulfate') * 6)
+    .info('recipe.hydrogen_fluoride.production')
     .duration(30)
     .EUt(VA[ULV])
     .buildAndRegister()
@@ -2707,21 +2718,13 @@ DT.recipeBuilder()
     .buildAndRegister()
 
 // Hydrobromic acid
-CSTR.recipeBuilder()
-    .fluidInputs(fluid('bromine') * 100)
-    .fluidInputs(fluid('sulfur_dioxide') * 50)
-    .fluidInputs(fluid('water') * 100)
-    .fluidOutputs(fluid('brominated_sulfur_dioxide') * 150)
+REACTION_FURNACE.recipeBuilder()
+    .fluidInputs(fluid('bromine') * 50)
+    .fluidInputs(fluid('hydrogen') * 50)
+    .notConsumable(ore('catalystBedSupportedPlatinum'))
+    .fluidOutputs(fluid('hydrogen_bromide') * 50)
+    .duration(10)
     .EUt(VA[LV])
-    .duration(15)
-    .buildAndRegister()
-
-DT.recipeBuilder()
-    .fluidInputs(fluid('brominated_sulfur_dioxide') * 3000)
-    .fluidOutputs(fluid('sulfuric_acid') * 1000)
-    .fluidOutputs(fluid('hydrogen_bromide') * 2000)
-    .EUt(VA[LV])
-    .duration(300)
     .buildAndRegister()
 
 BCR.recipeBuilder()

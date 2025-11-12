@@ -1342,18 +1342,13 @@ class FirstDegreeMaterialsA {
 
         CryogenicSolder.setFormula("In97Ag3", true)
 
-
         LithiumCobaltOxide = new Material.Builder(8287, SuSyUtility.susyId('lithium_cobalt_oxide'))
                 .dust()
                 .components(Lithium, Cobalt, Oxygen * 2)
                 .colorAverage()
                 .build()
 
-        SodiumCathodeAlloy = new Material.Builder(8288, SuSyUtility.susyId('sodium_cathode_alloy'))
-                .dust()
-                .components(Sodium * 4, Iron * 3, Manganese * 3, Oxygen * 12)
-                .colorAverage()
-                .build()
+        // FREE ID: 8288
 
         LithiumHexafluorophosphate = new Material.Builder(8289, SuSyUtility.susyId('lithium_hexafluorophosphate'))
                 .dust()
@@ -2121,7 +2116,7 @@ class FirstDegreeMaterialsA {
         SamariumAlloy = new Material.Builder(8403, SuSyUtility.susyId('samarium_alloy'))
                 .dust().ingot().liquid(new FluidBuilder().temperature(1600))
                 .color(0xb3d683).iconSet(METALLIC)
-                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_PLATE, NO_UNIFICATION)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_PLATE, NO_UNIFICATION, HIP_PRESSED)
                 .components(Samarium, Cobalt * 5)
                 .build()
 

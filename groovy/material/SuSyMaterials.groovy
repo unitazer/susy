@@ -588,6 +588,8 @@ class SuSyMaterials {
     public static Material OrthoCresylicAcidMixture
     public static Material CresolNovolacsOligomer
     public static Material EpoxyCresolNovolacs
+    public static Material ResolResinMixture
+    public static Material ResolResinInfiltrant
     public static Material OsmiumRutheniumTetroxideMixture
     public static Material OsmiumRutheniumSolution
     public static Material ChlorinatedRhodiumIridiumSolution
@@ -1144,7 +1146,6 @@ class SuSyMaterials {
     public static Material HypersalineWater
     public static Material LithiumCarbonate
     public static Material LithiumCobaltOxide
-    public static Material SodiumCathodeAlloy
     public static Material LithiumHexafluorophosphate
     public static Material NickelHydroxide
     public static Material NickelChloride
@@ -1721,7 +1722,6 @@ class SuSyMaterials {
     public static Material SodiumSulfiteSolution
     public static Material PhosphorusSolution
     public static Material SodiumCyanideSolution
-    public static Material BrominatedSulfurDioxide
     public static Material SodiumThiosulfateSolution
     public static Material DilutedIronIIIChlorideSolution
     public static Material SodiumPerchlorateSolution

@@ -581,7 +581,6 @@ susy.material.tetramethylammonium_hydroxide_solution=Solução de Hidróxido de 
 susy.material.boron_trioxide_solution=Solução de Trióxido de Boro
 susy.material.phosphorus_solution=Solução de Fósforo
 susy.material.sodium_cyanide_solution=Solução de Cianeto de Sódio
-susy.material.brominated_sulfur_dioxide=Dióxido Sulfúrico Brominado 
 susy.material.phosphorus_trichloride=Tricloreto de Fósforo
 
 susy.material.wacker_catalyst_solution=Solução de Catalisador Wacker
@@ -709,7 +708,6 @@ susy.material.concentrated_salt_water=Concentrated Salt Water
 susy.material.hypersaline_water=Hypersaline Water
 susy.material.lithium_carbonate=Lithium Carbonate
 susy.material.lithium_cobalt_oxide=Lithium Cobalt Oxide
-susy.material.sodium_cathode_alloy=Sodium Battery Cathode Alloy
 susy.material.lithium_hexafluorophosphate=Lithium Hexafluorophosphate
 susy.material.nickel_chloride=Nickel Chloride
 susy.material.nickel_hydroxide=Nickel Hydroxide
