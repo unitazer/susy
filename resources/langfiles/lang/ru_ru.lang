@@ -556,7 +556,6 @@ susy.material.tetramethylammonium_hydroxide_solution=Раствор гидрок
 susy.material.boron_trioxide_solution=Раствор триоксида бора
 susy.material.phosphorus_solution=Фосфорный раствор
 susy.material.sodium_cyanide_solution=Раствор цианида натрия
-susy.material.brominated_sulfur_dioxide=Бромированный диоксид серы
 susy.material.phosphorus_trichloride=трихлорид фосфора
 
 susy.material.wacker_catalyst_solution=Раствор Ваккера
@@ -682,7 +681,6 @@ susy.material.impure_bromine=Нечистый бром
 susy.material.concentrated_salt_water=Концентрированная соленая вода
 susy.material.hypersaline_water=Гиперсоленая вода
 susy.material.lithium_cobalt_oxide=оксид лития-кобальта
-susy.material.sodium_cathode_alloy=Катодный сплав натрия
 susy.material.lithium_hexafluorophosphate=Литий гексафторфосфат
 susy.material.nickel_chloride=Никель хлорид
 susy.material.nickel_hydroxide=Гидроксид никеля

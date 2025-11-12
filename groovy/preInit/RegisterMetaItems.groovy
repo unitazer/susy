@@ -128,9 +128,10 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(303, "carbon.mesh.treated")
         addItem(304, "proton_exchange_membrane_fuel_cell")
 
-        addItem(400, "engine.spark_plug")
+        addItem(400, "engine.spark_plug.iridium")
         addItem(401, "engine.piston")
         addItem(402, "engine.crankshaft")
+        addItem(403, "engine.spark_plug.palladium")
 
         addItem(500, "sintered_alumina.insulator")
 
@@ -208,19 +209,23 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(3500, "copra")
 
         //Batteries 4000-4100
-        Batteries['lead_acid'].register(it, 4000);
-        addItem(4001, "cathode.lead");
-        addItem(4002, "anode.lead");
-        addItem(4003, "cathode.lead_paste");
-        addItem(4004, "cathode.lead_frame");
-        Batteries['ni_fe'].register(it, 4005);
-        addItem(4006, "electrode.steel_frame");
-        addItem(4007, "electrode.nickeled_steel_frame");
+        Batteries['lead_acid'].register(it, 4000)
+        addItem(4001, "cathode.lead")
+        addItem(4002, "anode.lead")
+        addItem(4003, "cathode.lead_paste")
+        addItem(4004, "cathode.lead_frame")
+        Batteries['ni_fe'].register(it, 4005)
+        addItem(4006, "electrode.steel_frame")
+        addItem(4007, "electrode.nickeled_steel_frame")
+        Batteries['ni_zn.mv'].register(it, 4008)
+        Batteries['ni_zn.hv'].register(it, 4009)
+        addItem(4010, "anode.zinc_oxide")
+        addItem(4011, "cathode.nioh2")
         // Battery hulls 4090-4100
-        addItem(4090, "battery.primitivehull.lv");
-        addItem(4091, "battery.primitivehull.mv");
+        addItem(4090, "battery.primitivehull.lv")
+        addItem(4091, "battery.primitivehull.mv")
 
-        addItem(4101, "vacuum_tube_components");
+        addItem(4101, "vacuum_tube_components")
 
         //Dusts & Pulps 4500-4999
 
@@ -397,10 +402,13 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10204, 'display.mercury')
         addItem(10205, 'display.mars')
         
-        // Parachutes 10250-10300
+        // Space Components 10250-10300
         addItem(10250, "parachute.drogue")
         addItem(10251, "parachute.main")
         addItem(10252, "parachute.supersonic_main")
+        addItem(10253, "carbon.mesh.phenolic.moist")
+        addItem(10254, "carbon.mesh.phenolic.treated")
+        addItem(10255, "carbon.tile.phenolic.treated")
 
         // Induction Furnace
         addItem(10301, "coated_copper_coil")
