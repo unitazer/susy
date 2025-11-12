@@ -884,10 +884,7 @@ class UnknownCompositionMaterials {
                 .color(0x475453)
                 .build()
 
-        CarbonBlack = new Material.Builder(4169, SuSyUtility.susyId('carbon_black'))
-                .dust()
-                .color(0x140f02)
-                .build()
+        // FREE ID: 4169
 
         ZincCementationSlurry = new Material.Builder(4170, SuSyUtility.susyId('zinc_cementation_slurry'))
                 .liquid()

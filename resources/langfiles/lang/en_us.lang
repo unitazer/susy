@@ -2160,7 +2160,6 @@ susy.material.rp_one=RP-1
 susy.material.ammonium_metatungstate=Ammonium Metatungstate (AMT)
 susy.material.clarified_slurry_oil=Clarified Slurry Oil
 susy.material.pyrolysis_raffinate=Pyrolysis Raffinate
-susy.material.carbon_black=Carbon Black
 susy.material.compounded_polyisoprene=Compounded Polyisoprene
 susy.material.compounded_styrene_isoprene_rubber=Compounded Styrene Isoprene Rubber
 susy.material.compounded_styrene_butadiene_rubber=Compounded Styrene Butadiene Rubber
@@ -3262,6 +3261,7 @@ item.susy.material.kevlar.plate=Woven Kevlar
 item.gregtech.material.polytetrafluoroethylene.fiber=Expanded Polytetrafluoroethylene Fiber
 item.gregtech.material.polytetrafluoroethylene.thread=Expanded Polytetrafluoroethylene Thread
 gregtech.material.chrome=Chromium
+gregtech.material.carbon=Carbon Black
 gregtech.material.cupric_oxide=Copper II Oxide
 gregtech.material.polycaprolactam=Polycaprolactam (Nylon-6)
 
