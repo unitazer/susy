@@ -3191,10 +3191,20 @@ class UnknownCompositionMaterials {
                 .liquid()
                 .color(0xe7e3eb)
                 .build()
-
-        GreenEpoxyPCBCoating = new Material.Builder(4693, SuSyUtility.susyId('green_epoxy_pcb_coating'))
+        
+        ResolResinMixture = new Material.Builder(4693, SuSyUtility.susyId('resol_resin_mixture'))
+                .liquid()
+                .color(0xad9478)
+                .build()
+        
+        ResolResinInfiltrant = new Material.Builder(4694, SuSyUtility.susyId('resol_resin_infiltrant'))
+                .liquid()
+                .color(0x4e2f0a)
+                .build()
+        
+        GreenEpoxyPCBCoating = new Material.Builder(4695, SuSyUtility.susyId('green_epoxy_pcb_coating'))
                 .liquid()
                 .color(0x196809)
-                .build();
+                .build()
     }
 }
