@@ -39,13 +39,13 @@ class UnknownCompositionMaterials {
                 .color(0x000000)
                 .build()
 
-        MolecularSieve = new Material.Builder(4003, SuSyUtility.susyId('molecular_sieve'))
+        MolecularSieveA = new Material.Builder(4003, SuSyUtility.susyId('molecular_sieve_a'))
                 .dust()
                 .iconSet(SHINY)
                 .color(0x737373)
                 .build()
 
-        WetMolecularSieve = new Material.Builder(4004, SuSyUtility.susyId('wet_molecular_sieve'))
+        WetMolecularSieveA = new Material.Builder(4004, SuSyUtility.susyId('wet_molecular_sieve_a'))
                 .dust()
                 .iconSet(SHINY)
                 .color(0x5c5c5c)
@@ -473,13 +473,13 @@ class UnknownCompositionMaterials {
                 .color(0xadb07f)
                 .build()
 
-        TypeXZeolite = new Material.Builder(4091, SuSyUtility.susyId('type_x_zeolite'))
+        SodiumXZeolite = new Material.Builder(4091, SuSyUtility.susyId('sodium_x_zeolite'))
                 .dust()
                 .iconSet(SHINY)
                 .color(0xe4e8bc)
                 .build()
 
-        TypeXZeoliteSolution = new Material.Builder(4092, SuSyUtility.susyId('type_x_zeolite_solution'))
+        SodiumXZeoliteSolution = new Material.Builder(4092, SuSyUtility.susyId('sodium_x_zeolite_solution'))
                 .liquid()
                 .color(0xe4e8bc)
                 .build()
@@ -1210,7 +1210,7 @@ class UnknownCompositionMaterials {
 
         AcidicWastewater.setFormula('(H2O)(?)', true)
 
-        CarbonatedMolecularSieve = new Material.Builder(4234, SuSyUtility.susyId('carbonated_molecular_sieve'))
+        CarbonatedMolecularSieveX = new Material.Builder(4234, SuSyUtility.susyId('carbonated_molecular_sieve_x'))
                 .dust()
                 .color(0x737373)
                 .iconSet(DULL)
@@ -1241,7 +1241,7 @@ class UnknownCompositionMaterials {
                 .color(0xcfa532)
                 .build()
 
-        NetherMolecularSieve = new Material.Builder(4240, SuSyUtility.susyId('nether_molecular_sieve'))
+        NetherMolecularSieveX = new Material.Builder(4240, SuSyUtility.susyId('nether_molecular_sieve_x'))
                 .dust()
                 .color(0x6e6565)
                 .iconSet(DULL)
@@ -1324,7 +1324,7 @@ class UnknownCompositionMaterials {
                 .color(0x262424)
                 .build()
 
-        ZSMFive = new Material.Builder(4264, SuSyUtility.susyId('zsm_five'))
+        SodiumZSMFive = new Material.Builder(4264, SuSyUtility.susyId('sodium_zsm_five'))
                 .dust()
                 .flags(GENERATE_CATALYST_BED)
                 .color(0x739133)
@@ -1537,7 +1537,7 @@ class UnknownCompositionMaterials {
 
         //FREE ID: 4330-4332
 
-        HZSMFive = new Material.Builder(4333, SuSyUtility.susyId('hzsm_five'))
+        HydrogenZSMFive = new Material.Builder(4333, SuSyUtility.susyId('hydrogen_zsm_five'))
                 .dust()
                 .flags(GENERATE_CATALYST_BED)
                 .color(0x75a118)
@@ -2014,13 +2014,13 @@ class UnknownCompositionMaterials {
                 .color(0x281757)
                 .build()
 
-        TypeYZeolite = new Material.Builder(4425, SuSyUtility.susyId('type_y_zeolite'))
+        SodiumYZeolite = new Material.Builder(4425, SuSyUtility.susyId('sodium_y_zeolite'))
                 .dust()
                 .iconSet(SHINY)
                 .color(0xc8cca1)
                 .build()
 
-        TypeYZeoliteSolution = new Material.Builder(4426, SuSyUtility.susyId('type_y_zeolite_solution'))
+        SodiumYZeoliteSolution = new Material.Builder(4426, SuSyUtility.susyId('sodium_y_zeolite_solution'))
                 .liquid()
                 .color(0xc8cca1)
                 .build()
@@ -2923,10 +2923,7 @@ class UnknownCompositionMaterials {
                 .flags(FLAMMABLE)
                 .build()
 
-        YttriaStabilizedZirconia = new Material.Builder(4641, SuSyUtility.susyId('yttria_stabilized_zirconia'))
-                .dust()
-                .color(0xe3ecff)
-                .build()
+        // FREE ID: 4641
 
         IrradiatedBismuth = new Material.Builder(4642, SuSyUtility.susyId('irradiated_bismuth'))
                 .liquid(new FluidBuilder().temperature(545))
@@ -3087,5 +3084,120 @@ class UnknownCompositionMaterials {
                 .color(0xd6b465)
                 .build()
 
+        ColloidalSilica = new Material.Builder(4673, SuSyUtility.susyId('colloidal_silica'))
+                .liquid()
+                .color(0xd9d8ca)
+                .build()
+
+        SodiumAZeoliteSolution = new Material.Builder(4674, SuSyUtility.susyId('sodium_a_zeolite_solution'))
+                .liquid()
+                .color(0xede1d5)
+                .build()
+
+        SodiumAZeolite = new Material.Builder(4675, SuSyUtility.susyId('sodium_a_zeolite'))
+                .dust()
+                .color(0xede1d5)
+                .build()
+
+        SodiumPotassiumAZeolite = new Material.Builder(4676, SuSyUtility.susyId('sodium_potassium_a_zeolite'))
+                .dust()
+                .color(0xc5c6e3)
+                .build()
+
+        MolecularSieveX = new Material.Builder(4677, SuSyUtility.susyId('molecular_sieve_x'))
+                .dust()
+                .color(0xc2bba3)
+                .build()
+
+        AmmoniumYZeolite = new Material.Builder(4678, SuSyUtility.susyId('ammonium_y_zeolite'))
+                .dust()
+                .color(0xa7cca1)
+                .build()
+
+        DealuminizedYZeolite = new Material.Builder(4679, SuSyUtility.susyId('dealuminized_y_zeolite'))
+                .dust()
+                .color(0xcbd1be)
+                .build()
+
+        ModifiedZsmFive = new Material.Builder(4680, SuSyUtility.susyId('modified_zsm_five'))
+                .dust()
+                .flags(GENERATE_CATALYST_BED)
+                .color(0x8fa118)
+                .build()
+
+        AmmoxidationCatalyst = new Material.Builder(4681, SuSyUtility.susyId('ammoxidation_catalyst'))
+                .dust()
+                .color(0x18877a)
+                .build()
+
+        PropyleneAmmoxidationMixture = new Material.Builder(4682, SuSyUtility.susyId('propylene_ammoxidation_mixture'))
+                .gas(new FluidBuilder().temperature(723))
+                .color(0x86a63a)
+                .build()
+
+        CrudeAcrylonitrile = new Material.Builder(4683, SuSyUtility.susyId('crude_acrylonitrile'))
+                .liquid()
+                .color(0x5c8c24)
+                .build()
+
+        Ebonite = new Material.Builder(4684, SuSyUtility.susyId('ebonite'))
+                .dust()
+                .flags(NO_UNIFICATION, GENERATE_PLATE)
+                .color(0x2b170c)
+                .build()
+
+        CompoundedEbonite = new Material.Builder(4685, SuSyUtility.susyId('compounded_ebonite'))
+                .dust()
+                .flags(NO_UNIFICATION)
+                .color(0x2b1e0c)
+                .build()
+
+        NaphthenicAcid = new Material.Builder(4686, SuSyUtility.susyId('naphthenic_acid'))
+                .liquid()
+                .color(0x5e5925)
+                .build()
+
+        NapalmGellingAgent = new Material.Builder(4687, SuSyUtility.susyId('napalm_gelling_agent'))
+                .dust()
+                .color(0xf3e997)
+                .build()
+
+        SodiumNaphthenateSolution = new Material.Builder(4688, SuSyUtility.susyId('sodium_naphthenate_solution'))
+                .liquid()
+                .color(0x073017)
+                .build()
+
+        Napalm = new Material.Builder(4689, SuSyUtility.susyId('napalm'))
+                .liquid()
+                .color(0xFEF7BA)
+                .flags(FLAMMABLE)
+                .build()
+
+        CeramicCoatingSlurry = new Material.Builder(4690, SuSyUtility.susyId('ceramic_coating_slurry'))
+                .fluid()
+                .flags(NO_UNIFICATION)
+                .color(0xc9c6b8)
+                .build()
+
+        SodiumCMCSuspension = new Material.Builder(4691, SuSyUtility.susyId('sodium_cmc_suspension'))
+                .liquid()
+                .color(0xe9e7e9)
+                .build()
+
+        CMCWaste = new Material.Builder(4692, SuSyUtility.susyId('cmc_waste'))
+                .liquid()
+                .color(0xe7e3eb)
+                .build()
+        
+        ResolResinMixture = new Material.Builder(4693, SuSyUtility.susyId('resol_resin_mixture'))
+                .liquid()
+                .color(0xad9478)
+                .build()
+        
+        ResolResinInfiltrant = new Material.Builder(4694, SuSyUtility.susyId('resol_resin_infiltrant'))
+                .liquid()
+                .color(0x4e2f0a)
+                .build()
+        
     }
 }

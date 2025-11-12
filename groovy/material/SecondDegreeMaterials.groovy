@@ -60,6 +60,8 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
+        PoloniumIVNitrateSolution.setFormula('Po(NO3)4(H2O)', true)
+
         SodaAshSolution = new Material.Builder(13006, SuSyUtility.susyId('soda_ash_solution'))
                 .liquid()
                 .components(SodaAsh * 1, Water * 1)
@@ -117,7 +119,7 @@ class SecondDegreeMaterials {
 
         SodiumAluminateSolution = new Material.Builder(13015, SuSyUtility.susyId('sodium_aluminate_solution'))
                 .liquid()
-                .components(SodiumAluminate * 1, Water * 1)
+                .components(SodiumAluminate * 2, Water * 3)
                 .color(0x3f71bf)
                 .build()
 
@@ -218,11 +220,7 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        BrominatedSulfurDioxide = new Material.Builder(13032, SuSyUtility.susyId('brominated_sulfur_dioxide'))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(SulfuricAcid, HydrobromicAcid * 2)
-                .colorAverage()
-                .build()
+        // FREE ID: 13032
 
         SodiumThiosulfateSolution = new Material.Builder(13033, SuSyUtility.susyId('sodium_thiosulfate_solution'))
                 .liquid()
@@ -461,11 +459,13 @@ class SecondDegreeMaterials {
                 .flags(GENERATE_CATALYST_BED)
                 .build()
 
-        AmmoniumMetatungstateSolution = new Material.Builder(13073, SuSyUtility.susyId('ammonium_metatungstate_solution'))
+        WattsBathElectrolyte = new Material.Builder(13073, SuSyUtility.susyId('watts_bath_electrolyte'))
                 .liquid()
-                .components(AmmoniumMetatungstate, Ammonia * 4, Water * 4)
-                .color(0x340959)
+                .components(NickelSulfate * 5, NickelChloride * 1, BoricAcid * 2, Water * 1)
+                .colorAverage()
                 .build()
+
+        WattsBathElectrolyte.setFormula('(NiSO4)5(NiCl2)(H3BO3)2(H2O)', true)
 
         DilutedSodiumChlorateSolution = new Material.Builder(13074, SuSyUtility.susyId('diluted_sodium_chlorate_solution'))
                 .liquid()
@@ -787,7 +787,13 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 13129
+        StabilizedSodiumSilicateSolution = new Material.Builder(13123, SuSyUtility.susyId('stabilized_sodium_silicate_solution'))
+                .liquid()
+                .components(SodiumSilicate, Ammonia, Water * 5)
+                .colorAverage()
+                .build()
+
+        // FREE ID: 13124-13129
 
         HexachloroiridicAcidSolution = new Material.Builder(13130, SuSyUtility.susyId('hexachloroiridic_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
@@ -1010,6 +1016,36 @@ class SecondDegreeMaterials {
         LithiumHydroxideMonohydrate = new Material.Builder(13166, SuSyUtility.susyId('lithium_hydroxide_monohydrate'))
                 .dust()
                 .components(LithiumHydroxide, Water)
+                .colorAverage()
+                .build()
+
+        AmmoniumDihydrogenPhosphateSolution = new Material.Builder(13167, SuSyUtility.susyId('ammonium_dihydrogen_phosphate_solution'))
+                .liquid()
+                .components(AmmoniumDihydrogenPhosphate, Water)
+                .colorAverage()
+                .build()
+
+        DiammoniumHydrogenPhosphateSolution = new Material.Builder(13168, SuSyUtility.susyId('diammonium_hydrogen_phosphate_solution'))
+                .liquid()
+                .components(DiammoniumHydrogenPhosphate, Water * 2)
+                .colorAverage()
+                .build()
+
+        MagnesiumNitrateSolution = new Material.Builder(13169, SuSyUtility.susyId('magnesium_nitrate_solution'))
+                .liquid()
+                .components(MagnesiumNitrate, Water * 2)
+                .colorAverage()
+                .build()
+        
+        PlatinumOnCarbon = new Material.Builder(13170, SuSyUtility.susyId('platinum_on_carbon'))
+                .dust()
+                .components(Platinum, ActivatedCarbon * 10)
+                .colorAverage()
+                .build()
+
+        DilutedLanthanumNitrateSolution = new Material.Builder(13171, SuSyUtility.susyId('diluted_lanthanum_nitrate_solution'))
+                .liquid()
+                .components(LanthanumNitrate * 2, Water * 3)
                 .colorAverage()
                 .build()
     }
