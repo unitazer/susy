@@ -1410,15 +1410,6 @@ RecyclingHelper.addShaped("gregtech:curtain_coater", metaitem('susy:curtain_coat
     [metaitem('pipeLargeFluidStainlessSteel'), ore('circuitHv'), metaitem('pipeLargeFluidStainlessSteel')]
 ])
 
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('frameGtSteel'))
-    .inputs(metaitem('conveyor.module.lv') * 2) 
-    .outputs(item('susy:conveyor_belt') * 1)
-    .fluidInputs(fluid('soldering_alloy') * 288)
-    .EUt(VA[LV])
-    .duration(600)
-    .buildAndRegister()
-
 // Precise Milling Machine
 
 RecyclingHelper.addShaped("gregtech:milling", metaitem('susy:milling'), [
