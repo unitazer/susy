@@ -320,7 +320,6 @@ class SuSyMaterials {
     public static Material WaelzSlag
     public static Material ReducedZincLeach
     public static Material WaelzOxide
-    public static Material CarbonBlack
     public static Material ZincCementationSlurry
     public static Material PrecipitatedZincLeach
     public static Material CopperCadmiumResidue
@@ -790,6 +789,7 @@ class SuSyMaterials {
     public static Material CyanamideSlurry
     public static Material CrudeCyanamideSolution
     public static Material CyanamideSolution
+    public static Material GreenEpoxyPCBCoating
 
     // Petrochem Materials
 
@@ -2354,6 +2354,9 @@ class SuSyMaterials {
     public static Material SilverSulfadiazine
     public static Material Dicyanamide
     public static Material PotassiumMethoxide
+    public static Material Tetrahydrobenzaldehyde
+    public static Material PeraceticAcidSolution
+    public static Material EpoxycyclohexaneCarboxylate
 
     // Third Degree Materials
 
@@ -2498,7 +2501,7 @@ class SuSyMaterials {
     public static Material GuanidiniumNitrateSolution
     public static Material CrudeTrimethylOrthoformate
     public static Material CrudeMethylVinylEther
-
+    public static Material TetrasodiumEthylenediaminetetraacetateSolution
 
     // Thermodynamics Materials
 

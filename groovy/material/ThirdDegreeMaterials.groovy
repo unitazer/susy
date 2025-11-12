@@ -10,9 +10,10 @@ import gregtech.api.unification.material.properties.*
 
 import supersymmetry.api.util.SuSyUtility
 
-import static gregtech.api.unification.material.info.MaterialIconSet.*
-import static gregtech.api.unification.material.info.MaterialFlags.*
-import static gregtech.api.unification.material.Materials.*
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtechfoodoption.GTFOMaterialHandler.*;
 
 class ThirdDegreeMaterials {
     static void register() {
@@ -878,6 +879,12 @@ class ThirdDegreeMaterials {
         CrudeMethylVinylEther = new Material.Builder(24142, SuSyUtility.susyId('crude_methyl_vinyl_ether'))
                 .liquid()
                 .components(MethylVinylEther, Methanol, PotassiumHydroxide)
+                .colorAverage()
+                .build()
+                
+        TetrasodiumEthylenediaminetetraacetateSolution = new Material.Builder(24143, SuSyUtility.susyId('tetrasodium_ethylenediaminetetraacetate_solution'))
+                .liquid()
+                .components(TetrasodiumEthylenediaminetetraacetate, Water)
                 .colorAverage()
                 .build()
     }

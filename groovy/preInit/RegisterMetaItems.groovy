@@ -102,12 +102,11 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(202, "vt_slag")
 
         addItem(203, "white_matte")
-
         addItem(210, "bound_leather")
 
-        addItem(212, "drone.lv").setMaxStackSize(1).addComponents(ElectricStats.createRechargeableBattery(10000, GTValues.LV)).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS)
+        addItem(212, "drone.lv").setMaxStackSize(1).addComponents(ElectricStats.createRechargeableBattery(10000, GTValues.LV)).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
         addItem(213, "glass_fibers")
-        addItem(214, "epoxy_lamina")
+        addItem(214, "titanium_cylinder");
 
         addItem(215, "commutator")
         addItem(216, "brush.unfired")
@@ -270,6 +269,19 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(5305, "etched.silicon_dioxide")
         addItem(5306, "etched.polysilicon")
         addItem(5307, "etched.silicon_nitride")
+
+        //Epoxy Circuit Board + Components 5800-5900
+        addItem(5800, "board.epoxy.prepreg")
+        addItem(5801, "board.epoxy.copper_clad");
+        addItem(5802, "board.epoxy.patterned");
+        addItem(5803, "board.epoxy.etched");
+        addItem(5804, "board.epoxy.drilled");
+        addItem(5805, "board.epoxy.electroless");
+        addItem(5806, "board.epoxy.electrolytic");
+        addItem(5807, "board.epoxy.wet_masked");
+        addItem(5808, "board.epoxy.mask_affixed"); 
+        addItem(5809, "circuit_board.fr4");
+
 
         //Good Circuit Components 5900-6000
         addItem(5900, "op_amp")
