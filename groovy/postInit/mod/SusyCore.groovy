@@ -83,6 +83,26 @@ ASSEMBLER.recipeBuilder()
 
 RecyclingHelper.handleRecycling(item('susy:susy_multiblock_casing', 10), [ore('plateStainlessSteel') * 4, item('gregtech:metal_casing', 4)])
 
+ASSEMBLER.recipeBuilder()
+    .inputs(metaitem('electric.motor.mv') * 2)
+    .inputs(ore('plateRubber') * 4)
+    .inputs(ore('wireFineAnnealedCopper') * 4)
+    .inputs(ore('stickLongSteel') * 4)
+    .inputs(ore('gearSmallSteel') * 2)
+    .fluidInputs(fluid('lubricant') * 500)
+    .outputs(item('susy:conveyor_belt'))
+    .duration(120)
+    .EUt(VA[MV])
+    .buildAndRegister();
+
+RecyclingHelper.handleRecycling(item('susy:conveyor_belt'), [
+    metaitem('electric.motor.mv') * 2,
+    ore('plateRubber') * 4,
+    ore('wireFineAnnealedCopper') * 4,
+    ore('stickLongSteel') * 4,
+    ore('gearSmallSteel') * 2
+])
+
 RecyclingHelper.addShaped("susy:air_vent_w", item('susy:meta_item', 4), [
     [ore('craftingToolHardHammer'),ore('stickWroughtIron'),ore('craftingToolScrewdriver')],
     [ore('plateWroughtIron'),ore('stickWroughtIron'),ore('plateWroughtIron')],
@@ -504,16 +524,4 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('soldering_alloy') * 144)
     .duration(400)
     .EUt(VA[EV])
-    .buildAndRegister();
-
-ASSEMBLER.recipeBuilder()
-    .inputs(metaitem('electric.motor.mv') * 2)
-    .inputs(ore('plateRubber') * 4)
-    .inputs(ore('wireFineAnnealedCopper') * 4)
-    .inputs(ore('stickLongSteel') * 4)
-    .inputs(ore('gearSmallSteel') * 2)
-    .fluidInputs(fluid('lubricant') * 500)
-    .outputs(item('susy:conveyor_belt'))
-    .duration(120)
-    .EUt(VA[MV])
     .buildAndRegister();

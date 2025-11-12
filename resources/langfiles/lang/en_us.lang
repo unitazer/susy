@@ -2759,8 +2759,7 @@ recipemap.electrostatic_separator.name=Electrostatic Separation
 recipemap.single_column_cryogenic_distillation.name=Single Column Cryogenic Distillation
 recipemap.low_pressure_cryogenic_distillation.name=Low Pressure Cryogenic Distillation
 recipemap.high_pressure_cryogenic_distillation.name=High Pressure Cryogenic Distillation
-recipemap.high_pressure_advanced_steam_turbine=High Pressure Advanced Steam Turbine
-recipemap.low_pressure_advanced_steam_turbine=Low Pressure Advanced Steam Turbine
+recipemap.advanced_steam_turbine=Advanced Steam Turbine
 recipemap.injection_molder.name=Injection Molding
 
 # QMD Particles
@@ -3132,7 +3131,8 @@ metaitem.epoxy_lamina.name=Epoxy Lamina
 metaitem.stem.cotton.name=Cotton Stem
 metaitem.spinneret.name=Spinneret
 
-metaitem.engine.spark_plug.name=Spark Plug
+metaitem.engine.spark_plug.palladium.name=Palladium-Tipped Spark Plug
+metaitem.engine.spark_plug.iridium.name=Iridium-Tipped Spark Plug
 metaitem.engine.piston.name=Piston
 metaitem.engine.crankshaft.name=Crankshaft
 metaitem.sintered_alumina.insulator.name=Sintered Alumina Insulator
@@ -3290,3 +3290,10 @@ recipe.mud=Acquire mud with the primitive mud pump./nThe easiest way to automate
 recipe.refrigeration=Carbon dioxide is the simplest refrigerant out of all of these.
 recipe.motor.brushless=Once you have access to silicon wafers in mid-MV, this is far cheaper.
 recipe.water.electrolysis=This is significantly faster if done in an electrolysis cell after unlocking NaOH.
+recipe.power_generation.multiblock_rotation=This recipe is run in a multiblock with shaft rotation mechanics, which means there is a spin-up time to reach maximum power outpu. Supply with lubricants to keep it running smoothly!
+recipe.power_generation.combustion=Can either be run in a multiblock or singleblock configuration. Multiblocks only require lubricant but singleblocks also require a coolant!
+recipe.power_generation.fuel_cell=Fuel cells require a certain temperature to run properly. Make sure to maintain temperature with preheated air!
+recipe.power_generation.combined_cycle=Combined cycle power plants utilize waste heat from gas turbine exhaust to boil water. Flue gas carries 10 EU/L of energy, and yields an extra 25% energy for a given amount of fuel.
+recipe.lubricant.midgrade=Provides a 1.2x boost in power generation recipes requiring lubricant.
+recipe.lubricant.premium=Provides a 1.4x boost in power generation recipes requiring lubricant.
+recipe.lubricant.supreme=Provides a 1.6x boost in power generation recipes requiring lubricant.

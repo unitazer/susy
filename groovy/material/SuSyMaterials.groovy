@@ -502,9 +502,6 @@ class SuSyMaterials {
     public static Material Pama
     public static Material PolymerizedStyreneIsopreneSolution
     public static Material PolyisobuteneSuccinicAnhydride
-    public static Material MidgradeLubricant
-    public static Material PremiumLubricant
-    public static Material SupremeLubricant
     public static Material ZincDialkyldithiophospate
     public static Material MolybdenumDialkyldithiophosphate
     public static Material AcidicDinitrobenzeneMixture
@@ -883,7 +880,6 @@ class SuSyMaterials {
     public static Material HeavyAtmosphericOverheads
     public static Material LightAtmosphericOverheads
 
-    public static Material LubricatingOil
     public static Material TreatedSulfuricLubricatingOil
 
     public static Material LightCycleOil

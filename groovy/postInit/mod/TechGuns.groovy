@@ -661,6 +661,14 @@ Globals.solders.each { key, val ->
         .EUt(VA[MV])
         .buildAndRegister();
 
+    CANNER.recipeBuilder()
+        .fluidInputs(fluid('napalm') * 250)
+        .inputs(item('techguns:itemshared', 28))
+        .outputs(item('techguns:itemshared', 27))
+        .duration(80)
+        .EUt(VA[ULV])
+        .buildAndRegister();
+
     WEAPONS_FACTORY.recipeBuilder()
         .inputs(item('techguns:itemshared', 72))
         .inputs(item('techguns:itemshared', 33))
