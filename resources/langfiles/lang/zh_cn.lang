@@ -2556,8 +2556,7 @@ recipemap.electrostatic_separator.name=静电分离
 recipemap.single_column_cryogenic_distillation.name=单塔式低温蒸馏
 recipemap.low_pressure_cryogenic_distillation.name=低压低温蒸馏
 recipemap.high_pressure_cryogenic_distillation.name=高压低温蒸馏
-recipemap.high_pressure_advanced_steam_turbine=高压高级蒸汽轮机
-recipemap.low_pressure_advanced_steam_turbine=低压高级蒸汽轮机
+recipemap.advanced_steam_turbine=高级蒸汽轮机
 
 # QMD Particles
 

@@ -1830,20 +1830,7 @@ class UnknownCompositionMaterials {
 
         MolybdenumDialkyldithiophosphate.setFormula("Mo[(S2P(OR)2]2", true)
 
-        MidgradeLubricant = new Material.Builder(4389, SuSyUtility.susyId('midgrade_lubricant'))
-                .liquid()
-                .color(0xc7aa2a)
-                .build()
-
-        PremiumLubricant = new Material.Builder(4390, SuSyUtility.susyId('premium_lubricant'))
-                .liquid()
-                .color(0xba831c)
-                .build()
-
-        SupremeLubricant = new Material.Builder(4391, SuSyUtility.susyId('supreme_lubricant'))
-                .liquid()
-                .color(0xad5f10)
-                .build()
+        // FREE IDs: 4389-4391
 
         DinitrobenzeneMixture = new Material.Builder(4392, SuSyUtility.susyId("dinitrobenzene_mixture"))
                 .dust()
