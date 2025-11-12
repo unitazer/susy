@@ -1,23 +1,24 @@
 {
   "preRequisites:11": [
-    380
+    191
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.383.desc",
+      "desc:8": "susy.quest.db.386.desc",
       "icon:10": {
-        "id:8": "icbmclassic:explosive_missile"
+        "Damage:2": 4,
+        "id:8": "icbmclassic:grenade"
       },
-      "name:8": "susy.quest.db.383.title"
+      "name:8": "susy.quest.db.386.title"
     }
   },
-  "questID:3": 383,
+  "questID:3": 386,
   "tasks:9": {
     "0:10": {
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "id:8": "icbmclassic:explosive_missile"
+          "id:8": "icbmclassic:grenade"
         }
       },
       "taskID:8": "bq_standard:retrieval"
