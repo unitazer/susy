@@ -127,9 +127,10 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(303, "carbon.mesh.treated")
         addItem(304, "proton_exchange_membrane_fuel_cell")
 
-        addItem(400, "engine.spark_plug")
+        addItem(400, "engine.spark_plug.iridium")
         addItem(401, "engine.piston")
         addItem(402, "engine.crankshaft")
+        addItem(403, "engine.spark_plug.palladium")
 
         addItem(500, "sintered_alumina.insulator")
 

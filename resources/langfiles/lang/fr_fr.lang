@@ -578,7 +578,6 @@ susy.material.tetramethylammonium_hydroxide_solution=Tetramethylammonium Hydroxi
 susy.material.boron_trioxide_solution=Boron Trioxide Solution
 susy.material.phosphorus_solution=Phosphorus Solution
 susy.material.sodium_cyanide_solution=Sodium Cyanide Solution
-susy.material.brominated_sulfur_dioxide=Brominated Sulfur Dioxide
 susy.material.phosphorus_trichloride=Phosphorus Trichloride
 
 susy.material.wacker_catalyst_solution=Wacker Catalyst Solution
@@ -2738,8 +2737,7 @@ recipemap.electrostatic_separator.name=Electrostatic Separation
 recipemap.single_column_cryogenic_distillation.name=Single Column Cryogenic Distillation
 recipemap.low_pressure_cryogenic_distillation.name=Low Pressure Cryogenic Distillation
 recipemap.high_pressure_cryogenic_distillation.name=High Pressure Cryogenic Distillation
-recipemap.high_pressure_advanced_steam_turbine=High Pressure Advanced Steam Turbine
-recipemap.low_pressure_advanced_steam_turbine=Low Pressure Advanced Steam Turbine
+recipemap.advanced_steam_turbine=Advanced Steam Turbine
 recipemap.injection_molder.name=Injection Molding
 
 # QMD Particles
