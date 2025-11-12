@@ -191,6 +191,7 @@ class ChangeFlags {
         VanadiumSteel.addFlags("generate_round");
         Mica.addFlags("generate_plate", "no_unification");
         Rubber.addFlags("generate_plate");
+        Polycaprolactam.addFlags("generate_foil");
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")

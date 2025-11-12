@@ -1150,7 +1150,6 @@ class SuSyMaterials {
     public static Material HypersalineWater
     public static Material LithiumCarbonate
     public static Material LithiumCobaltOxide
-    public static Material SodiumCathodeAlloy
     public static Material LithiumHexafluorophosphate
     public static Material NickelHydroxide
     public static Material NickelChloride
