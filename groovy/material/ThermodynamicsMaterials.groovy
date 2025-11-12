@@ -632,7 +632,7 @@ class ThermodynamicsMaterials {
                 .components(Deuterium * 2, Oxygen * 1)
                 .build()
 
-        PressurizedHeavyWater.setProperty(SCPropertyKey.COOLANT, new CoolantProperty(PressurizedHeavyWater, HotPressurizedHeavyWater, FluidStorageKeys.LIQUID, 2, 1000, 558, 2064000, 4228).setAccumulatesHydrogen(true)
+        PressurizedHeavyWater.setProperty(SCPropertyKey.COOLANT, new CoolantProperty(PressurizedHeavyWater, HotPressurizedHeavyWater, FluidStorageKeys.LIQUID, 4, 1000, 558, 2064000, 4228).setAccumulatesHydrogen(true)
                 .setSlowAbsorptionFactor(0.0625)
                 .setFastAbsorptionFactor(0.03125))
         // per mole, 2,233,120J absorbed --> 331,143 EU/mol
