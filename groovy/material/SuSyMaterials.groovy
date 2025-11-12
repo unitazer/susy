@@ -1847,7 +1847,8 @@ class SuSyMaterials {
     public static Material StabilizedSodiumSilicateSolution
     public static Material MagnesiumNitrateSolution
     public static Material PlatinumOnCarbon
-
+    public static Material TabularAlumina
+    public static Material ReactiveAlumina
 
     // Organic Chemistry Materials
 
