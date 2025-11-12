@@ -191,6 +191,7 @@ class ChangeFlags {
         VanadiumSteel.addFlags("generate_round");
         Mica.addFlags("generate_plate", "no_unification");
         Rubber.addFlags("generate_plate");
+        Polycaprolactam.addFlags("generate_foil");
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")
@@ -246,7 +247,8 @@ class ChangeFlags {
         PolyvinylAcetate.setFormula("[C4H6O2]n", true);
         PolyvinylButyral.setFormula("[C8H14O2]n", true);
         TungstenSteel.setFormula("Fe60W8Cr3Mo2V", true);
-
+        StainlessSteel.setFormula("Fe28Cr8Ni4Si2Mn", true);
+        
         // Ore Processing
         
         Pitchblende.addFlags("disable_decomposition")

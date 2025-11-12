@@ -14,6 +14,16 @@ ASSEMBLER.recipeBuilder()
     .duration(160)
     .buildAndRegister()
 
+// H2SO4
+
+MIXER.recipeBuilder()
+    .fluidInputs(fluid('sulfur_trioxide') * 1000)
+    .fluidInputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('sulfuric_acid') * 1000)
+    .EUt(VA[ULV])
+    .duration(40)
+    .buildAndRegister()
+
 // Ammonium Chloride
 
 BCR.recipeBuilder()
@@ -199,6 +209,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid('hydrogen_fluoride') * 2000)
     .outputs(metaitem('dustCalciumSulfate') * 6)
+    .info('recipe.hydrogen_fluoride.production')
     .duration(30)
     .EUt(VA[ULV])
     .buildAndRegister()

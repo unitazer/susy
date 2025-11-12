@@ -125,6 +125,7 @@ class OrganicChemistryMaterials {
                 .components(Carbon * 6, Hydrogen * 9, Oxygen * 5, Sodium * 1)
                 .color(0x7d6547)
                 .build()
+        AlkaliCellulose.setFormula('[C6H7O2(OH)2ONa]n', true)
 
         SodiumCelluloseXanthate = new Material.Builder(15016, SuSyUtility.susyId('sodium_cellulose_xanthate'))
                 .dust()
@@ -370,7 +371,7 @@ class OrganicChemistryMaterials {
 
         PBISolution = new Material.Builder(15057, SuSyUtility.susyId('pbi_solution'))
                 .liquid()
-                .components(Dimethylacetamide * 1, Polybenzimidazole * 1)
+                .components(Dimethylacetamide * 1, Polybenzimidazole * 1, LithiumChloride * 1)
                 .color(0x171410)
                 .build()
 
@@ -3154,5 +3155,19 @@ class OrganicChemistryMaterials {
                 .components(Carbon * 2, Hydrogen * 3, Nitrogen)
                 .color(0x275e75)
                 .build()
+
+        MyristicAcid = new Material.Builder(15496, SuSyUtility.susyId('myristic_acid'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .components(Carbon * 14, Hydrogen * 28, Oxygen * 2)
+                .color(0xd99441)
+                .build()
+
+        SodiumCarboxymethylCellulose = new Material.Builder(15497, SuSyUtility.susyId('sodium_carboxymethyl_cellulose'))
+                .dust()
+                .components(Carbon * 8, Hydrogen * 11, Oxygen * 6, Sodium)
+                .color(0xf5eedc)
+                .build()
+
+        SodiumCarboxymethylCellulose.setFormula('[C6H7O2(OH)2OCH2COONa]n', true)
     }
 }

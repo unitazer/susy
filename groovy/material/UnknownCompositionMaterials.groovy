@@ -3155,10 +3155,52 @@ class UnknownCompositionMaterials {
                 .color(0x2b1e0c)
                 .build()
 
-        CeramicCoatingSlurry = new Material.Builder(4686, SuSyUtility.susyId('ceramic_coating_slurry'))
+        NaphthenicAcid = new Material.Builder(4686, SuSyUtility.susyId('naphthenic_acid'))
+                .liquid()
+                .color(0x5e5925)
+                .build()
+
+        NapalmGellingAgent = new Material.Builder(4687, SuSyUtility.susyId('napalm_gelling_agent'))
+                .dust()
+                .color(0xf3e997)
+                .build()
+
+        SodiumNaphthenateSolution = new Material.Builder(4688, SuSyUtility.susyId('sodium_naphthenate_solution'))
+                .liquid()
+                .color(0x073017)
+                .build()
+
+        Napalm = new Material.Builder(4689, SuSyUtility.susyId('napalm'))
+                .liquid()
+                .color(0xFEF7BA)
+                .flags(FLAMMABLE)
+                .build()
+
+        CeramicCoatingSlurry = new Material.Builder(4690, SuSyUtility.susyId('ceramic_coating_slurry'))
                 .fluid()
                 .flags(NO_UNIFICATION)
                 .color(0xc9c6b8)
                 .build()
+
+        SodiumCMCSuspension = new Material.Builder(4691, SuSyUtility.susyId('sodium_cmc_suspension'))
+                .liquid()
+                .color(0xe9e7e9)
+                .build()
+
+        CMCWaste = new Material.Builder(4692, SuSyUtility.susyId('cmc_waste'))
+                .liquid()
+                .color(0xe7e3eb)
+                .build()
+        
+        ResolResinMixture = new Material.Builder(4693, SuSyUtility.susyId('resol_resin_mixture'))
+                .liquid()
+                .color(0xad9478)
+                .build()
+        
+        ResolResinInfiltrant = new Material.Builder(4694, SuSyUtility.susyId('resol_resin_infiltrant'))
+                .liquid()
+                .color(0x4e2f0a)
+                .build()
+        
     }
 }

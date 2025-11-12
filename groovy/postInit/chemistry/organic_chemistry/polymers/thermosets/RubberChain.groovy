@@ -132,6 +132,7 @@ for (rubber in rubbers) {
                     }
                     .notConsumable(metaitem('shape.extruder.' + shape.shapeName))
                     .outputs(ore(shape.name + rubber.output)[0] * (rubber.yield * shape.yield))
+                    .info('recipe.vulcanization.' + catalyst.name)
                     .EUt(VA[ULV])
                     .buildAndRegister()
             }
@@ -234,6 +235,7 @@ MIXER.recipeBuilder()
     .inputs(ore('dustPolyisoprene') * 8)
     .inputs(ore('dustCarbonBlack') * 2)
     .outputs(metaitem('dustCompoundedPolyisoprene') * 10)
+    .info('recipe.compounded_polyisoprene')
     .EUt(VA[MV])
     .duration(250)
     .buildAndRegister()
