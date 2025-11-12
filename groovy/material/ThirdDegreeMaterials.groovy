@@ -877,7 +877,7 @@ class ThirdDegreeMaterials {
 
         CrudeMethylVinylEther = new Material.Builder(24142, SuSyUtility.susyId('crude_methyl_vinyl_ether'))
                 .liquid()
-                .components(MethylVinylEther, Methanol)
+                .components(MethylVinylEther, Methanol, PotassiumHydroxide)
                 .colorAverage()
                 .build()
     }
