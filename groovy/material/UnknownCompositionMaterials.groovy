@@ -1833,20 +1833,7 @@ class UnknownCompositionMaterials {
 
         MolybdenumDialkyldithiophosphate.setFormula("Mo[(S2P(OR)2]2", true)
 
-        MidgradeLubricant = new Material.Builder(4389, SuSyUtility.susyId('midgrade_lubricant'))
-                .liquid()
-                .color(0xc7aa2a)
-                .build()
-
-        PremiumLubricant = new Material.Builder(4390, SuSyUtility.susyId('premium_lubricant'))
-                .liquid()
-                .color(0xba831c)
-                .build()
-
-        SupremeLubricant = new Material.Builder(4391, SuSyUtility.susyId('supreme_lubricant'))
-                .liquid()
-                .color(0xad5f10)
-                .build()
+        // FREE IDs: 4389-4391
 
         DinitrobenzeneMixture = new Material.Builder(4392, SuSyUtility.susyId("dinitrobenzene_mixture"))
                 .dust()
@@ -3191,5 +3178,16 @@ class UnknownCompositionMaterials {
                 .liquid()
                 .color(0xe7e3eb)
                 .build()
+        
+        ResolResinMixture = new Material.Builder(4693, SuSyUtility.susyId('resol_resin_mixture'))
+                .liquid()
+                .color(0xad9478)
+                .build()
+        
+        ResolResinInfiltrant = new Material.Builder(4694, SuSyUtility.susyId('resol_resin_infiltrant'))
+                .liquid()
+                .color(0x4e2f0a)
+                .build()
+        
     }
 }
