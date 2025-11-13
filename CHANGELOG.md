@@ -2,6 +2,8 @@
 ## Mod Changes
 ### Mod Updates
 - SusyCore v0.1.81 → v0.1.82
+- Supercritical v0.2.2 → v0.2.3
+- SussyPatches v1.8.1 → v1.9.0
 ## Changes
 ### New Features
 - EV-unlocked circuit boards are now craftable! (#1321 by @littlecube8152)
