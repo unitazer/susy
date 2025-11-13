@@ -10,9 +10,10 @@ import gregtech.api.unification.material.properties.*
 
 import supersymmetry.api.util.SuSyUtility
 
-import static gregtech.api.unification.material.info.MaterialIconSet.*
-import static gregtech.api.unification.material.info.MaterialFlags.*
-import static gregtech.api.unification.material.Materials.*
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtechfoodoption.GTFOMaterialHandler.*;
 
 class ThirdDegreeMaterials {
     static void register() {
@@ -211,7 +212,7 @@ class ThirdDegreeMaterials {
 
         FluorinatedSurfactantMixture = new Material.Builder(24032, SuSyUtility.susyId('fluorinated_surfactant_mixture'))
                 .liquid()
-                .components(PerfluorooctanoicAcid * 1, Water * 1)
+                .components(PerfluorooctanoicAcid * 1, Water * 1, Ammonia * 1)
                 .colorAverage()
                 .build()
 
@@ -601,7 +602,7 @@ class ThirdDegreeMaterials {
 
         SpentPBISolution = new Material.Builder(24096, SuSyUtility.susyId('spent_pbi_solution'))
                 .liquid()
-                .components(Dimethylacetamide * 1)
+                .components(Dimethylacetamide * 1, LithiumChloride * 1)
                 .colorAverage()
                 .build()
 
@@ -823,7 +824,7 @@ class ThirdDegreeMaterials {
 
         PerfluorovinylSulfonylEtherSolution = new Material.Builder(24133, SuSyUtility.susyId('perfluorovinyl_sulfonyl_ether_solution'))
                 .liquid()
-                .components(PerfluorovinylSulfonylEther, SodiumFluoride * 2, Dimethylformamide * 2)
+                .components(PerfluorovinylSulfonylEther, Dimethylformamide * 2)
                 .colorAverage()
                 .build()
 
@@ -854,6 +855,12 @@ class ThirdDegreeMaterials {
         PolytetrafluoroethyleneCoatingSolution = new Material.Builder(24138, SuSyUtility.susyId('polytetrafluoroethylene_coating_solution'))
                 .liquid()
                 .components(Polytetrafluoroethylene * 2, Cyclohexane)
+                .colorAverage()
+                .build()
+
+        TetrasodiumEthylenediaminetetraacetateSolution = new Material.Builder(24139, SuSyUtility.susyId('tetrasodium_ethylenediaminetetraacetate_solution'))
+                .liquid()
+                .components(TetrasodiumEthylenediaminetetraacetate, Water)
                 .colorAverage()
                 .build()
     }

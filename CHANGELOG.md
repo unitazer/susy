@@ -1,3 +1,104 @@
+# UPDATE 0.1.15.10
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.80 → v0.1.81
+- Universal Tweaks 1.12.2-1.16.0.1 → 1.12.2-1.17.0
+- UniLib 1.1.1+1.12.2-forge → 1.2.0+1.12.2-forge
+- CraftPresence 2.6.2+1.12.2-forge → 2.7.0+1.12.2-forge
+- SussyPatches 1.8.0 → 1.8.1
+## Changes
+**NOTICE: THIS IS A HIGHLY BREAKING UPDATE.** Players with large gas turbines are advised to prepare large quantities of steel and floor space to transition to this update.
+### New Features
+- [Susy-Core] Multiblock combustion engines are now available at MV! Pollute the environment in style! (#549 by @planetme)
+- Recipe documentation is now available within JEI recipes! (#1724 by @bruberu)
+- Who knows what this heat shield could be for? (#1726 by @lemonelk)
+- A new combat-focused chapter is here to help declutter the questbook! (#1718 by @Fiery36)
+- A partial French translation is also disponible pour tous nos joueurs français. (#1721 by @Vmdelpapa)
+### Changed Features
+- Realistic napalm is now needed for your incendiary weapons. (#1661 by @lemonelk) 
+- MV/HV batteries have been replaced with Ni/Zn formulations. (#1722 by @trexxet)
+- [Susy-Core] Your asbestos armor has never looked better! Environmental survival armors have been given a lift-up thanks to our new contributor Suharakimi! (#525 by @MCTian-mi and @Suharakimi)
+- [Susy-Core] The mixer settler now can perform 16 recipes in parallel. (#566 by @trainvoi)
+### Fixes
+Many thanks to Fiery36, Solothesolo, and trainvoi for helping to keep our pack stable.
+# UPDATE 0.1.15.9
+## Changes
+### New Features
+- 6061 and 7075 Aluminium Alloys are now craftable! I wonder what you'll need this for. (#1710 by @Fiery36)
+- More decoration blocks, like asbestos wool, are now available for you to craft! (#1711 by @Rick8484)
+- The NiFe MV battery has now replaced the MV sodium battery. (#1689 by @trexxet)
+### Changed Features
+- Techbro houses no longer spawn quite as often as before, and the loot tables are now correct. (#1696 by @oliwier509)
+- Stainless steel no longer uses small dusts. (#1700 by @Rick8484)
+### Fixes
+- Resolve the conflict between LT and Universal Tweaks (#1692 by @Rick8484)
+- Sodium sulfate solution can now be made from sodium sulfate dust. (#1699 by @Fiery36)
+Many more bugfixes were made by @Rick8484, @Fiery36, and @trexxet. Thank you for keeping the pack stable!
+### TODO: Uncategorized Changes (Please Categorize)
+- updating PR (#1677 by @oliwier509)
+# UPDATE 0.1.15.8
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.78 → v0.1.79
+- Universal Mod Core 1.12.2-forge-1.2.1 → 1.12.2-forge-1.2.2-3d12767
+- GroovyScript 1.2.5 → 1.3.1
+- ModularUI 2.5.0 → 3.0.3
+- Inventory Bogo Sorter 1.4.11 → 1.5.0
+- Fixeroo 2.3.6b → 2.3.6
+- Fugue 0.20.4 → 0.21.0
+- SussyPatches 1.6.4 → 1.8.0
+### Mod Additions
+- Key Binding Patch → 1.12.2] Key Binding Patch v1.3.3.3 - 2024-12-1
+- Aqua Acrobatics [Forge] → 1.15.4
+## Changes
+### New Features
+- Parachute items are now craftable; you'll need them eventually... (#1671 by @lemonelk)
+- Ore vein displays are now much easier to read! (#1688 by @MCTian-mi)
+- Aqua Acrobatics is now available! (#1690 by @MCTian-mi)
+### Changed Features
+- Batteries now require specialized hardened rubber! (#1687 by @trexxet)
+- [Susy-Core] Refractory gunning mixture usage has been balanced for longer recipes. (#561 by @trainvoi)
+- Bastnasitic Pr-Nd Hydroxides now just need a crystallizer rather than an LCR. (#1676 by @Rick8484)
+### Fixes
+Many small issues and dupes have been fixed, including: 
+- Fix machine block items being invisible (#1686 by @MCTian-mi)
+- Allow quarry to mine infinite limestone (#1680 by @trainvoi)
+- Moved ULPIC quest out of MV (#1683 by @Fiery36)
+Thanks to @trainvoi and @Rick8484 for further changes.
+# UPDATE 0.1.15.7.1
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.77 → v0.1.78
+- Fluidlogged API API-v2.2.4-mc1.12.2 → API-v3.1.1-mc1.12.2
+- ModularUI 2.5.0-rc6 → 2.5.0
+- Had Enough Items 4.29.7 → 4.29.8
+- Extreme Sound Muffler: Legacy legacy-1.12.2-1.0.4 → legacy-1.12.2-1.0.5
+- MixinBooter 10.6 → 10.7
+- Fugue 0.20.3 → 0.20.4
+- SussyPatches 1.6.2 → 1.6.4
+## Changes
+### New Features
+- [Susy-Core] added more concrete types for upcoming dungeons (#559 by @oliwier509)
+- Biomes for techbrohouses (#1675 by @Rick8484)
+### Fixes
+- Use Ni(OH)2 instead of NiOOH in battery production (#1672 by @trexxet)
+# UPDATE 0.1.15.7
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.76 → v0.1.77
+- Supercritical 0.2.1 → 0.2.2
+- SussyPatches 1.5.0 → 1.6.2
+## Changes
+### New Features
+- Structures have been upgraded once more! Explore the world. (#1669 by @oliwier509)
+- Lead-acid battery recipes have been properly SUSY-fied! (#1655 by @trexxet)
+- Lead-acid batteries also now act as baubles. (#1657 by @MCTian-mi)
+### Changed Features
+- Large steam hammers are now craftable (#1658 by @trexxet)
+- Rubber pipes are no longer overpowered. (#1662 by @trainvoi)
+- More items now have recycling! (#1663 by @trexxet)
+### Fixes
+- Lots of small changes and fixes have occurred since the last update... (#1659 by @Rick8484) (#1660 by @Fiery36) (#1665 by @PatRat2) (#1670 by @Syriusz171)
 # UPDATE 0.1.15.6
 ## Mod Changes
 ### Mod Updates

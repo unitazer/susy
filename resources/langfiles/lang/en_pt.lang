@@ -581,7 +581,6 @@ susy.material.tetramethylammonium_hydroxide_solution=Solução de Hidróxido de 
 susy.material.boron_trioxide_solution=Solução de Trióxido de Boro
 susy.material.phosphorus_solution=Solução de Fósforo
 susy.material.sodium_cyanide_solution=Solução de Cianeto de Sódio
-susy.material.brominated_sulfur_dioxide=Dióxido Sulfúrico Brominado 
 susy.material.phosphorus_trichloride=Tricloreto de Fósforo
 
 susy.material.wacker_catalyst_solution=Solução de Catalisador Wacker
@@ -2101,7 +2100,7 @@ metaitem.sponge.hafnium.crude.name=Crude Hafnium Sponge
 metaitem.drone.lv.name=Basic Drone
 
 metaitem.glass_fibers.name=Glass Fibers
-metaitem.epoxy_lamina.name=Epoxy Lamina
+metaitem.board.epoxy.prepreg.name=Epoxy Lamina
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand

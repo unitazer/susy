@@ -60,6 +60,8 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
+        PoloniumIVNitrateSolution.setFormula('Po(NO3)4(H2O)', true)
+
         SodaAshSolution = new Material.Builder(13006, SuSyUtility.susyId('soda_ash_solution'))
                 .liquid()
                 .components(SodaAsh * 1, Water * 1)
@@ -218,11 +220,7 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        BrominatedSulfurDioxide = new Material.Builder(13032, SuSyUtility.susyId('brominated_sulfur_dioxide'))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(SulfuricAcid, HydrobromicAcid * 2)
-                .colorAverage()
-                .build()
+        // FREE ID: 13032
 
         SodiumThiosulfateSolution = new Material.Builder(13033, SuSyUtility.susyId('sodium_thiosulfate_solution'))
                 .liquid()
@@ -461,7 +459,13 @@ class SecondDegreeMaterials {
                 .flags(GENERATE_CATALYST_BED)
                 .build()
 
-        // FREE ID: 13073
+        WattsBathElectrolyte = new Material.Builder(13073, SuSyUtility.susyId('watts_bath_electrolyte'))
+                .liquid()
+                .components(NickelSulfate * 5, NickelChloride * 1, BoricAcid * 2, Water * 1)
+                .colorAverage()
+                .build()
+
+        WattsBathElectrolyte.setFormula('(NiSO4)5(NiCl2)(H3BO3)2(H2O)', true)
 
         DilutedSodiumChlorateSolution = new Material.Builder(13074, SuSyUtility.susyId('diluted_sodium_chlorate_solution'))
                 .liquid()
@@ -1036,6 +1040,12 @@ class SecondDegreeMaterials {
         PlatinumOnCarbon = new Material.Builder(13170, SuSyUtility.susyId('platinum_on_carbon'))
                 .dust()
                 .components(Platinum, ActivatedCarbon * 10)
+                .colorAverage()
+                .build()
+
+        DilutedLanthanumNitrateSolution = new Material.Builder(13171, SuSyUtility.susyId('diluted_lanthanum_nitrate_solution'))
+                .liquid()
+                .components(LanthanumNitrate * 2, Water * 3)
                 .colorAverage()
                 .build()
     }

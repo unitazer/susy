@@ -1,27 +1,24 @@
-package postInit.mod
+import static prePostInit.Recipemaps.*
 
 import com.cleanroommc.groovyscript.api.IIngredient
 import com.codetaylor.mc.pyrotech.library.spi.block.IBlockIgnitableWithIgniterItem
 import com.codetaylor.mc.pyrotech.modules.tech.basic.ModuleTechBasic
 import com.codetaylor.mc.pyrotech.modules.tech.basic.block.BlockKilnPit
-import globals.Globals
-import postInit.utils.RecyclingHelper
+
+import static gregtech.api.GTValues.*
 import gregtech.api.items.metaitem.MetaItem
 import gregtech.api.items.metaitem.stats.IItemBehaviour
 import gregtech.api.util.GTUtility
 import gregtech.common.items.behaviors.LighterBehaviour
+
 import net.minecraft.util.EnumHand
 import net.minecraftforge.event.entity.player.PlayerInteractEvent
 import net.minecraftforge.event.world.BlockEvent
 import net.minecraftforge.fml.common.eventhandler.Event
 
-log.infoMC("Running Pyrotech.groovy...")
+import postInit.utils.RecyclingHelper
 
-SMELTER = recipemap('primitive_smelter')
-ALLOY_SMELTER = recipemap('alloy_smelter')
-CUTTER = recipemap('cutter')
-ASSEMBLER = recipemap('assembler')
-CHEMICAL_BATH = recipemap('chemical_bath')
+log.infoMC("Running Pyrotech.groovy...")
 
 // Make it easier to create a pit kiln
 event_manager.listen { PlayerInteractEvent.RightClickBlock event ->
@@ -650,7 +647,7 @@ CUTTER.recipeBuilder()
         .outputs(item('pyrotech:material', 38))
         .chancedOutput(item('pyrotech:material', 38), 5000, 0)
         .duration(80)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // Leather Strap
@@ -662,7 +659,7 @@ CUTTER.recipeBuilder()
         .inputs(item('pyrotech:material', 38))
         .outputs(item('pyrotech:material', 39) * 4)
         .duration(50)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // Leather Cord
@@ -676,7 +673,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(item('pyrotech:material', 39) * 2)
         .outputs(item('pyrotech:material', 40))
         .duration(100)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // Durable Leather ingredients
@@ -686,7 +683,7 @@ CHEMICAL_BATH.recipeBuilder()
         .fluidInputs(fluid('creosote') * 200)
         .outputs(item('pyrotech:material', 41))
         .duration(100)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 // Durable Leather Sheet
@@ -708,7 +705,7 @@ CHEMICAL_BATH.recipeBuilder()
         .fluidInputs(fluid('creosote') * 200)
         .outputs(item('pyrotech:material', 42))
         .duration(80)
-        .EUt(30)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 // Durable Leather Strap
@@ -728,7 +725,7 @@ CHEMICAL_BATH.recipeBuilder()
         .fluidInputs(fluid('creosote') * 50)
         .outputs(item('pyrotech:material', 43))
         .duration(50)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // Durable Leather Cord
@@ -938,7 +935,7 @@ def anvil_recipes = [
         ["diorite_to_cobbled", item('minecraft:stone', 3), item('pyrotech:cobblestone', 1), 2],
         ["flour_from_wheat", ore('itemWheat').or(ore('cropWheat')), metaitem('dustWheat'), 1],
         ["brick_stone", ore('stone'), item('pyrotech:material', 16) * 4, 2, false],
-        ["stick_stone", item('pyrotech:material', 16), item('pyrotech:material', 27) * 2, 2, false],
+        ["stick_stone", item('pyrotech:material', 16), item('gregtech:meta_stick', 1599), 2, false],
         ["bone_shard", ore('bone'), item('pyrotech:material', 11) * 3, 2],
         ["flint_shard", ore('gemFlint'), item('pyrotech:material', 10) * 3, 2],
         ["cobblestone_to_rocks", ore('cobblestone'), item('pyrotech:rock') * 8, 2, false],
@@ -1232,7 +1229,7 @@ ores.forEach { oreIn ->
 reductants.forEach { reductant ->
     ores.forEach { oreIn ->
         smelting_prefixes.forEach { prefix ->
-            def builder = SMELTER.recipeBuilder()
+            def builder = PRIMITIVE_SMELTER.recipeBuilder()
                     .inputs(oreIn.get(prefix))
                     .inputs(reductant.get(oreIn, prefix))
                     .duration(oreIn.getDuration(reductant, prefix))
@@ -1257,7 +1254,7 @@ def extra_smelting_recipes = [
 
 extra_smelting_recipes.forEach { recipe ->
     reductants.forEach { reductant ->
-        SMELTER.recipeBuilder()
+        PRIMITIVE_SMELTER.recipeBuilder()
                 .inputs(*(recipe[0]))
                 .inputs(ore(reductant.name) * 8)
                 .outputs(*(recipe[1]))
@@ -1278,7 +1275,7 @@ def alloy_add = {String outputAlloy, int outputAmount, int recipeDuration, Array
         def uniqueCombinations = ([alloying_prefixes] * numUniqueInputs).combinations()
         reductants.forEach { reductant ->
             uniqueCombinations.forEach { uniqueCombination ->
-                def builder = SMELTER.recipeBuilder()
+                def builder = PRIMITIVE_SMELTER.recipeBuilder()
                 double fuel_duration_multiplier = 0
                 int fuelCount = 0
                 for (int i = 0; i < numUniqueInputs; i++) {
@@ -1380,7 +1377,7 @@ ALLOY_SMELTER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.block'))
         .outputs(item('pyrotech:slag_glass'))
         .duration(100)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister();
 
 ALLOY_SMELTER.recipeBuilder()
@@ -1388,7 +1385,7 @@ ALLOY_SMELTER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.block'))
         .outputs(item('pyrotech:slag_glass'))
         .duration(100)
-        .EUt(Globals.voltAmps[1])
+        .EUt(VA[LV])
         .buildAndRegister();
 
 // Recycling

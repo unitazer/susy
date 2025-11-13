@@ -1,3 +1,6 @@
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
+
 def name_removals = [
     'quark:arrow_explosive',
     'minecraft:chest',
@@ -62,9 +65,8 @@ for (i in 0..15) {
 		.fluidInputs(fluid('dye_' + dye_colors[i]) * 72)
 		.outputs(item('quark:stained_planks', i))
 		.duration(20)
-		.EUt(7)
+		.EUt(VA[ULV])
 		.buildAndRegister();
 	
 }
-
 

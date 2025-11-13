@@ -1,10 +1,7 @@
+import static prePostInit.Recipemaps.*
 import globals.Globals
 import postInit.utils.RecyclingHelper
-
-ASSEMBLER = recipemap('assembler')
-MIXER = recipemap('mixer')
-EXTRUDER = recipemap('extruder')
-SINTERING_OVEN = recipemap('sintering_oven')
+import static gregtech.api.GTValues.*
 
 def name_removals = [
     'gregtech:gregtech.machine.fisher.lv',
@@ -122,7 +119,7 @@ def hulls = [metaitem('hull.ulv'), metaitem('hull.lv'), metaitem('hull.mv'), met
              metaitem('hull.opv')];
 
 def tieredWires = [ore('wireGtQuadrupleRedAlloy'), ore('wireGtQuadrupleCopper'), ore('wireGtQuadrupleCupronickel'), ore('wireGtQuadrupleKanthal'),
-                   ore('wireGtQuadrupleNichrome'), ore('wireGtQuadrupleTungstenSteel'), ore('wireGtQuadrupleHssg'),
+                   ore('wireGtQuadrupleNichrome'), ore('wireGtQuadrupleRtmAlloy'), ore('wireGtQuadrupleHssg'),
                    ore('wireGtQuadrupleNaquadah'), ore('wireGtQuadrupleNaquadahAlloy')];
 
 def tieredPlates = [ore('plateWroughtIron'), ore('plateSteel'), ore('plateAluminium'), ore('plateStainlessSteel'),
@@ -146,7 +143,7 @@ def tieredQuadCables = [ore('cableGtQuadrupleRedAlloy'), ore('cableGtQuadrupleTi
                         ore('cableGtQuadrupleVanadiumGallium'), ore('cableGtQuadrupleYttriumBariumCuprate')]
 
 def tieredSprings = [metaitem('springIron'), metaitem('springCopper'), metaitem('springCupronickel'), metaitem('springKanthal'),
-                     metaitem('springNichrome'), metaitem('springTungstenSteel'), metaitem('springHssg'),
+                     metaitem('springNichrome'), metaitem('springRtmAlloy'), metaitem('springHssg'),
                      metaitem('springNaquadah'), metaitem('springNaquadahAlloy')]
 
 def rotors = [
@@ -166,7 +163,7 @@ def chemicalReactorParts = [ore('blockGlass'), ore('blockGlass'), ore('blockGlas
                             metaitem('pipeHugeFluidPolytetrafluoroethylene')]
 
 def tieredPipes = [metaitem('pipeLargeFluidSteel'), metaitem('pipeLargeFluidSteel'), metaitem('pipeLargeFluidAluminium'), metaitem('pipeLargeFluidStainlessSteel'),
-                   metaitem('pipeLargeFluidTitanium'), metaitem('pipeLargeFluidTungstenCarbide'), metaitem('pipeLargeFluidNiobiumTitanium'),
+                   metaitem('pipeLargeFluidTitanium'), metaitem('pipeLargeFluidTungstenSteel'), metaitem('pipeLargeFluidNiobiumTitanium'),
                    metaitem('pipeLargeFluidNaquadah'), metaitem('pipeLargeFluidDuranium')]
 
 def tieredMagnets = [metaitem('stickIronMagnetic'), metaitem('stickSteelMagnetic'), metaitem('stickSteelMagnetic'), metaitem('stickAlnicoMagnetic'),
@@ -264,7 +261,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('coal_tar') * 1000)
     .inputs(ore('dustCoke') * 4)
     .outputs(metaitem('pitch_binder') * 4)
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(200)
     .buildAndRegister()
 
@@ -272,7 +269,7 @@ EXTRUDER.recipeBuilder()
     .notConsumable(metaitem('shape.extruder.rod'))
     .inputs(metaitem('pitch_binder'))
     .outputs(metaitem('raw_electrode'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(200)
     .buildAndRegister()
 
@@ -282,7 +279,8 @@ SINTERING_OVEN.recipeBuilder()
     .fluidInputs(fluid('air') * 100)
     .outputs(metaitem('graphite_electrode'))
     .fluidOutputs(fluid('carbon_dioxide') * 50)
-    .EUt(30)
+    .info('recipe.graphite_electrode')
+    .EUt(VA[LV])
     .duration(150)
     .buildAndRegister()
 
@@ -292,7 +290,7 @@ SINTERING_OVEN.recipeBuilder()
     .fluidInputs(fluid('air') * 100)
     .outputs(metaitem('graphite_electrode'))
     .fluidOutputs(fluid('carbon_dioxide') * 50)
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(150)
     .buildAndRegister()
 
@@ -302,7 +300,7 @@ SINTERING_OVEN.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 80)
     .outputs(metaitem('graphite_electrode'))
     .fluidOutputs(fluid('carbon_dioxide') * 50)
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(150)
     .buildAndRegister()
 
@@ -312,10 +310,9 @@ SINTERING_OVEN.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 80)
     .outputs(metaitem('graphite_electrode'))
     .fluidOutputs(fluid('carbon_dioxide') * 50)
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(150)
     .buildAndRegister()
-
 
 for (i = 1; i <= 8; i++) {
     RecyclingHelper.removeByOutput(metaitem('arc_furnace.' + Globals.voltageTiers[i]))
@@ -573,22 +570,16 @@ RecyclingHelper.addShaped("steel_turbine_controller", metaitem('susy:basic_steam
     [metaitem('cableGtSingleTin'), ore('circuitLv'),                   metaitem('cableGtSingleTin')]
 ])
 
-RecyclingHelper.addShaped("gas_turbine_controller", metaitem('susy:basic_gas_turbine'), [
-    [ore('plateSteel'),               metaitem('cableGtSingleCopper'),    ore('plateSteel')],
-    [ore('circuitMv'),                metaitem('hull.mv'),                ore('circuitMv')],
-    [metaitem('cableGtSingleCopper'), ore('circuitMv'),                   metaitem('cableGtSingleCopper')]
-])
-
-RecyclingHelper.addShaped("titanium_hp_turbine_controller", metaitem('susy:high_pressure_advanced_steam_turbine'), [
+RecyclingHelper.addShaped("titanium_turbine_controller", metaitem('susy:advanced_steam_turbine'), [
     [ore('plateTitanium'),            metaitem('pipeSmallFluidTitanium'),       ore('plateTitanium')],
     [ore('circuitEv'),             metaitem('hull.ev'), ore('circuitEv')],
     [metaitem('cableGtHexAluminium'), ore('circuitEv'),                   metaitem('cableGtHexAluminium')]
 ])
 
-RecyclingHelper.addShaped("titanium_lp_turbine_controller", metaitem('susy:low_pressure_advanced_steam_turbine'), [
-    [ore('plateTitanium'),            metaitem('pipeHugeFluidTitanium'),       ore('plateTitanium')],
-    [ore('circuitEv'),             metaitem('hull.ev'), ore('circuitEv')],
-    [metaitem('cableGtHexAluminium'), ore('circuitEv'),                   metaitem('cableGtHexAluminium')]
+RecyclingHelper.addShaped("lp_turbine_rotor", item('susy:turbine_rotor', 4), [
+    [ore('plateTitanium'),             ore('ringIncoloy825'),     ore('plateTitanium')],
+    [ore('craftingToolHardHammer'), ore('stickLongIncoloy825'), ore('craftingToolScrewdriver')],
+    [ore('plateTitanium'),             ore('rotorIncoloy825'),     ore('plateTitanium')]
 ])
 
 RecyclingHelper.addShaped("hp_turbine_rotor", item('susy:turbine_rotor', 8), [
@@ -597,10 +588,10 @@ RecyclingHelper.addShaped("hp_turbine_rotor", item('susy:turbine_rotor', 8), [
     [ore('plateTitanium'),             ore('rotorNimonic105'),     ore('plateTitanium')]
 ])
 
-RecyclingHelper.addShaped("lp_turbine_rotor", item('susy:turbine_rotor', 4), [
-    [ore('plateTitanium'),             ore('ringIncoloy825'),     ore('plateTitanium')],
-    [ore('craftingToolHardHammer'), ore('stickLongIncoloy825'), ore('craftingToolScrewdriver')],
-    [ore('plateTitanium'),             ore('rotorIncoloy825'),     ore('plateTitanium')]
+RecyclingHelper.addShaped("gas_turbine_rotor", item('susy:turbine_rotor', 12), [
+    [ore('plateTitanium'),             ore('ringReneN5'),     ore('plateTitanium')],
+    [ore('craftingToolHardHammer'), ore('stickLongReneN5'), ore('craftingToolScrewdriver')],
+    [ore('plateTitanium'),             ore('rotorReneN5'),     ore('plateTitanium')]
 ])
 
 // Steel Turbine Casing 
@@ -702,7 +693,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('voltage_coil.lv'))
     .inputs(ore('wireGtQuadrupleTin') * 2)
     .outputs(metaitem('susy:energy_hatch.output_4a.lv'))
-    .EUt(7)
+    .EUt(VA[ULV])
     .duration(100)
     .buildAndRegister()
 
@@ -712,7 +703,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('voltage_coil.lv'))
     .inputs(ore('wireGtOctalTin') * 2)
     .outputs(metaitem('susy:energy_hatch.output_16a.lv'))
-    .EUt(7)
+    .EUt(VA[ULV])
     .duration(200)
     .buildAndRegister()
 
@@ -723,7 +714,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('voltage_coil.mv'))
     .inputs(ore('wireGtQuadrupleCopper') * 2)
     .outputs(metaitem('susy:energy_hatch.output_4a.mv'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(100)
     .buildAndRegister()
 
@@ -734,7 +725,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('voltage_coil.mv'))
     .inputs(ore('wireGtOctalCopper') * 2)
     .outputs(metaitem('susy:energy_hatch.output_16a.mv'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(200)
     .buildAndRegister()
 
@@ -745,7 +736,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('voltage_coil.hv'))
     .inputs(ore('wireGtQuadrupleGold') * 2)
     .outputs(metaitem('susy:energy_hatch.output_4a.hv'))
-    .EUt(120)
+    .EUt(VA[MV])
     .duration(100)
     .buildAndRegister()
 
@@ -756,7 +747,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('voltage_coil.hv'))
     .inputs(ore('wireGtOctalGold') * 2)
     .outputs(metaitem('susy:energy_hatch.output_16a.hv'))
-    .EUt(120)
+    .EUt(VA[MV])
     .duration(200)
     .buildAndRegister()
 
@@ -767,14 +758,14 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('voltage_coil.ev'))
     .inputs(ore('wireGtOctalAluminium') * 2)
     .outputs(metaitem('susy:energy_hatch.output_16a.ev'))
-    .EUt(480)
+    .EUt(VA[HV])
     .duration(200)
     .buildAndRegister()
 
 //Extra Quadruple Hatches
 def materialPipe = [null, "Bronze", "Steel", "StainlessSteel", "Titanium", "Tungstensteel", "NiobiumTitanium", "Iridium", "Naquadah", "Neutronium", null, null, null, null];
 
-for (i = 1; i <= 3; i++) {
+for (i = LV; i <= HV; i++) {
 
     ASSEMBLER.recipeBuilder()
         .inputs(metaitem('fluid_hatch.import.' + Globals.voltageTiers[i]))
@@ -782,7 +773,7 @@ for (i = 1; i <= 3; i++) {
         .circuitMeta(4)
         .fluidInputs(fluid('plastic') * 576)
         .outputs(metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i]))
-        .EUt(Globals.voltAmps[i])
+        .EUt(VA[i])
         .duration(300)
         .buildAndRegister()
 
@@ -792,7 +783,7 @@ for (i = 1; i <= 3; i++) {
         .circuitMeta(4)
         .fluidInputs(fluid('plastic') * 576)
         .outputs(metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]))
-        .EUt(Globals.voltAmps[i])
+        .EUt(VA[i])
         .duration(300)
         .buildAndRegister()
 
@@ -802,7 +793,7 @@ for (i = 1; i <= 3; i++) {
         .circuitMeta(4)
         .fluidInputs(fluid('plastic') * 1296)
         .outputs(metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]))
-        .EUt(Globals.voltAmps[i])
+        .EUt(VA[i])
         .duration(600)
         .buildAndRegister()
 
@@ -812,7 +803,7 @@ for (i = 1; i <= 3; i++) {
         .circuitMeta(4)
         .fluidInputs(fluid('plastic') * 1296)
         .outputs(metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]))
-        .EUt(Globals.voltAmps[i])
+        .EUt(VA[i])
         .duration(600)
         .buildAndRegister()
 
@@ -1038,6 +1029,51 @@ RecyclingHelper.addShaped("susy:mixer_settler", metaitem('susy:mixer_settler'), 
     [pumps[3], tieredCables[3], pumps[3]]
 ])
 
+RecyclingHelper.addShaped("susy:induction_furnace", metaitem('susy:induction_furnace'), [
+        [ore('cableGtQuadrupleTin'), tieredPlates[1], ore('cableGtQuadrupleTin')],
+        [circuits[1], hulls[1], circuits[1]],
+        [pumps[1], tieredPlates[1], robotArms[1]]
+]);
+
+MIXER.recipeBuilder()
+        .inputs(ore('dustMagnesia') * 1)
+        .fluidInputs(fluid('diluted_sodium_silicate_solution') * 200)
+        .fluidInputs(fluid('water') * 7800)
+        .fluidOutputs(fluid('ceramic_coating_slurry') * 8000)
+        .EUt(VA[LV])
+        .duration(200)
+        .buildAndRegister()
+
+CHEMICAL_BATH.recipeBuilder()
+        .inputs(ore('pipeNormalFluidCopper'))
+        .fluidInputs(fluid('ceramic_coating_slurry') * 1000)
+        .outputs(metaitem('coated_copper_coil'))
+        .EUt(VA[LV])
+        .duration(100)
+        .buildAndRegister()
+
+DRYER.recipeBuilder()
+        .inputs(metaitem('coated_copper_coil'))
+        .outputs(metaitem('cured_coated_coil'))
+        .EUt(VA[LV])
+        .duration(200)
+        .buildAndRegister()
+
+BENDER.recipeBuilder()
+        .inputs(metaitem('cured_coated_coil'))
+        .outputs(metaitem('induction_coil'))
+        .EUt(VA[LV])
+        .duration(200)
+        .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('induction_coil'))
+        .inputs(ore('plateMica')  * 4)
+        .outputs(item('susy:induction_coil_assembly'))
+        .EUt(VA[LV])
+        .duration(600)
+        .buildAndRegister()
+
 //ION EXCHANGE COLUMN
 
 for (i = 1; i <= 8; i++) {
@@ -1169,7 +1205,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('gearSteel') * 4)
     .circuitMeta(2)
     .outputs(metaitem('fluid_drilling_rig.mv'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
 
@@ -1184,65 +1220,9 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('circuitHv'))
     .outputs(metaitem('susy:catalytic_reformer'))
     .circuitMeta(3)
-    .EUt(480)
+    .EUt(VA[HV])
     .duration(600)
     .buildAndRegister() 
-
-//Power Units
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('gearSmallSteel') * 2)
-    .inputs(ore('screwSteel'))
-    .inputs(ore('plateSteel') * 2)
-    .inputs(metaitem('electric.motor.lv'))
-    .inputs(ore('batteryLv'))
-    .outputs(metaitem('power_unit.lv'))
-    .EUt(30)
-    .duration(150)
-    .buildAndRegister()
-
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('gearSmallAluminium') * 2)
-    .inputs(ore('screwAluminium'))
-    .inputs(ore('plateAluminium') * 2)
-    .inputs(metaitem('electric.motor.mv'))
-    .inputs(ore('batteryMv'))
-    .outputs(metaitem('power_unit.mv'))
-    .EUt(120)
-    .duration(150)
-    .buildAndRegister()
-
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('gearSmallStainlessSteel') * 2)
-    .inputs(ore('screwStainlessSteel'))
-    .inputs(ore('plateStainlessSteel') * 2)
-    .inputs(metaitem('electric.motor.hv'))
-    .inputs(ore('batteryHv'))
-    .outputs(metaitem('power_unit.hv'))
-    .EUt(480)
-    .duration(150)
-    .buildAndRegister()
-
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('gearSmallTitanium') * 2)
-    .inputs(ore('screwTitanium'))
-    .inputs(ore('plateTitanium') * 2)
-    .inputs(metaitem('electric.motor.ev'))
-    .inputs(ore('batteryEv'))
-    .outputs(metaitem('power_unit.ev'))
-    .EUt(1920)
-    .duration(150)
-    .buildAndRegister()
-
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('gearSmallTungstenSteel') * 2)
-    .inputs(ore('screwTungstenSteel'))
-    .inputs(ore('plateTungstenSteel') * 2)
-    .inputs(metaitem('electric.motor.iv'))
-    .inputs(ore('batteryIv'))
-    .outputs(metaitem('power_unit.iv'))
-    .EUt(7680)
-    .duration(150)
-    .buildAndRegister()
 
 // AIR DIST. CONTROLLERS
 
@@ -1256,7 +1236,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('mineral_wool') * 64)
     .fluidInputs(fluid('cryogenic_solder') * 1296)
     .outputs(metaitem('susy:single_column_cryogenic_distillation_plant'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
 
@@ -1271,7 +1251,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('mineral_wool') * 64)
     .fluidInputs(fluid('cryogenic_solder') * 1296)
     .outputs(metaitem('susy:low_pressure_cryogenic_distillation_plant'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
 
@@ -1285,7 +1265,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('mineral_wool') * 64)
     .fluidInputs(fluid('cryogenic_solder') * 1296)
     .outputs(metaitem('susy:high_pressure_cryogenic_distillation_plant'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
 
@@ -1298,7 +1278,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('electric.motor.hv'))
     .inputs(metaitem('electric.pump.hv') * 4)
     .outputs(metaitem('susy:blender'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
 
@@ -1321,13 +1301,13 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('springCopper'))
     .inputs(ore('springSmallCopper'))
     .inputs(ore('circuitLv'))
-    .inputs(metaitem('engine.spark_plug') * 4)
+    .inputs(metaitem('engine.spark_plug.palladium') * 4)
     .inputs(metaitem('engine.piston') * 4)
     .inputs(metaitem('engine.crankshaft'))
     .inputs(ore('gearSteel') * 2)
     .inputs(ore('pipeHugeFluidSteel'))
     .outputs(metaitem('combustion_generator.lv'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
 
@@ -1336,7 +1316,7 @@ RecyclingHelper.handleRecycling(metaitem('combustion_generator.lv'), [
     metaitem('hull.Lv'),
     ore('springCopper'),
     ore('springSmallCopper'),
-    metaitem('engine.spark_plug') * 4, //doesn't get counted by RecyclingHandler
+    metaitem('engine.spark_plug.palladium') * 4, //doesn't get counted by RecyclingHandler
     metaitem('engine.piston') * 4,     //doesn't get counted by RecyclingHandler
     metaitem('engine.crankshaft'),     //doesn't get counted by RecyclingHandler
     ore('gearSteel') * 2,
@@ -1348,13 +1328,13 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('springCopper'))
     .inputs(ore('springSmallCopper'))
     .inputs(ore('circuitMv'))
-    .inputs(metaitem('engine.spark_plug') * 4)
+    .inputs(metaitem('engine.spark_plug.palladium') * 4)
     .inputs(metaitem('engine.piston') * 4)
     .inputs(metaitem('engine.crankshaft'))
     .inputs(ore('gearAluminium') * 2)
     .inputs(ore('pipeHugeFluidAluminium'))
     .outputs(metaitem('combustion_generator.mv'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
 
@@ -1363,7 +1343,7 @@ RecyclingHelper.handleRecycling(metaitem('combustion_generator.mv'), [
     metaitem('hull.Mv'),
     ore('springCopper'),
     ore('springSmallCopper'),
-    metaitem('engine.spark_plug') * 4, //doesn't get counted by RecyclingHandler
+    metaitem('engine.spark_plug.palladium') * 4, //doesn't get counted by RecyclingHandler
     metaitem('engine.piston') * 4,     //doesn't get counted by RecyclingHandler
     metaitem('engine.crankshaft'),     //doesn't get counted by RecyclingHandler
     ore('gearAluminium') * 2,
@@ -1375,13 +1355,13 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('springCopper'))
     .inputs(ore('springSmallCopper'))
     .inputs(ore('circuitHv'))
-    .inputs(metaitem('engine.spark_plug') * 4)
+    .inputs(metaitem('engine.spark_plug.iridium') * 4)
     .inputs(metaitem('engine.piston') * 4)
     .inputs(metaitem('engine.crankshaft'))
     .inputs(ore('gearStainlessSteel') * 2)
     .inputs(ore('pipeHugeFluidStainlessSteel'))
     .outputs(metaitem('combustion_generator.hv'))
-    .EUt(30)
+    .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
 
@@ -1390,7 +1370,7 @@ RecyclingHelper.handleRecycling(metaitem('combustion_generator.hv'), [
     metaitem('hull.Hv'),
     ore('springCopper'),
     ore('springSmallCopper'),
-    metaitem('engine.spark_plug') * 4, //doesn't get counted by RecyclingHandler
+    metaitem('engine.spark_plug.iridium') * 4, //doesn't get counted by RecyclingHandler
     metaitem('engine.piston') * 4,     //doesn't get counted by RecyclingHandler
     metaitem('engine.crankshaft'),     //doesn't get counted by RecyclingHandler
     ore('gearStainlessSteel') * 2,
@@ -1416,6 +1396,34 @@ RecyclingHelper.addShaped("gregtech:locomotive_controller", metaitem('susy:stock
 		[metaitem('emitter.lv'), ore('circuitLv'), metaitem('sensor.lv')]
 ])
 
+// Curtain Coater
+
+RecyclingHelper.addShaped("gregtech:curtain_coater", metaitem('susy:curtain_coater'), [
+    [metaitem('electric.pump.hv'), metaitem('frameStainlessSteel'), metaitem('electric.pump.hv')],
+    [ore('circuitHv'), metaitem('hull.Hv'), ore('circuitHv')],
+    [metaitem('pipeLargeFluidStainlessSteel'), ore('circuitHv'), metaitem('pipeLargeFluidStainlessSteel')]
+])
+
+// Precise Milling Machine
+
+RecyclingHelper.addShaped("gregtech:milling", metaitem('susy:milling'), [
+    [ore('circuitHv'), metaitem('conveyor.module.hv'), ore('circuitHv')],
+    [metaitem('robot.arm.hv'), metaitem('hull.Hv'), metaitem('robot.arm.hv')],
+    [ore('circuitHv'), metaitem('conveyor.module.hv'), ore('circuitHv')]
+])
+
+ASSEMBLER.recipeBuilder()
+    .inputs(item('gregtech:metal_casing', 4))
+    .inputs(ore('toolHeadDrillSteel'))
+    .inputs(ore('circuitHv') * 2)
+    .inputs(metaitem('conveyor.module.hv') * 4)
+    .inputs(metaitem('electric.motor.hv') * 4)
+    .fluidInputs(fluid('soldering_alloy') * 1152)
+    .outputs(item('susy:drill_bit'))
+    .EUt(VA[HV])
+    .duration(600)
+    .buildAndRegister()
+    
 RecyclingHelper.addShaped("gregtech:injection_molder", metaitem('susy:injection_molder'), [
         [metaitem('springKanthal'), ore('circuitHv'), metaitem('cableGtSingleGold')],
         [ore('pipeLargeFluidStainlessSteel'), metaitem('hull.hv'), metaitem('electric.motor.hv')],
@@ -1433,3 +1441,52 @@ for (def i = 1; i < 8; i++) {
             ore('craftingToolScrewdriver')
     ])
 }
+
+ASSEMBLER.recipeBuilder()
+    .circuitMeta(16)
+    .inputs(metaitem('hull.mv'))
+    .inputs(metaitem('drum.steel'))
+    .inputs(ore('circuitMv') * 4)
+    .inputs(ore('gearSteel') *  4)
+    .inputs(ore('pipeHugeFluidSteel') * 4)
+    .inputs(ore('wireGtQuadrupleCopper') * 4)
+    .inputs(ore('ringRubber') * 8)
+    .inputs(metaitem('fluid_filter'))
+    .fluidInputs(fluid('coolant') * 10000)
+    .outputs(metaitem('susy:internal_combustion_generator'))
+    .EUt(VA[LV])
+    .duration(600)
+    .buildAndRegister()
+
+RecyclingHelper.handleRecycling(metaitem('susy:internal_combustion_generator'), [
+    metaitem('hull.mv'),
+    metaitem('drum.steel'),
+    ore('gearSteel') *  4,
+    ore('pipeHugeFluidSteel') * 4,
+    ore('wireGtQuadrupleCopper') * 4,
+    ore('ringRubber') * 8,
+])
+
+ASSEMBLER.recipeBuilder()
+    .circuitMeta(16)
+    .inputs(metaitem('hull.ev'))
+    .inputs(metaitem('electric.pump.ev') * 4)
+    .inputs(ore('circuitEv') * 4)
+    .inputs(ore('gearStainlessSteel') *  4)
+    .inputs(ore('pipeHugeFluidTitanium') * 4)
+    .inputs(ore('wireGtQuadrupleAluminium') * 4)
+    .inputs(metaitem('engine.spark_plug.iridium') * 4)
+    .inputs(metaitem('fluid_filter'))
+    .outputs(metaitem('susy:gas_turbine'))
+    .EUt(VA[LV])
+    .duration(600)
+    .buildAndRegister()
+
+RecyclingHelper.handleRecycling(metaitem('susy:gas_turbine'), [
+    metaitem('hull.ev'),
+    metaitem('drum.titanium'),
+    ore('gearStainlessSteel') *  4,
+    ore('pipeHugeFluidTitanium') * 4,
+    ore('wireGtQuadrupleAluminium') * 4,
+    ore('ringSilicone') * 8,
+])
