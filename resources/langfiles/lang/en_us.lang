@@ -207,6 +207,27 @@ susy.material.purified_beryllium_hydroxide=Purified Beryllium Hydroxide
 susy.material.purified_beryllium_oxide=Purified Beryllium Oxide
 susy.material.purified_beryllium_chloride=Purified Beryllium Chloride
 
+susy.material.aniline=Aniline
+susy.material.acetanilide=Acetanilide
+susy.material.n_acetylsulfanilyl_chloride=N-Acetylsulfanilyl Chloride
+susy.material.guanidinium_nitrate=Guanidinium Nitrate
+susy.material.tetramethoxypropane=Tetramethoxypropane
+susy.material.trimethyl_orthoformate=Trimethyl Orthoformate
+susy.material.methyl_vinyl_ether=Methyl Vinyl Ether
+susy.material.two_aminopyrimidine=2-Aminopyrimidine
+susy.material.sodium_sulfadiazine=Sodium Sulfadiazine
+susy.material.silver_nitrate=Silver Nitrate
+susy.material.silver_sulfadiazine=Silver Sulfadiazine
+susy.material.dicyanamide=Dicyanamide
+susy.material.potassium_methoxide=Potassium Methoxide
+susy.material.acetanilide_solution=Acetanilide Solution
+susy.material.cyanamide_slurry=Cyanamide Slurry
+susy.material.crude_cyanamide_solution=Crude Cyanamide Solution
+susy.material.cyanamide_solution=Cyanamide Solution
+susy.material.guanidinium_nitrate_solution=Guanidinium Nitrate Solution
+susy.material.crude_trimethyl_orthoformate=Crude Trimethyl Orthoformate
+susy.material.crude_methyl_vinyl_ether=Crude Methyl Vinyl Ether
+
 # Solids
 
 susy.material.pig_iron=Pig Iron

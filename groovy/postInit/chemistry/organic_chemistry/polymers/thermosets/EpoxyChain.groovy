@@ -381,11 +381,12 @@ VACUUM_CHAMBER.recipeBuilder()
         .duration(10)
         .buildAndRegister()
             
-    DRYER.recipeBuilder()
-        .inputs(metaitem('board.epoxy.prepreg'))
+    CHEMICAL_BATH.recipeBuilder()
+        .inputs(metaitem('glass_fibers'))
+        .fluidInputs(fluid('epoxy') * 144)
         .outputs(metaitem('plateReinforcedEpoxyResin'))
         .EUt(VA[MV])
-        .duration(100)
+        .duration(160)
         .buildAndRegister()
 
 // SU-8 photoresist

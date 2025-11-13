@@ -786,6 +786,9 @@ class SuSyMaterials {
     public static Material CeramicCoatingSlurry
     public static Material SodiumCMCSuspension
     public static Material CMCWaste
+    public static Material CyanamideSlurry
+    public static Material CrudeCyanamideSolution
+    public static Material CyanamideSolution
     public static Material GreenEpoxyPCBCoating
 
     // Petrochem Materials
@@ -1592,6 +1595,7 @@ class SuSyMaterials {
     public static Material MixedOxideFuel
     public static Material DilutedAcetone
     public static Material BariumNitrate
+    public static Material SilverNitrate
     public static Material DiammoniumHydrogenPhosphate
     public static Material Boehmite
     public static Material ReverseOsmosisWater
@@ -2339,6 +2343,17 @@ class SuSyMaterials {
     public static Material Acetonitrile
     public static Material MyristicAcid
     public static Material SodiumCarboxymethylCellulose
+    public static Material Acetanilide
+    public static Material NAcetylsulfanilylChloride
+    public static Material GuanidiniumNitrate
+    public static Material Tetramethoxypropane
+    public static Material TrimethylOrthoformate
+    public static Material MethylVinylEther
+    public static Material TwoAminopyrimidine
+    public static Material SodiumSulfadiazine
+    public static Material SilverSulfadiazine
+    public static Material Dicyanamide
+    public static Material PotassiumMethoxide
     public static Material Tetrahydrobenzaldehyde
     public static Material PeraceticAcidSolution
     public static Material EpoxycyclohexaneCarboxylate
@@ -2482,6 +2497,10 @@ class SuSyMaterials {
     public static Material DichlorodiphenylSulfoneSolution
     public static Material FuelCellCatalystSolution
     public static Material PolytetrafluoroethyleneCoatingSolution
+    public static Material AcetanilideSolution
+    public static Material GuanidiniumNitrateSolution
+    public static Material CrudeTrimethylOrthoformate
+    public static Material CrudeMethylVinylEther
     public static Material TetrasodiumEthylenediaminetetraacetateSolution
 
     // Thermodynamics Materials
