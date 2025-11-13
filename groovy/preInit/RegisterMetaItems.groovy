@@ -434,6 +434,11 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10316, "clay_graphite_paste")
         addItem(10317, "clay_graphite_crucible")
         addItem(10318, "raw_clay_graphite_crucible")
+
+        // Alumina Refractories 10330-10340
+        addItem(10330, "cac_clinker")
+        addItem(10331, "hot_cac_clinker")
+        addItem(10332, "cac_dust")
     }
 
     log.infoMC("Finished adding metaitems")
