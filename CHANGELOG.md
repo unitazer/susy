@@ -1,3 +1,17 @@
+# UPDATE 0.1.15.10.1
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.81 → v0.1.82
+## Changes
+### New Features
+- EV-unlocked circuit boards are now craftable! (#1321 by @littlecube8152)
+- A new topical antibiotic... (#1600 by @fil1423)
+### Changed Features
+- Renamed carbon to carbon black & disabled centrifugation recipes. (#1596 by @Rick8484)
+- Updated Portuguese translation. (#1667 by @roquesystemexe)
+- Reorganized and updated LV, MV, and Power Generation quest lines. (incorporated into #1321 by @planetme)
+### Fixes
+- [Susy-Core] Fixed mixer settler not supporting item I/O (#571 by @bruberu)
 # UPDATE 0.1.15.10
 ## Mod Changes
 ### Mod Updates
