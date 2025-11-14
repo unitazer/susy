@@ -223,12 +223,28 @@ BR.recipeBuilder()
     .EUt(200)
     .buildAndRegister()
 
-// Ullman's - Aluminium Ch. 5. Hall-Heroult makes like 99.9% pure already so not making it a chanced output.
-ZONE_REFINER.recipeBuilder()
-    .inputs(ore('ingotAluminium'))
-    .outputs(metaitem('ingotHighPurityAluminium'))
-    .duration(200)
+// High purity aluminium (Ullman's - Aluminium Ch. 5)
+
+BR.recipeBuilder()
+    .inputs(ore('dustBariumCarbonate') * 5)
+    .fluidInputs(fluid('ammonium_fluoride_solution' * 2000))
+    .outputs(metaitem('dustBariumFluoride') * 3)
+    .fluidOutputs(fluid('ammonium_carbonate_solution' * 1000))
+    .duration(100)
     .EUt(VA[LV])
+    .buildAndRegister()
+
+ELECTROLYTIC_CELL.recipeBuilder()
+    .notConsumable(ore('dustSodiumFluoride') * 2)
+    .notConsumable(ore('dustAluminiumTrifluoride') * 2)
+    .notConsumable(ore('dustBariumFluoride'))
+    .notConsumable(metaitem('graphite_electrode'))
+    // .notConsumable(some sort of carbon block/plate)
+    .inputs(ore('dustAluminium') * 5)
+    .inputs(ore('dustCopper'))
+    .fluidOutputs(liquid('high_purity_aluminium') * 720)
+    .duration(400)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // Alums

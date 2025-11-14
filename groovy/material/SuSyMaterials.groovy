@@ -1615,6 +1615,7 @@ class SuSyMaterials {
     public static Material LeadIVOxide
     public static Material AluminiumAlloy6061
     public static Material AluminiumAlloy7075
+    public static Material BariumFluoride
 
     // HP Materials
 
