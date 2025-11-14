@@ -206,7 +206,7 @@ VACUUM_CHAMBER.recipeBuilder()
     .fluidInputs(fluid('argon') * 200)
     .outputs(metaitem('lamp.mercury.lp') * 1)
     .duration(160)
-    .EUt(VA[HV])
+    .EUt(VA[MV])
     .buildAndRegister();
 
 VACUUM_CHAMBER.recipeBuilder()
@@ -216,7 +216,7 @@ VACUUM_CHAMBER.recipeBuilder()
     .fluidInputs(fluid('mercury') * 10)
     .chancedOutput(metaitem('lamp.mercury.lp') * 1, 1000, 0)
     .duration(160)
-    .EUt(VA[HV])
+    .EUt(VA[MV])
     .buildAndRegister();
 
-crafting.addShapeless('BegoneArcLamp', metaitem('incandescent_light'), metaitem('carbon_arc_lamp')) 
+crafting.addShapeless('BegoneArcLamp', metaitem('incandescent_light'), [metaitem('carbon_arc_lamp')]) 
