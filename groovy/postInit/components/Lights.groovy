@@ -218,3 +218,5 @@ VACUUM_CHAMBER.recipeBuilder()
     .duration(160)
     .EUt(VA[HV])
     .buildAndRegister();
+
+crafting.addShapeless('BegoneArcLamp', metaitem('incandescent_light'), metaitem('carbon_arc_lamp')) 
