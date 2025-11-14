@@ -1396,6 +1396,34 @@ RecyclingHelper.addShaped("gregtech:locomotive_controller", metaitem('susy:stock
 		[metaitem('emitter.lv'), ore('circuitLv'), metaitem('sensor.lv')]
 ])
 
+// Curtain Coater
+
+RecyclingHelper.addShaped("gregtech:curtain_coater", metaitem('susy:curtain_coater'), [
+    [metaitem('electric.pump.hv'), metaitem('frameStainlessSteel'), metaitem('electric.pump.hv')],
+    [ore('circuitHv'), metaitem('hull.Hv'), ore('circuitHv')],
+    [metaitem('pipeLargeFluidStainlessSteel'), ore('circuitHv'), metaitem('pipeLargeFluidStainlessSteel')]
+])
+
+// Precise Milling Machine
+
+RecyclingHelper.addShaped("gregtech:milling", metaitem('susy:milling'), [
+    [ore('circuitHv'), metaitem('conveyor.module.hv'), ore('circuitHv')],
+    [metaitem('robot.arm.hv'), metaitem('hull.Hv'), metaitem('robot.arm.hv')],
+    [ore('circuitHv'), metaitem('conveyor.module.hv'), ore('circuitHv')]
+])
+
+ASSEMBLER.recipeBuilder()
+    .inputs(item('gregtech:metal_casing', 4))
+    .inputs(ore('toolHeadDrillSteel'))
+    .inputs(ore('circuitHv') * 2)
+    .inputs(metaitem('conveyor.module.hv') * 4)
+    .inputs(metaitem('electric.motor.hv') * 4)
+    .fluidInputs(fluid('soldering_alloy') * 1152)
+    .outputs(item('susy:drill_bit'))
+    .EUt(VA[HV])
+    .duration(600)
+    .buildAndRegister()
+    
 RecyclingHelper.addShaped("gregtech:injection_molder", metaitem('susy:injection_molder'), [
         [metaitem('springKanthal'), ore('circuitHv'), metaitem('cableGtSingleGold')],
         [ore('pipeLargeFluidStainlessSteel'), metaitem('hull.hv'), metaitem('electric.motor.hv')],

@@ -1290,55 +1290,6 @@ MIXER.recipeBuilder()
     .buildAndRegister();
 
 CENTRIFUGE.recipeBuilder()
-    .inputs(ore('dustAnthracite'))
-    .chancedOutput(metaitem('dustCarbon'), 9000, 0)
-    .duration(80)
-    .EUt(VA[LV])
-    .buildAndRegister();
-
-CENTRIFUGE.recipeBuilder()
-    .inputs(ore('dustGreenCoke'))
-    .chancedOutput(metaitem('dustCarbon'), 8500, 0)
-    .duration(80)
-    .EUt(VA[LV])
-    .buildAndRegister();
-
-CENTRIFUGE.recipeBuilder()
-    .inputs(ore('dustCoal'))
-    .chancedOutput(metaitem('dustCarbon'), 7500, 0)
-    .duration(80)
-    .EUt(VA[LV])
-    .buildAndRegister();
-
-CENTRIFUGE.recipeBuilder()
-    .inputs(ore('dustCharcoal'))
-    .chancedOutput(metaitem('dustCarbon'), 6000, 0)
-    .duration(100)
-    .EUt(VA[LV])
-    .buildAndRegister();
-
-CENTRIFUGE.recipeBuilder()
-    .inputs(ore('dustCoke'))
-    .outputs(metaitem('dustCarbon'))
-    .duration(60)
-    .EUt(VA[LV])
-    .buildAndRegister();
-
-CENTRIFUGE.recipeBuilder()
-    .inputs(ore('dustDiamond'))
-    .outputs(metaitem('dustCarbon'))
-    .duration(40)
-    .EUt(VA[LV])
-    .buildAndRegister();
-
-CENTRIFUGE.recipeBuilder()
-    .inputs(ore('dustGraphite'))
-    .outputs(metaitem('dustCarbon'))
-    .duration(40)
-    .EUt(VA[LV])
-    .buildAndRegister();
-
-CENTRIFUGE.recipeBuilder()
     .inputs(ore('dustMagnalium') * 3)
     .outputs(metaitem('dustMagnesium'))
     .outputs(metaitem('dustAluminium') * 2)

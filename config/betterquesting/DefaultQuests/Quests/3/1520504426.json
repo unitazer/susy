@@ -1,28 +1,31 @@
 {
+  "preRequisiteTypes:7": [
+    1
+  ],
   "preRequisites:11": [
-    373,
-    786
+    397
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.1997511526.desc",
+      "desc:8": "susy.quest.db.1520504426.desc",
       "icon:10": {
         "id:8": "appliedenergistics2:dummy_fluid_item",
         "tag:10": {
-          "FluidName:8": "natural_gas"
+          "Amount:3": 1000,
+          "FluidName:8": "ethylene_glycol"
         }
       },
-      "name:8": "susy.quest.db.1997511526.title",
+      "name:8": "susy.quest.db.1520504426.title",
       "tasklogic:8": "OR"
     }
   },
-  "questID:3": 1997511526,
+  "questID:3": 1520504426,
   "tasks:9": {
     "0:10": {
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
-          "FluidName:8": "natural_gas"
+          "FluidName:8": "ethylene_glycol"
         }
       },
       "taskID:8": "bq_standard:fluid"
