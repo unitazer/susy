@@ -137,15 +137,6 @@ for (fluid in QuenchingFluid.quenching_fluids) {
         .buildAndRegister();
 
     CHEMICAL_BATH.recipeBuilder()
-        .inputs(ore('ingotHotPlatinum'))
-        .fluidInputs(liquid(fluid.getColdFluid()) * fluid.amount)
-        .outputs(metaitem('ingotPlatinum'))
-        .fluidOutputs(liquid(fluid.getHotFluid()) * fluid.amount)
-        .duration((int) fluid.getDuration() * 4)
-        .EUt(120)
-        .buildAndRegister();
-
-    CHEMICAL_BATH.recipeBuilder()
         .inputs(ore('ingotHotPalladium'))
         .fluidInputs(liquid(fluid.getColdFluid()) * fluid.amount)
         .outputs(metaitem('ingotPalladium'))
