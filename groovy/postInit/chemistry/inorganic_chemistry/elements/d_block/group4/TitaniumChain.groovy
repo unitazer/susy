@@ -201,31 +201,25 @@ DT.recipeBuilder()
         .buildAndRegister()
 
 // Kroll Process
-ERF.recipeBuilder()
-        .circuitMeta(2)
-        .fluidInputs(fluid('titanium_tetrachloride') * 3600)
-        .fluidInputs(fluid('argon') * 1000)
-        .inputs(ore('dustMagnesium') * 8)
-        .outputs(metaitem('sponge.titanium.crude') * 4)
-        .fluidOutputs(fluid('magnesium_chloride') * 3024)
-        .outputs(metaitem('dustMagnesium'))
-        .blastFurnaceTemp(2150)
-        .duration(400)
-        .EUt(VA[HV] * 2)
-        .buildAndRegister()
 
-ERF.recipeBuilder()
-        .circuitMeta(2)
-        .fluidInputs(fluid('titanium_tetrachloride') * 3600)
-        .fluidInputs(fluid('helium') * 4000)
-        .inputs(ore('dustMagnesium') * 8)
-        .outputs(metaitem('sponge.titanium.crude') * 4)
-        .fluidOutputs(fluid('magnesium_chloride') * 3024)
-        .outputs(metaitem('dustMagnesium'))
-        .blastFurnaceTemp(2150)
-        .duration(800)
-        .EUt(VA[HV] * 2)
-        .buildAndRegister()
+def gases = [
+    'argon'   : [amount: 1000, duration: 400],
+    'helium': [amount: 4000, duration: 800]
+]
+
+gases.each { gas, data ->
+	ERF.recipeBuilder()
+        	.circuitMeta(2)
+       		.fluidInputs(fluid('titanium_tetrachloride') * 3600)
+        	.fluidInputs(fluid(gas) * data.amount)
+        	.inputs(ore('dustMagnesium') * 8)
+        	.outputs(metaitem('sponge.titanium.crude') * 4)
+        	.fluidOutputs(fluid('magnesium_chloride') * 3024)
+        	.outputs(metaitem('dustMagnesium'))
+        	.blastFurnaceTemp(2150)
+        	.duration(data.duration)
+        	.EUt(VA[HV] * 2)
+        	.buildAndRegister()
 
 VACUUM_CHAMBER.recipeBuilder()
         .inputs(metaitem('sponge.titanium.crude'))
