@@ -201,10 +201,10 @@ DT.recipeBuilder()
         .buildAndRegister()
 
 // Kroll Process
-    ERF.recipeBuilder()
+ERF.recipeBuilder()
         .circuitMeta(2)
         .fluidInputs(fluid('titanium_tetrachloride') * 3600)
-        .notConsumable(fluid('argon') * 4000)
+        .fluidInputs(fluid('argon') * 1000)
         .inputs(ore('dustMagnesium') * 8)
         .outputs(metaitem('sponge.titanium.crude') * 4)
         .fluidOutputs(fluid('magnesium_chloride') * 3024)
