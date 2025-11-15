@@ -1048,5 +1048,11 @@ class SecondDegreeMaterials {
                 .components(LanthanumNitrate * 2, Water * 3)
                 .colorAverage()
                 .build()
+
+        CopperIINitrateSolution = new Material.Builder(13172, SuSyUtility.susyId('copper_ii_nitrate_solution'))
+                .liquid()
+                .components(CopperIINitrate, Water)
+                .colorAverage()
+                .build()
     }
 }
