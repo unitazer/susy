@@ -3845,4 +3845,11 @@ CRYSTALLIZER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-
+CSTR.recipeBuilder()
+    .notConsumable(fluid('sulfuric_acid') * 50)
+    .fluidInputs(fluid('hydrogen_peroxide') * 50)
+    .fluidInputs(fluid('acetic_acid') * 50)
+    .fluidOutputs(fluid('peracetic_acid_solution') * 100)
+    .duration(10)
+    .EUt(VA[HV])
+    .buildAndRegister()
