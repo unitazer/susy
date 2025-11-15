@@ -5,6 +5,7 @@ import techguns.items.guns.GenericGun
 import techguns.plugins.crafttweaker.EnumGunStat
 import techguns.TGArmors
 import techguns.TGItems
+import techguns.util.ItemStackOreDict
 
 def name_removals = [
     "techguns:basicmachine_0_ammo_press",
@@ -1432,6 +1433,10 @@ TGArmors.t2_commando_Helmet.setRepairMats(item('gregtech:meta_plate', 8273), ite
 TGArmors.t2_commando_Chestplate.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15380), 0.5f, 4)
 TGArmors.t2_commando_Leggings.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15380), 0.333f, 3)
 TGArmors.t2_commando_Boots.setRepairMats(item('gregtech:meta_plate', 8273), item('gregtech:meta_plate', 15380), 0.5f, 2)
+
+TGArmors.riot_shield.setRepairMat(new ItemStackOreDict("platePolycarbonate",3))
+TGArmors.ballistic_shield.setRepairMat(new ItemStackOreDict("plateBoronNitride",3))
+TGArmors.advanced_shield.setRepairMat(new ItemStackOreDict("plateUltraHighMolecularWeightPolyethylene",3))
 
 //Compressed air
 
