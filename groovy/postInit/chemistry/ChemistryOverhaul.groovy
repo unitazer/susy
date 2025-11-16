@@ -3845,4 +3845,61 @@ CRYSTALLIZER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
+// Diazonaphthoquinone
 
+FIXED_BR.recipeBuilder()
+    .notConsumable(ore('catalystBedChromiumTrioxide'))
+    .fluidInputs(fluid('tetralin') * 50)
+    .fluidInputs(fluid('oxygen') * 100)
+    .fluidOutputs(fluid('1_tetralone') * 50)
+    .fluidOutputs(fluid('water') * 50)
+    .duration(2)
+    .EUt(VA[MV])
+    .buildAndRegister();
+
+ROASTER.recipeBuilder()
+    .notConsumable(ore('catalystBedPalladium'))
+    .fluidInputs(fluid('1_tetralone') * 1000)
+    .fluidOutputs(fluid('1_naphthol') * 1000)
+    .fluidOutputs(fluid('hydrogen') * 2000)
+    .duration(100)
+    .EUt(VA[MV])
+    .buildAndRegister();
+
+CSTR.recipeBuilder()
+    .fluidInputs(fluid('nitration_mixture') * 100)
+    .fluidInputs(fluid('1_naphthol') * 50)
+    .fluidOutputs(fluid('acidic_2_nitro_1_naphthol') * 100)
+    .duration(80)
+    .EUt(VA[MV])
+    .buildAndRegister();
+
+DT.recipeBuilder()
+    .fluidInputs(fluid('acidic_2_nitro_1_naphthol') * 2000)
+    .fluidOutputs(fluid('2_nitro_1_naphthol') * 1000)
+    .fluidOutputs(fluid('sulfuric_acid') * 1000)
+    .duration(80)
+    .EUt(VA[MV])
+    .buildAndRegister();
+
+FIXED_BR.recipeBuilder()
+    .notConsumable(ore('catalystBedPalladium'))
+    .fluidInputs(fluid('2_nitro_1_naphthol') * 50)
+    .fluidInputs(fluid('hydrogen') * 300)
+    .fluidOutputs(fluid('2_amino_1_naphthol') * 50)
+    .fluidOutputs(fluid('water') * 200)
+    .duration(2)
+    .EUt(VA[MV])
+    .buildAndRegister();
+
+BR.recipeBuilder()
+    .inputs(ore('dustSodiumNitrite') * 4)
+    .fluidInputs(fluid('hydrochloric_acid') * 2000)
+    .fluidInputs(fluid('sodium_hydroxide_solution') * 1000)
+    .fluidInputs(fluid('2_amino_1_naphthol') * 1000)
+    .fluidOutputs(fluid('diazonaphthoquinone') * 1000)
+    .fluidOutputs(fluid('diluted_salt_water') * 2000)
+    .fluidOutputs(fluid('water') * 2000)
+    .duration(80)
+    .EUt(VA[MV])
+    .buildAndRegister();

@@ -2645,6 +2645,12 @@ susy.material.perfluorovinyl_sulfonyl_ether_solution=Perfluorovinyl Sulfonyl Eth
 susy.material.nafion_solution=Nafion Solution
 susy.material.partially_deionized_water=Partially Deionized Water
 susy.material.stabilized_sodium_silicate_solution=Stabilized Sodium Silicate Solution
+susy.material.1_tetralone=1-Tetralone
+susy.material.1_naphthol=1-Naphthol
+susy.material.acidic_2_nitro_1_naphthol=Acidic 2-Nitro-1-Naphthol
+susy.material.2_nitro_1_naphthol=2-Nitro-1-Naphthol
+susy.material.2_amino_1_naphthol=2-Amino-1-Naphthol
+susy.material.diazonaphthoquinone=Diazonaphthoquinone (DNQ)
 
 # Isotopes
 

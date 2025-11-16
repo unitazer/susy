@@ -1048,5 +1048,11 @@ class SecondDegreeMaterials {
                 .components(LanthanumNitrate * 2, Water * 3)
                 .colorAverage()
                 .build()
+
+        AcidicTwoNitroOneNaphthol = new Material.Builder(13172, SuSyUtility.susyId('acidic_2_nitro_1_naphthol'))
+                .liquid()
+                .components(TwoNitroOneNaphthol, SulfuricAcid)
+                .colorAverage()
+                .build()
     }
 }
