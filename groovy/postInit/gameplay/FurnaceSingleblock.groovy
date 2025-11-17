@@ -134,7 +134,7 @@ heatingElements.each { heatingElement ->
 
 // Acheson Process
 
-ore('silicaSand').add(
+ore('dustSilicaSand').add(
         metaitem('dustQuartzite'),
         metaitem('dustCertusQuartz'),
         metaitem('dustNetherQuartz'),
@@ -149,9 +149,9 @@ ore('carbonSource').add(
 
 RESISTANCE_FURNACE.recipeBuilder()
         .notConsumable(metaitem('graphite_electrode'))
-        .notConsumable(ore('silicaSand') * 2)
+        .notConsumable(ore('dustSilicaSand') * 2)
         .notConsumable(ore('carbonSource') * 6)
-        .inputs(ore('silicaSand'))
+        .inputs(ore('dustSilicaSand'))
         .inputs(ore('carbonSource') * 3)
         .outputs(metaitem('dustSiliconCarbide'))
         .fluidOutputs(fluid('carbon_monoxide') * 1000)
