@@ -1916,11 +1916,6 @@ ALLOY_SMELTER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-// Glass Dust * 5
-mods.gregtech.mixer.removeByInput(7, [metaitem('dustSmallFlint'), metaitem('dustQuartzite') * 4], null)
-// Glass Dust * 4
-mods.gregtech.mixer.removeByInput(7, [metaitem('dustSmallFlint'), metaitem('dustQuartzSand') * 4], null)
-
 MIXER.recipeBuilder()
     .inputs(metaitem('dustFlint'))
     .inputs(metaitem('dustQuartzite') * 16)
@@ -1936,10 +1931,8 @@ MIXER.recipeBuilder()
     .duration(200)
     .EUt(VA[ULV])
     .buildAndRegister()
-
-crafting.remove('gregtech:glass_dust_flint')   
-
-crafting.addShapeless('gregtech:glass_dust_flint', metaitem('dustGlass') * 8, [
+    
+crafting.addShapeless('gregtech:glass_flint_dust_full', metaitem('dustGlass') * 8, [
         metaitem('dustFlint'), metaitem('dustQuartzSand'), metaitem('dustQuartzSand'),
         metaitem('dustQuartzSand'), metaitem('dustQuartzSand'), metaitem('dustQuartzSand'),
         metaitem('dustQuartzSand'), metaitem('dustQuartzSand'), metaitem('dustQuartzSand')])
