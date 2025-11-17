@@ -260,7 +260,6 @@ RecyclingHelper.addShaped("gregtech:coagulation_tank_wall", item('susy:coagulati
 
 ore('carbon').add(
         metaitem('dustCoalTarPitch'),
-        metaitem('dustGreenCoke'),
         metaitem('dustHeatedGreenCoke')
 )
 
