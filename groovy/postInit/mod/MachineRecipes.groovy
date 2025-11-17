@@ -282,6 +282,8 @@ EXTRUDER.recipeBuilder()
 
 // Preferably extrusion but can't be asked atm
 SINTERING_OVEN.recipeBuilder()
+    .fluidInputs(fluid('monoxide_rich_syngas') * 100)
+    .fluidInputs(fluid('air') * 100)
     .inputs(metaitem('pitch_binder') * 7)
     .notConsumable(metaitem('shape.mold.crucible'))
     .outputs(metaitem('raw_carbon_crucible'))
