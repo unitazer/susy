@@ -2547,7 +2547,7 @@ susy.material.very_diluted_calcium_chloride_solution=Very Diluted Calcium Chlori
 susy.material.reactor_steel=Reactor Steel
 susy.material.inconel_718=Inconel 718
 susy.material.silver_indium_cadmium=Silver-Indium-Cadmium Alloy
-susy.material.high_alumina_refractory=High Alumina Refractory
+susy.material.synthetic_mullite_refractory=Synthetic Mullite Refractory
 susy.material.mullitized_kyanite=Mullitized Kyanite
 susy.material.nimonic_105=Nimonic 105
 susy.material.vinylidene_fluoride_surfactant_mixture=Vinylidene Fluoride Surfactant Mixture
@@ -2737,6 +2737,9 @@ susy.material.tetrasodium_ethylenediaminetetraacetate_solution=Tetrasodium EDTA 
 susy.material.resol_resin_infiltrant=Resol Resin Infiltrant
 susy.material.resol_resin_mixture=Resol Resin Mixture
 susy.material.coal_tar_pitch=Coal Tar Pitch
+susy.material.tabular_alumina=Tabular Alumina
+susy.material.reactive_alumina=Reactive Alumina
+susy.material.tabular_alumina_refractory=Tabular Alumina Refractory
 
 # Isotopes
 
@@ -2960,6 +2963,10 @@ metaitem.carbon_crucible.name=Carbon Crucible
 metaitem.clay_graphite_paste.name=Clay-Graphite Paste
 metaitem.raw_clay_graphite_crucible.name=Unfired Clay-Graphite Crucible
 metaitem.clay_graphite_crucible.name=Clay-Graphite Crucible
+
+metaitem.hot_cac_clinker.name=Hot Calcium Aluminate Cement Clinker
+metaitem.cac_clinker.name=Calcium Aluminate Cement Clinker
+metaitem.cac_dust.name=Calcium Aluminate Cement Dust
 
 metaitem.rydberg_atom_array.name=Rydberg Atom Array
 metaitem.malted_grain.name=Malted Grain

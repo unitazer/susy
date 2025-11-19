@@ -737,7 +737,7 @@ class SuSyMaterials {
     public static Material BasicBerylliumCarbonateSlurry
     public static Material BasicBerylliumCarbonateSolution
     public static Material HydraulicFluid
-    public static Material HighAluminaRefractory
+    public static Material SyntheticMulliteRefractory
     public static Material ImpurePPOSolution
     public static Material PolyphosphoricAcid
     public static Material SupportedPolyphosphoricAcid
@@ -791,6 +791,7 @@ class SuSyMaterials {
     public static Material CyanamideSolution
     public static Material GreenEpoxyPCBCoating
     public static Material CoalTarPitch
+    public static Material TabularAluminaRefractory
 
     // Petrochem Materials
 

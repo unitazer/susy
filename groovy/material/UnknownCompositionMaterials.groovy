@@ -2918,7 +2918,7 @@ class UnknownCompositionMaterials {
                 .flags(NO_UNIFICATION)
                 .build()
 
-        HighAluminaRefractory = new Material.Builder(4643, SuSyUtility.susyId('high_alumina_refractory'))
+        SyntheticMulliteRefractory = new Material.Builder(4643, SuSyUtility.susyId('synthetic_mullite_refractory'))
                 .dust().ingot()
                 .iconSet(DULL)
                 .flags(NO_UNIFICATION)
@@ -3206,8 +3206,15 @@ class UnknownCompositionMaterials {
                 .color(0x196809)
                 .build()
 
-        CoalTarPitch = new Material.Builder(4693, SuSyUtility.susyId('coal_tar_pitch'))
+        CoalTarPitch = new Material.Builder(4699, SuSyUtility.susyId('coal_tar_pitch'))
                 .dust()
+                .color(0x170a04)
+                .build()
+
+        TabularAluminaRefractory = new Material.Builder(4700, SuSyUtility.susyId('tabular_alumina_refractory'))
+                .dust().ingot()
+                .iconSet(DULL)
+                .flags(NO_UNIFICATION)
                 .color(0x170a04)
                 .build()
     }

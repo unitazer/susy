@@ -2,60 +2,75 @@ import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
 import globals.Sintering
 
-// Medium Alumina Refractory
+// Synthetic Mullite Refractory
 
 ERF.recipeBuilder()
-    .inputs(ore('dustKyanite'))
-    .outputs(metaitem('dustMullitizedKyanite'))
-    .EUt(VA[MV])
-    .blastFurnaceTemp(1200)
-    .duration(100)
-    .buildAndRegister()
-
-MIXER.recipeBuilder()
-    .inputs(ore('dustMullitizedKyanite') * 2)
-    .inputs(ore('dustBauxite') * 13)
-    .inputs(ore('dustClay'))
-    .fluidInputs(fluid('water') * 8000)
-    .outputs(metaitem('dustMediumAluminaRefractory') * 24)
-    .EUt(VA[ULV])
-    .duration(200)
-    .buildAndRegister()
-
-FORMING_PRESS.recipeBuilder()
-        .inputs(ore('dustTabularAlumina'))
-        .outputs(metaitem('inhotHighAluminaRefractory'))
+        .inputs(ore('dustKyanite'))
+        .outputs(metaitem('dustMullitizedKyanite'))
+        .EUt(VA[MV])
+        .blastFurnaceTemp(1200)
         .duration(100)
-        .EUt(VA[LV])
         .buildAndRegister()
 
-SINTERING_OVEN.recipeBuilder()
-    .inputs(metaitem('dustMediumAluminaRefractory'))
-    .outputs(metaitem('ingotMediumAluminaRefractory'))
-    .EUt(VA[MV])
-    .duration(50)
-    .buildAndRegister()
+MIXER.recipeBuilder()
+        .inputs(ore('dustMullitizedKyanite') * 2)
+        .inputs(ore('dustBauxite') * 8)
+        .inputs(ore('dustClay') * 4)
+        .fluidInputs(fluid('water') * 2000)
+        .outputs(metaitem('dustSyntheticMulliteRefractory') * 16)
+        .EUt(VA[ULV])
+        .duration(80)
+        .buildAndRegister()
 
-crafting.addShaped("susy:advanced_refractory", item('susy:susy_multiblock_casing', 9), [
-    [ore('ingotMediumAluminaRefractory'), ore('ingotMediumAluminaRefractory')],
-    [ore('ingotMediumAluminaRefractory'), ore('ingotMediumAluminaRefractory')]
+// For later
+//FORMING_PRESS.recipeBuilder()
+//        .inputs(ore('dustSyntheticMulliteRefractory'))
+//        .outputs(metaitem('ingotSyntheticMulliteRefractory'))
+//        .duration(100)
+//        .EUt(VA[LV])
+//        .buildAndRegister()
+
+SINTERING_OVEN.recipeBuilder()
+        .inputs(ore('dustSyntheticMulliteRefractory'))
+        .outputs(metaitem('ingotSyntheticMulliteRefractory'))
+        .EUt(VA[MV])
+        .duration(50)
+        .buildAndRegister()
+
+crafting.addShaped("susy:synthetic_mullite_refractory", item('susy:susy_multiblock_casing', 11), [
+        [ore('ingotSyntheticMulliteRefractory'), ore('ingotSyntheticMulliteRefractory')],
+        [ore('ingotSyntheticMulliteRefractory'), ore('ingotSyntheticMulliteRefractory')]
 ])
 
+// Tabular Alumina
+
+Sintering.RotaryKiln.fuels.each { fuel ->
+    Sintering.RotaryKiln.comburents.each { comburent ->
+        ROTARY_KILN.recipeBuilder()
+                .inputs(ore('dustAlumina'))
+                .outputs(metaitem('dustTabularAlumina'))
+                .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+                .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+                .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+                .duration(fuel.duration + comburent.duration)
+                .EUt(VA[HV])
+                .buildAndRegister()
+    }
+}
+
+// Reactive Alumina
+
+ERF.recipeBuilder()
+        .circuitMeta(2)
+        .inputs(ore('dustAluminiumHydroxide') * 14)
+        .fluidOutputs(fluid('dense_steam') * 3000)
+        .outputs(metaitem('dustReactiveAlumina') * 5)
+        .duration(100)
+        .blastFurnaceTemp(1300)
+        .EUt(VA[HV])
+        .buildAndRegister()
 
 // Calcium Aluminate Cement
-
-Sintering.plasmaFuels().each { fuel ->
-    ROTARY_KILN.recipeBuilder()
-            .inputs(ore('dustAlumina'))
-            .inputs(ore('dustLimestone'))
-            .circuitMeta(1)
-            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-            .outputs(metaitem('hot_cac_clinker'))
-            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-            .duration(fuel.duration)
-            .EUt(VA[HV])
-            .buildAndRegister()
-}
 
 Sintering.nonPlasmaFuels().each { fuel ->
     Sintering.comburents.each { comburent ->
@@ -102,76 +117,42 @@ for (gas in gases) {
             .buildAndRegister()
 }
 
-mods.gregtech.macerator.recipeBuilder()
+MACERATOR.recipeBuilder()
         .inputs(metaitem('cac_clinker'))
         .outputs(metaitem('cac_dust') * 16)
         .duration(20)
         .EUt(VA[ULV])
         .buildAndRegister()
 
-// Reactive Alumina
-
-ERF.recipeBuilder()
-        .circuitMeta(2)
-        .inputs(ore('dustAluminiumHydroxide') * 14)
-        .fluidOutputs(fluid('dense_steam') * 3000)
-        .outputs(metaitem('dustReactiveAlumina') * 5)
-        .duration(100)
-        .blastFurnaceTemp(1300)
-        .EUt(VA[HV])
-        .buildAndRegister()
-
-// Tabular Alumina
-
-Sintering.RotaryKiln.fuels.each { fuel ->
-    Sintering.RotaryKiln.comburents.each { comburent ->
-        ROTARY_KILN.recipeBuilder()
-            .inputs(ore('dustAlumina'))
-            .outputs(metaitem('dustTabularAlumina'))
-            .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
-            .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
-            .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
-            .duration(fuel.duration + comburent.duration)
-            .EUt(VA[HV])
-            .buildAndRegister()
-    }
-}
-
-// High-Alumina Refractory
-
-MACEERATOR.recipeBuilder()
-        .inputs(metaitem('cac_clinker'))
-        .outputs(metaitem('cac_dust') * 16)
-        .duration(20)
-        .EUt(VA[ULV])
-        .buildAndRegister()
+// Tabular Alumina Refractory
 
 MIXER.recipeBuilder()
-        .inputs(ore('dustTabularAlumina') * 6)
-        .inputs(ore('dustAlumina'))
-        .inputs(ore('dustReactiveAlumina'))
-        .inputs(metaitem('cac_dust') * 3)
-        .fluidInputs(fluid('water') * 3750)
-        .outputs(metaitem('dustHighAluminaRefractory') * 12)
-        .duration(100)
+        .inputs(ore('dustTabularAlumina') * 21)
+        .inputs(ore('dustAlumina') * 5)
+        .inputs(ore('dustReactiveAlumina') * 3)
+        .inputs(metaitem('cac_dust') * 9)
+        .fluidInputs(fluid('water') * 1500)
+        .outputs(metaitem('dustTabularAluminaRefractory') * 32)
+        .duration(160)
         .EUt(VA[ULV])
         .buildAndRegister()
 
-FORMING_PRESS.recipeBuilder()
-        .inputs(ore('dustTabularAlumina'))
-        .outputs(metaitem('inhotHighAluminaRefractory'))
-        .duration(100)
-        .EUt(VA[LV])
-        .buildAndRegister()
+// For later
+//FORMING_PRESS.recipeBuilder()
+//        .inputs(ore('dustTabularAluminaRefractory'))
+//        .outputs(metaitem('ingotTabularAluminaRefractory'))
+//        .duration(100)
+//        .EUt(VA[LV])
+//        .buildAndRegister()
 
 SINTERING_OVEN.recipeBuilder()
-    .inputs(metaitem('ingotHighAluminaRefractory'))
-    .outputs(metaitem('ingotHighAluminaRefractory'))
-    .EUt(VA[EV])
-    .duration(50)
-    .buildAndRegister()
+        .inputs(ore('dustTabularAluminaRefractory'))
+        .outputs(metaitem('ingotTabularAluminaRefractory'))
+        .EUt(VA[EV])
+        .duration(50)
+        .buildAndRegister()
 
-crafting.addShaped("susy:advanced_refractory", item('susy:susy_multiblock_casing', 9), [
-    [ore('ingotHighAluminaRefractory'), ore('ingotHighAluminaRefractory')],
-    [ore('ingotHighAluminaRefractory'), ore('ingotHighAluminaRefractory')]
+crafting.addShaped("susy:tabular_alumina_refractory", item('susy:susy_multiblock_casing', 9), [
+        [ore('ingotTabularAluminaRefractory'), ore('ingotTabularAluminaRefractory')],
+        [ore('ingotTabularAluminaRefractory'), ore('ingotTabularAluminaRefractory')]
 ])

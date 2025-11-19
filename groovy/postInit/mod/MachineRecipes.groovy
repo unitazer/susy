@@ -167,7 +167,7 @@ def tieredMagnets = [metaitem('stickIronMagnetic'), metaitem('stickSteelMagnetic
                      metaitem('stickAlnicoMagnetic'), metaitem('stickNeodymiumAlloyMagnetic'), metaitem('stickSamariumAlloyMagnetic'),
                      metaitem('stickSamariumAlloyMagnetic'), metaitem('stickSamariumAlloyMagnetic')];
 
-def refractories = [item('gregtech:metal_casing', 1), item('gregtech:metal_casing', 1), item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9),
+def refractories = [item('gregtech:metal_casing', 1), item('gregtech:metal_casing', 1), item('susy:susy_multiblock_casing', 11), item('susy:susy_multiblock_casing', 11),
                     item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9)]
 
 log.infoMC("Adding Vulcanizing Press Craft")
