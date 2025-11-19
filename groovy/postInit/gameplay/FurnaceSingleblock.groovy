@@ -7,6 +7,12 @@ def heatingElements = [
         [material: metaitem('springKanthal'), duration: 60]
 ]
 
+def mapRange = { idIn, idOut, range ->
+    range.collect { meta ->
+        [input: item(idIn, meta), output: item(idOut, meta)]
+    }
+}
+
 def nonMetals = [
         [input: item('minecraft:cobblestone'), output: item('minecraft:stone')],
         [input: item('minecraft:stone_slab', 3), output: item('minecraft:stone_slab')],
@@ -14,29 +20,6 @@ def nonMetals = [
         [input: item('pyrotech:cobblestone', 0), output: item('minecraft:stone', 5)],
         [input: item('pyrotech:cobblestone', 1), output: item('minecraft:stone', 3)],
         [input: item('pyrotech:cobblestone', 2), output: item('minecraft:stone', 1)],
-        [input: item('gregtech:stone_cobble'), output: item('gregtech:stone_smooth')],
-        [input: item('susy:susy_stone_cobble'), output: item('susy:susy_stone_smooth')],
-        [input: item('susy:susy_stone_cobble', 1), output: item('susy:susy_stone_smooth', 1)],
-        [input: item('susy:susy_stone_cobble', 2), output: item('susy:susy_stone_smooth', 2)],
-        [input: item('susy:susy_stone_cobble', 3), output: item('susy:susy_stone_smooth', 3)],
-        [input: item('susy:susy_stone_cobble', 4), output: item('susy:susy_stone_smooth', 4)],
-        [input: item('susy:susy_stone_cobble', 5), output: item('susy:susy_stone_smooth', 5)],
-        [input: item('susy:susy_stone_cobble', 6), output: item('susy:susy_stone_smooth', 6)],
-        [input: item('susy:susy_stone_cobble', 7), output: item('susy:susy_stone_smooth', 7)],
-        [input: item('susy:susy_stone_cobble', 8), output: item('susy:susy_stone_smooth', 8)],
-        [input: item('susy:susy_stone_cobble', 9), output: item('susy:susy_stone_smooth', 9)],
-        [input: item('susy:susy_stone_cobble', 10), output: item('susy:susy_stone_smooth', 10)],
-        [input: item('susy:susy_stone_cobble', 11), output: item('susy:susy_stone_smooth', 11)],
-        [input: item('gregtech:stone_cobble', 1), output: item('gregtech:stone_smooth', 1)],
-        [input: item('gregtech:stone_cobble', 2), output: item('gregtech:stone_smooth', 2)],
-        [input: item('gregtech:stone_cobble', 3), output: item('gregtech:stone_smooth', 3)],
-        [input: item('gregtech:stone_cobble', 4), output: item('gregtech:stone_smooth', 4)],
-        [input: item('gregtech:stone_cobble', 5), output: item('gregtech:stone_smooth', 5)],
-        [input: item('gregtech:stone_smooth', 1), output: item('gregtech:stone_polished', 1)],
-        [input: item('gregtech:stone_smooth', 2), output: item('gregtech:stone_polished', 2)],
-        [input: item('gregtech:stone_smooth', 3), output: item('gregtech:stone_polished', 3)],
-        [input: item('gregtech:stone_smooth', 4), output: item('gregtech:stone_polished', 4)],
-        [input: item('gregtech:stone_smooth', 5), output: item('gregtech:stone_polished', 5)],
         [input: metaitem('dustSienna'), output: metaitem('dustBurntSienna')],
         [input: ore('blockClay'), output: item('minecraft:hardened_clay')],
         [input: item('minecraft:stained_hardened_clay'), output: item('minecraft:white_glazed_terracotta')],
@@ -83,8 +66,11 @@ def nonMetals = [
         [input: metaitem('raw_electrode'), output: metaitem('carbon_electrode')],
         [input: metaitem('raw_carbon_crucible'), output: metaitem('carbon_crucible')],
         [input: metaitem('raw_clay_graphite_crucible'), output: metaitem('clay_graphite_crucible')]
-
 ]
+
+nonMetals += mapRange('susy:susy_stone_cobble', 'susy:susy_stone_smooth', 0..11)
+nonMetals += mapRange('gregtech:stone_cobble', 'gregtech:stone_smooth', 0..5)
+nonMetals += mapRange('gregtech:stone_smooth', 'gregtech:stone_polished', 1..5)
 
 def metals = [
         [input: metaitem('dustTin'), output: fluid('tin')],
