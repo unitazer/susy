@@ -191,7 +191,8 @@ class ChangeFlags {
         Rubber.addFlags("generate_plate");
         TungstenCarbide.addFlags("hip_pressed");
         Polycaprolactam.addFlags("generate_foil");
-        Palladium.addFlags("generate_bolt_screw")
+        Palladium.addFlags("generate_bolt_screw");
+        Copper.addFlags("continuously_cast")
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")
