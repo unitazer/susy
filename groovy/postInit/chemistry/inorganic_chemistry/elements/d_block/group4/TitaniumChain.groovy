@@ -220,6 +220,7 @@ gases.each { gas, data ->
         	.duration(data.duration)
         	.EUt(VA[HV] * 2)
         	.buildAndRegister()
+}
 
 VACUUM_CHAMBER.recipeBuilder()
         .inputs(metaitem('sponge.titanium.crude'))
