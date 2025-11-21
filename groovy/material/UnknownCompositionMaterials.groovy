@@ -3206,7 +3206,7 @@ class UnknownCompositionMaterials {
                 .color(0x196809)
                 .build()
 
-        CoalTarPitch = new Material.Builder(4699, SuSyUtility.susyId('coal_tar_pitch'))
+        Pitch = new Material.Builder(4699, SuSyUtility.susyId('pitch'))
                 .dust()
                 .color(0x170a04)
                 .build()

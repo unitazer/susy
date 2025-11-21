@@ -51,7 +51,7 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(160, "red_mud_slag")
         addItem(161, "leached_red_mud_slag")
 
-        addItem(162, "pitch_binder")
+        addItem(162, "carbon_paste")
 
         addItem(165, "rydberg_atom_array")
 
