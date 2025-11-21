@@ -4,8 +4,6 @@ import static gregtech.api.GTValues.*
 
 
 
-log.infoMC("Running Lights.groovy...")
-
 ASSEMBLER.recipeBuilder()
     .inputs(ore('cableGtSingleTin') * 2)
     .inputs(metaitem('graphite_electrode'))
