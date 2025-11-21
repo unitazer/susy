@@ -411,14 +411,13 @@ CVD.recipeBuilder()
     .EUt(VA[HV])
     .buildAndRegister()
 
-//This stel should take 200mb trimethyl indium, 200mb trimethyl gallium and 400mb methane to show the layering quantum wells/barriers
-//Just waiting till someone adds an extra fluid input to the CVD machine
 CVD.recipeBuilder()
     .inputs(metaitem('gallium_nitride_buffer_wafer'))
-    .fluidInputs(fluid('ammonia') * 200)
+    .fluidInputs(fluid('ammonia') * 400)
     .fluidInputs(fluid('trimethyl_indium') * 200) 
+    .fluidInputs(fluid('trimethyl_gallium') * 200) 
     .outputs(metaitem('raw_LED_wafer'))
-    .fluidOutputs(fluid('methane') * 600)
+    .fluidOutputs(fluid('methane') * 1200)
     .cleanroom(CleanroomType.CLEANROOM)
     .duration(800)
     .EUt(VA[HV])
