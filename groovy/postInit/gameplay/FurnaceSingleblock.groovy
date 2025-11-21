@@ -128,8 +128,9 @@ ore('dustSilicaSand').add(
 )
 
 ore('carbonSource').add(
-        metaitem('dustCoke'),
-        metaitem('dustHeatedGreenCoke')
+        metaitem('dustCharcoal'),
+        metaitem('dustGreenCoke'),
+        metaitem('dustCoke')
 )
 
 RESISTANCE_FURNACE.recipeBuilder()
@@ -145,9 +146,9 @@ RESISTANCE_FURNACE.recipeBuilder()
         .buildAndRegister()
 
 ore('insulatingCarbon').add(
-        metaitem('dustAnthracite'),
+        metaitem('dustCoke'),
         metaitem('dustHeatedGreenCoke'),
-        metaitem('dustGraphite')
+        metaitem('dustAnthracite')
 )
 
 RESISTANCE_FURNACE.recipeBuilder()
