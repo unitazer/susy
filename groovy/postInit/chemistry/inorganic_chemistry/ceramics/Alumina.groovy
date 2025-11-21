@@ -60,14 +60,12 @@ Sintering.RotaryKiln.fuels.each { fuel ->
 
 // Reactive Alumina
 
-ERF.recipeBuilder()
-        .circuitMeta(2)
-        .inputs(ore('dustAluminiumHydroxide') * 14)
-        .fluidOutputs(fluid('dense_steam') * 3000)
-        .outputs(metaitem('dustReactiveAlumina') * 5)
-        .duration(100)
-        .blastFurnaceTemp(1300)
-        .EUt(VA[HV])
+// Replace with ball milling whenever that's added
+MACERATOR.recipeBuilder()
+        .inputs(ore('dustAlumina'))
+        .outputs(metaitem('dustReactiveAlumina'))
+        .duration(20)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // Calcium Aluminate Cement

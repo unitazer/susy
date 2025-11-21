@@ -2922,7 +2922,7 @@ class UnknownCompositionMaterials {
                 .dust().ingot()
                 .iconSet(DULL)
                 .flags(NO_UNIFICATION)
-                .color(0xe8dec3)
+                .color(0xeaddc7 )
                 .build()
 
         ImpureBertranditeLeach = new Material.Builder(4644, SuSyUtility.susyId('impure_bertrandite_leach'))
@@ -3215,7 +3215,7 @@ class UnknownCompositionMaterials {
                 .dust().ingot()
                 .iconSet(DULL)
                 .flags(NO_UNIFICATION)
-                .color(0x170a04)
+                .color(0xe7ddcd)
                 .build()
     }
 }

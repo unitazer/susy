@@ -1052,13 +1052,13 @@ class SecondDegreeMaterials {
         TabularAlumina = new Material.Builder(13172, SuSyUtility.susyId('tabular_alumina'))
                 .dust()
                 .components(Alumina)
-                .color(0xdddff4)
+                .color(0xe7e8f7)
                 .build()
 
         ReactiveAlumina = new Material.Builder(13173, SuSyUtility.susyId('reactive_alumina'))
                 .dust()
                 .components(Alumina)
-                .color(0xe3e3fe)
+                .color(0xf1f2fa)
                 .build()
     }
 }
