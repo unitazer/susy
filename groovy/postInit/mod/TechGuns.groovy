@@ -368,12 +368,6 @@ crafting.replaceShaped("techguns:revolver", item('techguns:revolver'), [
     [ore('craftingToolFile'), item('techguns:itemshared', 42), item('techguns:itemshared', 1)]
 ])
 
-crafting.replaceShaped("techguns:boltaction", item('techguns:boltaction'), [
-    [null, ore('craftingToolWrench'), item('techguns:itemshared', 3)],
-    [ore('plateGlass'), ore('ringIron'), ore('plateGlass')],
-    [item('techguns:itemshared', 38), item('techguns:itemshared', 33), item('techguns:itemshared', 42)]
-])
-
 crafting.replaceShaped("techguns:sawedoff", item('techguns:sawedoff'), [
         [ore('springSmallSteel'), metaitem('gun.barrel.steel'), null],
         [metaitem('gun.barrel.steel'), item('techguns:itemshared', 33), item('techguns:itemshared', 2)],
