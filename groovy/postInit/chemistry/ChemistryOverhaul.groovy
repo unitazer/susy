@@ -2007,7 +2007,7 @@ MIXER.recipeBuilder()
 // 2-EAQ
 
 BR.recipeBuilder()
-    .inputs(ore("dustPhthalicAnhydride") * 13)
+    .inputs(ore("dustPhthalicAnhydride") * 15)
     .fluidInputs(fluid("ethylbenzene") * 1000)
     .fluidOutputs(fluid("two_ethylanthraquinone") * 1000)
     .fluidOutputs(fluid("water") * 1000)
