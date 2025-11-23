@@ -1906,3 +1906,24 @@ ALLOY_SMELTER.recipeBuilder()
     .duration(40)
     .EUt(VA[LV])
     .buildAndRegister()
+
+MIXER.recipeBuilder()
+    .inputs(metaitem('dustFlint'))
+    .inputs(metaitem('dustQuartzite') * 16)
+    .outputs(metaitem('dustGlass') * 20)
+    .duration(160)
+    .EUt(VA[ULV])
+    .buildAndRegister()
+
+MIXER.recipeBuilder()
+    .inputs(metaitem('dustFlint'))
+    .inputs(metaitem('dustQuartzSand') * 20)
+    .outputs(metaitem('dustGlass') * 20)
+    .duration(200)
+    .EUt(VA[ULV])
+    .buildAndRegister()
+    
+crafting.addShapeless('gregtech:glass_flint_dust_full', metaitem('dustGlass') * 8, [
+        metaitem('dustFlint'), metaitem('dustQuartzSand'), metaitem('dustQuartzSand'),
+        metaitem('dustQuartzSand'), metaitem('dustQuartzSand'), metaitem('dustQuartzSand'),
+        metaitem('dustQuartzSand'), metaitem('dustQuartzSand'), metaitem('dustQuartzSand')])
