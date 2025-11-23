@@ -1049,9 +1049,15 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        AcidicTwoNitroOneNaphthol = new Material.Builder(13172, SuSyUtility.susyId('acidic_2_nitro_1_naphthol'))
+        AcidicTwoNitroOneNaphthol = new Material.Builder(13172, SuSyUtility.susyId('acidic_two_nitro_one_naphthol'))
                 .liquid()
                 .components(TwoNitroOneNaphthol, SulfuricAcid)
+                .colorAverage()
+                .build()
+
+        AcidicTwoAminoOneNaphthol = new Material.Builder(13173, SuSyUtility.susyId('acidic_two_amino_one_naphthol'))
+                .liquid()
+                .components(TwoAminoOneNaphthol, HydrochloricAcid)
                 .colorAverage()
                 .build()
     }

@@ -2650,6 +2650,7 @@ susy.material.1_naphthol=1-Naphthol
 susy.material.acidic_2_nitro_1_naphthol=Acidic 2-Nitro-1-Naphthol
 susy.material.2_nitro_1_naphthol=2-Nitro-1-Naphthol
 susy.material.2_amino_1_naphthol=2-Amino-1-Naphthol
+susy.material.acidic_2_amino_1_naphthol=Acidic 2-Amino-1-Naphthol
 susy.material.diazonaphthoquinone=Diazonaphthoquinone (DNQ)
 
 # Isotopes
