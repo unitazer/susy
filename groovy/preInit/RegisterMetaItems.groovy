@@ -31,7 +31,6 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(105, "shape.mold.crucible")
         addItem(106, "crucible.boron.nitride")
         addItem(107, "crucible.quartz")
-        addItem(108, "crucible.graphite")
         addItem(109, "shape.mold.long_rod")
         addItem(110, "shape.mold.ring")
         addItem(111, "crucible.tantalum")
@@ -52,9 +51,7 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(160, "red_mud_slag")
         addItem(161, "leached_red_mud_slag")
 
-        addItem(162, "pitch_binder")
-        addItem(163, "raw_electrode")
-        addItem(164, "graphite_electrode")
+        addItem(162, "carbon_paste")
 
         addItem(165, "rydberg_atom_array")
 
@@ -422,11 +419,26 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10254, "carbon.mesh.phenolic.treated")
         addItem(10255, "carbon.tile.phenolic.treated")
 
-        // Induction Furnace
-        addItem(10301, "coated_copper_coil")
-        addItem(10302, "cured_coated_coil")
-        addItem(10303, "induction_coil")
+        // Induction Furnace 10300-10310
+        addItem(10300, "coated_copper_coil")
+        addItem(10301, "cured_coated_coil")
+        addItem(10302, "induction_coil")
 
+        // Graphite Crucibles and Electrodes 10310-10330
+        addItem(10310, "raw_electrode")
+        addItem(10311, "carbon_electrode")
+        addItem(10312, "graphite_electrode")
+        addItem(10313, "raw_carbon_crucible")
+        addItem(10314, "carbon_crucible")
+        addItem(10315, "crucible.graphite")
+        addItem(10316, "clay_graphite_paste")
+        addItem(10317, "clay_graphite_crucible")
+        addItem(10318, "raw_clay_graphite_crucible")
+
+        // Alumina Refractories 10330-10340
+        addItem(10330, "cac_clinker")
+        addItem(10331, "hot_cac_clinker")
+        addItem(10332, "cac_dust")
     }
 
     log.infoMC("Finished adding metaitems")

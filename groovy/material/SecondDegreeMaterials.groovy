@@ -1048,5 +1048,17 @@ class SecondDegreeMaterials {
                 .components(LanthanumNitrate * 2, Water * 3)
                 .colorAverage()
                 .build()
+
+        TabularAlumina = new Material.Builder(13172, SuSyUtility.susyId('tabular_alumina'))
+                .dust()
+                .components(Alumina)
+                .color(0xe7e8f7)
+                .build()
+
+        ReactiveAlumina = new Material.Builder(13173, SuSyUtility.susyId('reactive_alumina'))
+                .dust()
+                .components(Alumina)
+                .color(0xf1f2fa)
+                .build()
     }
 }
