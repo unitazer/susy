@@ -8911,7 +8911,7 @@ hash = "f7264e7e56bc552551d942e17ea99efde4345515a3eb66687d49e4f8f9aa9927"
 
 [[files]]
 file = "groovy/postInit/components/EtchablesChain.groovy"
-hash = "662dccc833639d972f4976165c4761bde7acfc341566db2dcf037683bce3143f"
+hash = "e5d77b7441a588601a3bac88bfc674df12a448ac5061f0dcef9a589a4ff40ba2"
 
 [[files]]
 file = "groovy/postInit/components/FieldGenerators.groovy"
@@ -10171,12 +10171,12 @@ metafile = true
 
 [[files]]
 file = "mods/sussypatches.pw.toml"
-hash = "a1d1f03ac398d910f9a39a4964fe952e77c579f38bf873e52ca7c9fbb8b4887e"
+hash = "107e8e300298264b96a7afc469673088b731fa1b5868fc68a214380c48720641"
 metafile = true
 
 [[files]]
 file = "mods/susycore.pw.toml"
-hash = "293e60e7c9b95ec38ea4bb94f8b6a828277d536c28074b287a8a6d2de0c8a3f8"
+hash = "c477e0033737e7fe0f56f453ffb6acaa6e041d575560919cb5c15dfa5395c2bf"
 metafile = true
 
 [[files]]

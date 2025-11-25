@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-      "layer0": "gregtech:items/metaitems/etched_LED_wafer"
+      "layer0": "gregtech:items/metaitems/etched_led_wafer"
     }
   }
