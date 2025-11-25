@@ -1,3 +1,5 @@
+import globals.Globals
+
 import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
 
@@ -179,3 +181,11 @@ RESISTANCE_FURNACE.recipeBuilder()
         .duration(200)
         .EUt(VA[LV])
         .buildAndRegister()
+
+// Being nice
+
+for (i = 1; i <= 8; i++) {
+    crafting.addShapeless("susy:resistance_furnace." + Globals.voltageTiers[i] + "_convert", metaitem('susy:resistance_furnace.' + Globals.voltageTiers[i]), [
+            metaitem('electric_furnace.' + Globals.voltageTiers[i])
+    ])
+}

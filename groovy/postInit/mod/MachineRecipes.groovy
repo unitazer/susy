@@ -168,6 +168,7 @@ def tieredMagnets = [metaitem('stickIronMagnetic'), metaitem('stickSteelMagnetic
                      metaitem('stickSamariumAlloyMagnetic'), metaitem('stickSamariumAlloyMagnetic')];
 
 def refractories = [item('gregtech:metal_casing', 1), item('gregtech:metal_casing', 1), item('susy:susy_multiblock_casing', 11), item('susy:susy_multiblock_casing', 11),
+                    item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9),
                     item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9)]
 
 log.infoMC("Adding Vulcanizing Press Craft")
@@ -540,9 +541,9 @@ for (i = 1; i <= 8; i++) {
 
 //Resistance Furnace
 
-for (i = 1; i <= 5; i++) {
+for (i = 1; i <= 8; i++) {
     mods.jei.ingredient.yeet(metaitem('electric_furnace.' + Globals.voltageTiers[i]))
-    RecyclingHelper.addShaped("gregtech:resistance_furnace." + Globals.voltageTiers[i], metaitem('susy:resistance_furnace.' + Globals.voltageTiers[i]), [
+    RecyclingHelper.addShaped("susy:resistance_furnace." + Globals.voltageTiers[i], metaitem('susy:resistance_furnace.' + Globals.voltageTiers[i]), [
             [circuits[i], refractories[i], circuits[i]],
             [refractories[i], hulls[i], refractories[i]],
             [tieredCables[i], refractories[i], tieredCables[i]]
