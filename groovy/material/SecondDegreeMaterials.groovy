@@ -1060,9 +1060,23 @@ class SecondDegreeMaterials {
                 .color(0xd6d1a9)
                 .build()
 
+        // FREE IDs: 13174-13177
+      
         YttriumAluminiumGarnetCerium = new Material.Builder(13178, SuSyUtility.susyId('yttrium_aluminium_garnet_cerium'))
                 .dust()
                 .color(0xfff1a8)
+                .build()
+
+        TabularAlumina = new Material.Builder(13179, SuSyUtility.susyId('tabular_alumina'))
+                .dust()
+                .components(Alumina)
+                .color(0xe7e8f7)
+                .build()
+
+        ReactiveAlumina = new Material.Builder(13180, SuSyUtility.susyId('reactive_alumina'))
+                .dust()
+                .components(Alumina)
+                .color(0xf1f2fa)
                 .build()
     }
 }
