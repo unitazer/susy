@@ -205,6 +205,7 @@ Photoresists.generatePatterningRecipes('wafer.polysilicon', 'patterned.polysilic
 Photoresists.generatePatterningRecipes('wafer.silicon_nitride', 'patterned.silicon_nitride', 'mask.advanced', HV, 4, 1, 1, true)
 Photoresists.generatePatterningRecipes('wafer.nickel', 'patterned.nand', 'mask.nand', HV, 4, 1, 1, true)
 Photoresists.generatePatterningRecipes('wafer.nickel', 'patterned.nor', 'mask.nor', HV, 4, 1, 2, true)
+Photoresists.generatePatterningRecipes('raw_LED_wafer', 'patterned_LED_wafer', 'mask.advanced', HV, 4, 1, 2, true)
 
 Etchants.generateEtchingRecipes('patterned.ic', 'etched.ic', 'silicon', LV, 1, false)
 Etchants.generateEtchingRecipes('patterned.cpu', 'etched.cpu', 'silicon', LV, 1,false)
