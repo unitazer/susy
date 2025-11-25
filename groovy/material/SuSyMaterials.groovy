@@ -1268,6 +1268,7 @@ class SuSyMaterials {
     public static Material SamariumAlloyMagnetic
     public static Material ChloroaceticAnhydride
     public static Material CopperIINitrate
+    public static Material CopperIINitrateSolution
     public static Material NickelIINitrate
     public static Material ZincNitrate
     public static Material MagnesiumNitrate

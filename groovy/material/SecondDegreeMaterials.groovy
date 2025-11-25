@@ -1078,5 +1078,11 @@ class SecondDegreeMaterials {
                 .components(Alumina)
                 .color(0xf1f2fa)
                 .build()
+      
+        CopperIINitrateSolution = new Material.Builder(13181, SuSyUtility.susyId('copper_ii_nitrate_solution'))
+                .liquid()
+                .components(CopperIINitrate, Water)
+                .colorAverage()
+                .build()
     }
 }
