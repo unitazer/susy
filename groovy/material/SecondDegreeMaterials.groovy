@@ -1048,5 +1048,41 @@ class SecondDegreeMaterials {
                 .components(LanthanumNitrate * 2, Water * 3)
                 .colorAverage()
                 .build()
+
+        HalophosphatePhosphor = new Material.Builder(13172, SuSyUtility.susyId('halophosphate_phosphor'))
+                .dust()
+                //.components(LanthanumNitrate * 2, Water * 3)
+                .color(0xd6d1a9)
+                .build()
+
+        HalophosphatePhosphorSolution = new Material.Builder(13173, SuSyUtility.susyId('halophosphate_phosphor_solution'))
+                .liquid()
+                .color(0xd6d1a9)
+                .build()
+
+        // FREE IDs: 13174-13177
+      
+        YttriumAluminiumGarnetCerium = new Material.Builder(13178, SuSyUtility.susyId('yttrium_aluminium_garnet_cerium'))
+                .dust()
+                .color(0xfff1a8)
+                .build()
+
+        TabularAlumina = new Material.Builder(13179, SuSyUtility.susyId('tabular_alumina'))
+                .dust()
+                .components(Alumina)
+                .color(0xe7e8f7)
+                .build()
+
+        ReactiveAlumina = new Material.Builder(13180, SuSyUtility.susyId('reactive_alumina'))
+                .dust()
+                .components(Alumina)
+                .color(0xf1f2fa)
+                .build()
+      
+        CopperIINitrateSolution = new Material.Builder(13181, SuSyUtility.susyId('copper_ii_nitrate_solution'))
+                .liquid()
+                .components(CopperIINitrate, Water)
+                .colorAverage()
+                .build()
     }
 }

@@ -2918,11 +2918,11 @@ class UnknownCompositionMaterials {
                 .flags(NO_UNIFICATION)
                 .build()
 
-        HighAluminaRefractory = new Material.Builder(4643, SuSyUtility.susyId('high_alumina_refractory'))
+        SyntheticMulliteRefractory = new Material.Builder(4643, SuSyUtility.susyId('synthetic_mullite_refractory'))
                 .dust().ingot()
                 .iconSet(DULL)
                 .flags(NO_UNIFICATION)
-                .color(0xe8dec3)
+                .color(0xeaddc7 )
                 .build()
 
         ImpureBertranditeLeach = new Material.Builder(4644, SuSyUtility.susyId('impure_bertrandite_leach'))
@@ -3204,6 +3204,18 @@ class UnknownCompositionMaterials {
         GreenEpoxyPCBCoating = new Material.Builder(4698, SuSyUtility.susyId('green_epoxy_pcb_coating'))
                 .liquid()
                 .color(0x196809)
+                .build()
+
+        Pitch = new Material.Builder(4699, SuSyUtility.susyId('pitch'))
+                .dust()
+                .color(0x170a04)
+                .build()
+
+        TabularAluminaRefractory = new Material.Builder(4700, SuSyUtility.susyId('tabular_alumina_refractory'))
+                .dust().ingot()
+                .iconSet(DULL)
+                .flags(NO_UNIFICATION)
+                .color(0xe7ddcd)
                 .build()
     }
 }
