@@ -5910,7 +5910,7 @@ hash = "c6b95b90b044ac5deb2d882ab6e4bd636aeaa2b4e4bc507a624e54a3ab64de0a"
 
 [[files]]
 file = "config/biomesoplenty/biomes/defaults/vanilla/hell.json"
-hash = "75199e21c6b0a35e4f20748d96da7b9e2d47b2cd06ebc1aba25ef679c358962b"
+hash = "c52fd54915b1d772600b59405c11ebf7f493a83ff0df2f395e103a0aa026fd2d"
 
 [[files]]
 file = "config/biomesoplenty/biomes/defaults/vanilla/ice_flats.json"
@@ -6034,7 +6034,7 @@ hash = "a7074498a67224475800f5d681c84753628718f0324540f5a3f4a1aa3fcc057c"
 
 [[files]]
 file = "config/biomesoplenty/biomes/vanilla/hell.json"
-hash = "01cdb1bd35dce61d7ec45852c2c491122be6b790d7e73b0a3d267b1e2366881a"
+hash = "24c1a7f09de1b2a54500eae0a34cf5c2a1110c298c42c6f2280818e4772c0a9d"
 
 [[files]]
 file = "config/biomesoplenty/biomes/vanilla/ice_flats.json"
@@ -8271,7 +8271,7 @@ hash = "8b256d0a66a565c1bcbd0c9afd872c4d5b16add5e23554a784bcacee46c1abf3"
 
 [[files]]
 file = "groovy/material/OrganicChemistryMaterials.groovy"
-hash = "404492eb19323029cd14f422f03ac5cd51de15e66430b366a0e7991e4b3a4c29"
+hash = "86281192b1bbee215fb277120ea695d22209aff9ab474b807ed7348cb62ce4b6"
 
 [[files]]
 file = "groovy/material/PetrochemistryMaterials.groovy"
@@ -8279,7 +8279,7 @@ hash = "8395d148c6d00f45ac1e94dcc451c6c55b59cf080724416350a77ae1237b50da"
 
 [[files]]
 file = "groovy/material/SecondDegreeMaterials.groovy"
-hash = "bf3f1b001b0c48fc25e837b55b032b57b4189a1873716c6f0e263027748c5370"
+hash = "7dead33836845139c2943652958a381a40085fb02d80167bc3010c14f8d2a341"
 
 [[files]]
 file = "groovy/material/SuSyMaterials.groovy"
@@ -8303,7 +8303,7 @@ hash = "be3ffe470b25d74f9d06a11b0cecddc4a9c0810b1177c88e62cfc7ce5c5cdf65"
 
 [[files]]
 file = "groovy/postInit/biology/GreenhouseChain.groovy"
-hash = "e24713c5a42f5db8d109b96014b17bcb53b863431f2bb6b7209e0e595b1c658b"
+hash = "370e2ee9520ce1fcb2e56bdebd2667c808c569fdd9ee8f0a37602de0f82c6e3c"
 
 [[files]]
 file = "groovy/postInit/biology/PaperChain.groovy"
@@ -8319,7 +8319,7 @@ hash = "b33c5f508512f3bcdfe0ea0473292620e17331b5d4c4d59681c9f61250bcfe17"
 
 [[files]]
 file = "groovy/postInit/chemistry/ChemistryOverhaul.groovy"
-hash = "65a6b60cb9ec8f126951423c1da5d1c590a47b8574fad73e0595ae2040720e07"
+hash = "1501f772213ec46baf288a329d1612aeb5c2fcddb44182a66c5867e58ca4a9dd"
 
 [[files]]
 file = "groovy/postInit/chemistry/inorganic_chemistry/Ceramics.groovy"
@@ -8723,7 +8723,7 @@ hash = "37713799f479bb7d8bf2f0e89b374d4884e6640ae5950c2f36ae3252251ef722"
 
 [[files]]
 file = "groovy/postInit/chemistry/organic_chemistry/petrochemistry/Fuels.groovy"
-hash = "c6f8be0c8548daf65fea79cadcb2c16b15274ee3383bc481ea76f6b91e45dc5e"
+hash = "a9816303fb52f89465c855c9c203eba583703c666d8a89032320482407b319ab"
 
 [[files]]
 file = "groovy/postInit/chemistry/organic_chemistry/petrochemistry/GasToLiquids.groovy"
@@ -8911,7 +8911,7 @@ hash = "f7264e7e56bc552551d942e17ea99efde4345515a3eb66687d49e4f8f9aa9927"
 
 [[files]]
 file = "groovy/postInit/components/EtchablesChain.groovy"
-hash = "b18070bb871f87c774fc953095bc8cae560e406884fdb06027d4f1cc8d872abf"
+hash = "662dccc833639d972f4976165c4761bde7acfc341566db2dcf037683bce3143f"
 
 [[files]]
 file = "groovy/postInit/components/FieldGenerators.groovy"
@@ -8927,7 +8927,7 @@ hash = "a2097c8992f2eee14521ad8d105de823f99e6570b6337b9832894685b872dccd"
 
 [[files]]
 file = "groovy/postInit/components/Lights.groovy"
-hash = "ee39aa6e7ef177b48f63ec34d1c0e341a9ccc672d769767222422db20367b07c"
+hash = "c5afd15e4c585ac7baec785532ebb3cb4f77c4bc6c3979b06c725b7db61c04c5"
 
 [[files]]
 file = "groovy/postInit/components/Motors.groovy"
@@ -9151,7 +9151,7 @@ hash = "5f9bd2743ba8308518d2962926449a3df0e1a7082c19e0a895cfcd1e62076e83"
 
 [[files]]
 file = "groovy/postInit/mod/GregTech.groovy"
-hash = "a8a235e820da7420b4243ca75fd89039f5f6964febcc45306bbfb16b99c41812"
+hash = "86d6c8f637555731a64161d22e2477ced1d1dadec18fe3423b4e2212e7a67262"
 
 [[files]]
 file = "groovy/postInit/mod/GregTechFoodOption.groovy"
@@ -14045,7 +14045,7 @@ hash = "6f18641cbced8d9a621732d851db9915dd98b007a903c8a28d171387e3dc76ab"
 
 [[files]]
 file = "resources/langfiles/lang/en_us.lang"
-hash = "1d3cf672d4397f9c7f80a62019500538293e56ff1fface5d3ced074dfac4bff2"
+hash = "29942fd65c6855e1d80a2707664c7617835f8512d3e3368131d00de2bdd68d1b"
 
 [[files]]
 file = "resources/langfiles/lang/fr_fr.lang"
