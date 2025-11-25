@@ -3853,7 +3853,44 @@ CRYSTALLIZER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-// Peracetic acid
+// Trimethylindium
+
+BR.recipeBuilder()
+    .fluidInputs(fluid('trimethylaluminium') * 1000)
+    .inputs(ore('dustIndiumChloride') * 4)
+    .fluidInputs(fluid('toluene') * 1000)
+    .outputs(metaitem('dustAluminiumChloride') * 4)
+    .fluidOutputs(fluid('trimethyl_indium_solution') * 2000)
+    .duration(200)
+    .EUt(VA[MV])
+    .buildAndRegister();
+
+VACUUM_DT.recipeBuilder()
+    .fluidInputs(fluid('trimethyl_indium_solution') * 2000)
+    .fluidOutputs(fluid('trimethyl_indium') * 1000)
+    .fluidOutputs(fluid('toluene') * 1000)
+    .EUt(VA[MV])
+    .duration(1000)
+    .buildAndRegister()
+
+// Trimethylgallium
+
+BR.recipeBuilder()
+    .fluidInputs(fluid('trimethylaluminium') * 1000)
+    .fluidInputs(fluid('gallium_trichloride') * 1000)
+    .fluidInputs(fluid('toluene') * 1000)
+    .outputs(metaitem('dustAluminiumChloride') * 4)
+    .fluidOutputs(fluid('trimethyl_gallium_solution') * 2000)
+    .duration(200)
+    .EUt(VA[MV])
+    .buildAndRegister();
+    
+VACUUM_DT.recipeBuilder()
+    .fluidInputs(fluid('trimethyl_gallium_solution') * 2000)
+    .fluidOutputs(fluid('trimethyl_gallium') * 1000)
+    .fluidOutputs(fluid('toluene') * 1000)
+    .EUt(VA[MV])
+    .duration(1000)
 
 CSTR.recipeBuilder()
     .notConsumable(fluid('sulfuric_acid') * 1000)

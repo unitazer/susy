@@ -2548,7 +2548,7 @@ susy.material.very_diluted_calcium_chloride_solution=Very Diluted Calcium Chlori
 susy.material.reactor_steel=Reactor Steel
 susy.material.inconel_718=Inconel 718
 susy.material.silver_indium_cadmium=Silver-Indium-Cadmium Alloy
-susy.material.high_alumina_refractory=High Alumina Refractory
+susy.material.synthetic_mullite_refractory=Synthetic Mullite Refractory
 susy.material.mullitized_kyanite=Mullitized Kyanite
 susy.material.nimonic_105=Nimonic 105
 susy.material.vinylidene_fluoride_surfactant_mixture=Vinylidene Fluoride Surfactant Mixture
@@ -2646,6 +2646,13 @@ susy.material.perfluorovinyl_sulfonyl_ether_solution=Perfluorovinyl Sulfonyl Eth
 susy.material.nafion_solution=Nafion Solution
 susy.material.partially_deionized_water=Partially Deionized Water
 susy.material.stabilized_sodium_silicate_solution=Stabilized Sodium Silicate Solution
+susy.material.halophosphate_phosphor=Halophosphate Phosphor
+susy.material.halophosphate_phosphor_solution=Halophosphate Phosphor Solution
+susy.material.trimethyl_gallium_solution=Trimethylgallium Solution
+susy.material.trimethyl_indium_solution=Trimethylindium Solution
+susy.material.trimethyl_gallium=Trimethylgallium
+susy.material.trimethyl_indium=Trimethylindium
+susy.material.yttrium_aluminium_garnet_cerium=Ce-Doped Yttrium Aluminium Garnet
 
 # Isotopes
 
@@ -2737,6 +2744,10 @@ susy.material.epoxycyclohexane_carboxylate=3,4-Epoxycyclohexylmethyl-3',4'-Epoxy
 susy.material.tetrasodium_ethylenediaminetetraacetate_solution=Tetrasodium EDTA Solution
 susy.material.resol_resin_infiltrant=Resol Resin Infiltrant
 susy.material.resol_resin_mixture=Resol Resin Mixture
+susy.material.pitch=Pitch
+susy.material.tabular_alumina=Tabular Alumina
+susy.material.reactive_alumina=Reactive Alumina
+susy.material.tabular_alumina_refractory=Tabular Alumina Refractory
 
 # Isotopes
 
@@ -2950,9 +2961,20 @@ metaitem.cracking_catalyst.name=Cracking Catalyst
 metaitem.hydrocracking_catalyst.name=Hydrocracking Catalyst
 metaitem.red_mud_slag.name=Red Mud Slag
 metaitem.leached_red_mud_slag.name=Leached Red Mud Slag
-metaitem.pitch_binder.name=Pitch Binder
-metaitem.raw_electrode.name=Raw Electrode
+metaitem.carbon_paste.name=Carbon Paste
+metaitem.raw_electrode.name=Unfired Carbon Electrode
+metaitem.carbon_electrode.name=Carbon Electrode
 metaitem.graphite_electrode.name=Graphite Electrode
+
+metaitem.raw_carbon_crucible.name=Unfired Carbon Crucible
+metaitem.carbon_crucible.name=Carbon Crucible
+metaitem.clay_graphite_paste.name=Clay-Graphite Paste
+metaitem.raw_clay_graphite_crucible.name=Unfired Clay-Graphite Crucible
+metaitem.clay_graphite_crucible.name=Clay-Graphite Crucible
+
+metaitem.hot_cac_clinker.name=Hot Calcium Aluminate Cement Clinker
+metaitem.cac_clinker.name=Calcium Aluminate Cement Clinker
+metaitem.cac_dust.name=Calcium Aluminate Cement Dust
 
 metaitem.rydberg_atom_array.name=Rydberg Atom Array
 metaitem.malted_grain.name=Malted Grain
@@ -3230,6 +3252,17 @@ metaitem.coated_copper_coil.name=Ceramic-Coated Copper Tubing
 metaitem.cured_coated_coil.name=Cured Ceramic-Coated Copper Tubing
 metaitem.induction_coil.name=Induction Coil
 
+metaitem.carbon_filament.name=Carbon Filament
+metaitem.gallium_nitride_buffer_wafer.name=Gallium Nitride Buffer Wafer
+metaitem.raw_LED_wafer.name=Raw LED Wafer
+metaitem.patterned_LED_wafer.name=Patterned LED Wafer
+metaitem.etched_LED_wafer.name=Etched LED Wafer
+metaitem.metallized_LED_wafer.name=Metallized LED Wafer
+metaitem.LED_chip.name=LED Chip
+metaitem.fused_quartz_bulb.name=Fused Quartz Bulb
+metaitem.lamp.mercury.hp.unfilled.name=Unfilled Mercury Vapor Lamp
+metaitem.lamp.mercury.hp.name=High Pressure Mercury Vapor Lamp
+metaitem.lamp.mercury.lp.name=Ultraviolet Mercury Vapor Lamp
 metaitem.carbon.mesh.phenolic.moist.name=Moist Phenolic Carbon Mesh
 metaitem.carbon.mesh.phenolic.treated.name=Treated Phenolic Carbon Mesh
 metaitem.carbon.tile.phenolic.treated.name=Treated Phenolic Carbon Tile
