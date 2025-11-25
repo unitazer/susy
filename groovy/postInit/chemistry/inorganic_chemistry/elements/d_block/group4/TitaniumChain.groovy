@@ -202,24 +202,22 @@ DT.recipeBuilder()
 
 // Kroll Process
 
-def gases = [
-    'argon'   : [amount: 1000, duration: 400],
-    'helium': [amount: 4000, duration: 800]
-]
-
-gases.each { gas, data ->
-	ERF.recipeBuilder()
-        	.circuitMeta(2)
-       		.fluidInputs(fluid('titanium_tetrachloride') * 3600)
-        	.fluidInputs(fluid(gas) * data.amount)
-        	.inputs(ore('dustMagnesium') * 8)
-        	.outputs(metaitem('sponge.titanium.crude') * 4)
-        	.fluidOutputs(fluid('magnesium_chloride') * 3024)
-        	.outputs(metaitem('dustMagnesium'))
-        	.blastFurnaceTemp(2150)
-        	.duration(data.duration)
-        	.EUt(VA[HV] * 2)
-        	.buildAndRegister()
+for (inertGas in Globals.inertGases) {
+        if (inertGas.tier < 2) {
+                continue
+        }
+        ERF.recipeBuilder()
+                .circuitMeta(2)
+                .fluidInputs(fluid('titanium_tetrachloride') * 3600)
+                .notConsumable(fluid(inertGas.name) * inertGas.amount_required)
+                .inputs(ore('dustMagnesium') * 8)
+                .outputs(metaitem('sponge.titanium.crude') * 4)
+                .fluidOutputs(fluid('magnesium_chloride') * 3024)
+                .outputs(metaitem('dustMagnesium'))
+                .blastFurnaceTemp(2150)
+                .duration(400 * inertGas.duration)
+                .EUt(VA[HV] * 2)
+                .buildAndRegister()
 }
 
 VACUUM_CHAMBER.recipeBuilder()
