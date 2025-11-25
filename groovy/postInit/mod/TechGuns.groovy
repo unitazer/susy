@@ -72,6 +72,7 @@ def name_removals = [
     "techguns:thompson_alt",
     "techguns:ak47",
     "techguns:ak47_alt",
+    "techguns:boltaction",
     "techguns:m4",
     "techguns:m4_alt",
     "techguns:m4_infiltrator",
