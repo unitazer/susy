@@ -2736,6 +2736,22 @@ susy.material.epoxycyclohexane_carboxylate=3,4-Epoxycyclohexylmethyl-3',4'-Epoxy
 susy.material.tetrasodium_ethylenediaminetetraacetate_solution=Tetrasodium EDTA Solution
 susy.material.resol_resin_infiltrant=Resol Resin Infiltrant
 susy.material.resol_resin_mixture=Resol Resin Mixture
+susy.material.concentrated_sea_water=Concentrated Sea Water
+susy.material.sea_bittern=Sea Bittern
+susy.material.desulfatized_sea_bittern=Desulfatized Sea Bittern
+susy.material.chlorinated_sea_bittern=Chlorinated Sea Bittern
+susy.material.debrominated_sea_bittern=Debrominated Sea Bittern
+susy.material.desalinated_sea_water=Desalinated Sea Water
+susy.material.demagnesiated_brine=Demagnesiated Brine
+susy.material.decalcified_brine=Decalcified Brine
+susy.material.brine_mother_liquor=Brine Mother Liquor
+susy.material.potassium_rich_mother_liquor=Potassium Rich Mother Liquor
+susy.material.bromine_rich_mother_liquor=Bromine Rich Mother Liquor
+susy.material.chlorinated_mother_liquor=Chlorinated Mother Liquor
+susy.material.salar_brine=Salar Brine
+susy.material.demagnesiated_salar_brine=Demagnesiated Salar Brine
+susy.material.decalcified_salar_brine=Decalcified Salar Brine
+susy.material.concentrated_salar_brine=Concentrated Salar Brine
 
 # Isotopes
 

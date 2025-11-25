@@ -51,7 +51,7 @@ import static gregtech.api.GTValues.*
         .circuitMeta(1)
         .fluidInputs(fluid('sea_water') * 10000)
         .fluidInputs(fluid('dense_steam') * 100)
-        .fluidOutputs(fluid('desalinated_sea_water') * 10000)
+        .fluidOutputs(fluid('water') * 10000)
         .fluidOutputs(fluid('concentrated_sea_water') * 100)
         .duration(80)
         .EUt(VA[MV])

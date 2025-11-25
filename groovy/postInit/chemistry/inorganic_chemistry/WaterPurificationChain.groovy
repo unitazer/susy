@@ -30,7 +30,7 @@ MIXER.recipeBuilder()
 
 CLARIFIER.recipeBuilder()
     .fluidInputs(fluid('flocculated_wastewater') * 8000)
-    .outputs(metaitem('dustAluminiumSulfate') * 8)
+    .outputs(metaitem('dustAluminiumSulfate'))
     .fluidOutputs(fluid('wastewater_sludge') * 2000)
     .fluidOutputs(fluid('water') * 6000)
     .duration(600)
