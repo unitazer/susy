@@ -2568,6 +2568,13 @@ class SuSyMaterials {
     public static Material TritiatedHeavyWater
     public static Material TritiatedSteam
     public static Material ChilledWater
+    public static Material HalophosphatePhosphor
+    public static Material HalophosphatePhosphorSolution
+    public static Material TrimethylGalliumSolution
+    public static Material TrimethylIndiumSolution
+    public static Material TrimethylGallium
+    public static Material TrimethylIndium
+    public static Material YttriumAluminiumGarnetCerium
 
 
     public static void changeFormulas() {

@@ -439,6 +439,20 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10330, "cac_clinker")
         addItem(10331, "hot_cac_clinker")
         addItem(10332, "cac_dust")
+      
+        // Lighting Components 10400-10420
+
+        addItem(10401, "carbon_filament")
+        addItem(10402, "gallium_nitride_buffer_wafer")
+        addItem(10403, "raw_led_wafer")
+        addItem(10404, "patterned_led_wafer")
+        addItem(10405, "etched_led_wafer")
+        addItem(10406, "metallized_led_wafer")
+        addItem(10407, "led_chip")
+        addItem(10408, "fused_quartz_bulb")
+        addItem(10409, "lamp.mercury.hp.unfilled")
+        addItem(10410, "lamp.mercury.hp")
+        addItem(10411, "lamp.mercury.lp")
     }
 
     log.infoMC("Finished adding metaitems")
