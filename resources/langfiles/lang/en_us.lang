@@ -3278,11 +3278,11 @@ metaitem.induction_coil.name=Induction Coil
 
 metaitem.carbon_filament.name=Carbon Filament
 metaitem.gallium_nitride_buffer_wafer.name=Gallium Nitride Buffer Wafer
-metaitem.raw_LED_wafer.name=Raw LED Wafer
-metaitem.patterned_LED_wafer.name=Patterned LED Wafer
-metaitem.etched_LED_wafer.name=Etched LED Wafer
-metaitem.metallized_LED_wafer.name=Metallized LED Wafer
-metaitem.LED_chip.name=LED Chip
+metaitem.raw_led_wafer.name=Raw LED Wafer
+metaitem.patterned_led_wafer.name=Patterned LED Wafer
+metaitem.etched_led_wafer.name=Etched LED Wafer
+metaitem.metallized_led_wafer.name=Metallized LED Wafer
+metaitem.led_chip.name=LED Chip
 metaitem.fused_quartz_bulb.name=Fused Quartz Bulb
 metaitem.lamp.mercury.hp.unfilled.name=Unfilled Mercury Vapor Lamp
 metaitem.lamp.mercury.hp.name=High Pressure Mercury Vapor Lamp

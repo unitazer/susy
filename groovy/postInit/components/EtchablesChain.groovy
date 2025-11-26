@@ -205,7 +205,7 @@ Photoresists.generatePatterningRecipes('wafer.polysilicon', 'patterned.polysilic
 Photoresists.generatePatterningRecipes('wafer.silicon_nitride', 'patterned.silicon_nitride', 'mask.advanced', HV, 4, 1, 1, true)
 Photoresists.generatePatterningRecipes('wafer.nickel', 'patterned.nand', 'mask.nand', HV, 4, 1, 1, true)
 Photoresists.generatePatterningRecipes('wafer.nickel', 'patterned.nor', 'mask.nor', HV, 4, 1, 2, true)
-Photoresists.generatePatterningRecipes('raw_LED_wafer', 'patterned_LED_wafer', 'mask.advanced', HV, 4, 1, 2, true)
+Photoresists.generatePatterningRecipes('raw_led_wafer', 'patterned_led_wafer', 'mask.advanced', HV, 4, 1, 2, true)
 
 Etchants.generateEtchingRecipes('patterned.ic', 'etched.ic', 'silicon', LV, 1, false)
 Etchants.generateEtchingRecipes('patterned.cpu', 'etched.cpu', 'silicon', LV, 1,false)
@@ -218,7 +218,7 @@ Etchants.generateEtchingRecipes('patterned.polysilicon', 'etched.polysilicon', '
 Etchants.generateEtchingRecipes('patterned.silicon_nitride', 'etched.silicon_nitride', 'silicon_nitride', MV, 1, true)
 Etchants.generateEtchingRecipes('patterned.nand', 'wafer.nand_memory_chip', 'nickel', MV, 1, true)
 Etchants.generateEtchingRecipes('patterned.nor', 'wafer.nor_memory_chip', 'nickel', MV, 1, true)
-Etchants.generateEtchingRecipes('patterned_LED_wafer', 'etched_LED_wafer', 'gallium_arsenide', HV, 1, true)
+Etchants.generateEtchingRecipes('patterned_led_wafer', 'etched_led_wafer', 'gallium_arsenide', HV, 1, true)
 
 ELECTROLYZER.recipeBuilder()
         .inputs(metaitem('etched.ic'))
@@ -273,7 +273,7 @@ generateCuttingRecipes('wafer.low_power_integrated_circuit', 'plate.low_power_in
 generateCuttingRecipes('wafer.power_integrated_circuit', 'plate.power_integrated_circuit', 4, EV, true)
 generateCuttingRecipes('wafer.nand_memory_chip', 'plate.nand_memory_chip', 32, HV, true)
 generateCuttingRecipes('wafer.nor_memory_chip', 'plate.nor_memory_chip', 16, HV, true)
-generateCuttingRecipes('metallized_LED_wafer', 'LED_chip', 32, HV, true)
+generateCuttingRecipes('metallized_led_wafer', 'led_chip', 32, HV, true)
 
 //PHENOLIC BOARD (TIER 2)
 
@@ -417,7 +417,7 @@ CVD.recipeBuilder()
     .fluidInputs(fluid('ammonia') * 400)
     .fluidInputs(fluid('trimethyl_indium') * 200) 
     .fluidInputs(fluid('trimethyl_gallium') * 200) 
-    .outputs(metaitem('raw_LED_wafer'))
+    .outputs(metaitem('raw_led_wafer'))
     .fluidOutputs(fluid('methane') * 1200)
     .cleanroom(CleanroomType.CLEANROOM)
     .duration(800)
@@ -426,9 +426,9 @@ CVD.recipeBuilder()
 
 //Gotta move this to a Physical Vapor Deposition machine when that's available
 CVD.recipeBuilder()
-    .inputs(metaitem('etched_LED_wafer'))
+    .inputs(metaitem('etched_led_wafer'))
     .inputs(metaitem('foilHighPurityAluminium'))
-    .outputs(metaitem('metallized_LED_wafer'))
+    .outputs(metaitem('metallized_led_wafer'))
     .cleanroom(CleanroomType.CLEANROOM)
     .duration(400)
     .EUt(VA[HV])

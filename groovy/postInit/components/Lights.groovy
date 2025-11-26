@@ -158,7 +158,7 @@ TUBE_FURNACE.recipeBuilder()
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
-    .inputs(metaitem('LED_chip') * 32)
+    .inputs(metaitem('led_chip') * 32)
     .inputs(metaitem('dustYttriumAluminiumGarnetCerium'))
     .inputs(metaitem('wireFineTin') * 8)
     .fluidInputs(fluid('glass') * 288)
