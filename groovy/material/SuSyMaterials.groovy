@@ -1014,7 +1014,7 @@ class SuSyMaterials {
     public static Material DilutedSaltpeterSolution
     public static Material HydrogenBromide
     public static Material DilutedCalciumChlorideSolution
-    public static Material DilutedRockSaltSolution
+    public static Material DilutedPotassiumChlorideSolution
     public static Material AmmoniaSolution
     public static Material SaltpeterSolution
     public static Material SaltySaltpeterSolution
