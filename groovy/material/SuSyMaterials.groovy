@@ -1620,7 +1620,7 @@ class SuSyMaterials {
     public static Material AcidicTwoNitroOneNaphthol
     public static Material TwoNitroOneNaphthol
     public static Material TwoAminoOneNaphthol
-    public static Material AcidicTwoAminoOneNaphthol
+    public static Material TwoNaphtholOneDiazoniumChloride
     public static Material Diazonaphthoquinone
 
     // HP Materials

@@ -1055,7 +1055,7 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        AcidicTwoAminoOneNaphthol = new Material.Builder(13173, SuSyUtility.susyId('acidic_two_amino_one_naphthol'))
+        TwoNaphtholOneDiazoniumChloride = new Material.Builder(13173, SuSyUtility.susyId('two_naphthol_one_diazonium_chloride'))
                 .liquid()
                 .components(TwoAminoOneNaphthol, HydrochloricAcid)
                 .colorAverage()
