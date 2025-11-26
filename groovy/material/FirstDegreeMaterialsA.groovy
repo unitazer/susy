@@ -534,7 +534,7 @@ class FirstDegreeMaterialsA {
                 .colorAverage()
                 .build()
 
-        DilutedRockSaltSolution = new Material.Builder(8164, SuSyUtility.susyId('diluted_rock_salt_solution'))
+        DilutedPotassiumChlorideSolution = new Material.Builder(8164, SuSyUtility.susyId('diluted_potassium_chloride_solution'))
                 .liquid()
                 .components(RockSalt, Water * 2)
                 .colorAverage()

@@ -121,6 +121,7 @@ class SuSyMaterials {
     public static Material Carnotite
     public static Material AlluvialPGMSand
     public static Material Bertrandite
+    public static Material Epsomite
 
     // Deposits for scanning
 
@@ -790,6 +791,22 @@ class SuSyMaterials {
     public static Material CrudeCyanamideSolution
     public static Material CyanamideSolution
     public static Material GreenEpoxyPCBCoating
+    public static Material ConcentratedSeaWater
+    public static Material SeaBittern
+    public static Material DesulfatizedSeaBittern
+    public static Material ChlorinatedSeaBittern
+    public static Material DebrominatedSeaBittern
+    public static Material DesalinatedSeaWater
+    public static Material DemagnesiatedBrine
+    public static Material DecalcifiedBrine
+    public static Material BrineMotherLiquor
+    public static Material PotassiumRichMotherLiquor
+    public static Material BromineRichMotherLiquor
+    public static Material ChlorinatedMotherLiquor
+    public static Material SalarBrine
+    public static Material DemagnesiatedSalarBrine
+    public static Material DecalcifiedSalarBrine
+    public static Material ConcentratedSalarBrine
     public static Material Pitch
     public static Material TabularAluminaRefractory
 
@@ -998,7 +1015,7 @@ class SuSyMaterials {
     public static Material DilutedSaltpeterSolution
     public static Material HydrogenBromide
     public static Material DilutedCalciumChlorideSolution
-    public static Material DilutedRockSaltSolution
+    public static Material DilutedPotassiumChlorideSolution
     public static Material AmmoniaSolution
     public static Material SaltpeterSolution
     public static Material SaltySaltpeterSolution
