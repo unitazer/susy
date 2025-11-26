@@ -1635,6 +1635,13 @@ class SuSyMaterials {
     public static Material LeadIVOxide
     public static Material AluminiumAlloy6061
     public static Material AluminiumAlloy7075
+    public static Material OneTetralone
+    public static Material OneNaphthol
+    public static Material AcidicTwoNitroOneNaphthol
+    public static Material TwoNitroOneNaphthol
+    public static Material TwoAminoOneNaphthol
+    public static Material TwoNaphtholOneDiazoniumChloride
+    public static Material Diazonaphthoquinone
 
     // HP Materials
 

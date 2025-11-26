@@ -1060,7 +1060,19 @@ class SecondDegreeMaterials {
                 .color(0xd6d1a9)
                 .build()
 
-        // FREE IDs: 13174-13177
+        AcidicTwoNitroOneNaphthol = new Material.Builder(13174, SuSyUtility.susyId('acidic_two_nitro_one_naphthol'))
+                .liquid()
+                .components(TwoNitroOneNaphthol, SulfuricAcid)
+                .colorAverage()
+                .build()
+
+        TwoNaphtholOneDiazoniumChloride = new Material.Builder(13175, SuSyUtility.susyId('two_naphthol_one_diazonium_chloride'))
+                .liquid()
+                .components(TwoAminoOneNaphthol, HydrochloricAcid)
+                .colorAverage()
+                .build()
+
+        // FREE IDs: 13176-13177
       
         YttriumAluminiumGarnetCerium = new Material.Builder(13178, SuSyUtility.susyId('yttrium_aluminium_garnet_cerium'))
                 .dust()
