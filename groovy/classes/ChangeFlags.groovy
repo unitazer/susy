@@ -68,8 +68,6 @@ class ChangeFlags {
         RecipeMaps.PYROLYSE_RECIPES.setMaxFluidInputs(2);
         SuSyRecipeMaps.RAILROAD_ENGINEERING_STATION_RECIPES.setMaxFluidInputs(3);
         SuSyRecipeMaps.RAILROAD_ENGINEERING_STATION_RECIPES.setMaxInputs(12);
-        SuSyRecipeMaps.CLARIFIER.setMaxFluidInputs(2);
-        SuSyRecipeMaps.MULTI_STAGE_FLASH_DISTILLATION.setMaxInputs(1);
 
         // Properties
 
