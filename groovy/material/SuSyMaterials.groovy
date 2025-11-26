@@ -738,7 +738,7 @@ class SuSyMaterials {
     public static Material BasicBerylliumCarbonateSlurry
     public static Material BasicBerylliumCarbonateSolution
     public static Material HydraulicFluid
-    public static Material HighAluminaRefractory
+    public static Material SyntheticMulliteRefractory
     public static Material ImpurePPOSolution
     public static Material PolyphosphoricAcid
     public static Material SupportedPolyphosphoricAcid
@@ -807,7 +807,8 @@ class SuSyMaterials {
     public static Material DemagnesiatedSalarBrine
     public static Material DecalcifiedSalarBrine
     public static Material ConcentratedSalarBrine
-
+    public static Material Pitch
+    public static Material TabularAluminaRefractory
 
     // Petrochem Materials
 
@@ -1284,6 +1285,7 @@ class SuSyMaterials {
     public static Material SamariumAlloyMagnetic
     public static Material ChloroaceticAnhydride
     public static Material CopperIINitrate
+    public static Material CopperIINitrateSolution
     public static Material NickelIINitrate
     public static Material ZincNitrate
     public static Material MagnesiumNitrate
@@ -1864,7 +1866,8 @@ class SuSyMaterials {
     public static Material StabilizedSodiumSilicateSolution
     public static Material MagnesiumNitrateSolution
     public static Material PlatinumOnCarbon
-
+    public static Material TabularAlumina
+    public static Material ReactiveAlumina
 
     // Organic Chemistry Materials
 
@@ -2583,6 +2586,13 @@ class SuSyMaterials {
     public static Material TritiatedHeavyWater
     public static Material TritiatedSteam
     public static Material ChilledWater
+    public static Material HalophosphatePhosphor
+    public static Material HalophosphatePhosphorSolution
+    public static Material TrimethylGalliumSolution
+    public static Material TrimethylIndiumSolution
+    public static Material TrimethylGallium
+    public static Material TrimethylIndium
+    public static Material YttriumAluminiumGarnetCerium
 
 
     public static void changeFormulas() {
