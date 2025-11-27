@@ -18,7 +18,7 @@ import static gregtech.api.GTValues.*
     FIXED_BR.recipeBuilder()
         .notConsumable(ore('catalystBedSupportedPalladium'))
         .fluidInputs(fluid('one_tetralone') * 1000)
-        .fluidOutputs(fluid('one_naphthol') * 1000)
+        .outputs(metaitem('dustOneNaphthol'))
         .fluidOutputs(fluid('hydrogen') * 2000)
         .duration(100)
         .EUt(VA[MV])
@@ -26,7 +26,7 @@ import static gregtech.api.GTValues.*
 
     BR.recipeBuilder()
         .fluidInputs(fluid('nitration_mixture') * 2000)
-        .fluidInputs(fluid('one_naphthol') * 1000)
+        .inputs(metaitem('dustOneNaphthol'))
         .outputs(metaitem('dustTwoNitroOneNaphthol'))
         .fluidOutputs(fluid('sulfuric_acid') * 1000)
         .duration(80)
