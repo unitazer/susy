@@ -3282,6 +3282,6 @@ class OrganicChemistryMaterials {
                 .components(Indium * 1, Carbon * 3, Hydrogen * 9)
                 .color(0x7c60d6)
                 .build()
-        TrimethylIndium.setFormula('Ga(CH3)3', true)
+        TrimethylIndium.setFormula('In(CH3)3', true)
     }
 }
