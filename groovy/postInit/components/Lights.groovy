@@ -4,15 +4,6 @@ import static gregtech.api.GTValues.*
 
 
 
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('cableGtSingleTin') * 2)
-    .inputs(metaitem('graphite_electrode'))
-    .inputs(metaitem('component.glass.tube') * 1)
-    .outputs(metaitem('carbon_arc_lamp') * 1)
-    .duration(100)
-    .EUt(VA[LV])
-    .buildAndRegister();
-
 ROASTER.recipeBuilder()
     .inputs(item('minecraft:string') * 4)
     .inputs(metaitem('wireGtSingleCopper') * 2)

@@ -3957,6 +3957,7 @@ VACUUM_DT.recipeBuilder()
     .fluidOutputs(fluid('toluene') * 1000)
     .EUt(VA[MV])
     .duration(1000)
+    .buildAndRegister();
 
 CSTR.recipeBuilder()
     .notConsumable(fluid('sulfuric_acid') * 1000)
