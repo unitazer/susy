@@ -3256,7 +3256,7 @@ class OrganicChemistryMaterials {
                 .color(0x2dad80)
                 .build()
 
-        TrimethylGalliumSolution = new Material.Builder(13174, SuSyUtility.susyId('trimethyl_gallium_solution'))
+        TrimethylGalliumSolution = new Material.Builder(15512, SuSyUtility.susyId('trimethyl_gallium_solution'))
                 .liquid()
                 .components(Gallium * 1, Carbon * 3, Hydrogen * 9, Toluene * 1)
                 .color(0x424242)
@@ -3264,7 +3264,7 @@ class OrganicChemistryMaterials {
 
         TrimethylGalliumSolution.setFormula('Ga(CH3)33(C6H5CH3)', true)
 
-        TrimethylIndiumSolution = new Material.Builder(13175, SuSyUtility.susyId('trimethyl_indium_solution'))
+        TrimethylIndiumSolution = new Material.Builder(15513, SuSyUtility.susyId('trimethyl_indium_solution'))
                 .liquid()
                 .components(Indium * 1, Carbon * 3, Hydrogen * 9, Toluene * 1)
                 .color(0x3b2f61)
@@ -3272,7 +3272,7 @@ class OrganicChemistryMaterials {
 
         TrimethylIndiumSolution.setFormula('In(CH3)3(C6H5CH3)', true)
 
-        TrimethylGallium = new Material.Builder(13176, SuSyUtility.susyId('trimethyl_gallium'))
+        TrimethylGallium = new Material.Builder(15514, SuSyUtility.susyId('trimethyl_gallium'))
                 .liquid()
                 .components(Gallium * 1, Carbon * 3, Hydrogen * 9)
                 .color(0xb3bab7)
@@ -3280,7 +3280,7 @@ class OrganicChemistryMaterials {
 
         TrimethylGallium.setFormula('Ga(CH3)3', true)
 
-        TrimethylIndium = new Material.Builder(13177, SuSyUtility.susyId('trimethyl_indium'))
+        TrimethylIndium = new Material.Builder(15515, SuSyUtility.susyId('trimethyl_indium'))
                 .liquid()
                 .components(Indium * 1, Carbon * 3, Hydrogen * 9)
                 .color(0x7c60d6)
@@ -3288,37 +3288,37 @@ class OrganicChemistryMaterials {
                 
         TrimethylIndium.setFormula('In(CH3)3', true)
 
-        OneTetralone = new Material.Builder(13178, SuSyUtility.susyId('one_tetralone'))
+        OneTetralone = new Material.Builder(15516, SuSyUtility.susyId('one_tetralone'))
                 .liquid()
                 .components(Carbon * 10, Hydrogen * 10, Oxygen)
                 .colorAverage()
                 .build()
 
-        OneNaphthol = new Material.Builder(13179, SuSyUtility.susyId('one_naphthol'))
+        OneNaphthol = new Material.Builder(15517, SuSyUtility.susyId('one_naphthol'))
                 .dust()
                 .components(Carbon * 10, Hydrogen * 8, Oxygen)
                 .colorAverage()
                 .build()
 
-        TwoNitroOneNaphthol = new Material.Builder(13180, SuSyUtility.susyId('two_nitro_one_naphthol'))
+        TwoNitroOneNaphthol = new Material.Builder(15518, SuSyUtility.susyId('two_nitro_one_naphthol'))
                 .dust()
                 .components(Carbon * 10, Hydrogen * 7, Oxygen * 3, Nitrogen)
                 .colorAverage()
                 .build()
 
-        TwoAminoOneNaphthol = new Material.Builder(13181, SuSyUtility.susyId('two_amino_one_naphthol'))
+        TwoAminoOneNaphthol = new Material.Builder(15519, SuSyUtility.susyId('two_amino_one_naphthol'))
                 .dust()
                 .components(Carbon * 10, Hydrogen * 9, Oxygen, Nitrogen)
                 .colorAverage()
                 .build()
 
-        OneNaphtholTwoDiazoniumChloride = new Material.Builder(13182, SuSyUtility.susyId('one_naphthol_two_diazonium_chloride'))
+        OneNaphtholTwoDiazoniumChloride = new Material.Builder(15520, SuSyUtility.susyId('one_naphthol_two_diazonium_chloride'))
                 .dust()
                 .components(Carbon * 10, Hydrogen * 7, Oxygen, Nitrogen * 2, Chlorine)
                 .colorAverage()
                 .build()
 
-        Diazonaphthoquinone = new Material.Builder(13183, SuSyUtility.susyId('diazonaphthoquinone'))
+        Diazonaphthoquinone = new Material.Builder(15521, SuSyUtility.susyId('diazonaphthoquinone'))
                 .dust()
                 .components(Carbon * 10, Hydrogen * 6, Oxygen, Nitrogen * 2)
                 .colorAverage()

@@ -2382,6 +2382,7 @@ class SuSyMaterials {
     public static Material OneNaphthol
     public static Material TwoNitroOneNaphthol
     public static Material TwoAminoOneNaphthol
+    public static Material OneNaphtholTwoDiazoniumChloride
     public static Material Diazonaphthoquinone
 
     // Third Degree Materials

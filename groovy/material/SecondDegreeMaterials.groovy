@@ -1084,17 +1084,5 @@ class SecondDegreeMaterials {
                 .components(CopperIINitrate, Water)
                 .colorAverage()
                 .build()
-
-        AcidicTwoNitroOneNaphthol = new Material.Builder(13182, SuSyUtility.susyId('acidic_two_nitro_one_naphthol'))
-                .liquid()
-                .components(TwoNitroOneNaphthol, SulfuricAcid)
-                .colorAverage()
-                .build()
-
-        TwoNaphtholOneDiazoniumChloride = new Material.Builder(13183, SuSyUtility.susyId('two_naphthol_one_diazonium_chloride'))
-                .liquid()
-                .components(TwoAminoOneNaphthol, HydrochloricAcid)
-                .colorAverage()
-                .build()
     }
 }
