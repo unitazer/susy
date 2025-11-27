@@ -3261,6 +3261,7 @@ class OrganicChemistryMaterials {
                 .components(Gallium * 1, Carbon * 3, Hydrogen * 9, Toluene * 1)
                 .color(0x424242)
                 .build()
+
         TrimethylGalliumSolution.setFormula('Ga(CH3)33(C6H5CH3)', true)
 
         TrimethylIndiumSolution = new Material.Builder(13175, SuSyUtility.susyId('trimethyl_indium_solution'))
@@ -3268,6 +3269,7 @@ class OrganicChemistryMaterials {
                 .components(Indium * 1, Carbon * 3, Hydrogen * 9, Toluene * 1)
                 .color(0x3b2f61)
                 .build()
+
         TrimethylIndiumSolution.setFormula('In(CH3)3(C6H5CH3)', true)
 
         TrimethylGallium = new Material.Builder(13176, SuSyUtility.susyId('trimethyl_gallium'))
@@ -3275,6 +3277,7 @@ class OrganicChemistryMaterials {
                 .components(Gallium * 1, Carbon * 3, Hydrogen * 9)
                 .color(0xb3bab7)
                 .build()
+
         TrimethylGallium.setFormula('Ga(CH3)3', true)
 
         TrimethylIndium = new Material.Builder(13177, SuSyUtility.susyId('trimethyl_indium'))
@@ -3282,6 +3285,43 @@ class OrganicChemistryMaterials {
                 .components(Indium * 1, Carbon * 3, Hydrogen * 9)
                 .color(0x7c60d6)
                 .build()
+                
         TrimethylIndium.setFormula('In(CH3)3', true)
+
+        OneTetralone = new Material.Builder(13178, SuSyUtility.susyId('one_tetralone'))
+                .liquid()
+                .components(Carbon * 10, Hydrogen * 10, Oxygen)
+                .colorAverage()
+                .build()
+
+        OneNaphthol = new Material.Builder(13179, SuSyUtility.susyId('one_naphthol'))
+                .dust()
+                .components(Carbon * 10, Hydrogen * 8, Oxygen)
+                .colorAverage()
+                .build()
+
+        TwoNitroOneNaphthol = new Material.Builder(13180, SuSyUtility.susyId('two_nitro_one_naphthol'))
+                .dust()
+                .components(Carbon * 10, Hydrogen * 7, Oxygen * 3, Nitrogen)
+                .colorAverage()
+                .build()
+
+        TwoAminoOneNaphthol = new Material.Builder(13181, SuSyUtility.susyId('two_amino_one_naphthol'))
+                .dust()
+                .components(Carbon * 10, Hydrogen * 9, Oxygen, Nitrogen)
+                .colorAverage()
+                .build()
+
+        OneNaphtholTwoDiazoniumChloride = new Material.Builder(13182, SuSyUtility.susyId('one_naphthol_two_diazonium_chloride'))
+                .dust()
+                .components(Carbon * 10, Hydrogen * 7, Oxygen, Nitrogen * 2, Chlorine)
+                .colorAverage()
+                .build()
+
+        Diazonaphthoquinone = new Material.Builder(13183, SuSyUtility.susyId('diazonaphthoquinone'))
+                .dust()
+                .components(Carbon * 10, Hydrogen * 6, Oxygen, Nitrogen * 2)
+                .colorAverage()
+                .build()
     }
 }

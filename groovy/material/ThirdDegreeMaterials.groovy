@@ -887,5 +887,25 @@ class ThirdDegreeMaterials {
                 .components(TetrasodiumEthylenediaminetetraacetate, Water)
                 .colorAverage()
                 .build()
+
+        OneNaphtholTwoDiazoniumChlorideSolution = new Material.Builder(24144, SuSyUtility.susyId('one_naphthol_two_diazonium_chloride_solution'))
+                .liquid()
+                .components(Carbon * 10, Hydrogen * 8, Oxygen, Nitrogen * 2, Chlorine, Salt, Water * 4)
+                .colorAverage()
+                .build()
+
+        OneNaphtholTwoDiazoniumChlorideSolution.setFormula('(C10H8ON2Cl)(NaCl)(H2O)4', true)
+
+        BenzenediazoniumChlorideSolution = new Material.Builder(24145, SuSyUtility.susyId('benzenediazonium_chloride_solution'))
+                .liquid()
+                .components(BenzenediazoniumChloride, Salt, Water * 4)
+                .colorAverage()
+                .build()
+        
+        BenzenediazoniumFluorideSolution = new Material.Builder(24146, SuSyUtility.susyId('benzenediazonium_fluoride_solution'))
+                .liquid()
+                .components(BenzenediazoniumFluoride, SodiumFluoride, Water * 4)
+                .colorAverage()
+                .build()
     }
 }

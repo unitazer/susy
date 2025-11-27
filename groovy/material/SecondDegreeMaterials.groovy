@@ -1060,7 +1060,7 @@ class SecondDegreeMaterials {
                 .color(0xd6d1a9)
                 .build()
 
-        // 13174-13177 Moved elsewhere
+        // FREE IDs: 13174-13177
       
         YttriumAluminiumGarnetCerium = new Material.Builder(13178, SuSyUtility.susyId('yttrium_aluminium_garnet_cerium'))
                 .dust()
