@@ -2661,6 +2661,7 @@ susy.material.trimethyl_indium_solution=Trimethylindium Solution
 susy.material.trimethyl_gallium=Trimethylgallium
 susy.material.trimethyl_indium=Trimethylindium
 susy.material.yttrium_aluminium_garnet_cerium=Ce-Doped Yttrium Aluminium Garnet
+susy.material.delithiated_salar_brine=Delithiated Salar Brine
 
 # Isotopes
 

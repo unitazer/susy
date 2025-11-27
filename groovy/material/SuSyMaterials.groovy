@@ -809,6 +809,7 @@ class SuSyMaterials {
     public static Material ConcentratedSalarBrine
     public static Material Pitch
     public static Material TabularAluminaRefractory
+    public static Material DelithiatedSalarBrine
 
     // Petrochem Materials
 
