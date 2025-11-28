@@ -550,7 +550,23 @@ for (i = 1; i <= 8; i++) {
     ])
 }
 
-// Pressure Swing Adsorber
+//Electric Resistance Furnace
+
+RecyclingHelper.replaceShaped("gregtech:electric_blast_furnace", metaitem('electric_blast_furnace'), [
+        [item('gregtech:metal_casing', 2), item('gregtech:metal_casing', 2), item('gregtech:metal_casing', 2)],
+        [circuits[1], hulls[1], circuits[1]],
+        [tieredCables[1], circuits[1], tieredCables[1]]
+])
+
+//Multi Smelter
+
+RecyclingHelper.replaceShaped("gregtech:multi_furnace", metaitem('multi_furnace'), [
+        [item('gregtech:metal_casing', 2), item('gregtech:metal_casing', 2), item('gregtech:metal_casing', 2)],
+        [circuits[2], hulls[2], circuits[2]],
+        [tieredCables[2], circuits[2], tieredCables[2]]
+])
+
+//Pressure Swing Adsorber
 
 RecyclingHelper.addShaped("gregtech:pressure_swing_adsorber", metaitem('susy:pressure_swing_adsorber'), [
     [metaitem('pipeLargeFluidAluminium'), motors[2], metaitem('pipeLargeFluidAluminium')],
