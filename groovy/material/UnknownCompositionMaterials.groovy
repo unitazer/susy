@@ -3297,5 +3297,10 @@ class UnknownCompositionMaterials {
                 .flags(NO_UNIFICATION)
                 .color(0xe7ddcd)
                 .build()
+
+        DelithiatedSalarBrine = new Material.Builder(4717, SuSyUtility.susyId('delithiated_salar_brine'))
+                .liquid()
+                .color(0xd4b97a)
+                .build()
     }
 }

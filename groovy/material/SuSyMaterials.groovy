@@ -809,6 +809,7 @@ class SuSyMaterials {
     public static Material ConcentratedSalarBrine
     public static Material Pitch
     public static Material TabularAluminaRefractory
+    public static Material DelithiatedSalarBrine
 
     // Petrochem Materials
 
@@ -1635,13 +1636,6 @@ class SuSyMaterials {
     public static Material LeadIVOxide
     public static Material AluminiumAlloy6061
     public static Material AluminiumAlloy7075
-    public static Material OneTetralone
-    public static Material OneNaphthol
-    public static Material AcidicTwoNitroOneNaphthol
-    public static Material TwoNitroOneNaphthol
-    public static Material TwoAminoOneNaphthol
-    public static Material TwoNaphtholOneDiazoniumChloride
-    public static Material Diazonaphthoquinone
 
     // HP Materials
 
@@ -2385,6 +2379,12 @@ class SuSyMaterials {
     public static Material Tetrahydrobenzaldehyde
     public static Material PeraceticAcidSolution
     public static Material EpoxycyclohexaneCarboxylate
+    public static Material OneTetralone
+    public static Material OneNaphthol
+    public static Material TwoNitroOneNaphthol
+    public static Material TwoAminoOneNaphthol
+    public static Material OneNaphtholTwoDiazoniumChloride
+    public static Material Diazonaphthoquinone
 
     // Third Degree Materials
 
@@ -2530,6 +2530,9 @@ class SuSyMaterials {
     public static Material CrudeTrimethylOrthoformate
     public static Material CrudeMethylVinylEther
     public static Material TetrasodiumEthylenediaminetetraacetateSolution
+    public static Material OneNaphtholTwoDiazoniumChlorideSolution
+    public static Material BenzenediazoniumChlorideSolution
+    public static Material BenzenediazoniumFluorideSolution
 
     // Thermodynamics Materials
 

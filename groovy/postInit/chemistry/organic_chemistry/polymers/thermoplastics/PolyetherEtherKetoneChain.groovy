@@ -5,9 +5,18 @@ import static gregtech.api.GTValues.*
 BR.recipeBuilder()
     .inputs(ore('dustSodiumNitrite') * 4)
     .fluidInputs(fluid('gtfo_aniline') * 1000)
-    .fluidInputs(fluid('hydrogen_fluoride') * 2000)
+    .fluidInputs(fluid('hydrofluoric_acid') * 2000)
+    .fluidOutputs(fluid('benzenediazonium_fluoride_solution') * 4000)
+    .duration(120)
+    .EUt(VA[MV])
+    .buildAndRegister();
+
+CRYSTALLIZER.recipeBuilder()
+    .inputs(metaitem('springNichrome'))
+    .fluidInputs(fluid('benzenediazonium_fluoride_solution') * 4000)
     .outputs(metaitem('dustBenzenediazoniumFluoride') * 14)
-    .fluidOutputs(fluid('diluted_sodium_fluoride_solution') * 2000)
+    .fluidOutputs(fluid('sodium_fluoride_solution') * 1000)
+    .fluidOutputs(fluid('dense_steam') * 3000)
     .duration(120)
     .EUt(VA[MV])
     .buildAndRegister();
