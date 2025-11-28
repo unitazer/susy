@@ -1,4 +1,10 @@
- # UPDATE 0.1.15.11
+# UPDATE 0.1.15.11.1
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.84 → v0.1.85
+## Changes
+This fixes the ERF recipe, the brine treatment lines, and the DNQ line, thanks to planetme, trainvoi, and Fiery.
+# UPDATE 0.1.15.11
 ## Mod Changes
 ### Mod Updates
 - SusyCore v0.1.82 → v0.1.84
