@@ -3274,9 +3274,9 @@ metaitem.parachute.drogue.name=Drogue Parachute
 metaitem.parachute.main.name=Subsonic Main Parachute
 metaitem.parachute.supersonic_main.name=Supersonic Disk-Gap-Band Parachute
 
-metaitem.coated_copper_coil.name=Ceramic-Coated Copper Tubing
-metaitem.cured_coated_coil.name=Cured Ceramic-Coated Copper Tubing
-metaitem.induction_coil.name=Induction Coil
+metaitem.coated_copper_coil.name=Ceramic-Coated Copper Coil
+metaitem.cured_coated_coil.name=Cured Ceramic-Coated Copper Coil
+metaitem.copper_coil.name=Copper Coil
 
 metaitem.carbon_filament.name=Carbon Filament
 metaitem.gallium_nitride_buffer_wafer.name=Gallium Nitride Buffer Wafer
