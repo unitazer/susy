@@ -93,7 +93,7 @@ susy.material.butyllithium=n-Butyllithium
 susy.material.diluted_butyllithium=Diluted n-Butyllithium
 susy.material.polymerized_styrene_butadiene_solution=Polymerized Styrene Butadiene Solution
 susy.material.diluted_calcium_chloride_solution=Diluted Calcium Chloride Solution
-susy.material.diluted_rock_salt_solution=Diluted Rock Salt Solution
+susy.material.diluted_potassium_chloride_solution=Diluted Potassium Chloride Solution
 susy.material.diluted_potassium_carbonate_solution=Diluted Potassium Carbonate Solution
 susy.material.potassium_hydroxide_solution=Potassium Hydroxide Solution
 susy.material.calcium_hydroxide_slurry=Calcium Hydroxide Slurry
@@ -122,6 +122,7 @@ susy.material.acidic_chloronitrobenzene_mixture=Acidic Chloronitrobenzene Mixtur
 susy.material.mixed_dichlorobenzene_solution=Mixed Dichlorobenzene Solution
 susy.material.two_butanol_solution=2-Butanol Solution
 susy.material.DilutedSodiumCarbonateSolution=Diluted Sodium Carbonate Solution
+susy.material.green_epoxy_pcb_coating=Green Epoxy PCB Coating
 susy.material.four_nitrophenol=4-Nitrophenol
 susy.material.four_aminophenol_solution=4-Aminophenol Solution
 susy.material.four_aminophenol=4-Aminophenol
@@ -205,6 +206,27 @@ susy.material.basic_beryllium_carbonate_solution=Basic Beryllium Carbonate Solut
 susy.material.purified_beryllium_hydroxide=Purified Beryllium Hydroxide
 susy.material.purified_beryllium_oxide=Purified Beryllium Oxide
 susy.material.purified_beryllium_chloride=Purified Beryllium Chloride
+
+susy.material.aniline=Aniline
+susy.material.acetanilide=Acetanilide
+susy.material.n_acetylsulfanilyl_chloride=N-Acetylsulfanilyl Chloride
+susy.material.guanidinium_nitrate=Guanidinium Nitrate
+susy.material.tetramethoxypropane=Tetramethoxypropane
+susy.material.trimethyl_orthoformate=Trimethyl Orthoformate
+susy.material.methyl_vinyl_ether=Methyl Vinyl Ether
+susy.material.two_aminopyrimidine=2-Aminopyrimidine
+susy.material.sodium_sulfadiazine=Sodium Sulfadiazine
+susy.material.silver_nitrate=Silver Nitrate
+susy.material.silver_sulfadiazine=Silver Sulfadiazine
+susy.material.dicyanamide=Dicyanamide
+susy.material.potassium_methoxide=Potassium Methoxide
+susy.material.acetanilide_solution=Acetanilide Solution
+susy.material.cyanamide_slurry=Cyanamide Slurry
+susy.material.crude_cyanamide_solution=Crude Cyanamide Solution
+susy.material.cyanamide_solution=Cyanamide Solution
+susy.material.guanidinium_nitrate_solution=Guanidinium Nitrate Solution
+susy.material.crude_trimethyl_orthoformate=Crude Trimethyl Orthoformate
+susy.material.crude_methyl_vinyl_ether=Crude Methyl Vinyl Ether
 
 # Solids
 
@@ -1256,6 +1278,7 @@ susy.material.crosslinked_polystyrene=Crosslinked Polystyrene-Divinylbenzene
 susy.material.chloroacetic_anhydride=Chloroacetic Anhydride
 susy.material.alfol_trialkylaluminium_mixture=Alfol Trialkylaluminium Mixture
 susy.material.copper_ii_nitrate=Copper II Nitrate
+susy.material.copper_ii_nitrate_solution=Copper II Nitrate Solution
 susy.material.nickel_ii_nitrate=Nickel II Nitrate
 susy.material.zinc_nitrate=Zinc Nitrate
 susy.material.magnesium_nitrate=Magnesium Nitrate
@@ -2159,7 +2182,6 @@ susy.material.rp_one=RP-1
 susy.material.ammonium_metatungstate=Ammonium Metatungstate (AMT)
 susy.material.clarified_slurry_oil=Clarified Slurry Oil
 susy.material.pyrolysis_raffinate=Pyrolysis Raffinate
-susy.material.carbon_black=Carbon Black
 susy.material.compounded_polyisoprene=Compounded Polyisoprene
 susy.material.compounded_styrene_isoprene_rubber=Compounded Styrene Isoprene Rubber
 susy.material.compounded_styrene_butadiene_rubber=Compounded Styrene Butadiene Rubber
@@ -2526,7 +2548,7 @@ susy.material.very_diluted_calcium_chloride_solution=Very Diluted Calcium Chlori
 susy.material.reactor_steel=Reactor Steel
 susy.material.inconel_718=Inconel 718
 susy.material.silver_indium_cadmium=Silver-Indium-Cadmium Alloy
-susy.material.high_alumina_refractory=High Alumina Refractory
+susy.material.synthetic_mullite_refractory=Synthetic Mullite Refractory
 susy.material.mullitized_kyanite=Mullitized Kyanite
 susy.material.nimonic_105=Nimonic 105
 susy.material.vinylidene_fluoride_surfactant_mixture=Vinylidene Fluoride Surfactant Mixture
@@ -2624,6 +2646,22 @@ susy.material.perfluorovinyl_sulfonyl_ether_solution=Perfluorovinyl Sulfonyl Eth
 susy.material.nafion_solution=Nafion Solution
 susy.material.partially_deionized_water=Partially Deionized Water
 susy.material.stabilized_sodium_silicate_solution=Stabilized Sodium Silicate Solution
+susy.material.one_tetralone=1-Tetralone
+susy.material.one_naphthol=1-Naphthol
+susy.material.two_nitro_one_naphthol=2-Nitro-1-Naphthol
+susy.material.two_amino_one_naphthol=2-Amino-1-Naphthol
+susy.material.one_naphthol_two_diazonium_chloride_solution=1-Naphthol-2-Diazonium Chloride Solution
+susy.material.diazonaphthoquinone=Diazonaphthoquinone (DNQ)
+susy.material.benzenediazonium_chloride_solution=Benzenediazonium Chloride Solution
+susy.material.benzenediazonium_fluoride_solution=Benzenediazonium Fluoride Solution
+susy.material.halophosphate_phosphor=Halophosphate Phosphor
+susy.material.halophosphate_phosphor_solution=Halophosphate Phosphor Solution
+susy.material.trimethyl_gallium_solution=Trimethylgallium Solution
+susy.material.trimethyl_indium_solution=Trimethylindium Solution
+susy.material.trimethyl_gallium=Trimethylgallium
+susy.material.trimethyl_indium=Trimethylindium
+susy.material.yttrium_aluminium_garnet_cerium=Ce-Doped Yttrium Aluminium Garnet
+susy.material.delithiated_salar_brine=Delithiated Salar Brine
 
 # Isotopes
 
@@ -2709,11 +2747,33 @@ susy.material.ceramic_coating_slurry=Ceramic-Coating Slurry
 susy.material.sodium_carboxymethyl_cellulose=Sodium Carboxymethyl Cellulose (CMC)
 susy.material.sodium_cmc_suspension=Sodium CMC Suspension
 susy.material.cmc_waste=CMC Waste
+susy.material.tetrahydrobenzaldehyde=Tetrahydrobenzaldehyde
+susy.material.peracetic_acid_solution=Peracetic Acid Solution
+susy.material.epoxycyclohexane_carboxylate=3,4-Epoxycyclohexylmethyl-3',4'-Epoxycyclohexane Carboxylate (ECC)
+susy.material.tetrasodium_ethylenediaminetetraacetate_solution=Tetrasodium EDTA Solution
 susy.material.resol_resin_infiltrant=Resol Resin Infiltrant
 susy.material.resol_resin_mixture=Resol Resin Mixture
-metaitem.carbon.mesh.phenolic.moist.name=Moist Phenolic Carbon Mesh
-metaitem.carbon.mesh.phenolic.treated.name=Treated Phenolic Carbon Mesh
-metaitem.carbon.tile.phenolic.treated.name=Treated Phenolic Carbon Tile
+susy.material.concentrated_sea_water=Concentrated Sea Water
+susy.material.sea_bittern=Sea Bittern
+susy.material.desulfatized_sea_bittern=Desulfatized Sea Bittern
+susy.material.chlorinated_sea_bittern=Chlorinated Sea Bittern
+susy.material.debrominated_sea_bittern=Debrominated Sea Bittern
+susy.material.desalinated_sea_water=Desalinated Sea Water
+susy.material.demagnesiated_brine=Demagnesiated Brine
+susy.material.decalcified_brine=Decalcified Brine
+susy.material.brine_mother_liquor=Brine Mother Liquor
+susy.material.potassium_rich_mother_liquor=Potassium Rich Mother Liquor
+susy.material.bromine_rich_mother_liquor=Bromine Rich Mother Liquor
+susy.material.chlorinated_mother_liquor=Chlorinated Mother Liquor
+susy.material.salar_brine=Salar Brine
+susy.material.demagnesiated_salar_brine=Demagnesiated Salar Brine
+susy.material.decalcified_salar_brine=Decalcified Salar Brine
+susy.material.concentrated_salar_brine=Concentrated Salar Brine
+susy.material.epsomite=Epsomite
+susy.material.pitch=Pitch
+susy.material.tabular_alumina=Tabular Alumina
+susy.material.reactive_alumina=Reactive Alumina
+susy.material.tabular_alumina_refractory=Tabular Alumina Refractory
 
 # Isotopes
 
@@ -2927,9 +2987,20 @@ metaitem.cracking_catalyst.name=Cracking Catalyst
 metaitem.hydrocracking_catalyst.name=Hydrocracking Catalyst
 metaitem.red_mud_slag.name=Red Mud Slag
 metaitem.leached_red_mud_slag.name=Leached Red Mud Slag
-metaitem.pitch_binder.name=Pitch Binder
-metaitem.raw_electrode.name=Raw Electrode
+metaitem.carbon_paste.name=Carbon Paste
+metaitem.raw_electrode.name=Unfired Carbon Electrode
+metaitem.carbon_electrode.name=Carbon Electrode
 metaitem.graphite_electrode.name=Graphite Electrode
+
+metaitem.raw_carbon_crucible.name=Unfired Carbon Crucible
+metaitem.carbon_crucible.name=Carbon Crucible
+metaitem.clay_graphite_paste.name=Clay-Graphite Paste
+metaitem.raw_clay_graphite_crucible.name=Unfired Clay-Graphite Crucible
+metaitem.clay_graphite_crucible.name=Clay-Graphite Crucible
+
+metaitem.hot_cac_clinker.name=Hot Calcium Aluminate Cement Clinker
+metaitem.cac_clinker.name=Calcium Aluminate Cement Clinker
+metaitem.cac_dust.name=Calcium Aluminate Cement Dust
 
 metaitem.rydberg_atom_array.name=Rydberg Atom Array
 metaitem.malted_grain.name=Malted Grain
@@ -3127,7 +3198,6 @@ metaitem.sponge.rhodium.name=Rhodium Sponge
 metaitem.drone.lv.name=Basic Drone
 
 metaitem.glass_fibers.name=Glass Fibers
-metaitem.epoxy_lamina.name=Epoxy Lamina
 metaitem.stem.cotton.name=Cotton Stem
 metaitem.spinneret.name=Spinneret
 
@@ -3136,6 +3206,7 @@ metaitem.engine.spark_plug.iridium.name=Iridium-Tipped Spark Plug
 metaitem.engine.piston.name=Piston
 metaitem.engine.crankshaft.name=Crankshaft
 metaitem.sintered_alumina.insulator.name=Sintered Alumina Insulator
+metaitem.titanium_cylinder.name=Titanium Cylinder
 
 metaitem.rubylith.name=Rubylith
 metaitem.rubylith_film.name=Rubylith Film
@@ -3174,6 +3245,19 @@ metaitem.brush.unfired.name=Unfired Brush
 metaitem.work_roll.unfinished.name=Unfinished Work Roll
 metaitem.nozzle.boron_nitride.name=Boron Nitride Nozzle
 
+metaitem.board.epoxy.prepreg.name=FR-4 Epoxy Prepreg
+metaitem.board.epoxy.copper_clad.name=FR-4 Copper Clad Laminate
+metaitem.board.epoxy.patterned.name=Patterned FR-4 Circuit Board
+metaitem.board.epoxy.etched.name=Etched FR-4 Circuit Board
+metaitem.board.epoxy.drilled.name=Drilled FR-4 Circuit Board
+metaitem.board.epoxy.electroless.name=Electroless Plated FR-4 Circuit Board
+metaitem.board.epoxy.electrolytic.name=Electrolytic Plated FR-4 Circuit Board
+metaitem.board.epoxy.wet_masked.name=Wet Masked FR-4 Circuit Board
+metaitem.board.epoxy.masked.name=Masked FR-4 Circuit Board
+metaitem.board.epoxy.mask_affixed.name=Mask-Affixed FR-4 Circuit Board
+metaitem.circuit_board.fr4.name=Advanced Circuit Board
+metaitem.circuit_board.fr4.tooltip=An Advanced Circuit Board/nDouble-sided FR-4 Printed Circuit Board
+
 metaitem.fiber.oxidized_polyacrylonitrile.name=Oxidized Polyacrylonitrile Fiber
 metaitem.carbon.mesh.treated.name=Treated Carbon Mesh
 metaitem.proton_exchange_membrane_fuel_cell.name=Proton Exchange Membrane Fuel Cell (PEMFC)
@@ -3193,6 +3277,21 @@ metaitem.parachute.supersonic_main.name=Supersonic Disk-Gap-Band Parachute
 metaitem.coated_copper_coil.name=Ceramic-Coated Copper Tubing
 metaitem.cured_coated_coil.name=Cured Ceramic-Coated Copper Tubing
 metaitem.induction_coil.name=Induction Coil
+
+metaitem.carbon_filament.name=Carbon Filament
+metaitem.gallium_nitride_buffer_wafer.name=Gallium Nitride Buffer Wafer
+metaitem.raw_led_wafer.name=Raw LED Wafer
+metaitem.patterned_led_wafer.name=Patterned LED Wafer
+metaitem.etched_led_wafer.name=Etched LED Wafer
+metaitem.metallized_led_wafer.name=Metallized LED Wafer
+metaitem.led_chip.name=LED Chip
+metaitem.fused_quartz_bulb.name=Fused Quartz Bulb
+metaitem.lamp.mercury.hp.unfilled.name=Unfilled Mercury Vapor Lamp
+metaitem.lamp.mercury.hp.name=High Pressure Mercury Vapor Lamp
+metaitem.lamp.mercury.lp.name=Ultraviolet Mercury Vapor Lamp
+metaitem.carbon.mesh.phenolic.moist.name=Moist Phenolic Carbon Mesh
+metaitem.carbon.mesh.phenolic.treated.name=Treated Phenolic Carbon Mesh
+metaitem.carbon.tile.phenolic.treated.name=Treated Phenolic Carbon Tile
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
@@ -3243,8 +3342,11 @@ item.susy.material.kevlar.plate=Woven Kevlar
 item.gregtech.material.polytetrafluoroethylene.fiber=Expanded Polytetrafluoroethylene Fiber
 item.gregtech.material.polytetrafluoroethylene.thread=Expanded Polytetrafluoroethylene Thread
 gregtech.material.chrome=Chromium
+gregtech.material.carbon=Carbon Black
 gregtech.material.cupric_oxide=Copper II Oxide
 gregtech.material.polycaprolactam=Polycaprolactam (Nylon-6)
+gregtech.material.potash=Potassium Oxide
+gregtech.material.rock_salt=Sylvite
 
 # Resin Logs
 susy.block_group_members.extractable_logs_1.name=Birch, Jungle, Oak, and Spruce Log
@@ -3290,7 +3392,7 @@ recipe.mud=Acquire mud with the primitive mud pump./nThe easiest way to automate
 recipe.refrigeration=Carbon dioxide is the simplest refrigerant out of all of these.
 recipe.motor.brushless=Once you have access to silicon wafers in mid-MV, this is far cheaper.
 recipe.water.electrolysis=This is significantly faster if done in an electrolysis cell after unlocking NaOH.
-recipe.power_generation.multiblock_rotation=This recipe is run in a multiblock with shaft rotation mechanics, which means there is a spin-up time to reach maximum power outpu. Supply with lubricants to keep it running smoothly!
+recipe.power_generation.multiblock_rotation=This recipe is run in a multiblock with shaft rotation mechanics, which means there is a spin-up time to reach maximum power output. Supply with lubricants to keep it running smoothly!
 recipe.power_generation.combustion=Can either be run in a multiblock or singleblock configuration. Multiblocks only require lubricant but singleblocks also require a coolant!
 recipe.power_generation.fuel_cell=Fuel cells require a certain temperature to run properly. Make sure to maintain temperature with preheated air!
 recipe.power_generation.combined_cycle=Combined cycle power plants utilize waste heat from gas turbine exhaust to boil water. Flue gas carries 10 EU/L of energy, and yields an extra 25% energy for a given amount of fuel.

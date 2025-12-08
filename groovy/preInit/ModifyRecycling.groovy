@@ -60,8 +60,8 @@ event_manager.listen { RecyclingManager.PreRecyclingEvent event ->
 
     RecyclingManager.addRecyclingGroovy(metaitem('engine.spark_plug.palladium'), [
     ore('boltPalladium'),
-    ore('plateStainlessSteel'),
-    ore('boltStainlessSteel'),
+    ore('plateSteel'),
+    ore('boltSteel'),
     metaitem('cableGtSingleCopper'),
     ])
 

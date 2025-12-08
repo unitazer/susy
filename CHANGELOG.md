@@ -1,3 +1,46 @@
+# UPDATE 0.1.15.11.1
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.84 → v0.1.85
+## Changes
+This fixes the ERF recipe, the brine treatment lines, and the DNQ line, thanks to planetme, trainvoi, and Fiery.
+# UPDATE 0.1.15.11
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.82 → v0.1.84
+- SussyPatches 1.9.0 → 1.9.2
+### Mod Removals
+- FluxLoading
+## Changes
+### New Features
+- Electric furnaces have been replaced by the better singleblock resistance furnace! Craft your current electric furnaces directly into them to get started. (#1725 by @Fiery36)
+- Lights of all types are now craftable! (#1729 by @PatRat2)
+- DNQ photoresist is now availab (#1740 by @WideMann)
+- Copper and the aluminium alloys are now continually castable. (#1736 by @Rick8484)
+### Changed Features
+- Brine processing has been mildly SUSY-fied **with some breaking changes**. (#1745 by @planetme)
+- The Periodic Table chapter has been brought up-to-date! (#1739 by @Engineerboy2998)
+- Added recipes for glass dust from full flint dusts (#1741 by @Leninus)
+- You will no longer be accosted by BOP hives. (#1742 by @koukopuff (first contribution!!!))
+### Fixes
+- Several multiblock infos, such as the evaporation pool's and the turning zone's, are now visible again. (#572 by @MCTian-mi)
+And thanks to @Rick8484, @Fiery36, @planetme, @Crindigo, and @MCTian-mi for helping to keep the pack stable.
+# UPDATE 0.1.15.10.1
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.81 → v0.1.82
+- Supercritical v0.2.2 → v0.2.3
+- SussyPatches v1.8.1 → v1.9.0
+## Changes
+### New Features
+- EV-unlocked circuit boards are now craftable! (#1321 by @littlecube8152)
+- A new topical antibiotic... (#1600 by @fil1423)
+### Changed Features
+- Renamed carbon to carbon black & disabled centrifugation recipes. (#1596 by @Rick8484)
+- Updated Portuguese translation. (#1667 by @roquesystemexe)
+- Reorganized and updated LV, MV, and Power Generation quest lines. (incorporated into #1321 by @planetme)
+### Fixes
+- [Susy-Core] Fixed mixer settler not supporting item I/O (#571 by @bruberu)
 # UPDATE 0.1.15.10
 ## Mod Changes
 ### Mod Updates
