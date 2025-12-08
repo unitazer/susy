@@ -2536,6 +2536,9 @@ class SuSyMaterials {
     public static Material SodiumBenzylSulfonate
     public static Material PolymerizedNitrileEmulsion
     public static Material NitrileLatex
+    public static Material ImpureNitrileRubber
+    public static Material WashedNitrileRubber
+    public static Material NitrileRubber
 
     // Thermodynamics Materials
 

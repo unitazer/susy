@@ -75,7 +75,6 @@ def rubbers = [
     new Rubber('dustCompoundedPolyisoprene', 'Rubber', 8, 225, 8),
     new Rubber('dustCompoundedStyreneIsopreneRubber', 'StyreneIsopreneRubber', 4, 30 * 20, 4),
     new Rubber('dustCompoundedStyreneButadieneRubber', 'StyreneButadieneRubber', 4, 30 * 20, 4),
-    new Rubber('dustCompoundedNitrileRubber', "NitrileRubber", 4, 30*20, 4)
 ]
 
 def sulfurs = [
@@ -348,7 +347,7 @@ COAGULATOR.recipeBuilder()
 
 MIXER.recipeBuilder() // washing out
     .fluidInputs(fluid('water') * 1000)
-    .inputs(metaitem('dustImpureNitrileRubber') * 1)
+    .inputs(ore('dustImpureNitrileRubber') * 1)
     .outputs(metaitem('dustHydratedNitrileRubber'))
     .fluidOutputs(fluid('sodium_benzyl_sulfonate_solution') * 500)
     .duration(40)
