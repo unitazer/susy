@@ -2527,12 +2527,11 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzylSulfonateSolution = new Material.builder(15396 SuSyUtility.susyId('sodium_benzylsulfonate_solution'))
-                .liquid()
-                .components(SodiumBenzylSulfonate, Water)
-                .colorAverage()
-                .build()
-
+        SodiumBenzylSulfonate = new Material.builder(15396, SuSyUtility.susyId('sodium_benzylsulfonate'))
+            .dust()
+            .components(Sodium * 1, Carbon * 18, Hydrogen * 30, Sulfur * 1, Oxygen * 3)
+            .colorAverage()
+            .build()
         Polycarbonate = new Material.Builder(15397, SuSyUtility.susyId('polycarbonate'))
                 .polymer()
                 .flags(GENERATE_PLATE)
@@ -2984,11 +2983,13 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzylSulfonate = new Material.builder(15470, SuSyUtility.susyId('sodium_benzylsulfonate'))
-            .dust()
-            .components(Sodium * 1, Carbon * 18, Hydrogen * 30, Sulfur * 1, Oxygen * 3)
-            .colorAverage()
-            .build()
+        SodiumBenzylSulfonateSolution = new Material.builder(15470, SuSyUtility.susyId('sodium_benzylsulfonate_solution'))
+                .liquid()
+                .components(SodiumBenzylSulfonate, Water)
+                .colorAverage()
+                .build()
+
+
 
         BenzenesulfonicAcid = new Material.Builder(15471, SuSyUtility.susyId('benzenesulfonic_acid'))
                 .liquid()
