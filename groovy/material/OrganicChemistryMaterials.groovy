@@ -2984,7 +2984,7 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzylSulfonate = new Material.builder(15470, SuSyUtility.susyId('sodium_dodecylbenzene_sulfonate'))
+        SodiumBenzylSulfonate = new Material.builder(15470, SuSyUtility.susyId('sodium_benzylsulfonate'))
             .dust()
             .components(Sodium * 1, Carbon * 18, Hydrogen * 30, Sulfur * 1, Oxygen * 3)
             .colorAverage()
