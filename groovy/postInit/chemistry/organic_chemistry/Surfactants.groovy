@@ -86,11 +86,11 @@ BR.recipeBuilder()
     .EUt(VA[MV])
     .buildAndRegister()
 
-//sulfonate surfactants
+//sulfonate surfactant
 MIXER.recipeBuilder()
-    .inputs(ore('dustDodecylbenzenesulfonicAcid') * 1)
+    .fluidInputs(fluid('benzenesulfonic_acid') * 1000)
     .fluidInputs(fluid('sodium_hydroxide_solution') * 1000)
-    .outputs(metaitem('dustSodiumDodecylbenzeneSulfonate'))
+    .outputs(metaitem('dustSodiumBenzylSulfonate'))
     .fluidOutputs(fluid('water') * 1000)
     .duration(100)
     .EUt(VA[MV])

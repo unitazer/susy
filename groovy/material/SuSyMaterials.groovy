@@ -2534,6 +2534,7 @@ class SuSyMaterials {
     public static Material BenzenediazoniumChlorideSolution
     public static Material BenzenediazoniumFluorideSolution
     public static Material SodiumBenzylSulfonate
+    public static Material SodiumBenzylSulfonateSolution
     public static Material PolymerizedNitrileEmulsion
     public static Material NitrileLatex
     public static Material ImpureNitrileRubber
