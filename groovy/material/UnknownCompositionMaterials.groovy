@@ -1385,7 +1385,7 @@ class UnknownCompositionMaterials {
                 .color(0xffcaf0)
                 .build()
 
-        NitrileRubber = new Material.builder(4274, SuSyUtility.susyOd('nitrile_rubber'))
+        NitrileRubber = new Material.builder(4274, SuSyUtility.susyId('nitrile_rubber'))
                 .dust()
                 .color(0xdcc0d4)
                 .build()

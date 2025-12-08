@@ -74,7 +74,7 @@ def rubbers = [
     new Rubber('dustLatex', 'Rubber', 4, 40 * 20, 4),
     new Rubber('dustCompoundedPolyisoprene', 'Rubber', 8, 225, 8),
     new Rubber('dustCompoundedStyreneIsopreneRubber', 'StyreneIsopreneRubber', 4, 30 * 20, 4),
-    new Rubber('dustCompoundedStyreneButadieneRubber', 'StyreneButadieneRubber', 4, 30 * 20, 4),
+    new Rubber('dustCompoundedStyreneButadieneRubber', 'StyreneButadieneRubber', 4, 30 * 20, 4)
 ]
 
 def sulfurs = [
@@ -317,11 +317,11 @@ POLYMERIZATION_TANK.recipeBuilder()
     .fluidInputs(fluid('butadiene') * 2880)
     .fluidInputs(fluid('acrylonitrile') * 1008)
     .fluidInputs(fluid('hydrogen_peroxide') * 500)
-    .fluidInputs(fluid('water') * 500)
+    .fluidInputs(fluid('water') * 5000)
     .notConsumable(ore('iron_sulfate') * 1)
     .inputs(ore('hydroquinone') * 7)
     .inputs(ore('dustSodiumBenzylsulfonate') * 2)
-    .fluidOutputs('polymerized_nitrile_emulsion' * 5000)
+    .fluidOutputs('polymerized_nitrile_emulsion' * 10000)
     .EUt(VA[MV])
     .duration(500)
     .buildAndRegister()
@@ -347,7 +347,7 @@ COAGULATOR.recipeBuilder()
 
 MIXER.recipeBuilder() // washing out
     .fluidInputs(fluid('water') * 1000)
-    .inputs(ore('dustImpureNitrileRubber') * 1)
+    .inputs(ore('dustImpureNitrileRubber') * 4)
     .outputs(metaitem('dustHydratedNitrileRubber'))
     .fluidOutputs(fluid('sodium_benzyl_sulfonate_solution') * 500)
     .duration(40)
