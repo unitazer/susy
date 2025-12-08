@@ -2980,7 +2980,11 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 15470
+        SodiumDodecylbenzeneSulfonate = new Material.builder(15470, SuSyUtility.susyId('sodium_dodecylbenzene_sulfonate'))
+            .dust()
+            .components(Calcium * 1, Carbon * 18, Hydrogen * 30, Sulfur * 1, Oxygen * 3)
+            .color(0x583a8b)
+            .build()
 
         BenzenesulfonicAcid = new Material.Builder(15471, SuSyUtility.susyId('benzenesulfonic_acid'))
                 .liquid()

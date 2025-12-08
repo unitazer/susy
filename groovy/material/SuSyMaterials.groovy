@@ -2533,6 +2533,9 @@ class SuSyMaterials {
     public static Material OneNaphtholTwoDiazoniumChlorideSolution
     public static Material BenzenediazoniumChlorideSolution
     public static Material BenzenediazoniumFluorideSolution
+    public static Material SodiumBenzylSulfonate
+    public static Material PolymerizedNitrileEmulsion
+    public static Material NitrileLatex
 
     // Thermodynamics Materials
 

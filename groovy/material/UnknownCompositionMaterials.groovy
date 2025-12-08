@@ -182,7 +182,11 @@ class UnknownCompositionMaterials {
                 .color(0x571a0b)
                 .build()
 
-        // FREE ID: 4031
+        PolymerizedNitrileEmulsion = new Material.builder(4031, SuSyUtility.susyId('polymerized_nitrile_emulsion'))
+            .liquid()
+            .color(0xfeeab8)
+            .build()
+
 
         SulfatedMetalOxide = new Material.Builder(4032, SuSyUtility.susyId('sulfated_metal_oxide'))
                 .dust()
@@ -884,7 +888,10 @@ class UnknownCompositionMaterials {
                 .color(0x475453)
                 .build()
 
-        // FREE ID: 4169
+        NitrileLatex = new Material.builder(4169, SuSyUtility.susyId('nitrile_latex'))
+                .liquid()
+                .color(0xeeeee4)
+                .build()
 
         ZincCementationSlurry = new Material.Builder(4170, SuSyUtility.susyId('zinc_cementation_slurry'))
                 .liquid()
@@ -1368,7 +1375,22 @@ class UnknownCompositionMaterials {
                 .iconSet(SHINY)
                 .build()
 
-        //FREE IDs: 4272-4275
+        ImpureNitrileRubber = new Material.builder(4272, SuSyUtility.susyId('impure_nitrile_rubber'))
+                .dust()
+                .color(0xffe3ca)
+                .build()
+
+        WashedNitrileRubber = new Material.builder(4273, SuSyUtility.susyId('washed_nitrile_rubber'))
+                .dust()
+                .color(0xffcaf0)
+                .build()
+
+        SodiumS
+
+        NitrileRubber = new Material.builder(4274, SuSyUtility.susyOd('nitrile_rubber'))
+                .dust()
+                .color(0xdcc0d4)
+                .build()
 
         CalcinedScheelite = new Material.Builder(4276, SuSyUtility.susyId('calcined_scheelite'))
                 .dust()

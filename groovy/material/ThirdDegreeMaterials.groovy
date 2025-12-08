@@ -80,7 +80,7 @@ class ThirdDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 24010
+        //FREE ID: 24010
 
         SodiumEthoxideSolution = new Material.Builder(24011, SuSyUtility.susyId('sodium_ethoxide_solution'))
                 .liquid()
@@ -640,7 +640,7 @@ class ThirdDegreeMaterials {
 
         FourAminophenolSolution.setFormula('(C6H7NO)(C3H8O)(H2O)2', true)
 
-        // FREE ID: 24102
+        //FREE: 24102
 
         IsopropylamineSolution = new Material.Builder(24103, SuSyUtility.susyId('isopropylamine_solution'))
                 .liquid()
