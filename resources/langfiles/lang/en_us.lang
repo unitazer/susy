@@ -227,7 +227,13 @@ susy.material.cyanamide_solution=Cyanamide Solution
 susy.material.guanidinium_nitrate_solution=Guanidinium Nitrate Solution
 susy.material.crude_trimethyl_orthoformate=Crude Trimethyl Orthoformate
 susy.material.crude_methyl_vinyl_ether=Crude Methyl Vinyl Ether
-
+susy.material.sodium_benzylsulfonate=Sodium Benzylsulfonate
+susy.material.sodium_benzylsulfonate_solution=Sodium Benzylsulfonate Solution
+susy.material.polymerized_nitrile_emulsion=Polymerized Nitrile Rubber Emulsion
+susy.material.nitrile_latex=Nitrile Rubber Latex
+susy.material.impure_nitrile_rubber=Impure Nitrile Rubber
+susy.material.washed_nitrile_rubber=Washed Nitrile Rubber
+susy.material.nitrile_rubber=Nitrile Rubber
 # Solids
 
 susy.material.pig_iron=Pig Iron
