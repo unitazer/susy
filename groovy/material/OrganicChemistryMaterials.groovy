@@ -2527,7 +2527,7 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzylSulfonate = new Material.builder(15396, SuSyUtility.susyId('sodium_benzylsulfonate'))
+        SodiumBenzeneSulfonate = new Material.builder(15396, SuSyUtility.susyId('sodium_benzenesulfonate'))
             .dust()
             .components(Sodium * 1, Carbon * 18, Hydrogen * 30, Sulfur * 1, Oxygen * 3)
             .colorAverage()
@@ -2983,9 +2983,9 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzylSulfonateSolution = new Material.builder(15470, SuSyUtility.susyId('sodium_benzylsulfonate_solution'))
+        SodiumBenzeneSulfonateSolution = new Material.builder(15470, SuSyUtility.susyId('sodium_benzenesulfonate_solution'))
                 .liquid()
-                .components(SodiumBenzylSulfonate, Water)
+                .components(SodiumBenzeneSulfonate, Water)
                 .colorAverage()
                 .build()
 

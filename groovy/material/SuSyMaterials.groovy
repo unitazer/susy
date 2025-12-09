@@ -2533,8 +2533,8 @@ class SuSyMaterials {
     public static Material OneNaphtholTwoDiazoniumChlorideSolution
     public static Material BenzenediazoniumChlorideSolution
     public static Material BenzenediazoniumFluorideSolution
-    public static Material SodiumBenzylSulfonate
-    public static Material SodiumBenzylSulfonateSolution
+    public static Material SodiumBenzeneSulfonate
+    public static Material SodiumBenzeneSulfonateSolution
     public static Material PolymerizedNitrileEmulsion
     public static Material NitrileLatex
     public static Material ImpureNitrileRubber
