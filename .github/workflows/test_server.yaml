@@ -78,13 +78,21 @@ jobs:
                 echo "Server is ready!"
                 break
               fi
-              echo "Waiting for server to be ready..."
+              
+              # Show last line of log to detect stalls
+              if [ -f logs/latest.log ]; then
+                tail -n 1 logs/latest.log
+              else
+                echo "Waiting for logs/latest.log to be created..."
+              fi
+              
               sleep 5
             done
           ' || {
             echo "Timeout waiting for server to be ready"
+            echo "=== Last 20 lines of server log ==="
+            tail -n 20 logs/latest.log 2>/dev/null || echo "No log file found"
             kill $SERVER_PID 2>/dev/null || true
-            cat logs/latest.log || echo "No log file found"
             exit 1
           }
           
@@ -93,7 +101,6 @@ jobs:
           wait $SERVER_PID 2>/dev/null || true
           
           echo "Server stopped successfully"
-      
       - name: Check for Groovy errors
         run: |
           cd server
