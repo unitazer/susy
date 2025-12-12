@@ -84,7 +84,7 @@ jobs:
           timeout 200 bash -c '
             while true; do
               # Check if server process is still running
-    	      if kill -n 0 $SERVER_PID 2>/dev/null; then
+              if kill -n 0 $SERVER_PID 2>/dev/null; then
                 echo "ERROR: Server process died unexpectedly!"
                 echo "=== Server output log ==="
                 cat server_output.log 2>/dev/null || echo "No server output found"
