@@ -7,7 +7,7 @@ on:
 jobs:
   test-server:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     
     steps:
       - name: Checkout repository
@@ -68,11 +68,11 @@ jobs:
           echo "=== Pre-flight checks ==="
           echo "Java version:"
           java -version
-          echo "Server jar exists: $([ -f minecraft_server.1.12.2.jar ] && echo 'yes' || echo 'no')"
+          echo "Server jar exists: $([ -f forge-1.12.2-14.23.5.2860.jar ] && echo 'yes' || echo 'no')"
           echo "========================="
           
           # Start server in background
-          java -Xmx4G -Xms4G -jar minecraft_server.1.12.2.jar nogui
+          java -Xmx4G -Xms4G -jar forge-1.12.2-14.23.5.2860.jar nogui
           SERVER_PID=$!
           
           echo "Server started with PID: $SERVER_PID"
@@ -81,7 +81,7 @@ jobs:
           sleep 2
           
           # Wait for the ready message
-          timeout 600 bash -c '
+          timeout 200 bash -c '
             while true; do
               # Check if server process is still running
               if ! kill -0 $SERVER_PID 2>/dev/null; then
