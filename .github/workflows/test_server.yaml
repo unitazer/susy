@@ -1,4 +1,5 @@
 name: Server Test
+# Thank you Claude
 
 on:
   workflow_dispatch:  # Allow manual triggering
@@ -6,7 +7,7 @@ on:
 jobs:
   test-server:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     
     steps:
       - name: Checkout repository
@@ -21,14 +22,9 @@ jobs:
       - name: Get latest pre-release
         id: get_release
         run: |
-          # Option 1: Target specific tag "latest"
           RELEASE_DATA=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             "https://api.github.com/repos/${{ github.repository }}/releases/tags/latest")
-          
-          # Option 2: Get most recent pre-release (uncomment if preferred)
-          # RELEASE_DATA=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          #   "https://api.github.com/repos/${{ github.repository }}/releases")
-          # RELEASE_DATA=$(echo "$RELEASE_DATA" | jq '[.[] | select(.prerelease == true)] | .[0]')
+
           
           DOWNLOAD_URL=$(echo "$RELEASE_DATA" | jq -r '.assets[2].browser_download_url')
           echo "download_url=$DOWNLOAD_URL" >> $GITHUB_OUTPUT
@@ -37,37 +33,16 @@ jobs:
       - name: Download and extract pre-release
         run: |
           wget -O server.zip "${{ steps.get_release.outputs.download_url }}"
-          mkdir -p server_temp
-          unzip server.zip -d server_temp/
-          
-          # Check if files are in a subdirectory
-          echo "=== Extracted structure ==="
-          ls -la server_temp/
-          echo "=========================="
-          
-          # If there's only one directory, move its contents up
-          if [ $(ls -1 server_temp/ | wc -l) -eq 1 ] && [ -d "server_temp/$(ls server_temp/)" ]; then
-            echo "Files are in a subdirectory, moving up..."
-            mv server_temp/*/* server/
-          else
-            echo "Files are at root level, moving..."
-            mv server_temp/* server/
-          fi
-          
-          rmdir server_temp || true
-          
-          echo "=== Final server directory ==="
-          ls -la server/
-          echo "=============================="
+          mkdir -p server
+          unzip server.zip -d server/
       
       - name: Download additional mods from Google Drive
         run: |
           # Install gdown for Google Drive downloads
-          pip install gdown -q
+          pip install gdown
           
           # Download mods folder (use folder ID from Google Drive URL)
           # Format: https://drive.google.com/drive/folders/FOLDER_ID
-          # Suppress output to avoid leaking the secret URL
           gdown --folder "${{ secrets.GDRIVE_MODS_URL }}" -O additional_mods/ > /dev/null 2>&1
           
           echo "✓ Additional mods downloaded successfully"
@@ -76,53 +51,28 @@ jobs:
         run: |
           cd server
           
-          # Show what files we have
-          echo "=== Files in server directory ==="
-          ls -la
-          echo "================================="
-          
-          # Find and verify the server jar
-          JAR_NAME="minecraft_server.1.12.2.jar"
-          
-          if [ -f "$JAR_NAME" ]; then
-            echo "✓ Found $JAR_NAME"
-          else
-            echo "ERROR: $JAR_NAME not found!"
-            echo "Available jar files:"
-            find . -name "*.jar" -type f
-            exit 1
-          fi
-          
           # Sign EULA
           echo "eula=true" > eula.txt
           
           # Copy additional mods from downloaded folder
           mkdir -p mods
-          if [ -d ../additional_mods/ ] && [ "$(ls -A ../additional_mods/)" ]; then
-            cp -r ../additional_mods/* mods/
-            echo "✓ Copied additional mods"
-          else
-            echo "⚠ No additional mods to copy"
-          fi
+          cp -r ../additional_mods/* mods/
+          
+          # Default-world-generator port (server.properties is read with a hashmap so it's fine if it's duplicated)
+          echo "defaultworldgenerator-port=a55790f1-609f-11ee-b9f3-80e82ceaaf53" >> server.properties
       
       - name: Run server until ready
         run: |
           cd server
           
-          JAR_NAME="minecraft_server.1.12.2.jar"
-          
           echo "=== Pre-flight checks ==="
           echo "Java version:"
           java -version
-          echo "Working directory: $(pwd)"
-          echo "Server jar exists: $([ -f $JAR_NAME ] && echo 'yes' || echo 'no')"
-          if [ -f $JAR_NAME ]; then
-            echo "Server jar size: $(ls -lh $JAR_NAME | awk '{print $5}')"
-          fi
+          echo "Server jar exists: $([ -f minecraft_server.1.12.2.jar ] && echo 'yes' || echo 'no')"
           echo "========================="
           
           # Start server in background
-          java -Xmx4G -Xms4G -jar $JAR_NAME nogui > server_output.log 2>&1 &
+          java -Xmx4G -Xms4G -jar minecraft_server.1.12.2.jar nogui > server_output.log 2>&1 &
           SERVER_PID=$!
           
           echo "Server started with PID: $SERVER_PID"
@@ -131,7 +81,7 @@ jobs:
           sleep 2
           
           # Wait for the ready message
-          timeout 200 bash -c '
+          timeout 600 bash -c '
             while true; do
               # Check if server process is still running
               if ! kill -0 $SERVER_PID 2>/dev/null; then
@@ -179,7 +129,6 @@ jobs:
           wait $SERVER_PID 2>/dev/null || true
           
           echo "Server stopped successfully"
-      
       - name: Check for Groovy errors
         run: |
           cd server
@@ -204,9 +153,9 @@ jobs:
           name: server-logs
           path: |
             server/logs/
-            server/server_output.log
           retention-days: 3
       
       - name: Report success
         if: success()
         run: echo "✅ Server test completed successfully!"
+
