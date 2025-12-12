@@ -72,7 +72,7 @@ jobs:
           echo "========================="
           
           # Start server in background
-          java -Xmx4G -Xms4G -jar forge-1.12.2-14.23.5.2860.jar nogui
+          java -Xmx4G -Xms4G -jar forge-1.12.2-14.23.5.2860.jar nogui 2>&1 &
           SERVER_PID=$!
           
           echo "Server started with PID: $SERVER_PID"
@@ -102,9 +102,7 @@ jobs:
               
               # Show last line of log to detect stalls
               if [ -f logs/latest.log ]; then
-                echo "=== Last server log line ==="
                 tail -n 1 logs/latest.log
-                echo "============================"
               else
                 echo "Waiting for logs/latest.log to be created..."
                 echo "=== Current server output (last 5 lines) ==="
