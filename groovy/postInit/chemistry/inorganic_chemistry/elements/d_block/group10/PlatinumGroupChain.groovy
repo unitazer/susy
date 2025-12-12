@@ -1,6 +1,15 @@
 import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
 
+// Hot Platinum Ingot * 1
+mods.gregtech.electric_blast_furnace.removeByInput(480, [metaitem('dustPlatinum'), metaitem('circuit.integrated').withNbt(['Configuration': 1])], null)
+// Hot Platinum Ingot * 1
+mods.gregtech.electric_blast_furnace.removeByInput(480, [metaitem('dustPlatinum'), metaitem('circuit.integrated').withNbt(['Configuration': 2])], [fluid('nitrogen') * 1000])
+// Hot Palladium Ingot * 1
+mods.gregtech.electric_blast_furnace.removeByInput(480, [metaitem('dustPalladium'), metaitem('circuit.integrated').withNbt(['Configuration': 1])], null)
+// Hot Palladium Ingot * 1
+mods.gregtech.electric_blast_furnace.removeByInput(480, [metaitem('dustPalladium'), metaitem('circuit.integrated').withNbt(['Configuration': 2])], [fluid('nitrogen') * 1000])
+
 // Pt/Pd FROM SECONDARY ORES (TIER 1)
 
     MACERATOR.recipeBuilder()
@@ -82,7 +91,7 @@ def metals = [
 
 for (metal in metals) {
     ERF.recipeBuilder()
-        .circuitMeta(3)
+        .circuitMeta(1)
         .inputs(metaitem('dust' + metal))
         .outputs(metaitem('ingot' + metal))
         .blastFurnaceTemp(2000)
@@ -91,7 +100,7 @@ for (metal in metals) {
         .buildAndRegister()
 
     ERF.recipeBuilder()
-        .circuitMeta(4)
+        .circuitMeta(2)
         .inputs(metaitem('dust' + metal))
         .fluidInputs(fluid('nitrogen') * 1000)
         .outputs(metaitem('ingot' + metal))
