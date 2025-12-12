@@ -74,6 +74,16 @@ jobs:
           # Wait for the ready message
           timeout 600 bash -c '
             while true; do
+              # Check if server process is still running
+              if ! kill -0 $SERVER_PID 2>/dev/null; then
+                echo "ERROR: Server process died unexpectedly!"
+                echo "=== Server output log ==="
+                cat server_output.log 2>/dev/null || echo "No server output found"
+                echo "=== Latest log (if exists) ==="
+                cat logs/latest.log 2>/dev/null || echo "No latest.log found"
+                exit 1
+              fi
+              
               if [ -f logs/latest.log ] && grep -q "\[FTB Library\]: Reloaded server" logs/latest.log; then
                 echo "Server is ready!"
                 break
@@ -81,9 +91,14 @@ jobs:
               
               # Show last line of log to detect stalls
               if [ -f logs/latest.log ]; then
+                echo "=== Last server log line ==="
                 tail -n 1 logs/latest.log
+                echo "============================"
               else
                 echo "Waiting for logs/latest.log to be created..."
+                echo "=== Current server output (last 5 lines) ==="
+                tail -n 5 server_output.log 2>/dev/null || echo "No output yet"
+                echo "============================"
               fi
               
               sleep 5
@@ -92,6 +107,8 @@ jobs:
             echo "Timeout waiting for server to be ready"
             echo "=== Last 20 lines of server log ==="
             tail -n 20 logs/latest.log 2>/dev/null || echo "No log file found"
+            echo "=== Full server output ==="
+            cat server_output.log 2>/dev/null || echo "No server output found"
             kill $SERVER_PID 2>/dev/null || true
             exit 1
           }
