@@ -131,17 +131,17 @@ jobs:
         run: |
           cd server
           
-          if [ -f logs/groovy.log ]; then
-            if grep -q "An exception occurred while running scripts." logs/groovy.log; then
+          if [ -f logs/groovy_server.log ]; then
+            if grep -q "An exception occurred while running scripts." logs/groovy_server.log; then
               echo "ERROR: Groovy script errors detected!"
               echo "=== Groovy Log Contents ==="
-              cat logs/groovy.log
+              cat logs/groovy_server.log
               exit 1
             else
               echo "No Groovy errors detected"
             fi
           else
-            echo "Warning: groovy.log not found"
+            echo "Warning: groovy_server.log not found"
           fi
       
       - name: Upload logs on failure
