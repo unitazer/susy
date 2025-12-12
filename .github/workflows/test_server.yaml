@@ -43,7 +43,9 @@ jobs:
           
           # Download mods folder (use folder ID from Google Drive URL)
           # Format: https://drive.google.com/drive/folders/FOLDER_ID
-          gdown --folder "${{ secrets.GDRIVE_MODS_URL }}" -O additional_mods/
+          gdown --folder "${{ secrets.GDRIVE_MODS_URL }}" -O additional_mods/ > /dev/null 2>&1
+          
+          echo "✓ Additional mods downloaded successfully"
       
       - name: Setup server files
         run: |
@@ -56,7 +58,8 @@ jobs:
           mkdir -p mods
           cp -r ../additional_mods/* mods/
           
-          # Add any other setup commands here
+          # Default-world-generator port (server.properties is read with a hashmap so it's fine if it's duplicated)
+          echo "defaultworldgenerator-port=a55790f1-609f-11ee-b9f3-80e82ceaaf53" >> server.properties
       
       - name: Run server until ready
         run: |
