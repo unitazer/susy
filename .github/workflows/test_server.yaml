@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'  # Adjust based on your modpack's requirements
+          java-version: '8'
       
       - name: Get latest pre-release
         id: get_release
