@@ -30,7 +30,7 @@ jobs:
           #   "https://api.github.com/repos/${{ github.repository }}/releases")
           # RELEASE_DATA=$(echo "$RELEASE_DATA" | jq '[.[] | select(.prerelease == true)] | .[0]')
           
-          DOWNLOAD_URL=$(echo "$RELEASE_DATA" | jq -r '.assets[0].browser_download_url')
+          DOWNLOAD_URL=$(echo "$RELEASE_DATA" | jq -r '.assets[2].browser_download_url')
           echo "download_url=$DOWNLOAD_URL" >> $GITHUB_OUTPUT
           echo "Downloading from: $DOWNLOAD_URL"
       
