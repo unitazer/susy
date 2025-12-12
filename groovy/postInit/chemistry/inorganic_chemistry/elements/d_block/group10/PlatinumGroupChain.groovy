@@ -82,7 +82,7 @@ def metals = [
 
 for (metal in metals) {
     ERF.recipeBuilder()
-        .circuitMeta(1)
+        .circuitMeta(3)
         .inputs(metaitem('dust' + metal))
         .outputs(metaitem('ingot' + metal))
         .blastFurnaceTemp(2000)
@@ -91,7 +91,7 @@ for (metal in metals) {
         .buildAndRegister()
 
     ERF.recipeBuilder()
-        .circuitMeta(2)
+        .circuitMeta(4)
         .inputs(metaitem('dust' + metal))
         .fluidInputs(fluid('nitrogen') * 1000)
         .outputs(metaitem('ingot' + metal))
