@@ -42,7 +42,7 @@ def nonMetals = [
         [input: item('minecraft:stained_hardened_clay', 15), output: item('minecraft:black_glazed_terracotta')],
         [input: item('biomesoplenty:mudball'), output: item('biomesoplenty:mud_brick')],
         [input: item('biomesoplenty:mud'), output: item('minecraft:dirt')],
-        [input: metaitem('gregtechfoodoption:brick.adobe_fired'), output: metaitem('gregtechfoodoption:brick.adobe')],
+        [input: metaitem('gregtechfoodoption:brick.adobe'), output: metaitem('gregtechfoodoption:brick.adobe_fired')],
         [input: metaitem('compressed.clay'), output: item('minecraft:brick')],
         [input: metaitem('compressed.coke_clay'), output: metaitem('brick.coke')],
         [input: metaitem('compressed.fireclay'), output: metaitem('brick.fireclay')],
