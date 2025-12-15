@@ -729,6 +729,7 @@ import static gregtech.api.unification.ore.OrePrefix.dye;
         .fluidInputs(fluid('n_pentanol') * 100)
         .fluidInputs(fluid('ammonia') * 50)
         .fluidOutputs(fluid('diamylamine') * 50)
+        .fluidOutputs(fluid('water') * 100)
         .duration(5)
         .EUt(VA[MV])
         .buildAndRegister();
