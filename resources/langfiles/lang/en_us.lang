@@ -234,6 +234,8 @@ susy.material.nitrile_latex=Nitrile Rubber Latex
 susy.material.impure_nitrile_rubber=Impure Nitrile Rubber
 susy.material.washed_nitrile_rubber=Washed Nitrile Rubber
 susy.material.nitrile_rubber=Nitrile Rubber
+susy.material.nitrile_emulsion=Nitrile Emulsion
+susy.material.fenton_reagent=Fenton's Reagent
 # Solids
 
 susy.material.pig_iron=Pig Iron

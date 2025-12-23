@@ -2527,11 +2527,12 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzeneSulfonate = new Material.builder(15396, SuSyUtility.susyId('sodium_benzenesulfonate'))
+        SodiumBenzeneSulfonate = new Material.Builder(15396, SuSyUtility.susyId('sodium_benzenesulfonate'))
             .dust()
             .components(Sodium * 1, Carbon * 18, Hydrogen * 30, Sulfur * 1, Oxygen * 3)
             .colorAverage()
             .build()
+            
         Polycarbonate = new Material.Builder(15397, SuSyUtility.susyId('polycarbonate'))
                 .polymer()
                 .flags(GENERATE_PLATE)
@@ -2983,7 +2984,7 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzeneSulfonateSolution = new Material.builder(15470, SuSyUtility.susyId('sodium_benzenesulfonate_solution'))
+        SodiumBenzeneSulfonateSolution = new Material.Builder(15470, SuSyUtility.susyId('sodium_benzenesulfonate_solution'))
                 .liquid()
                 .components(SodiumBenzeneSulfonate, Water)
                 .colorAverage()
@@ -3332,5 +3333,11 @@ class OrganicChemistryMaterials {
                 .components(Carbon * 10, Hydrogen * 6, Oxygen, Nitrogen * 2)
                 .colorAverage()
                 .build()
+
+        NitrileEmulsion = new Material.Builder(15522, SuSyUtility.susyId('nitrile_emulsion'))
+                .components(Acrylonitrile * 1, Butadiene * 2)
+                .colorAverage()
+                .fluid()
+                .color()
     }
 }

@@ -220,7 +220,11 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 13032
+        FentonReagent = new Material.Builder(13032, SuSyUtility.susyId('fenton_reagent'))
+                .liquid()
+                .components(HydrogenPeroxide * 1, IronSulfate * 1)
+                .colorAverage()
+                .build()
 
         SodiumThiosulfateSolution = new Material.Builder(13033, SuSyUtility.susyId('sodium_thiosulfate_solution'))
                 .liquid()

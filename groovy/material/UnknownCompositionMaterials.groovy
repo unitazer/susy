@@ -182,7 +182,7 @@ class UnknownCompositionMaterials {
                 .color(0x571a0b)
                 .build()
 
-        PolymerizedNitrileEmulsion = new Material.builder(4031, SuSyUtility.susyId('polymerized_nitrile_emulsion'))
+        PolymerizedNitrileEmulsion = new Material.Builder(4031, SuSyUtility.susyId('polymerized_nitrile_emulsion'))
             .liquid()
             .color(0xfeeab8)
             .build()
@@ -888,7 +888,7 @@ class UnknownCompositionMaterials {
                 .color(0x475453)
                 .build()
 
-        NitrileLatex = new Material.builder(4169, SuSyUtility.susyId('nitrile_latex'))
+        NitrileLatex = new Material.Builder(4169, SuSyUtility.susyId('nitrile_latex'))
                 .liquid()
                 .color(0xeeeee4)
                 .build()
@@ -1375,17 +1375,17 @@ class UnknownCompositionMaterials {
                 .iconSet(SHINY)
                 .build()
 
-        ImpureNitrileRubber = new Material.builder(4272, SuSyUtility.susyId('impure_nitrile_rubber'))
+        ImpureNitrileRubber = new Material.Builder(4272, SuSyUtility.susyId('impure_nitrile_rubber'))
                 .dust()
                 .color(0xffe3ca)
                 .build()
 
-        WashedNitrileRubber = new Material.builder(4273, SuSyUtility.susyId('washed_nitrile_rubber'))
+        WashedNitrileRubber = new Material.Builder(4273, SuSyUtility.susyId('washed_nitrile_rubber'))
                 .dust()
                 .color(0xffcaf0)
                 .build()
 
-        NitrileRubber = new Material.builder(4274, SuSyUtility.susyId('nitrile_rubber'))
+        NitrileRubber = new Material.Builder(4274, SuSyUtility.susyId('nitrile_rubber'))
                 .dust()
                 .color(0xdcc0d4)
                 .build()

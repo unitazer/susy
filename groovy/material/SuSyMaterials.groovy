@@ -2540,6 +2540,8 @@ class SuSyMaterials {
     public static Material ImpureNitrileRubber
     public static Material WashedNitrileRubber
     public static Material NitrileRubber
+    public static Material FentonReagent
+    public static Material NitrileEmulsion
 
     // Thermodynamics Materials
 
