@@ -696,6 +696,17 @@ ASSEMBLER.recipeBuilder()
     .EUt(VA[EV])
     .buildAndRegister();
 
+//Iron Armor
+
+RecyclingHelper.removeRecyclingRecipes(item('minecraft:iron_helmet'))
+RecyclingHelper.handleRecycling(item('minecraft:iron_helmet'), [ore('dustSmallIron') * 13])
+
+RecyclingHelper.removeRecyclingRecipes(item('minecraft:iron_chestplate'))
+RecyclingHelper.handleRecycling(item('minecraft:iron_chestplate'), [ore('dustSmallIron') * 21])
+
+RecyclingHelper.removeRecyclingRecipes(item('minecraft:iron_leggings'))
+RecyclingHelper.handleRecycling(item('minecraft:iron_leggings'), [ore('dustSmallIron') * 21])
+
 //Ore Recipes
 
 MACERATOR.recipeBuilder()
