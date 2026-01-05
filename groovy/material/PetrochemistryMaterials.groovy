@@ -156,11 +156,7 @@ class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build()
 
-        LubricatingOil = new Material.Builder(20024, SuSyUtility.susyId('lubricating_oil'))
-                .liquid()
-                .color(0x858146)
-                .flags(FLAMMABLE)
-                .build()
+        // FREE ID: 20024
 
         SlackWax = new Material.Builder(20025, SuSyUtility.susyId('slack_wax'))
                 .liquid()
@@ -916,6 +912,18 @@ class PetrochemistryMaterials {
         MethanolDehydrationOverheads = new Material.Builder(20156, SuSyUtility.susyId('methanol_dehydration_overheads'))
                 .gas()
                 .color(0xdec887)
+                .flags(FLAMMABLE)
+                .build()
+
+        AlkaliTreatedKerosene = new Material.Builder(20157, SuSyUtility.susyId('alkali_treated_kerosene'))
+                .liquid()
+                .color(0xb7cf32)
+                .flags(FLAMMABLE)
+                .build()
+
+        AlkaliTreatedLightGasOil = new Material.Builder(20158, SuSyUtility.susyId('alkali_treated_light_gas_oil'))
+                .liquid()
+                .color(0x999648)
                 .flags(FLAMMABLE)
                 .build()
     }

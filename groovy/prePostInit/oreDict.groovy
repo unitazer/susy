@@ -23,7 +23,8 @@ ore('gtLight').add(metaitem('incandescent_light'))
 ore('gtLight').add(metaitem('halogen_light'))
 ore('gtLight').add(metaitem('fluorescent_light'))
 ore('gtLight').add(metaitem('led_light'))
-ore('gtLight').add(metaitem('carbon_arc_lamp'))
+ore('gtLight').add(metaitem('lamp.mercury.hp'))
+
 
 //Coke block
 
@@ -249,6 +250,7 @@ ore('ingotSteel').remove(item('industrialrenewal:ingot_steel'))
 ore('blockConcrete').remove(item('susy:susy_stone_smooth:9'))
 ore('stone').remove(item('susy:susy_stone_smooth:9'))
 ore('cobblestone').remove(item('susy:susy_stone_cobble:9'))
+ore('stickStone').remove(item('pyrotech:material', 27))
 
 //Misc Fixes
 
@@ -289,9 +291,23 @@ elements.each { element ->
     String highPurityDust = "dustHighPurity${element}"
     String normalDust = "dust${element}"
 
+    String anyPuritySmallDust = "dustAnyPurity${element}"
+    String highPuritySmallDust = "dustHighPurity${element}"
+    String normalSmallDust = "dust${element}"
+
+    String anyPurityTinyDust = "dustAnyPurity${element}"
+    String highPurityTinyDust = "dustHighPurity${element}"
+    String normalTinyDust = "dust${element}"
+
     // Add both high purity and normal dust to the anyPurity dust ore dictionary entry
     ore(anyPurityDust).add(metaitem(highPurityDust))
     ore(anyPurityDust).add(metaitem(normalDust))
+
+    ore(anyPuritySmallDust).add(metaitem(highPuritySmallDust))
+    ore(anyPuritySmallDust).add(metaitem(normalSmallDust))
+
+    ore(anyPurityTinyDust).add(metaitem(highPurityTinyDust))
+    ore(anyPurityTinyDust).add(metaitem(normalTinyDust))
 }
 
 //NTP knives
