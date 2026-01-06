@@ -2527,11 +2527,11 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzeneSulfonate = new Material.Builder(15396, SuSyUtility.susyId('sodium_benzenesulfonate'))
-            .dust()
-            .components(Sodium * 1, Carbon * 18, Hydrogen * 30, Sulfur * 1, Oxygen * 3)
-            .colorAverage()
-            .build()
+        SodiumBenzenesulfonate = new Material.Builder(15396, SuSyUtility.susyId('sodium_benzenesulfonate'))
+            	.dust()
+            	.components(Carbon * 6, Hydrogen * 5, Sulfur * 1, Oxygen * 3, Sodium * 1)
+            	.colorAverage()
+            	.build()
             
         Polycarbonate = new Material.Builder(15397, SuSyUtility.susyId('polycarbonate'))
                 .polymer()
@@ -2984,13 +2984,11 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzeneSulfonateSolution = new Material.Builder(15470, SuSyUtility.susyId('sodium_benzenesulfonate_solution'))
+        SodiumBenzenesulfonateSolution = new Material.Builder(15470, SuSyUtility.susyId('sodium_benzenesulfonate_solution'))
                 .liquid()
-                .components(SodiumBenzeneSulfonate, Water)
+                .components(SodiumBenzenesulfonate, Water)
                 .colorAverage()
                 .build()
-
-
 
         BenzenesulfonicAcid = new Material.Builder(15471, SuSyUtility.susyId('benzenesulfonic_acid'))
                 .liquid()
@@ -3338,6 +3336,7 @@ class OrganicChemistryMaterials {
                 .components(Acrylonitrile * 1, Butadiene * 2)
                 .colorAverage()
                 .fluid()
-                .color()
+                .colorAverage()
+                .build()
     }
 }

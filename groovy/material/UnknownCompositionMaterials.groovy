@@ -1387,6 +1387,8 @@ class UnknownCompositionMaterials {
 
         NitrileRubber = new Material.Builder(4274, SuSyUtility.susyId('nitrile_rubber'))
                 .dust()
+                .polymer()
+                .flags(GENERATE_FOIL)
                 .color(0xdcc0d4)
                 .build()
 
