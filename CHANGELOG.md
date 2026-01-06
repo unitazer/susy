@@ -1,3 +1,29 @@
+# UPDATE 0.1.15.13
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.86 → v0.1.87
+## Changes
+### Fixes
+- Reverted TechGuns repairing recipes to the default (to prevent server errors) (#1760 by @Fiery36)
+- BrainTech Aerospace Tape(tm) is now available again! (#1762 by @Fiery36)
+- The zirconium chain now preserves chlorine. (#1764 by @whoisyp)
+- [Susy-Core] Have you experienced issues with freezing while joining a server? That's fixed now! It turns out drone pad sounds were the issue... (#583 by @bruberu)
+While we're still working on things in the background, I hope you enjoy this small, gift-sized little update. Also, thanks to @whoisyp for their first contribution!
+# UPDATE 0.1.15.12
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.85 → v0.1.86
+- Supercritical 0.2.3 → 0.2.4
+## Changes
+### Changed Features
+- Masonry bricks can now be automated! (#1755 by @Fiery36)
+- [Susy-Core] The AFC multiblock is now more symmetrical. (#582 by @koukopuff)
+- Multiblock quests no longer require all blocks simultaneously. (#1753 by @Fiery36)
+### Fixes
+- Replaced the deprecated blocks (#1751 by @oliwier509)
+- [Susy-Core] The flying shear is now actually required, and strands are no longer deleted. (#581 by @bruberu)
+And thanks to @Fiery36 and @oliwier509 for maintaining the pack.
+We're mostly working on space, circuits, and finals, so expect visible progress to be slow... until it isn't.
 # UPDATE 0.1.15.11.1
 ## Mod Changes
 ### Mod Updates
