@@ -1,3 +1,18 @@
+# UPDATE 0.1.15.14
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.87 → v0.1.88
+## Changes
+### New Features
+- [Susy-Core] You can now see which LittleTiles blocks have loot in TOP! Never miss those random GTFO food items again. (#585 by @aluminium0316)
+### Changed Features
+- [Susy-Core] Singleblock combustion generators now accept manual insertion of coolant. (#586 by @ThisMightBeNoah)
+### Fixes
+- Iron armor no longer causes dupes. (#1766 by @koukopuff)
+- Yet another step has been taken towards stoichiometric perfection... (#1772 by @Crindigo)
+- [Susy-Core] Combustion generator UIs are now more accurate. (#584 by @aluminium0316)
+And thanks to @Fiery36, @whoisyp, and @Syriusz171 for fixing issues in the questbook.
+I also want to highlight our new contributors: @ThisMightBeNoah, @Engineerboy2998, and @aluminium0316! Thank you for joining us.
 # UPDATE 0.1.15.13
 ## Mod Changes
 ### Mod Updates
