@@ -595,7 +595,7 @@ susy.material.potassium_iodide_solution=Potassium Iodide Solution
 susy.material.sodium_sulfate_solution=Sodium Sulfate Solution
 susy.material.copper_zinc_chromium_oxide=Copper Zinc Chromium Oxide
 susy.material.philips_catalyst=Philips Catalyst
-susy.material.ziegler_natta_catalyst=Ziegler Natta Catalyst
+susy.material.ziegler_natta_catalyst=Ziegler-Natta Catalyst
 susy.material.hydrogen_peroxide_solution=Hydrogen Peroxide Solution
 susy.material.ammonium_acetate_solution=Ammonium Acetate Solution
 susy.material.tetramethylammonium_hydroxide_solution=Tetramethylammonium Hydroxide Solution
@@ -3059,7 +3059,7 @@ metaitem.wafer.tungsten.name=Tungsten-Coated Wafer
 metaitem.wafer.nickel.name=Nickel-Coated Wafer
 metaitem.wafer.gallium_arsenide.name=Gallium Arsenide Wafer
 metaitem.wafer.raw.silicon.name=Raw Silicon Wafer
-metaitem.wafer.treated.silicon.name=Acid Treated Silicon Wafer
+metaitem.wafer.treated.silicon.name=Acid-Treated Silicon Wafer
 
 metaitem.seed_crystal.silicon.name=Silicon Seed Crystal
 metaitem.seed_crystal.gallium_arsenide.name=Gallium Arsenide Seed Crystal
