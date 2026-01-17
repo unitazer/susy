@@ -1330,10 +1330,12 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('engine.crankshaft'))
     .inputs(ore('gearSteel') * 2)
     .inputs(ore('pipeHugeFluidSteel'))
-    .outputs(metaitem('combustion_generator.lv'))
+    .outputs(metaitem('susy:combustion_generator.lv'))
     .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
+
+crafting.addShapeless('susy:combustion_generator.lv_convert', metaitem('susy:combustion_generator.lv'), [metaitem('combustion_generator.lv')])
 
 RecyclingHelper.removeRecyclingRecipes(metaitem('combustion_generator.lv'))
 RecyclingHelper.handleRecycling(metaitem('combustion_generator.lv'), [
@@ -1357,10 +1359,12 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('engine.crankshaft'))
     .inputs(ore('gearAluminium') * 2)
     .inputs(ore('pipeHugeFluidAluminium'))
-    .outputs(metaitem('combustion_generator.mv'))
+    .outputs(metaitem('susy:combustion_generator.mv'))
     .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
+
+crafting.addShapeless('susy:combustion_generator.mv_convert', metaitem('susy:combustion_generator.mv'), [metaitem('combustion_generator.mv')])
 
 RecyclingHelper.removeRecyclingRecipes(metaitem('combustion_generator.mv'))
 RecyclingHelper.handleRecycling(metaitem('combustion_generator.mv'), [
@@ -1384,10 +1388,12 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('engine.crankshaft'))
     .inputs(ore('gearStainlessSteel') * 2)
     .inputs(ore('pipeHugeFluidStainlessSteel'))
-    .outputs(metaitem('combustion_generator.hv'))
+    .outputs(metaitem('susy:combustion_generator.hv'))
     .EUt(VA[LV])
     .duration(600)
     .buildAndRegister()
+
+crafting.addShapeless('susy:combustion_generator.hv_convert', metaitem('susy:combustion_generator.hv'), [metaitem('combustion_generator.hv')])
 
 RecyclingHelper.removeRecyclingRecipes(metaitem('combustion_generator.hv'))
 RecyclingHelper.handleRecycling(metaitem('combustion_generator.hv'), [
