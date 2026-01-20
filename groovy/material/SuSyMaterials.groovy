@@ -956,7 +956,7 @@ class SuSyMaterials {
     public static Material CrudeMediumLiquefactionOil
     public static Material SulfuricMediumLiquefactionOil
     public static Material HeatedMediumLiquefactionOil
-    public static Material TreatedSulfuricLiquefactionOil
+    public static Material TreatedSulfuricMediumLiquefactionOil
     public static Material MediumLiquefactionOil
 
     public static Material RawLtSyncrude
