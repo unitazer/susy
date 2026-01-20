@@ -833,7 +833,7 @@ class PetrochemistryMaterials {
 
         TreatedSulfuricLightNaphtha = new Material.Builder(20140, SuSyUtility.susyId('treated_sulfuric_light_naphtha'))
                 .liquid()
-                .color(0x29263d)
+                .color(0xfff508)
                 .flags(FLAMMABLE)
                 .build()
 
