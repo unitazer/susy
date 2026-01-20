@@ -7,7 +7,7 @@ INDUCTION_FURNACE.recipeBuilder()
         .EUt(VA[MV])
         .duration(10)
         .buildAndRegister()
-
+/*
 // 97.6% Al 1.1% Mg 0.64% Si 0.36% Cu 0.30% Cr
 INDUCTION_FURNACE.recipeBuilder()
         .fluidInputs(fluid('molten.aluminium') * 10144)
@@ -31,5 +31,5 @@ INDUCTION_FURNACE.recipeBuilder()
         .EUt(VA[MV])
         .duration(9600)
         .buildAndRegister()
-
+*/
 

@@ -90,8 +90,8 @@ def metals = [
         [input: metaitem('dustGold'), output: fluid('gold')],
         [input: metaitem('dustSilver'), output: fluid('silver')],
         [input: metaitem('dustAluminium'), output: fluid('aluminium')],
-        [input: metaitem('dustAluminiumAlloy6061'), output: fluid('aluminium_alloy_6061')],
-        [input: metaitem('dustAluminiumAlloy7075'), output: fluid('aluminium_alloy_7075')],
+        //[input: metaitem('dustAluminiumAlloy6061'), output: fluid('aluminium_alloy_6061')],
+        //[input: metaitem('dustAluminiumAlloy7075'), output: fluid('aluminium_alloy_7075')],
         [input: metaitem('dustCadmium'), output: fluid('cadmium')],
         [input: metaitem('dustIndium'), output: fluid('indium')],
         [input: metaitem('dustRedAlloy'), output: fluid('red_alloy')]
