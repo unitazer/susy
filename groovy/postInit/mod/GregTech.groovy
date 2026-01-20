@@ -696,15 +696,6 @@ ASSEMBLER.recipeBuilder()
     .EUt(VA[EV])
     .buildAndRegister();
 
-ASSEMBLER.recipeBuilder()
-    .inputs(ore('cableGtSingleTin') * 2)
-    .inputs(metaitem('graphite_electrode'))
-    .inputs(metaitem('component.glass.tube') * 8)
-    .outputs(metaitem('carbon_arc_lamp') * 8)
-    .duration(100)
-    .EUt(VA[LV])
-    .buildAndRegister();
-
 //Ore Recipes
 
 MACERATOR.recipeBuilder()
@@ -1500,6 +1491,7 @@ crafting.replaceShaped("gregtech:casing_steel_firebox", item('gregtech:boiler_fi
 
 // Tapes
 ASSEMBLER.recipeBuilder()
+    .circuitMeta(1)
     .inputs(ore('foilPlastic') * 4)
     .fluidInputs(fluid('glue') * 250)
     .outputs(metaitem('basic_tape') * 8)
@@ -1915,3 +1907,24 @@ ALLOY_SMELTER.recipeBuilder()
     .duration(40)
     .EUt(VA[LV])
     .buildAndRegister()
+
+MIXER.recipeBuilder()
+    .inputs(metaitem('dustFlint'))
+    .inputs(metaitem('dustQuartzite') * 16)
+    .outputs(metaitem('dustGlass') * 20)
+    .duration(160)
+    .EUt(VA[ULV])
+    .buildAndRegister()
+
+MIXER.recipeBuilder()
+    .inputs(metaitem('dustFlint'))
+    .inputs(metaitem('dustQuartzSand') * 16)
+    .outputs(metaitem('dustGlass') * 16)
+    .duration(200)
+    .EUt(VA[ULV])
+    .buildAndRegister()
+    
+crafting.addShapeless('gregtech:glass_flint_dust_full', metaitem('dustGlass') * 8, [
+        metaitem('dustFlint'), metaitem('dustQuartzSand'), metaitem('dustQuartzSand'),
+        metaitem('dustQuartzSand'), metaitem('dustQuartzSand'), metaitem('dustQuartzSand'),
+        metaitem('dustQuartzSand'), metaitem('dustQuartzSand'), metaitem('dustQuartzSand')])
