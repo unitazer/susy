@@ -75,7 +75,7 @@ def rubbers = [
     new Rubber('dustCompoundedPolyisoprene', 'Rubber', 8, 225, 8),
     new Rubber('dustCompoundedStyreneIsopreneRubber', 'StyreneIsopreneRubber', 4, 30 * 20, 4),
     new Rubber('dustCompoundedStyreneButadieneRubber', 'StyreneButadieneRubber', 4, 30 * 20, 4),
-    new Rubber('dustRawNitrileRubber', 'NitrileButadieneRubber', 4, 30 * 20, 4)
+    new Rubber('dustRawNitrileRubber', 'NitrileRubber', 4, 30 * 20, 4)
 ]
 
 def sulfurs = [
@@ -343,6 +343,7 @@ DT.recipeBuilder()
     .buildAndRegister()
 
 BR.recipeBuilder()
+    .circuitMeta(2)
     .inputs(ore('dustSalt') * 2)
     .fluidInputs(fluid('sulfuric_acid') * 100)
     .fluidInputs(fluid('nitrile_rubber_latex') * 2000)
