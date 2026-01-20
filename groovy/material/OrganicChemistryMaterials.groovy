@@ -2527,11 +2527,7 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzenesulfonate = new Material.Builder(15396, SuSyUtility.susyId('sodium_benzenesulfonate'))
-            	.dust()
-            	.components(Carbon * 6, Hydrogen * 5, Sulfur * 1, Oxygen * 3, Sodium * 1)
-            	.colorAverage()
-            	.build()
+        // FREE ID: 15396
             
         Polycarbonate = new Material.Builder(15397, SuSyUtility.susyId('polycarbonate'))
                 .polymer()
@@ -2984,11 +2980,7 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        SodiumBenzenesulfonateSolution = new Material.Builder(15470, SuSyUtility.susyId('sodium_benzenesulfonate_solution'))
-                .liquid()
-                .components(SodiumBenzenesulfonate, Water)
-                .colorAverage()
-                .build()
+        // FREE ID: 15470
 
         BenzenesulfonicAcid = new Material.Builder(15471, SuSyUtility.susyId('benzenesulfonic_acid'))
                 .liquid()
@@ -3332,11 +3324,17 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        NitrileEmulsion = new Material.Builder(15522, SuSyUtility.susyId('nitrile_emulsion'))
-                .components(Acrylonitrile * 1, Butadiene * 2)
-                .colorAverage()
-                .fluid()
-                .colorAverage()
+        RawNitrileRubber = new Material.Builder(15522, SuSyUtility.susyId('raw_nitrile_rubber'))
+                .dust()
+                .components(Acrylonitrile * 3, Butadiene * 7)
+                .color(0x0a0e1f)
+                .build()
+
+        NitrileRubber = new Material.Builder(15523, SuSyUtility.susyId('nitrile_rubber'))
+                .polymer()
+                .components(Acrylonitrile * 3, Butadiene * 7)
+                .flags(GENERATE_FOIL, GENERATE_RING)
+                .color(0x040714)
                 .build()
     }
 }

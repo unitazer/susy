@@ -74,7 +74,8 @@ def rubbers = [
     new Rubber('dustLatex', 'Rubber', 4, 40 * 20, 4),
     new Rubber('dustCompoundedPolyisoprene', 'Rubber', 8, 225, 8),
     new Rubber('dustCompoundedStyreneIsopreneRubber', 'StyreneIsopreneRubber', 4, 30 * 20, 4),
-    new Rubber('dustCompoundedStyreneButadieneRubber', 'StyreneButadieneRubber', 4, 30 * 20, 4)
+    new Rubber('dustCompoundedStyreneButadieneRubber', 'StyreneButadieneRubber', 4, 30 * 20, 4),
+    new Rubber('dustRawNitrileRubber', 'NitrileButadieneRubber', 4, 30 * 20, 4)
 ]
 
 def sulfurs = [
@@ -310,73 +311,43 @@ MIXER.recipeBuilder()
     .duration(250)
     .buildAndRegister()
 
-
-// nitrile-butadiene rubber
+// Nitrile-Butadiene rubber
 
 MIXER.recipeBuilder()
-    .fluidInputs(fluid('butadiene') * 2880)
+    .inputs(ore('dustTinySodiumDodecylSulfate'))
+    .fluidInputs(fluid('butadiene') * 400)
     .fluidInputs(fluid('acrylonitrile') * 1000)
-    .fluidInputs(fluid('water') * 5000)
-    .inputs(ore('dustSodiumBenzenesulfonate') * 16)
-    .fluidOutputs(fluid('nitrile_emulsion') * 9000)
+    .fluidInputs(fluid('water') * 2000)
+    .fluidOutputs(fluid('nitrile_rubber_precursor_emulsion') * 3400)
     .EUt(VA[MV])
-    .duration(30)
-    .buildAndRegister()
-
-MIXER.recipeBuilder()
-    .fluidInputs(fluid('hydrogen_peroxide') * 500)
-    .inputs(ore('dustIronSulfate') * 3)
-    .fluidOutputs(fluid('fenton_reagent') * 500)
-    .EUt(VA[LV])
-    .duration(30)
+    .duration(20)
     .buildAndRegister()
 
 POLYMERIZATION_TANK.recipeBuilder()
-    .fluidInputs(fluid('nitrile_emulsion') * 9000)
-    .fluidInputs(fluid('fenton_reagent') * 500)
-    .inputs(ore('hydroquinone') * 7)
-    .fluidOutputs(fluid('polymerized_nitrile_emulsion') * 10000)
+    .inputs(ore('dustTinySodiumDithionite'))
+    .inputs(ore('dustTinyIronSulfate'))
+    .fluidInputs(fluid('nitrile_rubber_precursor_emulsion') * 3400)
+    .fluidInputs(fluid('di_tert_butyl_peroxide') * 50)
+    .fluidOutputs(fluid('nitrile_rubber_emulsion') * 2400)
     .EUt(VA[MV])
     .duration(500)
     .buildAndRegister()
 
-HIGH_TEMP_DT.recipeBuilder()
-    .fluidInputs(fluid('polymerized_nitrile_emulsion') * 5000)
-    .fluidOutputs(fluid('butadiene') * 800)
-    .fluidOutputs(fluid('acrylonitrile') * 200)
-    .fluidOutputs(fluid('nitrile_latex') * 4000)
+DT.recipeBuilder()
+    .fluidInputs(fluid('nitrile_rubber_emulsion') * 2400)
+    .fluidOutputs(fluid('butadiene') * 100)
+    .fluidOutputs(fluid('acrylonitrile') * 300)
+    .fluidOutputs(fluid('nitrile_rubber_latex') * 2000)
     .EUt(VA[MV])
-    .duration(80)
+    .duration(125)
     .buildAndRegister()
 
-
-COAGULATOR.recipeBuilder()
-    .fluidInputs(fluid('nitrile_latex') * 1000)
-    .fluidInputs(fluid('sulfuric_acid') * 80)
-    .fluidOutputs()
-    .outputs(metaitem('dustImpureNitrileRubber'))
-    .duration(300)
-    .buildAndRegister()
-
-MIXER.recipeBuilder() // washing out
-    .fluidInputs(fluid('water') * 1000)
-    .inputs(ore('dustImpureNitrileRubber') * 4)
-    .outputs(metaitem('dustWashedNitrileRubber'))
-    .fluidOutputs(fluid('sodium_benzenesulfonate_solution') * 500)
-    .duration(40)
-    .EUt(VA[LV])
-    .buildAndRegister()
-
-DISTILLERY.recipeBuilder()
-    .fluidInputs(fluid('sodium_benzenesulfonate_solution') * 1000)
-    .outputs(metaitem('dustSodiumBenzenesulfonate') * 16)
-    .EUt(VA[ULV])
-    .duration(10)
-    .buildAndRegister()
-
-DRYER.recipeBuilder()
-    .inputs(ore('dustWashedNitrileRubber') * 10)
-    .outputs(metaitem('dustNitrileRubber') * 10)
+BR.recipeBuilder()
+    .inputs(ore('dustSalt') * 2)
+    .fluidInputs(fluid('sulfuric_acid') * 100)
+    .fluidInputs(fluid('nitrile_rubber_latex') * 2000)
+    .fluidOutputs(fluid('acidic_wastewater') * 2100)
+    .outputs(metaitem('dustRawNitrileRubber'))
     .EUt(VA[MV])
-    .duration(80)
+    .duration(250)
     .buildAndRegister()

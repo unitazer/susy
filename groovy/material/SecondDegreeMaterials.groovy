@@ -220,11 +220,7 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        FentonReagent = new Material.Builder(13032, SuSyUtility.susyId('fenton_reagent'))
-                .liquid()
-                .components(HydrogenPeroxide * 1, IronSulfate * 1)
-                .colorAverage()
-                .build()
+        // FREE ID: 13032
 
         SodiumThiosulfateSolution = new Material.Builder(13033, SuSyUtility.susyId('sodium_thiosulfate_solution'))
                 .liquid()
@@ -797,7 +793,13 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 13124-13129
+        SodiumDithioniteSolution = new Material.Builder(13124, SuSyUtility.susyId('sodium_dithionite_solution'))
+                .liquid()
+                .components(SodiumDithionite, Water)
+                .colorAverage()
+                .build()
+
+        // FREE ID: 13125-13129
 
         HexachloroiridicAcidSolution = new Material.Builder(13130, SuSyUtility.susyId('hexachloroiridic_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))

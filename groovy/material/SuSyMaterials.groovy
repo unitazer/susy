@@ -810,6 +810,9 @@ class SuSyMaterials {
     public static Material Pitch
     public static Material TabularAluminaRefractory
     public static Material DelithiatedSalarBrine
+    public static Material NitrileRubberPrecursorEmulsion
+    public static Material NitrileRubberEmulsion
+    public static Material NitrileRubberLatex
 
     // Petrochem Materials
 
@@ -1634,8 +1637,9 @@ class SuSyMaterials {
     public static Material YttriaStabilizedZirconia
     public static Material BismuthIIINitrateSolution
     public static Material LeadIVOxide
-    public static Material AluminiumAlloy6061
-    public static Material AluminiumAlloy7075
+    public static Material ZincDithioniteSolution
+    public static Material SodiumDithionite
+    public static Material ZincHydroxide
 
     // HP Materials
 
@@ -1869,6 +1873,7 @@ class SuSyMaterials {
     public static Material PlatinumOnCarbon
     public static Material TabularAlumina
     public static Material ReactiveAlumina
+    public static Material SodiumDithioniteSolution
 
     // Organic Chemistry Materials
 
@@ -2385,6 +2390,8 @@ class SuSyMaterials {
     public static Material TwoAminoOneNaphthol
     public static Material OneNaphtholTwoDiazoniumChloride
     public static Material Diazonaphthoquinone
+    public static Material RawNitrileRubber
+    public static Material NitrileRubber
 
     // Third Degree Materials
 
@@ -2533,15 +2540,6 @@ class SuSyMaterials {
     public static Material OneNaphtholTwoDiazoniumChlorideSolution
     public static Material BenzenediazoniumChlorideSolution
     public static Material BenzenediazoniumFluorideSolution
-    public static Material SodiumBenzenesulfonate
-    public static Material SodiumBenzenesulfonateSolution
-    public static Material PolymerizedNitrileEmulsion
-    public static Material NitrileLatex
-    public static Material ImpureNitrileRubber
-    public static Material WashedNitrileRubber
-    public static Material NitrileRubber
-    public static Material FentonReagent
-    public static Material NitrileEmulsion
 
     // Thermodynamics Materials
 
