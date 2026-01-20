@@ -66,6 +66,14 @@ FIXED_BR.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
+SIEVE_DT.recipeBuilder()
+    .fluidInputs(fluid('treated_sulfuric_naphtha') * 1000)
+    .fluidOutputs(fluid('naphtha') * 1000)
+    .fluidOutputs(fluid('sour_gas') * 200)
+    .duration(50)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
 // Sour gas processing
 
 BCR.recipeBuilder()
