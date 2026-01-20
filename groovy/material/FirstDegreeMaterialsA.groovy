@@ -257,7 +257,7 @@ class FirstDegreeMaterialsA {
         AluminiumHydroxide.setFormula("Al(OH)3", true)
 
         AluminiumTrifluoride = new Material.Builder(8119, SuSyUtility.susyId('aluminium_trifluoride'))
-                .dust().liquid(new FluidBuilder().temperature(1564))
+                .dust()
                 .components(Aluminium, Fluorine * 3)
                 .color(0x3d98bf)
                 .build()

@@ -650,7 +650,7 @@ class FirstDegreeMaterialsB {
                 .build()
 
         BariumFluoride = new Material.Builder(8762, SuSyUtility.susyId('barium_fluoride'))
-                .dust().liquid(new FluidBuilder().temperature(1641))
+                .dust()
                 .components(Barium, Fluorine * 2)
                 .colorAverage()
                 .build()

@@ -1870,6 +1870,7 @@ class SuSyMaterials {
     public static Material PlatinumOnCarbon
     public static Material TabularAlumina
     public static Material ReactiveAlumina
+    public static Material HoopesElectrolyte
 
     // Organic Chemistry Materials
 
