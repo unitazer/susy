@@ -102,6 +102,7 @@ ELECTROLYTIC_CELL.recipeBuilder()
     .duration(400)
     .buildAndRegister()
 
+ELECTROLYTIC_CELL.recipeBuilder()
     .notConsumable(metaitem('stickNickel'))
     .notConsumable(metaitem('stickIron'))
     .notConsumable(ore('plateNafion'))
