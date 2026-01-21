@@ -649,7 +649,27 @@ class FirstDegreeMaterialsB {
                 .color(0xF5F3D0)
                 .build()
 
-        BariumFluoride = new Material.Builder(8762, SuSyUtility.susyId('barium_fluoride'))
+        ZincDithioniteSolution = new Material.Builder(8762, SuSyUtility.susyId('zinc_dithionite_solution'))
+                .liquid()
+                .components(Zinc, Sulfur * 2, Oxygen * 4, Water)
+                .color(0xd6c7b0)
+                .build()
+
+        SodiumDithionite = new Material.Builder(8763, SuSyUtility.susyId('sodium_dithionite'))
+                .dust()
+                .components(Sodium * 2, Sulfur * 2, Oxygen * 4)
+                .color(0xcfc0a1)
+                .build()
+
+        ZincHydroxide = new Material.Builder(8764, SuSyUtility.susyId('zinc_hydroxide'))
+                .dust()
+                .components(Zinc, Hydrogen * 2, Oxygen * 2)
+                .color(0x939cbf)
+                .build()
+
+        ZincHydroxide.setFormula("Zn(OH)2", true)
+      
+        BariumFluoride = new Material.Builder(8765, SuSyUtility.susyId('barium_fluoride'))
                 .dust()
                 .components(Barium, Fluorine * 2)
                 .colorAverage()

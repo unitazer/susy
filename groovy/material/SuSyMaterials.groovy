@@ -810,6 +810,9 @@ class SuSyMaterials {
     public static Material Pitch
     public static Material TabularAluminaRefractory
     public static Material DelithiatedSalarBrine
+    public static Material NitrileRubberPrecursorEmulsion
+    public static Material NitrileRubberEmulsion
+    public static Material NitrileRubberLatex
 
     // Petrochem Materials
 
@@ -1638,8 +1641,9 @@ class SuSyMaterials {
     public static Material YttriaStabilizedZirconia
     public static Material BismuthIIINitrateSolution
     public static Material LeadIVOxide
-    public static Material AluminiumAlloy6061
-    public static Material AluminiumAlloy7075
+    public static Material ZincDithioniteSolution
+    public static Material SodiumDithionite
+    public static Material ZincHydroxide
     public static Material BariumFluoride
 
     // HP Materials
@@ -1874,6 +1878,7 @@ class SuSyMaterials {
     public static Material PlatinumOnCarbon
     public static Material TabularAlumina
     public static Material ReactiveAlumina
+    public static Material SodiumDithioniteSolution
     public static Material HoopesElectrolyte
 
     // Organic Chemistry Materials
@@ -2391,6 +2396,8 @@ class SuSyMaterials {
     public static Material TwoAminoOneNaphthol
     public static Material OneNaphtholTwoDiazoniumChloride
     public static Material Diazonaphthoquinone
+    public static Material RawNitrileRubber
+    public static Material NitrileRubber
 
     // Third Degree Materials
 

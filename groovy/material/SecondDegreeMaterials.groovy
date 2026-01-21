@@ -797,7 +797,13 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 13124-13129
+        SodiumDithioniteSolution = new Material.Builder(13124, SuSyUtility.susyId('sodium_dithionite_solution'))
+                .liquid()
+                .components(SodiumDithionite, Water)
+                .colorAverage()
+                .build()
+
+        // FREE ID: 13125-13129
 
         HexachloroiridicAcidSolution = new Material.Builder(13130, SuSyUtility.susyId('hexachloroiridic_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
