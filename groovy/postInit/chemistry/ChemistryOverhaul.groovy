@@ -278,6 +278,7 @@ ROASTER.recipeBuilder()
 // Sodium bisulfate and related
 
 BR.recipeBuilder()
+    .circuitMeta(1)
     .inputs(ore('dustSalt') * 2)
     .fluidInputs(fluid('sulfuric_acid') * 1000)
     .outputs(metaitem('dustSodiumBisulfate') * 7)
