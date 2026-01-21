@@ -649,6 +649,12 @@ class FirstDegreeMaterialsB {
                 .color(0xF5F3D0)
                 .build()
 
+        ZincDithioniteSolution = new Material.Builder(8762, SuSyUtility.susyId('zinc_dithionite_solution'))
+                .liquid()
+                .components(Zinc, Sulfur * 2, Oxygen * 4, Water)
+                .color(0xd6c7b0)
+                .build()
+
         SodiumDithionite = new Material.Builder(8763, SuSyUtility.susyId('sodium_dithionite'))
                 .dust()
                 .components(Sodium * 2, Sulfur * 2, Oxygen * 4)
