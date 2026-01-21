@@ -1640,6 +1640,7 @@ class SuSyMaterials {
     public static Material LeadIVOxide
     public static Material AluminiumAlloy6061
     public static Material AluminiumAlloy7075
+    public static Material BariumFluoride
 
     // HP Materials
 
@@ -1873,6 +1874,7 @@ class SuSyMaterials {
     public static Material PlatinumOnCarbon
     public static Material TabularAlumina
     public static Material ReactiveAlumina
+    public static Material HoopesElectrolyte
 
     // Organic Chemistry Materials
 

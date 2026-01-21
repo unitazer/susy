@@ -648,5 +648,11 @@ class FirstDegreeMaterialsB {
                 .components(Silver, Nitrogen, Oxygen * 3)
                 .color(0xF5F3D0)
                 .build()
+
+        BariumFluoride = new Material.Builder(8762, SuSyUtility.susyId('barium_fluoride'))
+                .dust()
+                .components(Barium, Fluorine * 2)
+                .colorAverage()
+                .build()
     }
 }
