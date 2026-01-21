@@ -702,11 +702,11 @@ for (fluid_fuel in FluidFuels) {
 }
 
 FLUID_HEATER.recipeBuilder()
-        .circuitMeta(1)
+        .circuitMeta(2)
         .fluidInputs(fluid('air') * 1000)
         .fluidOutputs(fluid('preheated_air') * 1000)
-        .duration(5)
-        .EUt(VA[EV])
+        .duration(40)
+        .EUt(VA[MV])
         .buildAndRegister();
 
 // Combined Cycle
@@ -900,6 +900,6 @@ FLUID_HEATER.recipeBuilder()
         .circuitMeta(1)
         .fluidInputs(liquid('air') * 1000)
         .fluidOutputs(liquid('hot_air') * 1000)
-        .duration(40)
+        .duration(20)
         .EUt(VA[LV])
         .buildAndRegister();
