@@ -674,5 +674,14 @@ class FirstDegreeMaterialsB {
                 .components(Barium, Fluorine * 2)
                 .colorAverage()
                 .build()
+
+        ManganeseSteel = new Material.Builder(8766, SuSyUtility.susyId('manganese_steel'))
+                .ingot().liquid(new FluidBuilder().temperature(1600))
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .components(Iron * 83, Manganese * 13, Carbon * 4)
+                .color(0xc2e6a3)
+                .blastTemp(1600, GasTier.LOW, GTValues.VA[GTValues.MV], 200)
+                .build()
     }
 }

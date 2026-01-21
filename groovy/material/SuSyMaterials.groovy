@@ -1641,6 +1641,7 @@ class SuSyMaterials {
     public static Material YttriaStabilizedZirconia
     public static Material BismuthIIINitrateSolution
     public static Material LeadIVOxide
+    public static Material ManganeseSteel
     public static Material ZincDithioniteSolution
     public static Material SodiumDithionite
     public static Material ZincHydroxide
