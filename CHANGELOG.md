@@ -1,7 +1,7 @@
 # UPDATE 0.1.16-rc1
 ## Mod Changes
 ### Mod Updates
-- SusyCore v0.1.88 → v0.1.90
+- SusyCore v0.1.88 → v0.1.91
 - Universal Tweaks 1.12.2-1.17.0 → 1.12.2-1.18.0
 - GregTech Food Option 1.12.2-1.12.7.1 → 1.12.2-1.12.8
 ### Mod Removals
