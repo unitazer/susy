@@ -220,7 +220,11 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 13032
+        HoopesElectrolyte = new Material.Builder(13032, SuSyUtility.susyId('hoopes_electrolyte'))
+                .dust().liquid(new FluidBuilder().temperature(1273))
+                .components(BariumFluoride, AluminiumTrifluoride * 2, SodiumFluoride * 2)
+                .colorAverage()
+                .build()
 
         SodiumThiosulfateSolution = new Material.Builder(13033, SuSyUtility.susyId('sodium_thiosulfate_solution'))
                 .liquid()

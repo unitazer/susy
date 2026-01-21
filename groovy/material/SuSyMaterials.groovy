@@ -955,7 +955,11 @@ class SuSyMaterials {
 
     public static Material LiquefactionOil
     public static Material LightLiquefactionOil
+    public static Material HeatedLightLiquefactionOil
     public static Material CrudeMediumLiquefactionOil
+    public static Material SulfuricMediumLiquefactionOil
+    public static Material HeatedMediumLiquefactionOil
+    public static Material TreatedSulfuricMediumLiquefactionOil
     public static Material MediumLiquefactionOil
 
     public static Material RawLtSyncrude
@@ -1640,6 +1644,7 @@ class SuSyMaterials {
     public static Material ZincDithioniteSolution
     public static Material SodiumDithionite
     public static Material ZincHydroxide
+    public static Material BariumFluoride
 
     // HP Materials
 
@@ -1874,6 +1879,7 @@ class SuSyMaterials {
     public static Material TabularAlumina
     public static Material ReactiveAlumina
     public static Material SodiumDithioniteSolution
+    public static Material HoopesElectrolyte
 
     // Organic Chemistry Materials
 

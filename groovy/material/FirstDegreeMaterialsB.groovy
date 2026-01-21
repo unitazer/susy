@@ -668,5 +668,11 @@ class FirstDegreeMaterialsB {
                 .build()
 
         ZincHydroxide.setFormula("Zn(OH)2", true)
+      
+        BariumFluoride = new Material.Builder(8765, SuSyUtility.susyId('barium_fluoride'))
+                .dust()
+                .components(Barium, Fluorine * 2)
+                .colorAverage()
+                .build()
     }
 }
