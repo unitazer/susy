@@ -676,5 +676,6 @@ class FirstDegreeMaterialsB {
                 .components(Iron * 83, Manganese * 13, Carbon * 4)
                 .color(0xc2e6a3)
                 .blastTemp(1600, GasTier.LOW, GTValues.VA[GTValues.MV], 200)
+                .build()
     }
 }
