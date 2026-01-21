@@ -1,3 +1,45 @@
+# UPDATE 0.1.16-rc1
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.88 → v0.1.91
+- Universal Tweaks 1.12.2-1.17.0 → 1.12.2-1.18.0
+- GregTech Food Option 1.12.2-1.12.7.1 → 1.12.2-1.12.8
+### Mod Removals
+- Climate Control/Geographicraft
+## Changes
+### New Features
+- The nitrile-butadiene rubber chain is here! (#1756 by @aliu-here)
+- Large boilers now accept a redstone control hatch! Control your multiblock even more. (sc#589 by @unitazer)
+- The eccentric roll crusher (jaw crusher) and ball mill have been added! Use these to greatly speed up your ore processing. (sc#592 by @MCTian-mi)
+- You may now make high-purity aluminium! (#1735 by @Fiery36)
+### Changed Features
+- Nuclear power output is now 32x higher. (#1791 by @planetme)
+- Bismuth fuel rods are now 3x cheaper, making polonium easier to obtain.
+- Sugarcane is now affected by sprinklers.
+### Fixes
+- Worlds now correctly load on CurseForge launcher! (But we had to remove Geographicraft for it.)
+- The questbook has been improved thanks to @whoisyp and @Fiery36.
+- You now receive the correct singleblock combustion generators from crafting. (#1781 by @Fiery36)
+- [Susy-Core] Barrels no longer crash servers! (sc#595 by @bruberu)
+- [Susy-Core] CPU lag from Project Red has also decreased. (sc#597 by @bruberu)
+But don't worry about all of the other code we merged lately from @Engineerboy2998, @xnossisx, @Suharakimi, @1minus4, @loxoDev, @aluminium0316, @unitazer and @ThisMightBeNoah.
+That's definitely not leading to anything.
+Of course, thanks to our new contributors @1minus4 and @aliu-here! Although we're still trying to figure out who @aliu-here is on Discord...
+# UPDATE 0.1.15.14
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.87 → v0.1.88
+## Changes
+### New Features
+- [Susy-Core] You can now see which LittleTiles blocks have loot in TOP! Never miss those random GTFO food items again. (#585 by @aluminium0316)
+### Changed Features
+- [Susy-Core] Singleblock combustion generators now accept manual insertion of coolant. (#586 by @ThisMightBeNoah)
+### Fixes
+- Iron armor no longer causes dupes. (#1766 by @koukopuff)
+- Yet another step has been taken towards stoichiometric perfection... (#1772 by @Crindigo)
+- [Susy-Core] Combustion generator UIs are now more accurate. (#584 by @aluminium0316)
+And thanks to @Fiery36, @whoisyp, and @Syriusz171 for fixing issues in the questbook.
+I also want to highlight our new contributors: @ThisMightBeNoah, @Engineerboy2998, and @aluminium0316! Thank you for joining us.
 # UPDATE 0.1.15.13
 ## Mod Changes
 ### Mod Updates
