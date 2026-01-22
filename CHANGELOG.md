@@ -1,3 +1,14 @@
+# UPDATE 0.1.16-rc2
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.91 → v0.1.93
+### Mod Removals
+- AssetMover
+## Changes
+### Fixes
+- This fixes some item ID shifts introduced by the last update. The culprits will be injected with Xenotimic Rare Earth Nitrates Solution.
+- The ball mill model and recipe logic have been slightly tweaked.
+- Both Acheson process recipes for graphite electrodes are now available.
 # UPDATE 0.1.16-rc1
 ## Mod Changes
 ### Mod Updates
