@@ -876,5 +876,9 @@ class ChangeFlags {
                 .absorptionFactor(0.015625)
                 .moderationFactor(5).build());
         Beryllium.addFlags("force_generate_block")
+
+        // Mill balls
+        Materials.Steel.setProperty(SuSyPropertyKey.MILL_BALL, new MillBallProperty(7680));
+        Materials.StainlessSteel.setProperty(SuSyPropertyKey.MILL_BALL, new MillBallProperty(17280));
     }
 }
