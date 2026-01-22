@@ -661,6 +661,7 @@ Globals.solders.each { key, val ->
         .fluidInputs(fluid('napalm') * 250)
         .inputs(item('techguns:itemshared', 28))
         .outputs(item('techguns:itemshared', 27))
+        .fluidInputs(fluid(key) * val)
         .duration(80)
         .EUt(VA[ULV])
         .buildAndRegister();
