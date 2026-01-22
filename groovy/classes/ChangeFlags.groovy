@@ -15,6 +15,7 @@ import supersymmetry.api.fluids.SusyFluidStorageKeys
 import supersymmetry.api.recipes.SuSyRecipeMaps
 import supersymmetry.api.unification.material.properties.DummyABSProperty;
 import supersymmetry.api.unification.material.properties.FiberProperty
+import supersymmetry.api.unification.material.properties.MillBallProperty
 import supersymmetry.api.unification.material.properties.SuSyPropertyKey
 
 import static gregtech.api.unification.material.Materials.*
