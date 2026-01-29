@@ -198,11 +198,22 @@ crafting.replaceShaped('minecraft:lever', item('minecraft:lever'), [
     [null, ore('dustRedstone'), ore('craftingToolScrewdriver')]
 ])
 
-crafting.replaceShaped('minecraft:tripwire_hook', item('minecraft:tripwire_hook') * 2, [
+RecyclingHelper.replaceShaped('minecraft:tripwire_hook', item('minecraft:tripwire_hook'), [
     [null, ore('ringIron'), null],
     [ore('springSmallIron'), ore('stickWood'), null],
     [ore('dustRedstone'), ore('cobblestone'), null]
 ])
+
+ASSEMBLER.recipeBuilder()
+    .inputs(ore('ringIron'))
+    .inputs(ore('springSmallIron'))
+    .inputs(ore('stickWood'))
+    .inputs(ore('dustRedstone'))
+    .inputs(ore('cobblestone'))
+    .outputs(item('minecraft:tripwire_hook'))
+    .duration(100)
+    .EUt(4)
+    .buildAndRegister()
 
 crafting.replaceShaped('quark:iron_rod', item('quark:iron_rod'), [
     [null, ore('stickIron'), null],
