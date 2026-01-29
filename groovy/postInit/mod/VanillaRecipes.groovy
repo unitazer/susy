@@ -882,6 +882,14 @@ mods.gregtech.assembler.removeByInput(1, [item('minecraft:planks', 4) * 6 * 6, m
 mods.gregtech.assembler.removeByInput(1, [item('minecraft:planks', 5) * 6 * 6, metaitem('circuit.integrated').withNbt(['Configuration': 7])], null)
 // Purpur Stairs * 4
 mods.gregtech.assembler.removeByInput(1, [metaitem('circuit.integrated').withNbt(['Configuration': 7]), item('minecraft:purpur_block') * 6 * 6], null)
+// Rubber Wood Stairs * 4
+mods.gregtech.assembler.removeByInput(1, [item('gregtech:planks') * 6 * 6, metaitem('circuit.integrated').withNbt(['Configuration': 7])], null)
+// Treated Wood Stairs * 4
+mods.gregtech.assembler.removeByInput(1, [item('gregtech:planks', 1) * 6 * 6, metaitem('circuit.integrated').withNbt(['Configuration': 7])], null)
+// Small Pile of Stone Dust * 6
+mods.gregtech.macerator.removeByInput(2, [item('minecraft:sandstone_stairs')], null)
+// Small Pile of Stone Dust * 6
+mods.gregtech.macerator.removeByInput(2, [item('minecraft:red_sandstone_stairs')], null)
 
 def stairVariants = [
         [block: item('minecraft:planks'), stair: item('minecraft:oak_stairs'), dust: metaitem('dustSmallWood')],
@@ -889,19 +897,20 @@ def stairVariants = [
         [block: item('minecraft:brick_block'), stair: item('minecraft:brick_stairs'), dust: metaitem('dustBrick')],
         [block: item('minecraft:stonebrick'), stair: item('minecraft:stone_brick_stairs'), dust: metaitem('dustSmallStone')],
         [block: item('minecraft:nether_brick'), stair: item('minecraft:nether_brick_stairs'), dust: metaitem('dustNetherrack')],
-        [block: item('minecraft:sandstone'), stair: item('minecraft:sandstone_stairs'), dust: metaitem('dustSmallQuartzSand')],
+        [block: item('minecraft:sandstone'), stair: item('minecraft:sandstone_stairs')],
         [block: item('minecraft:planks', 1), stair: item('minecraft:spruce_stairs'), dust: metaitem('dustSmallWood')],
         [block: item('minecraft:planks', 2), stair: item('minecraft:birch_stairs'), dust: metaitem('dustSmallWood')],
         [block: item('minecraft:planks', 3), stair: item('minecraft:jungle_stairs'), dust: metaitem('dustSmallWood')],
         [block: item('minecraft:quartz_block'), stair: item('minecraft:quartz_stairs'), dust: metaitem('dustNetherQuartz')],
         [block: item('minecraft:planks', 4), stair: item('minecraft:acacia_stairs'), dust: metaitem('dustSmallWood')],
         [block: item('minecraft:planks', 5), stair: item('minecraft:dark_oak_stairs'), dust: metaitem('dustSmallWood')],
-        [block: item('minecraft:red_sandstone'), stair: item('minecraft:red_sandstone_stairs'), dust: metaitem('dustSmallQuartzSand')],
+        [block: item('minecraft:red_sandstone'), stair: item('minecraft:red_sandstone_stairs')],
         [block: item('minecraft:purpur_block'), stair: item('minecraft:purpur_stairs')],
+        [block: item('gregtech:planks'), stair: item('gregtech:rubber_wood_stairs'), dust: metaitem('dustSmallWood')],
+        [block: item('gregtech:planks', 2), stair: item('gregtech:treated_wood_stairs'), dust: metaitem('dustSmallTreatedWood')],
 ]
 
 stairVariants.each {material ->
-
     ASSEMBLER.recipeBuilder()
             .circuitMeta(7)
             .inputs(material.block * 6)
@@ -911,7 +920,7 @@ stairVariants.each {material ->
             .buildAndRegister()
 
     if (material.dust != null) {
-
+        RecyclingHelper.removeRecyclingRecipes(material.stair)
         RecyclingHelper.handleRecycling(material.stair, [material.dust * 3])
     }
 }
