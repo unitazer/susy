@@ -1939,3 +1939,5 @@ LATHE.recipeBuilder()
         .duration(20)
         .EUt(VA[ULV])
         .buildAndRegister()
+
+RecyclingHelper.handleRecycling(metaitem('stickStone'), [metaitem('dustSmallStone')])
