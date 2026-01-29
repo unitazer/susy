@@ -8,7 +8,7 @@ def name_removals = [
         "regeneration:hand_jar",
         "regeneration:lindos_vial",
         "tardis:tardis_coral",
-	"tardis:bessie",
+	    "tardis:bessie",
         "sync:sync_core",
         "sync:shell_constructor",
         "sync:shell_storage",
@@ -18,12 +18,30 @@ def name_removals = [
         'quark:redstone_randomizer',
         "gravitygun:gravitygun",
         "gravitygun:supercharged_gravitygun",
-        "portalgun:portalgun"
-]
+        "portalgun:portalgun",
+        'weeping-angels:angel_painting',
+        'jecalculation:math_calculator',
+        'cyberware:blueprint_archive',
+        'cyberware:component_box',
+        'cyberware:surgery_chamber',
+        'cyberware:charger',
+        'cyberware:engineering_table',
+        'cyberware:scanner',
+        'cyberware:scanner_1',
+        'cyberware:beacon',
+        'cyberware:radio_post']
 
 for (name in name_removals) {
     crafting.remove(name)
 }
+
+mods.jei.ingredient.yeet(
+        item('travelersbackpack:backpack_tank'),
+        item('travelersbackpack:sleeping_bag_bottom'),
+        item('travelersbackpack:hose_nozzle'),
+        item('travelersbackpack:hose'),
+        fluid('potion'),
+)
 
 crafting.replaceShaped('cd4017be_lib:dimstack/dim_pipe', item('dimstack:dim_pipe') * 2, [
         [ore('frameGtSteel'), ore('gemQuartzite'), ore('frameGtSteel')],
@@ -53,4 +71,16 @@ crafting.replaceShaped('toolbelt:belt', item('toolbelt:belt'), [
         [item('minecraft:string'), metaitem('bound_leather'), item('minecraft:string')],
         [metaitem('bound_leather'), null, metaitem('bound_leather')],
         [item('toolbelt:pouch'), metaitem('ringSteel'), item('toolbelt:pouch')]
-]) 
+])
+
+crafting.replaceShaped('travelersbackpack:travelers_backpack_standard', item('travelersbackpack:travelers_backpack'), [
+        [item('techguns:itemshared', 77), metaitem('workbench'), item('techguns:itemshared', 77)],
+        [metaitem('large_fluid_cell.steel').or(item('gregtech:machine', 1612)), item('minecraft:chest'), metaitem('large_fluid_cell.steel').or(item('gregtech:machine', 1612))],
+        [item('techguns:itemshared', 77), ore('wool'), item('techguns:itemshared', 77)]
+])
+
+crafting.replaceShaped('jecalculation:item_calculator', item('jecalculation:item_calculator'), [
+        [metaitem('wireFineRedAlloy'), metaitem('plateGlass'), metaitem('wireFineRedAlloy')],
+        [item('opencomputers:material', 14), ore('circuitLv'), item('opencomputers:material', 16)],
+        [metaitem('wireFineRedAlloy'), ore('plateSteel'), metaitem('wireFineRedAlloy')]
+])
