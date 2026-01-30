@@ -204,6 +204,11 @@ RecyclingHelper.replaceShaped('minecraft:tripwire_hook', item('minecraft:tripwir
     [ore('dustRedstone'), ore('cobblestone'), null]
 ])
 
+// Tripwire Hook * 1
+mods.gregtech.assembler.removeByInput(4, [item('biomesoplenty:bamboo') * 2 * 2, metaitem('ringIron') * 2], null)
+// Tripwire Hook * 1
+mods.gregtech.assembler.removeByInput(4, [item('biomesoplenty:bamboo') * 2 * 2, metaitem('ringWroughtIron') * 2], null)
+
 ASSEMBLER.recipeBuilder()
     .inputs(ore('ringIron'))
     .inputs(ore('springSmallIron'))
@@ -214,6 +219,9 @@ ASSEMBLER.recipeBuilder()
     .duration(100)
     .EUt(4)
     .buildAndRegister()
+
+RecyclingHelper.removeRecyclingRecipes(item('minecraft:trapped_chest'))
+RecyclingHelper.handleRecycling(item('minecraft:trapped_chest'), [item('minecraft:chest'), ore('ringIron'), ore('springSmallIron'), ore('stickWood'), ore('dustRedstone'), ore('cobblestone')])
 
 crafting.replaceShaped('quark:iron_rod', item('quark:iron_rod'), [
     [null, ore('stickIron'), null],
