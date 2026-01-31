@@ -119,4 +119,5 @@ class Recipemaps {
     static final def VULCANIZER = recipemap('vulcanizing_press')
     static final def WEAPONS_FACTORY = recipemap('weapons_factory')
     static final def ZONE_REFINER = recipemap('zone_refiner')
+    static final def CUPOLA_FURNACE = recipemap('cupola_furnace')
 }

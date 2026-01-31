@@ -182,6 +182,14 @@ for (blastable in blastables) {
         .circuitMeta(2)
         .buildAndRegister()
 
+    //cast iron in cupola furnace; primitive age
+    CUPOLA_FURNACE.recipeBuilder()
+        .inputs(ore('ingotPigIron') * 10)
+        .inputs(ore('dustLimestone'))
+        .outputs(item('minecraft:iron_ingot') * 10)
+        .duration(200)
+        .buildAndRegister()
+
     METALLURGICAL_CONVERTER.recipeBuilder()
         .inputs(ore('ingotPigIron') * 10)
         .inputs(ore('dustQuicklime'))
