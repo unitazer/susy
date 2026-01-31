@@ -48,6 +48,17 @@ class ReductantIron {
     }
 }
 
+class ReductantCarbon {
+    String name
+    int consumption
+    float duration_multiplier
+    ReductantCarbon(String name, int consumption, float multiplier) {
+        this.name = name
+        this.consumption = consumption
+        this.duration_multiplier = multiplier
+    }
+}
+
 def blastables = [
     new BlastableIron('dustMagnetite', 2, 6, 4, 80),
     new BlastableIron('dustBandedIron', 2, 4, 3, 80),
@@ -182,14 +193,28 @@ for (blastable in blastables) {
         .circuitMeta(2)
         .buildAndRegister()
 
-    //cast iron in cupola furnace; primitive age
-    CUPOLA_FURNACE.recipeBuilder()
-        .inputs(ore('ingotPigIron') * 10)
-        .inputs(ore('dustLimestone'))
-        .inputs(ore('dustCoke') * 20)
-        .outputs(item('minecraft:iron_ingot') * 10)
-        .duration(200)
-        .buildAndRegister()
+def carbon_reductant = [
+        new ReductantCarbon("charcoal", 12, 1),
+        new ReductantCarbon("gemCoal", 10, 1), // Standard consumption, 10 = 8 + 2
+        new ReductantCarbon("gemLigniteCoke", 12, 1.2),
+        new ReductantCarbon("fuelCoke", 8, 0.8),
+        new ReductantCarbon("gemAnthracite", 8, 0.75),
+        new ReductantCarbon("dustCharcoal", 12, 0.95),
+        new ReductantCarbon("dustCoal", 10, 0.9),
+        new ReductantCarbon("dustLigniteCoke", 12, 1),
+        new ReductantCarbon("dustCoke", 8, 0.75),
+        new ReductantCarbon("dustAnthracite", 8, 0.7)
+]
+    for (carbon_reductant in carbon_reductants) {
+        //cast iron in cupola furnace; primitive age
+        CUPOLA_FURNACE.recipeBuilder()
+            .inputs(ore('ingotPigIron') * 8)
+            .inputs(ore('dustLimestone'))
+            .inputs(ore(carbon_reductant.name) * carbon_reductant.consumption)
+            .outputs(item('minecraft:iron_ingot') * 8)
+            .duration(200 * carbon_reductant.duration_multiplier)
+            .buildAndRegister()
+    }
 
     METALLURGICAL_CONVERTER.recipeBuilder()
         .inputs(ore('ingotPigIron') * 10)
