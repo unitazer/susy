@@ -186,6 +186,7 @@ for (blastable in blastables) {
     CUPOLA_FURNACE.recipeBuilder()
         .inputs(ore('ingotPigIron') * 10)
         .inputs(ore('dustLimestone'))
+        .inputs(ore('dustCoke') * 20)
         .outputs(item('minecraft:iron_ingot') * 10)
         .duration(200)
         .buildAndRegister()
