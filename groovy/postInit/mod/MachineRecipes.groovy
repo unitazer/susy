@@ -257,6 +257,13 @@ RecyclingHelper.addShaped("gregtech:coagulation_tank_wall", item('susy:coagulati
     [ore('plankTreatedWood'), ore('boltSteel'), ore('plankTreatedWood')]
 ])
 
+log.infoMC("Adding Cupola Furnace Craft")
+RecyclingHelper.addShaped("susy:cupola_furnace", metaitem('susy:cupola_furnace'), [
+    [metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay')],
+    [ore('craftingToolFile'), ore('blockGlass'), ore('craftingToolSoftHammer')],
+    [metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay')]
+])
+
 //Nerf arc furnaces, add graphite rod chain
 
 MIXER.recipeBuilder()
