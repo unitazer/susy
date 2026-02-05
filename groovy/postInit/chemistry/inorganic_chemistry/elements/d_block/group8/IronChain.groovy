@@ -396,6 +396,14 @@ ROASTER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
+ROASTER.recipeBuilder()
+        .inputs(ore('dustIronIiSulfide') * 2)
+        .outputs(metaitem('dustIronIiiOxide') * 1)
+        .fluidOutputs(fluid('sulfur_dioxide') * 2000)
+        .duration(200)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
 // FeSO4
 
 BR.recipeBuilder()

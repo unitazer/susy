@@ -17,9 +17,9 @@ ASSEMBLER.recipeBuilder()
 // H2SO4
 
 BR.recipeBuilder()
-        .notConsumable(metaitem('foilLead'))
-        .inputs(ore('dustSulfur') * 1)
-        .inputs(ore('dustSaltpeter') * 1)
+        .notConsumable(metaitem('foilLead') * 6)
+        .inputs(ore('dustSulfur'))
+        .notConsumable(ore('dustSaltpeter'))
         .fluidInputs(fluid('water') * 1000)
         .fluidOutputs(fluid('sulfuric_acid') * 1000)
         .duration(40)
