@@ -217,6 +217,15 @@ for (i = 1; i <= 8; i++) {
     ])
 }
 
+log.infoMC("Adding Steam Batch Reactor Craft")
+
+//Steam Batch Reactor
+RecyclingHelper.addShaped("gregtech:batch_reactor.ulv", metaitem('susy:batch_reactor.bronze'), [
+        [ore('pipeSmallFluidBronze'), ore('rotorBronze'), ore('pipeSmallFluidBronze')],
+        [ore('pipeSmallFluidBronze'), item('gregtech:steam_casing', 1), ore('pipeSmallFluidBronze')],
+        [ore('pipeSmallFluidBronze'), ore('rotorSteel'), ore('pipeSmallFluidBronze')]
+])
+
 log.infoMC("Adding Latex Collector Craft")
 
 //Latex Collector
@@ -467,6 +476,12 @@ RecyclingHelper.addShaped("gregtech:roaster.steel", metaitem('susy:roaster.steel
     [metaitem('plateWroughtIron'), metaitem('plateWroughtIron'), metaitem('plateWroughtIron')],
     [metaitem('plateSteel'), metaitem('susy:roaster.bronze'), metaitem('plateSteel')],
     [metaitem('pipeSmallFluidTinAlloy'), metaitem('pipeSmallFluidTinAlloy'), metaitem('pipeSmallFluidTinAlloy')]
+])
+
+RecyclingHelper.addShaped("gregtech:batch_reactor.steel", metaitem('susy:batch_reactor.steel'), [
+        [metaitem('plateSteel'), metaitem('pipeSmallFluidTinAlloy'), metaitem('plateSteel')],
+        [metaitem('pipeSmallFluidTinAlloy'), metaitem('susy:batch_reactor.bronze'), metaitem('pipeSmallFluidTinAlloy')],
+        [metaitem('plateWroughtIron'), metaitem('pipeSmallFluidTinAlloy'), metaitem('plateWroughtIron')]
 ])
 
 //Add the rest of the vacuum chambers
