@@ -16,13 +16,23 @@ ASSEMBLER.recipeBuilder()
 
 // H2SO4
 
-MIXER.recipeBuilder()
-    .fluidInputs(fluid('sulfur_trioxide') * 1000)
-    .fluidInputs(fluid('water') * 1000)
-    .fluidOutputs(fluid('sulfuric_acid') * 1000)
-    .EUt(VA[ULV])
-    .duration(40)
-    .buildAndRegister()
+BR.recipeBuilder()
+        .notConsumable(metaitem('foilLead'))
+        .inputs(ore('dustSulfur') * 1)
+        .inputs(ore('dustSaltpeter') * 1)
+        .fluidInputs(fluid('water') * 1000)
+        .fluidOutputs(fluid('sulfuric_acid') * 1000)
+        .duration(40)
+        .EUt(VA[ULV])
+        .buildAndRegister()
+
+BCR.recipeBuilder()
+        .fluidInputs(fluid('sulfur_trioxide') * 50)
+        .fluidInputs(fluid('water') * 50)
+        .fluidOutputs(fluid('sulfuric_acid') * 50)
+        .duration(2)
+        .EUt(VA[LV])
+        .buildAndRegister()
 
 // Ammonium Chloride
 
