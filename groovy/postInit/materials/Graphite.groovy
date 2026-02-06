@@ -1,12 +1,13 @@
 import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
 
+// Graphite Components
 MIXER.recipeBuilder()
     .inputs(ore('dustPitch'))
     .inputs(ore('dustCoke') * 9)
     .outputs(metaitem('carbon_paste') * 5)
     .EUt(VA[LV])
-    .duration(60)
+    .duration(80)
     .buildAndRegister()
 
 MIXER.recipeBuilder()
@@ -22,7 +23,7 @@ EXTRUDER.recipeBuilder()
     .inputs(metaitem('carbon_paste'))
     .outputs(metaitem('raw_electrode'))
     .EUt(VA[LV])
-    .duration(50)
+    .duration(120)
     .buildAndRegister()
 
 FORMING_PRESS.recipeBuilder()
@@ -30,24 +31,42 @@ FORMING_PRESS.recipeBuilder()
     .notConsumable(metaitem('shape.mold.crucible'))
     .outputs(metaitem('raw_carbon_crucible'))
     .EUt(VA[LV])
-    .duration(100)
+    .duration(140)
     .buildAndRegister()
 
+/*
 FORMING_PRESS.recipeBuilder()
-    .inputs(metaitem('carbon_paste') * 7)
+    .inputs(metaitem('carbon_paste') * 9)
     .notConsumable(metaitem('shape.mold.block'))
-    .outputs(metaitem('raw_carbon_crucible'))
+    .outputs(metaitem('raw_carbon_block'))
     .EUt(VA[LV])
-    .duration(100)
+    .duration(180)
+    .buildAndRegister()
+ */
+
+// Graphite Dust
+MILLING.recipeBuilder()
+    .inputs(metaitem('graphite_electrode'))
+    .outputs(metaitem('dustGraphite') * 1)
+    .EUt(VA[LV])
+    .duration(40)
     .buildAndRegister()
 
+MILLING.recipeBuilder()
+    .inputs(metaitem('crucible.graphite'))
+    .outputs(metaitem('dustGraphite') * 7)
+    .EUt(VA[LV])
+    .duration(160)
+    .buildAndRegister()
+
+// Clay-Graphite
 MIXER.recipeBuilder()
     .fluidInputs(fluid('water') * 100)
     .inputs(metaitem('dustFireclay'))
     .inputs(metaitem('dustGraphite'))
     .outputs(metaitem('clay_graphite_paste'))
     .EUt(VA[LV])
-    .duration(50)
+    .duration(60)
     .buildAndRegister()
 
 FORMING_PRESS.recipeBuilder()
@@ -55,13 +74,5 @@ FORMING_PRESS.recipeBuilder()
     .notConsumable(metaitem('shape.mold.crucible'))
     .outputs(metaitem('raw_clay_graphite_crucible'))
     .EUt(VA[LV])
-    .duration(100)
-    .buildAndRegister()
-
-MILLING.recipeBuilder()
-    .inputs(metaitem('clay_graphite_paste') * 7)
-    .notConsumable(metaitem('shape.mold.crucible'))
-    .outputs(metaitem('raw_clay_graphite_crucible'))
-    .EUt(VA[LV])
-    .duration(100)
+    .duration(160)
     .buildAndRegister()
