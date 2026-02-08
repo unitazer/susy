@@ -22,7 +22,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(ore('sand') * 2)
         .outputs(item('industrialrenewal:concrete') * 4)
         .duration(40)
-        .EUtVA[ULV]
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 MIXER.recipeBuilder()
