@@ -34,15 +34,13 @@ FORMING_PRESS.recipeBuilder()
     .duration(140)
     .buildAndRegister()
 
-/*
 FORMING_PRESS.recipeBuilder()
     .inputs(metaitem('carbon_paste') * 9)
     .notConsumable(metaitem('shape.mold.block'))
-    .outputs(metaitem('raw_carbon_block'))
+    .outputs(ore('blockGreenCarbon').first())
     .EUt(VA[LV])
     .duration(180)
     .buildAndRegister()
- */
 
 // Graphite Dust
 MILLING.recipeBuilder()
