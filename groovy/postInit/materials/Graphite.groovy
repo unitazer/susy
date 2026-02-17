@@ -43,6 +43,10 @@ FORMING_PRESS.recipeBuilder()
     .buildAndRegister()
 
 // Graphite Dust
+
+// Graphite Dust * 9
+mods.gregtech.macerator.removeByInput(2, [metaitem('blockGraphite')], null)
+
 BALL_MILL.recipeBuilder()
     .inputs(metaitem('graphite_electrode'))
     .outputs(metaitem('dustGraphite') * 1)
@@ -54,8 +58,15 @@ BALL_MILL.recipeBuilder()
     .inputs(metaitem('crucible.graphite'))
     .outputs(metaitem('dustGraphite') * 7)
     .EUt(VA[LV])
-    .duration(160)
+    .duration(120)
     .buildAndRegister()
+
+BALL_MILL.recipeBuilder()
+        .inputs(ore('blockGraphite'))
+        .outputs(metaitem('dustGraphite') * 9)
+        .EUt(VA[LV])
+        .duration(240)
+        .buildAndRegister()
 
 // Clay-Graphite
 MIXER.recipeBuilder()
