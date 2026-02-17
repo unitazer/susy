@@ -43,14 +43,14 @@ FORMING_PRESS.recipeBuilder()
     .buildAndRegister()
 
 // Graphite Dust
-MILLING.recipeBuilder()
+BALL_MILL.recipeBuilder()
     .inputs(metaitem('graphite_electrode'))
     .outputs(metaitem('dustGraphite') * 1)
     .EUt(VA[LV])
     .duration(40)
     .buildAndRegister()
 
-MILLING.recipeBuilder()
+BALL_MILL.recipeBuilder()
     .inputs(metaitem('crucible.graphite'))
     .outputs(metaitem('dustGraphite') * 7)
     .EUt(VA[LV])
