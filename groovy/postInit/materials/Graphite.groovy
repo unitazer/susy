@@ -62,11 +62,11 @@ BALL_MILL.recipeBuilder()
     .buildAndRegister()
 
 BALL_MILL.recipeBuilder()
-        .inputs(ore('blockGraphite'))
-        .outputs(metaitem('dustGraphite') * 9)
-        .EUt(VA[LV])
-        .duration(240)
-        .buildAndRegister()
+    .inputs(ore('blockGraphite'))
+    .outputs(metaitem('dustGraphite') * 9)
+    .EUt(VA[LV])
+    .duration(240)
+    .buildAndRegister()
 
 // Clay-Graphite
 MIXER.recipeBuilder()
