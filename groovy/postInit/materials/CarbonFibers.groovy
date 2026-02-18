@@ -1,4 +1,6 @@
-import static prePostInit.Recipemaps.*
+import prePostInit.Recipemaps
+
+import static prePostInit.*
 import static gregtech.api.GTValues.*
 
 // Acrylonitrile production via ammoxidation of propylene
