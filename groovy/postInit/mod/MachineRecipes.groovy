@@ -171,8 +171,6 @@ def refractories = [item('gregtech:metal_casing', 1), item('gregtech:metal_casin
                     item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9),
                     item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9)]
 
-log.infoMC("Adding Vulcanizing Press Craft")
-
 //Vulcanizing Press
 RecyclingHelper.addShaped("gregtech:vulcanizing_press.ulv", metaitem('susy:vulcanizing_press.bronze'), [
     [ore('springSmallSteel'), ore('stickSteel'), ore('springSmallSteel')],
@@ -200,8 +198,6 @@ RecyclingHelper.addShaped("gregtech:vulcanizing_press.ev", metaitem('susy:vulcan
     [ore('cableGtSingleAluminium'), ore('circuitEv'), ore('cableGtSingleAluminium')]
 ])
 
-log.infoMC("Adding Roaster Craft")
-
 //Roaster
 RecyclingHelper.addShaped("gregtech:roaster.ulv", metaitem('susy:roaster.bronze'), [
     [ore('pipeSmallFluidBronze'), ore('rotorBronze'), ore('pipeSmallFluidBronze')],
@@ -216,8 +212,6 @@ for (i = 1; i <= 8; i++) {
         [tieredCables[i], tieredWires[i], tieredCables[i]]
     ])
 }
-
-log.infoMC("Adding Latex Collector Craft")
 
 //Latex Collector
 RecyclingHelper.addShaped("gregtech:latex_collector.ulv", metaitem('susy:latex_collector.bronze'), [
@@ -234,16 +228,12 @@ for (i = 1; i <= 4; i++) {
     ])
 }
 
-log.infoMC("Adding Steam Mixer Craft")
-
 //Mixer
 RecyclingHelper.addShaped("gregtech:mixer.ulv", metaitem('susy:mixer.bronze'), [
     [ore('blockGlass'), ore('rotorBronze'), ore('blockGlass')],
     [ore('blockGlass'), ore('stickBronze'), ore('blockGlass')],
     [ore('pipeSmallFluidBronze'), item('gregtech:steam_casing'), ore('pipeSmallFluidBronze')]
 ])
-
-log.infoMC("Adding Coagulation Tank Craft")
 
 //Coagulation Tank
 RecyclingHelper.addShaped("gregtech:coagulation_tank", metaitem('susy:coagulation_tank'), [
@@ -257,7 +247,6 @@ RecyclingHelper.addShaped("gregtech:coagulation_tank_wall", item('susy:coagulati
     [ore('plankTreatedWood'), ore('boltSteel'), ore('plankTreatedWood')]
 ])
 
-log.infoMC("Adding Cupola Furnace Craft")
 RecyclingHelper.addShaped("susy:cupola_furnace", metaitem('susy:cupola_furnace'), [
     [metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay')],
     [ore('craftingToolFile'), ore('blockGlass'), ore('craftingToolSoftHammer')],
