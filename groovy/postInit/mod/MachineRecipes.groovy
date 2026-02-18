@@ -257,64 +257,6 @@ RecyclingHelper.addShaped("gregtech:coagulation_tank_wall", item('susy:coagulati
     [ore('plankTreatedWood'), ore('boltSteel'), ore('plankTreatedWood')]
 ])
 
-//Nerf arc furnaces, add graphite rod chain
-
-MIXER.recipeBuilder()
-        .inputs(ore('dustPitch'))
-        .inputs(ore('dustHeatedGreenCoke') * 9)
-        .outputs(metaitem('carbon_paste') * 10)
-        .EUt(VA[LV])
-        .duration(60)
-        .buildAndRegister()
-
-MIXER.recipeBuilder()
-        .inputs(ore('dustPitch'))
-        .inputs(ore('dustCoke') * 9)
-        .outputs(metaitem('carbon_paste') * 5)
-        .EUt(VA[LV])
-        .duration(60)
-        .buildAndRegister()
-
-EXTRUDER.recipeBuilder()
-        .notConsumable(metaitem('shape.extruder.rod'))
-        .inputs(metaitem('carbon_paste'))
-        .outputs(metaitem('raw_electrode'))
-        .EUt(VA[LV])
-        .duration(200)
-        .buildAndRegister()
-
-// Preferably extrusion but can't be asked atm
-SINTERING_OVEN.recipeBuilder()
-        .fluidInputs(fluid('monoxide_rich_syngas') * 100)
-        .fluidInputs(fluid('air') * 100)
-        .inputs(metaitem('carbon_paste') * 3)
-        .fluidOutputs(fluid('carbon_dioxide') * 50)
-        .notConsumable(metaitem('shape.mold.crucible'))
-        .outputs(metaitem('raw_carbon_crucible'))
-        .info('recipe.graphite_electrode')
-        .EUt(VA[LV])
-        .duration(1440)
-        .buildAndRegister()
-
-MIXER.recipeBuilder()
-        .fluidInputs(fluid('water') * 100)
-        .inputs(metaitem('dustFireclay'))
-        .inputs(metaitem('dustGraphite'))
-        .outputs(metaitem('clay_graphite_paste'))
-        .EUt(VA[LV])
-        .duration(50)
-        .buildAndRegister()
-
-SINTERING_OVEN.recipeBuilder()
-        .inputs(metaitem('clay_graphite_paste') * 3)
-        .notConsumable(metaitem('shape.mold.crucible'))
-        .outputs(metaitem('raw_clay_graphite_crucible'))
-        .EUt(VA[LV])
-        .duration(1440)
-        .buildAndRegister()
-
-
-
 for (i = 1; i <= 8; i++) {
     RecyclingHelper.removeByOutput(metaitem('arc_furnace.' + Globals.voltageTiers[i]))
 
