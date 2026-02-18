@@ -249,7 +249,7 @@ RecyclingHelper.addShaped("gregtech:coagulation_tank_wall", item('susy:coagulati
 
 RecyclingHelper.addShaped("susy:cupola_furnace", metaitem('susy:cupola_furnace'), [
     [metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay')],
-    [ore('craftingToolFile'), ore('blockGlass'), ore('craftingToolSoftHammer')],
+    [ore('craftingToolFile'), ore('blockGlass'), ore('craftingToolHardHammer')],
     [metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay'), metaitem('gregtech:brick.fireclay')]
 ])
 
