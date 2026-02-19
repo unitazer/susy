@@ -29,7 +29,9 @@ def name_removals = [
         'cyberware:scanner',
         'cyberware:scanner_1',
         'cyberware:beacon',
-        'cyberware:radio_post']
+        'cyberware:radio_post',
+        'biomesoplenty:mud_from_dirt'
+]
 
 for (name in name_removals) {
     crafting.remove(name)
@@ -84,3 +86,14 @@ crafting.replaceShaped('jecalculation:item_calculator', item('jecalculation:item
         [item('opencomputers:material', 14), ore('circuitLv'), item('opencomputers:material', 16)],
         [metaitem('wireFineRedAlloy'), ore('plateSteel'), metaitem('wireFineRedAlloy')]
 ])
+
+crafting.addShapeless("gregtech:mud_block_to_ball", item('biomesoplenty:mudball') * 4, [
+        item('biomesoplenty:mud')
+])
+
+crafting.addShapeless("gregtech:mud_from_dirt", item('biomesoplenty:mud'), [
+        fluid('water') * 1000,
+        ore('dirt')
+])
+
+item('biomesoplenty:mudball').Item.setMaxStackSize(64)
