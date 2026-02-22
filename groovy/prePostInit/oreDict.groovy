@@ -15,9 +15,6 @@ ore('ingotTin').remove(item('techguns:itemshared', 80))
 ore('ingotSteel').remove(item('techguns:itemshared', 83))
 ore('ingotTitanium').remove(item('techguns:itemshared', 85))
 
-//Force stick to exist
-ore('stickWood').add(item('minecraft:stick'))
-
 //Light oredict
 ore('gtLight').add(metaitem('incandescent_light'))
 ore('gtLight').add(metaitem('halogen_light'))
@@ -90,7 +87,19 @@ ore('dyeGreen').add(metaitem('gregtechfoodoption:cupric_hydrogen_arsenite_dust')
 
 //Add ore dict to non traditional ore blocks 
 
+// Bauxite the special little snowflake
 ore('oreBauxite').add(item('susy:resource_block:0'))
+ore('oreBauxite').remove(item('gregtech:ore_bauxite_0'))
+
+// Crushed Bauxite Ore * 1
+mods.gregtech.forge_hammer.removeByInput(16, [item('susy:resource_block')], null)
+// Crushed Bauxite Ore * 2
+mods.gregtech.macerator.removeByInput(2, [item('susy:resource_block')], null)
+
+for (i in 0..2) {
+    mods.jei.ingredient.yeet(item('gregtech:ore_bauxite_0', i))
+}
+
 ore('oreCaliche').add(item('susy:resource_block:1'))
 
 ore('oreNonMarineEvaporiteDeposit').add(item('susy:resource_block:2'))
@@ -106,6 +115,7 @@ ore('orePhosphoriteDeposit').add(item('susy:resource_block:12'))
 ore('orePotashDeposit').add(item('susy:resource_block:13'))
 
 ore('oreSulfur').add(item('susy:resource_block:14'))
+ore('oreSulfur').remove(item('susy:resource_block', 14))
 ore('oreCoalDeposit').add(item('susy:resource_block:15'))
 ore('oreNativeCopperDeposit').add(item('susy:resource_block_1:0'))
 ore('oreAnthraciteDeposit').add(item('susy:resource_block_1:1'))
@@ -242,7 +252,7 @@ for (type in StoneVariantBlock.StoneType.values()) {
     OreDictionary.registerOre('stone', variant)
 }
 
-//Manual Fixes
+//Misc Fixes
 ore('stickWood').add(item('minecraft:stick'))
 ore('stickIron').remove(item('industrialrenewal:stick_iron'))
 ore('stickSteel').remove(item('industrialrenewal:stick_steel'))
@@ -251,12 +261,11 @@ ore('blockConcrete').remove(item('susy:susy_stone_smooth:9'))
 ore('stone').remove(item('susy:susy_stone_smooth:9'))
 ore('cobblestone').remove(item('susy:susy_stone_cobble:9'))
 ore('stickStone').remove(item('pyrotech:material', 27))
-
-//Misc Fixes
-
 ore('dustCoal').remove(item('threng:material', 3))
 ore('dustCinnabar').remove(item('tardis:cinnabar'))
 ore('dustSaltpeter').remove(item('icbmclassic:saltpeter'))
+ore('oreSulfur').remove(item('gaspunk:sulfur'))
+ore('dustSulfur').remove(item('icbmclassic:sulfurdust'))
 
 //Hide ALL TechGuns recipes, they are impossible anyways since the machines needed are uncraftable
 mods.jei.category.hideCategory('minecraft.brewing')
