@@ -36,6 +36,14 @@ BCR.recipeBuilder()
         .EUt(VA[LV])
         .buildAndRegister()
 
+DISTILLERY.recipeBuilder()
+        .fluidInputs(fluid('chamber_acid') * 1000)
+        .circuitMeta(1)
+        .fluidOutputs(fluid('sulfuric_acid') * 400)
+        .duration(120)
+        .EUt(VA[ULV])
+        .buildAndRegister()
+
 // Ammonium Chloride
 
 BCR.recipeBuilder()
