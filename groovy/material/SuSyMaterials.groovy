@@ -813,6 +813,7 @@ class SuSyMaterials {
     public static Material NitrileRubberPrecursorEmulsion
     public static Material NitrileRubberEmulsion
     public static Material NitrileRubberLatex
+    public static Material ChamberAcid
 
     // Petrochem Materials
 

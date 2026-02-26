@@ -256,7 +256,7 @@ class UnknownCompositionMaterials {
                 .color(0x8c613f)
                 .build()
 
-        NonMarineEvaporite = new Material.Builder(4045, SuSyUtility.susyId('non_marine_evaporite'))
+        NonMarineEvaporite = new Builder(4045, SuSyUtility.susyId('non_marine_evaporite'))
                 .dust()
                 .color(0x78756d)
                 .build()
@@ -3312,6 +3312,11 @@ class UnknownCompositionMaterials {
         DelithiatedSalarBrine = new Material.Builder(4717, SuSyUtility.susyId('delithiated_salar_brine'))
                 .liquid()
                 .color(0xd4b97a)
+                .build()
+
+        ChamberAcid = new Material.Builder(4718, SuSyUtility.susyId('chamber_acid'))
+                .liquid()
+                .color(0xa12828)
                 .build()
     }
 }

@@ -1,14 +1,14 @@
 import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
 
-ROASTER.recipeBuilder()
-    .circuitmeta(1)
-    .inputs(ore('dustPyrite') * 2)
-    .outputs(metaitem('dustIronIiSulfide'))
-    .outputs(metaitem('dustSulfur'))
-    .duration(80)
-    .EUt(VA[ULV])
-    .buildAndRegister()
+//ROASTER.recipeBuilder()
+//    .circuitmeta(1)
+//    .inputs(ore('dustPyrite') * 2)
+//    .outputs(metaitem('dustIronIiSulfide'))
+//    .outputs(metaitem('dustSulfur'))
+//    .duration(80)
+//    .EUt(VA[ULV])
+//    .buildAndRegister()
 
 ROASTER.recipeBuilder()
         .circuitmeta(2)
