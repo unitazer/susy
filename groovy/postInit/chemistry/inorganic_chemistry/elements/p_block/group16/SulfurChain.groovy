@@ -2,10 +2,10 @@ import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
 
 ROASTER.recipeBuilder()
-        .circuitmeta(2)
+        .circuitMeta(2)
         .inputs(ore('dustPyrite') * 2)
-        .outputs(metaitem('dustIronIiiSulfate') * 1)
-        .FluidOutputs(fluid('sulfur_dioxide') * 4000)
+        .outputs(metaitem('dustIronIiiSulfate'))
+        .outputs(metaitem('dustSulfur'))
         .duration(80)
         .EUt(VA[ULV])
         .buildAndRegister()
