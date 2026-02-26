@@ -445,7 +445,7 @@ ROASTER.recipeBuilder()
         .outputs(metaitem('dustIronIiiOxide') * 5)
         .fluidoutputs(fluid(('sulfur_dioxide') * 4000)
         .duration(160)
-        .EUt(60)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 // FeSO4
