@@ -30,7 +30,12 @@ def name_removals = [
         'cyberware:scanner_1',
         'cyberware:beacon',
         'cyberware:radio_post',
-        'biomesoplenty:mud_from_dirt'
+        'biomesoplenty:mud_from_dirt',
+        'biomesoplenty:terrestrial_artifact',
+        'biomesoplenty:biome_finder',
+        'biomesoplenty:ruby_block',
+        'biomesoplenty:malachite_block',
+        'biomesoplenty:sapphire_block',
 ]
 
 for (name in name_removals) {
@@ -43,7 +48,25 @@ mods.jei.ingredient.yeet(
         item('travelersbackpack:hose_nozzle'),
         item('travelersbackpack:hose'),
         fluid('potion'),
+        item('biomesoplenty:biome_block'),
 )
+
+for (i in 0..7) {
+    mods.jei.ingredient.yeet(item('biomesoplenty:gem_ore', i))
+}
+
+//Easter egg BOP gem blocks
+mods.chisel.carving.addGroup("ruby_blocks")
+mods.chisel.carving.addVariation("ruby_blocks", item('gregtech:meta_block_compressed_19', 7))
+mods.chisel.carving.addVariation("ruby_blocks", item('biomesoplenty:gem_block', 1))
+
+mods.chisel.carving.addGroup("malachite_blocks")
+mods.chisel.carving.addVariation("malachite_blocks", item('gregtech:meta_block_compressed_19', 10))
+mods.chisel.carving.addVariation("malachite_blocks", item('biomesoplenty:gem_block', 5))
+
+mods.chisel.carving.addGroup("sapphire_blocks")
+mods.chisel.carving.addVariation("sapphire_blocks", item('gregtech:meta_block_compressed_24', 1))
+mods.chisel.carving.addVariation("sapphire_blocks", item('biomesoplenty:gem_block', 6))
 
 crafting.replaceShaped('cd4017be_lib:dimstack/dim_pipe', item('dimstack:dim_pipe') * 2, [
         [ore('frameGtSteel'), ore('gemQuartzite'), ore('frameGtSteel')],
