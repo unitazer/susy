@@ -3,9 +3,8 @@ import classes.*
 import static gregtech.api.GTValues.*
 import postInit.utils.RecyclingHelper
 
-def circuit(x) {
-    return metaitem('circuit.integrated').withNbt([Configuration: x])
-}
+mods.jei.category.hideCategory('minecraft.brewing')
+mods.jei.category.hideCategory('minecraft.anvil')
 
 mods.jei.ingredient.yeet(
         item('minecraft:iron_sword'),
@@ -33,27 +32,20 @@ mods.jei.ingredient.yeet(
         item('minecraft:golden_pickaxe'),
         item('minecraft:golden_axe'),
         item('minecraft:golden_hoe'),
-        item('minecraft:redstone_ore'),
-        item('minecraft:lapis_ore'),
-        item('minecraft:redstone_ore'),
 )
 
-def recipesToRemove = [
+def name_removals = [
     'minecraft:dispenser',
     'gregtech:piston_bronze',
     'gregtech:piston_steel',
     'gregtech:piston_aluminium',
     'gregtech:piston_titanium',
     'quark:hopper',
-    'quark:gravisand',
-    'quark:ender_watcher',
-    'quark:redstone_inductor',
     'minecraft:fermented_spider_eye',
     'minecraft:speckled_melon',
     'minecraft:magma_cream',
     'minecraft:brewing_stand',
     'minecraft:golden_carrot',
-    'quark:golden_frog_leg',
     'minecraft:white_bed',
     'minecraft:orange_bed',
     'minecraft:magenta_bed',
@@ -116,10 +108,6 @@ def recipesToRemove = [
     'minecraft:minecart',
     'quark:trapdoor',
     'minecraft:golden_apple',
-    'chisel:uncraft_blockcopper',
-    'chisel:uncraft_blocksteel',
-    'chisel:uncraft_blocktin',
-    'chisel:uncraft_blockbronze',
     'chisel:redstone',
     'chisel:emerald',
     'chisel:coal',
@@ -128,7 +116,7 @@ def recipesToRemove = [
     'minecraft:bow',
 ]
 
-for (name in recipesToRemove) {
+for (name in name_removals) {
     crafting.remove(name)
 }
 
@@ -197,7 +185,7 @@ for (entry in buttonItemMap) {
 
 crafting.replaceShaped('minecraft:dispenser', item('minecraft:dispenser'), [
     [ore('cobblestone'), ore('gearIron'), ore('cobblestone')],
-    [ore('string'), ore('springSteel'), metaitem('electric.motor.lv')],//metaitem('electric.motor.lv')
+    [ore('string'), ore('springSteel'), metaitem('electric.motor.lv')],
     [ore('cobblestone'), ore('wireFineRedAlloy'), ore('cobblestone')]
 ])
 
@@ -309,30 +297,6 @@ crafting.replaceShaped('minecraft:observer', item('minecraft:observer'), [
     [ore('cobblestone'), ore('cobblestone'), ore('cobblestone')]
 ])
 
-crafting.replaceShaped('quark:rain_detector', item('quark:rain_detector'), [
-    [ore('wireFineRedAlloy'), ore('wireFineRedAlloy'), ore('wireFineRedAlloy')],
-    [ore('plateNetherQuartz'), ore('plateNetherQuartz'), ore('plateNetherQuartz')],
-    [ore('cobblestone'), ore('cobblestone'), ore('cobblestone')]
-])
-
-crafting.replaceShaped('quark:iron_ladder', item('quark:iron_ladder') * 16, [
-    [ore('stickIron'), ore('craftingToolHardHammer'), ore('stickIron')],
-    [ore('stickIron'), ore('stickIron'), ore('stickIron')],
-    [ore('stickIron'), ore('craftingToolFile'), ore('stickIron')]
-])
-
-crafting.replaceShaped('quark:paper_lantern', item('quark:paper_lantern'), [
-    [ore('paper'), ore('stickWood'), ore('paper')],
-    [ore('paper'), item('minecraft:torch'), ore('paper')],
-    [ore('paper'), ore('stickWood'), ore('paper')]
-])
-
-crafting.replaceShaped('quark:framed_glass', item('quark:framed_glass') * 4, [
-    [ore('blockGlassColorless'), ore('stickIron'), ore('blockGlassColorless')],
-    [ore('stickIron'), ore('blockGlassColorless'), ore('stickIron')],
-    [ore('blockGlassColorless'), ore('stickIron'), ore('blockGlassColorless')]
-])
-
 crafting.replaceShaped('minecraft:golden_rail', item('minecraft:golden_rail') * 6, [
     [ore('stickBrass'), ore('stickSteelMagnetic'), ore('stickBrass')],
     [ore('stickBrass'), ore('stickWood'), ore('stickBrass')],
@@ -355,12 +319,6 @@ crafting.replaceShaped('minecraft:activator_rail', item('minecraft:activator_rai
     [ore('stickSteel'), ore('stickWood'), ore('stickSteel')],
     [ore('stickSteel'), item('minecraft:redstone_torch'), ore('stickSteel')],
     [ore('stickSteel'), ore('stickWood'), ore('stickSteel')]
-])
-
-crafting.replaceShaped('quark:chain', item('quark:chain') * 3, [
-    [ore('ringIron'), null, null],
-    [null, ore('ringIron'), null],
-    [null, null, ore('ringIron')]
 ])
 
 crafting.replaceShaped('minecraft:torchLig', item('minecraft:torch') * 2, [
@@ -478,7 +436,7 @@ mods.gregtech.assembler.recipeBuilder()
     .buildAndRegister()
 
 // Dispenser * 1
-mods.gregtech.assembler.removeByInput(30, [item('minecraft:cobblestone') * 7, item('minecraft:bow'), item('minecraft:redstone'), circuit(1)], null)
+mods.gregtech.assembler.removeByInput(30, [metaitem('circuit.integrated').withNbt(['Configuration': 1]), item('minecraft:cobblestone') * 7 * 7, item('minecraft:bow'), item('minecraft:redstone')], null)
 mods.gregtech.assembler.recipeBuilder()
     .circuitMeta(11)
     .inputs(ore('cobblestone'))
@@ -492,7 +450,7 @@ mods.gregtech.assembler.recipeBuilder()
     .buildAndRegister()
 
 // Dropper * 1
-mods.gregtech.assembler.removeByInput(30, [item('minecraft:cobblestone') * 7, item('minecraft:redstone'), circuit(2)], null)
+mods.gregtech.assembler.removeByInput(30, [metaitem('circuit.integrated').withNbt(['Configuration': 2]), item('minecraft:cobblestone') * 7 * 7, item('minecraft:redstone')], null)
 mods.gregtech.assembler.recipeBuilder()
     .circuitMeta(12)
     .inputs(ore('cobblestone'))

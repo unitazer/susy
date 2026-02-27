@@ -7,6 +7,17 @@ import techguns.TGArmors
 import techguns.TGItems
 import techguns.util.ItemStackOreDict
 
+mods.jei.category.hideCategory('techguns.ammopress')
+mods.jei.category.hideCategory('techguns.metalpress')
+mods.jei.category.hideCategory('techguns.chemlab')
+mods.jei.category.hideCategory('techguns.fabricator')
+mods.jei.category.hideCategory('techguns.chargingstation')
+mods.jei.category.hideCategory('techguns.reactionchamber')
+mods.jei.category.hideCategory('techguns.oredrill')
+mods.jei.category.hideCategory('techguns.blastfurnace')
+mods.jei.category.hideCategory('techguns.grinder')
+mods.jei.category.hideCategory('techguns.camobench')
+
 def name_removals = [
     "techguns:basicmachine_0_ammo_press",
     "techguns:basicmachine_1_metal_press_alt",
