@@ -86,14 +86,21 @@ CUTTER.recipeBuilder()
         .EUt(VA[MV])
         .buildAndRegister()
 
-AUTOCLAVE.recipeBuilder()
-        .inputs(ore('dustBariumCarbonate') * 5)
-        .inputs(ore('dustRutile') * 3)
-        .fluidInputs(fluid('water') * 1000)
-        .outputs(metaitem('gemExquisiteBariumTitanate'))
-        .duration(200)
-        .EUt(VA[MV])
-        .buildAndRegister()
+Sintering.RotaryKiln.fuels.each { fuel ->
+    Sintering.RotaryKiln.comburents.each { comburent ->
+        ROTARY_KILN.recipeBuilder()
+                .inputs(ore('dustBariumCarbonate') * 5)
+                .inputs(ore('dustRutile') * 3)
+                .fluidInputs(fluid(fuel.name) * fuel.amountRequired)
+                .outputs(metaitem('dustBariumTitanate') * 5)
+                .fluidOutputs(fluid('carbon_dioxide') * 1000)
+                .fluidInputs(fluid(comburent.name) * comburent.amountRequired)
+                .fluidOutputs(fluid(fuel.byproduct) * fuel.byproductAmount)
+                .duration(fuel.duration + comburent.duration)
+                .EUt(VA[MV])
+                .buildAndRegister()
+    }
+}
 
 // Gallium Phosphate
 
