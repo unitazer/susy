@@ -32,7 +32,10 @@ mods.jei.ingredient.yeet(
         item('minecraft:golden_shovel'),
         item('minecraft:golden_pickaxe'),
         item('minecraft:golden_axe'),
-        item('minecraft:golden_hoe')
+        item('minecraft:golden_hoe'),
+        item('minecraft:redstone_ore'),
+        item('minecraft:lapis_ore'),
+        item('minecraft:redstone_ore'),
 )
 
 def recipesToRemove = [
@@ -122,7 +125,7 @@ def recipesToRemove = [
     'chisel:coal',
     'chisel:charcoal',
     'quark:charcoal_block',
-    'minecraft:bow'
+    'minecraft:bow',
 ]
 
 for (name in recipesToRemove) {

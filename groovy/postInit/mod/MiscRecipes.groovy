@@ -61,11 +61,11 @@ mods.chisel.carving.addVariation("ruby_blocks", item('gregtech:meta_block_compre
 mods.chisel.carving.addVariation("ruby_blocks", item('biomesoplenty:gem_block', 1))
 
 mods.chisel.carving.addGroup("malachite_blocks")
-mods.chisel.carving.addVariation("malachite_blocks", item('gregtech:meta_block_compressed_19', 10))
+mods.chisel.carving.addVariation("malachite_blocks", item('gregtech:meta_block_compressed_24', 1))
 mods.chisel.carving.addVariation("malachite_blocks", item('biomesoplenty:gem_block', 5))
 
 mods.chisel.carving.addGroup("sapphire_blocks")
-mods.chisel.carving.addVariation("sapphire_blocks", item('gregtech:meta_block_compressed_24', 1))
+mods.chisel.carving.addVariation("sapphire_blocks", item('gregtech:meta_block_compressed_19', 10))
 mods.chisel.carving.addVariation("sapphire_blocks", item('biomesoplenty:gem_block', 6))
 
 crafting.replaceShaped('cd4017be_lib:dimstack/dim_pipe', item('dimstack:dim_pipe') * 2, [

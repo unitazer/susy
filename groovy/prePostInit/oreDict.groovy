@@ -84,15 +84,16 @@ ore('dyeGreen').add(metaitem('gregtechfoodoption:cupric_hydrogen_arsenite_dust')
 ore('gemMalachite').remove(item('biomesoplenty:gem', 5))
 ore('gemRuby').remove(item('biomesoplenty:gem', 1))
 ore('gemSapphire').remove(item('biomesoplenty:gem', 6))
-ore('gemTopaz').remove(item('biomesoplenty:gem', 3))
 ore('blockMalachite').remove(item('biomesoplenty:gem_block', 5))
 ore('blockRuby').remove(item('biomesoplenty:gem_block', 1))
 ore('blockSapphire').remove(item('biomesoplenty:gem_block', 6))
-ore('blockTopaz').remove(item('biomesoplenty:gem_block', 3))
 ore('oreMalachite').remove(item('biomesoplenty:gem_ore', 5))
 ore('oreRuby').remove(item('biomesoplenty:gem_ore', 1))
 ore('oreSapphire').remove(item('biomesoplenty:gem_ore', 6))
-ore('oreTopaz').remove(item('biomesoplenty:gem_ore', 3))
+
+//Vanilla ores
+ore('oreLapis').remove(item('minecraft:lapis_ore'))
+ore('oreRedstone').remove(item('minecraft:redstone_ore'))
 
 //Add ore dict to non traditional ore blocks 
 
@@ -273,7 +274,7 @@ ore('stickStone').remove(item('pyrotech:material', 27))
 ore('dustCoal').remove(item('threng:material', 3))
 ore('dustCinnabar').remove(item('tardis:cinnabar'))
 ore('dustSaltpeter').remove(item('icbmclassic:saltpeter'))
-ore('oreSulfur').remove(item('gaspunk:sulfur'))
+ore('dustSulfur').remove(item('gaspunk:sulfur'))
 ore('dustSulfur').remove(item('icbmclassic:sulfurdust'))
 ore('blockCoalCoke').add(metaitem('blockCoke'))
 
