@@ -697,5 +697,14 @@ class FirstDegreeMaterialsB {
                 .components(Carbon)
                 .color(0x353535)
                 .build()
+
+        MercuryIISulfate = new Material.Builder(8769, SuSyUtility.susyId('mercury_ii_sulfate'))
+                .dust()
+                .components(Mercury * 1, Sulfur * 1, Oxygen * 4)
+                .colorAverage()
+                .build()
+
+        MercuryIISulfate.setFormula("Cu(SO4)", true)
+
     }
 }

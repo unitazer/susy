@@ -162,10 +162,10 @@ class UnknownCompositionMaterials {
                 .color(0xacbbac)
                 .build()
 
-        ImpureAcetaldehyde = new Material.Builder(4027, SuSyUtility.susyId('impure_acetaldehyde'))
-                .liquid()
-                .color(0x6e6e6e)
-                .build()
+//        ImpureAcetaldehyde = new Material.Builder(4027, SuSyUtility.susyId('impure_acetaldehyde'))
+//                .liquid()
+//                .color(0x6e6e6e)
+//                .build()
 
         CativaCatalystPreparation = new Material.Builder(4028, SuSyUtility.susyId('cativa_catalyst_preparation'))
                 .liquid()

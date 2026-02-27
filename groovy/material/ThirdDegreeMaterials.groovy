@@ -44,11 +44,11 @@ class ThirdDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        WackerCatalystSolution = new Material.Builder(24004, SuSyUtility.susyId('wacker_catalyst_solution'))
-                .liquid()
-                .components(WackerCatalyst * 1, Water * 1)
-                .colorAverage()
-                .build()
+//        WackerCatalystSolution = new Material.Builder(24004, SuSyUtility.susyId('wacker_catalyst_solution'))
+//                .liquid()
+//                .components(WackerCatalyst * 1, Water * 1)
+//                .colorAverage()
+//                .build()
 
         TwoEthylanthraquinoneSolution = new Material.Builder(24005, SuSyUtility.susyId('two_ethylanthraquinone_solution'))
                 .liquid()

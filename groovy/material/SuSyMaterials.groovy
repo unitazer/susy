@@ -183,7 +183,7 @@ class SuSyMaterials {
     public static Material BorateLiquor
     public static Material Asphalt
     public static Material BlackAsh
-    public static Material ImpureAcetaldehyde
+//    public static Material ImpureAcetaldehyde
     public static Material CativaCatalystPreparation
     public static Material CativaCatalystSolution
     public static Material CrudeCumene
@@ -1648,6 +1648,7 @@ class SuSyMaterials {
     public static Material BariumFluoride
     public static Material GreenCarbon
     public static Material BakedCarbon
+    public static Material MercuryIISulfate
 
     // HP Materials
 
@@ -1747,7 +1748,7 @@ class SuSyMaterials {
     public static Material PotassiumFluorideSolution
     public static Material PotassiumTetrafluoroborateSolution
     public static Material SodiumBromideSolution
-    public static Material WackerCatalyst
+    public static Material WackerCatalystSolution
     public static Material PotassiumIodideSolution
     public static Material SodiumSulfateSolution
     public static Material CopperZincChromiumOxide
@@ -1883,6 +1884,7 @@ class SuSyMaterials {
     public static Material ReactiveAlumina
     public static Material SodiumDithioniteSolution
     public static Material HoopesElectrolyte
+    public static Material MercuryIISulfateSolution
 
     // Organic Chemistry Materials
 
@@ -2409,7 +2411,7 @@ class SuSyMaterials {
     public static Material LithiumSolution
     public static Material DimethylacetamideSolution
     public static Material AcidicFurfuralSolution
-    public static Material WackerCatalystSolution
+//    public static Material WackerCatalystSolution
     public static Material TwoEthylanthraquinoneSolution
     public static Material AcetamideSolution
     public static Material HydrazineSolution

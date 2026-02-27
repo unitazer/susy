@@ -147,9 +147,9 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        WackerCatalyst = new Material.Builder(13020, SuSyUtility.susyId('wacker_catalyst'))
-                .dust()
-                .components(PalladiumChloride * 1, CopperIIChloride * 1)
+        WackerCatalystSolution = new Material.Builder(13020, SuSyUtility.susyId('wacker_catalyst_solution'))
+                .liquid()
+                .components(PalladiumChloride * 1, CopperIIChloride * 1, Water * 1)
                 .colorAverage()
                 .build()
 
@@ -1092,6 +1092,12 @@ class SecondDegreeMaterials {
         CopperIINitrateSolution = new Material.Builder(13181, SuSyUtility.susyId('copper_ii_nitrate_solution'))
                 .liquid()
                 .components(CopperIINitrate, Water)
+                .colorAverage()
+                .build()
+
+        MercuryIISulfateSolution = new Material.Builder(13182, SuSyUtility.susyId('mercury_ii_sulfate_solution'))
+                .liquid()
+                .components(MercuryIISulfate * 1, SulfuricAcid * 1)
                 .colorAverage()
                 .build()
     }
