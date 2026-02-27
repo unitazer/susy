@@ -177,7 +177,7 @@ REACTION_FURNACE.recipeBuilder()
         .buildAndRegister()
 
 FORMING_PRESS.recipeBuilder()
-        .inputs(ore('dustLeadZirconateTitanate') * 10)
+        .inputs(ore('dustLeadZirconateTitanate'))
         .notConsumable(metaitem('shape.mold.ball'))
         .outputs(metaitem('gemLeadZirconateTitanate'))
         .duration(500)
