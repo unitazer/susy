@@ -49,10 +49,19 @@ mods.jei.ingredient.yeet(
         item('travelersbackpack:hose'),
         fluid('potion'),
         item('biomesoplenty:biome_block'),
+        item('scalinghealth:crystalore'),
+        item('tardis:cinnabar_ore'),
+        item('rftools:dimensional_shard_ore'),
+        item('rftools:dimensional_shard_ore', 1),
+        item('rftools:dimensional_shard_ore', 2),
+        item('weeping-angels:kontron_ore'),
 )
 
 for (i in 0..7) {
-    mods.jei.ingredient.yeet(item('biomesoplenty:gem_ore', i))
+    mods.jei.ingredient.yeet(
+        item('biomesoplenty:gem_ore', i),
+        item('srparasites:infestedore', i)
+    )
 }
 
 //Easter egg BOP gem blocks

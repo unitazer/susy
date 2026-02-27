@@ -223,6 +223,10 @@ mods.jei.ingredient.yeet( // hide techguns plates, ingots, and ores
     item('techguns:itemshared', 85)  //Titanium Ingot
 )
 
+for (i in 0..7) {
+    mods.jei.ingredient.yeet(item('techguns:orecluster', i))
+}
+
 ore_dict.remove('oreCopper', item('techguns:basicore'))
 ore_dict.remove('oreTin', item('techguns:basicore', 1))
 ore_dict.remove('oreLead', item('techguns:basicore', 2))
