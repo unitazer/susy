@@ -1,10 +1,10 @@
 // Ore Removal
 
-//  total = unused ores and material
+// total = unused ores and material
 // partial = ores that are unused but the material can be obtained
 // default = ores that only generate their default ore
 // nether = ores that only generate their nether ore
-// both = ores that generate both ores
+// both = ores that generate both ore variants
 
 def oreMap = [
         [name: 'Orthomagmatic', type: 'deposit'],
@@ -39,7 +39,7 @@ def oreMap = [
         [name: 'Cinnabar', type: 'both'],
         [name: 'Coal', type: 'partial'],
         [name: 'Cobaltite', type: 'default'],
-        [name: 'Sheldonite', type: 'default'],
+        [name: 'Cooperite', type: 'default'],
         [name: 'Diamond', type: 'partial'],
         [name: 'Electrum', type: 'partial'],
         [name: 'Emerald', type: 'partial'],
@@ -82,7 +82,7 @@ def oreMap = [
         [name: 'Pentlandite', type: 'both'],
         [name: 'Spodumene', type: 'both'],
         [name: 'Lepidolite', type: 'total'],
-        [name: 'Glauconite', type: 'total'],
+        [name: 'GlauconiteSand', type: 'total'],
         [name: 'Malachite', type: 'both'],
         [name: 'Barite', type: 'nether'],
         [name: 'Alunite', type: 'nether'],
@@ -96,8 +96,8 @@ def oreMap = [
         [name: 'Lapis', type: 'default'],
         [name: 'Apatite', type: 'total'],
         [name: 'TricalciumPhosphate', type: 'partial'],
-        [name: 'RedGarnet', type: 'total'],
-        [name: 'YellowGarnet', type: 'total'],
+        [name: 'GarnetRed', type: 'total'],
+        [name: 'GarnetYellow', type: 'total'],
         [name: 'VanadiumMagnetite', type: 'total'],
         [name: 'Pollucite', type: 'default'],
         [name: 'FullersEarth', type: 'total'],
@@ -111,7 +111,56 @@ def oreMap = [
         [name: 'GraniticMineralSand', type: 'partial'],
         [name: 'GarnetSand', type: 'total'],
         [name: 'BasalticMineralSand', type: 'total'],
-
+        [name: 'Petalite', type: 'total'],
+        [name: 'Amblygonite', type: 'total'],
+        [name: 'Thortveitite', type: 'total'],
+        [name: 'Perovskite', type: 'default'],
+        [name: 'Titanomagnetite', type: 'default'],
+        [name: 'Fluorapatite', type: 'default'],
+        [name: 'VanadiferousTitanomagnetite', type: 'default'],
+        [name: 'Baddeleyite', type: 'default'],
+        [name: 'Vanadinite', type: 'nether'],
+        [name: 'Cerussite', type: 'default'],
+        [name: 'Anglesite', type: 'default'],
+        [name: 'Enargite', type: 'default'],
+        [name: 'Smithsonite', type: 'nether'],
+        [name: 'Arsenopyrite', type: 'default'],
+        [name: 'Acanthite', type: 'default'],
+        [name: 'Pyrargyrite', type: 'default'],
+        [name: 'Stephanite', type: 'default'],
+        [name: 'Proustite', type: 'default'],
+        [name: 'Celestine', type: 'default'],
+        [name: 'Strontianite', type: 'partial'],
+        [name: 'Witherite', type: 'total'],
+        [name: 'Wolframite', type: 'both'],
+        [name: 'Rhodplumsite', type: 'total'],
+        [name: 'Bowieite', type: 'total'],
+        [name: 'Polarite', type: 'total'],
+        [name: 'Livingstonite', type: 'total'],
+        [name: 'Bismuthinite', type: 'both'],
+        [name: 'Lorandite', type: 'total'],
+        [name: 'Hutchinsonite', type: 'total'],
+        [name: 'Crookesite', type: 'total'],
+        [name: 'Dilithium', type: 'total'],
+        [name: 'Lignite', type: 'partial'],
+        [name: 'Anthracite', type: 'partial'],
+        [name: 'Phosphorite', type: 'default'],
+        [name: 'Sperrylite', type: 'default'],
+        [name: 'Zircon', type: 'default'],
+        [name: 'Chlorapatite', type: 'default'],
+        [name: 'Columbite', type: 'both'],
+        [name: 'Braggite', type: 'default'],
+        [name: 'Hydroxyapatite', type: 'default'],
+        [name: 'Rhodochrosite', type: 'nether'],
+        [name: 'Carnotite', type: 'default'],
+        [name: 'AlluvialPgmSand', type: 'partial'],
+        [name: 'Bertrandite', type: 'default'],
+        [name: 'RawElectrum', type: 'default'],
+        [name: 'Fluorite', type: 'both'],
+        [name: 'CassiteriteSand', type: 'total'],
+        [name: 'Talc', type: 'default'],
+        [name: 'Bentonite', type: 'total'],
+        [name: 'Pitchblende', type: 'default'],
 ]
 
 def elementMap = elements.collect { [name: it, type: 'partial'] } // Piggybacks of the list of elements from OreDict.groovy
@@ -136,11 +185,11 @@ oreMap.each { material ->
     }
     else if (type == 'total') {
         prefixes = ['dust', 'dustSmall', 'dustTiny', 'dustImpure', 'dustPure', 'crushed',
-                    'crushedPurified', 'crushedCentrifuged', 'gem', 'gemFlawless',
+                    'ground', 'crushedPurified', 'crushedCentrifuged', 'gem', 'gemFlawless',
                     'gemExquisite', 'block',  'ore', 'oreNetherrack', 'oreEndstone']
     }
     else if (type == 'partial') {
-        prefixes = ['dustImpure', 'dustPure', 'crushed', 'crushedPurified', 'gemFlawless',
+        prefixes = ['dustImpure', 'dustPure', 'crushed', 'ground', 'crushedPurified', 'gemFlawless',
                     'gemExquisite', 'crushedCentrifuged', 'ore', 'oreNetherrack', 'oreEndstone']
     }
     else if (type == 'nether') {
