@@ -3336,5 +3336,13 @@ class OrganicChemistryMaterials {
                 .flags(GENERATE_FOIL, GENERATE_RING)
                 .color(0x040714)
                 .build()
+
+        AceticAcidAnhydrideMixture = new Material.Builder(15524, SuSyUtility.susyId("acetic_acid_anhydride_mixture"))
+                .liquid()
+                .components(AceticAcid * 1, EthylAcetate * 2)
+                .colorAverage()
+                .build()
+
+        AceticAcidAnhydrideMixture.setFormula("", true)
     }
 }

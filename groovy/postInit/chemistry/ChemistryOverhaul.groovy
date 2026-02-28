@@ -1712,15 +1712,39 @@ DISTILLERY.recipeBuilder()
     .duration(300)
     .buildAndRegister()
 
+// 2CH3CHO + O2 -> C4H6O3 + H2O
+// 150 + 150 -> 75 + 75
+// 2CH3CHO + O2 -> 2C2H4O2
+// 25 + 25 -> 25
+
 CSTR.recipeBuilder()
-    .notConsumable(ore('CobaltIiAcetate'))
-//    .notConsumable(ore('CopperIiAcetate') * 2)
-    .fluidInputs(fluid('gtfo_acetaldehyde') * 50)
-    .fluidInputs(fluid('ethyl_acetate') * 100)
-    .fluidInputs(fluid('oxygen') * 50)
-    .fluidOutputs(fluid('gtfo_acetic_anhydride') * 50)
+    .notConsumable(ore('dustCobaltIiAcetate'))
+    .notConsumable(ore('dustCopperIiAcetate') * 2)
+    .fluidInputs(fluid('gtfo_acetaldehyde') * 175)
+    .fluidInputs(fluid('ethyl_acetate') * 300)
+    .fluidInputs(fluid('oxygen') * 175)
+    .fluidOutputs(fluid('acetic_acid_anhydride_mixture') * 475)
     .EUt(VA[MV])
+    .duration(20)
+    .buildAndRegister()
+
+VACUUM_DT.recipeBuilder()
+    .fluidInputs(fluid('acetic_acid_anhydride_mixture') * 4750)
+    .fluidOutputs(fluid('ethyl_acetate') * 2000)
+    .fluidOutputs(fluid('gtfo_acetic_anhydride') * 750)
+    .fluidOutputs(fluid('water') * 750)
+    .fluidOutputs(fluid('acetic_acid') * 250)
+    .duration(300)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+// Ketene + Acetic Acid
+BCR.recipeBuilder()
+    .fluidInputs(fluid('ethenone') * 50)
+    .fluidInputs(fluid('acetic_acid') * 50)
+    .fluidOutputs(fluid('gtfo_acetic_anhydride') * 50)
     .duration(5)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // Cellulose Acetate

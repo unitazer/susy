@@ -2405,6 +2405,7 @@ class SuSyMaterials {
     public static Material Diazonaphthoquinone
     public static Material RawNitrileRubber
     public static Material NitrileRubber
+    public static Material AceticAcidAnhydrideMixture
 
     // Third Degree Materials
 

@@ -1107,7 +1107,7 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        CopperIIAcetate.setFormula("(Cu(C2H3O2)2)2(H2O)3", true)
+        CopperIIAcetateSolution.setFormula("Cu2(C2H3O2)4(H2O)3", true)
 
     }
 }
