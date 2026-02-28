@@ -3685,6 +3685,8 @@ class FirstDegreeMaterialsA {
                 .colorAverage()
                 .build()
 
+        CopperCarbonate.setFormula('Cu2(OH)2CO3', true)
+
         AmmoniumHexachlororuthenate = new Material.Builder(8643, SuSyUtility.susyId('ammonium_hexachlororuthenate'))
                 .dust()
                 .components(Nitrogen * 2, Hydrogen * 8, Ruthenium * 1, Chlorine * 6, Water * 1)

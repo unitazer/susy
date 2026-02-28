@@ -704,7 +704,12 @@ class FirstDegreeMaterialsB {
                 .colorAverage()
                 .build()
 
-        MercuryIISulfate.setFormula("Cu(SO4)", true)
+        CopperIIAcetate = new Material.Builder(8770, SuSyUtility.susyId("copper_ii_acetate"))
+                .dust()
+                .components(Copper * 2, Carbon * 8, Hydrogen * 12, Oxygen * 8, Water * 2)
+                .colorAverage()
+                .build()
 
+        CopperIIAcetate.setFormula("Cu2(OAc)4(H2O)2", true)
     }
 }

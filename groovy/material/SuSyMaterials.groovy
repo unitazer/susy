@@ -1886,6 +1886,7 @@ class SuSyMaterials {
     public static Material SodiumDithioniteSolution
     public static Material HoopesElectrolyte
     public static Material MercuryIISulfateSolution
+    public static Material CopperIIAcetateSolution
 
     // Organic Chemistry Materials
 

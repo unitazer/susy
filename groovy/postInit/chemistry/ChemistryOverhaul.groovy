@@ -1692,15 +1692,38 @@ ROASTER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-//CELLULOSE ACETATE
+// Acetic Anhydride
+
+// Oxidation of Acetaldehyde
+BR.recipeBuilder()
+    .inputs(ore('dustCopperCarbonate') * 10)
+    .fluidInputs(fluid('acetic_acid') * 4000)
+    .fluidOutputs(fluid('copper_ii_acetate_solution') * 3000)
+    .fluidOutputs(fluid('carbon_dioxide') * 1000)
+    .EUt(VA[MV])
+    .duration(80)
+    .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('copper_ii_acetate_solution') * 3000)
+    .outputs(metaitem('dustCopperIiAcetate') * 32)
+    .fluidOutputs(fluid('water') * 1000)
+    .EUt(VA[LV])
+    .duration(300)
+    .buildAndRegister()
 
 CSTR.recipeBuilder()
-    .fluidInputs(fluid('methyl_acetate') * 50)
-    .fluidInputs(fluid('carbon_monoxide') * 50)
+    .notConsumable(ore('CobaltIiAcetate'))
+//    .notConsumable(ore('CopperIiAcetate') * 2)
+    .fluidInputs(fluid('gtfo_acetaldehyde') * 50)
+    .fluidInputs(fluid('ethyl_acetate') * 100)
+    .fluidInputs(fluid('oxygen') * 50)
     .fluidOutputs(fluid('gtfo_acetic_anhydride') * 50)
     .EUt(VA[MV])
-    .duration(1)
+    .duration(5)
     .buildAndRegister()
+
+// Cellulose Acetate
 
 BR.recipeBuilder()
     .inputs(ore('dustCellulose'))

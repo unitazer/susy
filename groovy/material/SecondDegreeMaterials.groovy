@@ -1100,5 +1100,14 @@ class SecondDegreeMaterials {
                 .components(MercuryIISulfate * 1, SulfuricAcid * 1)
                 .colorAverage()
                 .build()
+
+        CopperIIAcetateSolution = new Material.Builder(13183, SuSyUtility.susyId('copper_ii_acetate_solution'))
+                .liquid()
+                .components(CopperIIAcetate * 1, Water * 1)
+                .colorAverage()
+                .build()
+
+        CopperIIAcetate.setFormula("(Cu(C2H3O2)2)2(H2O)3", true)
+
     }
 }

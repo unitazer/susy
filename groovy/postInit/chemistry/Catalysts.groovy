@@ -307,10 +307,12 @@ BR.recipeBuilder()
     .buildAndRegister();
 
 BR.recipeBuilder()
-    .inputs(ore('dustCopperIiChloride') * 3)
-    .fluidInputs(fluid('soda_ash_solution') * 1000)
-    .outputs(metaitem('dustCopperCarbonate') * 5)
-    .fluidOutputs(fluid('concentrated_salt_water') * 1000)
+    .inputs(ore('dustCopperSulfate') * 12)
+    .fluidInputs(fluid('soda_ash_solution') * 2000)
+    .fluidInputs(fluid('water') * 1000)
+    .outputs(metaitem('dustCopperCarbonate') * 10)
+    .fluidOutputs(fluid('sodium_sulfate_solution') * 2000)
+    .fluidOutputs(fluid('carbon_dioxide') * 1000)
     .duration(100)
     .EUt(VA[MV])
     .buildAndRegister();
