@@ -111,19 +111,20 @@ DT.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-// Acetic acid (chemical)
+// Acetic Acid (chemical)
 
-FIXED_BR.recipeBuilder()
+// Oxidation of Acetaldehyde
+CSTR.recipeBuilder()
+    .circuitMeta(1)
+    .notConsumable(ore('dustCobaltIiAcetate'))
     .fluidInputs(fluid('gtfo_acetaldehyde') * 100)
-    .fluidInputs(fluid('oxygen') * 100)
-    .notConsumable(ore('catalystBedCobalt'))
+    .fluidInputs(fluid('oxygen') * 50)
     .fluidOutputs(fluid('acetic_acid') * 100)
-    .duration(10)
-    .EUt(VA[LV])
+    .duration(5)
+    .EUt(VA[MV])
     .buildAndRegister()
 
 // Cativa Process
-
 DISTILLERY.recipeBuilder()
     .fluidInputs(fluid('hexachloroiridic_acid_solution') * 2000)
     .outputs(metaitem('dustHexachloroiridicAcid'))
