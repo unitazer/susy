@@ -2120,7 +2120,7 @@ susy.material.cobalt_sulfate_solution=Cobalt Sulfate Solution
 susy.material.lithium_nitrate=Lithium Nitrate
 susy.material.lithium_nitrate_solution=Lithium Nitrate Solution
 susy.material.zinc_carbonate=Zinc Carbonate
-susy.material.copper_carbonate=Copper Carbonate
+susy.material.copper_carbonate=Basic Copper Carbonate
 susy.material.chlorided_alumina=Chlorided Alumina
 susy.material.sulfated_metal_oxide=Sulfated Metal Oxide (SMO)
 susy.material.solid_phosphoric_acid=Solid Phosphoric Acid (SPA)
@@ -2791,6 +2791,8 @@ susy.material.green_carbon=Green Carbon
 susy.material.baked_carbon=Baked Carbon
 susy.material.mercury_ii_sulfate=Mercury II Sulfate
 susy.material.mercury_ii_sulfate_solution=Mercury II Sulfate Solution
+susy.material.copper_ii_acetate=Copper II Acetate
+susy.material.copper_ii_acetate_solution=Copper II Acetate Solution
 
 # Isotopes
 
