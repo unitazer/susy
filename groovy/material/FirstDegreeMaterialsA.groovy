@@ -77,7 +77,7 @@ class FirstDegreeMaterialsA {
         HighPurityArsenic = generatePurifiedElement(Arsenic, 8024, true, false)
         HighPuritySelenium = generatePurifiedElement(Selenium, 8025, true, false)
         HighPurityRubidium = generatePurifiedElement(Rubidium, 8026, false, false)
-        HighPurityStronium = generatePurifiedElement(Strontium, 8027, false, false)
+        HighPurityStrontium = generatePurifiedElement(Strontium, 8027, false, false)
         HighPurityYttrium = generatePurifiedElement(Yttrium, 8028, false, false)
         HighPurityZirconium = generatePurifiedElement(Zirconium, 8029, false, false)
         HighPurityNiobium = generatePurifiedElement(Niobium, 8030, false, false)

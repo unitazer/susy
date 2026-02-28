@@ -1680,7 +1680,7 @@ class SuSyMaterials {
     public static Material HighPurityArsenic
     public static Material HighPuritySelenium
     public static Material HighPurityRubidium
-    public static Material HighPurityStronium
+    public static Material HighPurityStrontium
     public static Material HighPurityYttrium
     public static Material HighPurityZirconium
     public static Material HighPurityNiobium
