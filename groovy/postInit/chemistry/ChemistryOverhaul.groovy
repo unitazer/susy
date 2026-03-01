@@ -1713,19 +1713,39 @@ ROASTER.recipeBuilder()
 // Acetic Anhydride
 
 // Oxidation of Acetaldehyde
+
+// Cu2(OH)2CO3 + 4C2H4O2 + 3H2O -> 2Cu(C2H3O2)2*H2O + 4H2O + CO2
 BR.recipeBuilder()
     .inputs(ore('dustCopperCarbonate') * 10)
     .fluidInputs(fluid('acetic_acid') * 4000)
-    .fluidOutputs(fluid('copper_ii_acetate_solution') * 1000) // Cu2(C2H3O2)4(H2O)3
+    .fluidInputs(fluid('distilled_water') * 3000)
+    .fluidOutputs(fluid('copper_ii_acetate_solution') * 4000) // Cu(C2H3O2)2(H2O)3
     .fluidOutputs(fluid('carbon_dioxide') * 1000)
+    .EUt(VA[MV])
+    .duration(160)
+    .buildAndRegister()
+
+MIXER.recipeBuilder()
+    .fluidInputs(fluid('water') * 1000)
+    .fluidInputs(fluid('acetic_acid') * 2000)
+    .fluidOutputs(fluid('diluted_acetic_acid') * 2000)
+    .EUt(VA[LV])
+    .duration(120)
+    .buildAndRegister()
+
+// CuO + 2C2H4O2(H2O) -> Cu(C2H3O2)*H2O + 2H2O
+BR.recipeBuilder()
+    .inputs(ore('dustCupricOxide') * 2)
+    .fluidInputs(fluid('diluted_acetic_acid') * 4000)
+    .fluidOutputs(fluid('copper_ii_acetate_solution') * 2000) // Cu(C2H3O2)2(H2O)3
     .EUt(VA[MV])
     .duration(80)
     .buildAndRegister()
 
-DISTILLERY.recipeBuilder()
-    .fluidInputs(fluid('copper_ii_acetate_solution') * 1000)
-    .outputs(metaitem('dustCopperIiAcetate') * 32) // Cu2(C2H3O2)4(H2O)2
-    .fluidOutputs(fluid('water') * 1000)
+DT.recipeBuilder()
+    .fluidInputs(fluid('copper_ii_acetate_solution') * 2000)
+    .outputs(metaitem('dustCopperIiAcetate') * 16) // Cu(C2H3O2)2(H2O)
+    .fluidOutputs(fluid('water') * 2000)
     .EUt(VA[LV])
     .duration(300)
     .buildAndRegister()

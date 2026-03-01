@@ -1103,11 +1103,11 @@ class SecondDegreeMaterials {
 
         CopperIIAcetateSolution = new Material.Builder(13183, SuSyUtility.susyId('copper_ii_acetate_solution'))
                 .liquid()
-                .components(CopperIIAcetate * 1, Water * 1)
+                .components(CopperIIAcetate * 1, Water * 2)
                 .colorAverage()
                 .build()
 
-        CopperIIAcetateSolution.setFormula("Cu2(C2H3O2)4(H2O)3", true)
+        CopperIIAcetateSolution.setFormula("Cu(C2H3O2)2(H2O)3", true)
 
     }
 }

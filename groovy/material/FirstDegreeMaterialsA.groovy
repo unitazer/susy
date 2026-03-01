@@ -3237,7 +3237,7 @@ class FirstDegreeMaterialsA {
                 .color(0xfc7e89)
                 .build()
 
-        CobaltIIAcetate.setFormula("Co(C2H3O2)2", true)
+        CobaltIIAcetate.setFormula("Co(C2H3O2)2*(H2O)4", true)
 
         PotassiumPyrosulfate = new Material.Builder(8578, SuSyUtility.susyId("potassium_pyrosulfate"))
                 .dust()

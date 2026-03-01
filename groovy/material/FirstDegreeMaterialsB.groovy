@@ -710,6 +710,6 @@ class FirstDegreeMaterialsB {
                 .colorAverage()
                 .build()
 
-        CopperIIAcetate.setFormula("Cu2(C2H3O2)4(H2O)2", true)
+        CopperIIAcetate.setFormula("Cu(C2H3O2)2*H2O", true)
     }
 }
