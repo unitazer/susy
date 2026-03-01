@@ -1020,20 +1020,24 @@ MIXER.recipeBuilder()
 // Methyl Acetate
 
 CSTR.recipeBuilder()
+    .notConsumable(fluid('sulfuric_acid') * 50)
     .fluidInputs(fluid('acetic_acid') * 50)
     .fluidInputs(fluid('methanol') * 50)
-    .fluidInputs(fluid('sulfuric_acid') * 50)
-    .fluidOutputs(fluid('methyl_acetate_solution') * 150)
-    .duration(12)
+    .fluidOutputs(fluid('water') * 50)
+    .fluidOutputs(fluid('methyl_acetate') * 50)
+    .duration(10)
     .EUt(VA[LV])
     .buildAndRegister()
 
-DT.recipeBuilder()
-    .fluidInputs(fluid('methyl_acetate_solution') * 3000)
-    .fluidOutputs(fluid('sulfuric_acid') * 1000)
-    .fluidOutputs(fluid('water') * 1000)
-    .fluidOutputs(fluid('methyl_acetate') * 1000)
-    .duration(120)
+// Ethyl Acetate
+
+CSTR.recipeBuilder()
+    .notConsumable(fluid('sulfuric_acid') * 50)
+    .fluidInputs(fluid('acetic_acid') * 50)
+    .fluidInputs(fluid('ethanol') * 50)
+    .fluidOutputs(fluid('ethyl_acetate') * 50)
+    .fluidOutputs(fluid('water') * 50)
+    .duration(10)
     .EUt(VA[LV])
     .buildAndRegister()
 

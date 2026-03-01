@@ -264,11 +264,11 @@ class OrganicChemistryMaterials {
 
         TrimethylBorate.setFormula("B(OCH3)3", true)
 
-        MethylAcetateSolution = new Material.Builder(15039, SuSyUtility.susyId('methyl_acetate_solution'))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(SulfuricAcid * 1, MethylAcetate * 1, Water * 1)
-                .colorAverage()
-                .build()
+//        MethylAcetateSolution = new Material.Builder(15039, SuSyUtility.susyId('methyl_acetate_solution'))
+//                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+//                .components(SulfuricAcid * 1, MethylAcetate * 1, Water * 1)
+//                .colorAverage()
+//                .build()
 
         TwoChloronitrobenzene = new Material.Builder(15040, SuSyUtility.susyId('two_chloronitrobenzene'))
                 .dust().liquid(new FluidBuilder().temperature(306))
