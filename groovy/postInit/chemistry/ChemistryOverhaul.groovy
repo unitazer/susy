@@ -1716,15 +1716,15 @@ ROASTER.recipeBuilder()
 BR.recipeBuilder()
     .inputs(ore('dustCopperCarbonate') * 10)
     .fluidInputs(fluid('acetic_acid') * 4000)
-    .fluidOutputs(fluid('copper_ii_acetate_solution') * 3000)
+    .fluidOutputs(fluid('copper_ii_acetate_solution') * 1000) // Cu2(C2H3O2)4(H2O)3
     .fluidOutputs(fluid('carbon_dioxide') * 1000)
     .EUt(VA[MV])
     .duration(80)
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
-    .fluidInputs(fluid('copper_ii_acetate_solution') * 3000)
-    .outputs(metaitem('dustCopperIiAcetate') * 32)
+    .fluidInputs(fluid('copper_ii_acetate_solution') * 1000)
+    .outputs(metaitem('dustCopperIiAcetate') * 32) // Cu2(C2H3O2)4(H2O)2
     .fluidOutputs(fluid('water') * 1000)
     .EUt(VA[LV])
     .duration(300)
