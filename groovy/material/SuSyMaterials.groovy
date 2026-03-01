@@ -2406,6 +2406,7 @@ class SuSyMaterials {
     public static Material RawNitrileRubber
     public static Material NitrileRubber
     public static Material AceticAcidAnhydrideMixture
+    public static Material EthylAcetateSolution
 
     // Third Degree Materials
 
