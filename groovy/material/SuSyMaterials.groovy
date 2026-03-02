@@ -2407,6 +2407,7 @@ class SuSyMaterials {
     public static Material NitrileRubber
     public static Material AceticAcidAnhydrideMixture
     public static Material EthylAcetateSolution
+    public static Material AceticAcidEthanolMixture
 
     // Third Degree Materials
 

@@ -265,7 +265,7 @@ class OrganicChemistryMaterials {
         TrimethylBorate.setFormula("B(OCH3)3", true)
 
         MethylAcetateSolution = new Material.Builder(15039, SuSyUtility.susyId('methyl_acetate_solution'))
-                .liquid(new FluidBuilder())
+                .liquid()
                 .components(MethylAcetate * 1, Water * 1)
                 .colorAverage()
                 .build()
@@ -3346,8 +3346,14 @@ class OrganicChemistryMaterials {
         AceticAcidAnhydrideMixture.setFormula("", true)
 
         EthylAcetateSolution = new Material.Builder(15525, SuSyUtility.susyId('ethyl_acetate_solution'))
-                .liquid(new FluidBuilder())
+                .liquid()
                 .components(EthylAcetate * 1, Water * 1)
+                .colorAverage()
+                .build()
+
+        AceticAcidEthanolMixture = new Material.Builder(15526, SuSyUtility.susyId("acetic_acid_ethanol_mixture"))
+                .liquid()
+                .components(AceticAcid, Ethanol)
                 .colorAverage()
                 .build()
     }
