@@ -1024,8 +1024,8 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('acetic_acid') * 50)
     .fluidInputs(fluid('methanol') * 50)
     .fluidOutputs(fluid('methyl_acetate_solution') * 100)
-    .duration(10)
-    .EUt(VA[LV])
+    .duration(2)
+    .EUt(VA[HV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -1038,13 +1038,21 @@ DT.recipeBuilder()
 
 // Ethyl Acetate
 
+BR.recipeBuilder()
+    .notConsumable(ore('dustSodiumMethoxide'))
+    .fluidInputs(fluid('gtfo_acetaldehyde') * 2000)
+    .fluidOutputs(fluid('ethyl_acetate') * 1000)
+    .duration(80)
+    .EUt(VA[MV])
+    .buildAndRegister()
+
 CSTR.recipeBuilder()
     .notConsumable(fluid('sulfuric_acid') * 50)
     .fluidInputs(fluid('acetic_acid') * 50)
     .fluidInputs(fluid('ethanol') * 50)
     .fluidOutputs(fluid('ethyl_acetate_solution') * 100)
-    .duration(10)
-    .EUt(VA[LV])
+    .duration(2)
+    .EUt(VA[HV])
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -1776,7 +1784,7 @@ VACUUM_DT.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-// Ketene + Acetic Acid
+// Ketene(Ethenone) + Acetic Acid
 
 BCR.recipeBuilder()
     .fluidInputs(fluid('ethenone') * 50)
