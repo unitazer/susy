@@ -73,6 +73,7 @@ ore('dyeBlue').add(metaitem('dustCobaltAluminate'))
 ore('dyeWhite').add(metaitem('dustLeadNitrate'))
 ore('dyeBlack').add(metaitem('dustCarbon'))
 ore('dyeGreen').add(metaitem('gregtechfoodoption:cupric_hydrogen_arsenite_dust'))
+ore('dyeWhite').add(metaitem('dustTitaniumDioxide'))
 
 // Concrete
 
@@ -105,7 +106,7 @@ ore('nutrientPhosphorous').add(metaitem('dustPhosphorus'))
 ore('nutrientPhosphorous').add(metaitem('dustPhosphorite'))
 ore('nutrientPhosphorous').add(item('minecraft:dye', 15))
 
-//Uranium Isotopes
+// Uranium Isotopes
 ore('dustIsotopesUranium').add(metaitem('dustNaturalUranium'))
 ore('dustIsotopesUranium').add(metaitem('dustUranium235'))
 ore('dustIsotopesUranium').add(metaitem('dustLeu235'))
@@ -113,6 +114,11 @@ ore('dustIsotopesUranium').add(metaitem('dustHaleu235'))
 ore('dustIsotopesUranium').add(metaitem('dustHeu235'))
 ore('dustIsotopesUranium').add(metaitem('dustWeaponsGradeUranium'))
 ore('dustIsotopesUranium').add(metaitem('dustUranium'))
+
+// Flocculants
+ore('dustFlocculant').add(metaitem('dustPotassiumAlum'))
+ore('dustFlocculant').add(metaitem('dustSodiumAlum'))
+ore('dustFlocculant').add(metaitem('dustAluminiumSulfate'))
 
 // Add ore dict to non traditional ore blocks
 
@@ -237,3 +243,5 @@ ore('foilMylar').add(metaitem('mylar'))
 ore('blockConcrete').remove(item('susy:susy_stone_smooth:9'))
 ore('stone').remove(item('susy:susy_stone_smooth:9'))
 ore('cobblestone').remove(item('susy:susy_stone_cobble:9'))
+ore('blockFuelCoke').remove(item('pyrotech:coal_coke_block'))
+ore('fuelCoke').remove(item('pyrotech:material', 1))
