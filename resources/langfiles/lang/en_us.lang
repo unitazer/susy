@@ -1781,7 +1781,7 @@ susy.material.impure_strontium_sulfide_slurry=Impure Strontium Sulfide Slurry
 susy.material.impure_strontium_sulfide=Impure Strontium Sulfide
 susy.material.diluted_sodium_carbonate_solution=Diluted Sodium Carbonate Solution
 susy.material.diluted_acetic_acid=Diluted Acetic Acid
-susy.material.cobalt_ii_acetate=Cobalt II Acetate
+susy.material.cobalt_ii_acetate=Cobalt II Acetate Tetrahydrate
 susy.material.palladium_on_carbon=Palladium On Carbon
 susy.material.dimethyl_terephthalate=Dimethyl Terephthalate
 susy.material.polyethylene_terephthalate=Polyethylene Terephthalate
@@ -2791,9 +2791,11 @@ susy.material.green_carbon=Green Carbon
 susy.material.baked_carbon=Baked Carbon
 susy.material.mercury_ii_sulfate=Mercury II Sulfate
 susy.material.mercury_ii_sulfate_solution=Mercury II Sulfate Solution
-susy.material.copper_ii_acetate=Copper II Acetate
+susy.material.copper_ii_acetate=Copper II Acetate Monohydrate
 susy.material.copper_ii_acetate_solution=Copper II Acetate Solution
 susy.material.acetic_acid_anhydride_mixture=Acetic Acid-Anhydride Mixture
+susy.material.ethyl_acetate_solution=Ethyl Acetate Solution
+susy.material.acetic_acid_ethanol_mixture=Acetic Acid-Ethanol Mixture
 
 # Isotopes
 
