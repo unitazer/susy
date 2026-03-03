@@ -4,7 +4,7 @@ import static gregtech.api.GTValues.*
 ROASTER.recipeBuilder()
         .inputs(ore('dustPyrite') * 1)
         .circuitMeta(2)
-        .outputs(metaitem('dustIronIiSulfide'))
+        .outputs(metaitem('dustIronIiSulfide') * 2)
         .outputs(metaitem('dustSulfur'))
         .duration(80)
         .EUt(VA[ULV])
