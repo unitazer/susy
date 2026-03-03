@@ -171,6 +171,20 @@ def refractories = [item('gregtech:metal_casing', 1), item('gregtech:metal_casin
                     item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9),
                     item('susy:susy_multiblock_casing', 9), item('susy:susy_multiblock_casing', 9)]
 
+//Distiller
+RecyclingHelper.addShaped("gregtech:distiller.ulv", metaitem('susy:distiller.bronze'), [
+        [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')],
+        [metaitem('pipeNormalFluidCopper'), item('gregtech:steam_casing'), metaitem('pipeNormalFluidCopper')],
+        [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')]
+])
+
+//batch reactor
+RecyclingHelper.addShaped("gregtech:batch_reactor.ulv", metaitem('susy:batch_reactor.bronze'), [
+        [ore('pipeSmallFluidBronze'), metaitem('steam.motor'), ore('pipeSmallFluidBronze')],
+        [ore('pipeSmallFluidBronze'), item('gregtech:steam_casing'), ore('pipeSmallFluidBronze')],
+        [ore('pipeSmallFluidBronze'), ore('rotorSteel'), ore('pipeSmallFluidBronze')]
+])
+
 //Vulcanizing Press
 RecyclingHelper.addShaped("gregtech:vulcanizing_press.ulv", metaitem('susy:vulcanizing_press.bronze'), [
     [ore('springSmallSteel'), ore('stickSteel'), ore('springSmallSteel')],
@@ -196,13 +210,6 @@ RecyclingHelper.addShaped("gregtech:vulcanizing_press.ev", metaitem('susy:vulcan
     [ore('cableGtSingleAluminium'), metaitem('electric.piston.ev'), ore('cableGtSingleAluminium')],
     [ore('wireGtQuadrupleNichrome'), metaitem('hull.ev'), ore('wireGtQuadrupleNichrome')],
     [ore('cableGtSingleAluminium'), ore('circuitEv'), ore('cableGtSingleAluminium')]
-])
-
-//Roaster
-RecyclingHelper.addShaped("gregtech:roaster.ulv", metaitem('susy:roaster.bronze'), [
-    [ore('pipeSmallFluidBronze'), ore('rotorBronze'), ore('pipeSmallFluidBronze')],
-    [ore('pipeSmallFluidBronze'), ore('plateBronze'), ore('pipeSmallFluidBronze')],
-    [ore('pipeSmallFluidBronze'), item('gregtech:steam_casing', 1), ore('pipeSmallFluidBronze')]
 ])
 
 for (i = 1; i <= 8; i++) {
@@ -411,6 +418,12 @@ RecyclingHelper.addShaped("gregtech:batch_reactor.steel", metaitem('susy:batch_r
         [metaitem('plateSteel'), metaitem('pipeSmallFluidTinAlloy'), metaitem('plateSteel')],
         [metaitem('pipeSmallFluidTinAlloy'), metaitem('susy:batch_reactor.bronze'), metaitem('pipeSmallFluidTinAlloy')],
         [metaitem('plateWroughtIron'), metaitem('pipeSmallFluidTinAlloy'), metaitem('plateWroughtIron')]
+])
+
+RecyclingHelper.addShaped("gregtech:distiller.steel", metaitem('susy:distiller.steel'), [
+        [metaitem('plateSteel'), ore('pipeSmallFluidTinAlloy'), metaitem('plateSteel')],
+        [ore('pipeSmallFluidTinAlloy'), metaitem('susy:distiller.bronze'), ore('pipeSmallFluidTinAlloy')],
+        [metaitem('plateWroughtIron'), ore('pipeSmallFluidTinAlloy'), metaitem('plateWroughtIron')]
 ])
 
 //Add the rest of the vacuum chambers

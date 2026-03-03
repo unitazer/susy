@@ -256,7 +256,7 @@ class UnknownCompositionMaterials {
                 .color(0x8c613f)
                 .build()
 
-        NonMarineEvaporite = new Builder(4045, SuSyUtility.susyId('non_marine_evaporite'))
+        NonMarineEvaporite = new Material.Builder(4045, SuSyUtility.susyId('non_marine_evaporite'))
                 .dust()
                 .color(0x78756d)
                 .build()
