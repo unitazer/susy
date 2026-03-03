@@ -440,16 +440,6 @@ ROASTER.recipeBuilder()
         .EUt(VA[LV])
         .buildAndRegister()
 
-ROASTER.recipeBuilder()
-        .fluidInputs(fluid('air') * 5500)
-        .inputs(ore('pyrite') * 1)
-        .circuitMeta(1)
-        .outputs(metaitem('dustIronIiiOxide') * 5)
-        .fluidoutputs(fluid('sulfur_dioxide') * 4000)
-        .duration(160)
-        .EUt(VA[ULV])
-        .buildAndRegister()
-
 // FeSO4
 
 BR.recipeBuilder()
