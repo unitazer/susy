@@ -184,8 +184,8 @@ class SuSyMaterials {
     public static Material Asphalt
     public static Material BlackAsh
 //    public static Material ImpureAcetaldehyde
-    public static Material CativaCatalystPreparation
-    public static Material CativaCatalystSolution
+//    public static Material CativaCatalystPreparation
+//    public static Material CativaCatalystSolution
     public static Material CrudeCumene
     public static Material SulfatedMetalOxide
     public static Material ImpureKaptonK
@@ -1650,6 +1650,8 @@ class SuSyMaterials {
     public static Material BakedCarbon
     public static Material MercuryIISulfate
     public static Material CopperIIAcetate
+    public static Material RhodiumIIIChlorideTrihydrate
+    public static Material LithiumIodideSolution
 
     // HP Materials
 
@@ -2281,6 +2283,7 @@ class SuSyMaterials {
     public static Material DiTertButylPeroxide
     public static Material TwoEthylhexylNitrate
     public static Material Nitromethane
+    public static Material MethylIodideSolution
     public static Material Polycarbonate
     public static Material Trichlorofluoromethane
     public static Material Dichlorodifluoromethane

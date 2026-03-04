@@ -2527,8 +2527,12 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 15396
-            
+        MethylIodideSolution = new Material.Builder(15396, SuSyUtility.susyId("methyl_iodide_solution"))
+                .liquid()
+                .components(Carbon, Hydrogen * 3, Iodine, Water)
+                .colorAverage()
+                .build()
+
         Polycarbonate = new Material.Builder(15397, SuSyUtility.susyId('polycarbonate'))
                 .polymer()
                 .flags(GENERATE_PLATE)

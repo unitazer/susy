@@ -711,5 +711,18 @@ class FirstDegreeMaterialsB {
                 .build()
 
         CopperIIAcetate.setFormula("Cu(C2H3O2)2*H2O", true)
+
+        RhodiumIIIChlorideTrihydrate = new Material.Builder(8771, SuSyUtility.susyId("rhodium_iii_chloride_trihydrate"))
+                .dust()
+                .components(Rhodium, Chlorine * 3, Water * 3)
+                .colorAverage()
+                .build()
+
+        LithiumIodideSolution = new Material.Builder(8772, SuSyUtility.susyId("lithium_iodide_solution"))
+                .liquid()
+                .components(Lithium, Iodine, Water * 3)
+                .colorAverage()
+                .build()
+
     }
 }

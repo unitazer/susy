@@ -2796,6 +2796,9 @@ susy.material.copper_ii_acetate_solution=Copper II Acetate Solution
 susy.material.acetic_acid_anhydride_mixture=Acetic Acid-Anhydride Mixture
 susy.material.ethyl_acetate_solution=Ethyl Acetate Solution
 susy.material.acetic_acid_ethanol_mixture=Acetic Acid-Ethanol Mixture
+susy.material.methyl_iodide_solution=Methyl Iodide (Iodomethane) Solution
+susy.material.rhodium_iii_chloride_trihydrate=Rhodium III Chloride Trihydrate
+susy.material.lithium_iodide_solution=Lithium Iodide Solution
 
 # Isotopes
 
