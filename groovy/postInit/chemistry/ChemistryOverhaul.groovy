@@ -1794,6 +1794,18 @@ BCR.recipeBuilder()
     .EUt(VA[MV])
     .buildAndRegister()
 
+// Methyl Acetate Carbonylation
+LCR.recipeBuilder()
+    .notConsumable(fluid('methyl_iodide_solution') * 2000)
+    .notConsumable(ore('dustRhodiumIiiChlorideTrihydrate'))
+    .notConsumable(fluid('lithium_iodide_solution') * 2000)
+    .fluidInputs(fluid('methyl_acetate') * 1000)
+    .fluidInputs(fluid('carbon_monoxide') * 1000)
+    .fluidOutputs(fluid('gtfo_acetic_anhydride') * 1000)
+    .duration(4)
+    .EUt(VA[EV])
+    .buildAndRegister()
+
 // Cellulose Acetate
 
 BR.recipeBuilder()
