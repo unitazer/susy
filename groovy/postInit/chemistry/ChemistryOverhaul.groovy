@@ -1038,6 +1038,7 @@ DT.recipeBuilder()
 
 // Ethyl Acetate
 
+// Tishchenko Reaction
 BR.recipeBuilder()
     .notConsumable(ore('dustSodiumMethoxide'))
     .fluidInputs(fluid('gtfo_acetaldehyde') * 2000)
@@ -1046,6 +1047,7 @@ BR.recipeBuilder()
     .EUt(VA[MV])
     .buildAndRegister()
 
+// Fischer Esterification
 CSTR.recipeBuilder()
     .notConsumable(fluid('sulfuric_acid') * 50)
     .fluidInputs(fluid('acetic_acid') * 50)
@@ -1719,9 +1721,9 @@ ROASTER.recipeBuilder()
     .buildAndRegister()
 
 // Acetic Anhydride
+// Source: Acetic Anhydride and Mixed Fatty Acid Anhydrides Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_065.pub3
 
 // Oxidation of Acetaldehyde
-
 // Cu2(OH)2CO3 + 4C2H4O2 + 3H2O -> 2Cu(C2H3O2)2*H2O + 4H2O + CO2
 BR.recipeBuilder()
     .inputs(ore('dustCopperCarbonate') * 10)
@@ -1747,12 +1749,12 @@ BR.recipeBuilder()
     .fluidInputs(fluid('diluted_acetic_acid') * 4000)
     .fluidOutputs(fluid('copper_ii_acetate_solution') * 2000) // Cu(C2H3O2)2(H2O)3
     .EUt(VA[MV])
-    .duration(80)
+    .duration(160)
     .buildAndRegister()
 
 DT.recipeBuilder()
     .fluidInputs(fluid('copper_ii_acetate_solution') * 2000)
-    .outputs(metaitem('dustCopperIiAcetate') * 16) // Cu(C2H3O2)2(H2O)
+    .outputs(metaitem('dustCopperIiAcetateMonohydrate') * 16) // Cu(C2H3O2)2(H2O)
     .fluidOutputs(fluid('water') * 2000)
     .EUt(VA[LV])
     .duration(300)
@@ -1765,7 +1767,7 @@ DT.recipeBuilder()
 
 CSTR.recipeBuilder()
     .notConsumable(ore('dustCobaltIiAcetate'))
-    .notConsumable(ore('dustCopperIiAcetate') * 2)
+    .notConsumable(ore('dustCopperIiAcetateMonohydrate') * 2)
     .fluidInputs(fluid('gtfo_acetaldehyde') * 175)
     .fluidInputs(fluid('ethyl_acetate') * 300)
     .fluidInputs(fluid('oxygen') * 175)
@@ -1785,7 +1787,6 @@ VACUUM_DT.recipeBuilder()
     .buildAndRegister()
 
 // Ketene(Ethenone) + Acetic Acid
-
 BCR.recipeBuilder()
     .fluidInputs(fluid('ethenone') * 50)
     .fluidInputs(fluid('acetic_acid') * 50)
@@ -1920,6 +1921,7 @@ FLUIDIZED_BR.recipeBuilder()
     .buildAndRegister()
 
 // Acetaldehyde
+// Source: Acetaldehyde.Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_031.pub2
 
 // Dehydrogenation of Ethanol
 FIXED_BR.recipeBuilder()

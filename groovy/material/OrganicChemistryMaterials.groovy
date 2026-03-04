@@ -270,6 +270,8 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
+        MethylAcetateSolution.setFormula("(C3H6O2)(H2O)", true)
+
         TwoChloronitrobenzene = new Material.Builder(15040, SuSyUtility.susyId('two_chloronitrobenzene'))
                 .dust().liquid(new FluidBuilder().temperature(306))
                 .components(Carbon * 6, Hydrogen * 4, Chlorine * 1, Nitrogen * 1, Oxygen * 2)
@@ -2533,6 +2535,8 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
+        MethylIodideSolution.setFormula("(CH3I)(H2O)", true)
+
         Polycarbonate = new Material.Builder(15397, SuSyUtility.susyId('polycarbonate'))
                 .polymer()
                 .flags(GENERATE_PLATE)
@@ -2984,7 +2988,11 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 15470
+        EthylAcetateSolution = new Material.Builder(15470, SuSyUtility.susyId('ethyl_acetate_solution'))
+                .liquid()
+                .components(EthylAcetate * 1, Water * 1)
+                .colorAverage()
+                .build()
 
         BenzenesulfonicAcid = new Material.Builder(15471, SuSyUtility.susyId('benzenesulfonic_acid'))
                 .liquid()
@@ -3354,6 +3362,8 @@ class OrganicChemistryMaterials {
                 .components(EthylAcetate * 1, Water * 1)
                 .colorAverage()
                 .build()
+
+        EthylAcetateSolution.setFormula("(C4H8O2)(H2O)", true)
 
         AceticAcidEthanolMixture = new Material.Builder(15526, SuSyUtility.susyId("acetic_acid_ethanol_mixture"))
                 .liquid()

@@ -1649,7 +1649,7 @@ class SuSyMaterials {
     public static Material GreenCarbon
     public static Material BakedCarbon
     public static Material MercuryIISulfate
-    public static Material CopperIIAcetate
+    public static Material CopperIIAcetateMonohydrate
     public static Material RhodiumIIIChlorideTrihydrate
     public static Material LithiumIodideSolution
 
@@ -2340,6 +2340,7 @@ class SuSyMaterials {
     public static Material FourFourDifluorobenzophenone
     public static Material ParaDiisopropylbenzene
     public static Material Hydroquinone
+    public static Material EthylAcetateSolution
     public static Material BenzenesulfonicAcid
     public static Material DiphenylSulfone
     public static Material PolyetherEtherKetone
@@ -2409,7 +2410,6 @@ class SuSyMaterials {
     public static Material RawNitrileRubber
     public static Material NitrileRubber
     public static Material AceticAcidAnhydrideMixture
-    public static Material EthylAcetateSolution
     public static Material AceticAcidEthanolMixture
 
     // Third Degree Materials
