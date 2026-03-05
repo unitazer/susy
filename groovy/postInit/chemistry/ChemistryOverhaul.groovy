@@ -1020,16 +1020,17 @@ MIXER.recipeBuilder()
 // Methyl Acetate
 
 CSTR.recipeBuilder()
-    .notConsumable(fluid('sulfuric_acid') * 50)
+    .fluidInputs(fluid('sulfuric_acid') * 50)
     .fluidInputs(fluid('acetic_acid') * 50)
     .fluidInputs(fluid('methanol') * 50)
-    .fluidOutputs(fluid('methyl_acetate_solution') * 100)
+    .fluidOutputs(fluid('acidic_methyl_acetate_water_mixture') * 150)
     .duration(2)
     .EUt(VA[HV])
     .buildAndRegister()
 
 DT.recipeBuilder()
-    .fluidInputs(fluid('methyl_acetate_solution') * 2000)
+    .fluidInputs(fluid('acidic_methyl_acetate_water_mixture') * 3000)
+    .fluidOutputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid('water') * 1000)
     .fluidOutputs(fluid('methyl_acetate') * 1000)
     .duration(160)
@@ -1049,16 +1050,17 @@ BR.recipeBuilder()
 
 // Fischer Esterification
 CSTR.recipeBuilder()
-    .notConsumable(fluid('sulfuric_acid') * 50)
+    .fluidInputs(fluid('sulfuric_acid') * 50)
     .fluidInputs(fluid('acetic_acid') * 50)
     .fluidInputs(fluid('ethanol') * 50)
-    .fluidOutputs(fluid('ethyl_acetate_solution') * 100)
+    .fluidOutputs(fluid('acidic_ethyl_acetate_water_mixture') * 150)
     .duration(2)
     .EUt(VA[HV])
     .buildAndRegister()
 
 DT.recipeBuilder()
-    .fluidInputs(fluid('ethyl_acetate_solution') * 2000)
+    .fluidInputs(fluid('acidic_ethyl_acetate_water_mixture') * 3000)
+    .fluidOutputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid('water') * 1000)
     .fluidOutputs(fluid('ethyl_acetate') * 1000)
     .duration(160)
@@ -1921,7 +1923,7 @@ FLUIDIZED_BR.recipeBuilder()
     .buildAndRegister()
 
 // Acetaldehyde
-// Source: Acetaldehyde.Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_031
+// Source: Acetaldehyde Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_031
 
 // Dehydrogenation of Ethanol
 FIXED_BR.recipeBuilder()
@@ -1989,14 +1991,6 @@ BR.recipeBuilder() // Source: Copper Compounds Chapter in Ullmann's Encyclopedia
         .fluidOutputs(fluid('carbon_dioxide') * 1000)
         .EUt(VA[MV])
         .duration(160)
-        .buildAndRegister()
-
-MIXER.recipeBuilder()
-        .fluidInputs(fluid('water') * 1000)
-        .fluidInputs(fluid('acetic_acid') * 1000)
-        .fluidOutputs(fluid('diluted_acetic_acid') * 2000)
-        .EUt(VA[LV])
-        .duration(120)
         .buildAndRegister()
 
 BR.recipeBuilder() // Source: Copper Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a07_567

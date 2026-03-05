@@ -264,13 +264,13 @@ class OrganicChemistryMaterials {
 
         TrimethylBorate.setFormula("B(OCH3)3", true)
 
-        MethylAcetateSolution = new Material.Builder(15039, SuSyUtility.susyId('methyl_acetate_solution'))
+        AcidicMethylAcetateWaterMixture = new Material.Builder(15039, SuSyUtility.susyId('acidic_methyl_acetate_water_mixture'))
                 .liquid()
-                .components(MethylAcetate * 1, Water * 1)
+                .components(MethylAcetate * 1, Sulfuric Acid * 1, Water * 1)
                 .colorAverage()
                 .build()
 
-        MethylAcetateSolution.setFormula("(C3H6O2)(H2O)", true)
+        AcidicMethylAcetateWaterMixture.setFormula("(C3H6O2)(H2SO4)(H2O)", true)
 
         TwoChloronitrobenzene = new Material.Builder(15040, SuSyUtility.susyId('two_chloronitrobenzene'))
                 .dust().liquid(new FluidBuilder().temperature(306))
@@ -777,7 +777,13 @@ class OrganicChemistryMaterials {
 
         Dimethylformamide.setFormula('(CH3)2NCH', true)
 
-        //FREE ID: 15128
+        AceticAcidAnhydrideMixture = new Material.Builder(15128, SuSyUtility.susyId("acetic_acid_anhydride_mixture"))
+                .liquid()
+                .components(AceticAcid * 1, EthylAcetate * 2)
+                .colorAverage()
+                .build()
+
+        AceticAcidAnhydrideMixture.setFormula("", true)
 
         TwoEthylanthraquinone = new Material.Builder(15129, SuSyUtility.susyId('two_ethylanthraquinone'))
                 .liquid()
@@ -1797,7 +1803,13 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        //FREE ID: 15287
+        AceticAcidEthanolMixture = new Material.Builder(15287, SuSyUtility.susyId("acetic_acid_ethanol_mixture"))
+                .liquid()
+                .components(Ethanol * 1, Acetic Acid * 1, Sulfuric Acid * 1)
+                .colorAverage()
+                .build()
+
+        AceticAcidEthanolMixture.setFormula("(C2H4O2)(C2H6O)(H2SO4)", true)
         
         DimethylTerephthalate = new Material.Builder(15288, SuSyUtility.susyId('dimethyl_terephthalate'))
                 .dust().liquid(new FluidBuilder().temperature(533))
@@ -2979,11 +2991,13 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        EthylAcetateSolution = new Material.Builder(15470, SuSyUtility.susyId('ethyl_acetate_solution'))
+        AcidicEthylAcetateWaterMixture = new Material.Builder(15470, SuSyUtility.susyId('acidic_ethyl_acetate_water_mixture'))
                 .liquid()
-                .components(EthylAcetate * 1, Water * 1)
+                .components(EthylAcetate * 1, Sulfuric Acid * 1, Water * 1)
                 .colorAverage()
                 .build()
+
+        AcidicEthylAcetateWaterMixture.setFormula("(C4H8O2)(H2SO4)(H2O)", true)
 
         BenzenesulfonicAcid = new Material.Builder(15471, SuSyUtility.susyId('benzenesulfonic_acid'))
                 .liquid()
@@ -3340,26 +3354,5 @@ class OrganicChemistryMaterials {
                 .color(0x040714)
                 .build()
 
-        AceticAcidAnhydrideMixture = new Material.Builder(15524, SuSyUtility.susyId("acetic_acid_anhydride_mixture"))
-                .liquid()
-                .components(AceticAcid * 1, EthylAcetate * 2)
-                .colorAverage()
-                .build()
-
-        AceticAcidAnhydrideMixture.setFormula("", true)
-
-        EthylAcetateSolution = new Material.Builder(15525, SuSyUtility.susyId('ethyl_acetate_solution'))
-                .liquid()
-                .components(EthylAcetate * 1, Water * 1)
-                .colorAverage()
-                .build()
-
-        EthylAcetateSolution.setFormula("(C4H8O2)(H2O)", true)
-
-        AceticAcidEthanolMixture = new Material.Builder(15526, SuSyUtility.susyId("acetic_acid_ethanol_mixture"))
-                .liquid()
-                .components(AceticAcid, Ethanol)
-                .colorAverage()
-                .build()
     }
 }

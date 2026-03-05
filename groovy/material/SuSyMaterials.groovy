@@ -1919,7 +1919,7 @@ class SuSyMaterials {
     public static Material DilutedEpichlorohydrin
     public static Material Isobutane
     public static Material Isobutylene
-    public static Material MethylAcetateSolution
+    public static Material AcidicMethylAcetateWaterMixture
     public static Material TrimethylBorate
     public static Material TwoChloronitrobenzene
     public static Material ChloronitrobenzeneMixture
@@ -1999,6 +1999,7 @@ class SuSyMaterials {
     public static Material PhthalicAnhydride
     public static Material ImpureCaprolactam
     public static Material Dimethylformamide
+    public static Material AceticAcidAnhydrideMixture
     public static Material TwoEthylanthraquinone
     public static Material TwoEthylanthrahydroquinone
     public static Material Butanone
@@ -2164,6 +2165,7 @@ class SuSyMaterials {
     public static Material TosylicAcidSolution
     public static Material Triphenylphosphine
     public static Material TriphenylphosphineDichloride
+    public static Material AceticAcidEthanolMixture
     public static Material TriphenylphosphineOxide
     public static Material Methyltrichlorosilane
     public static Material Methyldichlorosilane
@@ -2336,7 +2338,7 @@ class SuSyMaterials {
     public static Material FourFourDifluorobenzophenone
     public static Material ParaDiisopropylbenzene
     public static Material Hydroquinone
-    public static Material EthylAcetateSolution
+    public static Material AcidicEthylAcetateWaterMixture
     public static Material BenzenesulfonicAcid
     public static Material DiphenylSulfone
     public static Material PolyetherEtherKetone
@@ -2405,8 +2407,6 @@ class SuSyMaterials {
     public static Material Diazonaphthoquinone
     public static Material RawNitrileRubber
     public static Material NitrileRubber
-    public static Material AceticAcidAnhydrideMixture
-    public static Material AceticAcidEthanolMixture
 
     // Third Degree Materials
 
