@@ -126,27 +126,27 @@ CSTR.recipeBuilder()
     .buildAndRegister()
 
 // Monsanto Process
-DISTILLERY.recipeBuilder()
-    .fluidInputs(fluid('hexachlororhodic_acid_solution') * 4475)
-    .fluidInputs(fluid('hydrochloric_acid') * 9000)
-    .outputs(metaitem('dustRhodiumIiiChlorideTrihydrate') * 7)  // Source: Platinum Group Metals and Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a21_075
-    .fluidOutputs(fluid('diluted_hydrochloric_acid') * 12000)
+DISTILLERY.recipeBuilder() // Source: Platinum Group Metals and Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a21_075
+    .fluidInputs(fluid('hexachlororhodic_acid_solution') * 8950)
+    .fluidInputs(fluid('hydrochloric_acid') * 4500)
+    .chancedOutput(metaitem('dustRhodiumIiiChlorideTrihydrate') * 7, 5000, 0)
+    .fluidOutputs(fluid('diluted_hydrochloric_acid') * 6000)
     .duration(200)
     .EUt(VA[MV])
     .buildAndRegister()
 
-CSTR.recipeBuilder()
+CSTR.recipeBuilder() // Simulates the reaction that would typically occur in-situ (Source: https://technology.matthey.com/content/journals/10.1595/003214000X44394105)
     .fluidInputs(fluid('methanol') * 100)
     .fluidInputs(fluid('hydroiodic_acid') * 100)
-    .fluidOutputs(fluid('methyl_iodide_solution') * 200) //Simulates the reaction that would typically occur in-situ
+    .fluidOutputs(fluid('methyl_iodide_solution') * 200)
     .duration(10)
     .EUt(VA[LV])
     .buildAndRegister()
 
-BR.recipeBuilder()
+BR.recipeBuilder() // Source: Lithium and Lithium Compounds. Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a15_393
     .inputs(ore('dustLithiumHydroxide') * 3)
     .fluidInputs(fluid('hydroiodic_acid') * 1000)
-    .fluidOutputs(fluid('lithium_iodide_solution') * 2000)  // Source: Lithium and Lithium Compounds. Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a15_393
+    .fluidOutputs(fluid('lithium_iodide_solution') * 2000)
     .EUt(VA[LV])
     .duration(160)
     .buildAndRegister()
