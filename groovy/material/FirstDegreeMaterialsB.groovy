@@ -728,6 +728,18 @@ class FirstDegreeMaterialsB {
 
         LithiumIodideSolution.setFormula("(LiI)(H2O)2", true)
 
+        HexachloroiridicIIIAcidSolution = new Material.Builder(8773, SuSyUtility.susyId('hexachloroiridic_iii_acid_solution'))
+                .liquid()
+                .components(Hydrogen * 3, Iridium, Chlorine * 6, Water * 2)
+                .colorAverage()
+                .build()
 
+        HexachloroiridicIIIAcidSolution.setFormula("(H3ICl6)(H2O)2", true)
+
+        IridiumIIIChlorideTrihydrate = new Material.Builder(8774, SuSyUtility.susyId("iridium_iii_chloride_trihydrate"))
+                .dust()
+                .components(Iridium, Chlorine * 3, Water * 3)
+                .colorAverage()
+                .build()
     }
 }

@@ -749,12 +749,7 @@ class FirstDegreeMaterialsA {
                 .colorAverage()
                 .build()
 
-        HexachloroiridicAcid = new Material.Builder(8197, SuSyUtility.susyId('hexachloroiridic_acid'))
-                .dust()
-                .iconSet(SHINY)
-                .components(Hydrogen * 2, Iridium, Chlorine * 6)
-                .colorAverage()
-                .build()
+        //FREE ID: 8197
 
         PotassiumIodide = new Material.Builder(8198, SuSyUtility.susyId('potassium_iodide'))
                 .dust()
@@ -762,11 +757,7 @@ class FirstDegreeMaterialsA {
                 .colorAverage()
                 .build()
 
-        IridiumIodide = new Material.Builder(8199, SuSyUtility.susyId('iridium_iodide'))
-                .dust()
-                .components(Iridium, Iodine * 4)
-                .colorAverage()
-                .build()
+        //FREE ID: 8199
 
         PhosphorusTrichloride = new Material.Builder(8200, SuSyUtility.susyId('phosphorus_trichloride'))
                 .liquid()

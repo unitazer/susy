@@ -184,8 +184,6 @@ class SuSyMaterials {
     public static Material Asphalt
     public static Material BlackAsh
 //    public static Material ImpureAcetaldehyde
-//    public static Material CativaCatalystPreparation
-//    public static Material CativaCatalystSolution
     public static Material CrudeCumene
     public static Material SulfatedMetalOxide
     public static Material ImpureKaptonK
@@ -1094,9 +1092,7 @@ class SuSyMaterials {
     public static Material WustiteCatalyst
     public static Material PalladiumChloride
     public static Material AmmoniumBisulfateSolution
-    public static Material HexachloroiridicAcid
     public static Material PotassiumIodide
-    public static Material IridiumIodide
     public static Material PhosphorusTrichloride
     public static Material SodiumDichromate
     public static Material RaneyNickel
@@ -1652,6 +1648,8 @@ class SuSyMaterials {
     public static Material CopperIIAcetateMonohydrate
     public static Material RhodiumIIIChlorideTrihydrate
     public static Material LithiumIodideSolution
+    public static Material HexachloroiridicIIIAcidSolution
+    public static Material IridiumIIIChlorideTrihydrate
 
     // HP Materials
 
@@ -2001,7 +1999,6 @@ class SuSyMaterials {
     public static Material PhthalicAnhydride
     public static Material ImpureCaprolactam
     public static Material Dimethylformamide
-    public static Material CativaCatalyst
     public static Material TwoEthylanthraquinone
     public static Material TwoEthylanthrahydroquinone
     public static Material Butanone
@@ -2167,7 +2164,6 @@ class SuSyMaterials {
     public static Material TosylicAcidSolution
     public static Material Triphenylphosphine
     public static Material TriphenylphosphineDichloride
-    public static Material BistriphenylphosphineiminiumChloride
     public static Material TriphenylphosphineOxide
     public static Material Methyltrichlorosilane
     public static Material Methyldichlorosilane

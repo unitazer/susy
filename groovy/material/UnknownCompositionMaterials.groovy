@@ -167,15 +167,7 @@ class UnknownCompositionMaterials {
 //                .color(0x6e6e6e)
 //                .build()
 //
-//        CativaCatalystPreparation = new Material.Builder(4028, SuSyUtility.susyId('cativa_catalyst_preparation'))
-//                .liquid()
-//                .color(0x9c8275)
-//                .build()
-//
-//        CativaCatalystSolution = new Material.Builder(4029, SuSyUtility.susyId('cativa_catalyst_solution'))
-//                .liquid()
-//                .color(0x75665e)
-//                .build()
+        //FREE IDs: 4028-4029
 
         CrudeCumene = new Material.Builder(4030, SuSyUtility.susyId('crude_cumene'))
                 .liquid()

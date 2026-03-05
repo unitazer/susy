@@ -1804,7 +1804,7 @@ LCR.recipeBuilder()
     .fluidInputs(fluid('carbon_monoxide') * 1000)
     .fluidOutputs(fluid('gtfo_acetic_anhydride') * 1000)
     .duration(4)
-    .EUt(VA[EV])
+    .EUt(VA[IV])
     .buildAndRegister()
 
 // Cellulose Acetate

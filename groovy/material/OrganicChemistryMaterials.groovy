@@ -777,12 +777,7 @@ class OrganicChemistryMaterials {
 
         Dimethylformamide.setFormula('(CH3)2NCH', true)
 
-        CativaCatalyst = new Material.Builder(15128, SuSyUtility.susyId('cativa_catalyst'))
-                .dust()
-                .color(0x695449)
-                .build()
-
-        CativaCatalyst.setFormula('[PPN][IrI2(CO)2]', true)
+        //FREE ID: 15128
 
         TwoEthylanthraquinone = new Material.Builder(15129, SuSyUtility.susyId('two_ethylanthraquinone'))
                 .liquid()
@@ -1802,12 +1797,8 @@ class OrganicChemistryMaterials {
                 .colorAverage()
                 .build()
 
-        BistriphenylphosphineiminiumChloride = new Material.Builder(15287, SuSyUtility.susyId('bistriphenylphosphineiminium_chloride'))
-                .dust()
-                .components(Carbon * 36, Hydrogen * 30, Chlorine * 1, Nitrogen * 1, Phosphorus * 2)
-                .colorAverage()
-                .build()
-
+        //FREE ID: 15287
+        
         DimethylTerephthalate = new Material.Builder(15288, SuSyUtility.susyId('dimethyl_terephthalate'))
                 .dust().liquid(new FluidBuilder().temperature(533))
                 .components(Carbon * 10, Hydrogen * 10, Oxygen * 4)
