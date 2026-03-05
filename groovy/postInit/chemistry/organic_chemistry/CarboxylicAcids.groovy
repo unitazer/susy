@@ -112,7 +112,7 @@ DT.recipeBuilder()
     .buildAndRegister()
 
 // Acetic Acid (chemical)
-// Source: Acetic Acid Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_045.pub2
+// Source: Acetic Acid Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_045
 
 // Oxidation of Acetaldehyde
 CSTR.recipeBuilder()
@@ -126,12 +126,11 @@ CSTR.recipeBuilder()
     .buildAndRegister()
 
 // Monsanto Process
-REACTION_FURNACE.recipeBuilder() //Don't really have a rotary evaporator equivalent that has two fluid inputs
+DISTILLERY.recipeBuilder()
     .fluidInputs(fluid('hexachlororhodic_acid_solution') * 4475)
-    .fluidInputs(fluid('hydrochloric_acid') * 1000)
-    .outputs(metaitem('dustRhodiumIiiChlorideTrihydrate') * 7)
-    .fluidOutputs(fluid('hydrogen_chloride') * 4000)
-    .fluidOutputs(fluid('steam') * 16000)
+    .fluidInputs(fluid('hydrochloric_acid') * 9000)
+    .outputs(metaitem('dustRhodiumIiiChlorideTrihydrate') * 7)  // Source: Platinum Group Metals and Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a21_075
+    .fluidOutputs(fluid('diluted_hydrochloric_acid') * 12000)
     .duration(200)
     .EUt(VA[MV])
     .buildAndRegister()
@@ -139,7 +138,7 @@ REACTION_FURNACE.recipeBuilder() //Don't really have a rotary evaporator equival
 CSTR.recipeBuilder()
     .fluidInputs(fluid('methanol') * 100)
     .fluidInputs(fluid('hydroiodic_acid') * 100)
-    .fluidOutputs(fluid('methyl_iodide_solution') * 200)
+    .fluidOutputs(fluid('methyl_iodide_solution') * 200) //Simulates the reaction that would typically occur in-situ
     .duration(10)
     .EUt(VA[LV])
     .buildAndRegister()
@@ -147,7 +146,7 @@ CSTR.recipeBuilder()
 BR.recipeBuilder()
     .inputs(ore('dustLithiumHydroxide') * 3)
     .fluidInputs(fluid('hydroiodic_acid') * 1000)
-    .fluidOutputs(fluid('lithium_iodide_solution') * 2000)
+    .fluidOutputs(fluid('lithium_iodide_solution') * 2000)  // Source: Lithium and Lithium Compounds. Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a15_393
     .EUt(VA[LV])
     .duration(160)
     .buildAndRegister()

@@ -1921,7 +1921,7 @@ FLUIDIZED_BR.recipeBuilder()
     .buildAndRegister()
 
 // Acetaldehyde
-// Source: Acetaldehyde.Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_031.pub2
+// Source: Acetaldehyde.Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_031
 
 // Dehydrogenation of Ethanol
 FIXED_BR.recipeBuilder()
