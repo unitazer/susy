@@ -2265,7 +2265,7 @@ susy.material.iridium_extract=Iridium Extract
 susy.material.os_ru_tetroxide_mixture=Osmium-Ruthenium Tetroxide Mixture
 susy.material.os_ru_solution=Osmium-Ruthenium Solution
 susy.material.reduced_gold_free_pgm_solution=Reduced Gold-Free PGM Solution
-susy.material.hexachloroiridic_acid_solution=Hexachloroiridic(IV) Acid Solution
+susy.material.hexachloroiridic_iv_acid_solution=Hexachloroiridic(IV) Acid Solution
 susy.material.hexachlororhodic_acid_solution=Hexachlororhodic(III) Acid Solution
 susy.material.hexachlororuthenic_acid_solution=Hexachlororuthenic(III) Acid Solution
 susy.material.ammonium_hexachlororuthenate=Ammonium Hexachlororuthenate(III)
@@ -2799,6 +2799,9 @@ susy.material.acetic_acid_ethanol_mixture=Acetic Acid-Ethanol Mixture
 susy.material.methyl_iodide_solution=Methyl Iodide (Iodomethane) Solution
 susy.material.rhodium_iii_chloride_trihydrate=Rhodium III Chloride Trihydrate
 susy.material.lithium_iodide_solution=Lithium Iodide Solution
+susy.material.hexachloroiridic_iii_acid_solution=Hexachloroiridic(III) Acid Solution
+susy.material.lithium_iodide_solution=Lithium Iodide Solution
+susy.material.iridium_iii_chloride_trihydrate=Iridium III Chloride Trihydrate
 
 # Isotopes
 

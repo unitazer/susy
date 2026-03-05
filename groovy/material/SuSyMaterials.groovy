@@ -1091,6 +1091,7 @@ class SuSyMaterials {
     public static Material CopperSulfate
     public static Material WustiteCatalyst
     public static Material PalladiumChloride
+    public static Material HexachloroiridicIVAcidSolution
     public static Material AmmoniumBisulfateSolution
     public static Material PotassiumIodide
     public static Material PhosphorusTrichloride
@@ -1644,7 +1645,7 @@ class SuSyMaterials {
     public static Material BariumFluoride
     public static Material GreenCarbon
     public static Material BakedCarbon
-    public static Material MercuryIISulfate
+    public static Material MercuryIISulfateSolution
     public static Material CopperIIAcetateMonohydrate
     public static Material RhodiumIIIChlorideTrihydrate
     public static Material LithiumIodideSolution
@@ -1885,7 +1886,6 @@ class SuSyMaterials {
     public static Material ReactiveAlumina
     public static Material SodiumDithioniteSolution
     public static Material HoopesElectrolyte
-    public static Material MercuryIISulfateSolution
     public static Material CopperIIAcetateSolution
 
     // Organic Chemistry Materials

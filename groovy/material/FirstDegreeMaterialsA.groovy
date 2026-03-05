@@ -749,7 +749,13 @@ class FirstDegreeMaterialsA {
                 .colorAverage()
                 .build()
 
-        //FREE ID: 8197
+        HexachloroiridicIVAcidSolution = new Material.Builder(8197, SuSyUtility.susyId('hexachloroiridic_iv_acid_solution'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .components(Hydrogen * 2, Rhodium * 1, Chlorine * 6, Water * 18)
+                .colorAverage()
+                .build()
+
+        HexachloroiridicIVAcidSolution.setFormula("(H2ICl6)(H2O)2", true)
 
         PotassiumIodide = new Material.Builder(8198, SuSyUtility.susyId('potassium_iodide'))
                 .dust()
@@ -3093,7 +3099,7 @@ class FirstDegreeMaterialsA {
                 .colorAverage()
                 .build()
 
-        NiobiumOxideDihydrate.setFormula("Nb2O5 * (H2O)2", true)
+        NiobiumOxideDihydrate.setFormula("Nb2O5*(H2O)2", true)
 
         PurifiedFluoroniobicAcidSolution = new Material.Builder(8556, SuSyUtility.susyId('purified_fluoroniobic_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
@@ -3383,6 +3389,8 @@ class FirstDegreeMaterialsA {
                 .components(Iron, Carbon * 2, Oxygen * 4, Water * 2)
                 .colorAverage()
                 .build()
+
+        IronOxalateDihydrate.setFormula("FeC2O4*(H2O)2", true)
 
         IndiumIIISulfateSolution = new Material.Builder(8603, SuSyUtility.susyId('indium_iii_sulfate_solution'))
                 .liquid()

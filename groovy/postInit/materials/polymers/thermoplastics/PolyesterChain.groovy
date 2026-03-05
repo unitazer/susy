@@ -16,7 +16,7 @@ BR.recipeBuilder()
     .fluidInputs(fluid('distilled_water') * 3000)
     .outputs(metaitem('dustCobaltIiAcetate') * 19)
     .EUt(VA[MV])
-    .duration(80)
+    .duration(240)
     .buildAndRegister()
 
 POLYMERIZATION_TANK.recipeBuilder()

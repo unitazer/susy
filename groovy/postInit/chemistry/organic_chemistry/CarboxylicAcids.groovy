@@ -127,6 +127,7 @@ CSTR.recipeBuilder()
 
 // Monsanto Process
 DISTILLERY.recipeBuilder() // Source: Platinum Group Metals and Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a21_075
+    .circuitMeta(3)
     .fluidInputs(fluid('hexachlororhodic_acid_solution') * 8950)
     .fluidInputs(fluid('hydrochloric_acid') * 4500)
     .chancedOutput(metaitem('dustRhodiumIiiChlorideTrihydrate') * 7, 5000, 0)
@@ -158,15 +159,14 @@ LCR.recipeBuilder()
     .fluidInputs(fluid('methanol') * 1000)
     .fluidInputs(fluid('carbon_monoxide') * 1000) // Possibly should be high-pressure? Currently unobtainable though
     .fluidOutputs(fluid('acetic_acid') * 1000)
-    .duration(4)
+    .duration(40)
     .EUt(VA[EV])
     .buildAndRegister()
 
 // Cativa Process
 
-// 2H2IrCl6 + H2C2O4 -> 2H3IrCl6 + 2CO2
 BR.recipeBuilder() // Source: https://patents.justia.com/patent/20190337819
-    .fluidInputs(fluid('hexachloroiridic_acid_solution') * 4000)
+    .fluidInputs(fluid('hexachloroiridic_iv_acid_solution') * 4000)
     .inputs(ore('dustOxalicAcid') * 8)
     .fluidOutputs(fluid('hexachloroiridic_iii_acid_solution') * 4000)
     .fluidOutputs(fluid('carbon_dioxide') * 2000)
@@ -175,10 +175,11 @@ BR.recipeBuilder() // Source: https://patents.justia.com/patent/20190337819
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
+    .circuitMeta(4)
     .fluidInputs(fluid('hexachloroiridic_iii_acid_solution') * 2000)
-    .fluidInputs(fluid('hydrochloric_acid') * 9000)
+    .fluidInputs(fluid('hydrochloric_acid') * 1000)
     .outputs(metaitem('dustIridiumIiiChlorideTrihydrate') * 7)
-    .fluidOutputs(fluid('diluted_hydrochloric_acid') * 12000)
+    .fluidOutputs(fluid('hydrogen_chloride') * 4000)
     .duration(100)
     .EUt(VA[MV])
     .buildAndRegister()
@@ -189,7 +190,7 @@ LCR.recipeBuilder()
     .fluidInputs(fluid('methanol') * 1000)
     .fluidInputs(fluid('carbon_monoxide') * 1000)
     .fluidOutputs(fluid('acetic_acid') * 1000)
-    .duration(2)
+    .duration(20)
     .EUt(VA[IV])
     .buildAndRegister()
 

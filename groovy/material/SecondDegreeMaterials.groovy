@@ -803,13 +803,7 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        // FREE ID: 13125-13129
-
-        HexachloroiridicAcidSolution = new Material.Builder(13130, SuSyUtility.susyId('hexachloroiridic_acid_solution'))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(HexachloroiridicAcid * 1, Water * 2)
-                .colorAverage()
-                .build()
+        // FREE ID: 13125-13130
 
         HexachlororhodicAcidSolution = new Material.Builder(13131, SuSyUtility.susyId('hexachlororhodic_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
@@ -879,9 +873,11 @@ class SecondDegreeMaterials {
 
         CopperIIChlorideSolution = new Material.Builder(13142, SuSyUtility.susyId('copper_ii_chloride_solution'))
                 .liquid()
-                .components(CopperIIChloride, Water)
+                .components(CopperIIChloride * 2, Water * 7)
                 .colorAverage()
                 .build()
+
+        CopperIIChlorideSolution.setFormula("(CuCl2)2(H2O)7", true)
 
         AmmoniumCarbonateSolution = new Material.Builder(13143, SuSyUtility.susyId('ammonium_carbonate_solution'))
                 .liquid()
@@ -1029,6 +1025,8 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
+        LithiumHydroxideMonohydrate.setFormula("LiOH*H2O", true)
+
         AmmoniumDihydrogenPhosphateSolution = new Material.Builder(13167, SuSyUtility.susyId('ammonium_dihydrogen_phosphate_solution'))
                 .liquid()
                 .components(AmmoniumDihydrogenPhosphate * 2, Water)
@@ -1095,15 +1093,7 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        MercuryIISulfateSolution = new Material.Builder(13182, SuSyUtility.susyId('mercury_ii_sulfate_solution'))
-                .liquid()
-                .components(MercuryIISulfate * 1, SulfuricAcid * 1)
-                .colorAverage()
-                .build()
-
-        MercuryIISulfateSolution.setFormula("(HgSO4)(H2SO4)", true)
-
-        CopperIIAcetateSolution = new Material.Builder(13183, SuSyUtility.susyId('copper_ii_acetate_solution'))
+        CopperIIAcetateSolution = new Material.Builder(13182, SuSyUtility.susyId('copper_ii_acetate_solution'))
                 .liquid()
                 .components(CopperIIAcetateMonohydrate * 1, Water * 2)
                 .colorAverage()
