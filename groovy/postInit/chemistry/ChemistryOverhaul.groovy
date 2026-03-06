@@ -1041,7 +1041,7 @@ DT.recipeBuilder()
 
 // Tishchenko Reaction
 BR.recipeBuilder()
-    .notConsumable(ore('dustSodiumMethoxide'))
+    .notConsumable(ore('dustAluminiumIsopropoxide'))
     .fluidInputs(fluid('gtfo_acetaldehyde') * 2000)
     .fluidOutputs(fluid('ethyl_acetate') * 1000)
     .duration(80)
