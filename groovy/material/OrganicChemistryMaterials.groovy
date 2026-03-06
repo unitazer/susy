@@ -266,7 +266,7 @@ class OrganicChemistryMaterials {
 
         AcidicMethylAcetateWaterMixture = new Material.Builder(15039, SuSyUtility.susyId('acidic_methyl_acetate_water_mixture'))
                 .liquid()
-                .components(MethylAcetate * 1, Sulfuric Acid * 1, Water * 1)
+                .components(MethylAcetate * 1, SulfuricAcid * 1, Water * 1)
                 .colorAverage()
                 .build()
 
@@ -777,13 +777,7 @@ class OrganicChemistryMaterials {
 
         Dimethylformamide.setFormula('(CH3)2NCH', true)
 
-        AceticAcidAnhydrideMixture = new Material.Builder(15128, SuSyUtility.susyId("acetic_acid_anhydride_mixture"))
-                .liquid()
-                .components(AceticAcid * 1, EthylAcetate * 2)
-                .colorAverage()
-                .build()
-
-        AceticAcidAnhydrideMixture.setFormula("", true)
+        // FREE ID: 15130
 
         TwoEthylanthraquinone = new Material.Builder(15129, SuSyUtility.susyId('two_ethylanthraquinone'))
                 .liquid()
@@ -1805,7 +1799,7 @@ class OrganicChemistryMaterials {
 
         AceticAcidEthanolMixture = new Material.Builder(15287, SuSyUtility.susyId("acetic_acid_ethanol_mixture"))
                 .liquid()
-                .components(Ethanol * 1, Acetic Acid * 1, Sulfuric Acid * 1)
+                .components(Ethanol * 1, AceticAcid * 1, SulfuricAcid * 1)
                 .colorAverage()
                 .build()
 
@@ -2993,7 +2987,7 @@ class OrganicChemistryMaterials {
 
         AcidicEthylAcetateWaterMixture = new Material.Builder(15470, SuSyUtility.susyId('acidic_ethyl_acetate_water_mixture'))
                 .liquid()
-                .components(EthylAcetate * 1, Sulfuric Acid * 1, Water * 1)
+                .components(EthylAcetate * 1, SulfuricAcid * 1, Water * 1)
                 .colorAverage()
                 .build()
 
@@ -3353,6 +3347,14 @@ class OrganicChemistryMaterials {
                 .flags(GENERATE_FOIL, GENERATE_RING)
                 .color(0x040714)
                 .build()
+
+        AceticAcidAnhydrideMixture = new Material.Builder(15524, SuSyUtility.susyId("acetic_acid_anhydride_mixture"))
+                .liquid()
+                .components(AceticAcid * 1, EthylAcetate * 2)
+                .colorAverage()
+                .build()
+
+        AceticAcidAnhydrideMixture.setFormula("", true)
 
     }
 }

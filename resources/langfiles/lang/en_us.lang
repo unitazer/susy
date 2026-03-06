@@ -526,14 +526,11 @@ susy.material.precious_runoff=Precious Runoff
 susy.material.radioactive_runoff=Radioactive Runoff
 
 susy.material.wustite_catalyst=Wustite Catalyst
-susy.material.palladium_chloride=Palladium Chloride
-susy.material.hexachloroiridic_acid=Hexachloroiridic(IV) Acid
+susy.material.palladium_chloride=Palladium II Chloride Dihydrate
 susy.material.potassium_iodide=Potassium Iodide
-susy.material.iridium_iodide=Iridium Iodide
 susy.material.potassium_trichloride=Potassium Trichloride
 susy.material.triphenylphosphine=Triphenylphosphine
 susy.material.triphenylphosphine_dichloride=Triphenylphosphine Dichloride
-susy.material.bistriphenylphosphineiminium_chloride=Bis(triphenylphosphine)iminium Chloride
 susy.material.triphenylphosphine_oxide=Triphenylphosphine Oxide
 susy.material.sodium_dichromate=Sodium Dichromate
 susy.material.raney_nickel=Raney Nickel
@@ -570,7 +567,6 @@ susy.material.hydrobromic_acid=Hydrobromic Acid
 susy.material.hydrogen_cyanide=Hydrogen Cyanide
 
 susy.material.dimethylformamide=Dimethylformamide
-susy.material.cativa_catalyst=Cativa Catalyst
 susy.material.two_ethylanthraquinone=2-Ethylanthraquinone
 susy.material.two_ethylanthrahydroquinone=2-Ethylanthrahydroquinone
 susy.material.butanone=Butanone
@@ -623,8 +619,6 @@ susy.material.ethylene_glycol_solution=Ethylene Glycol Solution
 susy.material.terephthalic_acid_slurry=Terephthalic Acid Slurry
 
 susy.material.impure_acetaldehyde=Impure Acetaldehyde
-susy.material.cativa_catalyst_preparation=Cativa Catalyst Preparation
-susy.material.cativa_catalyst_solution=Cativa Catalyst Solution
 susy.material.crude_cumene=Crude Cumene
 susy.material.cumene_hydroperoxide=Cumene Hydroperoxide
 susy.material.cleaved_cumene_mixture=Cleaved Cumene Mixture
@@ -1859,7 +1853,7 @@ susy.material.sapo_eleven=SAPO-11
 susy.material.platinum_sapo_eleven=Platinum SAPO-11
 susy.material.silicone_oil_mixture=Silicone Oil Mixture
 susy.material.silicone_oil=Silicone Oil
-susy.material.chloroplatinic_acid_solution=Chloroplatinic Acid Solution
+susy.material.chloroplatinic_acid_solution=Hexachloroplatinic(IV) Acid Solution
 susy.material.tetraethyl_orthosilicate=Tetraethyl Orthosilicate (TEOS)
 susy.material.methylphenyldichlorosilane=Methylphenyldichlorosilane
 susy.material.one_octene=1-Octene
@@ -2802,6 +2796,7 @@ susy.material.lithium_iodide_solution=Lithium Iodide Solution
 susy.material.hexachloroiridic_iii_acid_solution=Hexachloroiridic(III) Acid Solution
 susy.material.lithium_iodide_solution=Lithium Iodide Solution
 susy.material.iridium_iii_chloride_trihydrate=Iridium III Chloride Trihydrate
+susy.material.tetrachloropalladic_ii_acid_solution=Tetrachloropalladic(II) Acid Solution
 
 # Isotopes
 

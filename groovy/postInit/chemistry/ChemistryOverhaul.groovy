@@ -1976,39 +1976,50 @@ BCR.recipeBuilder()
     .buildAndRegister()
 
 // Wacker Process
-ROASTER.recipeBuilder()
-    .fluidInputs(fluid('chlorine') * 2000)
+
+BR.recipeBuilder() // Source: Platinum Group Metals and Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a21_075
     .inputs(ore('dustAnyPurityPalladium'))
-    .outputs(metaitem('dustPalladiumChloride') * 3)
-    .duration(280)
+    .fluidInputs(fluid('chlorine') * 2000)
+    .fluidInputs(fluid('hydrochloric_acid') * 2000)
+    .fluidOutputs(fluid('tetrachloropalladic_ii_acid_solution') * 2000)
+    .duration(160)
+    .EUt(VA[MV])
+    .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('tetrachloropalladic_ii_acid_solution') * 2000)
+    .fluidInputs(fluid('diluted_hydrochloric_acid') * 2000)
+    .output(metaitem('dustPalladiumChloride') * 5)
+    .fluidOutputs(fluid('hydrochloric_acid') * 4000)
+    .duration(100)
     .EUt(VA[MV])
     .buildAndRegister()
 
 BR.recipeBuilder() // Source: Copper Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a07_567
-        .inputs(ore('dustCopperCarbonate') * 10)
-        .fluidInputs(fluid('hydrochloric_acid') * 4000)
-        .fluidOutputs(fluid('copper_ii_chloride_solution') * 7000) //(CuCl2)2(H2O)7
-        .fluidOutputs(fluid('carbon_dioxide') * 1000)
-        .EUt(VA[MV])
-        .duration(160)
-        .buildAndRegister()
+    .inputs(ore('dustCopperCarbonate') * 10)
+    .fluidInputs(fluid('hydrochloric_acid') * 4000)
+    .fluidOutputs(fluid('copper_ii_chloride_solution') * 7000) //(CuCl2)2(H2O)7
+    .fluidOutputs(fluid('carbon_dioxide') * 1000)
+    .EUt(VA[MV])
+    .duration(160)
+    .buildAndRegister()
 
-BR.recipeBuilder() // Source: Copper Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a07_567
-        .inputs(ore('dustCupricOxide') * 4)
-        .fluidInputs(fluid('hydrochloric_acid') * 4000)
-        .fluidInputs(fluid('distilled_water') * 1000)
-        .fluidOutputs(fluid('copper_ii_chloride_solution') * 7000) //(CuCl2)2(H2O)7
-        .EUt(VA[MV])
-        .duration(200)
-        .buildAndRegister()
+BR.recipeBuilder()
+    .inputs(ore('dustCupricOxide') * 4)
+    .fluidInputs(fluid('hydrochloric_acid') * 4000)
+    .fluidInputs(fluid('distilled_water') * 1000)
+    .fluidOutputs(fluid('copper_ii_chloride_solution') * 7000) //(CuCl2)2(H2O)7
+    .EUt(VA[MV])
+    .duration(200)
+    .buildAndRegister()
 
 CRYSTALLIZER.recipeBuilder()
-        .fluidInputs(fluid('copper_ii_chloride_solution') * 7000)
-        .outputs(metaitem('dustCopperIiChloride') * 6)
-        .fluidOutputs(fluid('water') * 7000)
-        .EUt(VA[LV])
-        .duration(200)
-        .buildAndRegister()
+    .fluidInputs(fluid('copper_ii_chloride_solution') * 7000)
+    .outputs(metaitem('dustCopperIiChloride') * 6)
+    .fluidOutputs(fluid('water') * 7000)
+    .EUt(VA[LV])
+    .duration(200)
+    .buildAndRegister()
 
 MIXER.recipeBuilder()
     .fluidInputs(fluid('water') * 1000)

@@ -481,13 +481,10 @@ susy.material.radioactive_runoff=Radioaktiver Abfluss
 
 susy.material.wustite_catalyst=Wüstit-Katalysator
 susy.material.palladium_chloride=Palladiumchlorid
-susy.material.hexachloroiridic_acid=Hexachloroiridium(IV)-Säure
 susy.material.potassium_iodide=Kaliumiodid
-susy.material.iridium_iodide=Iridiumiodid
 susy.material.potassium_trichloride=Kaliumtrichlorid
 susy.material.triphenylphosphine=Triphenylphosphin
 susy.material.triphenylphosphine_dichloride=Triphenylphosphindichlorid
-susy.material.bistriphenylphosphineiminium_chloride=Bis(triphenylphosphin)iminiumchlorid
 susy.material.triphenylphosphine_oxide=Triphenylphosphinoxid
 susy.material.sodium_dichromate=Natriumdichromat
 susy.material.raney_nickel=Raney-Nickel
@@ -524,7 +521,6 @@ susy.material.hydrobromic_acid=Bromwasserstoffsäure
 susy.material.hydrogen_cyanide=Cyanwasserstoff
 
 susy.material.dimethylformamide=Dimethylformamid
-susy.material.cativa_catalyst=Cativa-Katalysator
 susy.material.two_ethylanthraquinone=2-Ethylanthrachinon
 susy.material.two_ethylanthrahydroquinone=2-Ethylanthrahydrochinon
 susy.material.butanone=Butanon
@@ -578,8 +574,6 @@ susy.material.ethylene_glycol_solution=Ethylenglykol-Lösung
 susy.material.terephthalic_acid_slurry=Terephthalsäure-Suspension
 
 susy.material.impure_acetaldehyde=Verunreinigtes Acetaldehyd
-susy.material.cativa_catalyst_preparation=Cativa-Katalysator-Vorbereitung
-susy.material.cativa_catalyst_solution=Cativa-Katalysator-Lösung
 susy.material.crude_cumene=Rohes Cumol
 susy.material.impure_kapton_k=Verunreinigtes Kapton K
 susy.material.impure_kapton_e=Verunreinigtes Kapton E

@@ -1651,6 +1651,7 @@ class SuSyMaterials {
     public static Material LithiumIodideSolution
     public static Material HexachloroiridicIIIAcidSolution
     public static Material IridiumIIIChlorideTrihydrate
+    public static Material TetrachloropalladicIIAcidSolution
 
     // HP Materials
 
@@ -1999,7 +2000,6 @@ class SuSyMaterials {
     public static Material PhthalicAnhydride
     public static Material ImpureCaprolactam
     public static Material Dimethylformamide
-    public static Material AceticAcidAnhydrideMixture
     public static Material TwoEthylanthraquinone
     public static Material TwoEthylanthrahydroquinone
     public static Material Butanone
@@ -2407,6 +2407,7 @@ class SuSyMaterials {
     public static Material Diazonaphthoquinone
     public static Material RawNitrileRubber
     public static Material NitrileRubber
+    public static Material AceticAcidAnhydrideMixture
 
     // Third Degree Materials
 

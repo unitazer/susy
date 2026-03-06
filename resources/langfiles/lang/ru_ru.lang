@@ -472,13 +472,10 @@ susy.material.radioactive_runoff=Радиоактивный сток
 
 susy.material.wustite_catalyst=Вюститовый катализатор
 susy.material.palladium_chloride=Палладий хлорид
-susy.material.hexachloroiridic_acid=Гексахлориридовая кислота
 susy.material.potassium_iodide=Йодистый калий
-susy.material.iridium_iodide=Иридий Йодид
 susy.material.potassium_trichloride=Трихлорид калия
 susy.material.triphenylphosphine=Трифенилфосфин
 susy.material.triphenylphosphine_dichloride=Трифенилфосфина дихлорид
-susy.material.bistriphenylphosphineiminium_chloride=Бис (трифенилфосфин)iminium Chloride
 susy.material.triphenylphosphine_oxide=Трифенилфосфиноксид
 susy.material.sodium_dichromate=Дихромат натрия
 susy.material.raney_nickel=Никель Ренея
@@ -515,7 +512,6 @@ susy.material.hydrobromic_acid=Бромоводородная кислота
 susy.material.hydrogen_cyanide=Цианистый водород
 
 susy.material.dimethylformamide=Диметилформамид
-susy.material.cativa_catalyst=Катива Катализатор
 susy.material.two_ethylanthraquinone=2-Этилантрахинон
 susy.material.two_ethylanthrahydroquinone=2-Этилантрагидрохинон
 susy.material.butanone=Бутанон
@@ -568,8 +564,6 @@ susy.material.ethylene_glycol_solution=Раствор этиленгликоля
 susy.material.terephthalic_acid_slurry=Суспензия терефталевой кислоты
 
 susy.material.impure_acetaldehyde=Нечистый ацетальдегид
-susy.material.cativa_catalyst_preparation=Катализатор Cativa
-susy.material.cativa_catalyst_solution=Раствор Катализатора Cativa
 susy.material.crude_cumene=Сырой кумол
 susy.material.impure_kapton_k=Нечистый каптон К
 susy.material.impure_kapton_e=Нечистый каптон E

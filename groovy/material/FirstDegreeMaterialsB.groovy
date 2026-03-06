@@ -698,7 +698,7 @@ class FirstDegreeMaterialsB {
                 .color(0x353535)
                 .build()
 
-        MercuryIISulfateSolution = new Material.Builder(13182, SuSyUtility.susyId('mercury_ii_sulfate_solution'))
+        MercuryIISulfateSolution = new Material.Builder(8769, SuSyUtility.susyId('mercury_ii_sulfate_solution'))
                 .liquid()
                 .components(Mercury * 1, Sulfur * 1, Oxygen * 4, SulfuricAcid * 1, Water * 2)
                 .colorAverage()
@@ -745,6 +745,14 @@ class FirstDegreeMaterialsB {
                 .build()
 
         IridiumIIIChlorideTrihydrate.setFormula("IrCl3*(H2O)3", true)
+
+        TetrachloropalladicIIAcidSolution = new Material.Builder(8775, SuSyUtility.susyId('tetrachloropalladic_ii_acid_solution'))
+                .liquid()
+                .components(Hydrogen * 2, Palladium, Chlorine * 4, Water * 2)
+                .colorAverage()
+                .build()
+
+        TetrachloropalladicIIAcidSolution.setFormula("(H2PdCl4)(H2O)2", true)
 
     }
 }

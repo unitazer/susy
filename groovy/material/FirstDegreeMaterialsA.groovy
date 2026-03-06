@@ -744,10 +744,11 @@ class FirstDegreeMaterialsA {
 
         PalladiumChloride = new Material.Builder(8196, SuSyUtility.susyId('palladium_chloride'))
                 .dust()
-                .iconSet(SHINY)
-                .components(Palladium, Chlorine * 2)
+                .components(Palladium, Chlorine * 2, Water * 2)
                 .colorAverage()
                 .build()
+
+        PalladiumChloride.setFormula("PdCl2*(H2O)2", true)
 
         HexachloroiridicIVAcidSolution = new Material.Builder(8197, SuSyUtility.susyId('hexachloroiridic_iv_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
@@ -3680,7 +3681,7 @@ class FirstDegreeMaterialsA {
 
         CopperCarbonate = new Material.Builder(8642, SuSyUtility.susyId("copper_carbonate"))
                 .dust()
-                .components(Copper, Carbon, Oxygen * 3)
+                .components(Copper * 2, Carbon, Oxygen * 5, Hydrogen * 2)
                 .colorAverage()
                 .build()
 
