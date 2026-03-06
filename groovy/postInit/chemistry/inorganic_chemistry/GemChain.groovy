@@ -92,6 +92,7 @@ REACTION_FURNACE.recipeBuilder()
         .inputs(ore('dustTitaniumDioxide') * 3)
         .outputs(metaitem('dustBariumTitanate') * 5)
         .fluidOutputs(fluid('carbon_dioxide') * 1000)
+        .duration(200)
         .EUt(VA[MV])
         .buildAndRegister()
 
