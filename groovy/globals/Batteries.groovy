@@ -9,6 +9,7 @@ class Batteries {
 
     static list = [
         new Battery('lead_acid', GTValues.LV, secs[0]),
+        new Battery('lead_acid.mv', GTValues.MV, secs[0]),
         new Battery('ni_fe', GTValues.MV, secs[0]),
         new Battery('ni_zn.mv', GTValues.MV, secs[1]),
         new Battery('ni_zn.hv', GTValues.HV, secs[0]),

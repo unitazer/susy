@@ -217,6 +217,8 @@ eventManager.listen { PostMaterialEvent event ->
         Batteries['ni_zn.hv'].register(it, 4009)
         addItem(4010, "anode.zinc_oxide")
         addItem(4011, "cathode.nioh2")
+        Batteries['lead_acid.mv'].register(it, 4012)
+
         // Battery hulls 4090-4100
         addItem(4090, "battery.primitivehull.lv")
         addItem(4091, "battery.primitivehull.mv")
