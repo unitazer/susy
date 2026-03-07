@@ -626,11 +626,6 @@ RecyclingHelper.replaceShapeless("pyrotech:tech/machine/cog_iron", item('pyrotec
 RecyclingHelper.replaceShapeless("pyrotech:tech/machine/cog_gold", item('pyrotech:cog_gold'), [metaitem('gearGold')])
 RecyclingHelper.replaceShapeless("pyrotech:tech/machine/cog_diamond", item('pyrotech:cog_diamond'), [metaitem('gearDiamond')])
 
-oreDict.add("gearStone", item('pyrotech:cog_stone'))
-oreDict.add("gearIron", item('pyrotech:cog_iron'))
-oreDict.add("gearGold", item('pyrotech:cog_gold'))
-oreDict.add("gearDiamond", item('pyrotech:cog_diamond'))
-
 crafting.addShapeless("susy:cog_stone_to_gear", metaitem('gearStone'), [item('pyrotech:cog_stone')])
 crafting.addShapeless("susy:cog_iron_to_gear", metaitem('gearIron'), [item('pyrotech:cog_iron')])
 crafting.addShapeless("susy:cog_gold_to_gear", metaitem('gearGold'), [item('pyrotech:cog_gold')])
