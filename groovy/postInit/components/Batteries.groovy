@@ -88,6 +88,33 @@ ELECTROLYTIC_CELL.recipeBuilder()
         .EUt(VA[LV])
         .buildAndRegister()
 
+ELECTROLYTIC_CELL.recipeBuilder()
+        .notConsumable(fluid('watts_bath_electrolyte') * 1000)
+        .inputs(ore('foilNickel'))
+        .inputs(metaitem('battery.steel_hull.lv'))
+        .outputs(metaitem('battery.ni_fe_hull.lv'))
+        .duration(160)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+ELECTROLYTIC_CELL.recipeBuilder()
+        .notConsumable(fluid('watts_bath_electrolyte') * 1000)
+        .inputs(ore('foilNickel'))
+        .inputs(metaitem('battery.steel_hull.mv'))
+        .outputs(metaitem('battery.ni_fe_hull.mv'))
+        .duration(160)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+ELECTROLYTIC_CELL.recipeBuilder()
+        .notConsumable(fluid('watts_bath_electrolyte') * 1000)
+        .inputs(ore('foilNickel'))
+        .inputs(metaitem('battery.steel_hull.hv'))
+        .outputs(metaitem('battery.ni_fe_hull.hv'))
+        .duration(160)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
 // Zinc Oxide Anode
 
 ASSEMBLER.recipeBuilder()
@@ -154,7 +181,7 @@ RecyclingHelper.handleRecycling(metaitem('battery.ni_fe'), [ore('plateSteel') * 
 // Nickel-Zinc Battery
 
 ASSEMBLER.recipeBuilder()
-        .inputs(metaitem('battery.hull.mv'))
+        .inputs(metaitem('battery.steel_hull.mv'))
         .inputs(metaitem('anode.zinc_oxide') * 1)
         .inputs(metaitem('cathode.nioh2') * 1)
         .inputs(ore('foilPolycaprolactam'))
