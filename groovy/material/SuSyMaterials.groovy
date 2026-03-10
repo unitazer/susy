@@ -1509,7 +1509,7 @@ class SuSyMaterials {
     public static Material LithiumNitrate
     public static Material LithiumNitrateSolution
     public static Material ZincCarbonate
-    public static Material CopperCarbonate
+    public static Material BasicCopperCarbonate
     public static Material AmmoniumHexachlororuthenate
     public static Material AmmoniumHexachlororhodate
     public static Material AmmoniumHexachloroiridate

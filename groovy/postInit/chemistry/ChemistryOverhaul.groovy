@@ -1728,7 +1728,7 @@ ROASTER.recipeBuilder()
 // Oxidation of Acetaldehyde
 // Cu2(OH)2CO3 + 4C2H4O2 + 3H2O -> 2Cu(C2H3O2)2*H2O + 4H2O + CO2
 BR.recipeBuilder() // Source: Copper Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a07_567
-    .inputs(ore('dustCopperCarbonate') * 10)
+    .inputs(ore('dustBasicCopperCarbonate') * 10)
     .fluidInputs(fluid('acetic_acid') * 4000)
     .fluidInputs(fluid('distilled_water') * 3000)
     .fluidOutputs(fluid('copper_ii_acetate_solution') * 4000) // Cu(C2H3O2)2(H2O)3
@@ -1996,7 +1996,7 @@ DISTILLERY.recipeBuilder()
     .buildAndRegister()
 
 BR.recipeBuilder() // Source: Copper Compounds Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a07_567
-    .inputs(ore('dustCopperCarbonate') * 10)
+    .inputs(ore('dustBasicCopperCarbonate') * 10)
     .fluidInputs(fluid('hydrochloric_acid') * 4000)
     .fluidOutputs(fluid('copper_ii_chloride_solution') * 7000) //(CuCl2)2(H2O)7
     .fluidOutputs(fluid('carbon_dioxide') * 1000)

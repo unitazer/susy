@@ -3679,13 +3679,13 @@ class FirstDegreeMaterialsA {
                 .colorAverage()
                 .build()
 
-        CopperCarbonate = new Material.Builder(8642, SuSyUtility.susyId("copper_carbonate"))
+        BasicCopperCarbonate = new Material.Builder(8642, SuSyUtility.susyId("basic_copper_carbonate"))
                 .dust()
                 .components(Copper * 2, Carbon, Oxygen * 5, Hydrogen * 2)
                 .colorAverage()
                 .build()
 
-        CopperCarbonate.setFormula('Cu2(OH)2CO3', true)
+        BasicCopperCarbonate.setFormula('Cu2(OH)2CO3', true)
 
         AmmoniumHexachlororuthenate = new Material.Builder(8643, SuSyUtility.susyId('ammonium_hexachlororuthenate'))
                 .dust()
