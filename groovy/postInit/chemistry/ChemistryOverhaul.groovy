@@ -72,6 +72,14 @@ ROASTER.recipeBuilder()
         .EUt(VA[ULV])
         .buildAndRegister()
 
+ROASTER.recipeBuilder()
+        .inputs(ore('dustSulfur') * 1)
+        .fluidInputs(fluid('air') * 3000)
+        .fluidOutputs(fluid('sulfur_dioxide') * 1000)
+        .duration(120)
+        .EUt(VA[ULV])
+        .buildAndRegister()
+
 // Ammonium Chloride
 
 BCR.recipeBuilder()
