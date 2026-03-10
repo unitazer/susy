@@ -1649,6 +1649,7 @@ class SuSyMaterials {
     public static Material BariumFluoride
     public static Material GreenCarbon
     public static Material BakedCarbon
+    public static Material GreenVitriol
 
     // HP Materials
 
