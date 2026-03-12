@@ -428,7 +428,7 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('sulfur_dioxide') * 1000)
     .fluidOutputs(fluid('sulfur_trioxide') * 1000)
     .duration(200)
-    .EUt(VA[LV])
+    .EUt(VA[ULV])
     .buildAndRegister()
 
 ROASTER.recipeBuilder()
