@@ -163,6 +163,8 @@ for (i in 0..2) {
     mods.jei.ingredient.yeet(item('gregtech:ore_bauxite_0', i))
 }
 
+// OreDic Removal + Hide from JEI
+
 oreDictRemovals = [
         'sgcraft:naquadahingot': 'ingotNaquadahAlloy',
         'appliedenergistics2:material:2': 'dustCertusQuartz',
@@ -239,12 +241,11 @@ for (type in StoneVariantBlock.StoneType.values()) {
 // Misc Fixes
 ore('stickWood').add(item('minecraft:stick'))
 ore('blockCoalCoke').add(metaitem('blockCoke'))
+ore('blockCoalCoke').add(item('pyrotech:coal_coke_block'))
 ore('foilMylar').add(metaitem('mylar'))
 ore('blockConcrete').remove(item('susy:susy_stone_smooth:9'))
 ore('stone').remove(item('susy:susy_stone_smooth:9'))
 ore('cobblestone').remove(item('susy:susy_stone_cobble:9'))
-ore('blockFuelCoke').remove(item('pyrotech:coal_coke_block'))
-ore('fuelCoke').remove(item('pyrotech:material', 1))
 
 //Dust oredicting
 elements = [

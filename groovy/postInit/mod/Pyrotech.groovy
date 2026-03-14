@@ -1161,7 +1161,7 @@ def reductants = [
         new Reductant("charcoal", 12, 1),
         new Reductant("gemCoal", 10, 1), // Standard consumption, 10 = 8 + 2
         new Reductant("gemLigniteCoke", 12, 1.2),
-        new Reductant("fuelCoke", 8, 0.8),
+        new Reductant("gemCoke", 8, 0.8),
         new Reductant("gemAnthracite", 8, 0.75),
         new Reductant("dustCharcoal", 12, 0.95),
         new Reductant("dustCoal", 10, 0.9),
