@@ -6,7 +6,7 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.470.desc",
       "icon:10": {
-        "Damage:2": 4007,
+        "Damage:2": 4015,
         "id:8": "gregtech:meta_item_2",
         "tag:10": {
           "Charge:4": 448000
@@ -22,7 +22,7 @@
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "Damage:2": 4007,
+          "Damage:2": 4015,
           "id:8": "gregtech:meta_item_2",
           "tag:10": {
             "Charge:4": 448000
@@ -37,7 +37,7 @@
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "Damage:2": 4015,
+          "Damage:2": 4014,
           "id:8": "gregtech:meta_item_2",
           "tag:10": {
             "Charge:4": 112000

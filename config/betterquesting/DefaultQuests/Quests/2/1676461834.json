@@ -6,7 +6,7 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.1676461834.desc",
       "icon:10": {
-        "Damage:2": 4014,
+        "Damage:2": 4007,
         "id:8": "gregtech:meta_item_2",
         "tag:10": {
           "Charge:4": 320000
@@ -22,7 +22,7 @@
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "Damage:2": 4014,
+          "Damage:2": 4007,
           "id:8": "gregtech:meta_item_2",
           "tag:10": {
             "Charge:4": 320000
