@@ -124,29 +124,29 @@ crafting.addShaped("cathode_lead", metaitem('cathode.lead'), [
 ]);
 
 crafting.addShaped('primitive_battery_hull_lv', metaitem('battery.primitivehull.lv'), [
-        [null,                metaitem('cableGtSingleTin'), null],
-        [ore('plateEbonite'), null,                         ore('plateEbonite')],
-        [ore('plateEbonite'), null,                         ore('plateEbonite')]
+        [metaitem('cableGtSingleTin'), null, metaitem('cableGtSingleTin')],
+        [ore('plateEbonite'), ore('plateEbonite'), ore('plateEbonite')],
+        [ore('plateEbonite'), ore('plateEbonite'), ore('plateEbonite')]
 ])
 
 ASSEMBLER.recipeBuilder()
-        .inputs(metaitem('cableGtSingleTin'))
-        .inputs(ore('plateEbonite') * 4)
-        .outputs(metaitem('battery.primitivehull.lv'))
-        .duration(80)
-        .EUt(VA[ULV])
-        .buildAndRegister()
-
-ASSEMBLER.recipeBuilder()
-        .inputs(metaitem('cableGtSingleCopper') * 2)
+        .inputs(metaitem('cableGtSingleTin') * 2)
         .inputs(ore('plateEbonite') * 6)
-        .outputs(metaitem('battery.primitivehull.mv'))
+        .outputs(metaitem('battery.primitivehull.lv'))
         .duration(80)
         .EUt(VA[LV])
         .buildAndRegister()
 
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('cableGtSingleCopper') * 2)
+        .inputs(ore('plateEbonite') * 8)
+        .outputs(metaitem('battery.primitivehull.mv'))
+        .duration(80)
+        .EUt(VA[ULV])
+        .buildAndRegister()
+
 crafting.addShaped("battery_lead_acid", metaitem('battery.lead_acid'), [
-        [null,                     metaitem('cableGtSingleTin'),          null],
+        [null,                     null,                                  null],
         [metaitem('cathode.lead'), fluid('diluted_sulfuric_acid') * 1000, metaitem('anode.lead')],
         [null,                     metaitem('battery.primitivehull.lv'),  null]
 ]);
@@ -261,8 +261,8 @@ ELECTROLYTIC_CELL.recipeBuilder()
 
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('battery.ni_fe_hull.lv'))
-        .inputs(metaitem('cableGtSingleTin'))
-        .inputs(metaitem('electrode.nickeled_steel_frame') * 2)
+        .inputs(metaitem('cableGtSingleTin') * 2)
+        .inputs(metaitem('electrode.nickeled_steel_frame'))
         .inputs(ore('dustNickelHydroxide') * 5)
         .inputs(ore('dustIronTwoThreeOxide') * 7)
         .fluidInputs(fluid('potassium_hydroxide_solution') * 1000)
@@ -274,7 +274,7 @@ ASSEMBLER.recipeBuilder()
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('battery.ni_fe_hull.mv'))
         .inputs(metaitem('cableGtSingleCopper') * 2)
-        .inputs(metaitem('electrode.nickeled_steel_frame') * 4)
+        .inputs(metaitem('electrode.nickeled_steel_frame') * 2)
         .inputs(ore('dustNickelHydroxide') * 10)
         .inputs(ore('dustIronTwoThreeOxide') * 14)
         .fluidInputs(fluid('potassium_hydroxide_solution') * 2000)
@@ -285,8 +285,8 @@ ASSEMBLER.recipeBuilder()
 
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('battery.ni_fe_hull.hv'))
-        .inputs(metaitem('cableGtSingleGold') * 4)
-        .inputs(metaitem('electrode.nickeled_steel_frame') * 8)
+        .inputs(metaitem('cableGtSingleGold') * 2)
+        .inputs(metaitem('electrode.nickeled_steel_frame') * 4)
         .inputs(ore('dustNickelHydroxide') * 20)
         .inputs(ore('dustIronTwoThreeOxide') * 28)
         .fluidInputs(fluid('potassium_hydroxide_solution') * 4000)

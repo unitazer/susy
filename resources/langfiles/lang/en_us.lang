@@ -2906,16 +2906,15 @@ metaitem.battery.ni_zn.hv.name=Nickel-Zinc HV Battery
 metaitem.anode.zinc_oxide.name=Zinc Oxide Anode
 metaitem.cathode.nioh2.name=Nickel Hydroxide Cathode
 
-metaitem.battery.primitivehull.lv.name=Ebonite LV Battery Hull
-metaitem.battery.primitivehull.mv.name=Ebonite MV Battery Hull
-metaitem.battery.hull.mv.name=MV Battery Hull
+metaitem.battery.primitivehull.lv.name=Medium Ebonite Battery Hull
+metaitem.battery.primitivehull.mv.name=Large Ebonite Battery Hull
 metaitem.battery.hull.hv.name=HV Battery Hull
-metaitem.battery.steel_hull.lv.name=Steel LV Battery Hull
-metaitem.battery.steel_hull.mv.name=Steel MV Battery Hull
-metaitem.battery.steel_hull.hv.name=Steel HV Battery Hull
-metaitem.battery.ni_fe_hull.lv.name=Nickel-Plated Steel LV Battery Hull
-metaitem.battery.ni_fe_hull.mv.name=Nickel-Plated Steel MV Battery Hull
-metaitem.battery.ni_fe_hull.hv.name=Nickel-Plated Steel HV Battery Hull
+metaitem.battery.steel_hull.lv.name=Small Steel Battery Hull
+metaitem.battery.steel_hull.mv.name=Medium Steel Battery Hull
+metaitem.battery.steel_hull.hv.name=Large Steel Battery Hull
+metaitem.battery.ni_fe_hull.lv.name=Small Nickel-Plated Steel Battery Hull
+metaitem.battery.ni_fe_hull.mv.name=Medium Nickel-Plated Steel Battery Hull
+metaitem.battery.ni_fe_hull.hv.name=Large Nickel-Plated Steel Battery Hull
 
 metaitem.steam.piston.name=Steam Piston
 metaitem.steam.motor.name=Steam Motor
