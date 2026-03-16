@@ -85,6 +85,7 @@ ore('dyeYellow').add(metaitem('dustLeadChromate'))
 ore('dyeGreen').add(metaitem('dustMalachite'))
 ore('dyeBlue').add(metaitem('dustCobaltAluminate'))
 ore('dyeWhite').add(metaitem('dustLeadNitrate'))
+ore('dyeWhite').add(metaitem('dustTitaniumDioxide'))
 ore('dyeBlack').add(metaitem('dustCarbon'))
 ore('dyeGreen').add(metaitem('gregtechfoodoption:cupric_hydrogen_arsenite_dust'))
 
@@ -251,6 +252,20 @@ ore('blockConcrete').remove(item('susy:susy_stone_smooth:9'))
 ore('stone').remove(item('susy:susy_stone_smooth:9'))
 ore('cobblestone').remove(item('susy:susy_stone_cobble:9'))
 ore('stickStone').remove(item('pyrotech:material', 27))
+
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lime'))
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lemon'))
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.orange'))
+ore('dustZincResidues').add(metaitem('dustZincHydrochloricLeachResidue'))
+ore('dustZincResidues').add(metaitem('dustZincLeachResidue'))
+ore('dustFlocculant').add(metaitem('dustPotassiumAlum'))
+ore('dustFlocculant').add(metaitem('dustSodiumAlum'))
+ore('dustFlocculant').add(metaitem('dustAluminiumSulfate'))
+ore('foilMylar').add(metaitem('mylar'))
+ore('gearStone').add(item('pyrotech:cog_stone'))
+ore('gearIron').add(item('pyrotech:cog_iron'))
+ore('gearGold').add(item('pyrotech:cog_gold'))
+ore('gearDiamond').add(item('pyrotech:cog_diamond'))
 
 //Misc Fixes
 
