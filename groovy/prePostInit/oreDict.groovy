@@ -17,7 +17,6 @@ ore('gtLight').add(metaitem('led_light'))
 ore('gtLight').add(metaitem('lamp.mercury.hp'))
 
 // Circuit oredict
-
 ore('circuitZpm').add(metaitem('circuit.gooware_processor'))
 
 ore('circuitUv').add(metaitem('circuit.gooware_assembly'))
@@ -63,7 +62,6 @@ ore('circuitOpv').add(metaitem('circuit.suprachronal.opv'))
 ore('circuitMax').add(metaitem('circuit.suprachronal.max'))
 
 // Dyes
-
 ore('dyeBrown').add(metaitem('dustSienna'))
 ore('dyeRed').add(metaitem('dustBurntSienna'))
 ore('dyeRed').add(metaitem('dustCinnabar'))
@@ -77,7 +75,6 @@ ore('dyeGreen').add(metaitem('gregtechfoodoption:cupric_hydrogen_arsenite_dust')
 ore('dyeWhite').add(metaitem('dustTitaniumDioxide'))
 
 // Concrete
-
 ore('dustCement').add(metaitem('cement.dust'))
 ore('blockConcrete').add(item('industrialrenewal:concrete'))
 ore('blockConcrete').add(item('engineersdecor:rebar_concrete'))
@@ -122,7 +119,6 @@ ore('dustFlocculant').add(metaitem('dustSodiumAlum'))
 ore('dustFlocculant').add(metaitem('dustAluminiumSulfate'))
 
 // Add ore dict to non traditional ore blocks
-
 ore('oreCaliche').add(item('susy:resource_block:1'))
 
 ore('oreNonMarineEvaporiteDeposit').add(item('susy:resource_block:2'))
@@ -137,8 +133,6 @@ ore('oreAlluvialGoldDeposit').add(item('susy:resource_block:11'))
 ore('orePhosphoriteDeposit').add(item('susy:resource_block:12'))
 ore('orePotashDeposit').add(item('susy:resource_block:13'))
 
-ore('oreSulfur').add(item('susy:resource_block:14'))
-ore('oreSulfur').remove(item('susy:resource_block', 14))
 ore('oreCoalDeposit').add(item('susy:resource_block:15'))
 ore('oreNativeCopperDeposit').add(item('susy:resource_block_1:0'))
 ore('oreAnthraciteDeposit').add(item('susy:resource_block_1:1'))
@@ -164,7 +158,7 @@ for (i in 0..2) {
     mods.jei.ingredient.yeet(item('gregtech:ore_bauxite_0', i))
 }
 
-// OreDic Removal + Hide from JEI
+// OreDict Removal + Hide from JEI
 
 oreDictRemovals = [
         'sgcraft:naquadahingot': 'ingotNaquadahAlloy',
