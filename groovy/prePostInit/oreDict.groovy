@@ -194,6 +194,7 @@ oreDictRemovals = [
         'icbmclassic:saltpeter': 'dustSaltpeter',
         'gaspunk:sulfur': 'dustSulfur',
         'icbmclassic:sulfurdust': 'dustSulfur',
+        'gregtechfoodoption:gtfo_oredict_item, 1138': 'dustSodiumCyanide',
 ]
 
 oreDictRemovals.each { key, val ->
@@ -241,6 +242,20 @@ ore('foilMylar').add(metaitem('mylar'))
 ore('blockConcrete').remove(item('susy:susy_stone_smooth:9'))
 ore('stone').remove(item('susy:susy_stone_smooth:9'))
 ore('cobblestone').remove(item('susy:susy_stone_cobble:9'))
+
+ore('gearDiamond').add(item('pyrotech:cog_diamond'))
+ore('gearGold').add(item('pyrotech:cog_gold'))
+ore('gearIron').add(item('pyrotech:cog_iron'))
+ore('gearStone').add(item('pyrotech:cog_stone'))
+ore('foilMylar').add(metaitem('mylar'))
+ore('dustFlocculant').add(metaitem('dustAluminiumSulfate'))
+ore('dustFlocculant').add(metaitem('dustSodiumAlum'))
+ore('dustFlocculant').add(metaitem('dustPotassiumAlum'))
+ore('dustZincResidues').add(metaitem('dustZincLeachResidue'))
+ore('dustZincResidues').add(metaitem('dustZincHydrochloricLeachResidue'))
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.orange'))
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lemon'))
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lime'))
 
 //Dust oredicting
 elements = [
