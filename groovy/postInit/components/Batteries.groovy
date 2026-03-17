@@ -182,7 +182,7 @@ crafting.addShaped("electrode_steel_frame", metaitem('electrode.steel_frame'), [
 ]);
 
 ASSEMBLER.recipeBuilder()
-        .circuitMeta(1)
+        .circuitMeta(5)
         .inputs(ore('plateSteel') * 4)
         .outputs(metaitem('battery.steel_hull.lv'))
         .duration(40)
@@ -190,7 +190,7 @@ ASSEMBLER.recipeBuilder()
         .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
-        .circuitMeta(2)
+        .circuitMeta(6)
         .inputs(ore('plateSteel') * 6)
         .outputs(metaitem('battery.steel_hull.mv'))
         .duration(40)
@@ -198,7 +198,7 @@ ASSEMBLER.recipeBuilder()
         .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
-        .circuitMeta(3)
+        .circuitMeta(7)
         .inputs(ore('plateSteel') * 8)
         .outputs(metaitem('battery.steel_hull.hv'))
         .duration(40)
