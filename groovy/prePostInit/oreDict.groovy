@@ -194,7 +194,7 @@ oreDictRemovals = [
         'icbmclassic:saltpeter': 'dustSaltpeter',
         'gaspunk:sulfur': 'dustSulfur',
         'icbmclassic:sulfurdust': 'dustSulfur',
-        'gregtechfoodoption:gtfo_oredict_item, 1138': 'dustSodiumCyanide',
+        'gregtechfoodoption:gtfo_oredict_item:1138': 'dustSodiumCyanide',
 ]
 
 oreDictRemovals.each { key, val ->
