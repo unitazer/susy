@@ -15,6 +15,7 @@ import postInit.utils.RecyclingHelper
 log.infoMC("Running Batteries.groovy...")
 
 mods.jei.ingredient.yeet(
+//        metaitem('battery.re.ulv.tantalum'),
         metaitem('battery.zpm.naquadria'),
         metaitem('battery.uv.naquadria'),
         metaitem('energy.module'),
