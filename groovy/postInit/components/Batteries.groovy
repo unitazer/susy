@@ -15,79 +15,123 @@ import postInit.utils.RecyclingHelper
 log.infoMC("Running Batteries.groovy...")
 
 mods.jei.ingredient.yeet(
-        metaitem('battery.hull.mv'),
-        metaitem('battery.ni_zn.mv'),
-        metaitem('battery.ni_zn.hv'),
-        metaitem('battery.hull.lv'),
-        metaitem('energy.lapotronic_orb'),
-        metaitem('energy.lapotronic_orb_cluster'),
+        metaitem('battery.zpm.naquadria'),
+        metaitem('battery.uv.naquadria'),
         metaitem('energy.module'),
         metaitem('energy.cluster'),
         metaitem('max.battery'),
-        metaitem('energy_crystal'),
-        metaitem('lapotron_crystal'),
+        metaitem('battery.ni_zn.mv'),
+        metaitem('battery.ni_zn.hv'),
 )
-
-/*
- * Remove legacy batteries
- */
 
 [
         metaitem('battery.re.lv.sodium'),
-        metaitem('battery.re.lv.cadmium'),
-        metaitem('battery.re.lv.lithium'),
         metaitem('battery.re.mv.sodium'),
-        metaitem('battery.re.mv.cadmium'),
+        metaitem('battery.re.hv.sodium'),
+        metaitem('battery.re.lv.lithium'),
         metaitem('battery.re.mv.lithium'),
-        metaitem('battery.re.hv.sodium')
+//        metaitem('battery.re.hv.lithium'),
+        metaitem('battery.re.lv.cadmium'),
+        metaitem('battery.re.mv.cadmium'),
+//        metaitem('battery.re.hv.cadmium'),
+        metaitem('energy_crystal'),
+        metaitem('lapotron_crystal'),
+//        metaitem('battery.ev.vanadium'),
+        metaitem('battery.iv.vanadium'),
+        metaitem('battery.luv.vanadium'),
+        metaitem('energy.lapotronic_orb'),
+        metaitem('energy.lapotronic_orb_cluster'),
 ].each { battery ->
     crafting.removeByInput(battery)
     mods.jei.ingredient.yeet(battery)
 }
 
-['lv', 'mv', 'hv', 'ev', 'iv'].each { voltage ->
+['lv', 'mv', 'iv', 'luv', 'zpm', 'uv'].each { voltage ->
     crafting.remove('gregtech:battery_hull_' + voltage)
     RecyclingHelper.removeRecyclingRecipes(metaitem('battery.hull.' + voltage))
+    mods.jei.ingredient.yeet((metaitem('battery.hull.' + voltage)))
 }
 
-// LV Battery Hull
-mods.gregtech.assembler.removeByInput(1, [metaitem('cableGtSingleTin'), metaitem('plateBatteryAlloy')], [fluid('plastic') * 144 * 144])
+// Small Battery Hull * 1
+mods.gregtech.assembler.removeByInput(1, [metaitem('cableGtSingleTin'), metaitem('plateBatteryAlloy')], [fluid('plastic') * 144])
+// Small Battery Hull * 1
 mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.lv.cadmium')], null)
+// Small Battery Hull * 1
 mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.lv.lithium')], null)
+// Small Battery Hull * 1
 mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.lv.sodium')], null)
-// MV Battery Hull
-mods.gregtech.assembler.removeByInput(2, [metaitem('cableGtSingleCopper') * 2, metaitem('plateBatteryAlloy') * 3], [fluid('plastic') * 432 * 432])
-mods.gregtech.assembler.removeByInput(2, [metaitem('cableGtSingleAnnealedCopper') * 2, metaitem('plateBatteryAlloy') * 3], [fluid('plastic') * 432 * 432])
+// Medium Battery Hull * 1
+mods.gregtech.assembler.removeByInput(2, [metaitem('cableGtSingleAnnealedCopper') * 2, metaitem('plateBatteryAlloy') * 3], [fluid('plastic') * 432])
+// Medium Battery Hull * 1
 mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.mv.cadmium')], null)
+// Medium Battery Hull * 1
 mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.mv.lithium')], null)
+// Medium Battery Hull * 1
 mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.mv.sodium')], null)
-// HV Battery Hull
-mods.gregtech.assembler.removeByInput(4, [metaitem('cableGtSingleGold') * 4, metaitem('plateBatteryAlloy') * 9], [fluid('plastic') * 1296 * 1296])
-mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.hv.cadmium')], null)
-mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.hv.lithium')], null)
+// Large Battery Hull * 1
+mods.gregtech.assembler.removeByInput(4, [metaitem('cableGtSingleGold') * 4, metaitem('plateBatteryAlloy') * 9], [fluid('plastic') * 1296])
+//// Large Battery Hull * 1
+//mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.hv.lithium')], null)
+//// Large Battery Hull * 1
+//mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.hv.cadmium')], null)
+// Large Battery Hull * 1
 mods.gregtech.extractor.removeByInput(2, [metaitem('battery.re.hv.sodium')], null)
-// Sodium Battery
+// Small Vanadium Battery Hull * 1
+mods.gregtech.assembler.removeByInput(480, [metaitem('cableGtSingleAluminium') * 2, metaitem('plateBlueSteel') * 2], [fluid('polytetrafluoroethylene') * 144])
+// Small Vanadium Battery Hull * 1
+mods.gregtech.extractor.removeByInput(2, [metaitem('battery.ev.vanadium')], null)
+// Medium Vanadium Battery Hull * 1
+mods.gregtech.assembler.removeByInput(1920, [metaitem('cableGtSinglePlatinum') * 2, metaitem('plateRoseGold') * 6], [fluid('polytetrafluoroethylene') * 288])
+// Medium Vanadium Battery Hull * 1
+mods.gregtech.extractor.removeByInput(2, [metaitem('battery.iv.vanadium')], null)
+// Large Vanadium Battery Hull * 1
+mods.gregtech.extractor.removeByInput(2, [metaitem('battery.luv.vanadium')], null)
+// Medium Naquadria Battery Hull * 1
+mods.gregtech.extractor.removeByInput(2, [metaitem('battery.zpm.naquadria')], null)
+// Large Naquadria Battery Hull * 1
+mods.gregtech.extractor.removeByInput(2, [metaitem('battery.uv.naquadria')], null)
+//// Tantalum Capacitor * 8
+//mods.gregtech.assembler.removeByInput(4, [metaitem('dustTantalum'), metaitem('foilManganese')], [fluid('plastic') * 144])
+// Small Sodium Battery * 1
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustSodium') * 2], null)
+// Medium Sodium Battery * 1
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustSodium') * 8], null)
+// Large Sodium Battery * 1
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustSodium') * 16], null)
-// Lithium Battery
+// Small Lithium Battery * 1
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustLithium') * 2], null)
+// Medium Lithium Battery * 1
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustLithium') * 8], null)
+// Large Lithium Battery * 1
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustLithium') * 16], null)
-// Cadmium Battery
+// Small Cadmium Battery * 1
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustCadmium') * 2], null)
+// Medium Cadmium Battery * 1
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustCadmium') * 8], null)
+// Large Cadmium Battery * 1
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustCadmium') * 16], null)
-// Energy crystal
+// Energium Crystal * 1
 mods.gregtech.autoclave.removeByInput(480, [metaitem('energium_dust') * 9], [fluid('water') * 1000])
+// Energium Crystal * 1
 mods.gregtech.autoclave.removeByInput(320, [metaitem('energium_dust') * 9], [fluid('distilled_water') * 1000])
+// Energium Crystal * 1
 mods.gregtech.autoclave.removeByInput(256, [metaitem('energium_dust') * 9], [fluid('black_steel') * 288])
+// Energium Crystal * 1
 mods.gregtech.autoclave.removeByInput(192, [metaitem('energium_dust') * 9], [fluid('blue_steel') * 72])
-// Lapotron
-mods.gregtech.autoclave.removeByInput(480, [metaitem('dustLapotron') * 15], [fluid('water') * 1000])
-mods.gregtech.autoclave.removeByInput(320, [metaitem('dustLapotron') * 15], [fluid('distilled_water') * 1000])
-mods.gregtech.autoclave.removeByInput(256, [metaitem('dustLapotron') * 15], [fluid('blue_steel') * 288])
-mods.gregtech.autoclave.removeByInput(192, [metaitem('dustLapotron') * 15], [fluid('red_steel') * 72])
+//// Small Vanadium Battery * 1
+//mods.gregtech.canner.removeByInput(480, [metaitem('battery.hull.ev'), metaitem('dustVanadium') * 2], null)
+// Medium Vanadium Battery * 1
+mods.gregtech.canner.removeByInput(1024, [metaitem('battery.hull.iv'), metaitem('dustVanadium') * 8], null)
+// Large Vanadium Battery * 1
+mods.gregtech.canner.removeByInput(1920, [metaitem('battery.hull.luv'), metaitem('dustVanadium') * 16], null)
+// Medium Naquadria Battery * 1
+mods.gregtech.canner.removeByInput(4096, [metaitem('battery.hull.zpm'), metaitem('dustNaquadria') * 8], null)
+// Large Naquadria Battery * 1
+mods.gregtech.canner.removeByInput(7680, [metaitem('battery.hull.uv'), metaitem('dustNaquadria') * 16], null)
+// Lapotronic Energy Orb * 1
+mods.gregtech.circuit_assembler.removeByInput(1024, [metaitem('circuit_board.extreme'), metaitem('plate.power_integrated_circuit') * 4, metaitem('engraved.lapotron_chip') * 24, metaitem('plate.nano_central_processing_unit') * 2, metaitem('wireFinePlatinum') * 16, metaitem('platePlatinum') * 8], [fluid('soldering_alloy') * 144])
+// Lapotronic Energy Orb * 1
+mods.gregtech.circuit_assembler.removeByInput(1024, [metaitem('circuit_board.extreme'), metaitem('plate.power_integrated_circuit') * 4, metaitem('engraved.lapotron_chip') * 24, metaitem('plate.nano_central_processing_unit') * 2, metaitem('wireFinePlatinum') * 16, metaitem('platePlatinum') * 8], [fluid('tin') * 288])
 
 // Lead-Acid Batteries
 
@@ -311,10 +355,6 @@ ASSEMBLER.recipeBuilder()
 RecyclingHelper.handleRecycling(metaitem('battery.hull.hv'),
         [ore('plateStainlessSteel') * 8, metaitem('cableGtSingleGold') * 4, ore('dustPolycaprolactam'), ore('dustPolyvinylChloride'), ore('dustPolypropylene') * 9])
 
-// EV Battery Hull
-mods.gregtech.assembler.removeByInput(480, [metaitem('cableGtSingleAluminium') * 2, metaitem('plateBlueSteel') * 2], [fluid('polytetrafluoroethylene') * 144 * 144])
-mods.gregtech.extractor.removeByInput(2, [metaitem('battery.ev.vanadium')], null)
-
 ASSEMBLER.recipeBuilder()
         .circuitMeta(5)
         .inputs(ore('plateStainlessSteel') * 16)
@@ -324,26 +364,9 @@ ASSEMBLER.recipeBuilder()
         .duration(240)
         .EUt(VA[HV])
         .buildAndRegister()
-        
+
 RecyclingHelper.handleRecycling(metaitem('battery.hull.ev'),
         [ore('plateStainlessSteel') * 16, metaitem('cableGtSingleAluminium') * 2, ore('dustPolytetrafluoroethylene')])
-
-// IV Battery Hull
-mods.gregtech.assembler.removeByInput(1920, [metaitem('cableGtSinglePlatinum') * 2, metaitem('plateRoseGold') * 6], [fluid('polytetrafluoroethylene') * 288 * 288])
-mods.gregtech.extractor.removeByInput(2, [metaitem('battery.iv.vanadium')], null)
-
-ASSEMBLER.recipeBuilder()
-        .circuitMeta(5)
-        .inputs(ore('plateStainlessSteel') * 32)
-        .inputs(metaitem('cableGtSinglePlatinum') * 2)
-        .fluidInputs(fluid('polytetrafluoroethylene') * 432)
-        .outputs(metaitem('battery.hull.iv'))
-        .duration(240)
-        .EUt(VA[EV])
-        .buildAndRegister()
-
-RecyclingHelper.handleRecycling(metaitem('battery.hull.iv'),
-        [ore('plateStainlessSteel') * 32, metaitem('cableGtSinglePlatinum') * 2, ore('dustPolytetrafluoroethylene') * 3])
 
 /* Old recipes */
 
