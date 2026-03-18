@@ -115,7 +115,7 @@ DT.recipeBuilder()
 // Source: Acetic Acid Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_045
 
 // Oxidation of Acetaldehyde
-CSTR.recipeBuilder()
+TBR.recipeBuilder()
     .circuitMeta(1)
     .notConsumable(ore('dustCobaltIiAcetate'))
     .fluidInputs(fluid('gtfo_acetaldehyde') * 50)

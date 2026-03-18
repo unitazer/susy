@@ -1767,7 +1767,7 @@ CRYSTALLIZER.recipeBuilder()
 // 2CH3CHO + O2 -> 2C2H4O2
 // 25 + 25 -> 25
 
-CSTR.recipeBuilder()
+TBR.recipeBuilder()
     .notConsumable(ore('dustCobaltIiAcetate'))
     .notConsumable(ore('dustCopperIiAcetateMonohydrate') * 2)
     .fluidInputs(fluid('gtfo_acetaldehyde') * 175)
