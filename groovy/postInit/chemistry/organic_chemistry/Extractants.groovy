@@ -788,7 +788,7 @@ import static gregtech.api.GTValues.*
         .buildAndRegister()
 
     BR.recipeBuilder()
-        .inputs(ore('dustSodiumMethoxide') * 6)
+        .inputs(ore('dustSodiumMethoxide') * 18)
         .fluidInputs(fluid('phosphorus_trichloride') * 1000)
         .outputs(metaitem('dustSalt') * 6)
         .fluidOutputs(fluid('trimethyl_phosphite') * 1000)

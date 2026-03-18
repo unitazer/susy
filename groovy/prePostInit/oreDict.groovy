@@ -118,6 +118,21 @@ ore('dustFlocculant').add(metaitem('dustPotassiumAlum'))
 ore('dustFlocculant').add(metaitem('dustSodiumAlum'))
 ore('dustFlocculant').add(metaitem('dustAluminiumSulfate'))
 
+// Gears/Cogs
+ore('gearDiamond').add(item('pyrotech:cog_diamond'))
+ore('gearGold').add(item('pyrotech:cog_gold'))
+ore('gearIron').add(item('pyrotech:cog_iron'))
+ore('gearStone').add(item('pyrotech:cog_stone'))
+
+// Zinc Residues
+ore('dustZincResidues').add(metaitem('dustZincLeachResidue'))
+ore('dustZincResidues').add(metaitem('dustZincHydrochloricLeachResidue'))
+
+// Electrolyte Fruit
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.orange'))
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lemon'))
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lime'))
+
 // Add ore dict to non traditional ore blocks
 ore('oreCaliche').add(item('susy:resource_block:1'))
 
@@ -194,6 +209,7 @@ oreDictRemovals = [
         'icbmclassic:saltpeter': 'dustSaltpeter',
         'gaspunk:sulfur': 'dustSulfur',
         'icbmclassic:sulfurdust': 'dustSulfur',
+        'gregtechfoodoption:gtfo_oredict_item:1138': 'dustSodiumCyanide',
 ]
 
 oreDictRemovals.each { key, val ->
