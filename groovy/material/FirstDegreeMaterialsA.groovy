@@ -742,13 +742,13 @@ class FirstDegreeMaterialsA {
                 .color(0x696e62)
                 .build()
 
-        PalladiumChloride = new Material.Builder(8196, SuSyUtility.susyId('palladium_chloride'))
+        PalladiumChlorideDihydrate = new Material.Builder(8196, SuSyUtility.susyId('palladium_chloride_dihydrate'))
                 .dust()
                 .components(Palladium, Chlorine * 2, Water * 2)
                 .colorAverage()
                 .build()
 
-        PalladiumChloride.setFormula("PdCl2*(H2O)2", true)
+        PalladiumChlorideDihydrate.setFormula("PdCl2*(H2O)2", true)
 
         HexachloroiridicIVAcidSolution = new Material.Builder(8197, SuSyUtility.susyId('hexachloroiridic_iv_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))

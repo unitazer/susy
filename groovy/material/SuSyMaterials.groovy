@@ -1090,7 +1090,7 @@ class SuSyMaterials {
     public static Material ArsenicVSulfide
     public static Material CopperSulfate
     public static Material WustiteCatalyst
-    public static Material PalladiumChloride
+    public static Material PalladiumChlorideDihydrate
     public static Material HexachloroiridicIVAcidSolution
     public static Material AmmoniumBisulfateSolution
     public static Material PotassiumIodide

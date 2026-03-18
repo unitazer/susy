@@ -149,7 +149,7 @@ class SecondDegreeMaterials {
 
         WackerCatalystSolution = new Material.Builder(13020, SuSyUtility.susyId('wacker_catalyst_solution'))
                 .liquid()
-                .components(PalladiumChloride * 1, CopperIIChloride * 1, Water * 1)
+                .components(PalladiumChlorideDihydrate * 1, CopperIIChloride * 1, Water * 1)
                 .colorAverage()
                 .build()
 
@@ -657,13 +657,13 @@ class SecondDegreeMaterials {
 
         PalladiumPrecursorSolution = new Material.Builder(13103, SuSyUtility.susyId("palladium_precursor_solution"))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(PalladiumChloride, PhosphoricAcid)
+                .components(PalladiumChlorideDihydrate, PhosphoricAcid)
                 .colorAverage()
                 .build()
 
         SupportedPalladium = new Material.Builder(13104, SuSyUtility.susyId("supported_palladium"))
                 .dust()
-                .components(PalladiumChloride, Alumina)
+                .components(PalladiumChlorideDihydrate, Alumina)
                 .flags(GENERATE_CATALYST_BED)
                 .colorAverage()
                 .build()

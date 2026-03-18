@@ -21,7 +21,7 @@ SINTERING_OVEN.recipeBuilder()
     .buildAndRegister()
 
 MIXER.recipeBuilder()
-    .inputs(ore('dustPalladiumChloride') * 3)
+    .inputs(ore('dustPalladiumChlorideDihydrate') * 3)
     .fluidInputs(fluid('phosphoric_acid') * 1000)
     .fluidOutputs(fluid('palladium_precursor_solution') * 1000)
     .duration(100)
@@ -59,7 +59,7 @@ ROASTER.recipeBuilder()
     // Pd/C
 
     BR.recipeBuilder()
-        .inputs(ore('dustPalladiumChloride'))
+        .inputs(ore('dustPalladiumChlorideDihydrate'))
         .inputs(ore('dustActivatedCarbon') * 4)
         .fluidInputs(fluid('deionized_water') * 250)
         .fluidInputs(fluid('formaldehyde') * 50)
