@@ -198,7 +198,7 @@ ASSEMBLER.recipeBuilder()
         .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
-        .circuitMeta(8)
+        .circuitMeta(9)
         .inputs(ore('plateSteel') * 8)
         .outputs(metaitem('battery.steel_hull.hv'))
         .duration(40)
