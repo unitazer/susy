@@ -317,12 +317,13 @@ BR.recipeBuilder()
     .EUt(VA[MV])
     .buildAndRegister();
 
-ROASTER.recipeBuilder()
+ROASTER.recipeBuilder() // Cu2(OH)2CO3 + ZnCO3 + CrO3 -> (CuO)2(ZnO)(CrO3) + 2CO2 + H2O
     .inputs(ore('dustBasicCopperCarbonate') * 10)
     .inputs(ore('dustZincCarbonate') * 5)
     .inputs(ore('dustChromiumTrioxide') * 4)
     .outputs(metaitem('dustCopperZincChromiumOxide'))
-    .fluidOutputs(fluid('carbon_dioxide') * 3000)
+    .fluidOutputs(fluid('carbon_dioxide') * 2000)
+    .fluidOutputs(fluid('water') * 1000)
     .duration(40)
     .EUt(40)
     .buildAndRegister()
