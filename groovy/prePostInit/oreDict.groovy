@@ -118,6 +118,21 @@ ore('dustFlocculant').add(metaitem('dustPotassiumAlum'))
 ore('dustFlocculant').add(metaitem('dustSodiumAlum'))
 ore('dustFlocculant').add(metaitem('dustAluminiumSulfate'))
 
+// Gears/Cogs
+ore('gearDiamond').add(item('pyrotech:cog_diamond'))
+ore('gearGold').add(item('pyrotech:cog_gold'))
+ore('gearIron').add(item('pyrotech:cog_iron'))
+ore('gearStone').add(item('pyrotech:cog_stone'))
+
+// Zinc Residues
+ore('dustZincResidues').add(metaitem('dustZincLeachResidue'))
+ore('dustZincResidues').add(metaitem('dustZincHydrochloricLeachResidue'))
+
+// Electrolyte Fruit
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.orange'))
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lemon'))
+ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lime'))
+
 // Add ore dict to non traditional ore blocks
 ore('oreCaliche').add(item('susy:resource_block:1'))
 
@@ -242,20 +257,6 @@ ore('foilMylar').add(metaitem('mylar'))
 ore('blockConcrete').remove(item('susy:susy_stone_smooth:9'))
 ore('stone').remove(item('susy:susy_stone_smooth:9'))
 ore('cobblestone').remove(item('susy:susy_stone_cobble:9'))
-
-ore('gearDiamond').add(item('pyrotech:cog_diamond'))
-ore('gearGold').add(item('pyrotech:cog_gold'))
-ore('gearIron').add(item('pyrotech:cog_iron'))
-ore('gearStone').add(item('pyrotech:cog_stone'))
-ore('foilMylar').add(metaitem('mylar'))
-ore('dustFlocculant').add(metaitem('dustAluminiumSulfate'))
-ore('dustFlocculant').add(metaitem('dustSodiumAlum'))
-ore('dustFlocculant').add(metaitem('dustPotassiumAlum'))
-ore('dustZincResidues').add(metaitem('dustZincLeachResidue'))
-ore('dustZincResidues').add(metaitem('dustZincHydrochloricLeachResidue'))
-ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.orange'))
-ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lemon'))
-ore('electrolyteFruit').add(metaitem('gregtechfoodoption:food.lime'))
 
 //Dust oredicting
 elements = [
