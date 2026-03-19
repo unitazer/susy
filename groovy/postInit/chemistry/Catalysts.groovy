@@ -323,7 +323,7 @@ ROASTER.recipeBuilder() // Cu2(OH)2CO3 + ZnCO3 + CrO3 -> (CuO)2(ZnO)(CrO3) + 2CO
     .inputs(ore('dustChromiumTrioxide') * 4)
     .outputs(metaitem('dustCopperZincChromiumOxide'))
     .fluidOutputs(fluid('carbon_dioxide') * 2000)
-    .fluidOutputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('dense_steam') * 1000)
     .duration(40)
     .EUt(40)
     .buildAndRegister()
