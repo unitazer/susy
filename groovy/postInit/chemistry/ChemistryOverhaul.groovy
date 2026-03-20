@@ -1201,8 +1201,6 @@ REACTION_FURNACE.recipeBuilder()
     .EUt(VA[HV])
     .buildAndRegister()
 
-oreDict.add('dyeWhite', metaitem('dustTitaniumDioxide'))
-
 // Butyraldehyde
 
 REACTION_FURNACE.recipeBuilder()
@@ -1814,9 +1812,6 @@ MIXER.recipeBuilder()
     .EUt(VA[LV])
     .duration(80)
     .buildAndRegister()
-
-// fix conflict
-mods.gregtech.fluid_heater.removeByInput(120, [metaitem('circuit.integrated').withNbt(["Configuration": 2])], [fluid('air') * 1000])
 
 DRYER.recipeBuilder()
     .fluidInputs(fluid('cellulose_acetate_solution') * 2000)
@@ -3019,17 +3014,17 @@ MIXER.recipeBuilder()
 
 CSTR.recipeBuilder()
     .fluidInputs(fluid('carbon_disulfide') * 50)
-    .fluidInputs(fluid('ammonia_solution') * 50)
-    .fluidOutputs(fluid('ammonium_thiocyanate_solution') * 50)
+    .fluidInputs(fluid('ammonia_solution') * 100)
+    .fluidOutputs(fluid('ammonium_thiocyanate_solution') * 100)
     .fluidOutputs(fluid('hydrogen_sulfide') * 50)
     .duration(5)
     .EUt(VA[LV])
     .buildAndRegister()
 
 DISTILLERY.recipeBuilder()
-    .fluidInputs(fluid('ammonium_thiocyanate_solution') * 1000)
+    .fluidInputs(fluid('ammonium_thiocyanate_solution') * 2000)
     .outputs(metaitem('dustAmmoniumThiocyanate') * 8)
-    .fluidOutputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('water') * 2000)
     .duration(60)
     .EUt(VA[LV])
     .buildAndRegister()

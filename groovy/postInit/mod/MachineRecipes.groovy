@@ -1011,6 +1011,14 @@ RecyclingHelper.addShaped("susy:mixer_settler", metaitem('susy:mixer_settler_v2'
 ]);
 crafting.addShapeless("susy:mixer_settler_convert", metaitem("susy:mixer_settler_v2"), [metaitem("susy:mixer_settler")]);
 
+// Large Steam Hammer
+
+RecyclingHelper.addShaped('susy:large_steam_hammer', metaitem('susy:large_steam_hammer'), [
+        [item('gregtech:boiler_casing', 1), item('gregtech:metal_casing', 4), item('gregtech:boiler_casing', 1)],
+        [ore('pipeNormalFluidSteel'), item('gregtech:metal_casing', 4), ore('pipeNormalFluidSteel')],
+        [metaitem('steam.piston'), metaitem('steam.piston'), metaitem('steam.piston')]
+])
+
 RecyclingHelper.addShaped("susy:induction_furnace", metaitem('susy:induction_furnace'), [
         [ore('cableGtQuadrupleTin'), tieredPlates[1], ore('cableGtQuadrupleTin')],
         [circuits[1], hulls[1], circuits[1]],

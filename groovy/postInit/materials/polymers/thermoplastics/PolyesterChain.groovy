@@ -44,4 +44,3 @@ EXTRUDER.recipeBuilder()
     .duration(10)
     .buildAndRegister()
 
-oreDict.add('foilMylar', metaitem('mylar'))
