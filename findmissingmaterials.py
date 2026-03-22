@@ -109,12 +109,12 @@ for material in sorted(list(materials_metaitems_set)):
     if ('.' in material):
         continue # just ignore metaitems for now
     if (material == ''):
-        continue
+        continue # empty string happens for some reason and this is shrimpler
     if (material[-1] not in "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"):
-        continue
+        continue # filter out variable-configured names; i.e suffixes and etc
     if (recipedump.find(material) != -1):
         continue
     result = subprocess.run(["grep", "-r", material, "./groovy/material"], stdout=subprocess.PIPE)
     if (result.stdout):
-        continue
+        continue # last resort search for it in groovy (for pre-release changes)
     print(f"{material} missing; from files {str(sources[material])[1:-1]}")
