@@ -1094,12 +1094,5 @@ class SecondDegreeMaterials {
                 .components(CopperIINitrate, Water)
                 .colorAverage()
                 .build()
-
-        GreenVitriolSolution = new Material.Builder(13182, SuSyUtility.susyId('green_vitriol_solution'))
-                .liquid()
-                .components(Iron, Sulfur, Oxygen * 4, Water)
-                .color(0xf1f2fa)
-                .build()
-
     }
 }

@@ -1,58 +1,31 @@
 import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
 
-ROASTER.recipeBuilder()
-        .inputs(ore('dustPyrite'))
-        .circuitMeta(2)
-        .outputs(metaitem('dustIronIiSulfide') * 2)
-        .outputs(metaitem('dustSulfur'))
-        .duration(80)
-        .EUt(VA[ULV])
-        .buildAndRegister()
+// Sulfur dioxide
 
 ROASTER.recipeBuilder()
-        .fluidInputs(fluid('oxygen') * 5500)
-        .inputs(ore('dustPyrite') * 1)
-        .circuitMeta(1)
-        .chancedOutput(metaitem('dustIronIiiOxide') * 5,5000,0)
-        .fluidOutputs(fluid('sulfur_dioxide') * 2000)
-        .duration(160)
-        .EUt(VA[ULV])
-        .buildAndRegister()
+    .inputs(ore('dustSulfur'))
+    .fluidInputs(fluid('air') * 3000)
+    .fluidOutputs(fluid('sulfur_dioxide') * 1000)
+    .duration(120)
+    .EUt(VA[ULV])
+    .buildAndRegister()
+
+// Iron sulfides and sulfates
 
 ROASTER.recipeBuilder()
-        .fluidInputs(fluid('air') * 8250)
-        .inputs(ore('dustPyrite') * 1)
-        .circuitMeta(1)
-        .chancedOutput(metaitem('dustIronIiiOxide') * 5,5000,0)
-        .fluidOutputs(fluid('sulfur_dioxide') * 2000)
-        .duration(160)
-        .EUt(VA[ULV])
-        .buildAndRegister()
-
-ROASTER.recipeBuilder()
-        .inputs(ore('dustIronIiSulfide') * 4)
-        .fluidInputs(fluid('oxygen') * 3500)
-        .outputs(metaitem('dustIronIiiOxide') * 5)
-        .fluidOutputs(fluid('sulfur_dioxide') * 2000)
-        .duration(80)
-        .EUt(VA[ULV])
-        .buildAndRegister()
-
-ROASTER.recipeBuilder()
-        .inputs(ore('dustIronIiSulfide') * 4)
-        .fluidInputs(fluid('oxygen') * 5250)
-        .outputs(metaitem('dustIronIiiOxide') * 5)
-        .fluidOutputs(fluid('sulfur_dioxide') * 2000)
-        .duration(80)
-        .EUt(VA[ULV])
-        .buildAndRegister()
+    .circuitMeta(2)
+    .inputs(ore('dustPyrite'))
+    .outputs(metaitem('dustIronIiSulfide') * 2)
+    .outputs(metaitem('dustSulfur'))
+    .duration(80)
+    .EUt(VA[ULV])
+    .buildAndRegister()
 
 ROASTER.recipeBuilder()
     .inputs(ore('dustIronIiiSulfate'))
     .outputs(metaitem('dustBandedIron'))
-    .fluidOutputs(fluid('sulfur_trioxide') * 3000)
-    .info("recipe.iron_iii_sulfate.roasting")
+    .fluidOutputs(fluid('sulfur_trioxide_reaction_mixture') * 6000)
     .duration(160)
     .EUt(VA[ULV])
     .buildAndRegister()
@@ -121,3 +94,95 @@ DISTILLERY.recipeBuilder()
     .duration(100)
     .EUt(VA[LV])
     .buildAndRegister()
+
+// Sulfuric acid
+
+MIXER.recipeBuilder()
+    .fluidInputs(fluid('sulfur_trioxide') * 1000)
+    .fluidInputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('sulfuric_acid') * 1000)
+    .EUt(VA[ULV])
+    .duration(1600)
+    .buildAndRegister()
+
+BCR.recipeBuilder()
+    .fluidInputs(fluid('sulfur_trioxide') * 50)
+    .fluidInputs(fluid('water') * 50)
+    .fluidOutputs(fluid('sulfuric_acid') * 50)
+    .duration(2)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+    // Bootstrap vitriol distillation
+
+    ROASTER.recipeBuilder()
+        .circuitMeta(3)
+        .fluidInputs(fluid('water') * 1000)
+        .fluidOutputs(fluid('dense_steam') * 1000)
+        .duration(80)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+    MIXER.recipeBuilder()
+        .fluidInputs(fluid('dense_steam') * 20)
+        .fluidInputs(fluid('air') * 980)
+        .fluidOutputs(fluid('gtfo_moist_air') * 1000)
+        .duration(5)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+    BR.recipeBuilder()
+        .inputs(ore('dustTinyPyrite'))
+        .fluidInputs(fluid('gtfo_moist_air') * 5555)
+        .outputs(metaitem('dustTinyGreenVitriol'))
+        .duration(120)
+        .EUt(VA[ULV])
+        .buildAndRegister()
+
+    ROASTER.recipeBuilder()
+        .inputs(ore('dustGreenVitriol') * 21)
+        .fluidOutputs(fluid('water') * 7000)
+        .outputs(metaitem('dustIronSulfate') * 6)
+        .duration(120)
+        .EUt(VA[ULV])
+        .buildAndRegister()
+
+    // Lead chamber process
+
+        // NO2 for lead chamber process
+
+        ROASTER.recipeBuilder()
+            .inputs(ore('dustSaltpeter') * 5)
+            .fluidInputs(fluid('sulfuric_acid') * 1000)
+            .fluidOutputs(fluid('nitrogen_dioxide') * 1000)
+            .fluidOutputs(fluid('oxygen') * 250)
+            .fluidOutputs(fluid('water') * 500)
+            .outputs(metaitem('dustPotassiumBisulfate') * 7)
+            .duration(120)
+            .EUt(VA[ULV])
+            .buildAndRegister()
+
+        // Reaction chamber
+
+        BR.recipeBuilder()
+            .notConsumable(metaitem('foilLead') * 6)
+            .fluidInputs(fluid('sulfur_dioxide') * 1000)
+            .fluidInputs(fluid('nitrogen_dioxide') * 2000)
+            .fluidInputs(fluid('chamber_acid') * 2500)
+            .fluidOutputs(fluid('chamber_acid') * 1000)
+            .fluidOutputs(fluid('nitric_oxide') * 2000)
+            .duration(160)
+            .EUt(VA[ULV])
+            .buildAndRegister()
+
+        // Glover tower
+
+        DISTILLERY.recipeBuilder()
+            .circuitMeta(1)
+            .fluidInputs(fluid('chamber_acid') * 1000)
+            .fluidOutputs(fluid('sulfuric_acid') * 400)
+            .duration(120)
+            .EUt(VA[ULV])
+            .buildAndRegister()
+
+        // Gay-Lussac tower

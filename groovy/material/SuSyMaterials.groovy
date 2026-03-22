@@ -1885,7 +1885,6 @@ class SuSyMaterials {
     public static Material ReactiveAlumina
     public static Material SodiumDithioniteSolution
     public static Material HoopesElectrolyte
-    public static Material GreenVitriolSolution
 
     // Organic Chemistry Materials
 
