@@ -3315,12 +3315,12 @@ class UnknownCompositionMaterials {
                 .build()
 
         ChamberAcid = new Material.Builder(4718, SuSyUtility.susyId('chamber_acid'))
-                .liquid()
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID).temperature(333))
                 .color(0xa12828)
                 .build()
 
         GloverTowerMixture = new Material.Builder(4719, SuSyUtility.susyId('glover_tower_mixture'))
-                .liquid()
+                .gas()
                 .color(0xa8c830)
                 .build()
     }
