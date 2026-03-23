@@ -814,6 +814,7 @@ class SuSyMaterials {
     public static Material NitrileRubberEmulsion
     public static Material NitrileRubberLatex
     public static Material ChamberAcid
+    public static Material GloverTowerMixture
 
     // Petrochem Materials
 
@@ -1650,6 +1651,7 @@ class SuSyMaterials {
     public static Material GreenCarbon
     public static Material BakedCarbon
     public static Material GreenVitriol
+    public static Material NitrosylsulfuricAcidSolution
 
     // HP Materials
 
@@ -1885,6 +1887,7 @@ class SuSyMaterials {
     public static Material ReactiveAlumina
     public static Material SodiumDithioniteSolution
     public static Material HoopesElectrolyte
+    public static Material LeadChamberReactionMixture
 
     // Organic Chemistry Materials
 

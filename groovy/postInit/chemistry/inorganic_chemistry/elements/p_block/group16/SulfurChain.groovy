@@ -4,10 +4,28 @@ import static gregtech.api.GTValues.*
 // Sulfur dioxide
 
 ROASTER.recipeBuilder()
+    .circuitMeta(1)
     .inputs(ore('dustSulfur'))
     .fluidInputs(fluid('air') * 3000)
     .fluidOutputs(fluid('sulfur_dioxide') * 1000)
     .duration(120)
+    .EUt(VA[ULV])
+    .buildAndRegister()
+
+ROASTER.recipeBuilder()
+    .circuitMeta(2)
+    .inputs(ore('dustSulfur'))
+    .fluidInputs(fluid('air') * 3375)
+    .fluidOutputs(fluid('glover_tower_feed') * 1375)
+    .duration(120)
+    .EUt(VA[ULV])
+    .buildAndRegister()
+
+MIXER.recipeBuilder()
+    .fluidInputs(fluid('sulfur_dioxide') * 1000)
+    .fluidInputs(fluid('air') * 375)
+    .fluidOutputs(fluid('glover_tower_feed') * 1375)
+    .duration(10)
     .EUt(VA[ULV])
     .buildAndRegister()
 
@@ -115,8 +133,8 @@ BCR.recipeBuilder()
 
     // Bootstrap vitriol distillation
 
-    ROASTER.recipeBuilder()
-        .circuitMeta(3)
+    DISTILLERY.recipeBuilder()
+        .circuitMeta(10)
         .fluidInputs(fluid('water') * 1000)
         .fluidOutputs(fluid('dense_steam') * 1000)
         .duration(80)
@@ -139,17 +157,17 @@ BCR.recipeBuilder()
         .EUt(VA[ULV])
         .buildAndRegister()
 
-    ROASTER.recipeBuilder()
+    DISTILLERY.recipeBuilder()
         .inputs(ore('dustGreenVitriol') * 21)
-        .fluidOutputs(fluid('water') * 7000)
+        .fluidOutputs(fluid('dense_steam') * 7000)
         .outputs(metaitem('dustIronSulfate') * 6)
-        .duration(120)
+        .duration(200)
         .EUt(VA[ULV])
         .buildAndRegister()
 
     // Lead chamber process
 
-        // NO2 for lead chamber process
+        // Initial NO2 for lead chamber process
 
         ROASTER.recipeBuilder()
             .inputs(ore('dustSaltpeter') * 5)
@@ -164,25 +182,58 @@ BCR.recipeBuilder()
 
         // Reaction chamber
 
+        MIXER.recipeBuilder()
+            .fluidInputs(fluid('sulfur_dioxide') * 1000)
+            .fluidInputs(fluid('nitrogen_dioxide') * 1000)
+            .fluidInputs(fluid('dense_steam') * 1000)
+            .fluidOutputs(fluid('lead_chamber_reaction_mixture') * 3000)
+            .duration(10)
+            .EUt(VA[ULV])
+            .buildAndRegister()
+
+        BR.recipeBuilder() // Bootstrap
+            .notConsumable(metaitem('foilLead') * 6)
+            .fluidInputs(fluid('lead_chamber_reaction_mixture') * 3000)
+            .fluidInputs(fluid('water') * 1000)
+            .fluidInputs(fluid('diluted_sulfuric_acid') * 2000)
+            .fluidOutputs(fluid('chamber_acid') * 5000)
+            .fluidOutputs(fluid('nitric_oxide') * 1000)
+            .duration(800)
+            .EUt(VA[ULV])
+            .buildAndRegister()
+
         BR.recipeBuilder()
             .notConsumable(metaitem('foilLead') * 6)
-            .fluidInputs(fluid('sulfur_dioxide') * 1000)
-            .fluidInputs(fluid('nitrogen_dioxide') * 2000)
+            .fluidInputs(fluid('lead_chamber_reaction_mixture') * 3000)
+            .fluidInputs(fluid('water') * 1500)
             .fluidInputs(fluid('chamber_acid') * 2500)
-            .fluidOutputs(fluid('chamber_acid') * 1000)
-            .fluidOutputs(fluid('nitric_oxide') * 2000)
+            .fluidOutputs(fluid('chamber_acid') * 5000)
+            .fluidOutputs(fluid('nitric_oxide') * 1000)
             .duration(160)
             .EUt(VA[ULV])
             .buildAndRegister()
 
         // Glover tower
 
-        DISTILLERY.recipeBuilder()
-            .circuitMeta(1)
-            .fluidInputs(fluid('chamber_acid') * 1000)
-            .fluidOutputs(fluid('sulfuric_acid') * 400)
-            .duration(120)
+        BR.recipeBuilder()
+            .notConsumable(metaitem('foilLead') * 6)
+            .fluidInputs(fluid('chamber_acid') * 2500)
+            .fluidInputs(fluid('nitrosylsulfuric_acid_solution') * 3000)
+            .fluidInputs(fluid('glover_tower_feed') * 2750)
+            .fluidOutputs(fluid('lead_chamber_reaction_mixture') * 6000)
+            .fluidOutputs(fluid('sulfuric_acid') * 3000)
+            .duration(160)
             .EUt(VA[ULV])
             .buildAndRegister()
 
         // Gay-Lussac tower
+
+        BR.recipeBuilder()
+            .notConsumable(metaitem('foilLead') * 6)
+            .fluidInputs(fluid('nitric_oxide') * 2000)
+            .fluidInputs(fluid('sulfuric_acid') * 2000)
+            .fluidInputs(fluid('air') * 1500)
+            .fluidOutputs(fluid('nitrosylsulfuric_acid_solution') * 3000)
+            .duration(160)
+            .EUt(VA[ULV])
+            .buildAndRegister()

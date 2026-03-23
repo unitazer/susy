@@ -3318,5 +3318,10 @@ class UnknownCompositionMaterials {
                 .liquid()
                 .color(0xa12828)
                 .build()
+
+        GloverTowerMixture = new Material.Builder(4719, SuSyUtility.susyId('glover_tower_mixture'))
+                .liquid()
+                .color(0xa8c830)
+                .build()
     }
 }

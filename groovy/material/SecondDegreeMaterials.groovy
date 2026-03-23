@@ -1094,5 +1094,11 @@ class SecondDegreeMaterials {
                 .components(CopperIINitrate, Water)
                 .colorAverage()
                 .build()
+
+        LeadChamberReactionMixture = new Material.Builder(13182, SuSyUtility.susyId('lead_chamber_reaction_mixture'))
+                .liquid()
+                .components(SulfurDioxide, NitrogenDioxide, Water)
+                .colorAverage()
+                .build()
     }
 }
