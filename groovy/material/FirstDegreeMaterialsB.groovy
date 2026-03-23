@@ -754,5 +754,18 @@ class FirstDegreeMaterialsB {
 
         TetrachloropalladicIIAcidSolution.setFormula("(H2PdCl4)(H2O)2", true)
 
+        GreenVitriol = new Material.Builder(8776, SuSyUtility.susyId('green_vitriol'))
+                .dust()
+                .components(Iron, Sulfur, Oxygen * 4, Water * 7)
+                .color(0x69e0ab)
+                .build()
+
+        NitrosylsulfuricAcid = new Material.Builder(8777, SuSyUtility.susyId('nitrosylsulfuric_acid'))
+                .liquid()
+                .components(Nitrogen * 2, Hydrogen * 2, Sulfur * 2, Oxygen * 10, Water * 1)
+                .color(0xe8a020)
+                .build()
+
+        NitrosylsulfuricAcid.setFormula("(NOHSO4)2(H2O)", true)
     }
 }

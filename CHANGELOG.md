@@ -1,3 +1,43 @@
+# UPDATE 0.1.16.3
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.96 → v0.1.97
+## Changes
+### New Features
+- Batteries included! Lead-acid and nickel-iron batteries now have large variants. (#1825 by @Fiery36)
+### Changes
+- Many useless ores have been removed from HEI. (#1826 by @Fiery36)
+### Fixes
+- Move scattered oredict definitions into oreDict.groovy (#1822 by @Crindigo)
+- The preheated air recipe has been restored! (#1824 by @Crindigo)
+- HV Magnets are now actually craftable at HV! (#1828 by @Fiery36)
+- Misspellings have been thoroughly removed from the questbook. (#1827 by @whoisyp)
+And thanks to @whoisyp, @Crindigo, and @Fiery36 for keeping the pack stable.
+# UPDATE 0.1.16.2
+## Mod Changes
+### Mod Updates
+We've got a lot of mod updates. Here are some highlights:
+- Had Enough Items 4.29.8 → 4.29.15
+- 籁/Sound Physics Remixin 1.1.12 → 1.1.17
+- Fugue 0.21.0 → 0.23.1
+- Inventory Bogo Sorter 1.5.0 → 1.6.2
+- Scape and Run: Parasites 1.12.2v1.9.21 → 1.10.2
+- Gregic Probe: CEu 1.4.4 → 1.4.5
+- GroovyScript 1.3.1 → 1.3.4
+- ModularUI 3.0.3 → 3.1.3
+- SusyCore v0.1.95 → v0.1.96
+- Better Questing Unofficial 4.2.6 → 4.2.7
+- Fluidlogged API API-v3.1.1-mc1.12.2 → API-v3.2.0-mc1.12.2
+## Changes
+### New Features
+- Something that isn't important :) (#1814 by @oliwier509)
+- [Susy-Core] Mixer-settlers are now twice as space-efficient! You can continue using the old structure or craft the controller into the new version.. (#619 by @Crindigo)
+### Fixes
+- Cleanroom/OptiFine is now compatible again! (#1816 by @trainvoi)
+- Gauges and Switches switches actually control redstone again!
+- [Susy-Core] Rotational generators now output flue gas more consistently! (#617 by @Crindigo)
+- [Susy-Core] Singleblock combustion engines no longer void fluids! (#618, #623 by @ThisMightBeNoah)
+Of course, thanks to @whoisyp and @Fiery36 for also helping to keep the pack stable.
 # UPDATE 0.1.16.1
 ## Mod Changes
 ### Mod Updates

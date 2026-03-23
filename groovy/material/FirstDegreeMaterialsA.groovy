@@ -2382,11 +2382,7 @@ class FirstDegreeMaterialsA {
 
         HighPurityPhosphorusVaporMixture.setFormula("(P)(H2O)", true)
 
-        PotassiumAmylXanthate = new Material.Builder(8443, SuSyUtility.susyId('potassium_amyl_xanthate'))
-                .dust()
-                .components(Carbon * 6, Hydrogen * 11, Potassium, Oxygen, Sulfur * 2)
-                .colorAverage()
-                .build()
+        //FREE ID: 8443
 
         GoldAmalgam = new Material.Builder(8444, SuSyUtility.susyId('gold_amalgam'))
                 .liquid()

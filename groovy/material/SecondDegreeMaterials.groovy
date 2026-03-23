@@ -528,7 +528,7 @@ class SecondDegreeMaterials {
 
         AmmoniumThiocyanateSolution = new Material.Builder(13082, SuSyUtility.susyId('ammonium_thiocyanate_solution'))
                 .liquid()
-                .components(AmmoniumThiocyanate, Water)
+                .components(AmmoniumThiocyanate, Water * 2)
                 .colorAverage()
                 .build()
 
@@ -1101,5 +1101,10 @@ class SecondDegreeMaterials {
 
         CopperIIAcetateSolution.setFormula("Cu(C2H3O2)2(H2O)3", true)
 
+        LeadChamberReactionMixture = new Material.Builder(13183, SuSyUtility.susyId('lead_chamber_reaction_mixture'))
+                .liquid()
+                .components(SulfurDioxide, NitrogenDioxide, Water)
+                .colorAverage()
+                .build()
     }
 }
