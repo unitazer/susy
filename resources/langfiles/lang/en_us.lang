@@ -128,8 +128,12 @@ susy.material.four_aminophenol_solution=4-Aminophenol Solution
 susy.material.four_aminophenol=4-Aminophenol
 susy.material.napalm=Napalm
 susy.material.naphthenic_acid=Naphthenic Acid
+susy.material.chamber_acid=Chamber Acid
+susy.material.glover_tower_mixture=Glover Tower Mixture
+susy.material.green_vitriol=Green Vitriol
+susy.material.nitrosylsulfuric_acid=Nitrosylsulfuric Acid
+susy.material.lead_chamber_reaction_mixture=Lead Chamber Reaction Mixture
 
-susy.material.iron_ii_sulfide=Iron II Sulfide
 susy.material.potassium_bisulfate=Potassium Bisulfate
 susy.material.potassium_sulfate=Potassium Sulfate
 susy.material.wet_antimony_trifluoride=Wet Antimony Trifluoride
@@ -3356,6 +3360,10 @@ gregtech.machine.electric_blast_furnace.name=Electric Resistance Furnace
 gregtech.multiblock.electric_blast_furnace.description=The Electric Resistance Furnace (ERF) is a multiblock structure used for smelting alloys, cooking metals and refining ores. It is required for obtaining high-tier alloys and metals, such as aluminium, stainless steel, titanium, and naquadah alloy.
 gregtech.advancement.medium_voltage.31_mv_energy_hatch.name=Upgrade Your ERF
 recipemap.electric_blast_furnace.name=Resistance Furnace
+susy.machine.batch_reactor.bronze.name=Steam Batch reactor
+susy.machine.batch_reactor.steel.name=High Pressure Steam Batch reactor
+susy.machine.distiller.bronze.name=Steam Distiller
+susy.machine.distiller.steel.name=High Pressure Steam Distiller
 
 # Material Renaming
 item.susy.material.ultra_high_molecular_weight_polyethylene.dustTiny=Tiny Pile of Ultra High Molecular Weight Polyethylene (UHMWPE) Pulp
@@ -3401,7 +3409,6 @@ recipe.vulcanization.=Sulfur may be obtained by processing pyrite or pure sulfur
 recipe.vulcanization.dustMagnesia=The catalyst requires magnesite ore in steam age, which is only found in the beneath and nether.
 recipe.vulcanization.dustZincite=The catalyst requires smithsonite ore, which is only found in the nether.
 recipe.compounded_polyisoprene=This is an HV-age post-oil-processing product that makes rubber more efficiently./nDo not try to make this in steam age!
-recipe.iron_iii_sulfate.roasting=You can produce iron III sulfate from pyrite in steam age./nThis is a very important recipe for sulfur/sulfuric acid production!
 recipe.hydrogen_fluoride.production=The best way to begin producing HF (and hydrofluoric acid) in LV by treating fluorite with sulfuric acid. This produces an insoluble byproduct, calcium sulfate, which can be used to regenerate sulfuric acid.
 recipe.chloralkali.upfront=§2Chloralkali process
 recipe.chloralkali=The primary method to produce chlorine gas and alkali metal hydroxides./nAsbestos membranes are initially used, but you may use Nafion membranes in EV to speed up the process.

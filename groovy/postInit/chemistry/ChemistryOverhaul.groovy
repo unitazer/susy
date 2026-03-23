@@ -14,16 +14,6 @@ ASSEMBLER.recipeBuilder()
     .duration(160)
     .buildAndRegister()
 
-// H2SO4
-
-MIXER.recipeBuilder()
-    .fluidInputs(fluid('sulfur_trioxide') * 1000)
-    .fluidInputs(fluid('water') * 1000)
-    .fluidOutputs(fluid('sulfuric_acid') * 1000)
-    .EUt(VA[ULV])
-    .duration(40)
-    .buildAndRegister()
-
 // Ammonium Chloride
 
 BCR.recipeBuilder()
@@ -368,8 +358,8 @@ BR.recipeBuilder()
     .inputs(ore('dustSaltpeter') * 5)
     .fluidOutputs(fluid('nitric_acid') * 1000)
     .outputs(metaitem('dustPotassiumBisulfate') * 7)
-    .duration(60)
-    .EUt(VA[LV])
+    .duration(120)
+    .EUt(VA[ULV])
     .buildAndRegister()
 
 // Sodium Sulfide

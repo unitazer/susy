@@ -697,5 +697,19 @@ class FirstDegreeMaterialsB {
                 .components(Carbon)
                 .color(0x353535)
                 .build()
+
+        GreenVitriol = new Material.Builder(8769, SuSyUtility.susyId('green_vitriol'))
+                .dust()
+                .components(Iron, Sulfur, Oxygen * 4, Water * 7)
+                .color(0x69e0ab)
+                .build()
+
+        NitrosylsulfuricAcid = new Material.Builder(8770, SuSyUtility.susyId('nitrosylsulfuric_acid'))
+                .liquid()
+                .components(Nitrogen * 2, Hydrogen * 2, Sulfur * 2, Oxygen * 10, Water * 1)
+                .color(0xe8a020)
+                .build()
+
+        NitrosylsulfuricAcid.setFormula("(NOHSO4)2(H2O)", true)
     }
 }

@@ -3313,5 +3313,15 @@ class UnknownCompositionMaterials {
                 .liquid()
                 .color(0xd4b97a)
                 .build()
+
+        ChamberAcid = new Material.Builder(4718, SuSyUtility.susyId('chamber_acid'))
+                .liquid()
+                .color(0xa12828)
+                .build()
+
+        GloverTowerMixture = new Material.Builder(4719, SuSyUtility.susyId('glover_tower_mixture'))
+                .liquid()
+                .color(0xa8c830)
+                .build()
     }
 }
