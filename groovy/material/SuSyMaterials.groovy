@@ -1651,7 +1651,7 @@ class SuSyMaterials {
     public static Material GreenCarbon
     public static Material BakedCarbon
     public static Material GreenVitriol
-    public static Material NitrosylsulfuricAcidSolution
+    public static Material NitrosylsulfuricAcid
 
     // HP Materials
 

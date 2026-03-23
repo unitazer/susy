@@ -704,12 +704,12 @@ class FirstDegreeMaterialsB {
                 .color(0x69e0ab)
                 .build()
 
-        NitrosylsulfuricAcidSolution = new Material.Builder(8770, SuSyUtility.susyId('nitrosylsulfuric_acid_solution'))
+        NitrosylsulfuricAcid = new Material.Builder(8770, SuSyUtility.susyId('nitrosylsulfuric_acid'))
                 .liquid()
                 .components(Nitrogen * 2, Hydrogen * 2, Sulfur * 2, Oxygen * 10, Water * 1)
                 .color(0xe8a020)
                 .build()
 
-        NitrosylsulfuricAcidSolution.setFormula("(NOHSO4)2(H2O)", true)
+        NitrosylsulfuricAcid.setFormula("(NOHSO4)2(H2O)", true)
     }
 }
