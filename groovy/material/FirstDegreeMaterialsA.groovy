@@ -3710,7 +3710,7 @@ class FirstDegreeMaterialsA {
         AmmoniumHexachloroiridate = new Material.Builder(8646, SuSyUtility.susyId('ammonium_hexachloroiridate'))
                 .dust()
                 .components(Nitrogen * 3, Hydrogen * 12, Iridium * 1, Chlorine * 6)
-                .color(0x403c21`)
+                .color(0x403c21)
                 .build()
 
         AmmoniumHexachloroiridate.setFormula('(NH4)2(IrCl6)', true)

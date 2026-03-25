@@ -1418,7 +1418,7 @@ class SuSyMaterials {
     public static Material FerroniobiumTantalum
     public static Material TantalumPentachloride
     public static Material NiobiumPentachloride
-    public static Material NiobicAcid
+    public static Material NiobiumOxideDihydrate
     public static Material PurifiedFluoroniobicAcidSolution
     public static Material NiobiumOxide
     public static Material FluorotantalicAcidSolution

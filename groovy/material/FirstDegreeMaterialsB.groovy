@@ -748,7 +748,7 @@ class FirstDegreeMaterialsB {
 
         TetrachloropalladicIIAcidSolution = new Material.Builder(8775, SuSyUtility.susyId('tetrachloropalladic_ii_acid_solution'))
                 .liquid()
-                .components(Hydrogen * 2, Palladium, Chlorine * 4, Water * 2)
+                .components(Hydrogen * 2, Palladium, Chlorine * 4, Water * 8)
                 .color(0x361a16)
                 .build()
 
