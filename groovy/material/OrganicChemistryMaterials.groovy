@@ -12,6 +12,7 @@ import supersymmetry.api.util.SuSyUtility
 import supersymmetry.api.unification.material.properties.SuSyPropertyKey
 import supersymmetry.api.unification.material.properties.FiberProperty
 
+import static gregtechfoodoption.GTFOMaterialHandler.*
 import static gregtech.api.unification.material.info.MaterialIconSet.*
 import static gregtech.api.unification.material.info.MaterialFlags.*
 import static gregtech.api.unification.material.Materials.*
@@ -265,7 +266,7 @@ class OrganicChemistryMaterials {
         TrimethylBorate.setFormula("B(OCH3)3", true)
 
         AcidicMethylAcetateWaterMixture = new Material.Builder(15039, SuSyUtility.susyId('acidic_methyl_acetate_water_mixture'))
-                .liquid()
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .components(MethylAcetate * 1, SulfuricAcid * 1, Water * 1)
                 .colorAverage()
                 .build()
@@ -1798,7 +1799,7 @@ class OrganicChemistryMaterials {
                 .build()
 
         AceticAcidEthanolMixture = new Material.Builder(15287, SuSyUtility.susyId("acetic_acid_ethanol_mixture"))
-                .liquid()
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .components(Ethanol * 1, AceticAcid * 1, SulfuricAcid * 1)
                 .colorAverage()
                 .build()
@@ -2986,7 +2987,7 @@ class OrganicChemistryMaterials {
                 .build()
 
         AcidicEthylAcetateWaterMixture = new Material.Builder(15470, SuSyUtility.susyId('acidic_ethyl_acetate_water_mixture'))
-                .liquid()
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .components(EthylAcetate * 1, SulfuricAcid * 1, Water * 1)
                 .colorAverage()
                 .build()
@@ -3347,14 +3348,5 @@ class OrganicChemistryMaterials {
                 .flags(GENERATE_FOIL, GENERATE_RING)
                 .color(0x040714)
                 .build()
-
-        AceticAcidAnhydrideMixture = new Material.Builder(15524, SuSyUtility.susyId("acetic_acid_anhydride_mixture"))
-                .liquid()
-                .components(AceticAcid * 1, EthylAcetate * 2)
-                .colorAverage()
-                .build()
-
-        AceticAcidAnhydrideMixture.setFormula("", true)
-
     }
 }

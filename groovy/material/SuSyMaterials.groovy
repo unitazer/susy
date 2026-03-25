@@ -183,7 +183,6 @@ class SuSyMaterials {
     public static Material BorateLiquor
     public static Material Asphalt
     public static Material BlackAsh
-//    public static Material ImpureAcetaldehyde
     public static Material CrudeCumene
     public static Material SulfatedMetalOxide
     public static Material ImpureKaptonK
@@ -813,6 +812,11 @@ class SuSyMaterials {
     public static Material NitrileRubberLatex
     public static Material ChamberAcid
     public static Material GloverTowerMixture
+    public static Material ImpureAceticAcid
+    public static Material MonsantoProcessCatalyst
+    public static Material CativaProcessCatalyst
+    public static Material AceticAnhydrideCatalyst
+    public static Material AceticAcidAnhydrideMixture
 
     // Petrochem Materials
 
@@ -1323,7 +1327,7 @@ class SuSyMaterials {
     public static Material TitaniumEthoxide
     public static Material HotSulfuricAcid
     public static Material CadmiumSulfateSolution
-    public static Material MercuryOxide
+    public static Material MercuryIIOxide
     public static Material IndiumChloride
     public static Material IndiumHydroxide
     public static Material IndiumOxide
@@ -1414,7 +1418,7 @@ class SuSyMaterials {
     public static Material FerroniobiumTantalum
     public static Material TantalumPentachloride
     public static Material NiobiumPentachloride
-    public static Material NiobiumOxideDihydrate
+    public static Material NiobicAcid
     public static Material PurifiedFluoroniobicAcidSolution
     public static Material NiobiumOxide
     public static Material FluorotantalicAcidSolution
@@ -1438,7 +1442,7 @@ class SuSyMaterials {
     public static Material ImpureBariumSulfide
     public static Material ImpureStrontiumSulfide
     public static Material DilutedAceticAcid
-    public static Material CobaltIIAcetate
+    public static Material CobaltIIAcetateTetrahydrate
     public static Material PotassiumPyrosulfate
     public static Material IronIIINitrateSolution
     public static Material ManganeseIIChloride
@@ -1656,6 +1660,7 @@ class SuSyMaterials {
     public static Material TetrachloropalladicIIAcidSolution
     public static Material GreenVitriol
     public static Material NitrosylsulfuricAcid
+    public static Material AcetaldehydeSolution
 
     // HP Materials
 
@@ -2035,7 +2040,6 @@ class SuSyMaterials {
     public static Material Bistrichloromethylbenzene
     public static Material TerephthaloylChloride
     public static Material Kevlar
-    public static Material AceticAnhydride
     public static Material CelluloseAcetate
     public static Material Pyridine
     public static Material Quinoline
@@ -2412,7 +2416,6 @@ class SuSyMaterials {
     public static Material Diazonaphthoquinone
     public static Material RawNitrileRubber
     public static Material NitrileRubber
-    public static Material AceticAcidAnhydrideMixture
 
     // Third Degree Materials
 
@@ -2421,7 +2424,6 @@ class SuSyMaterials {
     public static Material LithiumSolution
     public static Material DimethylacetamideSolution
     public static Material AcidicFurfuralSolution
-//    public static Material WackerCatalystSolution
     public static Material TwoEthylanthraquinoneSolution
     public static Material AcetamideSolution
     public static Material HydrazineSolution
@@ -2561,6 +2563,7 @@ class SuSyMaterials {
     public static Material OneNaphtholTwoDiazoniumChlorideSolution
     public static Material BenzenediazoniumChlorideSolution
     public static Material BenzenediazoniumFluorideSolution
+    public static Material IsopropylAlcoholSolution
 
     // Thermodynamics Materials
 

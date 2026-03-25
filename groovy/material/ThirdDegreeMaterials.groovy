@@ -903,5 +903,11 @@ class ThirdDegreeMaterials {
                 .components(BenzenediazoniumFluoride, SodiumFluoride, Water * 4)
                 .colorAverage()
                 .build()
+
+        IsopropylAlcoholSolution = new Material.Builder(24147, SuSyUtility.susyId('isopropyl_alcohol_solution'))
+                .liquid()
+                .components(IsopropylAlcohol, Water)
+                .colorAverage()
+                .build()
     }
 }

@@ -700,16 +700,16 @@ class FirstDegreeMaterialsB {
 
         MercuryIISulfateSolution = new Material.Builder(8769, SuSyUtility.susyId('mercury_ii_sulfate_solution'))
                 .liquid()
-                .components(Mercury * 1, Sulfur * 1, Oxygen * 4, SulfuricAcid * 1, Water * 2)
+                .components(Mercury, Sulfur, Oxygen * 4, Water)
                 .colorAverage()
                 .build()
 
-        MercuryIISulfateSolution.setFormula("(HgSO4)(H2SO4)", true)
+        MercuryIISulfateSolution.setFormula("(HgSO4)(H2O)", true)
 
         CopperIIAcetateMonohydrate = new Material.Builder(8770, SuSyUtility.susyId("copper_ii_acetate_monohydrate"))
                 .dust()
                 .components(Copper * 2, Carbon * 8, Hydrogen * 12, Oxygen * 8, Water * 2)
-                .colorAverage()
+                .color(0x488ae0)
                 .build()
 
         CopperIIAcetateMonohydrate.setFormula("Cu(C2H3O2)2*H2O", true)
@@ -717,7 +717,7 @@ class FirstDegreeMaterialsB {
         RhodiumIIIChlorideTrihydrate = new Material.Builder(8771, SuSyUtility.susyId("rhodium_iii_chloride_trihydrate"))
                 .dust()
                 .components(Rhodium, Chlorine * 3, Water * 3)
-                .colorAverage()
+                .color(0x210010)
                 .build()
 
         RhodiumIIIChlorideTrihydrate.setFormula("RhCl3*(H2O)3", true)
@@ -732,16 +732,16 @@ class FirstDegreeMaterialsB {
 
         HexachloroiridicIIIAcidSolution = new Material.Builder(8773, SuSyUtility.susyId('hexachloroiridic_iii_acid_solution'))
                 .liquid()
-                .components(Hydrogen * 3, Iridium, Chlorine * 6, Water * 2)
-                .colorAverage()
+                .components(Hydrogen * 3, Iridium, Chlorine * 6, Water * 12)
+                .color(0x241500)
                 .build()
 
-        HexachloroiridicIIIAcidSolution.setFormula("(H3IrCl6)(H2O)2", true)
+        HexachloroiridicIIIAcidSolution.setFormula("(H3IrCl6)(H2O)12", true)
 
         IridiumIIIChlorideTrihydrate = new Material.Builder(8774, SuSyUtility.susyId("iridium_iii_chloride_trihydrate"))
                 .dust()
                 .components(Iridium, Chlorine * 3, Water * 3)
-                .colorAverage()
+                .color(0x12101a)
                 .build()
 
         IridiumIIIChlorideTrihydrate.setFormula("IrCl3*(H2O)3", true)
@@ -749,7 +749,7 @@ class FirstDegreeMaterialsB {
         TetrachloropalladicIIAcidSolution = new Material.Builder(8775, SuSyUtility.susyId('tetrachloropalladic_ii_acid_solution'))
                 .liquid()
                 .components(Hydrogen * 2, Palladium, Chlorine * 4, Water * 2)
-                .colorAverage()
+                .color(0x361a16)
                 .build()
 
         TetrachloropalladicIIAcidSolution.setFormula("(H2PdCl4)(H2O)2", true)
@@ -767,5 +767,11 @@ class FirstDegreeMaterialsB {
                 .build()
 
         NitrosylsulfuricAcid.setFormula("(NOHSO4)2(H2O)", true)
+
+        AcetaldehydeSolution = new Material.Builder(8778, SuSyUtility.susyId('acetaldehyde_solution'))
+                .liquid()
+                .components(Acetaldehyde, Water)
+                .colorAverage()
+                .build()
     }
 }

@@ -149,7 +149,7 @@ class SecondDegreeMaterials {
 
         WackerCatalystSolution = new Material.Builder(13020, SuSyUtility.susyId('wacker_catalyst_solution'))
                 .liquid()
-                .components(PalladiumChlorideDihydrate * 1, CopperIIChloride * 1, Water * 1)
+                .components(PalladiumChlorideDihydrate, CopperIIChloride, Water)
                 .colorAverage()
                 .build()
 
@@ -873,7 +873,7 @@ class SecondDegreeMaterials {
 
         CopperIIChlorideSolution = new Material.Builder(13142, SuSyUtility.susyId('copper_ii_chloride_solution'))
                 .liquid()
-                .components(CopperIIChloride * 2, Water * 7)
+                .components(CopperIIChloride, Water)
                 .colorAverage()
                 .build()
 

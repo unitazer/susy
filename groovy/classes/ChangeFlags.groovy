@@ -237,7 +237,7 @@ class ChangeFlags {
         Pitchblende.setFormula("(?)UO2", true);
         Bastnasite.setFormula("(REE)CO3F", true);
         Monazite.setFormula("(REE,Th)PO4", true);
-        Gypsum.setFormula("(CaSO4)(H2O)2", true);
+        Gypsum.setFormula("(CaSO4)*(H2O)2", true);
         Polyethylene.setFormula("[C2H4]n", true);
         PolyvinylChloride.setFormula("[C2H3Cl]n", true);
         Rubber.setFormula("[C5H8]n", true);

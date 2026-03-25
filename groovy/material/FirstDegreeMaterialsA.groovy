@@ -752,11 +752,11 @@ class FirstDegreeMaterialsA {
 
         HexachloroiridicIVAcidSolution = new Material.Builder(8197, SuSyUtility.susyId('hexachloroiridic_iv_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(Hydrogen * 2, Rhodium * 1, Chlorine * 6, Water * 18)
-                .colorAverage()
+                .components(Hydrogen * 2, Iridium, Chlorine * 6, Water * 2)
+                .color(0x040429)
                 .build()
 
-        HexachloroiridicIVAcidSolution.setFormula("(H2ICl6)(H2O)2", true)
+        HexachloroiridicIVAcidSolution.setFormula("(H2IrCl6)(H2O)2", true)
 
         PotassiumIodide = new Material.Builder(8198, SuSyUtility.susyId('potassium_iodide'))
                 .dust()
@@ -2403,10 +2403,10 @@ class FirstDegreeMaterialsA {
                 .build()
         CadmiumSulfateSolution.setFormula("(CdSO4)(H2O)", true)
 
-        MercuryOxide = new Material.Builder(8447, SuSyUtility.susyId('mercury_oxide'))
+        MercuryIIOxide = new Material.Builder(8447, SuSyUtility.susyId('mercury_ii_oxide'))
                 .dust()
                 .components(Mercury, Oxygen)
-                .colorAverage()
+                .color(0xf7980a)
                 .build()
 
         IndiumChloride = new Material.Builder(8448, SuSyUtility.susyId('indium_chloride'))
@@ -3225,13 +3225,13 @@ class FirstDegreeMaterialsA {
                 .colorAverage()
                 .build()
 
-        CobaltIIAcetate = new Material.Builder(8577, SuSyUtility.susyId("cobalt_ii_acetate"))
+        CobaltIIAcetateTetrahydrate = new Material.Builder(8577, SuSyUtility.susyId("cobalt_ii_acetate_tetrahydrate"))
                 .dust()
                 .components(Cobalt, Carbon * 4, Oxygen * 6, Hydrogen * 4, Water * 4)
                 .color(0xfc7e89)
                 .build()
 
-        CobaltIIAcetate.setFormula("Co(C2H3O2)2*(H2O)4", true)
+        CobaltIIAcetateTetrahydrate.setFormula("Co(C2H3O2)2*(H2O)4", true)
 
         PotassiumPyrosulfate = new Material.Builder(8578, SuSyUtility.susyId("potassium_pyrosulfate"))
                 .dust()
@@ -3678,7 +3678,7 @@ class FirstDegreeMaterialsA {
         BasicCopperCarbonate = new Material.Builder(8642, SuSyUtility.susyId("basic_copper_carbonate"))
                 .dust()
                 .components(Copper * 2, Carbon, Oxygen * 5, Hydrogen * 2)
-                .colorAverage()
+                .color(0x8ed6e6)
                 .build()
 
         BasicCopperCarbonate.setFormula('Cu2(OH)2CO3', true)
@@ -3686,7 +3686,7 @@ class FirstDegreeMaterialsA {
         AmmoniumHexachlororuthenate = new Material.Builder(8643, SuSyUtility.susyId('ammonium_hexachlororuthenate'))
                 .dust()
                 .components(Nitrogen * 2, Hydrogen * 8, Ruthenium * 1, Chlorine * 6, Water * 1)
-                .colorAverage()
+                .color(0xf59c8e)
                 .build()
 
         AmmoniumHexachlororuthenate.setFormula('(NH4)2[RuCl6]', true)
@@ -3694,7 +3694,7 @@ class FirstDegreeMaterialsA {
         PotassiumOsmate = new Material.Builder(8644, SuSyUtility.susyId('potassium_osmate'))
                 .dust()
                 .components(Potassium * 2, Osmium, Oxygen * 6, Hydrogen * 4)
-                .color(0xbf21a0)
+                .color(0x2b0f14)
                 .build()
 
         PotassiumOsmate.setFormula("K2[OsO2(OH)4]", true)
@@ -3702,7 +3702,7 @@ class FirstDegreeMaterialsA {
         AmmoniumHexachlororhodate = new Material.Builder(8645, SuSyUtility.susyId('ammonium_hexachlororhodate'))
                 .dust()
                 .components(Nitrogen * 3, Hydrogen * 12, Rhodium * 1, Chlorine * 6)
-                .colorAverage()
+                .color(0xcc3939)
                 .build()
 
         AmmoniumHexachlororhodate.setFormula('(NH4)3(RhCl6)', true)
@@ -3710,7 +3710,7 @@ class FirstDegreeMaterialsA {
         AmmoniumHexachloroiridate = new Material.Builder(8646, SuSyUtility.susyId('ammonium_hexachloroiridate'))
                 .dust()
                 .components(Nitrogen * 3, Hydrogen * 12, Iridium * 1, Chlorine * 6)
-                .colorAverage()
+                .color(0x403c21`)
                 .build()
 
         AmmoniumHexachloroiridate.setFormula('(NH4)2(IrCl6)', true)

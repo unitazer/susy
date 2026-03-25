@@ -162,11 +162,11 @@ class UnknownCompositionMaterials {
                 .color(0xacbbac)
                 .build()
 
-//        ImpureAcetaldehyde = new Material.Builder(4027, SuSyUtility.susyId('impure_acetaldehyde'))
-//                .liquid()
-//                .color(0x6e6e6e)
-//                .build()
-//
+        AceticAcidAnhydrideMixture = new Material.Builder(4027, SuSyUtility.susyId("acetic_acid_anhydride_mixture"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0xc47e70)
+                .build()
+
         //FREE IDs: 4028-4029
 
         CrudeCumene = new Material.Builder(4030, SuSyUtility.susyId('crude_cumene'))
@@ -3314,6 +3314,26 @@ class UnknownCompositionMaterials {
         GloverTowerMixture = new Material.Builder(4719, SuSyUtility.susyId('glover_tower_mixture'))
                 .liquid()
                 .color(0xa8c830)
+                .build()
+
+        ImpureAceticAcid = new Material.Builder(4720, SuSyUtility.susyId('impure_acetic_acid'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0xb4a08c)
+                .build()
+
+        MonsantoProcessCatalyst = new Material.Builder(4721, SuSyUtility.susyId('monsanto_process_catalyst'))
+                .liquid()
+                .color(0xc8a840)
+                .build()
+
+        CativaProcessCatalyst = new Material.Builder(4722, SuSyUtility.susyId('cativa_process_catalyst'))
+                .liquid()
+                .color(0xd4c050)
+                .build()
+
+        AceticAnhydrideCatalyst = new Material.Builder(4723, SuSyUtility.susyId('acetic_anhydride_catalyst'))
+                .dust()
+                .color(0xa284b5)
                 .build()
     }
 }

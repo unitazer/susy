@@ -486,9 +486,9 @@ for (metal in metals) {
 
         CRYSTALLIZER.recipeBuilder()
             .fluidInputs(fluid('hexachlororhodic_acid_solution') * 8950)
-            .inputs(ore('dustAmmoniumChloride') * 9)
+            .fluidInputs(fluid('ammonium_chloride_solution') * 1500)
             .chancedOutput(metaitem('dustAmmoniumHexachlororhodate') * 21, 5000, 0)
-            .fluidOutputs(fluid('acidic_wastewater') * 8950)
+            .fluidOutputs(fluid('acidic_wastewater') * 10450)
             .duration(200)
             .EUt(VA[MV])
             .buildAndRegister()
