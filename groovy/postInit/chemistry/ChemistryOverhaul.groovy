@@ -996,56 +996,6 @@ MIXER.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-// Methyl Acetate
-
-CSTR.recipeBuilder()
-    .fluidInputs(fluid('sulfuric_acid') * 50)
-    .fluidInputs(fluid('acetic_acid') * 50)
-    .fluidInputs(fluid('methanol') * 50)
-    .fluidOutputs(fluid('acidic_methyl_acetate_water_mixture') * 150)
-    .duration(2)
-    .EUt(VA[HV])
-    .buildAndRegister()
-
-DT.recipeBuilder()
-    .fluidInputs(fluid('acidic_methyl_acetate_water_mixture') * 3000)
-    .fluidOutputs(fluid('sulfuric_acid') * 1000)
-    .fluidOutputs(fluid('water') * 1000)
-    .fluidOutputs(fluid('methyl_acetate') * 1000)
-    .duration(160)
-    .EUt(VA[LV])
-    .buildAndRegister()
-
-// Ethyl Acetate
-
-// Tishchenko Reaction
-BR.recipeBuilder()
-    .notConsumable(ore('dustAluminiumIsopropoxide'))
-    .fluidInputs(fluid('gtfo_acetaldehyde') * 2000)
-    .fluidOutputs(fluid('ethyl_acetate') * 1000)
-    .duration(80)
-    .EUt(VA[MV])
-    .buildAndRegister()
-
-// Fischer Esterification
-CSTR.recipeBuilder()
-    .fluidInputs(fluid('sulfuric_acid') * 50)
-    .fluidInputs(fluid('acetic_acid') * 50)
-    .fluidInputs(fluid('ethanol') * 50)
-    .fluidOutputs(fluid('acidic_ethyl_acetate_water_mixture') * 150)
-    .duration(2)
-    .EUt(VA[HV])
-    .buildAndRegister()
-
-DT.recipeBuilder()
-    .fluidInputs(fluid('acidic_ethyl_acetate_water_mixture') * 3000)
-    .fluidOutputs(fluid('sulfuric_acid') * 1000)
-    .fluidOutputs(fluid('water') * 1000)
-    .fluidOutputs(fluid('ethyl_acetate') * 1000)
-    .duration(160)
-    .EUt(VA[LV])
-    .buildAndRegister()
-
 // Chlorobenzene
 
 BCR.recipeBuilder()

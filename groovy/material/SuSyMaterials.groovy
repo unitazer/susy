@@ -2175,6 +2175,7 @@ class SuSyMaterials {
     public static Material Triphenylphosphine
     public static Material TriphenylphosphineDichloride
     public static Material AceticAcidEthanolMixture
+    public static Material AceticAcidMethanolMixture
     public static Material TriphenylphosphineOxide
     public static Material Methyltrichlorosilane
     public static Material Methyldichlorosilane

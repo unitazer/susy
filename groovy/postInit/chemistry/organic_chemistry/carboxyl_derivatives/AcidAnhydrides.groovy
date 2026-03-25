@@ -64,7 +64,7 @@ CSTR.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 40)
     .fluidOutputs(fluid('acetic_acid_anhydride_mixture') * 185)
     .EUt(VA[MV])
-    .duration(20)
+    .duration(30)
     .buildAndRegister()
 
 DT.recipeBuilder()
@@ -75,11 +75,9 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('water') * 150)
     .fluidOutputs(fluid('ethyl_acetate') * 1000)
     .fluidOutputs(fluid('gtfo_acetaldehyde') * 100)
-    .duration(200)
+    .duration(300)
     .EUt(VA[MV])
     .buildAndRegister()
-
-    // 
 
 // Ketene (Ethenone) + Acetic Acid
 

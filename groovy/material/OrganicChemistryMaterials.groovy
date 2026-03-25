@@ -1800,7 +1800,7 @@ class OrganicChemistryMaterials {
 
         AceticAcidEthanolMixture = new Material.Builder(15287, SuSyUtility.susyId("acetic_acid_ethanol_mixture"))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(Ethanol * 1, AceticAcid * 1, SulfuricAcid * 1)
+                .components(Ethanol * 1, AceticAcid * 1, SulfuricAcid * 1, Water * 4)
                 .colorAverage()
                 .build()
 
@@ -3348,5 +3348,13 @@ class OrganicChemistryMaterials {
                 .flags(GENERATE_FOIL, GENERATE_RING)
                 .color(0x040714)
                 .build()
+
+        AceticAcidMethanolMixture = new Material.Builder(15524, SuSyUtility.susyId('acetic_acid_methanol_mixture'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .components(AceticAcid * 1, Methanol * 1, SulfuricAcid * 1, Water * 4)
+                .colorAverage()
+                .build()
+
+        AceticAcidMethanolMixture.setFormula("(CH3COOH)(CH3OH)(H2SO4)", true)
     }
 }

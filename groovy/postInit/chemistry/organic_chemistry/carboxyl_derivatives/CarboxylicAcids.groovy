@@ -94,7 +94,8 @@ FERMENTER.recipeBuilder()
     .EUt(16)
     .buildAndRegister()
 
-DT.recipeBuilder()
+SIEVE_DT.recipeBuilder()
+    .notConsumable(fluid('ethyl_acetate') * 100)
     .fluidInputs(fluid('vinegar') * 2000)
     .outputs(metaitem('dustWood'))
     .fluidOutputs(fluid('acetic_acid') * 400)
@@ -103,16 +104,32 @@ DT.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-DT.recipeBuilder()
+DISTILLERY.recipeBuilder()
+    .circuitMeta(0)
+    .fluidInputs(fluid('vinegar') * 2000)
+    .fluidOutputs(fluid('diluted_acetic_acid') * 800)
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
     .fluidInputs(fluid('gtfo_apple_cider') * 2000)
-    .fluidOutputs(fluid('acetic_acid') * 400)
-    .fluidOutputs(fluid('water') * 1600)
-    .duration(200)
+    .fluidOutputs(fluid('diluted_acetic_acid') * 80)
+    .duration(80)
     .EUt(VA[LV])
     .buildAndRegister()
 
 // Acetic Acid (chemical)
 // Source: Acetic Acid Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_045
+
+SIEVE_DT.recipeBuilder()
+    .notConsumable(fluid('ethyl_acetate') * 100)
+    .fluidInputs(fluid('diluted_acetic_acid') * 2000)
+    .fluidOutputs(fluid('acetic_acid') * 1000)
+    .fluidOutputs(fluid('water') * 1000)
+    .EUt(VA[MV])
+    .duration(100)
+    .buildAndRegister()
 
 // Oxidation of Acetaldehyde
 
@@ -128,8 +145,9 @@ BR.recipeBuilder()
     .buildAndRegister()
 
 SIEVE_DT.recipeBuilder()
-    .notConsumable(fluid('toluene') * 100)
+    .notConsumable(fluid('ethyl_acetate') * 100)
     .fluidInputs(fluid('impure_acetic_acid') * 1000)
+    .outputs(metaitem('dustCobaltIiAcetateTetrahydrate'))
     .fluidOutputs(fluid('acetic_acid') * 950)
     .fluidOutputs(fluid('formic_acid') * 10)
     .fluidOutputs(fluid('methyl_acetate') * 10)
@@ -224,6 +242,16 @@ LCR.recipeBuilder()
     .fluidOutputs(fluid('acetic_acid') * 1000)
     .duration(20)
     .EUt(VA[MV])
+    .buildAndRegister()
+
+// Acetic anhydride hydrolysis
+
+CSTR.recipeBuilder()
+    .fluidInputs(fluid('acetic_anhydride') * 50)
+    .fluidInputs(fluid('distilled_water') * 50)
+    .fluidOutputs(fluid('acetic_acid') * 100)
+    .duration(10)
+    .EUt(VA[LV])
     .buildAndRegister()
 
 // Fatty acids
