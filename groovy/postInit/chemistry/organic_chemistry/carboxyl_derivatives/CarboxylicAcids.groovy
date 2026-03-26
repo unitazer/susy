@@ -112,13 +112,6 @@ DISTILLERY.recipeBuilder()
     .EUt(VA[LV])
     .buildAndRegister()
 
-DISTILLERY.recipeBuilder()
-    .fluidInputs(fluid('gtfo_apple_cider') * 2000)
-    .fluidOutputs(fluid('diluted_acetic_acid') * 80)
-    .duration(80)
-    .EUt(VA[LV])
-    .buildAndRegister()
-
 // Acetic Acid (chemical)
 // Source: Acetic Acid Chapter in Ullmann's Encyclopedia of Industrial Chemistry https://doi.org/10.1002/14356007.a01_045
 
@@ -247,7 +240,7 @@ LCR.recipeBuilder()
 // Acetic anhydride hydrolysis
 
 CSTR.recipeBuilder()
-    .fluidInputs(fluid('acetic_anhydride') * 50)
+    .fluidInputs(fluid('gtfo_acetic_anhydride') * 50)
     .fluidInputs(fluid('distilled_water') * 50)
     .fluidOutputs(fluid('acetic_acid') * 100)
     .duration(10)

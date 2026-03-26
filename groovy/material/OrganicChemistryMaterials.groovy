@@ -267,7 +267,7 @@ class OrganicChemistryMaterials {
 
         AcidicMethylAcetateWaterMixture = new Material.Builder(15039, SuSyUtility.susyId('acidic_methyl_acetate_water_mixture'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(MethylAcetate * 1, SulfuricAcid * 1, Water * 1)
+                .components(MethylAcetate * 1, SulfuricAcid * 1, Water * 2)
                 .colorAverage()
                 .build()
 
