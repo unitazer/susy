@@ -2150,6 +2150,13 @@ CRYSTALLIZER.recipeBuilder()
     .EUt(VA[MV])
     .buildAndRegister();
 
+SOLIDIFIER.recipeBuilder()
+    .fluidInputs(fluid('pyrocatechol') * 2016)
+    .outputs(metaitem('dustPyrocatechol') * 14)
+    .duration(20)
+    .EUt(VA[LV])
+    .buildAndRegister();
+
 // Tetramethylammonium chloride
 LCR.recipeBuilder()
     .fluidInputs(fluid('trimethylamine') * 1000)
