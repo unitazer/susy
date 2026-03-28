@@ -35,3 +35,17 @@ ROASTER.recipeBuilder()
     .duration(60)
     .EUt(VA[LV])
     .buildAndRegister()
+
+// Small Pile of Mercury II Chloride Dust * 1
+mods.gregtech.distillery.removeByInput(30, [metaitem('circuit.integrated').withNbt(["Configuration": 1])], [fluid('crude_gallium_trichloride') * 432])
+
+ELECTROLYZER.recipeBuilder()
+    .notConsumable(metaitem('stickIron'))
+    .notConsumable(metaitem('graphite_electrode'))
+    .notConsumable(fluid('water') * 1000)
+    .inputs(ore('dustMercuryIiChloride') * 3)
+    .fluidOutputs(fluid('chlorine') * 2000)
+    .fluidOutputs(fluid('mercury') * 1000)
+    .duration(120)
+    .EUt(VA[MV])
+    .buildAndRegister()

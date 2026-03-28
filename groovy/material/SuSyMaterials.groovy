@@ -817,6 +817,10 @@ class SuSyMaterials {
     public static Material CativaProcessCatalyst
     public static Material AceticAnhydrideCatalyst
     public static Material AceticAcidAnhydrideMixture
+    public static Material CrudeKetoneAlcoholOil
+    public static Material NitricAcidMotherLiquor
+    public static Material DilutedNitricAcidMotherLiquor
+    public static Material AdipicNitricAcidMotherLiquor
 
     // Petrochem Materials
 
@@ -956,6 +960,10 @@ class SuSyMaterials {
     public static Material RawMonoxideRichSyngas
     public static Material MonoxideRichSyngas
     public static Material ReformedMonoxideRichSyngas
+    public static Material CrackedNaturalGas
+    public static Material QuenchedCrackedNaturalGas
+    public static Material StrippedCrackedNaturalGas
+    public static Material CrudeSyngas
 
     public static Material LiquefactionOil
     public static Material LightLiquefactionOil
@@ -1333,7 +1341,6 @@ class SuSyMaterials {
     public static Material IndiumOxide
     public static Material TitaniumDioxide
     public static Material EthanolWaterAzeotrope
-    public static Material EntrainedEthanolWaterAzeotrope
     public static Material ChromiumIIIOxide
     public static Material SodiumSulfateAcetoneSolution
     public static Material SilicaGel
@@ -1661,6 +1668,8 @@ class SuSyMaterials {
     public static Material GreenVitriol
     public static Material NitrosylsulfuricAcid
     public static Material AcetaldehydeSolution
+    public static Material GammaAlumina
+    public static Material FineGammaAlumina
 
     // HP Materials
 
@@ -1738,7 +1747,7 @@ class SuSyMaterials {
 
     // Second Degree Materials
 
-    public static Material PlatinumPrecursorSolution
+    public static Material SupportedPlatinumChloride
     public static Material PalladiumPrecursorSolution
     public static Material SupportedPlatinum
     public static Material NitrateSaltMix
@@ -1949,6 +1958,7 @@ class SuSyMaterials {
     public static Material PBISolution
     public static Material PBIWaste
     public static Material Cyclohexanone
+    public static Material Cyclohexanol
     public static Material CaprolactamSolution
     public static Material CrackedOneTwoDichloroethaneMix
     public static Material VinylChlorideSuspension
@@ -2565,6 +2575,8 @@ class SuSyMaterials {
     public static Material BenzenediazoniumChlorideSolution
     public static Material BenzenediazoniumFluorideSolution
     public static Material IsopropylAlcoholSolution
+    public static Material KetoneAlcoholOil
+    public static Material AcetyleneSolution
 
     // Thermodynamics Materials
 

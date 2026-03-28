@@ -773,5 +773,21 @@ class FirstDegreeMaterialsB {
                 .components(Acetaldehyde, Water)
                 .colorAverage()
                 .build()
+
+        GammaAlumina = new Material.Builder(8779, SuSyUtility.susyId('gamma_alumina'))
+                .dust()
+                .components(Aluminium * 2, Oxygen * 3)
+                .color(0xe8e4d0)
+                .iconSet(SAND)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+
+        FineGammaAlumina = new Material.Builder(8780, SuSyUtility.susyId('fine_gamma_alumina'))
+                .dust()
+                .components(Aluminium * 2, Oxygen * 3)
+                .color(0xf0ede0)
+                .iconSet(FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
     }
 }

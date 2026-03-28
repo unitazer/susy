@@ -3356,5 +3356,12 @@ class OrganicChemistryMaterials {
                 .build()
 
         AceticAcidMethanolMixture.setFormula("(CH3COOH)(CH3OH)(H2SO4)", true)
+
+        Cyclohexanol = new Material.Builder(15525, SuSyUtility.susyId('cyclohexanol'))
+                .liquid(new FluidBuilder().temperature(434))
+                .components(Carbon * 6, Hydrogen * 12, Oxygen * 1)
+                .flags(FLAMMABLE)
+                .color(0xd4c97a)
+                .build()
     }
 }

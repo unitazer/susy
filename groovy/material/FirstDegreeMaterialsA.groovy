@@ -2442,11 +2442,7 @@ class FirstDegreeMaterialsA {
                 .color(0xad552f)
                 .build()
 
-        EntrainedEthanolWaterAzeotrope = new Material.Builder(8453, SuSyUtility.susyId('entrained_ethanol_water_azeotrope'))
-                .liquid()
-                .components(Ethanol * 91, Water * 9, Toluene * 10)
-                .colorAverage()
-                .build()
+        // FREE ID: 8453
 
         CalciumSulfite = new Material.Builder(8454, SuSyUtility.susyId('calcium_sulfite'))
                 .dust()

@@ -576,15 +576,18 @@ class SecondDegreeMaterials {
 
         AlluvialDivalentPalladiumSolution.setFormula('(H2PdCl4)(ZnCl2)(HCl)4(H2O)14', true)
 
-        PlatinumPrecursorSolution = new Material.Builder(13091, SuSyUtility.susyId('platinum_precursor_solution'))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(AmmoniumHexachloroplatinate, PhosphoricAcid * 1)
+        SupportedPlatinumChloride = new Material.Builder(13091, SuSyUtility.susyId('supported_platinum'))
+                .dust()
+                .components(Hydrogen * 2, Platinum, Chlorine * 6, Water * 6, Alumina * 9)
                 .colorAverage()
+                .flags(GENERATE_CATALYST_BED)
                 .build()
+
+        SupportedPlatinumChloride.setFormula('(H2PtCl6)(H2O)6(Al2O3)9', true)
 
         SupportedPlatinum = new Material.Builder(13092, SuSyUtility.susyId('supported_platinum'))
                 .dust()
-                .components(Alumina, Platinum, Chlorine * 4)
+                .components(Alumina * 9, Platinum)
                 .colorAverage()
                 .flags(GENERATE_CATALYST_BED)
                 .build()
@@ -655,15 +658,18 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        PalladiumPrecursorSolution = new Material.Builder(13103, SuSyUtility.susyId("palladium_precursor_solution"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(PalladiumChlorideDihydrate, PhosphoricAcid)
+        SupportedPalladiumChloride = new Material.Builder(13103, SuSyUtility.susyId("supported_palladium_chloride"))
+                .dust()
+                .components(Hydrogen * 2, Palladium, Chlorine * 4, Water * 8, Alumina * 9)
+                .flags(GENERATE_CATALYST_BED)
                 .colorAverage()
                 .build()
 
+        SupportedPalladiumChloride.setFormula('(H2PdCl4)(H2O)8(Al2O3)9', true)
+
         SupportedPalladium = new Material.Builder(13104, SuSyUtility.susyId("supported_palladium"))
                 .dust()
-                .components(PalladiumChlorideDihydrate, Alumina)
+                .components(Palladium, Alumina * 9)
                 .flags(GENERATE_CATALYST_BED)
                 .colorAverage()
                 .build()
