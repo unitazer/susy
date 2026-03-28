@@ -49,7 +49,7 @@ import static gregtech.api.GTValues.*
         .fluidOutputs(fluid('sulfuric_acid') * 1000)
         .fluidOutputs(fluid('acetic_acid') * 1000)
         .fluidOutputs(fluid('water') * 4000)
-        .fluidOutputs(fluid('ethanol') * 1000)
+        .fluidOutputs(fluid('methanol') * 1000)
         .duration(160)
         .EUt(VA[LV])
         .buildAndRegister()

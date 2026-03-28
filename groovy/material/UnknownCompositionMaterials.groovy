@@ -3338,9 +3338,8 @@ class UnknownCompositionMaterials {
 
         CrudeKetoneAlcoholOil = new Material.Builder(4724, SuSyUtility.susyId('crude_ketone_alcohol_oil'))
                 .liquid()
-                .components(Cyclohexanol * 7, Cyclohexanone * 2, Water * 2)
                 .flags(FLAMMABLE)
-                .colorAverage()
+                .color(0x80784a)
                 .build()
 
         NitricAcidMotherLiquor = new Material.Builder(4725, SuSyUtility.susyId('nitric_acid_mother_liquor'))

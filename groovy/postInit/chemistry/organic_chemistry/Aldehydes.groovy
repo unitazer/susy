@@ -112,7 +112,7 @@ MIXER.recipeBuilder()
     .buildAndRegister()
 
 BCR.recipeBuilder()
-    .notConsumable(fluid('wacker_catalyst_solution') * 50)
+    .notConsumable(fluid('wacker_catalyst_solution') * 1000)
     .fluidInputs(fluid('ethylene') * 50)
     .fluidInputs(fluid('oxygen') * 50)
     .fluidOutputs(fluid('gtfo_acetaldehyde') * 50)

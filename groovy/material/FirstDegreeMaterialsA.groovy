@@ -1424,7 +1424,7 @@ class FirstDegreeMaterialsA {
                 .ingot()
                 .components(Gold, Steel)
                 .color(0xb8a639)
-                .flags(GENERATE_FINE_WIRE)
+                .flags(GENERATE_FINE_WIRE, DISABLE_DECOMPOSITION)
                 .build()
 
         GoldConcentrate = new Material.Builder(8300, SuSyUtility.susyId('gold_concentrate'))

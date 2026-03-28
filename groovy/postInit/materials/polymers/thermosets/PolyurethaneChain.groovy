@@ -115,14 +115,14 @@ LCR.recipeBuilder() // Startup
     .fluidInputs(fluid('diluted_nitric_acid') * 1200)
     .fluidInputs(fluid('nitric_acid') * 350)
     .fluidInputs(fluid('oxygen') * 500)
-    .fluidOutputs(fluid('dilute_nitric_acid_mother_liquor') * 1600) // 7 parts nitric, 25 parts water, 9 parts adipic acid
+    .fluidOutputs(fluid('diluted_nitric_acid_mother_liquor') * 1600) // 7 parts nitric, 25 parts water, 9 parts adipic acid
     .fluidOutputs(fluid('nitrous_oxide') * 300)
     .duration(20)
     .EUt(VA[HV])
     .buildAndRegister()
 
-DISTILLERY.recipeBuilder()
-    .fluidInputs(fluid('dilute_nitric_acid_mother_liquor') * 1600)
+DT.recipeBuilder()
+    .fluidInputs(fluid('diluted_nitric_acid_mother_liquor') * 1600)
     .fluidOutputs(fluid('adipic_nitric_acid_mother_liquor') * 800)
     .fluidOutputs(fluid('water') * 800)
     .duration(20)
@@ -131,7 +131,7 @@ DISTILLERY.recipeBuilder()
 
 CRYSTALLIZER.recipeBuilder()
     .fluidInputs(fluid('adipic_nitric_acid_mother_liquor') * 800)
-    .chancedOutput(ore('dustAdipicAcid') * 15, 4500, 0)
+    .chancedOutput(metaitem('dustAdipicAcid') * 15, 4500, 0)
     .fluidOutputs(fluid('nitric_acid_mother_liquor') * 800) // 7 parts nitric, 9 parts water
     .duration(20)
     .EUt(VA[LV])
@@ -143,7 +143,7 @@ LCR.recipeBuilder() // Looping
     .fluidInputs(fluid('nitric_acid_mother_liquor') * 800)
     .fluidInputs(fluid('water') * 150)
     .fluidInputs(fluid('oxygen') * 500)
-    .fluidOutputs(fluid('dilute_nitric_acid_mother_liquor') * 1600) // 7 parts nitric, 25 parts water, 9 parts adipic acid
+    .fluidOutputs(fluid('diluted_nitric_acid_mother_liquor') * 1600) // 7 parts nitric, 25 parts water, 9 parts adipic acid
     .fluidOutputs(fluid('nitrous_oxide') * 300)
     .duration(20)
     .EUt(VA[HV])

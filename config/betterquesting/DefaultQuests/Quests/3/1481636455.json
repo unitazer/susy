@@ -1,27 +1,29 @@
 {
   "preRequisites:11": [
-    50,
-    97
+    504
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.130.desc",
+      "desc:8": "susy.quest.db.1481636455.desc",
       "frame:8": "GATE",
       "icon:10": {
-        "Damage:2": 986,
-        "id:8": "gregtech:machine"
+        "id:8": "susy:eccentric_roll"
       },
-      "ismain:1": 1,
-      "name:8": "susy.quest.db.130.title"
+      "name:8": "susy.quest.db.1481636455.title"
     }
   },
-  "questID:3": 130,
+  "questID:3": 1481636455,
   "tasks:9": {
     "0:10": {
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "Damage:2": 986,
+          "Damage:2": 14741,
+          "id:8": "gregtech:machine"
+        },
+        "1:10": {
+          "Count:3": 1,
+          "Damage:2": 14742,
           "id:8": "gregtech:machine"
         }
       },

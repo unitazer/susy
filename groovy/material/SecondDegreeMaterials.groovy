@@ -576,7 +576,7 @@ class SecondDegreeMaterials {
 
         AlluvialDivalentPalladiumSolution.setFormula('(H2PdCl4)(ZnCl2)(HCl)4(H2O)14', true)
 
-        SupportedPlatinumChloride = new Material.Builder(13091, SuSyUtility.susyId('supported_platinum'))
+        SupportedPlatinumChloride = new Material.Builder(13091, SuSyUtility.susyId('supported_platinum_chloride'))
                 .dust()
                 .components(Hydrogen * 2, Platinum, Chlorine * 6, Water * 6, Alumina * 9)
                 .colorAverage()

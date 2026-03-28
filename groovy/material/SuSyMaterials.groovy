@@ -1748,7 +1748,7 @@ class SuSyMaterials {
     // Second Degree Materials
 
     public static Material SupportedPlatinumChloride
-    public static Material PalladiumPrecursorSolution
+    public static Material SupportedPalladiumChloride
     public static Material SupportedPlatinum
     public static Material NitrateSaltMix
     public static Material AmmoniumChlorideSolution

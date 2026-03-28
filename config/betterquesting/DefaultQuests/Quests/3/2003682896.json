@@ -1,24 +1,25 @@
 {
   "preRequisites:11": [
-    262318723,
-    45
+    243
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.228.desc",
+      "desc:8": "susy.quest.db.2003682896.desc",
       "icon:10": {
-        "id:8": "minecraft:gunpowder"
+        "Damage:2": 321,
+        "id:8": "gregtech:machine"
       },
-      "name:8": "susy.quest.db.228.title"
+      "name:8": "susy.quest.db.2003682896.title"
     }
   },
-  "questID:3": 228,
+  "questID:3": 2003682896,
   "tasks:9": {
     "0:10": {
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "id:8": "minecraft:gunpowder"
+          "Damage:2": 321,
+          "id:8": "gregtech:machine"
         }
       },
       "taskID:8": "bq_standard:retrieval"

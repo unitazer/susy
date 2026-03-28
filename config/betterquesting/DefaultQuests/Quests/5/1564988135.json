@@ -1,35 +1,25 @@
 {
-  "preRequisiteTypes:7": [
-    0,
-    0,
-    1
-  ],
   "preRequisites:11": [
-    417,
-    510,
-    507
+    977680348
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.665.desc",
+      "desc:8": "susy.quest.db.1564988135.desc",
       "icon:10": {
-        "id:8": "appliedenergistics2:dummy_fluid_item",
-        "tag:10": {
-          "FluidName:8": "reformed_hydrogen_rich_syngas"
-        }
+        "Damage:2": 90,
+        "id:8": "gregtech:meta_catalyst_pellet"
       },
-      "name:8": "susy.quest.db.665.title",
-      "questlogic:8": "OR",
+      "name:8": "susy.quest.db.1564988135.title",
       "tasklogic:8": "OR"
     }
   },
-  "questID:3": 665,
+  "questID:3": 1564988135,
   "tasks:9": {
     "0:10": {
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
-          "FluidName:8": "reformed_hydrogen_rich_syngas"
+          "FluidName:8": "cativa_process_catalyst"
         }
       },
       "taskID:8": "bq_standard:fluid"
@@ -39,7 +29,7 @@
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
-          "FluidName:8": "reformed_monoxide_rich_syngas"
+          "FluidName:8": "monsanto_process_catalyst"
         }
       },
       "taskID:8": "bq_standard:fluid"
