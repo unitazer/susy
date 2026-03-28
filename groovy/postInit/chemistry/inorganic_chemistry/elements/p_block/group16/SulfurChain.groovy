@@ -157,7 +157,7 @@ BCR.recipeBuilder()
         .EUt(VA[ULV])
         .buildAndRegister()
 
-    DISTILLERY.recipeBuilder()
+    ROASTER.recipeBuilder()
         .inputs(ore('dustGreenVitriol') * 21)
         .fluidOutputs(fluid('dense_steam') * 7000)
         .outputs(metaitem('dustIronSulfate') * 6)
