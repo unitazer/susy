@@ -1,4 +1,4 @@
-# UPDATE 0.1.16.4.1 (The Going Insane Update)
+# UPDATE 0.1.16.4.1
 ## Mod Changes
 ### Mod Updates
 - Better Questing Unofficial 4.2.7 → 4.3.1
