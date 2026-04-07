@@ -1884,6 +1884,7 @@ susy.material.unsaturated_polyalphaolefin=Unsaturated Polyalphaolefin
 susy.material.n_butanol_waste=n-Butanol Waste
 susy.material.palladium_precursor_solution=Palladium Precursor Solution
 susy.material.supported_palladium=Supported Palladium
+susy.material.supported_palladium_chloride=Supported Palladium Chloride
 susy.material.polyalphaolefin=Polyalphaolefin (PAO)
 susy.material.polybutene_mixture=Polybutene Mixture
 susy.material.polybutene=Polybutene
