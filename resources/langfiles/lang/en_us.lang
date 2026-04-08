@@ -676,12 +676,6 @@ susy.material.pyridine=Pyridine
 susy.material.quinoline=Quinoline
 
 susy.material.soda_ash=Soda Ash (Sodium Carbonate)
-
-susy.material.concentrated_brine=Concentrated Brine
-susy.material.brine_evaporite=Brine Evaporite
-susy.material.boron_free_brine=Boron-Free Brine
-susy.material.lithium_free_brine=Lithium-Free Brine
-susy.material.chlorinated_brine=Chlorinated Brine
 susy.material.impure_bromine=Impure Bromine
 susy.material.concentrated_salt_water=Concentrated Salt Water
 susy.material.hypersaline_water=Hypersaline Water
@@ -698,7 +692,6 @@ susy.material.magnesium_chloride_solution=Magnesium Chloride Solution
 susy.material.wood_ash=Wood Ash
 susy.material.potassium_carbonate_solution=Potassium Carbonate Solution
 susy.material.magnesium_sulfate=Magnesium Sulfate
-susy.material.very_concentrated_brine=Very Concentrated Brine
 susy.material.langbeinite_leach=Langbeinite Leach
 susy.material.polyhalite_leach=Polyhalite Leach
 susy.material.concentrated_polyhalite_leach=Concentrated Polyhalite Leach
