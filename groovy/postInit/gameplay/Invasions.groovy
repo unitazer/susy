@@ -72,10 +72,31 @@ new MobHordeEvent((player) -> {
     bandit.getEntityData().setTag("susy", root);
 
     return bandit;
-}, 2, 4, "bandit_scouts")
+}, 1, 2, "bandit_scouts")
         .setTimer(144000, 216000)	        // 2 - 3 hours
-        .minHate("Bandits", 4) //adjust min hate later
+        .minHate("Bandits", 5) //adjust min hate later
         .runCommandOnLanding("say test")
+
+
+
+// summon techguns:bandit ~ ~ ~ {ArmorItems:[{id:"techguns:t1_scout_boots",Count:1},{id:"techguns:t1_scout_leggings",Count:1},{id:"techguns:t1_scout_chestplate",Count:1},{id:"techguns:t1_scout_helmet",Count:1}]}
+
+
+new MobHordeEvent((player) -> {
+    Bandit bandit = new Bandit(player.world);
+    bandit.addRandomArmor(0);
+
+    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+    root.setString("faction", "Bandits");
+    root.setInteger("hate", -1);
+    bandit.getEntityData().setTag("susy", root);
+
+    return bandit;
+}, 3, 5, "bandit_small")
+        .setTimer(144000, 216000)	        // 2 - 3 hours
+        .minHate("Bandits", 15) //adjust min hate later
+        .runCommandOnLanding("say test")
+
 
 /*
 // Commands for pods
@@ -98,11 +119,17 @@ new MobHordeEvent((player) -> null, 20, 20, "debug_invasion")
             double radius = 30;
             double angle = t * 2 * Math.PI;
             return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
-        }, Arrays.asList(command3,command4,command5))
+        },
+                Arrays.asList(command3, command4, command5),
+                (player) -> {
+                    Bandit bandit = new Bandit(player.world);
+                    bandit.addRandomArmor(1);
+                    return bandit;
+                })
         .allignBlock()
         .setDistribution(50.0,50.0);
-
  */
+
 /*
 // Example 1: Square
 new MobHordeEvent({ player -> null }, 10, 10, "square_invasion")
