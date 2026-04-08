@@ -53,7 +53,7 @@ new MobHordeEvent((player) -> {EntityZombie zombie = new EntityZombie(player.wor
 // when the raid ends and there are raiders alive, the hate gets inverted and added instead
 // this means that the player will slowly build up hate the longer they ignore invasions for
 // only applies to human factions, zombies are :dimbass: and don't understand hate
-// if hate is not meant to change, just sate it to 0 (important for sieges)
+// if hate is not meant to change, just set it to 0 (important for sieges)
 
 // Why this system? "Weakness invites aggression" - Ronald Reagan
 // if the bandits think they can get away with raiding yo shit they will keep doing it :troll:
