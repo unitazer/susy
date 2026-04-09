@@ -2680,6 +2680,9 @@ susy.material.trimethyl_gallium=Trimethylgallium
 susy.material.trimethyl_indium=Trimethylindium
 susy.material.yttrium_aluminium_garnet_cerium=Ce-Doped Yttrium Aluminium Garnet
 susy.material.delithiated_salar_brine=Delithiated Salar Brine
+susy.material.dimethyl_one_three_dioxane=4,4-dimethyl-1,3-dioxane
+susy.material.methylbutynol=Methylbutynol
+susy.material.methylbutenol=Methylbutenol
 
 # Isotopes
 

@@ -1671,6 +1671,9 @@ class SuSyMaterials {
     public static Material AcetaldehydeSolution
     public static Material GammaAlumina
     public static Material FineGammaAlumina
+    public static Material DimethylOneThreeDioxane
+    public static Material Methylbutynol
+    public static Material Methylbutenol
 
     // HP Materials
 
