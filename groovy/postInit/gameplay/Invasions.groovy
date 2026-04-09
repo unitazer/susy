@@ -4,6 +4,7 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
 import techguns.entities.npcs.Bandit;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.nbt.NBTTagCompound
 
 //zombie waves
 //can happen at any time, for any reason
@@ -57,15 +58,39 @@ new MobHordeEvent((player) -> {EntityZombie zombie = new EntityZombie(player.wor
 
 // Why this system? "Weakness invites aggression" - Ronald Reagan
 // if the bandits think they can get away with raiding yo shit they will keep doing it :troll:
+
 //HATE advancement Reg, for progression
-MobHordeEvent.baseline(new ResourceLocation("gregtech:low_voltage/23_lv_assembler"), 10)
+
+MobHordeEvent.baseline(new ResourceLocation("gregtech:steam/12_electronic_circuit"), 1)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:low_voltage/root_lv"), 3)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:low_voltage/23_lv_assembler"), 5)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:low_voltage/27_electric_blast_furnace"), 10)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:medium_voltage/root_mv"), 15)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:medium_voltage/42_kanthal_coil"), 20)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:high_voltage/root_hv"), 23)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:medium_voltage/37_advanced_integrated_logic_circuit"), 25)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:high_voltage/44_distillation_tower"), 35)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:extreme_voltage/root_ev"), 40)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:high_voltage/40_workstation"), 50)
+MobHordeEvent.baseline(new ResourceLocation("gregtech:insane_voltage/root_iv"), 65)
 
 //Human invasions
 
+//Scripted
+//Ivan, the tutorial raider
+
+
+//Random
+/**
+ scouts
+ 1-2 people
+ combat knives
+ bandit helmets only
+ very weak, early game enemies
+**/
 new MobHordeEvent((player) -> {
     Bandit bandit = new Bandit(player.world);
-    bandit.addRandomArmor(0);
-
+    //hate
     NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
     root.setString("faction", "Bandits");
     root.setInteger("hate", -1);
@@ -73,29 +98,86 @@ new MobHordeEvent((player) -> {
 
     return bandit;
 }, 1, 2, "bandit_scouts")
-        .setTimer(144000, 216000)	        // 2 - 3 hours
-        .minHate("Bandits", 5) //adjust min hate later
-        .runCommandOnLanding("say test")
+        .setPostSpawnModifier({ entity ->
+            NBTTagCompound nbt = new NBTTagCompound()
+            def armor = new net.minecraft.nbt.NBTTagList()
+            ["boots","leggings","chestplate","helmet"].eachWithIndex { name, idx ->
+                def tag = new NBTTagCompound()
+                if (idx == 3) {
+                    tag.setString("id", "techguns:t1_scout_helmet")
+                    tag.setByte("Count", (byte)1)
+                }
+                armor.appendTag(tag)
+            }
+            def hands = new net.minecraft.nbt.NBTTagList()
+            def main = new NBTTagCompound()
+            main.setString("id", "techguns:combatknife")
+            main.setByte("Count", (byte)1)
+            hands.appendTag(main)
+            hands.appendTag(new NBTTagCompound())
+            nbt.setTag("ArmorItems", armor)
+            nbt.setTag("HandItems", hands)
+            entity.readEntityFromNBT(nbt)
+            return entity
+        })
+        .setTimer(144000, 216000)
+        .minHate("Bandits", 5)
 
-
-
-// summon techguns:bandit ~ ~ ~ {ArmorItems:[{id:"techguns:t1_scout_boots",Count:1},{id:"techguns:t1_scout_leggings",Count:1},{id:"techguns:t1_scout_chestplate",Count:1},{id:"techguns:t1_scout_helmet",Count:1}]}
-
+/**
+ small raiding band
+ 3-6 people
+ weapons: combat knives, revolvers, bolt action rifles
+ random bandit armor
+ small raiding party
+ congratulations player, you have made enough noise to be noticed!
+ **/
 
 new MobHordeEvent((player) -> {
     Bandit bandit = new Bandit(player.world);
-    bandit.addRandomArmor(0);
-
+    //hate
     NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
     root.setString("faction", "Bandits");
     root.setInteger("hate", -1);
     bandit.getEntityData().setTag("susy", root);
 
     return bandit;
-}, 3, 5, "bandit_small")
-        .setTimer(144000, 216000)	        // 2 - 3 hours
-        .minHate("Bandits", 15) //adjust min hate later
-        .runCommandOnLanding("say test")
+}, 3, 6, "bandit_small_raid")
+        .setTimer(144000, 216000)
+        .minHate("Bandits", 15)
+        .setPostSpawnModifier(entity -> {
+            if (entity instanceof Bandit) {
+                NBTTagCompound nbt = new NBTTagCompound();
+
+                // List of possible weapons
+                String[] possibleWeapons = new String[]{
+                        "techguns:combatknife",
+                        "techguns:revolver",
+                        "techguns:boltaction"
+                };
+
+                // Pick a random weapon
+                String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
+                net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                main.setString("id", chosenWeapon);
+                main.setByte("Count", (byte)1);
+                hands.appendTag(main);
+                hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+
+                nbt.setTag("HandItems", hands);
+
+                entity.readEntityFromNBT(nbt);
+            }
+            return entity;
+        });
+
+
+
+
+
+
+
+
 
 
 /*
@@ -109,27 +191,38 @@ String command5 = "say 3"
 
 new MobHordeEvent((player) -> null, 20, 20, "debug_invasion")
         .runCommandOnLanding(command0)
-        .addPattern(t -> {
-            double radius = 20;
-            double angle = t * 2 * Math.PI;
-            return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
-        }, command3)
+        .addPattern(
+                t -> {
+                    double radius = 20;
+                    double angle = t * 2 * Math.PI;
+                    return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
+                },
+                null,                        // pattern-specific commands
+                null,                        // supplierOverride (null = default)
+                null                         // postSpawnModifier (null = default)
+        )
 
-        .addPattern(t -> {
-            double radius = 30;
-            double angle = t * 2 * Math.PI;
-            return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
-        },
+        .addPattern(
+                t -> {
+                    double radius = 30;
+                    double angle = t * 2 * Math.PI;
+                    return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
+                },
                 Arrays.asList(command3, command4, command5),
-                (player) -> {
+                player -> {
                     Bandit bandit = new Bandit(player.world);
                     bandit.addRandomArmor(1);
                     return bandit;
-                })
+                },
+                entity -> {
+                    // optional post-spawn modifier per entity
+                    return entity;
+                }
+        )
         .allignBlock()
         .setDistribution(50.0,50.0);
- */
 
+ */
 /*
 // Example 1: Square
 new MobHordeEvent({ player -> null }, 10, 10, "square_invasion")
