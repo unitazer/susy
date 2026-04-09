@@ -10,36 +10,44 @@ import net.minecraft.nbt.NBTTagCompound
 //can happen at any time, for any reason
 //great at keeping the tension up while not being too world-ending
 
-new MobHordeEvent((player) -> {EntityZombie zombie = new EntityZombie(player.world);
+new MobHordeEvent((player) -> {
+    EntityZombie zombie = new EntityZombie(player.world);
     zombie.addPotionEffect(new PotionEffect(MobEffects.SPEED, 999999, 0));
-    return zombie;}, 2, 4, "zombie_small")
+    return zombie;
+}, 2, 4, "zombie_small")
         .setNightOnly(true)
-        .setTimer(144000, 216000)		// 2 - 3 hours
+        .setTimer(144000, 216000)        // 2 - 3 hours
         .setCanUsePods(false)
 
-new MobHordeEvent((player) -> {EntityZombie zombie = new EntityZombie(player.world);
+new MobHordeEvent((player) -> {
+    EntityZombie zombie = new EntityZombie(player.world);
     zombie.addPotionEffect(new PotionEffect(MobEffects.SPEED, 999999, 1));
     zombie.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 999999, 0));
-    return zombie;}, 5, 10, "zombie_medium")
+    return zombie;
+}, 5, 10, "zombie_medium")
         .setNightOnly(true)
-        .setTimer(144000, 216000)		// 2 - 3 hours
+        .setTimer(144000, 216000)        // 2 - 3 hours
         .setCanUsePods(false)
 
-new MobHordeEvent((player) -> {EntityZombie zombie = new EntityZombie(player.world);
+new MobHordeEvent((player) -> {
+    EntityZombie zombie = new EntityZombie(player.world);
     zombie.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 999999, 1));
     zombie.addPotionEffect(new PotionEffect(MobEffects.SPEED, 999999, 1));
-    return zombie;}, 8, 18, "zombie_large")
+    return zombie;
+}, 8, 18, "zombie_large")
         .setNightOnly(true)
-        .setTimer(144000, 216000)		// 2 - 3 hours
+        .setTimer(144000, 216000)        // 2 - 3 hours
         .setCanUsePods(false)
 
-new MobHordeEvent((player) -> {EntityZombie zombie = new EntityZombie(player.world);
+new MobHordeEvent((player) -> {
+    EntityZombie zombie = new EntityZombie(player.world);
     zombie.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 999999, 1));
     zombie.addPotionEffect(new PotionEffect(MobEffects.SPEED, 999999, 1));
     zombie.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 999999, 2));
-    return zombie;}, 20, 30, "zombie_massive")
+    return zombie;
+}, 20, 30, "zombie_massive")
         .setNightOnly(true)
-        .setTimer(144000, 216000)		// 2 - 3 hours
+        .setTimer(144000, 216000)        // 2 - 3 hours
         .setCanUsePods(false)
 
 
@@ -82,12 +90,13 @@ MobHordeEvent.baseline(new ResourceLocation("gregtech:insane_voltage/root_iv"), 
 
 //Random
 /**
- scouts
+ bandit scouts
  1-2 people
  combat knives
  bandit helmets only
  very weak, early game enemies
-**/
+ you haven't been noticed... yet
+ **/
 new MobHordeEvent((player) -> {
     Bandit bandit = new Bandit(player.world);
     //hate
@@ -101,18 +110,18 @@ new MobHordeEvent((player) -> {
         .setPostSpawnModifier({ entity ->
             NBTTagCompound nbt = new NBTTagCompound()
             def armor = new net.minecraft.nbt.NBTTagList()
-            ["boots","leggings","chestplate","helmet"].eachWithIndex { name, idx ->
+            ["boots", "leggings", "chestplate", "helmet"].eachWithIndex { name, idx ->
                 def tag = new NBTTagCompound()
                 if (idx == 3) {
                     tag.setString("id", "techguns:t1_scout_helmet")
-                    tag.setByte("Count", (byte)1)
+                    tag.setByte("Count", (byte) 1)
                 }
                 armor.appendTag(tag)
             }
             def hands = new net.minecraft.nbt.NBTTagList()
             def main = new NBTTagCompound()
             main.setString("id", "techguns:combatknife")
-            main.setByte("Count", (byte)1)
+            main.setByte("Count", (byte) 1)
             hands.appendTag(main)
             hands.appendTag(new NBTTagCompound())
             nbt.setTag("ArmorItems", armor)
@@ -124,11 +133,10 @@ new MobHordeEvent((player) -> {
         .minHate("Bandits", 5)
 
 /**
- small raiding band
+ small raiding party
  3-6 people
  weapons: combat knives, revolvers, bolt action rifles
  random bandit armor
- small raiding party
  congratulations player, you have made enough noise to be noticed!
  **/
 
@@ -145,43 +153,351 @@ new MobHordeEvent((player) -> {
         .setTimer(144000, 216000)
         .minHate("Bandits", 15)
         .setPostSpawnModifier(entity -> {
-            if (entity instanceof Bandit) {
-                NBTTagCompound nbt = new NBTTagCompound();
 
-                // List of possible weapons
-                String[] possibleWeapons = new String[]{
-                        "techguns:combatknife",
-                        "techguns:revolver",
-                        "techguns:boltaction"
-                };
+            NBTTagCompound nbt = new NBTTagCompound();
 
-                // Pick a random weapon
-                String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
-                net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
-                net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
-                main.setString("id", chosenWeapon);
-                main.setByte("Count", (byte)1);
-                hands.appendTag(main);
-                hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+            // List of possible weapons
+            String[] possibleWeapons = new String[]{
+                    "techguns:combatknife",
+                    "techguns:revolver",
+                    "techguns:boltaction"
+            };
 
-                nbt.setTag("HandItems", hands);
-
-                entity.readEntityFromNBT(nbt);
-            }
+            // Pick a random weapon
+            String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
+            net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+            net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+            main.setString("id", chosenWeapon);
+            main.setByte("Count", (byte) 1);
+            hands.appendTag(main);
+            hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+            nbt.setTag("HandItems", hands);
+            entity.readEntityFromNBT(nbt);
             return entity;
         });
 
+/**
+ medium raiding party
+ 5-10 people
+ weapons: revolvers, bolt action rifles, sawed off shotgun, pistol
+ random bandit armor
+ Looks like you're stuck here for a while after all.
+ **/
 
+new MobHordeEvent((player) -> {
+    Bandit bandit = new Bandit(player.world);
+    //hate
+    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+    root.setString("faction", "Bandits");
+    root.setInteger("hate", -2);
+    bandit.getEntityData().setTag("susy", root);
 
+    return bandit;
+}, 5, 10, "bandit_medium_raid")
+        .setTimer(144000, 216000)
+        .minHate("Bandits", 30)
+        .setPostSpawnModifier(entity -> {
 
+            NBTTagCompound nbt = new NBTTagCompound();
 
+            // List of possible weapons
+            String[] possibleWeapons = new String[]{
+                    "techguns:sawedoff",
+                    "techguns:revolver",
+                    "techguns:boltaction",
+                    "techguns:pistol"
+            };
 
+            // Pick a random weapon
+            String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
+            net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+            net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+            main.setString("id", chosenWeapon);
+            main.setByte("Count", (byte) 1);
+            hands.appendTag(main);
+            hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+            nbt.setTag("HandItems", hands);
+            entity.readEntityFromNBT(nbt);
+            return entity;
+        });
 
+/**
+ large raiding party
+ 10-18 people
+ weapons: thompson, bolt action rifles, ak47, mac10
+ full bandit armor
+ organized spawn instead of random insertion
+ auxiliaries present
+ Well well well, someone is becoming a problem.
+ **/
 
+new MobHordeEvent((player) -> null, 10, 18, "bandit_large_raid")
+        .setTimer(144000, 216000)
+        .minHate("Bandits", 50)
 
+        //normal raider
+        .addPattern(
+                //circle
+                t -> {
+                    double radius = 10;
+                    double angle = t * 2 * Math.PI;
+                    return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
+                },
+                null,
+                player -> {
+                    Bandit bandit = new Bandit(player.world);
+                    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+                    root.setString("faction", "Bandits");
+                    root.setInteger("hate", -3);
+                    bandit.getEntityData().setTag("susy", root);
+                    return bandit;
+                },
+                entity -> {
+                    if (entity instanceof Bandit) {
+                        NBTTagCompound nbt = new NBTTagCompound();
+
+                        // Armor
+                        net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                        String[] armorItems = new String[]{
+                                "techguns:t1_scout_boots",
+                                "techguns:t1_scout_leggings",
+                                "techguns:t1_scout_chestplate",
+                                "techguns:t1_scout_helmet"
+                        };
+                        for (String item : armorItems) {
+                            net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                            armorTag.setString("id", item);
+                            armorTag.setByte("Count", (byte)1);
+                            armor.appendTag(armorTag);
+                        }
+                        nbt.setTag("ArmorItems", armor);
+
+                        // Random weapon
+                        String[] possibleWeapons = new String[]{
+                                "techguns:thompson",
+                                "techguns:boltaction",
+                                "techguns:mac10",
+                                "techguns:ak47"
+                        };
+                        String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
+
+                        net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                        net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                        main.setString("id", chosenWeapon);
+                        main.setByte("Count", (byte)1);
+                        hands.appendTag(main);
+                        hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                        nbt.setTag("HandItems", hands);
+
+                        entity.readEntityFromNBT(nbt);
+                    }
+                    return entity;
+                }
+        )
+        //mercenary
+        .addPattern(
+                //square
+                t -> {
+                    double n = 2;
+                    double angle = t * 2 * Math.PI;
+                    double radius = 15;
+                    double x = (Math.cos(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.cos(angle)), 2/n) * radius;
+                    double z = (Math.sin(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.sin(angle)), 2/n) * radius;
+                    return new MobHordeEvent.Vec2(x, z);
+                },
+                null,
+                player -> {
+                    Bandit bandit = new Bandit(player.world);
+                    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+                    root.setString("faction", "Bandits");
+                    root.setInteger("hate", -6);
+                    bandit.getEntityData().setTag("susy", root);
+                    return bandit;
+                },
+                entity -> {
+                    if (entity instanceof Bandit) {
+                        NBTTagCompound nbt = new NBTTagCompound();
+
+                        // Armor
+                        net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                        String[] armorItems = new String[]{
+                                "techguns:t2_combat_boots",
+                                "techguns:t2_combat_leggings",
+                                "techguns:t2_combat_chestplate",
+                                "techguns:t2_combat_helmet"
+                        };
+                        for (String item : armorItems) {
+                            net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                            armorTag.setString("id", item);
+                            armorTag.setByte("Count", (byte)1);
+                            armor.appendTag(armorTag);
+                        }
+                        nbt.setTag("ArmorItems", armor);
+
+                        // m4 only
+                        String chosenWeapon = "techguns:m4"
+
+                        net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                        net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                        main.setString("id", chosenWeapon);
+                        main.setByte("Count", (byte)1);
+                        hands.appendTag(main);
+                        hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                        nbt.setTag("HandItems", hands);
+
+                        entity.readEntityFromNBT(nbt);
+                    }
+                    return entity;
+                }
+        )
+        .setDistribution(90.0,10.0); //mostly normal bandits, some mercenaries
+
+/**
+ massive raiding party
+ 20-30 people
+ weapons: ak47, combat shotguns, thompson
+ full basic combat armor
+ organized spawn instead of random insertion
+ Congratulations, you have become impossible to ignore
+ **/
+
+new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
+        .setTimer(144000, 216000)
+        .minHate("Bandits", 100)
+
+        //normal raider
+        .addPattern(
+                //circle
+                t -> {
+                    double radius = 10;
+                    double angle = t * 2 * Math.PI;
+                    return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
+                },
+                null,
+                player -> {
+                    Bandit bandit = new Bandit(player.world);
+                    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+                    root.setString("faction", "Bandits");
+                    root.setInteger("hate", -5);
+                    bandit.getEntityData().setTag("susy", root);
+                    return bandit;
+                },
+                entity -> {
+                    if (entity instanceof Bandit) {
+                        NBTTagCompound nbt = new NBTTagCompound();
+
+                        // Armor
+                        net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                        String[] armorItems = new String[]{
+                                "techguns:t1_combat_boots",
+                                "techguns:t1_combat_leggings",
+                                "techguns:t1_combat_chestplate",
+                                "techguns:t1_combat_helmet"
+                        };
+                        for (String item : armorItems) {
+                            net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                            armorTag.setString("id", item);
+                            armorTag.setByte("Count", (byte)1);
+                            armor.appendTag(armorTag);
+                        }
+                        nbt.setTag("ArmorItems", armor);
+
+                        // Random weapon
+                        String[] possibleWeapons = new String[]{
+                                "techguns:thompson",
+                                "techguns:combatshotgun",
+                                "techguns:ak47"
+                        };
+                        String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
+
+                        net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                        net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                        main.setString("id", chosenWeapon);
+                        main.setByte("Count", (byte)1);
+                        hands.appendTag(main);
+                        hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                        nbt.setTag("HandItems", hands);
+
+                        entity.readEntityFromNBT(nbt);
+                    }
+                    return entity;
+                }
+        )
+        //mercenary
+        .addPattern(
+                //square
+                t -> {
+                    double n = 2;
+                    double angle = t * 2 * Math.PI;
+                    double radius = 15;
+                    double x = (Math.cos(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.cos(angle)), 2/n) * radius;
+                    double z = (Math.sin(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.sin(angle)), 2/n) * radius;
+                    return new MobHordeEvent.Vec2(x, z);
+                },
+                null,
+                player -> {
+                    Bandit bandit = new Bandit(player.world);
+                    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+                    root.setString("faction", "Bandits");
+                    root.setInteger("hate", -6);
+                    bandit.getEntityData().setTag("susy", root);
+                    return bandit;
+                },
+                entity -> {
+                    if (entity instanceof Bandit) {
+                        NBTTagCompound nbt = new NBTTagCompound();
+
+                        // Armor
+                        net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                        String[] armorItems = new String[]{
+                                "techguns:t2_combat_boots",
+                                "techguns:t2_combat_leggings",
+                                "techguns:t2_combat_chestplate",
+                                "techguns:t2_combat_helmet"
+                        };
+                        for (String item : armorItems) {
+                            net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                            armorTag.setString("id", item);
+                            armorTag.setByte("Count", (byte)1);
+                            armor.appendTag(armorTag);
+                        }
+                        nbt.setTag("ArmorItems", armor);
+
+                        // m4 only
+                        String chosenWeapon = "techguns:m4"
+
+                        net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                        net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                        main.setString("id", chosenWeapon);
+                        main.setByte("Count", (byte)1);
+                        hands.appendTag(main);
+                        hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                        nbt.setTag("HandItems", hands);
+
+                        entity.readEntityFromNBT(nbt);
+                    }
+                    return entity;
+                }
+        )
+        .setDistribution(80.0,20.0); //mostly normal bandits, some mercenaries
+
+/**
+ siege
+ 40+ people
+ weapons: ak47, combat shotguns, m4
+ full basic combat armor for normal troops
+ spawns in formation
+ mortar support
+ sandbags
+ bandit flare (keeps spawning bandits until you destroy it, they do not count towards the raid)
+ hate resets to baseline if you manage to defeat the siege
+ The bandits consider themselves at total war with you
+ **/
 
 /*
 // Commands for pods
+// example code only, templates, etc...
+// not meant to be used in actual gameplay, dev only
 String command1 = "#gen Test";
 String command2 = "#gen Test1";
 String command0 = "say init"
@@ -225,15 +541,18 @@ new MobHordeEvent((player) -> null, 20, 20, "debug_invasion")
  */
 /*
 // Example 1: Square
+//old code going forward, only use for math equation for shapes
+//test before adding
+
 new MobHordeEvent({ player -> null }, 10, 10, "square_invasion")
-        .addPattern({ t ->
-            double n = 2
-            double angle = t * 2 * Math.PI
-            double radius = 20;
-            new MobHordeEvent.Vec2(
-                    (Math.cos(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.cos(angle)), 2/n) * radius,
-                    (Math.sin(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.sin(angle)), 2/n) * radius
-            )
+        .addPattern(t -> {
+                    double n = 2;
+                    double angle = t * 2 * Math.PI;
+                    double radius = 20;
+                    double x = (Math.cos(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.cos(angle)), 2/n) * radius;
+                    double z = (Math.sin(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.sin(angle)), 2/n) * radius;
+                    return new MobHordeEvent.Vec2(x, z);
+                },
         })
 
 // Example 2: Trapezoid
