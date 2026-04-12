@@ -6,6 +6,9 @@ import net.minecraft.util.math.BlockPos
 
 System.out.println("grs siege loaded")
 
+// /setblock ~ ~ ~ susy:raid_flare_block 0 replace {targetUUID:"31c4910d-9b69-4725-8969-9ed53ac8a7dc"}
+// deverloper uuid, use for RunClient
+
 TileEntityFlare.metaClass.callGroovySpawn = { String type, player ->
 
     switch (type) {
@@ -19,7 +22,7 @@ def spawnBanditRaid(player) {
 
     def world = player.world
 
-    for (int attempt = 0; attempt < 32; attempt++) {
+    for (int attempt = 0; attempt < 4; attempt++) {
         Bandit bandit = new Bandit(world)
         // ===== Custom NBT =====
         NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy")
@@ -69,5 +72,5 @@ def spawnBanditRaid(player) {
         return
     }
 
-    System.out.println("Bandit spawn failed after many attempts")
+    System.out.println("Bandit spawn failed")
 }
