@@ -634,7 +634,7 @@ import static gregtech.api.unification.ore.OrePrefix.dye;
         .fluidInputs(fluid('boron_trifluoride') * 10)
         .fluidOutputs(fluid('polyethylene_glycol') * 1000)
         .duration(200)
-        .EUt(240)
+        .EUt(120)
         .buildAndRegister()
 
 // Antiwear
