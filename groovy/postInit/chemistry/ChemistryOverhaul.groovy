@@ -1472,6 +1472,7 @@ DT.recipeBuilder()
 //Diethyl Ether
 
 CSTR.recipeBuilder()
+    .circuitMeta(1)
     .fluidInputs(fluid('ethanol') * 100)
     .fluidInputs(fluid('sulfuric_acid') * 50)
     .fluidOutputs(fluid('diethyl_ether_solution') * 150)
