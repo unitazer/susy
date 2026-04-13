@@ -19,6 +19,10 @@ this reduces file size by roughly 50% (eg DJ2 4.2mb -> 2.2mb)
 import argparse
 import json
 import os
+import time
+
+def intlist(string):
+    return [int(i) for i in string.split(',')]
 
 def parse_args():
     parser = argparse.ArgumentParser(prog="build", description=__doc__)
@@ -30,6 +34,10 @@ def parse_args():
                         type=str,
                         default="en_us",
                         help="what language the output language file is, defaults to en_us")
+    parser.add_argument("--edit",
+                        type=intlist,
+                        default=[],
+                        help="the quest ID(s) to push back into JSON for editing (comma separated)")
     return parser.parse_args()
 
 # Props that BQ automatically assumes by default, thus only increasing the size of the DefaultQuests json.
@@ -85,11 +93,16 @@ uselessProps = {
 
 basePath = os.path.normpath(os.path.abspath(__file__ + "/../../"))
 defaultQuests = basePath + "/config/betterquesting/DefaultQuests"
+questInfo = defaultQuests + "/QuestSettings.json"
 lang = basePath + "/config/betterquesting/resources/supersymmetry/lang"
 
 def convertToLang(line: str) -> str:
     """replaces any \\n or other json escape sequences with the correct escape character, %"""
     return line.replace("%", "%%").replace("\n", "%n")
+
+def convertFromLang(text: str) -> str:
+    # i love unicode on windows :deranged:
+    return text.replace("%n", "\n").replace("%%", "%").replace('\u00c2\u00a7', '\u00a7')
 
 def nest(location: dict) -> dict:
     """navigates through a dict to delete anything undesired"""
@@ -103,7 +116,7 @@ def nest(location: dict) -> dict:
     return location
 
 
-def i18n(output: dict, id: int, entry: dict, place: str, prefix: str):
+def i18n(output: dict, id: int, entry: dict, place: str, prefix: str, reverse: bool = False):
     """converts questbook title/desc into lang file"""
 
     start = "%s.quest" % prefix
@@ -115,12 +128,16 @@ def i18n(output: dict, id: int, entry: dict, place: str, prefix: str):
     desc = key + ".desc"
 
     if (entry["properties:10"]["betterquesting:10"]["name:8"].startswith(start)):
+        if reverse:
+            entry["properties:10"]["betterquesting:10"]["name:8"] = convertFromLang(output[title])
         alreadyKnownKeys.append(title)
     else:
         output[title] = convertToLang(entry["properties:10"]["betterquesting:10"]["name:8"])
         entry["properties:10"]["betterquesting:10"]["name:8"] = title.rstrip()
         
     if (entry["properties:10"]["betterquesting:10"]["desc:8"].startswith(start)):
+        if reverse:
+            entry["properties:10"]["betterquesting:10"]["desc:8"] = convertFromLang(output[desc])
         alreadyKnownKeys.append(desc)
     else:
         output[desc] = convertToLang(entry["properties:10"]["betterquesting:10"]["desc:8"])
@@ -155,14 +172,36 @@ def key(entry):
     """print(entry[14:(-5 if "desc" in entry else -6)])"""
     return ("db" in entry, int(entry[14:(-5 if "desc" in entry else -6)]), "desc" in entry)
 
+def updateVersion():
+    questKeys = {}
+    try:
+        with open(questInfo, "r", errors="ignore", encoding='utf-8') as file:
+            questKeys = json.load(file)
+    except FileNotFoundError:
+        print("questbook info file %s was not found" % (questInfo))
+
+    version = int(time.time() / 1024)
+    questKeys["betterquesting:10"]["pack_version:1"] = version
+    print("Questbook version no.", version)
+    with open(questInfo, "w", errors="ignore", encoding='utf-8') as file:
+        json.dump(questKeys, file, indent=2)
+
 
 def build(args):
     os.makedirs(lang, exist_ok=True)
     langFile = lang + "/" + args.lang + ".lang"
     questKeys = {}
+    # This is called via main.py without edit present
+    if hasattr(args, "edit"):
+        editQuestIds = args.edit
+    else:
+        editQuestIds = []
+
+    if len(editQuestIds) > 0:
+        print("Editing quest IDs: %s" % editQuestIds)
     
     try:
-        with open(langFile, "r", errors="ignore") as file:
+        with open(langFile, "r", errors="ignore", encoding='utf-8') as file:
             for line in file.readlines():
                 questKeys[line.split("=", 1)[0]] = line.split("=", 1)[1].rstrip()
     except FileNotFoundError:
@@ -172,7 +211,7 @@ def build(args):
     knowKeys = 0
     for root, dirs, files in os.walk(defaultQuests):
         for filename in files:
-            with open(os.path.join(root, filename), "r") as file:
+            with open(os.path.join(root, filename), "r", encoding='utf-8') as file:
                 currentquest = json.load(file)
                 
             if filename == "QuestSettings.json": 
@@ -189,19 +228,21 @@ def build(args):
                 if root.endswith("QuestLines"): 
                     knowKeys += i18n(output=questKeys, id=entryid, entry=currentquest, place="ql", prefix=args.prefix)
                 else:
-                    knowKeys += i18n(output=questKeys, id=entryid, entry=currentquest, place="db", prefix=args.prefix)
+                    knowKeys += i18n(output=questKeys, id=entryid, entry=currentquest, place="db", prefix=args.prefix,
+                                     reverse=entryid in editQuestIds)
 
-            with open(os.path.join(root, filename), "w") as file:
+            with open(os.path.join(root, filename), "w", newline='\n', encoding='utf-8') as file:
                 json.dump(currentquest, file, indent=2)
     
     
     if (knowKeys > 0):
         print("Already knew %s keys " % knowKeys)
     
-    with open(langFile, "w") as file:
+    with open(langFile, "w", newline='\n', encoding='utf-8') as file:
         for i in sorted(questKeys, key=key):
             file.write(i + "=" + questKeys[i] + "\n")
-
+    
+    updateVersion()
 
 if (__name__ == "__main__"):
     build(parse_args())

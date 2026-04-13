@@ -1,0 +1,30 @@
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('dysprosium_chloride_solution') * 6000)
+    .outputs(metaitem('dustDysprosiumChloride') * 4)
+    .fluidOutputs(fluid('water') * 6000)
+    .duration(20)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+BR.recipeBuilder()
+    .inputs(ore('dustDysprosiumChloride') * 4)
+    .fluidInputs(fluid('hydrofluoric_acid') * 3000)
+    .outputs(metaitem('dustDysprosiumFluoride') * 4)
+    .fluidOutputs(fluid('acidic_wastewater') * 9000)
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+REACTION_FURNACE.recipeBuilder()
+    .notConsumable(metaitem('crucible.tantalum'))
+    .inputs(ore('dustDysprosiumFluoride') * 8)
+    .inputs(ore('dustHighPurityCalcium') * 3)
+    .fluidInputs(fluid('helium') * 50)
+    .outputs(metaitem('dustDysprosium') * 2)
+    .outputs(metaitem('dustFluorite') * 9)
+    .duration(200)
+    .EUt(VA[HV] * 2)
+    .buildAndRegister()

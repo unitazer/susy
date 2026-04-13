@@ -9,6 +9,7 @@ journeymap/
 logs/
 saves/
 mods/*.jar
+.idea/
 
 .curseclient
 usercache.json
@@ -20,6 +21,7 @@ index.toml
 *.log
 *.txt
 *.dll
+*.so
 
 build/modlist.*
 config/InvTweaks.cfg
@@ -39,6 +41,8 @@ hei_bookmarks.ini
 config/acronym/saved/
 
 config/beneath/blockdeco.json
+
+config/betterquesting/DefaultQuests/QuestSettings.json
 
 #config/biomesoplenty/biomes/defaults/
 
@@ -99,3 +103,9 @@ visualores/
 .idea/workspace.xml
 servers.dat
 mods/*.jar
+/mods/1.12.2/*.jar
+/mods/memory_repo
+vintagefix/transformerCache/jarDiscoverer.cache
+/journeymap
+hotbar.nbt
+config/susy/susy_canary

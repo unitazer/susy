@@ -1,5 +1,6 @@
 package classes
 
+import gregicality.multiblocks.api.unification.properties.GCYMPropertyKey;
 import gregtech.api.fluids.FluidBuilder
 import gregtech.api.fluids.attribute.FluidAttributes
 import gregtech.api.fluids.store.FluidStorageKey
@@ -12,28 +13,34 @@ import gregtech.api.unification.material.properties.OreProperty
 import gregtech.api.unification.material.properties.PropertyKey
 import supersymmetry.api.fluids.SusyFluidStorageKeys
 import supersymmetry.api.recipes.SuSyRecipeMaps
+import supersymmetry.api.unification.material.properties.DummyABSProperty;
 import supersymmetry.api.unification.material.properties.FiberProperty
+import supersymmetry.api.unification.material.properties.MillBallProperty
 import supersymmetry.api.unification.material.properties.SuSyPropertyKey
 
 import static gregtech.api.unification.material.Materials.*
 import static gregtech.api.unification.material.info.MaterialFlags.*
 import static material.SuSyMaterials.*
 
+import supercritical.api.unification.material.properties.FissionFuelProperty
+import supercritical.api.unification.material.properties.ModeratorProperty
+import supercritical.api.unification.material.properties.SCPropertyKey
+
 //eventManager.listen(EventPriority.LOWEST)
 class ChangeFlags {
-	private static void setupSlurries(Material mat) {
-		def property = new FluidProperty()
-		property.enqueueRegistration(SusyFluidStorageKeys.SLURRY, new FluidBuilder().temperature(293))
-		property.enqueueRegistration(SusyFluidStorageKeys.IMPURE_SLURRY, new FluidBuilder().temperature(293))
+    private static void setupSlurries(Material mat) {
+        def property = new FluidProperty()
+        property.enqueueRegistration(SusyFluidStorageKeys.SLURRY, new FluidBuilder().temperature(293))
+        property.enqueueRegistration(SusyFluidStorageKeys.IMPURE_SLURRY, new FluidBuilder().temperature(293))
 
-		mat.setProperty(PropertyKey.FLUID, property)
-	}
-	
-	private static void setupFluidType(Material mat, FluidStorageKey key, int temp) {
+        mat.setProperty(PropertyKey.FLUID, property)
+    }
+    
+    private static void setupFluidType(Material mat, FluidStorageKey key, int temp) {
         if (mat.getProperty(PropertyKey.FLUID) == null) {
             def property = new FluidProperty();
-		    property.enqueueRegistration(key, new FluidBuilder().temperature(temp))
-		    mat.setProperty(PropertyKey.FLUID, property)
+            property.enqueueRegistration(key, new FluidBuilder().temperature(temp))
+            mat.setProperty(PropertyKey.FLUID, property)
         } else {
             def property = mat.getProperty(PropertyKey.FLUID)
             if (property.getQueuedBuilder(key) != null) {
@@ -42,17 +49,17 @@ class ChangeFlags {
                 property.enqueueRegistration(key, new FluidBuilder().temperature(temp))
             }
         }
-	}
-	private static void setupFluidType(Material mat, FluidStorageKey key) {
+    }
+    private static void setupFluidType(Material mat, FluidStorageKey key) {
         if (mat.getProperty(PropertyKey.FLUID) == null) {
             def property = new FluidProperty();
-		    property.enqueueRegistration(key, new FluidBuilder())
-		    mat.setProperty(PropertyKey.FLUID, property)
+            property.enqueueRegistration(key, new FluidBuilder())
+            mat.setProperty(PropertyKey.FLUID, property)
         } else {
             def property = mat.getProperty(PropertyKey.FLUID)
-		    property.enqueueRegistration(key, new FluidBuilder())
+            property.enqueueRegistration(key, new FluidBuilder())
         }
-	}
+    }
 
     public static void init() {
     //MaterialEvent event ->
@@ -60,6 +67,7 @@ class ChangeFlags {
         log.infoMC("Modifying flags...")
 
         RecipeMaps.BLAST_RECIPES.setMaxFluidInputs(2);
+        RecipeMaps.PYROLYSE_RECIPES.setMaxFluidInputs(2);
         SuSyRecipeMaps.RAILROAD_ENGINEERING_STATION_RECIPES.setMaxFluidInputs(3);
         SuSyRecipeMaps.RAILROAD_ENGINEERING_STATION_RECIPES.setMaxInputs(12);
 
@@ -68,12 +76,14 @@ class ChangeFlags {
         Germanium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Tellurium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Cadmium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Magnesium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Asbestos.setProperty(PropertyKey.INGOT, new IngotProperty());
 
         BisphenolA.setProperty(PropertyKey.DUST, new DustProperty());
+        Polonium.setProperty(PropertyKey.DUST, new DustProperty());
 
         Silver.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(1234, 50, false, false, true, false));
-        Rubber.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(593, 50, true, false, false, false));
+        Rubber.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(593, 6, true, false, false, false));
 
         
         setupFluidType(AntimonyTrifluoride, FluidStorageKeys.LIQUID, 565)
@@ -89,12 +99,33 @@ class ChangeFlags {
         OsmiumTetroxide.addFlags("NO_UNIFICATION")
         //setupFluidType(Iron3Chloride, FluidStorageKeys.GAS, 590) 
 
+        setupFluidType(Sodium, FluidStorageKeys.LIQUID, 371)
+        setupFluidType(SodiumHydroxide, FluidStorageKeys.LIQUID, 591)
+        setupFluidType(Polydimethylsiloxane, FluidStorageKeys.LIQUID, 293)
+        setupFluidType(Glass, FluidStorageKeys.LIQUID, 1800)
+        setupFluidType(PolyvinylButyral, FluidStorageKeys.LIQUID, 440)
+        setupFluidType(Nitrochlorobenzene, FluidStorageKeys.LIQUID, 326)
+        setupFluidType(Iron3Chloride, FluidStorageKeys.LIQUID, 585)
+        setupFluidType(Dichlorobenzidine, FluidStorageKeys.LIQUID, 438)
+        setupFluidType(Diaminobenzidine, FluidStorageKeys.LIQUID, 450)
+        setupFluidType(PhthalicAcid, FluidStorageKeys.LIQUID, 480)
+        setupFluidType(DiphenylIsophtalate, FluidStorageKeys.LIQUID, 410)
+        setupFluidType(Dichlorobenzene, FluidStorageKeys.LIQUID, 256)
+        setupFluidType(SiliconeRubber, FluidStorageKeys.LIQUID, 400)
+        setupFluidType(StyreneButadieneRubber, FluidStorageKeys.LIQUID, 450)
+        setupFluidType(HighPurityGermanium, FluidStorageKeys.LIQUID, 1211)
+        setupFluidType(HighPurityArsenic, FluidStorageKeys.LIQUID, 1090)
+        setupFluidType(HighPuritySelenium, FluidStorageKeys.LIQUID, 494)
+        setupFluidType(BlackSteel, FluidStorageKeys.LIQUID, 1728)
+        setupFluidType(Polytetrafluoroethylene, FluidStorageKeys.LIQUID, 293)
+
         setupFluidType(CarbonDioxide, SusyFluidStorageKeys.SUPERCRITICAL, 304)
         setupFluidType(Propane, SusyFluidStorageKeys.SUPERCRITICAL, 370)
 
         Polybenzimidazole.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, true))
         Polytetrafluoroethylene.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, false))
-        Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder()));
+        Asbestos.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, true))
+        //Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder()));
 
         Tantalum.setProperty(PropertyKey.BLAST, new BlastProperty(3293, GasTier.MID, 480, 240, -1, -1));
         Molybdenum.setProperty(PropertyKey.BLAST, new BlastProperty(2890, GasTier.MID, 480, 240, -1, -1));
@@ -103,6 +134,7 @@ class ChangeFlags {
         Cobalt.setProperty(PropertyKey.BLAST, new BlastProperty(1750, GasTier.LOW, 120, 200, -1, -1));
         Beryllium.setProperty(PropertyKey.BLAST, new BlastProperty(1560, GasTier.LOW, 120, 200, -1, -1));
         Nickel.setProperty(PropertyKey.BLAST, new BlastProperty(1728, GasTier.LOW, 120, 120, -1, -1));
+        Hafnium.setProperty(PropertyKey.BLAST, new BlastProperty(2227, GasTier.LOW, 120, 120, -1, -1));
 
         // Supercons, max amps multiplied by 4.
         ManganesePhosphide.getProperty(PropertyKey.WIRE).setAmperage(8);
@@ -120,34 +152,48 @@ class ChangeFlags {
         Polyethylene.getProperty(PropertyKey.FLUID_PIPE).setCanContain(FluidAttributes.ACID, true);
         Polytetrafluoroethylene.getProperty(PropertyKey.FLUID_PIPE).setCryoProof(true);
 
+        // Dummy properties for continuous casting
+        Steel.setProperty(GCYMPropertyKey.ALLOY_BLAST, new DummyABSProperty())
+        Aluminium.setProperty(GCYMPropertyKey.ALLOY_BLAST, new DummyABSProperty())
+
         // Flags
 
         Asbestos.addFlags("generate_foil");
+        Magnesium.addFlags("generate_rod", "generate_plate");
         Tellurium.addFlags("generate_plate");
-        Steel.addFlags("generate_spring", "generate_spring_small");
+        Steel.addFlags("generate_spring", "generate_spring_small", "continuously_cast");
         Titanium.addFlags("generate_foil", "generate_spring", "generate_spring_small");
         Lead.addFlags("generate_round");
-        Nickel.addFlags("generate_rod", "generate_foil");
-        Aluminium.addFlags("generate_round", "generate_rotor");
-        Tungsten.addFlags("generate_fine_wire");
+        Nickel.addFlags("generate_rod", "generate_foil", "generate_fine_wire");
+        Aluminium.addFlags("generate_round", "generate_rotor", "continuously_cast");
+        Tungsten.addFlags("generate_fine_wire", "hip_pressed");
         Molybdenum.addFlags("generate_fine_wire");
-        Tantalum.addFlags("generate_rod");
-        Tantalum.addFlags("generate_fine_wire");
+        Tantalum.addFlags("generate_rod", "generate_fine_wire", "generate_catalyst_bed", "generate_plate");
         Titanium.addFlags("generate_fine_wire");
-        Tantalum.addFlags("generate_catalyst_bed");
         ChromiumTrioxide.addFlags("generate_catalyst_bed");
         Iron3Chloride.addFlags("generate_catalyst_bed");
-        Platinum.addFlags("generate_catalyst_bed");
         Alumina.addFlags("generate_catalyst_bed");
         Silver.addFlags("generate_catalyst_bed");
         Nickel.addFlags("generate_catalyst_bed");
         Magnesia.addFlags("generate_catalyst_bed");
+        CupricOxide.addFlags("generate_catalyst_bed");
         Brass.addFlags("generate_ring");
         Indium.addFlags("generate_plate");
         BisphenolA.addFlags("no_unification");
         Phosphorus.addFlags("no_smelting");
         Tetrahedrite.addFlags("no_smelting");
         Gold.addFlags("generate_gear");
+        IronMagnetic.addFlags("generate_ring");
+        SteelMagnetic.addFlags("generate_plate")
+        StainlessSteel.addFlags("generate_round");
+        Hafnium.addFlags("generate_long_rod", "generate_rod");
+        VanadiumSteel.addFlags("generate_round");
+        Mica.addFlags("generate_plate", "no_unification");
+        Rubber.addFlags("generate_plate");
+        TungstenCarbide.addFlags("hip_pressed");
+        Polycaprolactam.addFlags("generate_foil");
+        Palladium.addFlags("generate_bolt_screw");
+        Copper.addFlags("continuously_cast")
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")
@@ -168,6 +214,12 @@ class ChangeFlags {
         // Colors
 
         Phosphorus.setMaterialRGB(0xfffed6);
+        Terbium.setMaterialRGB(0x4b9c70);
+        Dysprosium.setMaterialRGB(0xbfc25f);
+        Holmium.setMaterialRGB(0xe3b16b);
+        Erbium.setMaterialRGB(0xc07ede);
+        Thulium.setMaterialRGB(0xe86666);
+        Mica.setMaterialRGB(0xe8e7ba);
 
         // Formulae
 
@@ -182,17 +234,33 @@ class ChangeFlags {
         Diatomite.setFormula("(SiO2)8(Fe2O3)(Al2O3)", true);
         Pollucite.setFormula("(Cs,Na)2Al2Si4O12(H2O)2", true);
         Pitchblende.setFormula("(?)UO2", true);
-
+        Bastnasite.setFormula("(REE)CO3F", true);
+        Monazite.setFormula("(REE,Th)PO4", true);
+        Gypsum.setFormula("(CaSO4)*(H2O)2", true);
+        Polyethylene.setFormula("[C2H4]n", true);
+        PolyvinylChloride.setFormula("[C2H3Cl]n", true);
+        Rubber.setFormula("[C5H8]n", true);
+        Polycaprolactam.setFormula("[C6H11NO]n", true);
+        Polytetrafluoroethylene.setFormula("[C2F4]n", true);
+        SiliconeRubber.setFormula("[SiC2H6O]n", true);
+        StyreneButadieneRubber.setFormula("[C40H44]n", true);
+        PolyphenyleneSulfide.setFormula("[C6H4S]n", true);
+        Polybenzimidazole.setFormula("[C20H12N4]n", true);
+        PolyvinylAcetate.setFormula("[C4H6O2]n", true);
+        PolyvinylButyral.setFormula("[C8H14O2]n", true);
+        TungstenSteel.setFormula("Fe60W8Cr3Mo2V", true);
+        StainlessSteel.setFormula("Fe28Cr8Ni4Si2Mn", true);
+        
         // Ore Processing
         
         Pitchblende.addFlags("disable_decomposition")
         Borax.setProperty(PropertyKey.ORE, new OreProperty());
         Scheelite.addFlags("generate_sifted", "generate_flotated");
-		setupSlurries(Scheelite)
+        setupSlurries(Scheelite)
         Pyrochlore.addFlags("generate_sifted", "generate_flotated", "generate_concentrate");
-		setupSlurries(Pyrochlore)
+        setupSlurries(Pyrochlore)
         Molybdenite.addFlags("generate_flotated");
-		setupSlurries(Molybdenite)
+        setupSlurries(Molybdenite)
         Tantalite.addFlags("generate_sifted", "generate_flotated", "generate_concentrate");
         setupSlurries(Tantalite)
         setupSlurries(Galena)
@@ -208,9 +276,11 @@ class ChangeFlags {
         Rutile.addFlags("generate_concentrate");
         setupSlurries(Sphalerite)
         setupSlurries(Pollucite)
-        setupSlurries(Arsenopyrite)
         Pentlandite.addFlags("generate_sifted", "generate_flotated");
-		setupSlurries(Pentlandite)
+        setupSlurries(Pentlandite)
+        Bastnasite.addFlags("generate_sifted", "generate_flotated");
+        setupSlurries(Bastnasite)
+        Monazite.addFlags("generate_concentrate");
 
         setupFluidType(PolyvinylAcetate, FluidStorageKeys.LIQUID, 385)
 
@@ -529,6 +599,7 @@ class ChangeFlags {
         oreProp.setOreByProducts(LimestoneTailings, LimestoneTailings, LimestoneTailings, LimestoneTailings);
 
         oreProp = Malachite.getProperty(PropertyKey.ORE);
+        oreProp.setOreMultiplier(2)
         oreProp.getOreByProducts().clear();
         oreProp.setOreByProducts(LimestoneTailings, LimestoneTailings, LimestoneTailings, LimestoneTailings);
 
@@ -707,6 +778,9 @@ class ChangeFlags {
         oreProp = Carnotite.getProperty(PropertyKey.ORE);
         oreProp.setOreByProducts(LimestoneTailings, LimestoneTailings, LimestoneTailings, LimestoneTailings);
 
+        oreProp = Bertrandite.getProperty(PropertyKey.ORE);
+        oreProp.setOreByProducts(PegmatiteTailings, PegmatiteTailings, PegmatiteTailings, PegmatiteTailings);
+
         oreProp = Cerussite.getProperty(PropertyKey.ORE);
         oreProp.setDirectSmeltResult(Lead);
 
@@ -763,6 +837,7 @@ class ChangeFlags {
         Naphtha.addFlags("flammable");
         NaturalGas.addFlags("flammable");
         Methane.addFlags("flammable");
+        Ethane.addFlags("flammable");
         Propane.addFlags("flammable");
         Butane.addFlags("flammable");
         Butadiene.addFlags("flammable");
@@ -780,5 +855,30 @@ class ChangeFlags {
         Methanol.addFlags("flammable");
         Ethanol.addFlags("flammable");
         log.infoMC("Finished modifying flags")
+
+        // Nuclear
+
+        Bismuth.setProperty(SCPropertyKey.FISSION_FUEL, FissionFuelProperty.builder(Bismuth.getRegistryName(), 560, 5000, 5)
+                .slowNeutronCaptureCrossSection(0.2)
+                .requiredNeutrons(1)
+                .releasedNeutrons(0)
+                .releasedHeatEnergy(0.005)
+                .build())
+
+        Graphite.setProperty(SCPropertyKey.MODERATOR, ModeratorProperty.builder()
+                .maxTemperature(3650)
+                .absorptionFactor(0.0625)
+                .moderationFactor(3).build())
+        Graphite.addFlags("force_generate_block")
+
+        Beryllium.setProperty(SCPropertyKey.MODERATOR, ModeratorProperty.builder()
+                .maxTemperature(1500)
+                .absorptionFactor(0.015625)
+                .moderationFactor(5).build());
+        Beryllium.addFlags("force_generate_block")
+
+        // Mill balls
+        Steel.setProperty(SuSyPropertyKey.MILL_BALL, new MillBallProperty(7680));
+        StainlessSteel.setProperty(SuSyPropertyKey.MILL_BALL, new MillBallProperty(17280));
     }
 }

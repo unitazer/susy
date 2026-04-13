@@ -1,42 +1,46 @@
-package prePostInit;
+package prePostInit
 
-import gregtech.api.GregTechAPI;
-import gregtech.api.recipes.Recipe;
-import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.recipes.GTRecipeHandler;
-import gregtech.api.recipes.ingredients.GTRecipeInput;
-import gregtech.api.unification.material.properties.PropertyKey;
-import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtechfoodoption.recipe.GTFORecipeMaps;
-import supersymmetry.api.fluids.SusyFluidStorageKeys;
-import supersymmetry.api.recipes.SuSyRecipeMaps;
-import static gregtech.api.recipes.RecipeMaps.*;
-import static gregtech.api.recipes.GTRecipeHandler.*;
+import gregicality.multiblocks.api.recipes.GCYMRecipeMaps;
+import gregtech.api.GregTechAPI
+import gregtech.api.gui.GuiTextures
+import gregtech.api.recipes.GTRecipeHandler
+import gregtech.api.recipes.Recipe
+import gregtech.api.recipes.RecipeMaps
+import gregtech.api.unification.OreDictUnifier
+import gregtech.api.unification.material.properties.PropertyKey
+import gregtech.api.unification.ore.OrePrefix
+import gregtechfoodoption.recipe.GTFORecipeMaps
+import supersymmetry.api.fluids.SusyFluidStorageKeys
+import supersymmetry.api.gui.SusyGuiTextures
+
+import static gregtech.api.recipes.GTRecipeHandler.*
+import static gregtech.api.recipes.RecipeMaps.*
 
 //Removed to make way for overhauls
-GTRecipeHandler.removeAllRecipes(RecipeMaps.DISTILLERY_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.DISTILLATION_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.CRACKING_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.BREWING_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.CHEMICAL_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.LARGE_CHEMICAL_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.FERMENTING_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.PYROLYSE_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.IMPLOSION_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.LASER_ENGRAVER_RECIPES);
-GTRecipeHandler.removeAllRecipes(GTFORecipeMaps.GREENHOUSE_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.VACUUM_RECIPES);
-GTRecipeHandler.removeAllRecipes(RecipeMaps.ELECTROLYZER_RECIPES);
+GTRecipeHandler.removeAllRecipes(RecipeMaps.DISTILLERY_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.DISTILLATION_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.CRACKING_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.BREWING_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.CHEMICAL_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.LARGE_CHEMICAL_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.FERMENTING_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.PYROLYSE_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.IMPLOSION_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.LASER_ENGRAVER_RECIPES)
+GTRecipeHandler.removeAllRecipes(GTFORecipeMaps.GREENHOUSE_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.VACUUM_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.ELECTROLYZER_RECIPES)
+GTRecipeHandler.removeAllRecipes(GCYMRecipeMaps.ALLOY_BLAST_RECIPES)
+GTRecipeHandler.removeAllRecipes(RecipeMaps.SEMI_FLUID_GENERATOR_FUELS)
 
 GregTechAPI.materialManager.getRegisteredMaterials().forEach(material -> {
-        if (material.hasProperty(PropertyKey.FLUID) && material.getProperty(PropertyKey.FLUID).getPrimaryKey() == SusyFluidStorageKeys.SLURRY) {
-                Recipe recipe = RecipeMaps.EXTRACTOR_RECIPES.findRecipe(Integer.MAX_VALUE, Collections.singletonList(OreDictUnifier.get(OrePrefix.dust, material)), Collections.emptyList(), false);
-                if (recipe != null) {
-                        RecipeMaps.EXTRACTOR_RECIPES.removeRecipe(recipe);
-                }
+    if (material.hasProperty(PropertyKey.FLUID) && material.getProperty(PropertyKey.FLUID).getPrimaryKey() == SusyFluidStorageKeys.SLURRY) {
+        Recipe recipe = RecipeMaps.EXTRACTOR_RECIPES.findRecipe(Integer.MAX_VALUE, Collections.singletonList(OreDictUnifier.get(OrePrefix.dust, material)), Collections.emptyList(), false)
+        if (recipe != null) {
+            RecipeMaps.EXTRACTOR_RECIPES.removeRecipe(recipe)
         }
-});
+    }
+})
 //Removal of certain centrifuging recipes
 
 // LPG * 370
@@ -334,23 +338,125 @@ mods.gregtech.centrifuge.removeByInput(30, [metaitem('dustYellowLimonite') * 4],
 mods.gregtech.centrifuge.removeByInput(30, [metaitem('dustBrownLimonite') * 4], null)
 // Baking Soda Solution * 1000
 mods.gregtech.mixer.removeByInput(8, [metaitem('dustSodiumBicarbonate')], [fluid('water') * 1000])
-// Crushed Bauxite Ore * 1
-mods.gregtech.forge_hammer.removeByInput(16, [item('gregtech:ore_bauxite_0')], null)
-// Crushed Bauxite Ore * 2
-mods.gregtech.macerator.removeByInput(2, [item('gregtech:ore_bauxite_0')], null)
 // Flower Pot * 1
 mods.gregtech.assembler.removeByInput(2, [item('minecraft:brick') * 3], null)
+// Tungsten Steel * 2
+mods.gregtech.mixer.removeByInput(1920, [metaitem('dustTungsten'), metaitem('dustSteel'), metaitem('circuit.integrated').withNbt(["Configuration": 1])], null)
+// Molten Tungstensteel * 288
+mods.gregtech.advanced_arc_furnace.removeByInput(1920, [metaitem('dustSteel'), metaitem('dustTungsten'), metaitem('circuit.integrated').withNbt(['Configuration': 12])], [fluid('helium') * 200 * 200, fluid('refractory_gunning_mixture') * 50 * 50])
+// Molten Tungstensteel * 288
+mods.gregtech.advanced_arc_furnace.removeByInput(1920, [metaitem('dustSteel'), metaitem('dustTungsten'), metaitem('circuit.integrated').withNbt(['Configuration': 2])], [fluid('refractory_gunning_mixture') * 50 * 50])
+// Diesel * 6000
+mods.gregtech.blender.removeByInput(120, null, [fluid('light_fuel') * 5000 * 5000, fluid('heavy_fuel') * 1000 * 1000])
+// Tungstensteel Dust * 2
+mods.gregtech.blender.removeByInput(1920, [metaitem('dustTungsten'), metaitem('dustSteel'), metaitem('circuit.integrated').withNbt(['Configuration': 1])], null)
+// Steel Dust * 1, Tungstent Dust * 1
+mods.gregtech.centrifuge.removeByInput(30, [metaitem('dustTungstenSteel') * 2], null)
+// Tempered Glass * 1
+mods.gregtech.arc_furnace.removeByInput(30, [item('minecraft:glass')], [fluid('oxygen') * 60 * 60])
+// Yttria Stabilized Zirconia Plate * 1
+mods.gregtech.compressor.removeByInput(2, [metaitem('dustYttriaStabilizedZirconia')], null)
+// Small Ethylene-Vinyl Acetate (EVA) Fluid Pipe * 1
+mods.gregtech.extruder.removeByInput(42, [metaitem('ingotEthyleneVinylAcetate'), metaitem('shape.extruder.pipe.small')], null)
+// Small Ethylene-Vinyl Acetate (EVA) Fluid Pipe * 1
+mods.gregtech.extruder.removeByInput(42, [metaitem('dustEthyleneVinylAcetate'), metaitem('shape.extruder.pipe.small')], null)
+// Polysulfone Bar * 1
+mods.gregtech.extruder.removeByInput(28, [metaitem('dustPolysulfone'), metaitem('shape.extruder.ingot')], null)
+// Polysulfone Rod * 2
+mods.gregtech.lathe.removeByInput(16, [metaitem('ingotPolysulfone')], null)
+// Polysulfone Rod * 2
+mods.gregtech.extruder.removeByInput(42, [metaitem('ingotPolysulfone'), metaitem('shape.extruder.rod')], null)
+// Viton Ring * 4
+mods.gregtech.extruder.removeByInput(42, [metaitem('ingotViton'), metaitem('shape.extruder.ring')], null)
+// Viton Ring * 4
+mods.gregtech.extruder.removeByInput(42, [metaitem('dustViton'), metaitem('shape.extruder.ring')], null)
+// Polyvinylidene Fluoride (PVDF) Sheet * 1
+mods.gregtech.extruder.removeByInput(56, [metaitem('ingotPolyvinylideneFluoride'), metaitem('shape.extruder.plate')], null)
+// Polyvinylidene Fluoride (PVDF) Sheet * 1
+mods.gregtech.extruder.removeByInput(56, [metaitem('dustPolyvinylideneFluoride'), metaitem('shape.extruder.plate')], null)
+// Thin Polyphenylene Sulfide Sheet * 4
+mods.gregtech.extruder.removeByInput(24, [metaitem('ingotPolyphenyleneSulfide'), metaitem('shape.extruder.foil')], null)
+// Thin Polyphenylene Sulfide Sheet * 4
+mods.gregtech.extruder.removeByInput(24, [metaitem('dustPolyphenyleneSulfide'), metaitem('shape.extruder.foil')], null)
+// Thin Polyphenylene Sulfide Sheet * 4
+mods.gregtech.bender.removeByInput(24, [metaitem('platePolyphenyleneSulfide'), metaitem('circuit.integrated').withNbt(['Configuration': 1])], null)
+// Thin Polyphenylene Sulfide Sheet * 4
+mods.gregtech.bender.removeByInput(24, [metaitem('ingotPolyphenyleneSulfide'), metaitem('circuit.integrated').withNbt(['Configuration': 10])], null)
+// Ethenone * 100
+mods.gregtech.fluid_heater.removeByInput(30, [metaitem('circuit.integrated').withNbt(['Configuration': 1])], [fluid('acetone') * 100])
 
-recipemap('vacuum_freezer').recipeBuilder()
-        .inputs(metaitem('gregtechfoodoption:matter_graham_hot_plate'))
-        .outputs(metaitem('gregtechfoodoption:cracker_graham_ungraded_plate'))
-        .EUt(60)
-        .duration(20)
-        .buildAndRegister()
+RecipeMaps.SIFTER_RECIPES
+    .modifyMaxFluidInputs(1)
+    .modifyMaxFluidOutputs(1)
+    .modifyMaxInputs(2)
+    .modifyMaxOutputs(8)
 
-recipemap('vacuum_freezer').recipeBuilder()
-        .inputs(metaitem('gregtechfoodoption:hot_apple_hard_candy_plate'))
-        .outputs(metaitem('gregtechfoodoption:food.apple_hard_candy'))
-        .EUt(5)
-        .duration(200)
-        .buildAndRegister()
+RecipeMaps.CENTRIFUGE_RECIPES
+    .modifyMaxFluidInputs(3)
+    .setSlotOverlay(false, true, false, GuiTextures.CENTRIFUGE_OVERLAY)
+
+RecipeMaps.MIXER_RECIPES
+    .modifyMaxFluidInputs(3)
+    .modifyMaxFluidOutputs(2)
+
+RecipeMaps.ARC_FURNACE_RECIPES
+    .modifyMaxInputs(4)
+
+RecipeMaps.ELECTROLYZER_RECIPES
+    .modifyMaxInputs(4)
+    .modifyMaxOutputs(3)
+    .modifyMaxFluidOutputs(3)
+
+RecipeMaps.ELECTROMAGNETIC_SEPARATOR_RECIPES
+    .modifyMaxFluidInputs(1)
+    .modifyMaxFluidOutputs(2)
+    .modifyMaxOutputs(4)
+
+GTFORecipeMaps.GREENHOUSE_RECIPES
+    .modifyMaxFluidInputs(4)
+
+RecipeMaps.PYROLYSE_RECIPES
+    .modifyMaxFluidOutputs(3)
+
+RecipeMaps.ELECTROMAGNETIC_SEPARATOR_RECIPES
+    .setSlotOverlay(false, false, SusyGuiTextures.ELECTROMAGNETIC_SEPARATOR_ITEM_OVERLAY)
+    .setSlotOverlay(false, true, SusyGuiTextures.ELECTROMAGNETIC_SEPARATOR_FLUID_OVERLAY)
+
+RecipeMaps.SIFTER_RECIPES
+    .setSlotOverlay(false, true, SusyGuiTextures.SIFTER_FLUID_OVERLAY)
+    .setSlotOverlay(true, true, SusyGuiTextures.SIFTER_FLUID_OVERLAY)
+    .setSlotOverlay(false, false, SusyGuiTextures.SIFTER_ITEM_INPUT_OVERLAY)
+    .setSlotOverlay(true, false, SusyGuiTextures.SIFTER_ITEM_OUTPUT_OVERLAY)
+
+RecipeMaps.LASER_ENGRAVER_RECIPES
+    .modifyMaxFluidInputs(1)
+
+RecipeMaps.GAS_TURBINE_FUELS
+    .modifyMaxFluidInputs(1)
+    .modifyMaxFluidOutputs(1)
+
+RecipeMaps.AUTOCLAVE_RECIPES
+    .modifyMaxFluidInputs(4)
+    .modifyMaxFluidOutputs(2)
+
+RecipeMaps.CHEMICAL_BATH_RECIPES
+    .modifyMaxOutputs(3)
+    .modifyMaxFluidInputs(3)
+    .modifyMaxFluidOutputs(3)
+
+RecipeMaps.EXTRUDER_RECIPES
+    .modifyMaxOutputs(3)
+    .modifyMaxFluidInputs(1)
+
+RecipeMaps.CUTTER_RECIPES
+    .modifyMaxOutputs(4)
+
+RecipeMaps.FORGE_HAMMER_RECIPES
+    .modifyMaxInputs(2)
+
+RecipeMaps.LARGE_CHEMICAL_RECIPES
+    .modifyMaxInputs(4)
+    .modifyMaxFluidInputs(6)
+
+RecipeMaps.DISTILLERY_RECIPES
+    .modifyMaxFluidInputs(2)

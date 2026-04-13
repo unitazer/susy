@@ -39,6 +39,7 @@ O _pack_ espalha-se por muitos níveis diferentes de masteria tecnológica, desd
 Todos os mods têm a sua progressão alterada para se incluir melhor na progressão do GregTech. Como consequência, automação e produção massiva são vitais, encorajando a construção de grandes fábricas e redes de transporte para mover recursos e produtos. O jogador terá de conquistar o Overworld e os seus recursos primeiro, para se deslocar e estabelecer uma permanente presença no espaço, depois explorar o sistema solar e finalmente sair do espaço inter-estrelar, explorando uma variedade de planetas com desafios únicos, geração de mundo, e enimigos para combater, e para aceder aos recursos mais exóticos do cosmos, começando do nada e construindo algo cada vez mais expansivo do que uma civilização Kardashev do tipo III.
 
 O _pack_ de momento encontra-se em beta. Podes te juntar ao nosso servidor de _discord_ aqui: https://discord.gg/BNbbK98rh6
+Jogadores que procuram se juntar a um servidor devem verificar o canal #looking-for-group no discord.
 
 ## Créditos
 Obrigado aos desenvolvedores da [Gregicality Community Pack](https://github.com/Gregicality/Gregicality-Community-Pack) por nos deixarem usar alguns dos seus *scripts*.
@@ -62,11 +63,24 @@ Agradecimentos especiais aos nossos voluntários:
 - trainvoi • Pesquisa
 - ZombieZilla • Pesquisa
 - Tian-mi • Tradução para Chinês (Mandarim)
-- Roque_Crafter • Tradução para Português (Oláá)
+- RoqueSystem.exe (Roque_Crafter) • Tradução para Português (Oláá)
 - Lavinia • Texturas
 - kubuus • Tradução para Polaco
 - Whatsapp • Estruturas, texturas e *feedback*
 - Science Demon • Trabalho no *Livro de tarefas*, tradução para Alemão e *bug fixing*
+- Siryeet3000 • Estruturas
+- Celeryman • Estruturas
+
+## Dicas de Desenvolvimento
+> [*Full Usage* - Tutorial de Packwiz](https://packwiz.infra.link/tutorials/creating/getting-started/)
+- Adicionar um *mod*: `packwiz cf add <project name>` ([*Full Usage*](https://packwiz.infra.link/tutorials/creating/adding-mods/))
+- Atualizar *Hash*: `packwiz refresh`
+- Imprimir (mostrar) a lista de *mods*: `packwiz list`
+- Atualizar a versão do *pack*: reescrever o número da versão em [pack.toml](pack.toml)
+- Atualizar a versão de um *mod*: `packwiz update <mod>/--all`
+- *Mod* apenas cliente: [rewrite <mod>.pw.toml#side manually](https://packwiz.infra.link/reference/pack-format/mod-toml/#properties)
 
 ## Construção do *pack*
-Vais precisar dos requerimentos python3 e python instalados para rodar o *script* de construção *main.py*.
+1. Corre `pip install requests` primeiro para instalar a *package* requerida.
+2. Corre `python build/main.py`.
+3. Verifica a pasta `buildOut`.

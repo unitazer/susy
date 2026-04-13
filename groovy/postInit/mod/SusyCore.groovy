@@ -1,10 +1,7 @@
-import globals.Globals
-import globals.RecyclingHelper
+import static prePostInit.Recipemaps.*
+import postInit.utils.RecyclingHelper
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.ingredients.nbtmatch.*
-
-ASSEMBLER = recipemap('assembler')
-FLUID_SOLIDIFIER = recipemap('fluid_solidifier')
-CVD = recipemap('cvd')
 
 crafting.addShaped("susy:basic_structural_casing", item('susy:susy_multiblock_casing', 3) * 6, [
     [ore('screwWroughtIron'), ore('plateWroughtIron'), ore('craftingToolHardHammer')],
@@ -23,7 +20,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(2)
     .outputs(item('susy:susy_multiblock_casing', 3) * 6)
     .duration(240)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(item('susy:susy_multiblock_casing', 3) * 3, [ore('plateWroughtIron') * 2])
@@ -34,7 +31,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(2)
     .outputs(item('susy:serpentine') * 6)
     .duration(240)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(item('susy:serpentine') * 3, [item('gregtech:fluid_pipe_tiny', 25), ore('plateSteel')])
@@ -47,11 +44,11 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('plateStainlessSteel') * 16)
     .outputs(item('susy:separator_rotor') * 5)
     .duration(240)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(item('susy:separator_rotor') * 5,
-		[metaitem('electric.motor.hv') * 2, ore('gearStainlessSteel') * 4, ore('rotorStainlessSteel') * 16, ore('plateStainlessSteel') * 16]
+        [metaitem('electric.motor.hv') * 2, ore('gearStainlessSteel') * 4, ore('rotorStainlessSteel') * 16, ore('plateStainlessSteel') * 16]
 )
 
 ASSEMBLER.recipeBuilder()
@@ -59,7 +56,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('plateStainlessSteel') * 9)
     .outputs(item('susy:susy_multiblock_casing', 2))
     .duration(240)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(item('susy:susy_multiblock_casing', 2), [ore('plateStainlessSteel') * 9])
@@ -70,21 +67,52 @@ ASSEMBLER.recipeBuilder()
     .inputs(ore('frameGtStainlessSteel'))
     .outputs(item('susy:susy_multiblock_casing', 1))
     .duration(240)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 RecyclingHelper.handleRecycling(item('susy:susy_multiblock_casing', 1), [ore('plateStainlessSteel') * 4, ore('frameGtStainlessSteel')])
 
+ASSEMBLER.recipeBuilder()
+    .circuitMeta(13)
+    .inputs(ore('plateStainlessSteel') * 4)
+    .inputs(item('gregtech:metal_casing', 4))
+    .outputs(item('susy:susy_multiblock_casing', 10))
+    .duration(240)
+    .EUt(VA[HV])
+    .buildAndRegister()
+
+RecyclingHelper.handleRecycling(item('susy:susy_multiblock_casing', 10), [ore('plateStainlessSteel') * 4, item('gregtech:metal_casing', 4)])
+
+ASSEMBLER.recipeBuilder()
+    .inputs(metaitem('electric.motor.mv') * 2)
+    .inputs(ore('plateRubber') * 4)
+    .inputs(ore('wireFineAnnealedCopper') * 4)
+    .inputs(ore('stickLongSteel') * 4)
+    .inputs(ore('gearSmallSteel') * 2)
+    .fluidInputs(fluid('lubricant') * 500)
+    .outputs(item('susy:conveyor_belt'))
+    .duration(120)
+    .EUt(VA[MV])
+    .buildAndRegister();
+
+RecyclingHelper.handleRecycling(item('susy:conveyor_belt'), [
+    metaitem('electric.motor.mv') * 2,
+    ore('plateRubber') * 4,
+    ore('wireFineAnnealedCopper') * 4,
+    ore('stickLongSteel') * 4,
+    ore('gearSmallSteel') * 2
+])
+
 RecyclingHelper.addShaped("susy:air_vent_w", item('susy:meta_item', 4), [
-	[ore('craftingToolHardHammer'),ore('stickWroughtIron'),ore('craftingToolScrewdriver')],
-	[ore('plateWroughtIron'),ore('stickWroughtIron'),ore('plateWroughtIron')],
-	[ore('screwWroughtIron'),ore('stickWroughtIron'),ore('screwWroughtIron')]
+    [ore('craftingToolHardHammer'),ore('stickWroughtIron'),ore('craftingToolScrewdriver')],
+    [ore('plateWroughtIron'),ore('stickWroughtIron'),ore('plateWroughtIron')],
+    [ore('screwWroughtIron'),ore('stickWroughtIron'),ore('screwWroughtIron')]
 ])
 
 crafting.addShaped("susy:air_vent_n", item('susy:meta_item', 4), [
-	[ore('craftingToolHardHammer'),ore('stickIron'),ore('craftingToolScrewdriver')],
-	[ore('plateIron'),ore('stickIron'),ore('plateIron')],
-	[ore('screwIron'),ore('stickIron'),ore('screwIron')]
+    [ore('craftingToolHardHammer'),ore('stickIron'),ore('craftingToolScrewdriver')],
+    [ore('plateIron'),ore('stickIron'),ore('plateIron')],
+    [ore('screwIron'),ore('stickIron'),ore('screwIron')]
 ])
 
 ASSEMBLER.recipeBuilder()
@@ -94,7 +122,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(13)
     .outputs(item('susy:meta_item', 4))
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
@@ -104,9 +132,8 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(13)
     .outputs(item('susy:meta_item', 4))
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
-
 
 // Restrictive Filters
 ASSEMBLER.recipeBuilder()
@@ -116,17 +143,17 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('soldering_alloy') * 72)
     .duration(200)
     .outputs(item('susy:meta_item', 6))
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
     .inputs(ore('foilSteel') * 8)
     .inputs(metaitem('item_filter'))
-    .circuitMeta(1)
+    .circuitMeta(2)
     .fluidInputs(fluid('tin') * 144)
     .outputs(item('susy:meta_item', 6))
     .duration(200)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 //Deposit stuff
@@ -154,7 +181,7 @@ crafting.addShaped("susy:gas_tank", item('susy:susy_armor', 3).withNbt(['oxygen'
 ])
 
 crafting.addShaped("susy:easy_cell", metaitem('fluid_cell'), [
-    [ore('toolHardHammer'), null],
+    [ore('craftingToolHardHammer'), null],
     [null, ore('plateSteel')]
 ])
 
@@ -163,11 +190,9 @@ crafting.addShapeless("susy:gas_tank_fill", item('susy:susy_armor', 3).withNbt([
     metaitem('fluid_cell').withNbt(['Fluid': ['FluidName': 'air', 'Amount': 1000]])
 ])
 
-
-
 ASSEMBLER.recipeBuilder()
     .circuitMeta(1)
-    .inputs(item('minecraft:leather_helmet'))
+    .inputNBT(item('minecraft:leather_helmet').getItem(), NBTMatcher.ANY, NBTCondition.ANY)
     .inputs(ore('pipeTinyFluidRubber'))
     .inputs(ore('ringRubber'))
     .inputs(metaitem('mineral_wool') * 5)
@@ -175,12 +200,12 @@ ASSEMBLER.recipeBuilder()
     .fluidInputs(fluid('glass') * 144)
     .outputs(item('susy:susy_armor', 4).withNbt(['damage': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
     .circuitMeta(2)
-    .inputs(item('minecraft:leather_chestplate'))
+    .inputNBT(item('minecraft:leather_chestplate').getItem(), NBTMatcher.ANY, NBTCondition.ANY)
     .inputs(ore('pipeTinyFluidRubber'))
     .inputs(ore('ringRubber'))
     .inputs(metaitem('mineral_wool') * 8)
@@ -188,7 +213,7 @@ ASSEMBLER.recipeBuilder()
     .inputs(metaitem('large_fluid_cell.steel'))
     .outputs(item('susy:susy_armor', 5).withNbt(['oxygen': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 crafting.shapelessBuilder()
@@ -203,22 +228,22 @@ crafting.shapelessBuilder()
 
 ASSEMBLER.recipeBuilder()
     .circuitMeta(3)
-    .inputs(item('minecraft:leather_leggings'))
+    .inputNBT(item('minecraft:leather_leggings').getItem(), NBTMatcher.ANY, NBTCondition.ANY)
     .inputs(metaitem('mineral_wool') * 7)
     .inputs(ore('foilAsbestos') * 7)
     .outputs(item('susy:susy_armor', 6).withNbt(['damage': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
     
 ASSEMBLER.recipeBuilder()
     .circuitMeta(4)
-    .inputs(item('minecraft:leather_boots'))
+    .inputNBT(item('minecraft:leather_boots').getItem(), NBTMatcher.ANY, NBTCondition.ANY)
     .inputs(metaitem('mineral_wool') * 4)
     .inputs(ore('foilAsbestos') * 4)
     .outputs(item('susy:susy_armor', 7).withNbt(['damage': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
@@ -226,7 +251,7 @@ ASSEMBLER.recipeBuilder()
     .inputNBT(item('susy:susy_armor', 5), NBTMatcher.ANY, NBTCondition.ANY)
     .outputs(item('susy:susy_armor', 8).withNbt(['oxygen': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .buildAndRegister()
     
 crafting.shapelessBuilder()
@@ -245,7 +270,7 @@ CVD.recipeBuilder()
     .inputNBT(item('susy:susy_armor', 4), NBTMatcher.ANY, NBTCondition.ANY)
     .outputs(item('susy:susy_armor', 9).withNbt(['damage': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 CVD.recipeBuilder()
@@ -253,7 +278,7 @@ CVD.recipeBuilder()
     .inputNBT(item('susy:susy_armor', 5), NBTMatcher.ANY, NBTCondition.ANY)
     .outputs(item('susy:susy_armor', 10).withNbt(['damage': 0.0D, 'oxygen': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 crafting.shapelessBuilder()
@@ -272,7 +297,7 @@ CVD.recipeBuilder()
     .inputNBT(item('susy:susy_armor', 8), NBTMatcher.ANY, NBTCondition.ANY)
     .outputs(item('susy:susy_armor', 10).withNbt(['damage': 0.0D, 'oxygen': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 CVD.recipeBuilder()
@@ -280,7 +305,7 @@ CVD.recipeBuilder()
     .inputNBT(item('susy:susy_armor', 6), NBTMatcher.ANY, NBTCondition.ANY)
     .outputs(item('susy:susy_armor', 11).withNbt(['damage': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 CVD.recipeBuilder()
@@ -288,70 +313,292 @@ CVD.recipeBuilder()
     .inputNBT(item('susy:susy_armor', 7), NBTMatcher.ANY, NBTCondition.ANY)
     .outputs(item('susy:susy_armor', 12).withNbt(['damage': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[3])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 // Filtered tank
 ASSEMBLER.recipeBuilder()
-    .inputs(metaitem('dustMolecularSieve'))
+    .inputs(metaitem('dustMolecularSieveX'))
     .inputs(metaitem('plateStainlessSteel') * 4)
     .inputs(item('susy:meta_item', 1))
     .inputNBT(item('susy:susy_armor', 10), NBTMatcher.ANY, NBTCondition.ANY)
     .outputs(item('susy:susy_armor', 13).withNbt(['oxygen': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[3])
-    .buildAndRegister()
-
-ASSEMBLER.recipeBuilder()
-    .circuitMeta(1)
-    .inputs(ore('threadPolybenzimidazole') * 10)
-    .inputs(metaitem('plateNomex') * 5)
-    .inputs(metaitem('pipeSmallFluidEthyleneVinylAcetate'))
-    .fluidInputs(fluid('borosilicate_glass') * 288)
-    .outputs(item('susy:susy_armor', 14))
-    .duration(400)
-    .EUt(Globals.voltAmps[4])
+    .EUt(VA[HV])
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
     .circuitMeta(2)
-    .inputs(metaitem('plateNomex') * 8)
-    .inputs(ore('threadPolybenzimidazole') * 20)
-    .inputs(metaitem('dustMolecularSieve') * 4)
-    .inputs(metaitem('pipeSmallFluidEthyleneVinylAcetate') * 2)
-    .inputs(metaitem('electric.piston.ev'))
-    .inputs(metaitem('rotorTitanium'))
-    .inputs(metaitem('large_fluid_cell.stainless_steel'))
-    .outputs(item('susy:susy_armor', 15))
+    .inputs(ore('threadPolybenzimidazole') * 10)
+    .inputs(metaitem('plateNomex') * 5)
+    .inputs(metaitem('pipeSmallFluidEthyleneVinylAcetate'))
+    .fluidInputs(fluid('e_glass') * 288)
+    .outputs(item('susy:susy_armor', 14))
     .duration(400)
-    .EUt(Globals.voltAmps[4])
+    .EUt(VA[EV])
     .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
     .circuitMeta(3)
+    .inputs(metaitem('plateNomex') * 8)
+    .inputs(ore('threadPolybenzimidazole') * 20)
+    .inputs(metaitem('dustMolecularSieveX') * 4)
+    .inputs(metaitem('pipeSmallFluidEthyleneVinylAcetate') * 2)
+    .inputs(metaitem('electric.piston.ev'))
+    .inputs(metaitem('rotorStainlessSteel'))
+    .inputs(metaitem('large_fluid_cell.stainless_steel'))
+    .outputs(item('susy:susy_armor', 15))
+    .duration(400)
+    .EUt(VA[EV])
+    .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+    .circuitMeta(4)
     .inputs(ore('threadPolybenzimidazole') * 16)
     .inputs(metaitem('pipeSmallFluidEthyleneVinylAcetate') * 3)
     .inputs(metaitem('plateNomex') * 7)
     .outputs(item('susy:susy_armor', 16).withNbt(['oxygen': 0.0D]))
     .duration(400)
-    .EUt(Globals.voltAmps[4])
+    .EUt(VA[EV])
     .buildAndRegister()
-    
+
 ASSEMBLER.recipeBuilder()
-    .circuitMeta(4)
+    .circuitMeta(5)
     .inputs(ore('threadPolybenzimidazole') * 14)
     .inputs(metaitem('pipeSmallFluidEthyleneVinylAcetate') * 2)
     .inputs(metaitem('plateNomex') * 4)
-    .inputs(metaitem('electric.pump.mv'))
+    .inputs(metaitem('electric.pump.ev'))
     .outputs(item('susy:susy_armor', 17))
     .duration(400)
-    .EUt(Globals.voltAmps[4])
+    .EUt(VA[EV])
     .buildAndRegister()
 
-FLUID_SOLIDIFIER.recipeBuilder()
-    .inputs(ore('frameGTSteel'))
-    .fluidInputs(fluid('concrete') * 576)
-    .outputs(item('susy:susy_stone_smooth', 9) * 32)
-    .duration(100)
-    .EUt(Globals.voltAmps[1])
+// Concrete Dust * 1 (remove Industrial Concrete recycling)
+mods.gregtech.macerator.removeByInput(2, [item('susy:susy_stone_smooth', 9)], null)
+// Concrete Dust * 1
+mods.gregtech.macerator.removeByInput(2, [item('susy:susy_stone_cobble', 9)], null)
+
+//Custom Susy Blocks for Nether Complex structure
+
+// Asbestos Fiber
+EXTRUDER.recipeBuilder()
+    .inputs(metaitem('dustAsbestos'))
+    .notConsumable(metaitem('shape.extruder.wire'))
+    .outputs(metaitem('fiberAsbestos') * 4)
+    .duration(20)
+    .EUt(VA[LV])
     .buildAndRegister()
+
+// Asbestos Plate * 1
+mods.gregtech.assembler.removeByInput(30, [metaitem('circuit.integrated').withNbt(['Configuration': 1]), metaitem('threadAsbestos') * 8], null)
+
+ASSEMBLER.recipeBuilder()
+    .inputs(metaitem('threadAsbestos'))
+    .outputs(item('susy:fake_wool') * 8)
+    .duration(20)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+def dyes = [
+    'orange'     : 1,
+    'magenta'    : 2,
+    'light_blue' : 3,
+    'yellow'     : 4,
+    'lime'       : 5,
+    'pink'       : 6,
+    'gray'       : 7,
+    'light_gray' : 8,
+    'cyan'       : 9,
+    'purple'     : 10,
+    'blue'       : 11,
+    'brown'      : 12,
+    'green'      : 13,
+    'red'        : 14,
+    'black'      : 15
+]
+
+dyes.each { dye, number ->
+    CHEMICAL_BATH.recipeBuilder()
+        .inputs(item('susy:fake_wool'))
+        .fluidInputs(fluid('dye_' + dye) * 144)
+        .outputs(item('susy:fake_wool', + number))
+        .duration(40)
+        .EUt(VA[LV])
+        .buildAndRegister()
+}
+
+//Custom Susy Blocks for Black Mesa style Research Facility
+
+//Industrial Concrete
+def concretes = [1, 2, 3]
+
+concretes.each { number ->
+    ASSEMBLER.recipeBuilder()
+        .circuitMeta(number)
+        .inputs(metaitem('frameSteel'))
+        .inputs(metaitem('dustStone'))
+        .fluidInputs(fluid('concrete') * 144)
+        .outputs(item('susy:random_concrete', number) * 8)
+        .duration(80)
+        .EUt(VA[LV])
+        .buildAndRegister()
+}
+
+ASSEMBLER.recipeBuilder()
+    .circuitMeta(4)
+    .inputs(metaitem('frameSteel')) 
+    .inputs(metaitem('dustStone'))
+    .fluidInputs(fluid('concrete') * 144) 
+    .outputs(item('susy:random_concrete') * 8) 
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+    .circuitMeta(5)
+    .inputs(metaitem('frameSteel')) 
+    .inputs(metaitem('dustStone'))
+    .fluidInputs(fluid('concrete') * 144) 
+    .outputs(item('susy:susy_stone_smooth', 9) * 8)
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+//Dotted Panels
+def panels = [4, 5, 6, 7]
+
+panels.each { number ->
+    ASSEMBLER.recipeBuilder()
+        .circuitMeta(number)
+        .inputs(metaitem('plateWroughtIron') * 4)
+        .inputs(metaitem('screwWroughtIron') * 2)
+        .outputs(item('susy:random_concrete', number) * 8)
+        .duration(80)
+        .EUt(VA[LV])
+        .buildAndRegister()
+}
+
+//Industrial Cinder Bricks
+def cinders = [8, 9, 10, 11, 12, 13]
+
+cinders.each { number ->
+    EXTRUDER.recipeBuilder()
+        .circuitMeta(number)
+        .notConsumable(metaitem('shape.extruder.block'))
+        .fluidInputs(fluid('concrete') * 144)
+        .outputs(item('susy:random_concrete', number) * 8)
+        .duration(80)
+        .EUt(VA[LV])
+        .buildAndRegister()
+} 
+
+//Smooth Industrial Concretes
+def smooths = [14, 15]
+
+smooths.each { number ->
+    EXTRUDER.recipeBuilder()
+        .circuitMeta(number)
+        .inputs(metaitem('frameSteel'))
+        .fluidInputs(fluid('concrete') * 144)
+        .outputs(item('susy:random_concrete', number) * 8)
+        .duration(80)
+        .EUt(VA[LV])
+        .buildAndRegister()
+} 
+
+EXTRUDER.recipeBuilder()
+    .circuitMeta(16)
+    .inputs(metaitem('frameSteel'))
+    .fluidInputs(fluid('concrete') * 144)
+    .outputs(item('susy:random_concrete1') * 8)
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+    .inputs(ore('circuitIv') * 4)
+    .inputs(metaitem('cover.screen'))
+    .inputs(ore('wireFineGold') * 8)
+    .inputs(metaitem('circuit_board.plastic'))
+    .outputs(metaitem('susy:code_breacher'))
+    .fluidInputs(fluid('soldering_alloy') * 144)
+    .duration(400)
+    .EUt(VA[EV])
+    .buildAndRegister();
+
+// Decoration Blocks
+
+crafting.addShaped('susy:gabbro_bricks', item('susy:susy_stone_bricks') * 4, [
+        [ore('stoneGabbro'), ore('stoneGabbro')],
+        [ore('stoneGabbro'), ore('stoneGabbro')]
+])
+
+crafting.addShaped('susy:gneiss_bricks', item('susy:susy_stone_bricks', 1) * 4, [
+        [ore('stoneGneiss'), ore('stoneGneiss')],
+        [ore('stoneGneiss'), ore('stoneGneiss')]
+])
+
+crafting.addShaped('susy:limestone_bricks', item('susy:susy_stone_bricks', 2) * 4, [
+        [ore('stoneLimestone'), ore('stoneLimestone')],
+        [ore('stoneLimestone'), ore('stoneLimestone')]
+])
+
+crafting.addShaped('susy:phyllite_bricks', item('susy:susy_stone_bricks', 3) * 4, [
+        [ore('stonePhyllite'), ore('stonePhyllite')],
+        [ore('stonePhyllite'), ore('stonePhyllite')]
+])
+
+crafting.addShaped('susy:quartzite_bricks', item('susy:susy_stone_bricks', 4) * 4, [
+        [ore('stoneQuartzite'), ore('stoneQuartzite')],
+        [ore('stoneQuartzite'), ore('stoneQuartzite')]
+])
+
+crafting.addShaped('susy:shale_bricks', item('susy:susy_stone_bricks', 5) * 4, [
+        [ore('stoneShale'), ore('stoneShale')],
+        [ore('stoneShale'), ore('stoneShale')]
+])
+
+crafting.addShaped('susy:slate_bricks', item('susy:susy_stone_bricks', 6) * 4, [
+        [ore('stoneSlate'), ore('stoneSlate')],
+        [ore('stoneSlate'), ore('stoneSlate')]
+])
+
+crafting.addShaped('susy:soapstone_bricks', item('susy:susy_stone_bricks', 7) * 4, [
+        [ore('stoneSoapstone'), ore('stoneSoapstone')],
+        [ore('stoneSoapstone'), ore('stoneSoapstone')]
+])
+
+crafting.addShaped('susy:kimberlite_bricks', item('susy:susy_stone_bricks', 8) * 4, [
+        [ore('stoneKimberlite'), ore('stoneKimberlite')],
+        [ore('stoneKimberlite'), ore('stoneKimberlite')]
+])
+
+crafting.addShaped('susy:industrial_concrete_bricks', item('susy:susy_stone_bricks', 9) * 4, [
+        [item('susy:susy_stone_smooth', 9), item('susy:susy_stone_smooth', 9)],
+        [item('susy:susy_stone_smooth', 9), item('susy:susy_stone_smooth', 9)]
+])
+
+crafting.addShapeless('marble_conversion', item('gregtech:stone_smooth', 2), [item('chisel:marble2', 7)])
+
+// Structural Block
+mods.gregtech.extruder.recipeBuilder()
+        .inputs(metaitem('frameSteel'))
+        .notConsumable(metaitem('shape.extruder.block'))
+        .fluidInputs(fluid('concrete') * 576)
+        .outputs(item('susy:structural_block') * 32)
+        .duration(200)
+        .EUt(VA[LV])
+        .buildAndRegister();
+
+//add variants to chisel group
+mods.chisel.carving.addGroup("susy_structural_blocks")
+for (int i = 0; i<16; i++) {
+    mods.chisel.carving.addVariation("susy_structural_blocks", item('susy:structural_block', i))
+}
+for (int i = 0; i<10; i++) {
+    mods.chisel.carving.addVariation("susy_structural_blocks", item('susy:structural_block_1', i))
+}
+
+//add custom sheets to chisel group
+mods.chisel.carving.addVariation("gt_metal_sheet", item('susy:custom_sheets', 0))
+mods.chisel.carving.addVariation("gt_metal_sheet", item('susy:custom_sheets', 1))

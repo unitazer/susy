@@ -1,13 +1,13 @@
 name = "Pyrotech"
-filename = "pyrotech-1.12.2-1.6.18.jar"
+filename = "pyrotech-1.12.2-1.6.19.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "dfe30f41fe6617798c2507f3db9592904ceaeb5d"
+hash = "117ce9f4b28349e39d3d8020d6920f3b66262b0c"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 5822040
+file-id = 6253355
 project-id = 306676

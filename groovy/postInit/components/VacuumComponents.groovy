@@ -1,5 +1,5 @@
-import globals.Globals
-
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
 import gregtech.api.recipes.recipeproperties.RecipeProperty;
 import gregtech.api.recipes.RecipeBuilder;
 
@@ -18,7 +18,6 @@ mods.gregtech.assembler.removeByInput(7, [metaitem('component.glass.tube'), meta
 // Vacuum Tube * 2
 mods.gregtech.assembler.removeByInput(7, [metaitem('component.glass.tube'), metaitem('boltSteel') * 2, metaitem('wireGtSingleCopper') * 2, metaitem('circuit.integrated').withNbt(["Configuration": 1])], null)
 
-
 crafting.addShaped("vacuum_tube_components", metaitem('vacuum_tube_components') * 4, [
     [null, metaitem('wireFineCupronickel'), null],
     [metaitem('plateNickel'), metaitem('ringSteel'), metaitem('foilNickel')],
@@ -31,20 +30,16 @@ crafting.addShaped("vacuum_tube_components_oxide", metaitem('vacuum_tube_compone
     [null, metaitem('boltSteel'), null]
 ])
 
+VACUUM_CHAMBER.recipeBuilder()
+    .inputs(metaitem('component.glass.tube'))
+    .inputs(metaitem('vacuum_tube_components'))
+    .inputs(ore('ringKovar'))
+    .outputs(metaitem('circuit.vacuum_tube'))
+    .EUt(VA[ULV])
+    .duration(200)
+    .buildAndRegister()
 
-def ASSEMBLER_RECIPES = recipemap('assembler')
-def VACUUM_RECIPES = recipemap('vacuum_chamber')
-
-VACUUM_RECIPES.recipeBuilder()
-.inputs(metaitem('component.glass.tube'))
-.inputs(metaitem('vacuum_tube_components'))
-.inputs(ore('ringKovar'))
-.outputs(metaitem('circuit.vacuum_tube'))
-.EUt(7)
-.duration(200)
-.buildAndRegister()
-
-ASSEMBLER_RECIPES.recipeBuilder()
+ASSEMBLER.recipeBuilder()
     .inputs(metaitem('wireFineCupronickel'))
     .inputs(metaitem('foilNickel') * 2)
     .inputs(metaitem('boltSteel') * 4)
@@ -54,7 +49,7 @@ ASSEMBLER_RECIPES.recipeBuilder()
     .duration(400)
     .buildAndRegister()
 
-ASSEMBLER_RECIPES.recipeBuilder()
+ASSEMBLER.recipeBuilder()
     .inputs(metaitem('wireFineTungsten'))
     .inputs(metaitem('foilNickel') * 2)
     .inputs(metaitem('boltSteel') * 4)
@@ -64,7 +59,7 @@ ASSEMBLER_RECIPES.recipeBuilder()
     .duration(400)
     .buildAndRegister()
 
-ASSEMBLER_RECIPES.recipeBuilder()
+ASSEMBLER.recipeBuilder()
     .inputs(metaitem('wireFineTungsten'))
     .inputs(metaitem('foilMolybdenum') * 2)
     .inputs(metaitem('boltSteel') * 4)

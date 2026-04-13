@@ -1,3 +1,17 @@
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
+
+def name_removals = [
+    'chisel:uncraft_blockcopper',
+    'chisel:uncraft_blocksteel',
+    'chisel:uncraft_blocktin',
+    'chisel:uncraft_blockbronze',
+]
+
+for (name in name_removals) {
+    crafting.remove(name)
+}
+
 crafting.replaceShaped('chisel:chisel_iron', item('chisel:chisel_iron'), [
     [null, null, ore('plateIron')],
     [null, ore('plateIron'), null],
@@ -58,6 +72,30 @@ crafting.replaceShaped('chisel:laboratory', item('chisel:laboratory', 0) * 32, [
         [ore('stone'), ore('stone'), ore('stone')]
 ])
 
+crafting.replaceShaped('chisel:valentines', item('chisel:valentines') * 32, [
+        [ore('stone'), ore('stone'), ore('stone')],
+        [ore('stone'), ore('dyePink'), ore('stone')],
+        [ore('stone'), ore('stone'), ore('stone')]
+])
+
+crafting.replaceShaped(item('chisel:voidstone') * 32, [
+        [ore('stone'), ore('stone'), ore('stone')],
+        [ore('stone'), ore('dyePurple'), ore('stone')],
+        [ore('stone'), ore('stone'), ore('stone')]
+])   
+
+crafting.replaceShaped(item('chisel:lavastone') * 8, [
+        [ore('stone'), ore('stone'), ore('stone')],
+        [ore('stone'), item('minecraft:lava_bucket'), ore('stone')],
+        [ore('stone'), ore('stone'), ore('stone')]
+])  
+
+crafting.replaceShaped(item('chisel:waterstone') * 8, [
+        [ore('stone'), ore('stone'), ore('stone')],
+        [ore('stone'), item('minecraft:water_bucket'), ore('stone')],
+        [ore('stone'), ore('stone'), ore('stone')]
+])  
+
 for (def i = 0; i < 16; i++) {
     crafting.removeByOutput(item('chisel:glasspane', i))
 
@@ -74,15 +112,13 @@ for (def i = 0; i < 2; i++) {
     ])
 }
 
-ASSEMBLER = recipemap('assembler')
-
 ASSEMBLER.recipeBuilder()
         .inputs(ore('stone') * 4)
         .inputs(item('minecraft:iron_ingot') * 4)
         .outputs(item('chisel:factory') * 32)
         .circuitMeta(1)
         .duration(20)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -91,7 +127,7 @@ ASSEMBLER.recipeBuilder()
         .outputs(item('chisel:tyrian') * 32)
         .circuitMeta(2)
         .duration(20)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister();
 
 ASSEMBLER.recipeBuilder()
@@ -100,5 +136,5 @@ ASSEMBLER.recipeBuilder()
         .outputs(item('chisel:temple') * 32)
         .circuitMeta(3)
         .duration(20)
-        .EUt(7)
+        .EUt(VA[ULV])
         .buildAndRegister();

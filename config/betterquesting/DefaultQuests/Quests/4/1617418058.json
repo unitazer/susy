@@ -12,7 +12,8 @@
           "FluidName:8": "isomerized_paraffin"
         }
       },
-      "name:8": "susy.quest.db.1617418058.title"
+      "name:8": "susy.quest.db.1617418058.title",
+      "tasklogic:8": "OR"
     }
   },
   "questID:3": 1617418058,

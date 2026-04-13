@@ -1,9 +1,9 @@
-import gregtech.api.recipes.RecipeBuilder
+import static prePostInit.Recipemaps.*
 import globals.Globals
+import static gregtech.api.GTValues.*
+import gregtech.api.recipes.RecipeBuilder
 
-def DRONE_PAD = recipemap('drone_pad');
-
-crafting.addShaped("susy:drone_pad_controller", metaitem('drone_pad'), [
+crafting.addShaped("susy:drone_pad_controller", metaitem('susy:drone_pad'), [
     [ore('plateSteel'), metaitem('emitter.lv'), ore('plateSteel')],
     [item('susy:susy_multiblock_casing', 4), item('gregtech:metal_casing', 4), item('susy:susy_multiblock_casing', 4)],
     [ore('plateSteel'), item('susy:susy_multiblock_casing', 4), ore('plateSteel')]
@@ -32,7 +32,7 @@ mods.gregtech.assembler.recipeBuilder()
     .inputs(ore('batteryLv'))
     .fluidInputs(fluid('soldering_alloy') * 72)
     .outputs(metaitem('drone.lv').withNbt(["Charge": 0L]))
-    .EUt(Globals.voltAmps[1])
+    .EUt(VA[LV])
     .duration(80)
     .buildAndRegister()
 
@@ -44,7 +44,7 @@ DRONE_PAD.recipeBuilder()
     .chancedOutput(item('minecraft:rotten_flesh') * 8, 8000, 400)
     .EUt(4)
     .duration(800)
-    .dimension(0)
+    .dimension(Globals.dimensions["Overworld"])
     .buildAndRegister()
 
 DRONE_PAD.recipeBuilder()
@@ -56,7 +56,7 @@ DRONE_PAD.recipeBuilder()
     .chancedOutput(item('minecraft:chicken') * 8, 8000, 400)
     .EUt(4)
     .duration(800)
-    .dimension(0)
+    .dimension(Globals.dimensions["Overworld"])
     .buildAndRegister()
 
 DRONE_PAD.recipeBuilder()
@@ -67,7 +67,7 @@ DRONE_PAD.recipeBuilder()
     .chancedOutput(item('minecraft:mutton') * 8, 8000, 400)
     .EUt(4)
     .duration(800)
-    .dimension(0)
+    .dimension(Globals.dimensions["Overworld"])
     .buildAndRegister()
 
 DRONE_PAD.recipeBuilder()
@@ -79,7 +79,7 @@ DRONE_PAD.recipeBuilder()
     .chancedOutput(item('minecraft:dye') * 8, 8000, 400)
     .EUt(4)
     .duration(800)
-    .dimension(0)
+    .dimension(Globals.dimensions["Overworld"])
     .buildAndRegister()
 
 DRONE_PAD.recipeBuilder()
@@ -90,5 +90,5 @@ DRONE_PAD.recipeBuilder()
     .chancedOutput(item('minecraft:wool') * 8, 8000, 400)
     .EUt(4)
     .duration(800)
-    .dimension(0)
+    .dimension(Globals.dimensions["Overworld"])
     .buildAndRegister()

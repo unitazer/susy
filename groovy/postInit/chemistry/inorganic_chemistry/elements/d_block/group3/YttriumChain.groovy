@@ -1,0 +1,37 @@
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
+
+BR.recipeBuilder()
+    .inputs(ore('dustYttriumHydroxide') * 7)
+    .fluidInputs(fluid('hydrochloric_acid') * 3000)
+    .fluidOutputs(fluid('yttrium_chloride_solution') * 6000)
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('yttrium_chloride_solution') * 6000)
+    .outputs(metaitem('dustYttriumChloride') * 4)
+    .fluidOutputs(fluid('water') * 6000)
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+REACTION_FURNACE.recipeBuilder()
+    .notConsumable(metaitem('crucible.tantalum'))
+    .inputs(ore('dustYttriumChloride') * 4)
+    .inputs(ore('dustLithium') * 3)
+    .fluidInputs(fluid('helium') * 50)
+    .outputs(metaitem('dustYttrium'))
+    .outputs(metaitem('dustLithiumChloride') * 6)
+    .duration(200)
+    .EUt(VA[HV] * 2)
+    .buildAndRegister()
+
+ROASTER.recipeBuilder()
+    .inputs(ore('dustYttriumHydroxide') * 14)
+    .outputs(metaitem('dustYttriumOxide') * 5)
+    .fluidOutputs(fluid('dense_steam') * 3000)
+    .duration(100)
+    .EUt(VA[MV])
+    .buildAndRegister()

@@ -1,0 +1,30 @@
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('holmium_chloride_solution') * 9000)
+    .outputs(metaitem('dustHolmiumChloride') * 4)
+    .fluidOutputs(fluid('water') * 9000)
+    .duration(20)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+BR.recipeBuilder()
+    .inputs(ore('dustHolmiumChloride') * 4)
+    .fluidInputs(fluid('hydrofluoric_acid') * 3000)
+    .outputs(metaitem('dustHolmiumFluoride') * 4)
+    .fluidOutputs(fluid('hydrochloric_acid') * 3000)
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+REACTION_FURNACE.recipeBuilder()
+    .notConsumable(metaitem('crucible.tantalum'))
+    .inputs(ore('dustHolmiumFluoride') * 8)
+    .inputs(ore('dustHighPurityCalcium') * 3)
+    .fluidInputs(fluid('helium') * 50)
+    .outputs(metaitem('dustHolmium') * 2)
+    .outputs(metaitem('dustFluorite') * 9)
+    .duration(200)
+    .EUt(960)
+    .buildAndRegister()

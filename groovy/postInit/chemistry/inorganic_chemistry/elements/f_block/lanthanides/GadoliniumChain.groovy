@@ -1,0 +1,52 @@
+import static prePostInit.Recipemaps.*
+import static gregtech.api.GTValues.*
+
+MIXER_SETTLER.recipeBuilder()
+    .fluidInputs(fluid('hydrochloric_acid') * 3625)
+    .fluidInputs(fluid('gadolinium_extract') * 25000)
+    .fluidOutputs(fluid('gadolinium_chloride_solution') * 3625)
+    .fluidOutputs(fluid('spent_p_five_zero_seven_extraction_mixture') * 25000)
+    .duration(80)
+    .EUt(VA[MV])
+    .requiredCells(2)
+    .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('gadolinium_chloride_solution') * 3625)
+    .outputs(metaitem('dustGadoliniumChloride') * 4)
+    .fluidOutputs(fluid('water') * 3625)
+    .duration(20)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+BR.recipeBuilder()
+    .inputs(ore('dustGadoliniumChloride') * 4)
+    .fluidInputs(fluid('hydrofluoric_acid') * 3000)
+    .outputs(metaitem('dustGadoliniumFluoride') * 4)
+    .fluidOutputs(fluid('hydrochloric_acid') * 3000)
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
+REACTION_FURNACE.recipeBuilder()
+    .notConsumable(metaitem('crucible.tantalum'))
+    .inputs(ore('dustGadoliniumFluoride') * 8)
+    .inputs(ore('dustHighPurityCalcium') * 3)
+    .fluidInputs(fluid('argon') * 50)
+    .outputs(metaitem('dustGadolinium') * 2)
+    .outputs(metaitem('dustFluorite') * 9)
+    .duration(200)
+    .EUt(960)
+    .buildAndRegister()
+
+// Gadolinium carbonate
+
+BR.recipeBuilder()
+    .inputs(ore('dustGadoliniumChloride') * 8)
+    .inputs(ore('dustSodaAsh') * 18)
+    .fluidInputs(fluid('deionized_water') * 6000)
+    .outputs(metaitem('dustGadoliniumCarbonate') * 14)
+    .fluidOutputs(fluid('salt_water') * 6000)
+    .duration(80)
+    .EUt(VA[LV])
+    .buildAndRegister()
