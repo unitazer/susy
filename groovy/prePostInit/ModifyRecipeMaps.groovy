@@ -457,3 +457,6 @@ RecipeMaps.FORGE_HAMMER_RECIPES
 RecipeMaps.LARGE_CHEMICAL_RECIPES
     .modifyMaxInputs(4)
     .modifyMaxFluidInputs(6)
+
+RecipeMaps.DISTILLERY_RECIPES
+    .modifyMaxFluidInputs(2)

@@ -183,9 +183,6 @@ class SuSyMaterials {
     public static Material BorateLiquor
     public static Material Asphalt
     public static Material BlackAsh
-    public static Material ImpureAcetaldehyde
-    public static Material CativaCatalystPreparation
-    public static Material CativaCatalystSolution
     public static Material CrudeCumene
     public static Material SulfatedMetalOxide
     public static Material ImpureKaptonK
@@ -815,6 +812,16 @@ class SuSyMaterials {
     public static Material NitrileRubberLatex
     public static Material ChamberAcid
     public static Material GloverTowerMixture
+    public static Material ImpureAceticAcid
+    public static Material MonsantoProcessCatalyst
+    public static Material CativaProcessCatalyst
+    public static Material AceticAnhydrideCatalyst
+    public static Material AceticAcidAnhydrideMixture
+    public static Material CrudeKetoneAlcoholOil
+    public static Material NitricAcidMotherLiquor
+    public static Material DilutedNitricAcidMotherLiquor
+    public static Material AdipicNitricAcidMotherLiquor
+    public static Material BauxiteLeach
 
     // Petrochem Materials
 
@@ -954,6 +961,10 @@ class SuSyMaterials {
     public static Material RawMonoxideRichSyngas
     public static Material MonoxideRichSyngas
     public static Material ReformedMonoxideRichSyngas
+    public static Material CrackedNaturalGas
+    public static Material QuenchedCrackedNaturalGas
+    public static Material StrippedCrackedNaturalGas
+    public static Material CrudeSyngas
 
     public static Material LiquefactionOil
     public static Material LightLiquefactionOil
@@ -1094,11 +1105,10 @@ class SuSyMaterials {
     public static Material ArsenicVSulfide
     public static Material CopperSulfate
     public static Material WustiteCatalyst
-    public static Material PalladiumChloride
+    public static Material PalladiumChlorideDihydrate
+    public static Material HexachloroiridicIVAcidSolution
     public static Material AmmoniumBisulfateSolution
-    public static Material HexachloroiridicAcid
     public static Material PotassiumIodide
-    public static Material IridiumIodide
     public static Material PhosphorusTrichloride
     public static Material SodiumDichromate
     public static Material RaneyNickel
@@ -1326,13 +1336,12 @@ class SuSyMaterials {
     public static Material TitaniumEthoxide
     public static Material HotSulfuricAcid
     public static Material CadmiumSulfateSolution
-    public static Material MercuryOxide
+    public static Material MercuryIIOxide
     public static Material IndiumChloride
     public static Material IndiumHydroxide
     public static Material IndiumOxide
     public static Material TitaniumDioxide
     public static Material EthanolWaterAzeotrope
-    public static Material EntrainedEthanolWaterAzeotrope
     public static Material ChromiumIIIOxide
     public static Material SodiumSulfateAcetoneSolution
     public static Material SilicaGel
@@ -1441,7 +1450,7 @@ class SuSyMaterials {
     public static Material ImpureBariumSulfide
     public static Material ImpureStrontiumSulfide
     public static Material DilutedAceticAcid
-    public static Material CobaltIIAcetate
+    public static Material CobaltIIAcetateTetrahydrate
     public static Material PotassiumPyrosulfate
     public static Material IronIIINitrateSolution
     public static Material ManganeseIIChloride
@@ -1514,7 +1523,7 @@ class SuSyMaterials {
     public static Material LithiumNitrate
     public static Material LithiumNitrateSolution
     public static Material ZincCarbonate
-    public static Material CopperCarbonate
+    public static Material BasicCopperCarbonate
     public static Material AmmoniumHexachlororuthenate
     public static Material AmmoniumHexachlororhodate
     public static Material AmmoniumHexachloroiridate
@@ -1650,10 +1659,20 @@ class SuSyMaterials {
     public static Material BariumFluoride
     public static Material GreenCarbon
     public static Material BakedCarbon
+    public static Material MercuryIISulfateSolution
+    public static Material CopperIIAcetateMonohydrate
+    public static Material RhodiumIIIChlorideTrihydrate
+    public static Material LithiumIodideSolution
+    public static Material HexachloroiridicIIIAcidSolution
+    public static Material IridiumIIIChlorideTrihydrate
+    public static Material TetrachloropalladicIIAcidSolution
     public static Material GreenVitriol
     public static Material NitrosylsulfuricAcid
     public static Material AB2MetalAlloy
     public static Material AB5MetalAlloy
+    public static Material AcetaldehydeSolution
+    public static Material GammaAlumina
+    public static Material FineGammaAlumina
 
     // HP Materials
 
@@ -1684,7 +1703,7 @@ class SuSyMaterials {
     public static Material HighPurityArsenic
     public static Material HighPuritySelenium
     public static Material HighPurityRubidium
-    public static Material HighPurityStronium
+    public static Material HighPurityStrontium
     public static Material HighPurityYttrium
     public static Material HighPurityZirconium
     public static Material HighPurityNiobium
@@ -1731,8 +1750,8 @@ class SuSyMaterials {
 
     // Second Degree Materials
 
-    public static Material PlatinumPrecursorSolution
-    public static Material PalladiumPrecursorSolution
+    public static Material SupportedPlatinumChloride
+    public static Material SupportedPalladiumChloride
     public static Material SupportedPlatinum
     public static Material NitrateSaltMix
     public static Material AmmoniumChlorideSolution
@@ -1753,7 +1772,7 @@ class SuSyMaterials {
     public static Material PotassiumFluorideSolution
     public static Material PotassiumTetrafluoroborateSolution
     public static Material SodiumBromideSolution
-    public static Material WackerCatalyst
+    public static Material WackerCatalystSolution
     public static Material PotassiumIodideSolution
     public static Material SodiumSulfateSolution
     public static Material CopperZincChromiumOxide
@@ -1889,6 +1908,7 @@ class SuSyMaterials {
     public static Material ReactiveAlumina
     public static Material SodiumDithioniteSolution
     public static Material HoopesElectrolyte
+    public static Material CopperIIAcetateSolution
     public static Material LeadChamberReactionMixture
 
     // Organic Chemistry Materials
@@ -1922,7 +1942,7 @@ class SuSyMaterials {
     public static Material DilutedEpichlorohydrin
     public static Material Isobutane
     public static Material Isobutylene
-    public static Material MethylAcetateSolution
+    public static Material AcidicMethylAcetateWaterMixture
     public static Material TrimethylBorate
     public static Material TwoChloronitrobenzene
     public static Material ChloronitrobenzeneMixture
@@ -1941,6 +1961,7 @@ class SuSyMaterials {
     public static Material PBISolution
     public static Material PBIWaste
     public static Material Cyclohexanone
+    public static Material Cyclohexanol
     public static Material CaprolactamSolution
     public static Material CrackedOneTwoDichloroethaneMix
     public static Material VinylChlorideSuspension
@@ -2002,7 +2023,6 @@ class SuSyMaterials {
     public static Material PhthalicAnhydride
     public static Material ImpureCaprolactam
     public static Material Dimethylformamide
-    public static Material CativaCatalyst
     public static Material TwoEthylanthraquinone
     public static Material TwoEthylanthrahydroquinone
     public static Material Butanone
@@ -2033,7 +2053,6 @@ class SuSyMaterials {
     public static Material Bistrichloromethylbenzene
     public static Material TerephthaloylChloride
     public static Material Kevlar
-    public static Material AceticAnhydride
     public static Material CelluloseAcetate
     public static Material Pyridine
     public static Material Quinoline
@@ -2168,7 +2187,8 @@ class SuSyMaterials {
     public static Material TosylicAcidSolution
     public static Material Triphenylphosphine
     public static Material TriphenylphosphineDichloride
-    public static Material BistriphenylphosphineiminiumChloride
+    public static Material AceticAcidEthanolMixture
+    public static Material AceticAcidMethanolMixture
     public static Material TriphenylphosphineOxide
     public static Material Methyltrichlorosilane
     public static Material Methyldichlorosilane
@@ -2284,6 +2304,7 @@ class SuSyMaterials {
     public static Material DiTertButylPeroxide
     public static Material TwoEthylhexylNitrate
     public static Material Nitromethane
+    public static Material MethylIodideSolution
     public static Material Polycarbonate
     public static Material Trichlorofluoromethane
     public static Material Dichlorodifluoromethane
@@ -2340,6 +2361,7 @@ class SuSyMaterials {
     public static Material FourFourDifluorobenzophenone
     public static Material ParaDiisopropylbenzene
     public static Material Hydroquinone
+    public static Material AcidicEthylAcetateWaterMixture
     public static Material BenzenesulfonicAcid
     public static Material DiphenylSulfone
     public static Material PolyetherEtherKetone
@@ -2416,7 +2438,6 @@ class SuSyMaterials {
     public static Material LithiumSolution
     public static Material DimethylacetamideSolution
     public static Material AcidicFurfuralSolution
-    public static Material WackerCatalystSolution
     public static Material TwoEthylanthraquinoneSolution
     public static Material AcetamideSolution
     public static Material HydrazineSolution
@@ -2556,6 +2577,9 @@ class SuSyMaterials {
     public static Material OneNaphtholTwoDiazoniumChlorideSolution
     public static Material BenzenediazoniumChlorideSolution
     public static Material BenzenediazoniumFluorideSolution
+    public static Material IsopropylAlcoholSolution
+    public static Material KetoneAlcoholOil
+    public static Material AcetyleneSolution
 
     // Thermodynamics Materials
 
