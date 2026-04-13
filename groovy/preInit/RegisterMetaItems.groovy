@@ -241,8 +241,9 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(4020, "electrode.nickeled_steel_foil")
         addItem(4021, "membrane.caprolactam")
         addItem(4022, "membrane.caprolactam_wet")
-        addItem(4023, "membrane.caprolactam_quenched")
-        addItem(4024, "membrane.caprolactam_casted")
+        addItem(4023, "membrane.caprolactam_casted")
+        addItem(4024, "anode.MetalHydrideMix")
+        addItem(4025, "anode.MetalHydride")
 
         addItem(4101, "vacuum_tube_components")
 

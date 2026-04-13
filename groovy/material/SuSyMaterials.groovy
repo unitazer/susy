@@ -1673,6 +1673,8 @@ class SuSyMaterials {
     public static Material AcetaldehydeSolution
     public static Material GammaAlumina
     public static Material FineGammaAlumina
+    public static Material AnnaelledAB2MetalAlloy
+    public static Material AnnaelledAB5MetalAlloy
 
     // HP Materials
 
@@ -2580,6 +2582,7 @@ class SuSyMaterials {
     public static Material IsopropylAlcoholSolution
     public static Material KetoneAlcoholOil
     public static Material AcetyleneSolution
+    public static Material PolyCaprolactamSolution
 
     // Thermodynamics Materials
 
