@@ -1112,5 +1112,17 @@ class SecondDegreeMaterials {
                 .components(SulfurDioxide, NitrogenDioxide, Water)
                 .colorAverage()
                 .build()
+
+        DimethylDioxaneSolution = new Material.Builder(13184, SuSyUtility.susyId('dimethyl_dioxane_solution'))
+                .liquid()
+                .components(SulfuricAcid, DimethylOneThreeDioxane, Water)
+                .colorAverage()
+                .build()
+
+        IsopreneSolution = new Material.Builder(13185, SuSyUtility.susyId('isoprene_solution'))
+                .liquid()
+                .components(Water, Isoprene, Formaldehyde)
+                .colorAverage()
+                .build()
     }
 }

@@ -1674,6 +1674,8 @@ class SuSyMaterials {
     public static Material DimethylOneThreeDioxane
     public static Material Methylbutynol
     public static Material Methylbutenol
+    public static Material DimethylDioxaneSolution
+    public static Material IsopreneSolution
 
     // HP Materials
 
