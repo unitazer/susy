@@ -712,7 +712,7 @@ class FirstDegreeMaterialsB {
 
         NitrosylsulfuricAcid.setFormula("(NOHSO4)2(H2O)", true)
 
-        AB2MetalHydride = new Material.Builder(8770, SuSyUtility.susyId('AB_2_metal_hydride'))
+        AB2MetalAlloy = new Material.Builder(8770, SuSyUtility.susyId('AB_2_metal_alloy'))
                 .ingot().liquid(new FluidBuilder().temperature(1500))
                 .components(HighPurityZirconium * 8, Titanium * 2, Vanadium * 6, Manganese * 3, Palladium, Nickel * 8, Iron * 2)
                 .color(0xa66570)
@@ -721,7 +721,7 @@ class FirstDegreeMaterialsB {
                 .build()
                 .setFormula("(Zr0.8Ti0.2)(V0.6Mn0.3Pd0.1Ni0.8Fe0.2)", true)
 
-        AB5MetalHydride = new Material.Builder(8771, SuSyUtility.susyId('AB_5_metal_hydride'))
+        AB5MetalAlloy = new Material.Builder(8771, SuSyUtility.susyId('AB_5_metal_alloy'))
                 .ingot().liquid(new FluidBuilder().temperature(1500))
                 .components(Lanthanum * 8, HighPurityZirconium * 2, Nickel * 45, Aluminium * 5)
                 .color(0xac6570)

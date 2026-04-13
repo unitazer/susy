@@ -239,10 +239,10 @@ eventManager.listen { PostMaterialEvent event ->
         Batteries['ni_mh.luv'].register(it, 4018)
         addItem(4019, "anode.metal_hydride")
         addItem(4020, "electrode.nickeled_steel_foil")
-        addItem(4021, "membrane.caprolatam")
-        addItem(4022, "membrane.caprolatam_wet")
-        addItem(4023, "membrane.caprolatam_quenched")
-        addItem(4024, "membrane.caprolatam_casted")
+        addItem(4021, "membrane.caprolactam")
+        addItem(4022, "membrane.caprolactam_wet")
+        addItem(4023, "membrane.caprolactam_quenched")
+        addItem(4024, "membrane.caprolactam_casted")
 
         addItem(4101, "vacuum_tube_components")
 
