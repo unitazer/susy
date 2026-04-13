@@ -476,6 +476,33 @@ VACUUM_CHAMBER.recipeBuilder()
         .EUt(VA[HV])
         .buildAndRegister()
 
+// Nickel Metal Hydride Battery
+
+ADVANCED_ARC_FURNACE.recipeBuilder()
+        .inputs(ore('dustHighPurityZirconium') * 8)
+        .inputs((ore('dustAnyPurityTitanium') * 2))
+        .inputs(ore('dustAnyPurityVanadium') * 6)
+        .inputs(ore('dustAnyPurityManganese') * 3)
+        .inputs(ore('dustAnyPurityPalladium'))
+        .inputs(ore('dustAnyPurityNickel') * 8)
+        .inputs(ore('dustAnyPurityIron') * 2)
+        .fluidInputs(fluid('argon') * 4000)
+        .fluidOutputs(fluid('AB2_metal_hydride') * 4320)
+        .duration(445)
+        .EUt(VA[EV])
+        .buildAndRegister()
+
+INDUCTION_FURNACE.recipeBuilder()
+        .inputs(ore('dustLanthanum') * 8)
+        .inputs(ore('dustHighPurityZirconium') * 2)
+        .inputs(ore('dustAnyPurityNickel') * 45)
+        .inputs(ore('dustAnyPurityAluminium') * 5)
+        .fluidInputs(fluid('argon') * 4000)
+        .fluidOutputs(fluid('AB5_metal_hydride') * 8640)
+        .duration(845)
+        .EUt(VA[EV])
+        .buildAndRegister()
+
 // HV Battery Hull  TO CHANGE
 ASSEMBLER.recipeBuilder()
         .circuitMeta(5)
