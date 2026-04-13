@@ -674,6 +674,7 @@ generateGreenhouseTreeRecipes('greenhouse_gases', item('biomesoplenty:sapling_2'
 generateGreenhouseTreeRecipes('greenhouse_gases', item('biomesoplenty:sapling_2', 7), item('biomesoplenty:leaves_5', 11), item('biomesoplenty:log_3', 7))
 
 //VANILLA CROPS
+// to be removed in later update
 
 ARBORETUM.recipeBuilder()
         .notConsumable(item('minecraft:cactus'))
@@ -936,3 +937,115 @@ generateGreenhouseCropRecipes('warm_humid_greenhouse_gases', metaitem('gregtechf
 //CUSTOM CROPS
 
 generateGreenhouseCropRecipes('warm_humid_greenhouse_gases', metaitem('gregtechfoodoption:seed.cotton'), metaitem('gregtechfoodoption:component.cotton'), 20)
+
+def registerGreenhouseRecipeBySeed (input, output) {
+    GREENHOUSE.recipeBuilder()
+            .notConsumable(input * 8)
+            .fluidInputs(fluid('water') * 2000)
+            .outputs(input * 24)
+            .outputs(output * 32)
+            .duration(600)
+            .EUt(60)
+            .buildAndRegister()
+
+    GREENHOUSE.recipeBuilder()
+            .notConsumable(input * 8)
+            .inputs(metaitem('fertilizer') * 2)
+            .fluidInputs(fluid('water') * 2000)
+            .outputs(input * 48)
+            .outputs(output * 64)
+            .duration(600)
+            .EUt(60)
+            .buildAndRegister()
+}
+
+def registerGreenhouseRecipeNoSeed (input) {
+    GREENHOUSE.recipeBuilder()
+            .notConsumable(input * 8)
+            .fluidInputs(fluid('water') * 2000)
+            .outputs(input * 32)
+            .duration(600)
+            .EUt(60)
+            .buildAndRegister()
+
+    GREENHOUSE.recipeBuilder()
+            .notConsumable(input * 8)
+            .inputs(metaitem('fertilizer') * 2)
+            .fluidInputs(fluid('water') * 2000)
+            .outputs(input * 64)
+            .duration(600)
+            .EUt(60)
+            .buildAndRegister()
+}
+
+registerGreenhouseRecipeBySeed(item('minecraft:wheat_seeds'), item('minecraft:wheat'));
+registerGreenhouseRecipeBySeed(item('minecraft:beetroot_seeds'), item('minecraft:beetroot'));
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.soy'), metaitem('gregtechfoodoption:component.soybean'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.tomato'), metaitem('gregtechfoodoption:crop.tomato'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.cucumber'), metaitem('gregtechfoodoption:crop.cucumber'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.onion'), metaitem('gregtechfoodoption:crop.onion'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.grape'), metaitem('gregtechfoodoption:food.grapes'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.horseradish'), metaitem('gregtechfoodoption:component.horseradish'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.oregano'), metaitem('gregtechfoodoption:component.oregano'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.basil'), metaitem('gregtechfoodoption:component.basil'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.aubergine'), metaitem('gregtechfoodoption:crop.aubergine'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.artichoke'), metaitem('gregtechfoodoption:component.artichoke'))
+registerGreenhouseRecipeBySeed(metaitem('gregtechfoodoption:seed.cotton'), metaitem('gregtechfoodoption:component.cotton'))
+
+registerGreenhouseRecipeNoSeed(item('minecraft:potato'))
+registerGreenhouseRecipeNoSeed(item('minecraft:carrot'))
+registerGreenhouseRecipeNoSeed(item('minecraft:reeds'))
+registerGreenhouseRecipeNoSeed(metaitem('gregtechfoodoption:seed.coffee'))
+registerGreenhouseRecipeNoSeed(metaitem('gregtechfoodoption:seed.pea'))
+registerGreenhouseRecipeNoSeed(metaitem('gregtechfoodoption:seed.bean'))
+registerGreenhouseRecipeNoSeed(metaitem('gregtechfoodoption:seed.garlic'))
+registerGreenhouseRecipeNoSeed(metaitem('gregtechfoodoption:component.corn.ear'))
+registerGreenhouseRecipeNoSeed(metaitem('gregtechfoodoption:component.black_pepper'))
+registerGreenhouseRecipeNoSeed(metaitem('gregtechfoodoption:component.rice'))
+
+GREENHOUSE.recipeBuilder()
+        .notConsumable(item('minecraft:melon_seeds') * 8)
+        .fluidInputs(fluid('water') * 2000)
+        .outputs(item('minecraft:melon_seeds') * 4)
+        .outputs(item('minecraft:melon_block') * 8)
+        .duration(600)
+        .EUt(60)
+        .buildAndRegister();
+
+GREENHOUSE.recipeBuilder()
+        .notConsumable(item('minecraft:melon_seeds') * 8)
+        .inputs(metaitem('fertilizer') * 2)
+        .fluidInputs(fluid('water') * 2000)
+        .outputs(item('minecraft:melon_seeds') * 8)
+        .outputs(item('minecraft:melon_block') * 16)
+        .duration(600)
+        .EUt(60)
+        .buildAndRegister();
+
+GREENHOUSE.recipeBuilder()
+        .notConsumable(item('minecraft:pumpkin_seeds') * 8)
+        .fluidInputs(fluid('water') * 2000)
+        .outputs(item('minecraft:pumpkin_seeds') * 4)
+        .outputs(item('minecraft:pumpkin') * 8)
+        .duration(600)
+        .EUt(60)
+        .buildAndRegister();
+
+GREENHOUSE.recipeBuilder()
+        .notConsumable(item('minecraft:pumpkin_seeds') * 8)
+        .inputs(metaitem('fertilizer') * 2)
+        .fluidInputs(fluid('water') * 2000)
+        .outputs(item('minecraft:pumpkin_seeds') * 8)
+        .outputs(item('minecraft:pumpkin') * 16)
+        .duration(600)
+        .EUt(60)
+        .buildAndRegister();
+
+GREENHOUSE.recipeBuilder()
+        .notConsumable(item('minecraft:cactus') * 8)
+        .notConsumable(item('minecraft:sand') * 8)
+        .fluidInputs(fluid('water') * 400)
+        .outputs(item('minecraft:cactus') * 32)
+        .duration(600)
+        .EUt(60)
+        .buildAndRegister();
