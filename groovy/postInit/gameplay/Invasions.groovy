@@ -3,6 +3,7 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
 import techguns.entities.npcs.Bandit;
+import techguns.entities.npcs.Outcast;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.nbt.NBTTagCompound
 
@@ -50,13 +51,6 @@ new MobHordeEvent((player) -> {
         .setTimer(144000, 216000)        // 2 - 3 hours
         .setCanUsePods(false)
 
-
-//bandits
-//todo
-//add HATE mechanic - DONE
-//make several raids scaling with said mechanic
-//add one scripted event when you get first assembler
-
 //HATE
 // invading raiders have negative hate, that hate gets subtracted when they get killed
 // when the raid ends and there are raiders alive, the hate gets inverted and added instead
@@ -83,10 +77,51 @@ MobHordeEvent.baseline(new ResourceLocation("gregtech:high_voltage/40_workstatio
 MobHordeEvent.baseline(new ResourceLocation("gregtech:insane_voltage/root_iv"), 65)
 
 //Human invasions
+//Bandits
 
 //Scripted
-//Ivan, the tutorial raider
+/**
+ Ivan, the tutorial raider
+ only Ivan
+ beer bottle
+ no armor
+ hangover
+ scripted event, here to show that there are other humans out there
+ Poor Ivan, stumbling his way through the dark he always finds himself in all sorts of trouble
+ The only invasion enemy which will not increase HATE if you let him escape
+ **/
 
+new MobHordeEvent((player) -> {
+    Bandit bandit = new Bandit(player.world);
+    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+    root.setString("faction", "Bandits");
+    root.setInteger("hate", 0);
+    bandit.getEntityData().setTag("susy", root);
+    bandit.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 999999, 2));
+
+    return bandit;
+}, 1, 1, "bandit_scripted_Ivan")
+        .setPostSpawnModifier({ entity ->
+            NBTTagCompound nbt = new NBTTagCompound()
+            def armor = new net.minecraft.nbt.NBTTagList()
+            ["boots", "leggings", "chestplate", "helmet"].eachWithIndex { name, idx -> //no armor
+                def tag = new NBTTagCompound()
+                armor.appendTag(tag)
+            }
+            def hands = new net.minecraft.nbt.NBTTagList()
+            def main = new NBTTagCompound()
+            main.setString("id", "gregtechfoodoption:gtfo_meta_item")
+            main.setByte("Count", (byte) 1)
+            main.setInteger("Damage", 220)
+            hands.appendTag(main)
+            hands.appendTag(new NBTTagCompound())
+            nbt.setTag("ArmorItems", armor)
+            nbt.setTag("HandItems", hands)
+            entity.readEntityFromNBT(nbt)
+            return entity
+        })
+        .triggerOnAdvancement(new ResourceLocation("gregtech:steam/91_primitive_blast_furnace"))
+        .runOnce()
 
 //Random
 /**
@@ -235,7 +270,7 @@ new MobHordeEvent((player) -> null, 10, 18, "bandit_large_raid")
         .setTimer(144000, 216000)
         .minHate("Bandits", 50)
 
-        //normal raider
+//normal raider
         .addPattern(
                 //circle
                 t -> {
@@ -294,7 +329,7 @@ new MobHordeEvent((player) -> null, 10, 18, "bandit_large_raid")
                     return entity;
                 }
         )
-        //mercenary
+//mercenary
         .addPattern(
                 //square
                 t -> {
@@ -365,7 +400,7 @@ new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
         .setTimer(144000, 216000)
         .minHate("Bandits", 100)
 
-        //normal raider
+//normal raider
         .addPattern(
                 //circle
                 t -> {
@@ -423,7 +458,7 @@ new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
                     return entity;
                 }
         )
-        //mercenary
+//mercenary
         .addPattern(
                 //square
                 t -> {
@@ -493,6 +528,49 @@ new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
  hate resets to baseline if you manage to defeat the siege
  The bandits consider themselves at total war with you
  **/
+
+
+
+//Feds
+//Scripted
+//Fed ortibal intervention
+
+//Random
+/**
+ federation scout
+ 1 person
+ LMG
+ full power armor
+ active combat stims
+ Whatever's left of the federation has noticed your presence, good luck
+ **/
+
+new MobHordeEvent((player) -> {
+    Outcast outcast = new Outcast(player.world);
+    //hate
+    NBTTagCompound root = outcast.getEntityData().getCompoundTag("susy");
+    root.setString("faction", "Feds");
+    root.setInteger("hate", -10);
+    outcast.getEntityData().setTag("susy", root);
+    outcast.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 999999, 1));
+    //do not use addRandomArmor in here if you set the nbt tag later, otherwise it will override it for some reason
+
+    return outcast;
+}, 1, 1, "fed_scout")
+        .setPostSpawnModifier({ entity ->
+            NBTTagCompound nbt = new NBTTagCompound()
+            def hands = new net.minecraft.nbt.NBTTagList()
+            def main = new NBTTagCompound()
+            main.setString("id", "techguns:lmg")
+            main.setByte("Count", (byte) 1)
+            hands.appendTag(main)
+            hands.appendTag(new NBTTagCompound())
+            nbt.setTag("HandItems", hands)
+            entity.readEntityFromNBT(nbt)
+            return entity
+        })
+        .setTimer(144000, 216000)
+        .minHate("Feds", 80)
 
 /*
 // Commands for pods
