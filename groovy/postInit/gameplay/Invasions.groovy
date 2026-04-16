@@ -288,44 +288,43 @@ new MobHordeEvent((player) -> null, 10, 18, "bandit_large_raid")
                     return bandit;
                 },
                 entity -> {
-                    if (entity instanceof Bandit) {
-                        NBTTagCompound nbt = new NBTTagCompound();
+                    NBTTagCompound nbt = new NBTTagCompound();
 
-                        // Armor
-                        net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
-                        String[] armorItems = new String[]{
-                                "techguns:t1_scout_boots",
-                                "techguns:t1_scout_leggings",
-                                "techguns:t1_scout_chestplate",
-                                "techguns:t1_scout_helmet"
-                        };
-                        for (String item : armorItems) {
-                            net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
-                            armorTag.setString("id", item);
-                            armorTag.setByte("Count", (byte)1);
-                            armor.appendTag(armorTag);
-                        }
-                        nbt.setTag("ArmorItems", armor);
-
-                        // Random weapon
-                        String[] possibleWeapons = new String[]{
-                                "techguns:thompson",
-                                "techguns:boltaction",
-                                "techguns:mac10",
-                                "techguns:ak47"
-                        };
-                        String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
-
-                        net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
-                        net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
-                        main.setString("id", chosenWeapon);
-                        main.setByte("Count", (byte)1);
-                        hands.appendTag(main);
-                        hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
-                        nbt.setTag("HandItems", hands);
-
-                        entity.readEntityFromNBT(nbt);
+                    // Armor
+                    net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                    String[] armorItems = new String[]{
+                            "techguns:t1_scout_boots",
+                            "techguns:t1_scout_leggings",
+                            "techguns:t1_scout_chestplate",
+                            "techguns:t1_scout_helmet"
+                    };
+                    for (String item : armorItems) {
+                        net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                        armorTag.setString("id", item);
+                        armorTag.setByte("Count", (byte)1);
+                        armor.appendTag(armorTag);
                     }
+                    nbt.setTag("ArmorItems", armor);
+
+                    // Random weapon
+                    String[] possibleWeapons = new String[]{
+                            "techguns:thompson",
+                            "techguns:boltaction",
+                            "techguns:mac10",
+                            "techguns:ak47"
+                    };
+                    String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
+
+                    net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                    net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                    main.setString("id", chosenWeapon);
+                    main.setByte("Count", (byte)1);
+                    hands.appendTag(main);
+                    hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                    nbt.setTag("HandItems", hands);
+
+                    entity.readEntityFromNBT(nbt);
+
                     return entity;
                 }
         )
@@ -350,38 +349,36 @@ new MobHordeEvent((player) -> null, 10, 18, "bandit_large_raid")
                     return bandit;
                 },
                 entity -> {
-                    if (entity instanceof Bandit) {
-                        NBTTagCompound nbt = new NBTTagCompound();
+                    NBTTagCompound nbt = new NBTTagCompound();
 
-                        // Armor
-                        net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
-                        String[] armorItems = new String[]{
-                                "techguns:t2_combat_boots",
-                                "techguns:t2_combat_leggings",
-                                "techguns:t2_combat_chestplate",
-                                "techguns:t2_combat_helmet"
-                        };
-                        for (String item : armorItems) {
-                            net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
-                            armorTag.setString("id", item);
-                            armorTag.setByte("Count", (byte)1);
-                            armor.appendTag(armorTag);
-                        }
-                        nbt.setTag("ArmorItems", armor);
-
-                        // m4 only
-                        String chosenWeapon = "techguns:m4"
-
-                        net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
-                        net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
-                        main.setString("id", chosenWeapon);
-                        main.setByte("Count", (byte)1);
-                        hands.appendTag(main);
-                        hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
-                        nbt.setTag("HandItems", hands);
-
-                        entity.readEntityFromNBT(nbt);
+                    // Armor
+                    net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                    String[] armorItems = new String[]{
+                            "techguns:t2_combat_boots",
+                            "techguns:t2_combat_leggings",
+                            "techguns:t2_combat_chestplate",
+                            "techguns:t2_combat_helmet"
+                    };
+                    for (String item : armorItems) {
+                        net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                        armorTag.setString("id", item);
+                        armorTag.setByte("Count", (byte)1);
+                        armor.appendTag(armorTag);
                     }
+                    nbt.setTag("ArmorItems", armor);
+
+                    // m4 only
+                    String chosenWeapon = "techguns:m4"
+
+                    net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                    net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                    main.setString("id", chosenWeapon);
+                    main.setByte("Count", (byte)1);
+                    hands.appendTag(main);
+                    hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                    nbt.setTag("HandItems", hands);
+
+                    entity.readEntityFromNBT(nbt);
                     return entity;
                 }
         )
@@ -418,43 +415,41 @@ new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
                     return bandit;
                 },
                 entity -> {
-                    if (entity instanceof Bandit) {
-                        NBTTagCompound nbt = new NBTTagCompound();
+                    NBTTagCompound nbt = new NBTTagCompound();
 
-                        // Armor
-                        net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
-                        String[] armorItems = new String[]{
-                                "techguns:t1_combat_boots",
-                                "techguns:t1_combat_leggings",
-                                "techguns:t1_combat_chestplate",
-                                "techguns:t1_combat_helmet"
-                        };
-                        for (String item : armorItems) {
-                            net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
-                            armorTag.setString("id", item);
-                            armorTag.setByte("Count", (byte)1);
-                            armor.appendTag(armorTag);
-                        }
-                        nbt.setTag("ArmorItems", armor);
-
-                        // Random weapon
-                        String[] possibleWeapons = new String[]{
-                                "techguns:thompson",
-                                "techguns:combatshotgun",
-                                "techguns:ak47"
-                        };
-                        String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
-
-                        net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
-                        net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
-                        main.setString("id", chosenWeapon);
-                        main.setByte("Count", (byte)1);
-                        hands.appendTag(main);
-                        hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
-                        nbt.setTag("HandItems", hands);
-
-                        entity.readEntityFromNBT(nbt);
+                    // Armor
+                    net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                    String[] armorItems = new String[]{
+                            "techguns:t1_combat_boots",
+                            "techguns:t1_combat_leggings",
+                            "techguns:t1_combat_chestplate",
+                            "techguns:t1_scout_helmet"
+                    };
+                    for (String item : armorItems) {
+                        net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                        armorTag.setString("id", item);
+                        armorTag.setByte("Count", (byte)1);
+                        armor.appendTag(armorTag);
                     }
+                    nbt.setTag("ArmorItems", armor);
+
+                    // Random weapon
+                    String[] possibleWeapons = new String[]{
+                            "techguns:thompson",
+                            "techguns:combatshotgun",
+                            "techguns:ak47"
+                    };
+                    String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
+
+                    net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                    net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                    main.setString("id", chosenWeapon);
+                    main.setByte("Count", (byte)1);
+                    hands.appendTag(main);
+                    hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                    nbt.setTag("HandItems", hands);
+
+                    entity.readEntityFromNBT(nbt);
                     return entity;
                 }
         )
@@ -479,38 +474,36 @@ new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
                     return bandit;
                 },
                 entity -> {
-                    if (entity instanceof Bandit) {
-                        NBTTagCompound nbt = new NBTTagCompound();
+                    NBTTagCompound nbt = new NBTTagCompound();
 
-                        // Armor
-                        net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
-                        String[] armorItems = new String[]{
-                                "techguns:t2_combat_boots",
-                                "techguns:t2_combat_leggings",
-                                "techguns:t2_combat_chestplate",
-                                "techguns:t2_combat_helmet"
-                        };
-                        for (String item : armorItems) {
-                            net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
-                            armorTag.setString("id", item);
-                            armorTag.setByte("Count", (byte)1);
-                            armor.appendTag(armorTag);
-                        }
-                        nbt.setTag("ArmorItems", armor);
-
-                        // m4 only
-                        String chosenWeapon = "techguns:m4"
-
-                        net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
-                        net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
-                        main.setString("id", chosenWeapon);
-                        main.setByte("Count", (byte)1);
-                        hands.appendTag(main);
-                        hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
-                        nbt.setTag("HandItems", hands);
-
-                        entity.readEntityFromNBT(nbt);
+                    // Armor
+                    net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                    String[] armorItems = new String[]{
+                            "techguns:t2_combat_boots",
+                            "techguns:t2_combat_leggings",
+                            "techguns:t2_combat_chestplate",
+                            "techguns:t2_combat_helmet"
+                    };
+                    for (String item : armorItems) {
+                        net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                        armorTag.setString("id", item);
+                        armorTag.setByte("Count", (byte)1);
+                        armor.appendTag(armorTag);
                     }
+                    nbt.setTag("ArmorItems", armor);
+
+                    // m4 only
+                    String chosenWeapon = "techguns:m4"
+
+                    net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                    net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                    main.setString("id", chosenWeapon);
+                    main.setByte("Count", (byte)1);
+                    hands.appendTag(main);
+                    hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                    nbt.setTag("HandItems", hands);
+
+                    entity.readEntityFromNBT(nbt);
                     return entity;
                 }
         )
@@ -529,7 +522,209 @@ new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
  The bandits consider themselves at total war with you
  **/
 
+new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
+        .setTimer(144000, 216000)
+        .minHate("Bandits", 300)
 
+//walls
+        .addPattern(
+                //square
+                t -> {
+                    double n = 2;
+                    double angle = t * 2 * Math.PI;
+                    double radius = 15;
+                    double x = (Math.cos(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.cos(angle)), 2/n) * radius;
+                    double z = (Math.sin(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.sin(angle)), 2/n) * radius;
+                    return new MobHordeEvent.Vec2(x, z);
+                },
+                Arrays.asList("setblock ~ ~ ~ techguns:sandbags"), //replace with bigger sandbags
+                null,
+                null,
+        )
+//mortar
+        .addPattern(
+                //square
+                t -> {
+                    return new MobHordeEvent.Vec2(0, 0); //always spawns in the center of the invasion
+                },
+                Arrays.asList("setblock ~ ~ ~ minecraft:redstone_block"), //replace with auto-mortar, shells do not destroy blocks before the player launches a rocket
+                null,
+                null,
+        )
+//flare
+        .addPattern(
+                //circle
+                t -> {
+                    double radius = 5;
+                    double angle = t * 2 * Math.PI;
+                    return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
+                },
+                Arrays.asList("setblock ~ ~ ~ susy:raid_flare_block 0 replace {targetUUID:\"%player_uuid%\"}"), //add player data tag
+                null,
+                null,
+        )
+//initial defender wave
+        .addPattern(
+                //square
+                t -> {
+                    double radius = 10;
+                    double angle = t * 2 * Math.PI;
+                    return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
+                },
+                null,
+                player -> {
+                    Bandit bandit = new Bandit(player.world);
+                    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+                    root.setString("faction", "Bandits");
+                    root.setInteger("hate", -5);
+                    bandit.getEntityData().setTag("susy", root);
+                    return bandit;
+                },
+                entity -> {
+                    NBTTagCompound nbt = new NBTTagCompound();
+
+                    // Armor
+                    net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                    String[] armorItems = new String[]{
+                            "techguns:t1_combat_boots",
+                            "techguns:t1_combat_leggings",
+                            "techguns:t1_combat_chestplate",
+                            "techguns:t1_scout_helmet"
+                    };
+                    for (String item : armorItems) {
+                        net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                        armorTag.setString("id", item);
+                        armorTag.setByte("Count", (byte)1);
+                        armor.appendTag(armorTag);
+                    }
+                    nbt.setTag("ArmorItems", armor);
+
+                    // Random weapon
+                    String[] possibleWeapons = new String[]{
+                            "techguns:m4",
+                            "techguns:combatshotgun",
+                            "techguns:ak47"
+                    };
+                    String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
+
+                    net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                    net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                    main.setString("id", chosenWeapon);
+                    main.setByte("Count", (byte)1);
+                    hands.appendTag(main);
+                    hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                    nbt.setTag("HandItems", hands);
+
+                    entity.readEntityFromNBT(nbt);
+                    return entity;
+                }
+        )
+//mercenaries
+        .addPattern(
+                //square
+                t -> {
+                    double n = 2;
+                    double angle = t * 2 * Math.PI;
+                    double radius = 12;
+                    double x = (Math.cos(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.cos(angle)), 2/n) * radius;
+                    double z = (Math.sin(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.sin(angle)), 2/n) * radius;
+                    return new MobHordeEvent.Vec2(x, z);
+                },
+                null,
+                player -> {
+                    Bandit bandit = new Bandit(player.world);
+                    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+                    root.setString("faction", "Bandits");
+                    root.setInteger("hate", -7);
+                    bandit.getEntityData().setTag("susy", root);
+                    return bandit;
+                },
+                entity -> {
+                    if (entity instanceof Bandit) {
+                        NBTTagCompound nbt = new NBTTagCompound();
+
+                        // Armor
+                        net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                        String[] armorItems = new String[]{
+                                "techguns:t2_combat_boots",
+                                "techguns:t2_combat_leggings",
+                                "techguns:t2_combat_chestplate",
+                                "techguns:t2_combat_helmet"
+                        };
+                        for (String item : armorItems) {
+                            net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                            armorTag.setString("id", item);
+                            armorTag.setByte("Count", (byte)1);
+                            armor.appendTag(armorTag);
+                        }
+                        nbt.setTag("ArmorItems", armor);
+                        // m4 only
+                        String chosenWeapon = "techguns:m4"
+
+                        net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                        net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                        main.setString("id", chosenWeapon);
+                        main.setByte("Count", (byte)1);
+                        hands.appendTag(main);
+                        hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                        nbt.setTag("HandItems", hands);
+
+                        entity.readEntityFromNBT(nbt);
+                    }
+                    return entity;
+                }
+        )
+//siege commander
+        .addPattern(
+                //center point
+                t -> {
+                    return new MobHordeEvent.Vec2(3, 0); //defends mortar directly
+                },
+                null,
+                player -> {
+                    Bandit bandit = new Bandit(player.world);
+                    NBTTagCompound root = bandit.getEntityData().getCompoundTag("susy");
+                    root.setString("faction", "Bandits");
+                    root.setInteger("hate", -50);
+                    bandit.getEntityData().setTag("susy", root);
+                    return bandit;
+                },
+                entity -> {
+                    NBTTagCompound nbt = new NBTTagCompound();
+
+                    // Armor
+                    net.minecraft.nbt.NBTTagList armor = new net.minecraft.nbt.NBTTagList();
+                    String[] armorItems = new String[]{
+                            "techguns:t2_riot_boots",
+                            "techguns:t2_riot_leggings",
+                            "techguns:t2_riot_chestplate",
+                            "techguns:t2_beret"
+                    };
+                    for (String item : armorItems) {
+                        net.minecraft.nbt.NBTTagCompound armorTag = new net.minecraft.nbt.NBTTagCompound();
+                        armorTag.setString("id", item);
+                        armorTag.setByte("Count", (byte)1);
+                        armor.appendTag(armorTag);
+                    }
+                    nbt.setTag("ArmorItems", armor);
+
+                    //flamethrower
+                    String chosenWeapon = "techguns:flamethrower"
+
+                    net.minecraft.nbt.NBTTagList hands = new net.minecraft.nbt.NBTTagList();
+                    net.minecraft.nbt.NBTTagCompound main = new net.minecraft.nbt.NBTTagCompound();
+                    main.setString("id", chosenWeapon);
+                    main.setByte("Count", (byte)1);
+                    hands.appendTag(main);
+                    hands.appendTag(new net.minecraft.nbt.NBTTagCompound()); // offhand empty
+                    nbt.setTag("HandItems", hands);
+
+                    entity.readEntityFromNBT(nbt);
+
+                    return entity;
+                }
+        )
+        .setExactDistribution(20,1,1,29,10,1); //walls, artillery, siege flare, initial siege wave, mercenaries, siege commander
 
 //Feds
 //Scripted
