@@ -33,15 +33,15 @@ def spawnBanditRaid(player) {
 
         // ===== Random weapon =====
         String[] weapons = [
-                "techguns:combatknife",
-                "techguns:revolver",
+                "techguns:ak47",
+                "techguns:thompson",
                 "techguns:boltaction"
         ]
 
         String chosen = weapons[(int)(Math.random() * weapons.length)]
 
         NBTTagCompound nbt = new NBTTagCompound()
-        def hands = new net.minecraft.nbt.NBTTagList()
+        def hands = new NBTTagList()
 
         def main = new NBTTagCompound()
         main.setString("id", chosen)
