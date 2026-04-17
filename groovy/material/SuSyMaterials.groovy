@@ -1902,6 +1902,7 @@ class SuSyMaterials {
     public static Material HoopesElectrolyte
     public static Material CopperIIAcetateSolution
     public static Material LeadChamberReactionMixture
+    public static Material SupportedVanadiumPentoxide
 
     // Organic Chemistry Materials
 

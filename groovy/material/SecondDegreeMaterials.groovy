@@ -1112,5 +1112,12 @@ class SecondDegreeMaterials {
                 .components(SulfurDioxide, NitrogenDioxide, Water)
                 .colorAverage()
                 .build()
+
+        SUpportedVanadiumPentoxide = new Material.Builder(13184, SuSyUtility.susyId('supported_vanadium_pentoxide'))
+                .dust().liquid()
+                .components(VanadiumPentoxide, PotassiumSulfate * 2, SiliconDioxide * 63)
+                .colorAverage()
+                .flags(GENERATE_CATALYST_BED)
+                .build()
     }
 }
