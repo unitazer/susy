@@ -382,7 +382,8 @@ new MobHordeEvent((player) -> null, 10, 18, "bandit_large_raid")
                     return entity;
                 }
         )
-        .setDistribution(90.0,10.0); //mostly normal bandits, some mercenaries
+        .setDistribution(90.0,10.0) //mostly normal bandits, some mercenaries
+        .setDropPodExplosions(false);
 
 /**
  massive raiding party
@@ -507,7 +508,8 @@ new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
                     return entity;
                 }
         )
-        .setDistribution(80.0,20.0); //mostly normal bandits, some mercenaries
+        .setDistribution(80.0,20.0) //mostly normal bandits, some mercenaries
+        .setDropPodExplosions(false);
 
 /**
  siege
@@ -537,7 +539,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                     double z = (Math.sin(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.sin(angle)), 2/n) * radius;
                     return new MobHordeEvent.Vec2(x, z);
                 },
-                Arrays.asList("setblock ~ ~ ~ techguns:sandbags"), //replace with bigger sandbags
+                Arrays.asList("#gen SandBags","kill @e[type=susy:drop_pod,r=0]"),
                 null,
                 null,
         )
@@ -547,7 +549,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                 t -> {
                     return new MobHordeEvent.Vec2(0, 0); //always spawns in the center of the invasion
                 },
-                Arrays.asList("setblock ~ ~ ~ minecraft:redstone_block"), //replace with auto-mortar, shells do not destroy blocks before the player launches a rocket
+                Arrays.asList("#gen AutoMortar","kill @e[type=susy:drop_pod,r=0]"),
                 null,
                 null,
         )
@@ -559,7 +561,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                     double angle = t * 2 * Math.PI;
                     return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
                 },
-                Arrays.asList("setblock ~ ~ ~ susy:raid_flare_block 0 replace {targetUUID:\"%player_uuid%\"}"), //add player data tag
+                Arrays.asList("setblock ~ ~ ~ susy:raid_flare_block 0 replace {targetUUID:\"%player_uuid%\"}","kill @s"),
                 null,
                 null,
         )
@@ -724,7 +726,8 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                     return entity;
                 }
         )
-        .setExactDistribution(20,1,1,29,10,1); //walls, artillery, siege flare, initial siege wave, mercenaries, siege commander
+        .setExactDistribution(20,1,1,29,10,1) //walls, artillery, siege flare, initial siege wave, mercenaries, siege commander
+        .setDropPodExplosions(false);
 
 //Feds
 //Scripted
