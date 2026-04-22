@@ -42,7 +42,7 @@ def nonMetals = [
         [input: item('minecraft:stained_hardened_clay', 15), output: item('minecraft:black_glazed_terracotta')],
         [input: item('biomesoplenty:mudball'), output: item('biomesoplenty:mud_brick')],
         [input: item('biomesoplenty:mud'), output: item('minecraft:dirt')],
-        [input: metaitem('gregtechfoodoption:brick.adobe_fired'), output: metaitem('gregtechfoodoption:brick.adobe')],
+        [input: metaitem('gregtechfoodoption:brick.adobe'), output: metaitem('gregtechfoodoption:brick.adobe_fired')],
         [input: metaitem('compressed.clay'), output: item('minecraft:brick')],
         [input: metaitem('compressed.coke_clay'), output: metaitem('brick.coke')],
         [input: metaitem('compressed.fireclay'), output: metaitem('brick.fireclay')],
@@ -67,7 +67,8 @@ def nonMetals = [
         [input: metaitem('gregtechfoodoption:component.coconut'), output: metaitem('copra')],
         [input: metaitem('raw_electrode'), output: metaitem('carbon_electrode')],
         [input: metaitem('raw_carbon_crucible'), output: metaitem('carbon_crucible')],
-        [input: metaitem('raw_clay_graphite_crucible'), output: metaitem('clay_graphite_crucible')]
+        [input: metaitem('raw_clay_graphite_crucible'), output: metaitem('clay_graphite_crucible')],
+        [input: ore('blockGreenCarbon'), output: ore('blockBakedCarbon').first()]
 ]
 
 nonMetals += mapRange('susy:susy_stone_cobble', 'susy:susy_stone_smooth', 0..11)
@@ -137,12 +138,12 @@ ore('carbonSource').add(
 
 RESISTANCE_FURNACE.recipeBuilder()
         .notConsumable(metaitem('graphite_electrode'))
-        .notConsumable(ore('dustSilicaSand') * 2)
-        .notConsumable(ore('carbonSource') * 6)
-        .inputs(ore('dustSilicaSand'))
-        .inputs(ore('carbonSource') * 3)
-        .outputs(metaitem('dustSiliconCarbide'))
-        .fluidOutputs(fluid('carbon_monoxide') * 1000)
+        .notConsumable(ore('dustSilicaSand') * 3)
+        .notConsumable(ore('carbonSource') * 3)
+        .inputs(ore('dustSilicaSand') * 6)
+        .inputs(ore('carbonSource') * 6)
+        .outputs(metaitem('dustSiliconCarbide') * 4)
+        .fluidOutputs(fluid('carbon_monoxide') * 4000)
         .duration(160)
         .EUt(VA[LV])
         .buildAndRegister()
@@ -154,6 +155,7 @@ ore('insulatingCarbon').add(
 )
 
 RESISTANCE_FURNACE.recipeBuilder()
+        .circuitMeta(1)
         .inputs(metaitem('carbon_electrode') * 2)
         .inputs(ore('insulatingCarbon') * 4)
         .notConsumable(ore('insulatingCarbon') * 16)
@@ -163,6 +165,7 @@ RESISTANCE_FURNACE.recipeBuilder()
         .buildAndRegister()
 
 RESISTANCE_FURNACE.recipeBuilder()
+        .circuitMeta(2)
         .inputs(metaitem('carbon_electrode'))
         .inputs(ore('insulatingCarbon') * 4)
         .notConsumable(ore('insulatingCarbon') * 16)
@@ -178,6 +181,16 @@ RESISTANCE_FURNACE.recipeBuilder()
         .notConsumable(ore('insulatingCarbon') * 16)
         .notConsumable(metaitem('graphite_electrode'))
         .outputs(metaitem('crucible.graphite'))
+        .duration(200)
+        .EUt(VA[LV])
+        .buildAndRegister()
+
+RESISTANCE_FURNACE.recipeBuilder()
+        .inputs(ore('blockBakedCarbon'))
+        .inputs(ore('insulatingCarbon') * 4)
+        .notConsumable(ore('insulatingCarbon') * 16)
+        .notConsumable(metaitem('graphite_electrode'))
+        .outputs(metaitem('blockGraphite'))
         .duration(200)
         .EUt(VA[LV])
         .buildAndRegister()
