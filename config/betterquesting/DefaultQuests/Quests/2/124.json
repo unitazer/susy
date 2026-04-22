@@ -1,13 +1,7 @@
 {
-  "preRequisiteTypes:7": [
-    0,
-    0,
-    1
-  ],
   "preRequisites:11": [
     127,
-    381,
-    109
+    381
   ],
   "properties:10": {
     "betterquesting:10": {
@@ -25,7 +19,7 @@
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
-          "Damage:2": 165,
+          "Damage:2": 10313,
           "id:8": "gregtech:meta_item_2"
         }
       },
