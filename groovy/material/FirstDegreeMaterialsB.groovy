@@ -825,5 +825,13 @@ class FirstDegreeMaterialsB {
                 .blastTemp(1500, GasTier.HIGH, GTValues.VA[GTValues.EV])
                 .build()
                 .setFormula("(La0.8Zr0.2)(Ni4.5Al0.5)", true)
+
+        CadmiumOxide = new Material.Builder(8785, SuSyUtility.susyId('Cadmium_oxide'))
+                .dust()
+                .components(Cadmium * 1, Oxygen * 1)
+                .color(0xe8e4d0)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
     }
 }

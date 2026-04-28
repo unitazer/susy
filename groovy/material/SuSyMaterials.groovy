@@ -1669,6 +1669,7 @@ class SuSyMaterials {
     public static Material FineGammaAlumina
     public static Material AnnaelledAB2MetalAlloy
     public static Material AnnaelledAB5MetalAlloy
+    public static Material CadmiumOxide
 
     // HP Materials
 
