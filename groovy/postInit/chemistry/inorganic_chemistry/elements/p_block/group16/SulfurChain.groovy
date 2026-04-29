@@ -234,7 +234,7 @@ BCR.recipeBuilder()
 
     // Contact process
 
-    FBR.recipeBuilder()
+    FLUIDIZED_BR.recipeBuilder()
         .notConsumable(ore('springCupronickel'))
         .notConsumable(ore('catalystBedSupportedVanadiumPentoxide'))
         .fluidInputs(fluid('oxygen') * 50)
