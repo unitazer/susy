@@ -382,8 +382,7 @@ new MobHordeEvent((player) -> null, 10, 18, "bandit_large_raid")
                     return entity;
                 }
         )
-        .setDistribution(90.0,10.0) //mostly normal bandits, some mercenaries
-        .setDropPodExplosions(false);
+        .setDistribution(90.0,10.0); //mostly normal bandits, some mercenaries
 
 /**
  massive raiding party
@@ -508,11 +507,10 @@ new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
                     return entity;
                 }
         )
-        .setDistribution(80.0,20.0) //mostly normal bandits, some mercenaries
-        .setDropPodExplosions(false);
+        .setDistribution(80.0,20.0); //mostly normal bandits, some mercenaries
 
 /**
- siege
+ Siege
  40+ people
  weapons: ak47, combat shotguns, m4
  full basic combat armor for normal troops
@@ -520,7 +518,7 @@ new MobHordeEvent((player) -> null, 20, 30, "bandit_massive_raid")
  mortar support
  sandbags
  bandit flare (keeps spawning bandits until you destroy it, they do not count towards the raid)
- hate resets to baseline if you manage to defeat the siege
+ hate resets to baseline if you manage to defeat the Siege
  The bandits consider themselves at total war with you
  **/
 
@@ -539,7 +537,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                     double z = (Math.sin(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.sin(angle)), 2/n) * radius;
                     return new MobHordeEvent.Vec2(x, z);
                 },
-                Arrays.asList("#gen SandBags","kill @e[type=susy:drop_pod,r=0]"),
+                Arrays.asList("setblock ~ ~ ~ techguns:sandbags"), //replace with bigger sandbags
                 null,
                 null,
         )
@@ -549,7 +547,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                 t -> {
                     return new MobHordeEvent.Vec2(0, 0); //always spawns in the center of the invasion
                 },
-                Arrays.asList("#gen AutoMortar","kill @e[type=susy:drop_pod,r=0]"),
+                Arrays.asList("setblock ~ ~ ~ minecraft:redstone_block"), //replace with auto-mortar, shells do not destroy blocks before the player launches a rocket
                 null,
                 null,
         )
@@ -561,7 +559,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                     double angle = t * 2 * Math.PI;
                     return new MobHordeEvent.Vec2(radius * Math.cos(angle), radius * Math.sin(angle));
                 },
-                Arrays.asList("setblock ~ ~ ~ susy:raid_flare_block 0 replace {targetUUID:\"%player_uuid%\"}","kill @s"),
+                Arrays.asList("setblock ~ ~ ~ susy:raid_flare_block 0 replace {targetUUID:\"%player_uuid%\"}"), //add player data tag
                 null,
                 null,
         )
@@ -676,11 +674,11 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                     return entity;
                 }
         )
-//siege commander
+//Siege commander
         .addPattern(
                 //center point
                 t -> {
-                    return new MobHordeEvent.Vec2(3, 0); //defends mortar directly
+                    return new MobHordeEvent.Vec2(0, 0); //defends mortar directly
                 },
                 null,
                 player -> {
@@ -726,8 +724,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                     return entity;
                 }
         )
-        .setExactDistribution(20,1,1,29,10,1) //walls, artillery, siege flare, initial siege wave, mercenaries, siege commander
-        .setDropPodExplosions(false);
+        .setExactDistribution(20,1,1,29,10,1); //walls, artillery, Siege flare, initial Siege wave, mercenaries, Siege commander
 
 //Feds
 //Scripted
@@ -769,6 +766,52 @@ new MobHordeEvent((player) -> {
         })
         .setTimer(144000, 216000)
         .minHate("Feds", 80)
+
+/**
+ federation squad
+ 6-13 people
+ LMG, miniguns, flamethrowers
+ full power armor
+ active combat stims
+ A 'surgical' strike team with orders to hunt you down. They realised you are not just some bandit
+ This would be a really good time to invest in ground to air
+ **/
+
+new MobHordeEvent((player) -> {
+    Outcast outcast = new Outcast(player.world);
+    //hate
+    NBTTagCompound root = outcast.getEntityData().getCompoundTag("susy");
+    root.setString("faction", "Feds");
+    root.setInteger("hate", -10);
+    outcast.getEntityData().setTag("susy", root);
+    outcast.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 999999, 1));
+    //do not use addRandomArmor in here if you set the nbt tag later, otherwise it will override it for some reason
+
+    return outcast;
+}, 6, 13, "fed_squad")
+        .setPostSpawnModifier({ entity ->
+            NBTTagCompound nbt = new NBTTagCompound()
+            def hands = new net.minecraft.nbt.NBTTagList()
+            def main = new NBTTagCompound()
+
+            // Random weapon
+            String[] possibleWeapons = new String[]{
+                    "techguns:lmg",
+                    "techguns:flamethrower",
+                    "techguns:minigun"
+            };
+            String chosenWeapon = possibleWeapons[(int) (Math.random() * possibleWeapons.length)];
+
+            main.setString("id", chosenWeapon)
+            main.setByte("Count", (byte) 1)
+            hands.appendTag(main)
+            hands.appendTag(new NBTTagCompound())
+            nbt.setTag("HandItems", hands)
+            entity.readEntityFromNBT(nbt)
+            return entity
+        })
+        .setTimer(144000, 216000)
+        .minHate("Feds", 185)
 
 /*
 // Commands for pods
