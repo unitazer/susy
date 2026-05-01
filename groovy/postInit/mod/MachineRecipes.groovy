@@ -1310,8 +1310,8 @@ ASSEMBLER.recipeBuilder()
 
 crafting.addShapeless('susy:combustion_generator.lv_convert', metaitem('susy:combustion_generator.lv'), [metaitem('combustion_generator.lv')])
 
-RecyclingHelper.removeRecyclingRecipes(metaitem('combustion_generator.lv'))
-RecyclingHelper.handleRecycling(metaitem('combustion_generator.lv'), [
+RecyclingHelper.removeRecyclingRecipes(metaitem('susy:combustion_generator.lv'))
+RecyclingHelper.handleRecycling(metaitem('susy:combustion_generator.lv'), [
     metaitem('hull.Lv'),
     ore('springCopper'),
     ore('springSmallCopper'),
@@ -1339,8 +1339,8 @@ ASSEMBLER.recipeBuilder()
 
 crafting.addShapeless('susy:combustion_generator.mv_convert', metaitem('susy:combustion_generator.mv'), [metaitem('combustion_generator.mv')])
 
-RecyclingHelper.removeRecyclingRecipes(metaitem('combustion_generator.mv'))
-RecyclingHelper.handleRecycling(metaitem('combustion_generator.mv'), [
+RecyclingHelper.removeRecyclingRecipes(metaitem('susy:combustion_generator.mv'))
+RecyclingHelper.handleRecycling(metaitem('susy:combustion_generator.mv'), [
     metaitem('hull.Mv'),
     ore('springCopper'),
     ore('springSmallCopper'),
@@ -1368,8 +1368,8 @@ ASSEMBLER.recipeBuilder()
 
 crafting.addShapeless('susy:combustion_generator.hv_convert', metaitem('susy:combustion_generator.hv'), [metaitem('combustion_generator.hv')])
 
-RecyclingHelper.removeRecyclingRecipes(metaitem('combustion_generator.hv'))
-RecyclingHelper.handleRecycling(metaitem('combustion_generator.hv'), [
+RecyclingHelper.removeRecyclingRecipes(metaitem('susy:combustion_generator.hv'))
+RecyclingHelper.handleRecycling(metaitem('susy:combustion_generator.hv'), [
     metaitem('hull.Hv'),
     ore('springCopper'),
     ore('springSmallCopper'),
