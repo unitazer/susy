@@ -1004,6 +1004,7 @@ RecyclingHelper.addShaped("gregtech:rotary_kiln", metaitem('susy:rotary_kiln_v2'
     [metaitem('pipeHugeFluidSteel'), hulls[2], metaitem('pipeHugeFluidSteel')],
     [circuits[2], motors[2], tieredCables[2]]
 ]);
+crafting.addShapeless("susy:rotary_kiln_convert", metaitem("susy:rotary_kiln_v2"), [metaitem("susy:rotary_kiln")]);
 
 RecyclingHelper.addShaped("gregtech:high_temperature_distillation_tower", metaitem('susy:high_temperature_distillation_tower'), [
     [circuits[3], item('gregtech:wire_coil'), circuits[3]],
