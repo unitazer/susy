@@ -1,6 +1,1 @@
-hash-format = "sha256"
 
-[[files]]
-file = "mods/keyboard-wizard.pw.toml"
-hash = "9f2991da95b34d0bfa5cc49840ea9cee54d021eeafe04d503d074429c42255d1"
-metafile = true
