@@ -678,7 +678,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
         .addPattern(
                 //center point
                 t -> {
-                    return new MobHordeEvent.Vec2(0, 0); //defends mortar directly
+                    return new MobHordeEvent.Vec2(5, 0); //defends mortar directly
                 },
                 null,
                 player -> {
