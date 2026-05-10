@@ -537,7 +537,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                     double z = (Math.sin(angle) < 0 ? -1 : 1) * Math.pow(Math.abs(Math.sin(angle)), 2/n) * radius;
                     return new MobHordeEvent.Vec2(x, z);
                 },
-                Arrays.asList("setblock ~ ~ ~ techguns:sandbags"), //replace with bigger sandbags
+                Arrays.asList("#gen SandBags"), //replace with bigger sandbags
                 null,
                 null,
         )
@@ -547,7 +547,7 @@ new MobHordeEvent((player) -> null, 62, 62, "bandit_siege")
                 t -> {
                     return new MobHordeEvent.Vec2(0, 0); //always spawns in the center of the invasion
                 },
-                Arrays.asList("setblock ~ ~ ~ minecraft:redstone_block"), //replace with auto-mortar, shells do not destroy blocks before the player launches a rocket
+                Arrays.asList("#gen AutoMortar"), //replace with auto-mortar, shells do not destroy blocks before the player launches a rocket
                 null,
                 null,
         )
