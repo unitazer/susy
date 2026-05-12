@@ -1908,6 +1908,7 @@ class SuSyMaterials {
     public static Material CopperIIAcetateSolution
     public static Material LeadChamberReactionMixture
     public static Material MetalHydrideMixAnode
+    public static Material SupportedVanadiumPentoxide
 
     // Organic Chemistry Materials
 

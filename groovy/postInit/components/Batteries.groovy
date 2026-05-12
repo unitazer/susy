@@ -173,19 +173,21 @@ crafting.addShaped('primitive_battery_hull_lv', metaitem('battery.primitivehull.
 ])
 
 ASSEMBLER.recipeBuilder()
+        .circuitMeta(1)
         .inputs(metaitem('cableGtSingleTin') * 2)
         .inputs(ore('plateEbonite') * 6)
         .outputs(metaitem('battery.primitivehull.lv'))
-        .duration(80)
-        .EUt(VA[LV])
+        .duration(20)
+        .EUt(VA[ULV])
         .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
+        .circuitMeta(2)
         .inputs(metaitem('cableGtSingleCopper') * 2)
         .inputs(ore('plateEbonite') * 8)
         .outputs(metaitem('battery.primitivehull.mv'))
-        .duration(80)
-        .EUt(VA[ULV])
+        .duration(20)
+        .EUt(VA[LV])
         .buildAndRegister()
 
 crafting.addShaped("battery_lead_acid", metaitem('battery.lead_acid'), [
@@ -615,8 +617,8 @@ ASSEMBLER.recipeBuilder()
         .EUt(VA[MV])
         .buildAndRegister()
 
-RecyclingHelper.handleRecycling(metaitem('battery.hull.hv'),
-        [ore('plateStainlessSteel') * 8, metaitem('cableGtSingleGold') * 4, ore('dustPolycaprolactam'), ore('dustPolyvinylChloride'), ore('dustPolypropylene') * 9])
+RecyclingHelper.removeRecyclingRecipes(metaitem('battery.hull.hv'))
+RecyclingHelper.handleRecycling(metaitem('battery.hull.hv'), [ore('plateStainlessSteel') * 8, metaitem('cableGtSingleGold') * 4, ore('dustPolycaprolactam'), ore('dustPolyvinylChloride'), ore('dustPolypropylene') * 9])
 
 /* Old recipes */
 

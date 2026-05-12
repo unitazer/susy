@@ -1113,8 +1113,14 @@ class SecondDegreeMaterials {
                 .colorAverage()
                 .build()
         
-
-        MetalHydrideMixAnode = new Material.Builder(8786, SuSyUtility.susyId('metal_hydride_mix_anode'))
+        SupportedVanadiumPentoxide = new Material.Builder(13184, SuSyUtility.susyId('supported_vanadium_pentoxide'))
+                .dust().liquid()
+                .components(VanadiumPentoxide, PotassiumSulfate * 2, SiliconDioxide * 63)
+                .colorAverage()
+                .flags(GENERATE_CATALYST_BED)
+                .build()
+      
+        MetalHydrideMixAnode = new Material.Builder(13185, SuSyUtility.susyId('metal_hydride_mix_anode'))
                 .dust()
                 .components(AnnealedAB2MetalAlloy * 6, AnnealedAB5MetalAlloy * 3, Copper)
                 .colorAverage()

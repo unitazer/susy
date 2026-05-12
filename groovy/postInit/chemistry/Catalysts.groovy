@@ -100,6 +100,17 @@ ROASTER.recipeBuilder()
         .EUt(VA[LV])
         .buildAndRegister()
 
+// Contact Process Catalyst
+
+MIXER.recipeBuilder()
+    .inputs(ore('dustTinyVanadiumPentoxide') * 21)
+    .inputs(ore('dustTinyPotassiumSulfate') * 42)
+    .inputs(ore('dustDiatomite') * 21)
+    .outputs(metaitem('dustSupportedVanadiumPentoxide') * 28)
+    .duration(200)
+    .EUt(VA[LV])
+    .buildAndRegister()
+
 // Isomerization catalysts
 
 BR.recipeBuilder()
@@ -345,7 +356,7 @@ ROASTER.recipeBuilder() // Cu2(OH)2CO3 + ZnCO3 + CrO3 -> (CuO)2(ZnO)(CrO3) + 2CO
     .EUt(40)
     .buildAndRegister()
 
-//RuO2
+// RuO2
 
 ROASTER.recipeBuilder()
     .inputs(ore('dustRuthenium'))
@@ -364,7 +375,7 @@ ROASTER.recipeBuilder()
     .EUt(VA[HV])
     .buildAndRegister()
 
-//Wustite Catalyst for Haber Process
+// Wustite Catalyst for Haber Process
 ROASTER.recipeBuilder()
     .fluidInputs(fluid('monoxide_rich_syngas') * 1000)
     .inputs(ore('dustMagnetite'))
@@ -381,7 +392,7 @@ ROASTER.recipeBuilder()
     .EUt(VA[MV])
     .buildAndRegister()
 
-//Pd-Rh Catalyst for Haber Process
+// Pd-Rh Catalyst for Haber Process
 MIXER.recipeBuilder()
     .inputs(ore('dustPlatinum') * 9)
     .inputs(ore('dustRhodium') * 1)
