@@ -355,8 +355,8 @@ ASSEMBLER.recipeBuilder()
         .EUt(VA[MV])
         .buildAndRegister()
 
-RecyclingHelper.handleRecycling(metaitem('battery.hull.hv'),
-        [ore('plateStainlessSteel') * 8, metaitem('cableGtSingleGold') * 4, ore('dustPolycaprolactam'), ore('dustPolyvinylChloride'), ore('dustPolypropylene') * 9])
+RecyclingHelper.removeRecyclingRecipes(metaitem('battery.hull.hv'))
+RecyclingHelper.handleRecycling(metaitem('battery.hull.hv'), [ore('plateStainlessSteel') * 8, metaitem('cableGtSingleGold') * 4, ore('dustPolycaprolactam'), ore('dustPolyvinylChloride'), ore('dustPolypropylene') * 9])
 
 ASSEMBLER.recipeBuilder()
         .circuitMeta(5)
@@ -368,8 +368,8 @@ ASSEMBLER.recipeBuilder()
         .EUt(VA[HV])
         .buildAndRegister()
 
-RecyclingHelper.handleRecycling(metaitem('battery.hull.ev'),
-        [ore('plateStainlessSteel') * 16, metaitem('cableGtSingleAluminium') * 2, ore('dustPolytetrafluoroethylene')])
+RecyclingHelper.removeRecyclingRecipes(metaitem('battery.hull.ev'))
+RecyclingHelper.handleRecycling(metaitem('battery.hull.ev'), [ore('plateStainlessSteel') * 16, metaitem('cableGtSingleAluminium') * 2, ore('dustPolytetrafluoroethylene')])
 
 /* Old recipes */
 
