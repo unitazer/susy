@@ -1294,7 +1294,7 @@ RecyclingHelper.addShaped("gregtech:sieve_distillation_tower", metaitem('susy:si
 // COMBUSTION ENGINES
 
 ASSEMBLER.recipeBuilder()
-    .inputs(metaitem('hull.Lv'))
+    .inputs(metaitem('hull.lv'))
     .inputs(ore('springCopper'))
     .inputs(ore('springSmallCopper'))
     .inputs(ore('circuitLv'))
@@ -1311,7 +1311,7 @@ ASSEMBLER.recipeBuilder()
 crafting.addShapeless('susy:combustion_generator.lv_convert', metaitem('susy:combustion_generator.lv'), [metaitem('combustion_generator.lv')])
 
 RecyclingHelper.handleRecycling(metaitem('susy:combustion_generator.lv'), [
-    metaitem('hull.Lv'),
+    metaitem('hull.lv'),
     ore('springCopper'),
     ore('springSmallCopper'),
     metaitem('engine.spark_plug.palladium') * 4, //doesn't get counted by RecyclingHandler
@@ -1322,7 +1322,7 @@ RecyclingHelper.handleRecycling(metaitem('susy:combustion_generator.lv'), [
 ])
 
 ASSEMBLER.recipeBuilder()
-    .inputs(metaitem('hull.Mv'))
+    .inputs(metaitem('hull.mv'))
     .inputs(ore('springCopper'))
     .inputs(ore('springSmallCopper'))
     .inputs(ore('circuitMv'))
@@ -1339,7 +1339,7 @@ ASSEMBLER.recipeBuilder()
 crafting.addShapeless('susy:combustion_generator.mv_convert', metaitem('susy:combustion_generator.mv'), [metaitem('combustion_generator.mv')])
 
 RecyclingHelper.handleRecycling(metaitem('susy:combustion_generator.mv'), [
-    metaitem('hull.Mv'),
+    metaitem('hull.mv'),
     ore('springCopper'),
     ore('springSmallCopper'),
     metaitem('engine.spark_plug.palladium') * 4, //doesn't get counted by RecyclingHandler
@@ -1350,7 +1350,7 @@ RecyclingHelper.handleRecycling(metaitem('susy:combustion_generator.mv'), [
 ])
 
 ASSEMBLER.recipeBuilder()
-    .inputs(metaitem('hull.Hv'))
+    .inputs(metaitem('hull.hv'))
     .inputs(ore('springCopper'))
     .inputs(ore('springSmallCopper'))
     .inputs(ore('circuitHv'))
@@ -1367,7 +1367,7 @@ ASSEMBLER.recipeBuilder()
 crafting.addShapeless('susy:combustion_generator.hv_convert', metaitem('susy:combustion_generator.hv'), [metaitem('combustion_generator.hv')])
 
 RecyclingHelper.handleRecycling(metaitem('susy:combustion_generator.hv'), [
-    metaitem('hull.Hv'),
+    metaitem('hull.hv'),
     ore('springCopper'),
     ore('springSmallCopper'),
     metaitem('engine.spark_plug.iridium') * 4, //doesn't get counted by RecyclingHandler
