@@ -2579,7 +2579,7 @@ class SuSyMaterials {
     public static Material IsopropylAlcoholSolution
     public static Material KetoneAlcoholOil
     public static Material AcetyleneSolution
-    public static Material PolyCaprolactamSolution
+    public static Material PolycaprolactamSolution
 
     // Thermodynamics Materials
 

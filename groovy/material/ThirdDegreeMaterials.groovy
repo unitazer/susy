@@ -923,9 +923,9 @@ class ThirdDegreeMaterials {
                 .colorAverage()
                 .build()
 
-        PolyCaprolactamSolution = new Material.Builder(24150, SuSyUtility.susyId('polycaprolactam_solution'))
+        PolycaprolactamSolution = new Material.Builder(24150, SuSyUtility.susyId('polycaprolactam_solution'))
                 .liquid()
-                .components(Caprolactam * 1)
+                .components(Caprolactam * 1, Tetrahydrofuran * 1)
                 .color(0x66696e)
                 .colorAverage()
                 .build()
