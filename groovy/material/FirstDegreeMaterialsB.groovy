@@ -808,25 +808,27 @@ class FirstDegreeMaterialsB {
                 .build()
                 .setFormula("(La0.8Zr0.2)(Ni4.5Al0.5)", true)
 
-        AnnaelledAB2MetalAlloy = new Material.Builder(8783, SuSyUtility.susyId('Annaelled_AB_2_metal_alloy'))
+        AnnealedAB2MetalAlloy = new Material.Builder(8783, SuSyUtility.susyId('annealed_AB_2_metal_alloy'))
                 .ingot().liquid(new FluidBuilder().temperature(1500))
                 .components(HighPurityZirconium * 8, Titanium * 2, Vanadium * 6, Manganese * 3, Palladium, Nickel * 8, Iron * 2)
                 .color(0xa66570)
                 .iconSet(SHINY)
                 .blastTemp(1500, GasTier.HIGH, GTValues.VA[GTValues.EV])
                 .build()
-                .setFormula("(Zr0.8Ti0.2)(V0.6Mn0.3Pd0.1Ni0.8Fe0.2)", true)
+        
+        AnnealedAB2MetalAlloy.setFormula("(Zr0.8Ti0.2)(V0.6Mn0.3Pd0.1Ni0.8Fe0.2)", true)
 
-        AnnaelledAB5MetalAlloy = new Material.Builder(8784, SuSyUtility.susyId('Annaelled_AB_5_metal_alloy'))
+        AnnealedAB5MetalAlloy = new Material.Builder(8784, SuSyUtility.susyId('annealed_AB_5_metal_alloy'))
                 .ingot().liquid(new FluidBuilder().temperature(1500))
                 .components(Lanthanum * 8, HighPurityZirconium * 2, Nickel * 45, Aluminium * 5)
                 .color(0xac6570)
                 .iconSet(SHINY)
                 .blastTemp(1500, GasTier.HIGH, GTValues.VA[GTValues.EV])
                 .build()
-                .setFormula("(La0.8Zr0.2)(Ni4.5Al0.5)", true)
+                
+        AnnealedAB5MetalAlloy.setFormula("(La0.8Zr0.2)(Ni4.5Al0.5)", true)
 
-        CadmiumOxide = new Material.Builder(8785, SuSyUtility.susyId('Cadmium_oxide'))
+        CadmiumOxide = new Material.Builder(8785, SuSyUtility.susyId('cadmium_oxide'))
                 .dust()
                 .components(Cadmium * 1, Oxygen * 1)
                 .color(0xe8e4d0)

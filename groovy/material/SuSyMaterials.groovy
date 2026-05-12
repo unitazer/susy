@@ -1667,8 +1667,8 @@ class SuSyMaterials {
     public static Material AcetaldehydeSolution
     public static Material GammaAlumina
     public static Material FineGammaAlumina
-    public static Material AnnaelledAB2MetalAlloy
-    public static Material AnnaelledAB5MetalAlloy
+    public static Material AnnealedAB2MetalAlloy
+    public static Material AnnealedAB5MetalAlloy
     public static Material CadmiumOxide
 
     // HP Materials
@@ -1907,6 +1907,7 @@ class SuSyMaterials {
     public static Material HoopesElectrolyte
     public static Material CopperIIAcetateSolution
     public static Material LeadChamberReactionMixture
+    public static Material MetalHydrideMixAnode
 
     // Organic Chemistry Materials
 

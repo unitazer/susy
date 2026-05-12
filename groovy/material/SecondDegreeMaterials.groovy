@@ -1112,5 +1112,14 @@ class SecondDegreeMaterials {
                 .components(SulfurDioxide, NitrogenDioxide, Water)
                 .colorAverage()
                 .build()
+        
+
+        MetalHydrideMixAnode = new Material.Builder(8786, SuSyUtility.susyId('metal_hydride_mix_anode'))
+                .dust()
+                .components(AnnealedAB2MetalAlloy * 6, AnnealedAB5MetalAlloy * 3, Copper)
+                .colorAverage()
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
     }
 }

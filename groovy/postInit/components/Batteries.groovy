@@ -533,32 +533,32 @@ INDUCTION_FURNACE.recipeBuilder()
 
 ARC_FURNACE.recipeBuilder()
         .fluidInputs(fluid('oxygen') * 100)
-        .inputs(ore('AB2metalalloy'))
-        .outputs(metaitem('ingotAnnaelledAb2MetalAlloy'))
-        .EUt(VA[EV])
+        .inputs(metaitem('ingotAb2MetalAlloy'))
+        .outputs(metaitem('ingotAnnealedAb2MetalAlloy'))
+        .EUt(VA[HV])
         .duration(120)
         .buildAndRegister()
 
 ARC_FURNACE.recipeBuilder()
         .fluidInputs(fluid('oxygen') * 100)
-        .inputs(ore('AB5metalalloy'))
-        .outputs(metaitem('ingotAnnaelledAb5MetalAlloy'))
+        .inputs(metaitem('ingotAb5MetalAlloy'))
+        .outputs(metaitem('ingotAnnealedAb5MetalAlloy'))
         .EUt(VA[EV])
         .duration(120)
         .buildAndRegister()
 
 MIXER.recipeBuilder()
-        .inputs(ore('dustAnnaelledAb2MetalAlloy') * 6)
-        .inputs(ore('dustAnnaelledAb5MetalAlloy') * 3)
+        .inputs(ore('dustAnnealedAb2MetalAlloy') * 6)
+        .inputs(ore('dustAnnealedAb5MetalAlloy') * 3)
         .inputs(ore('dustHighPurityCopper'))
-        .outputs(metaitem('anode.mh_Mix') * 10)
+        .outputs(metaitem('dustMetalHydrideMixAnode') * 10)
         .EUt(VA[EV])
         .duration(20)
         .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('electrode.nickeled_steel_foil'))
-        .inputs(ore('anode.mh_Mix'))
+        .inputs(ore('dustMetalHydrideMixAnode'))
         .inputs(ore('dustPolyvinylideneFluoride'))
         .inputs(ore('dustAnyPurityCarbon'))
         .outputs(metaitem('anode.mh'))
@@ -617,19 +617,6 @@ ASSEMBLER.recipeBuilder()
 
 RecyclingHelper.handleRecycling(metaitem('battery.hull.hv'),
         [ore('plateStainlessSteel') * 8, metaitem('cableGtSingleGold') * 4, ore('dustPolycaprolactam'), ore('dustPolyvinylChloride'), ore('dustPolypropylene') * 9])
-
-ASSEMBLER.recipeBuilder()
-        .circuitMeta(5)
-        .inputs(ore('plateStainlessSteel') * 16)
-        .inputs(metaitem('cableGtSingleAluminium') * 2)
-        .fluidInputs(fluid('polytetrafluoroethylene') * 144)
-        .outputs(metaitem('battery.hull.ev'))
-        .duration(240)
-        .EUt(VA[HV])
-        .buildAndRegister()
-
-RecyclingHelper.handleRecycling(metaitem('battery.hull.ev'),
-        [ore('plateStainlessSteel') * 16, metaitem('cableGtSingleAluminium') * 2, ore('dustPolytetrafluoroethylene')])
 
 /* Old recipes */
 
