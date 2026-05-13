@@ -508,6 +508,11 @@ ASSEMBLER.recipeBuilder()
 
 // Nickel Metal Hydride Battery
 
+// Liquid AB-2 Metal Alloy * 4320
+mods.gregtech.advanced_arc_furnace.removeByInput(1920, [metaitem('dustHighPurityZirconium') * 8, metaitem('dustTitanium') * 2, metaitem('dustVanadium') * 6, metaitem('dustManganese') * 3, metaitem('dustPalladium'), metaitem('dustNickel') * 8, metaitem('dustIron') * 2, metaitem('circuit.integrated').withNbt(['Configuration': 17])], [fluid('refractory_gunning_mixture') * 1700, fluid('argon') * 1500])
+mods.gregtech.advanced_arc_furnace.removeByInput(1920, [metaitem('dustHighPurityZirconium') * 8, metaitem('dustTitanium') * 2, metaitem('dustVanadium') * 6, metaitem('dustManganese') * 3, metaitem('dustPalladium'), metaitem('dustNickel') * 8, metaitem('dustIron') * 2, metaitem('circuit.integrated').withNbt(['Configuration': 7])], [fluid('refractory_gunning_mixture') * 2600])
+
+
 ADVANCED_ARC_FURNACE.recipeBuilder()
         .inputs(ore('dustHighPurityZirconium') * 8)
         .inputs((ore('dustAnyPurityTitanium') * 2))
