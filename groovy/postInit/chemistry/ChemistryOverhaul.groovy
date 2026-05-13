@@ -489,9 +489,9 @@ DT.recipeBuilder()
     .buildAndRegister()
 
 CSTR.recipeBuilder()
-    .fluidInputs(fluid('chloromethane') * 45)
-    .fluidInputs(fluid('chlorine') * 180)
-    .fluidOutputs(fluid('chlorinated_chloromethane_mixture') * 150)
+    .fluidInputs(fluid('chloromethane') * 30)
+    .fluidInputs(fluid('chlorine') * 120)
+    .fluidOutputs(fluid('chlorinated_chloromethane_mixture') * 100)
     .duration(5)
     .EUt(VA[LV])
     .buildAndRegister()
@@ -507,15 +507,15 @@ DT.recipeBuilder()
     .buildAndRegister()
 
 CSTR.recipeBuilder()
-    .fluidInputs(fluid('dichloromethane') * 50)
-    .fluidInputs(fluid('chlorine') * 150)
-    .fluidOutputs(fluid('chlorinated_dichloromethane_mixture') * 150)
+    .fluidInputs(fluid('dichloromethane') * 20)
+    .fluidInputs(fluid('chlorine') * 60)
+    .fluidOutputs(fluid('chlorinated_dichloromethane_mixture') * 100)
     .duration(5)
     .EUt(VA[LV])
     .buildAndRegister()
 
 DT.recipeBuilder()
-    .fluidInputs(fluid('chlorinated_dichloromethane_mixture') * 3000)
+    .fluidInputs(fluid('chlorinated_dichloromethane_mixture') * 5000)
     .fluidOutputs(fluid('carbon_tetrachloride') * 500)
     .fluidOutputs(fluid('chloroform') * 500)
     .fluidOutputs(fluid('hydrogen_chloride') * 1500)
@@ -1075,18 +1075,6 @@ ROASTER.recipeBuilder()
     .EUt(VA[ULV])
     .buildAndRegister()
 
-// Sulfur Trioxide
-
-ROASTER.recipeBuilder()
-    .fluidInputs(fluid('oxygen') * 1000)
-    .fluidInputs(fluid('sulfur_dioxide') * 1000)
-    .notConsumable(ore('dustVanadiumPentoxide'))
-    .fluidOutputs(fluid('sulfur_trioxide') * 1000)
-
-    .duration(200)
-    .EUt(VA[ULV])
-    .buildAndRegister()
-
 // Saltpeter and Sodium Hydroxide Solution
 
 MIXER.recipeBuilder()
@@ -1472,6 +1460,7 @@ DT.recipeBuilder()
 //Diethyl Ether
 
 CSTR.recipeBuilder()
+    .circuitMeta(1)
     .fluidInputs(fluid('ethanol') * 100)
     .fluidInputs(fluid('sulfuric_acid') * 50)
     .fluidOutputs(fluid('diethyl_ether_solution') * 150)

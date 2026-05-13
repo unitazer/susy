@@ -1,3 +1,34 @@
+# UPDATE 0.1.16.6
+## Mod Changes
+### Mod Updates
+- SusyCore v0.1.99 → v0.1.100
+- GroovyScript 1.3.4 → 1.4.3
+- Had Enough Items 4.30.2 → 4.30.1
+## Changes
+### New Features
+- [Susy-Core] The rotary kiln is animated and looking better than ever! Convert your rotary kiln into the new version (or don't). (#632 by @planetme)
+- You can now filter recipes in HEI!
+### Changed Features
+- The contact process has been buffed! (#1845 by @planetme)
+- Kovar ingots can now be made in the alloy smelter (finally) (#1852 by @TheFriedEgg618)
+- Do check your Cativa catalysts and Monsanto catalysts; the quantity required has increased.
+### Fixes
+- PTFE no longer has a chlorine dupe (probably) (#1848 by @The-ExZombie)
+- The incinerator quest is no longer... weird. (#1849 by @Fiery36)
+And thanks to @trainvoi, @The-ExZombie and @Fiery36 for helping to keep the pack stable and up-to-date.
+# UPDATE 0.1.16.5
+## Mod Changes
+### Mod Updates
+- Had Enough Items 4.29.15 → 4.30.2
+- SusyCore v0.1.98 → v0.1.99
+## Changes
+### New Features
+- You can now use a new LV multiblock, the greenhouse, to harvest crops! (The MV greenhouse has been renamed the "arboretum.") (#1843 by @WideMann)
+### Fixes
+- Acetic anhydride catalyst is no longer lost. (#1838 by @Fiery36)
+- Cellulose acetate mesh is now craftable without silicon wafers. (#1841 by @WideMann)
+- Fix conflicting recipes (#1842 by @WideMann)
+And thanks to @whoisyp and @unitazer for additional work on keeping the pack stable.
 # UPDATE 0.1.16.4.1
 ## Mod Changes
 ### Mod Updates

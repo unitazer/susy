@@ -228,16 +228,10 @@ class SuSyMaterials {
     public static Material AnthraceneExtract
     public static Material CrudeQuinoliniumSulfate
     public static Material ImpureQuinoline
-    public static Material ConcentratedBrine
-    public static Material BrineEvaporite
-    public static Material BoronFreeBrine
-    public static Material LithiumFreeBrine
-    public static Material ChlorinatedBrine
     public static Material ImpureBromine
     public static Material ChilledLava
     public static Material ChilledFlueGas
     public static Material WoodAsh
-    public static Material VeryConcentratedBrine
     public static Material LangbeiniteLeach
     public static Material PolyhaliteLeach
     public static Material CarnalliteLeach
@@ -1668,6 +1662,8 @@ class SuSyMaterials {
     public static Material TetrachloropalladicIIAcidSolution
     public static Material GreenVitriol
     public static Material NitrosylsulfuricAcid
+    public static Material AB2MetalAlloy
+    public static Material AB5MetalAlloy
     public static Material AcetaldehydeSolution
     public static Material GammaAlumina
     public static Material FineGammaAlumina
@@ -1676,6 +1672,9 @@ class SuSyMaterials {
     public static Material Methylbutenol
     public static Material DimethylDioxaneSolution
     public static Material IsopreneSolution
+    public static Material AnnealedAB2MetalAlloy
+    public static Material AnnealedAB5MetalAlloy
+    public static Material CadmiumOxide
 
     // HP Materials
 
@@ -1913,6 +1912,8 @@ class SuSyMaterials {
     public static Material HoopesElectrolyte
     public static Material CopperIIAcetateSolution
     public static Material LeadChamberReactionMixture
+    public static Material MetalHydrideMixAnode
+    public static Material SupportedVanadiumPentoxide
 
     // Organic Chemistry Materials
 
@@ -2583,6 +2584,7 @@ class SuSyMaterials {
     public static Material IsopropylAlcoholSolution
     public static Material KetoneAlcoholOil
     public static Material AcetyleneSolution
+    public static Material PolycaprolactamSolution
 
     // Thermodynamics Materials
 
