@@ -1667,6 +1667,11 @@ class SuSyMaterials {
     public static Material AcetaldehydeSolution
     public static Material GammaAlumina
     public static Material FineGammaAlumina
+    public static Material DimethylOneThreeDioxane
+    public static Material Methylbutynol
+    public static Material Methylbutenol
+    public static Material DimethylDioxaneSolution
+    public static Material IsopreneSolution
     public static Material AnnealedAB2MetalAlloy
     public static Material AnnealedAB5MetalAlloy
     public static Material CadmiumOxide

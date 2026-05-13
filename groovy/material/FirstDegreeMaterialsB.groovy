@@ -835,5 +835,24 @@ class FirstDegreeMaterialsB {
                 .iconSet(METALLIC)
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
+      
+        DimethylOneThreeDioxane = new Material.Builder(8786, SuSyUtility.susyId('dimethyl_one_three_dioxane'))
+                .liquid()
+                .components(Carbon * 6, Hydrogen * 12, Oxygen * 2)
+                .colorAverage()
+                .build()
+
+        Methylbutynol = new Material.Builder(8787, SuSyUtility.susyId('methylbutynol'))
+                .liquid()
+                .components(Carbon * 5, Hydrogen * 8, Oxygen)
+                .colorAverage()
+                .build()
+
+        Methylbutenol = new Material.Builder(8788, SuSyUtility.susyId('methylbutenol'))
+                .liquid()
+                .components(Carbon * 5, Hydrogen * 10, Oxygen)
+                .colorAverage()
+                .build()
+
     }
 }
