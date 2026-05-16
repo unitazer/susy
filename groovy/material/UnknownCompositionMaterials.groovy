@@ -3340,5 +3340,107 @@ class UnknownCompositionMaterials {
                 .liquid(new FluidBuilder().temperature(450))
                 .color(0x5e2613)
                 .build()
+
+        CarbonFelt = new Material.Builder(4729, SuSyUtility.susyId('carbon_felt'))
+                .dust()
+                .flags(GENERATE_FOIL, NO_UNIFICATION)
+                .color(0x000000)
+                .build()
+
+        ActivatedCarbonFelt = new Material.Builder(4730, SuSyUtility.susyId('activated_carbon_felt'))
+                .dust()
+                .flags(GENERATE_FOIL, NO_UNIFICATION)
+                .color(0x000000)
+                .build()
+
+        ExpandableGraphite = new Material.Builder(4731, SuSyUtility.susyId('expandable_graphite'))
+                .dust()
+                .iconSet("SHINY")
+                .color(0x5B5B5B)
+                .build()
+
+        GraphitePaper = new Material.Builder(4732, SuSyUtility.susyId('graphite_paper'))
+                .dust()
+                .flags(GENERATE_FOIL, NO_UNIFICATION)
+                .color(0x5B5B5B)
+                .build()
+
+        VanadiumElectrolyteSlurry = new Material.Builder(4733, SuSyUtility.susyId('vanadium_electrolyte_slurry'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0xE05F3E)
+                .build()
+
+        CrystallizedVanadiumElectrolyte = new Material.Builder(4734, SuSyUtility.susyId('crystallized_vanadium_electrolyte'))
+                .dust()
+                .iconSet("BRIGHT")
+                .color(0xE05F3E)
+                .build()
+
+        VanadiumBatteryElectrolyte = new Material.Builder(4735, SuSyUtility.susyId('vanadium_battery_electrolyte'))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0xFF6C47)
+                .build()
+
+        GrapheneOxide = new Material.Builder(4736, SuSyUtility.susyId('graphene_oxide'))
+                .dust()
+                .iconSet("QUARTZ")
+                .color(0x4C2015)
+                .build()
+
+        GrapheneOxidePolyDADMACTungstateSolution = new Material.Builder(4737, SuSyUtility.susyId('graphene_oxide_polydadmac_tungstate_solution'))
+                .liquid()
+                .color(0xFF00B2)
+                .build()
+
+        TungsticAcidCoatedGrapheneOxideNanosheet = new Material.Builder(4739, SuSyUtility.susyId('tungstic_acid_coated_graphene_oxide_nanosheet'))
+                .dust()
+                .iconSet("DIAMOND")
+                .color(0x7A0055)
+                .build()
+
+        RinsedTungsticAcidCoatedGrapheneOxideNanosheet = new Material.Builder(4740, SuSyUtility.susyId('rinsed_tungstic_acid_coated_graphene_oxide_nanosheet'))
+                .dust()
+                .iconSet("EMERALD")
+                .color(0xAD0079)
+                .build()
+
+        TungstenTrioxideNanoparticleCoatedGrapheneOxideNanosheet = new Material.Builder(4741, SuSyUtility.susyId('tungsten_trioxide_nanoparticle_coated_graphene_oxide_nanosheet'))
+                .dust()
+                .iconSet("METALLIC")
+                .color(0xAD0079)
+                .build()
+
+        WaterNafionSolution = new Material.Builder(4742, SuSyUtility.susyId('water_nafion_solution'))
+                .liquid()
+                .color(0xcfccb0)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+
+        WaterNafionSolution.setFormula('([(C2F4)(C7HF13O5S)]n)(H2O)', true)
+
+        TungsticAcidCoatedGrapheneOxideNanosheetSolution = new Material.Builder(4743, SuSyUtility.susyId('tungstic_acid_coated_graphene_oxide_nanosheet_solution'))
+                .liquid()
+                .color(0x7A0055)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+
+        TungstenTrioxideGrapheneOxideDopedNafion = new Material.Builder(4744, SuSyUtility.susyId('tungsten_trioxide_graphene_oxide_doped_nafion'))
+                .dust()
+                .polymer(1)
+                .flags(GENERATE_PLATE, GENERATE_FOIL)
+                .iconSet("SHINY")
+                .color(0x99947A)
+                .build()
+        TungstenTrioxideGrapheneOxideDopedNafion.setFormula('([(C2F4)(C7HF13O5S)]n)(H2O)', true)
+
+        TungstenTrioxideGrapheneOxideDopedNafionSolution = new Material.Builder(4745, SuSyUtility.susyId('tungsten_trioxide_graphene_oxide_doped_nafion_solution'))
+                .liquid()
+                .components(TungstenTrioxideGrapheneOxideDopedNafion, Water)
+                .color(0x99947A)
+                .build()
+
+        TungstenTrioxideGrapheneOxideDopedNafionSolution.setFormula('([(C2F4)(C7HF13O5S)]n)(H2O)', true)
+        
+        
     }
 }

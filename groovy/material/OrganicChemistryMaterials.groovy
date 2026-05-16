@@ -3124,6 +3124,8 @@ class OrganicChemistryMaterials {
 
         Polyacrylonitrile = new Material.Builder(15489, SuSyUtility.susyId('polyacrylonitrile'))
                 .dust()
+                .polymer(1)
+                .flags(GENERATE_PLATE, GENERATE_FOIL)
                 .components(Carbon * 3, Hydrogen * 3, Nitrogen)
                 .color(0x44703e)
                 .build()
@@ -3363,5 +3365,30 @@ class OrganicChemistryMaterials {
                 .flags(FLAMMABLE)
                 .color(0xd4c97a)
                 .build()
+
+        PunchedPolyacrylonitrile = new Material.Builder(15526, SuSyUtility.susyId('punched_polyacrylonitrile'))
+                .dust()
+                .polymer(1)
+                .flags(GENERATE_PLATE, NO_UNIFICATION, GENERATE_FOIL)
+                .components(Carbon * 3, Hydrogen * 3, Nitrogen)
+                .color(0x3B6036)
+                .build()
+
+        PunchedPolyacrylonitrile.setFormula('[C3H3N]n', true)
+
+        DiallyldimethylammoniumChloride = new Material.Builder(15527, SuSyUtility.susyId('diallyldimethylammonium_chloride'))
+                .liquid()
+                .components(Carbon * 8, Hydrogen * 16, Nitrogen, Chlorine)
+                .color(0x30FF7F)
+                .build()
+
+        PolydiallyldimethylammoniumChloride = new Material.Builder(15528, SuSyUtility.susyId('polydiallyldimethylammonium_chloride'))
+                .dust()
+                .iconSet("LAPIS")
+                .components(Carbon * 8, Hydrogen * 16, Nitrogen, Chlorine)
+                .color(0x30FF7F)
+                .build()
+
+        PolydiallyldimethylammoniumChloride.setFormula('[C8H16NCl]n', true)
     }
 }

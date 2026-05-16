@@ -2833,6 +2833,30 @@ susy.material.polycaprolactam_solution=Polycaprolactam Solution
 susy.material.rp_1=RP-1
 susy.material.one_naphthol_two_diazonium_chloride=1-Napthol-2-Diazonium Chloride
 susy.material.supported_vanadium_pentoxide=Supported Vanadium Pentoxide
+susy.material.punched_polyacrylonitrile=Punched Polyacrylonitrile
+susy.material.diallyldimethylammonium_chloride=Diallyldimethylammonium Chloride (DADMAC)
+susy.material.polydiallyldimethylammonium_chloride=Polydiallyldimethylammonium Chloride (PolyDADMAC)
+susy.material.vanadium_trioxide=Vanadium Trioxide
+susy.material.vanadium_trioxide_waste_gas=Vanadium Trioxide Waste Gas
+susy.material.graphene_oxide_solution=Graphene Oxide Solution
+susy.material.very_diluted_nitric_acid=Very Diluted Nitric Acid
+susy.material.water_nafion_solution=Water Nafion Solution
+susy.material.tungstic_acid_coated_graphene_oxide_nanosheet_solution=Tungstic Acid-Coated Graphene Oxide Nanosheet Solution
+susy.material.tungsten_trioxide_graphene_oxide_doped_nafion=Tungsten Trioxide/Graphene Oxide-Doped Nafion
+susy.material.carbon_felt=Carbon Felt
+susy.material.activated_carbon_felt=Activated Carbon Felt
+susy.material.vanadium_electrolyte_slurry=Vanadium Electrolyte Slurry
+susy.material.crystallized_vanadium_electrolyte=Crystallized Vanadium Electrolyte
+susy.material.vanadium_battery_electrolyte=Vanadium Battery Electrolyte
+susy.material.graphene_oxide=Graphene Oxide
+susy.material.graphene_oxide_polydadmac_tungstate_solution=Graphene Oxide-PolyDADMAC-Tungstate Solution
+susy.material.tungstic_acid_coated_graphene_oxide_nanosheet=Tungstic Acid-Coated Graphene Oxide Nanosheet
+susy.material.rinsed_tungstic_acid_coated_graphene_oxide_nanosheet=Rinsed Tungstic Acid-Coated Graphene Oxide Nanosheet
+susy.material.tungsten_trioxide_nanoparticle_coated_graphene_oxide_nanosheet=Tungsten Trioxide Nanoparticle-Coated Graphene Oxide Nanosheet
+susy.material.expandable_graphite=Expandable Graphite
+susy.material.graphite_paper=Graphite Paper
+susy.material.tungsten_trioxide_graphene_oxide_doped_nafion_solution=Tungsten Trioxide/Graphene Oxide-Doped Nafion Solution
+
 
 # Isotopes
 
@@ -3379,6 +3403,14 @@ metaitem.carbon.mesh.phenolic.moist.name=Moist Phenolic Carbon Mesh
 metaitem.carbon.mesh.phenolic.treated.name=Treated Phenolic Carbon Mesh
 metaitem.carbon.tile.phenolic.treated.name=Treated Phenolic Carbon Tile
 
+metaitem.needle.steel.name=Steel Needle
+metaitem.needle.steel.barbed.name=Barbed Steel Needle
+metaitem.needle_assembly.steel.barbed.name=Barbed Steel Needle Assembly
+metaitem.membrane.vanadium_battery.name=Vanadium Flow Battery Membrane
+metaitem.expanded_graphite_worms.name=Expanded Graphite Worms
+
+
+
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
 tile.magma.name=Magma-Infused Netherrack
@@ -3403,6 +3435,11 @@ gregtech.machine.laser_engraver.opv.name=Legendary Electron Beam Lithographer
 
 recipemap.laser_engraver.name=Electron Beam Lithography
 
+#Substation Renaming
+tile.battery_block.empty_tier_i.name=Empty Tier I Flow Battery Hull
+tile.metal_casing.palladium_substation.name=Power Substation Casing
+tile.battery_block.lapotronic_ev.name=Vanadium Flow Battery
+ 
 # Generic Renaming
 item.chisel.chisel_diamond.name=Steel Chisel
 tooltip.computronics.waila.tape.notapeinserted=No Tape Inserted
@@ -3420,6 +3457,7 @@ gregtech.advancement.medium_voltage.31_mv_energy_hatch.name=Upgrade Your ERF
 recipemap.electric_blast_furnace.name=Resistance Furnace
 gregtechfoodoption.machine.greenhouse.name=Arboretum
 recipemap.greenhouse.name=Arboretum
+
 
 # Material Renaming
 item.susy.material.ultra_high_molecular_weight_polyethylene.dustTiny=Tiny Pile of Ultra High Molecular Weight Polyethylene (UHMWPE) Pulp
