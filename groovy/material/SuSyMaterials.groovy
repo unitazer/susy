@@ -2655,33 +2655,6 @@ class SuSyMaterials {
     public static Material TrimethylGallium
     public static Material TrimethylIndium
     public static Material YttriumAluminiumGarnetCerium
-    public static Material PunchedPolyacrylonitrile
-    public static Material CarbonFelt
-    public static Material ActivatedCarbonFelt
-    public static Material VanadiumTrioxide
-    public static Material VanadiumTrioxideWasteGas
-    public static Material VanadiumElectrolyteSlurry
-    public static Material CrystallizedVanadiumElectrolyte
-    public static Material VanadiumBatteryElectrolyte
-    public static Material DiallyldimethylammoniumChloride
-    public static Material PolydiallyldimethylammoniumChloride
-    public static Material GrapheneOxideSolution
-    public static Material GrapheneOxide
-    public static Material VeryDilutedNitricAcid
-    public static Material GrapheneOxidePolyDADMACTungstateSolution
-    public static Material TungsticAcidCoatedGrapheneOxideNanosheetSolution
-    public static Material TungsticAcidCoatedGrapheneOxideNanosheet
-    public static Material RinsedTungsticAcidCoatedGrapheneOxideNanosheet
-    public static Material TungstenTrioxideNanoparticleCoatedGrapheneOxideNanosheet
-    public static Material WaterNafionSolution
-    public static Material TungstenTrioxideGrapheneOxideDopedNafionSolution
-    public static Material TungstenTrioxideGrapheneOxideDopedNafion
-    public static Material ExpandableGraphite
-    public static Material GraphitePaper
-
-
-
-
 
 
     public static void changeFormulas() {

@@ -243,14 +243,7 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(4022, "anode.mh")
         addItem(4023, "membrane.cast_film")
 
-
         addItem(4101, "vacuum_tube_components")
-        //Flow batteries 4200-4300
-        addItem(4200, "needle.steel")
-        addItem(4201, "needle.steel.barbed")
-        addItem(4202, "needle_assembly.steel.barbed")
-        addItem(4203, "membrane.vanadium_battery")
-        addItem(4204, "expanded_graphite_worms")
 
         //Dusts & Pulps 4500-4999
 

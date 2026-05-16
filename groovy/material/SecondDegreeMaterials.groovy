@@ -1139,28 +1139,5 @@ class SecondDegreeMaterials {
                 .iconSet(METALLIC)
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
-
-        VanadiumTrioxideWasteGas = new Material.Builder(13188, SuSyUtility.susyId('vanadium_trioxide_waste_gas'))
-                .gas(new FluidBuilder().temperature(1000))
-                .components(CarbonMonoxide * 7, DenseSteam * 8, Nitrogen * 2, Ammonia * 8)
-                .colorAverage()
-                .flags(DISABLE_DECOMPOSITION)
-                .build()
-
-        VanadiumTrioxideWasteGas.setFormula("(CO)7(H2O)8N2(NH3)8", true)
-
-        GrapheneOxideSolution = new Material.Builder(13189, SuSyUtility.susyId('graphene_oxide_solution'))
-                .liquid()
-                .color(0x4C2015)
-                .flags(DISABLE_DECOMPOSITION)
-                .build()
-
-        VeryDilutedNitricAcid = new Material.Builder(13190, SuSyUtility.susyId('very_diluted_nitric_acid'))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(NitricAcid, Water * 3)
-                .color(0xCCCC99)
-                .flags(DISABLE_DECOMPOSITION)
-                .build()
-
     }
 }

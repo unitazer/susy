@@ -854,13 +854,5 @@ class FirstDegreeMaterialsB {
                 .colorAverage()
                 .build()
 
-        VanadiumTrioxide = new Material.Builder(8789, SuSyUtility.susyId('vanadium_trioxide'))
-                .dust()
-                .components(Vanadium * 2, Oxygen * 3)
-                .colorAverage()
-                .build()
-        
-        
-
     }
 }
