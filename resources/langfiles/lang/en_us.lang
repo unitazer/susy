@@ -2833,29 +2833,25 @@ susy.material.polycaprolactam_solution=Polycaprolactam Solution
 susy.material.rp_1=RP-1
 susy.material.one_naphthol_two_diazonium_chloride=1-Napthol-2-Diazonium Chloride
 susy.material.supported_vanadium_pentoxide=Supported Vanadium Pentoxide
-susy.material.punched_polyacrylonitrile=Punched Polyacrylonitrile
 susy.material.diallyldimethylammonium_chloride=Diallyldimethylammonium Chloride (DADMAC)
-susy.material.polydiallyldimethylammonium_chloride=Polydiallyldimethylammonium Chloride (PolyDADMAC)
+susy.material.diallyldimethylammonium_chloride_solution=Diallyldimethylammonium Chloride (DADMAC) Solution
+susy.material.polydiallyldimethylammonium_chloride_solution=Polydiallyldimethylammonium Chloride (PolyDADMAC) Solution
 susy.material.vanadium_trioxide=Vanadium Trioxide
-susy.material.vanadium_trioxide_waste_gas=Vanadium Trioxide Waste Gas
-susy.material.graphene_oxide_solution=Graphene Oxide Solution
-susy.material.very_diluted_nitric_acid=Very Diluted Nitric Acid
-susy.material.water_nafion_solution=Water Nafion Solution
-susy.material.tungstic_acid_coated_graphene_oxide_nanosheet_solution=Tungstic Acid-Coated Graphene Oxide Nanosheet Solution
-susy.material.tungsten_trioxide_graphene_oxide_doped_nafion=Tungsten Trioxide/Graphene Oxide-Doped Nafion
-susy.material.carbon_felt=Carbon Felt
-susy.material.activated_carbon_felt=Activated Carbon Felt
+susy.material.graphene_oxide_dispersion=Graphene Oxide Dispersion
+susy.material.nafion_dispersion=Nafion Dispersion
+susy.material.acidified_graphene_oxide_tungstate_solution=Acidified Graphene Oxide-Tungstate Solution
+susy.material.nanoparticle_modified_nafion=Nanoparticle-Modified Nafion
 susy.material.vanadium_electrolyte_slurry=Vanadium Electrolyte Slurry
 susy.material.crystallized_vanadium_electrolyte=Crystallized Vanadium Electrolyte
 susy.material.vanadium_battery_electrolyte=Vanadium Battery Electrolyte
 susy.material.graphene_oxide=Graphene Oxide
-susy.material.graphene_oxide_polydadmac_tungstate_solution=Graphene Oxide-PolyDADMAC-Tungstate Solution
-susy.material.tungstic_acid_coated_graphene_oxide_nanosheet=Tungstic Acid-Coated Graphene Oxide Nanosheet
-susy.material.rinsed_tungstic_acid_coated_graphene_oxide_nanosheet=Rinsed Tungstic Acid-Coated Graphene Oxide Nanosheet
-susy.material.tungsten_trioxide_nanoparticle_coated_graphene_oxide_nanosheet=Tungsten Trioxide Nanoparticle-Coated Graphene Oxide Nanosheet
+susy.material.graphene_oxide_tungstate_solution=Graphene Oxide-Tungstate Solution
+susy.material.acidified_graphene_oxide_tungstate=Acidified Graphene Oxide-Tungstate
+susy.material.tungsten_modified_graphene_oxide_nanosheet=Tungsten-Modified Graphene Oxide Nanosheet
 susy.material.expandable_graphite=Expandable Graphite
 susy.material.graphite_paper=Graphite Paper
-susy.material.tungsten_trioxide_graphene_oxide_doped_nafion_solution=Tungsten Trioxide/Graphene Oxide-Doped Nafion Solution
+susy.material.nanoparticle_modified_nafion_dispersion=Nanoparticle-Modified Nafion Dispersion
+susy.material.expanded_polytetrafluoroethylene=Expanded Polytetrafluoroethylene (ePTFE)
 
 
 # Isotopes
@@ -3408,7 +3404,13 @@ metaitem.needle.steel.barbed.name=Barbed Steel Needle
 metaitem.needle_assembly.steel.barbed.name=Barbed Steel Needle Assembly
 metaitem.membrane.vanadium_battery.name=Vanadium Flow Battery Membrane
 metaitem.expanded_graphite_worms.name=Expanded Graphite Worms
-
+metaitem.foil.punched_polyacrylonitrile.name=Thin Punched Polyacrylonitrile (PAN) Sheet
+metaitem.foil.carbon_felt.name=Carbon Felt
+metaitem.foil.activated_carbon_felt.name=Activated Carbon Felt
+metaitem.paste.lubricated_ptfe.name=Lubricated Polytetrafluoroethylene (PTFE) Paste
+metaitem.preform.lubricated_ptfe.name=Lubricated Polytetrafluoroethylene (PTFE) Preform
+metaitem.foil.extruded_ptfe.name=Extruded Polytetrafluoroethylene (PTFE) Thin Sheet
+metaitem.foil.stretched_ptfe.name=Stretched Polytetrafluoroethylene (PTFE) Thin Sheet
 
 
 # Vanilla MC

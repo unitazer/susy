@@ -68,7 +68,8 @@ def nonMetals = [
         [input: metaitem('raw_electrode'), output: metaitem('carbon_electrode')],
         [input: metaitem('raw_carbon_crucible'), output: metaitem('carbon_crucible')],
         [input: metaitem('raw_clay_graphite_crucible'), output: metaitem('clay_graphite_crucible')],
-        [input: ore('blockGreenCarbon'), output: ore('blockBakedCarbon').first()]
+        [input: ore('blockGreenCarbon'), output: ore('blockBakedCarbon').first()],
+        [input: metaitem('dustExpandableGraphite'), output: metaitem('expanded_graphite_worms') * 4]
 ]
 
 nonMetals += mapRange('susy:susy_stone_cobble', 'susy:susy_stone_smooth', 0..11)

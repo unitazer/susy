@@ -3366,29 +3366,26 @@ class OrganicChemistryMaterials {
                 .color(0xd4c97a)
                 .build()
 
-        PunchedPolyacrylonitrile = new Material.Builder(15526, SuSyUtility.susyId('punched_polyacrylonitrile'))
-                .dust()
-                .polymer(1)
-                .flags(GENERATE_PLATE, NO_UNIFICATION, GENERATE_FOIL)
-                .components(Carbon * 3, Hydrogen * 3, Nitrogen)
-                .color(0x3B6036)
-                .build()
-
-        PunchedPolyacrylonitrile.setFormula('[C3H3N]n', true)
-
-        DiallyldimethylammoniumChloride = new Material.Builder(15527, SuSyUtility.susyId('diallyldimethylammonium_chloride'))
+        DiallyldimethylammoniumChloride = new Material.Builder(15526, SuSyUtility.susyId('diallyldimethylammonium_chloride'))
                 .liquid()
                 .components(Carbon * 8, Hydrogen * 16, Nitrogen, Chlorine)
                 .color(0x30FF7F)
                 .build()
 
-        PolydiallyldimethylammoniumChloride = new Material.Builder(15528, SuSyUtility.susyId('polydiallyldimethylammonium_chloride'))
-                .dust()
-                .iconSet("LAPIS")
-                .components(Carbon * 8, Hydrogen * 16, Nitrogen, Chlorine)
-                .color(0x30FF7F)
+        DiallyldimethylammoniumChlorideSolution = new Material.Builder(15527, SuSyUtility.susyId('diallyldimethylammonium_chloride_solution'))
+                .liquid()
+                .components(DiallyldimethylammoniumChloride, Water)
+                .colorAverage()
                 .build()
 
-        PolydiallyldimethylammoniumChloride.setFormula('[C8H16NCl]n', true)
+        DiallyldimethylammoniumChlorideSolution.setFormula('(C8H16NCl)(H2O)', true)
+        
+        PolydiallyldimethylammoniumChlorideSolution = new Material.Builder(15528, SuSyUtility.susyId('polydiallyldimethylammonium_chloride_solution'))
+                .liquid()
+                .components(Carbon * 8, Hydrogen * 16, Nitrogen, Chlorine, Water)
+                .color(0x77FFA9)
+                .build()
+
+        PolydiallyldimethylammoniumChlorideSolution.setFormula('([C8H16NCl]n)(H2O)', true)
     }
 }

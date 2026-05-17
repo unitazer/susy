@@ -82,6 +82,7 @@ ROASTER.recipeBuilder()
         .fluidOutputs(fluid('dense_steam') * 1000)
         .fluidOutputs(fluid('ammonia') * 2000)
         .duration(80)
+        .circuitMeta(1)
         .EUt(VA[MV])
         .buildAndRegister()
 

@@ -251,6 +251,13 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(4202, "needle_assembly.steel.barbed")
         addItem(4203, "membrane.vanadium_battery")
         addItem(4204, "expanded_graphite_worms")
+        addItem(4205, "foil.punched_polyacrylonitrile")
+        addItem(4206, "foil.carbon_felt")
+        addItem(4207, "foil.activated_carbon_felt")
+        addItem(4208, "paste.lubricated_ptfe")
+        addItem(4209, "preform.lubricated_ptfe")
+        addItem(4210, "foil.extruded_ptfe")
+        addItem(4211, "foil.stretched_ptfe")
 
         //Dusts & Pulps 4500-4999
 

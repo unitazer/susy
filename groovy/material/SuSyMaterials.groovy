@@ -2655,30 +2655,25 @@ class SuSyMaterials {
     public static Material TrimethylGallium
     public static Material TrimethylIndium
     public static Material YttriumAluminiumGarnetCerium
-    public static Material PunchedPolyacrylonitrile
-    public static Material CarbonFelt
-    public static Material ActivatedCarbonFelt
     public static Material VanadiumTrioxide
-    public static Material VanadiumTrioxideWasteGas
     public static Material VanadiumElectrolyteSlurry
     public static Material CrystallizedVanadiumElectrolyte
     public static Material VanadiumBatteryElectrolyte
     public static Material DiallyldimethylammoniumChloride
-    public static Material PolydiallyldimethylammoniumChloride
-    public static Material GrapheneOxideSolution
+    public static Material DiallyldimethylammoniumChlorideSolution
+    public static Material PolydiallyldimethylammoniumChlorideSolution
+    public static Material GrapheneOxideDispersion
     public static Material GrapheneOxide
-    public static Material VeryDilutedNitricAcid
-    public static Material GrapheneOxidePolyDADMACTungstateSolution
-    public static Material TungsticAcidCoatedGrapheneOxideNanosheetSolution
-    public static Material TungsticAcidCoatedGrapheneOxideNanosheet
-    public static Material RinsedTungsticAcidCoatedGrapheneOxideNanosheet
-    public static Material TungstenTrioxideNanoparticleCoatedGrapheneOxideNanosheet
-    public static Material WaterNafionSolution
-    public static Material TungstenTrioxideGrapheneOxideDopedNafionSolution
-    public static Material TungstenTrioxideGrapheneOxideDopedNafion
+    public static Material GrapheneOxideTungstateSolution
+    public static Material AcidifiedGrapheneOxideTungstateSolution
+    public static Material AcidifiedGrapheneOxideTungstate
+    public static Material TungstenModifiedGrapheneOxideNanosheet
+    public static Material NafionDispersion
+    public static Material NanoparticleModifiedNafionDispersion
+    public static Material NanoparticleModifiedNafion
     public static Material ExpandableGraphite
     public static Material GraphitePaper
-
+    public static Material ExpandedPolytetrafluoroethylene
     
 
     public static void changeFormulas() {
