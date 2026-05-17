@@ -3392,25 +3392,25 @@ class UnknownCompositionMaterials {
                 .color(0xFF00B2)
                 .build()
 
-        TungsticAcidCoatedGrapheneOxideNanosheet = new Material.Builder(4739, SuSyUtility.susyId('tungstic_acid_coated_graphene_oxide_nanosheet'))
+        TungsticAcidCoatedGrapheneOxideNanosheet = new Material.Builder(4738, SuSyUtility.susyId('tungstic_acid_coated_graphene_oxide_nanosheet'))
                 .dust()
                 .iconSet("DIAMOND")
                 .color(0x7A0055)
                 .build()
 
-        RinsedTungsticAcidCoatedGrapheneOxideNanosheet = new Material.Builder(4740, SuSyUtility.susyId('rinsed_tungstic_acid_coated_graphene_oxide_nanosheet'))
+        RinsedTungsticAcidCoatedGrapheneOxideNanosheet = new Material.Builder(4739, SuSyUtility.susyId('rinsed_tungstic_acid_coated_graphene_oxide_nanosheet'))
                 .dust()
                 .iconSet("EMERALD")
                 .color(0xAD0079)
                 .build()
 
-        TungstenTrioxideNanoparticleCoatedGrapheneOxideNanosheet = new Material.Builder(4741, SuSyUtility.susyId('tungsten_trioxide_nanoparticle_coated_graphene_oxide_nanosheet'))
+        TungstenTrioxideNanoparticleCoatedGrapheneOxideNanosheet = new Material.Builder(4740, SuSyUtility.susyId('tungsten_trioxide_nanoparticle_coated_graphene_oxide_nanosheet'))
                 .dust()
                 .iconSet("METALLIC")
                 .color(0xAD0079)
                 .build()
 
-        WaterNafionSolution = new Material.Builder(4742, SuSyUtility.susyId('water_nafion_solution'))
+        WaterNafionSolution = new Material.Builder(4741, SuSyUtility.susyId('water_nafion_solution'))
                 .liquid()
                 .color(0xcfccb0)
                 .flags(DISABLE_DECOMPOSITION)
@@ -3418,13 +3418,13 @@ class UnknownCompositionMaterials {
 
         WaterNafionSolution.setFormula('([(C2F4)(C7HF13O5S)]n)(H2O)', true)
 
-        TungsticAcidCoatedGrapheneOxideNanosheetSolution = new Material.Builder(4743, SuSyUtility.susyId('tungstic_acid_coated_graphene_oxide_nanosheet_solution'))
+        TungsticAcidCoatedGrapheneOxideNanosheetSolution = new Material.Builder(4742, SuSyUtility.susyId('tungstic_acid_coated_graphene_oxide_nanosheet_solution'))
                 .liquid()
                 .color(0x7A0055)
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
 
-        TungstenTrioxideGrapheneOxideDopedNafion = new Material.Builder(4744, SuSyUtility.susyId('tungsten_trioxide_graphene_oxide_doped_nafion'))
+        TungstenTrioxideGrapheneOxideDopedNafion = new Material.Builder(4743, SuSyUtility.susyId('tungsten_trioxide_graphene_oxide_doped_nafion'))
                 .dust()
                 .polymer(1)
                 .flags(GENERATE_PLATE, GENERATE_FOIL)
@@ -3433,7 +3433,7 @@ class UnknownCompositionMaterials {
                 .build()
         TungstenTrioxideGrapheneOxideDopedNafion.setFormula('([(C2F4)(C7HF13O5S)]n)(H2O)', true)
 
-        TungstenTrioxideGrapheneOxideDopedNafionSolution = new Material.Builder(4745, SuSyUtility.susyId('tungsten_trioxide_graphene_oxide_doped_nafion_solution'))
+        TungstenTrioxideGrapheneOxideDopedNafionSolution = new Material.Builder(4744, SuSyUtility.susyId('tungsten_trioxide_graphene_oxide_doped_nafion_solution'))
                 .liquid()
                 .components(TungstenTrioxideGrapheneOxideDopedNafion, Water)
                 .color(0x99947A)

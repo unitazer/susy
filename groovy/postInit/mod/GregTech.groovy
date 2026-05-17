@@ -1975,7 +1975,7 @@ ASSEMBLER.recipeBuilder()
         .buildAndRegister()
 
 ASSEMBLER.recipeBuilder()
-        .inputs(item('gregtech:meta_block_frame_544', 8))
+        .inputs(ore('frameGtInconel718'))
         .inputs(ore('plateReinforcedEpoxyResin') * 6)
         .fluidInputs(fluid('dye_light_blue') * 288)
         .outputs(item('gregtech:metal_casing', 11) * 2)

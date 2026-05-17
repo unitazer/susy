@@ -2679,10 +2679,7 @@ class SuSyMaterials {
     public static Material ExpandableGraphite
     public static Material GraphitePaper
 
-
-
-
-
+    
 
     public static void changeFormulas() {
         log.infoMC("Changing Formulas!")
