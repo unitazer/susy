@@ -908,7 +908,7 @@ FORMING_PRESS.recipeBuilder()
 EXTRUDER.recipeBuilder()
         .inputs(metaitem('preform.lubricated_ptfe'))
         .notConsumable(metaitem('shape.extruder.foil'))//source says 75 um thick after extrusion
-        .outputs(metaitem('foil.extruded_ptfe'))
+        .outputs(metaitem('foil.extruded_ptfe') * 4)
         .duration(140)
         .EUt(VA[MV])
         .buildAndRegister()
