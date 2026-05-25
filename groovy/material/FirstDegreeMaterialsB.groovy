@@ -854,5 +854,22 @@ class FirstDegreeMaterialsB {
                 .colorAverage()
                 .build()
 
+        CopperTungstenAlloy = new Material.Builder(8790, SuSyUtility.susyId('copper_tungsten_alloy'))
+                .dust()
+                .flags(GENERATE_ROD, NO_UNIFICATION)
+                .components(Copper, Tungsten * 3)
+                .color(0xA8591C)
+                .build()
+
+        LanthanumZirconiumOxide = new Material.Builder(8791, SuSyUtility.susyId('lanthanum_zirconium_oxide'))
+                .dust().ingot()
+                .flags(NO_UNIFICATION)
+                .components(Lanthanum * 2, Zirconium * 2, Oxygen * 7)
+                .color(0xB94DA0)
+                .iconSet(DULL)
+                .build()
+        
+        
+
     }
 }

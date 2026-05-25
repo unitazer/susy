@@ -816,6 +816,9 @@ class SuSyMaterials {
     public static Material DilutedNitricAcidMotherLiquor
     public static Material AdipicNitricAcidMotherLiquor
     public static Material BauxiteLeach
+    public static Material InvestmentCastingCeramicSlurry
+    public static Material InvestmentCastingMixture
+
 
     // Petrochem Materials
 
@@ -1675,6 +1678,10 @@ class SuSyMaterials {
     public static Material AnnealedAB2MetalAlloy
     public static Material AnnealedAB5MetalAlloy
     public static Material CadmiumOxide
+    public static Material CopperTungstenAlloy
+    public static Material LanthanumZirconiumOxide
+
+
 
     // HP Materials
 
@@ -1914,6 +1921,10 @@ class SuSyMaterials {
     public static Material LeadChamberReactionMixture
     public static Material MetalHydrideMixAnode
     public static Material SupportedVanadiumPentoxide
+    public static Material RawInvestmentCastingMixture
+    public static Material SilicaCoatedInvestmentCastingMixture
+    public static Material DriedSilicaCoatedInvestmentCastingMixture
+
 
     // Organic Chemistry Materials
 
@@ -2434,6 +2445,10 @@ class SuSyMaterials {
     public static Material Diazonaphthoquinone
     public static Material RawNitrileRubber
     public static Material NitrileRubber
+    public static Material Norbornene
+    public static Material DicyclopentadieneNorborneneResin
+    public static Material HydrogenatedDicyclopentadieneNorborneneResin
+
 
     // Third Degree Materials
 
@@ -2585,6 +2600,7 @@ class SuSyMaterials {
     public static Material KetoneAlcoholOil
     public static Material AcetyleneSolution
     public static Material PolycaprolactamSolution
+    public static Material DicyclopentadieneNorborneneResinSolution
 
     // Thermodynamics Materials
 
@@ -2656,6 +2672,7 @@ class SuSyMaterials {
     public static Material TrimethylIndium
     public static Material YttriumAluminiumGarnetCerium
 
+    
 
     public static void changeFormulas() {
         log.infoMC("Changing Formulas!")

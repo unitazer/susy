@@ -3363,5 +3363,28 @@ class OrganicChemistryMaterials {
                 .flags(FLAMMABLE)
                 .color(0xd4c97a)
                 .build()
+
+        Norbornene = new Material.Builder(15529, SuSyUtility.susyId('norbornene'))
+                .dust()
+                .iconSet(ROUGH)
+                .components(Carbon * 7, Hydrogen * 10)
+                .color(0xfffff0)
+                .build()
+
+        DicyclopentadieneNorborneneResin = new Material.Builder(15530, SuSyUtility.susyId('dicyclopentadiene_norbornene_resin'))
+                .polymer(1)
+                .iconSet(ROUGH)
+                .color(0xA8B277)
+                .build()
+
+        DicyclopentadieneNorborneneResin.setFormula("[(C10H12)9(C7H10)]n", true)
+
+        HydrogenatedDicyclopentadieneNorborneneResin = new Material.Builder(15531, SuSyUtility.susyId('hydrogenated_dicyclopentadiene_norbornene_resin'))
+                .polymer(1)
+                .iconSet(DIAMOND)
+                .color(0xA8B277)
+                .build()
+
+        HydrogenatedDicyclopentadieneNorborneneResin.setFormula("[(C10H12)9(C7H10)]n", true) //should there be more hydrogen here?
     }
 }

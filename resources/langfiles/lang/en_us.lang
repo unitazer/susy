@@ -2833,6 +2833,19 @@ susy.material.polycaprolactam_solution=Polycaprolactam Solution
 susy.material.rp_1=RP-1
 susy.material.one_naphthol_two_diazonium_chloride=1-Napthol-2-Diazonium Chloride
 susy.material.supported_vanadium_pentoxide=Supported Vanadium Pentoxide
+susy.material.investment_casting_ceramic_slurry=Investment Casting Ceramic Slurry
+susy.material.investment_casting_mixture=Investment Casting Mixture
+susy.material.copper_tungsten_alloy=Copper-Tungsten Alloy
+susy.material.lanthanum_zirconium_oxide=Lanthanum Zirconium Oxide (LZO)
+susy.material.raw_investment_casting_mixture=Raw Investment Casting Mixture
+susy.material.silica_coated_investment_casting_mixture=Silica-Coated Investment Casting Mixture
+susy.material.dried_silica_coated_investment_casting_mixture=Dried Silica-Coated Investment Casting Mixture
+susy.material.norbornene=Norbornene
+susy.material.dicyclopentadiene_norbornene_resin_solution=Dicyclopentadiene-Norbornene Resin Solution
+susy.material.dicyclopentadiene_norbornene_resin=Dicyclopentadiene-Norbornene Resin
+susy.material.hydrogenated_dicyclopentadiene_norbornene_resin=Hydrogenated Dicyclopentadiene-Norbornene Resin
+
+
 
 # Isotopes
 
@@ -3379,6 +3392,52 @@ metaitem.carbon.mesh.phenolic.moist.name=Moist Phenolic Carbon Mesh
 metaitem.carbon.mesh.phenolic.treated.name=Treated Phenolic Carbon Mesh
 metaitem.carbon.tile.phenolic.treated.name=Treated Phenolic Carbon Tile
 
+metaitem.needle.steel.name=Steel Needle
+metaitem.needle.steel.barbed.name=Barbed Steel Needle
+metaitem.needle_assembly.steel.barbed.name=Barbed Steel Needle Assembly
+metaitem.membrane.vanadium_battery.name=Vanadium Flow Battery Membrane
+metaitem.expanded_graphite_worms.name=Expanded Graphite Worms
+metaitem.foil.punched_polyacrylonitrile.name=Thin Punched Polyacrylonitrile (PAN) Sheet
+metaitem.foil.carbon_felt.name=Carbon Felt
+metaitem.foil.activated_carbon_felt.name=Activated Carbon Felt
+metaitem.paste.lubricated_ptfe.name=Lubricated Polytetrafluoroethylene (PTFE) Paste
+metaitem.preform.lubricated_ptfe.name=Lubricated Polytetrafluoroethylene (PTFE) Preform
+metaitem.foil.extruded_ptfe.name=Extruded Polytetrafluoroethylene (PTFE) Thin Sheet
+metaitem.foil.stretched_ptfe.name=Stretched Polytetrafluoroethylene (PTFE) Thin Sheet
+
+metaitem.turbine_blade_core_die.name=Turbine Blade Core Die Set
+metaitem.turbine_blade_shape_die.name=Turbine Blade Shape Die Set
+metaitem.investment_casting_binder.name=Investment Casting Core Binder
+metaitem.turbine_blade_casting_core.name=Turbine Blade Casting Core
+metaitem.fired_turbine_blade_casting_core.name=Fired Turbine Blade Casting Core
+metaitem.investment_casting_wax.name=Investment Casting Wax
+metaitem.wax_turbine_blade_mold.name=Wax Turbine Blade Mold
+metaitem.ceramic_coated_wax_turbine_blade_mold.name=Ceramic-Coated Wax Turbine Blade Mold
+metaitem.stuccoed_ceramic_turbine_blade_mold.name=Stuccoed Ceramic Turbine Blade Mold
+metaitem.dried_ceramic_turbine_blade_mold.name=Dried Ceramic Turbine Blade Mold
+metaitem.dewaxed_ceramic_turbine_blade_mold.name=Dewaxed Turbine Blade Mold
+metaitem.turbine_blade_mold.name=Turbine Blade Mold
+metaitem.bridgman_furnace.name=Bridgman-Stockbarger Furnace
+metaitem.cast_gas_turbine_blade.name=Cast Gas Turbine Blade
+metaitem.demolded_gas_turbine_blade.name=Demolded Gas Turbine Blade
+metaitem.decored_gas_turbine_blade.name=Decored Gas Turbine Blade
+metaitem.milled_gas_turbine_blade.name=Milled Gas Turbine Blade
+metaitem.surface_finished_gas_turbine_blade.name=Surface-Finished Gas Turbine Blade
+metaitem.platinum_coated_gas_turbine_blade.name=Platinum-Coated Gas Turbine Blade
+metaitem.platinum_aluminide_coated_gas_turbine_blade.name=Platinum Aluminide-Coated Gas Turbine Blade
+metaitem.gas_turbine_blade.name=Gas Turbine Blade
+metaitem.cast_high_pressure_steam_turbine_blade.name=Cast High-Pressure Steam Turbine Blade
+metaitem.demolded_high_pressure_steam_turbine_blade.name=Demolded High-Pressure Steam Turbine Blade
+metaitem.decored_high_pressure_steam_turbine_blade.name=Decored High-Pressure Steam Turbine Blade
+metaitem.milled_high_pressure_steam_turbine_blade.name=Milled High-Pressure Steam Turbine Blade
+metaitem.high_pressure_steam_turbine_blade.name=High-Pressure Steam Turbine Blade
+metaitem.cast_low_pressure_steam_turbine_blade.name=Cast Low-Pressure Steam Turbine Blade
+metaitem.demolded_low_pressure_steam_turbine_blade.name=Demolded Low-Pressure Steam Turbine Blade
+metaitem.decored_low_pressure_steam_turbine_blade.name=Decored Low-Pressure Steam Turbine Blade
+metaitem.milled_low_pressure_steam_turbine_blade.name=Milled Low-Pressure Steam Turbine Blade
+metaitem.low_pressure_steam_turbine_blade.name=Low-Pressure Steam Turbine Blade
+
+
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
 tile.magma.name=Magma-Infused Netherrack
@@ -3403,6 +3462,11 @@ gregtech.machine.laser_engraver.opv.name=Legendary Electron Beam Lithographer
 
 recipemap.laser_engraver.name=Electron Beam Lithography
 
+#Substation Renaming
+tile.battery_block.empty_tier_i.name=Empty Tier I Flow Battery Hull
+tile.metal_casing.palladium_substation.name=Power Substation Casing
+tile.battery_block.lapotronic_ev.name=Vanadium Flow Battery
+ 
 # Generic Renaming
 item.chisel.chisel_diamond.name=Steel Chisel
 tooltip.computronics.waila.tape.notapeinserted=No Tape Inserted
@@ -3420,6 +3484,7 @@ gregtech.advancement.medium_voltage.31_mv_energy_hatch.name=Upgrade Your ERF
 recipemap.electric_blast_furnace.name=Resistance Furnace
 gregtechfoodoption.machine.greenhouse.name=Arboretum
 recipemap.greenhouse.name=Arboretum
+
 
 # Material Renaming
 item.susy.material.ultra_high_molecular_weight_polyethylene.dustTiny=Tiny Pile of Ultra High Molecular Weight Polyethylene (UHMWPE) Pulp

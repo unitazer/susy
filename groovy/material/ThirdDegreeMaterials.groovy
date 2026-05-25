@@ -929,5 +929,11 @@ class ThirdDegreeMaterials {
                 .color(0x66696e)
                 .colorAverage()
                 .build()
+
+        DicyclopentadieneNorborneneResinSolution = new Material.Builder(24151, SuSyUtility.susyId('dicyclopentadiene_norbornene_resin_solution'))
+                .liquid()
+                .components(DicyclopentadieneNorborneneResin * 1, Benzene * 1)
+                .colorAverage()
+                .build()
     }
 }

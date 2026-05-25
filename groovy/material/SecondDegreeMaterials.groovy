@@ -1139,5 +1139,26 @@ class SecondDegreeMaterials {
                 .iconSet(METALLIC)
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
+
+        RawInvestmentCastingMixture = new Material.Builder(13189, SuSyUtility.susyId('raw_investment_casting_mixture'))
+                .dust()
+                .color(0x58A0A0)
+                .components(SiliconDioxide * 3, Zircon * 2, SiliconCarbide * 2)
+                .iconSet(SHINY)
+                .build();
+
+        SilicaCoatedInvestmentCastingMixture = new Material.Builder(13190, SuSyUtility.susyId('silica_coated_investment_casting_mixture'))
+                .dust()
+                .color(0x58A0A0)
+                .components(SiliconDioxide * 3, Zircon * 2, SiliconCarbide * 2)
+                .iconSet(LAPIS)
+                .build();
+
+        DriedSilicaCoatedInvestmentCastingMixture = new Material.Builder(13191, SuSyUtility.susyId('dried_silica_coated_investment_casting_mixture'))
+                .dust()
+                .color(0x64B7B7)
+                .components(SiliconDioxide * 3, Zircon * 2, SiliconCarbide * 2)
+                .iconSet(LAPIS)
+                .build();
     }
 }

@@ -564,24 +564,6 @@ RecyclingHelper.addShaped("titanium_turbine_controller", metaitem('susy:advanced
     [metaitem('cableGtHexAluminium'), ore('circuitEv'),                   metaitem('cableGtHexAluminium')]
 ])
 
-RecyclingHelper.addShaped("lp_turbine_rotor", item('susy:turbine_rotor', 4), [
-    [ore('plateTitanium'),             ore('ringIncoloy825'),     ore('plateTitanium')],
-    [ore('craftingToolHardHammer'), ore('stickLongIncoloy825'), ore('craftingToolScrewdriver')],
-    [ore('plateTitanium'),             ore('rotorIncoloy825'),     ore('plateTitanium')]
-])
-
-RecyclingHelper.addShaped("hp_turbine_rotor", item('susy:turbine_rotor', 8), [
-    [ore('plateTitanium'),             ore('ringNimonic105'),     ore('plateTitanium')],
-    [ore('craftingToolHardHammer'), ore('stickLongNimonic105'), ore('craftingToolScrewdriver')],
-    [ore('plateTitanium'),             ore('rotorNimonic105'),     ore('plateTitanium')]
-])
-
-RecyclingHelper.addShaped("gas_turbine_rotor", item('susy:turbine_rotor', 12), [
-    [ore('plateTitanium'),             ore('ringReneN5'),     ore('plateTitanium')],
-    [ore('craftingToolHardHammer'), ore('stickLongReneN5'), ore('craftingToolScrewdriver')],
-    [ore('plateTitanium'),             ore('rotorReneN5'),     ore('plateTitanium')]
-])
-
 // Steel Turbine Casing 
 mods.gregtech.assembler.removeByInput(16, [metaitem('plateMagnalium') * 6, metaitem('frameBlueSteel'), metaitem('circuit.integrated').withNbt(['Configuration': 6])], null)
 

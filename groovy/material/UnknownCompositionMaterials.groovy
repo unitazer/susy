@@ -3340,5 +3340,17 @@ class UnknownCompositionMaterials {
                 .liquid(new FluidBuilder().temperature(450))
                 .color(0x5e2613)
                 .build()
+
+        InvestmentCastingCeramicSlurry = new Material.Builder(4743, SuSyUtility.susyId('investment_casting_ceramic_slurry'))
+                .liquid()
+                .color(0x6E4C40)
+                .build()
+
+        InvestmentCastingMixture = new Material.Builder(4744, SuSyUtility.susyId('investment_casting_mixture'))
+                .dust()
+                .iconSet(METALLIC)
+                .color(0xFFE1D8)
+                .build()
+
     }
 }
