@@ -1125,12 +1125,6 @@ class SecondDegreeMaterials {
                 .components(SulfuricAcid, DimethylOneThreeDioxane, Water)
                 .colorAverage()
                 .build()
-
-        IsopreneSolution = new Material.Builder(13186, SuSyUtility.susyId('isoprene_solution'))
-                .liquid()
-                .components(Water, Isoprene, Formaldehyde)
-                .colorAverage()
-                .build()
         
         MetalHydrideMixAnode = new Material.Builder(13187, SuSyUtility.susyId('metal_hydride_mix_anode'))
                 .dust()

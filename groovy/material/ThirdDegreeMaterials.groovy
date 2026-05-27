@@ -929,5 +929,11 @@ class ThirdDegreeMaterials {
                 .color(0x66696e)
                 .colorAverage()
                 .build()
+
+        IsopreneSolution = new Material.Builder(13186, SuSyUtility.susyId('isoprene_solution'))
+                .liquid()
+                .components(Water, Isoprene, Formaldehyde)
+                .colorAverage()
+                .build()
     }
 }
