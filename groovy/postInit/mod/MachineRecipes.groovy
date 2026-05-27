@@ -146,8 +146,8 @@ def tieredSprings = [metaitem('springIron'), metaitem('springCopper'), metaitem(
 
 def rotors = [
     ore('rotorLead'),
-    ore('rotorTin'),
-    ore('rotorBronze'),
+    ore('rotorTin'), 
+    ore('rotorBronze'), 
     ore('rotorSteel'),
     ore('rotorStainlessSteel'),
     ore('rotorTungstenSteel'),
@@ -583,7 +583,7 @@ RecyclingHelper.addShaped("gas_turbine_rotor", item('susy:turbine_rotor', 12), [
     [ore('plateTitanium'),             ore('rotorReneN5'),     ore('plateTitanium')]
 ])
 
-// Steel Turbine Casing
+// Steel Turbine Casing 
 mods.gregtech.assembler.removeByInput(16, [metaitem('plateMagnalium') * 6, metaitem('frameBlueSteel'), metaitem('circuit.integrated').withNbt(['Configuration': 6])], null)
 
 ASSEMBLER.recipeBuilder()
@@ -602,7 +602,7 @@ RecyclingHelper.replaceShaped("gregtech:casing_steel_turbine_casing", item('greg
     [metaitem('plateSteel'), ore('craftingToolWrench'), metaitem('plateSteel')]
 ])
 
-// Stainless Turbine Casing
+// Stainless Turbine Casing 
 mods.gregtech.assembler.removeByInput(16, [item('gregtech:turbine_casing', 5), metaitem('plateStainlessSteel') * 6, metaitem('circuit.integrated').withNbt(['Configuration': 6])], null)
 
 ASSEMBLER.recipeBuilder()
@@ -621,7 +621,7 @@ RecyclingHelper.replaceShaped("gregtech:casing_stainless_turbine_casing", item('
     [metaitem('plateStainlessSteel'), ore('craftingToolWrench'), metaitem('plateStainlessSteel')]
 ])
 
-// Titanium Turbine Casing
+// Titanium Turbine Casing 
 mods.gregtech.assembler.removeByInput(16, [item('gregtech:turbine_casing', 5), metaitem('plateTitanium') * 6, metaitem('circuit.integrated').withNbt(['Configuration': 6])], null)
 
 ASSEMBLER.recipeBuilder()
@@ -640,7 +640,7 @@ RecyclingHelper.replaceShaped("gregtech:casing_titanium_turbine_casing", item('g
     [metaitem('plateTitanium'), ore('craftingToolWrench'), metaitem('plateTitanium')]
 ])
 
-// Tungstensteel Turbine Casing
+// Tungstensteel Turbine Casing 
 mods.gregtech.assembler.removeByInput(16, [item('gregtech:turbine_casing', 5), metaitem('plateTungstenSteel') * 6, metaitem('circuit.integrated').withNbt(['Configuration': 6])], null)
 
 ASSEMBLER.recipeBuilder()
@@ -797,23 +797,23 @@ for (i = LV; i <= HV; i++) {
         .buildAndRegister()
 
     // Interconversion
-    crafting.addShaped("susy:fluid_hatch.import_to_export.4x." + Globals.voltageTiers[i],
+    crafting.addShaped("susy:fluid_hatch.import_to_export.4x." + Globals.voltageTiers[i], 
         metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i]), [
             [ore('craftingToolScrewdriver')],
             [metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i])]
     ])
-    crafting.addShaped("susy:fluid_hatch.export_to_import.4x." + Globals.voltageTiers[i],
+    crafting.addShaped("susy:fluid_hatch.export_to_import.4x." + Globals.voltageTiers[i], 
         metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]), [
             [ore('craftingToolScrewdriver')],
             [metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i])]
     ])
 
-    crafting.addShaped("susy:fluid_hatch.import_to_export.9x." + Globals.voltageTiers[i],
+    crafting.addShaped("susy:fluid_hatch.import_to_export.9x." + Globals.voltageTiers[i], 
         metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]), [
             [ore('craftingToolScrewdriver')],
             [metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i])]
     ])
-    crafting.addShaped("susy:fluid_hatch.export_to_import.9x." + Globals.voltageTiers[i],
+    crafting.addShaped("susy:fluid_hatch.export_to_import.9x." + Globals.voltageTiers[i], 
         metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]), [
             [ore('craftingToolScrewdriver')],
             [metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i])]
@@ -1005,6 +1005,8 @@ RecyclingHelper.addShaped("gregtech:rotary_kiln", metaitem('susy:rotary_kiln_v2'
     [metaitem('pipeHugeFluidSteel'), hulls[2], metaitem('pipeHugeFluidSteel')],
     [circuits[2], motors[2], tieredCables[2]]
 ]);
+
+crafting.addShapeless("susy:rotary_kiln_convert", metaitem("susy:rotary_kiln_v2"), [metaitem("susy:rotary_kiln")]);
 
 RecyclingHelper.addShaped("gregtech:high_temperature_distillation_tower", metaitem('susy:high_temperature_distillation_tower'), [
     [circuits[3], item('gregtech:wire_coil'), circuits[3]],
@@ -1220,7 +1222,7 @@ ASSEMBLER.recipeBuilder()
     .circuitMeta(3)
     .EUt(VA[HV])
     .duration(600)
-    .buildAndRegister()
+    .buildAndRegister() 
 
 // AIR DIST. CONTROLLERS
 
