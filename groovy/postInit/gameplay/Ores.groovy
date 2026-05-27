@@ -1,4 +1,4 @@
-import static prePostInit.oreDict.*
+import static prePostInit.Elements.*
 
 // Ore Removal
 
@@ -165,7 +165,7 @@ def oreMap = [
         [name: 'Pitchblende', type: 'default'],
 ]
 
-def elementMap = elements.collect { [name: it, type: 'partial'] } // Piggybacks off the list of elements from OreDict.groovy
+def elementMap = elementList.collect { [name: it, type: 'partial'] } // Piggybacks off the list of elements from OreDict.groovy
 elementMap.find { it.name == 'Silver' }?.put('type', 'default')
 oreMap.addAll(elementMap)
 
