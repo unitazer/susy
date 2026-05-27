@@ -492,15 +492,6 @@ crafting.addShaped('susy:industrial_concrete_bricks', item('susy:susy_stone_bric
 
 crafting.addShapeless('marble_conversion', item('gregtech:stone_smooth', 2), [item('chisel:marble2', 7)])
 
-//add variants to chisel group
-mods.chisel.carving.addGroup("susy_structural_blocks")
-for (int i = 0; i<16; i++) {
-    mods.chisel.carving.addVariation("susy_structural_blocks", item('susy:structural_block', i))
-}
-for (int i = 0; i<10; i++) {
-    mods.chisel.carving.addVariation("susy_structural_blocks", item('susy:structural_block_1', i))
-}
-
 //add custom sheets to chisel group
 mods.chisel.carving.addVariation("gt_metal_sheet", item('susy:custom_sheets', 0))
 mods.chisel.carving.addVariation("gt_metal_sheet", item('susy:custom_sheets', 1))
