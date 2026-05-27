@@ -2964,9 +2964,9 @@ metaitem.battery.stainless_steel_hull.iv.name=Large Stainless Steel Battery Hull
 metaitem.battery.ni_cd.mv.name=Nickel-Cadmium MV Battery
 metaitem.battery.ni_cd.hv.name=Nickel-Cadmium HV Battery
 metaitem.battery.ni_cd.ev.name=Nickel-Cadmium EV Battery
-metaitem.battery.ni_mh.hv.name=Nickel-Metal-Hydride HV Battery
-metaitem.battery.ni_mh.ev.name=Nickel-Metal-Hydride EV Battery
-metaitem.battery.ni_mh.iv.name=Nickel-Metal-Hydride IV Battery
+metaitem.battery.ni_mh.hv.name=Nickel-Metal Hydride HV Battery
+metaitem.battery.ni_mh.ev.name=Nickel-Metal Hydride EV Battery
+metaitem.battery.ni_mh.iv.name=Nickel-Metal Hydride IV Battery
 
 metaitem.battery.primitivehull.lv.name=Medium Ebonite Battery Hull
 metaitem.battery.primitivehull.mv.name=Large Ebonite Battery Hull
