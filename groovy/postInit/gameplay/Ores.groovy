@@ -1,3 +1,5 @@
+import static prePostInit.oreDict.*
+
 // Ore Removal
 
 // total = unused ores and material
