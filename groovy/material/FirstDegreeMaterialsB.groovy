@@ -797,7 +797,8 @@ class FirstDegreeMaterialsB {
                 .iconSet(METALLIC)
                 .blastTemp(1500, GasTier.HIGH, GTValues.VA[GTValues.EV])
                 .build()
-                .setFormula("(Zr0.8Ti0.2)(V0.6Mn0.3Pd0.1Ni0.8Fe0.2)", true)
+                
+        AB2MetalAlloy.setFormula("(Zr0.8Ti0.2)(V0.6Mn0.3Pd0.1Ni0.8Fe0.2)", true)
 
         AB5MetalAlloy = new Material.Builder(8782, SuSyUtility.susyId('AB_5_metal_alloy'))
                 .ingot().liquid(new FluidBuilder().temperature(1500))
@@ -806,7 +807,8 @@ class FirstDegreeMaterialsB {
                 .iconSet(METALLIC)
                 .blastTemp(1500, GasTier.HIGH, GTValues.VA[GTValues.EV])
                 .build()
-                .setFormula("(La0.8Zr0.2)(Ni4.5Al0.5)", true)
+
+        AB5MetalAlloy.setFormula("(La0.8Zr0.2)(Ni4.5Al0.5)", true)
 
         AnnealedAB2MetalAlloy = new Material.Builder(8783, SuSyUtility.susyId('annealed_AB_2_metal_alloy'))
                 .ingot().liquid(new FluidBuilder().temperature(1500))
