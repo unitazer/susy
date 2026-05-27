@@ -15,7 +15,6 @@ import postInit.utils.RecyclingHelper
 log.infoMC("Running Batteries.groovy...")
 
 mods.jei.ingredient.yeet(
-//        metaitem('battery.re.ulv.tantalum'),
         metaitem('battery.zpm.naquadria'),
         metaitem('battery.uv.naquadria'),
         metaitem('energy.module'),
@@ -24,18 +23,19 @@ mods.jei.ingredient.yeet(
 )
 
 [
+        metaitem('battery.re.ulv.tantalum'),
         metaitem('battery.re.lv.sodium'),
         metaitem('battery.re.mv.sodium'),
         metaitem('battery.re.hv.sodium'),
         metaitem('battery.re.lv.lithium'),
         metaitem('battery.re.mv.lithium'),
-//        metaitem('battery.re.hv.lithium'),
+        metaitem('battery.re.hv.lithium'),
         metaitem('battery.re.lv.cadmium'),
         metaitem('battery.re.mv.cadmium'),
-//        metaitem('battery.re.hv.cadmium'),
+        metaitem('battery.re.hv.cadmium'),
         metaitem('energy_crystal'),
         metaitem('lapotron_crystal'),
-//        metaitem('battery.ev.vanadium'),
+        metaitem('battery.ev.vanadium'),
         metaitem('battery.iv.vanadium'),
         metaitem('battery.luv.vanadium'),
         metaitem('energy.lapotronic_orb'),
@@ -45,7 +45,7 @@ mods.jei.ingredient.yeet(
     mods.jei.ingredient.yeet(battery)
 }
 
-['lv', 'mv', 'iv', 'luv', 'zpm', 'uv'].each { voltage ->
+['lv', 'mv', 'hv', 'iv', 'ev', 'luv', 'zpm', 'uv'].each { voltage ->
     crafting.remove('gregtech:battery_hull_' + voltage)
     RecyclingHelper.removeRecyclingRecipes(metaitem('battery.hull.' + voltage))
     mods.jei.ingredient.yeet((metaitem('battery.hull.' + voltage)))
