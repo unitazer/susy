@@ -30,7 +30,8 @@ mods.jei.ingredient.yeet(
     metaitem('rotor_holder.luv'),
     metaitem('rotor_holder.zpm'),
     metaitem('rotor_holder.uv'),
-    metaitem('susy:rotary_kiln')
+    metaitem('susy:rotary_kiln'),
+    metaitem('susy:mixer_settler')
 )
 
 //Add recipes for new chemical reactors, and remove old chemical reactor recipes
