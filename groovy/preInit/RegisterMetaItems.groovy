@@ -24,9 +24,7 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(100, "cement.clinker")
         addItem(101, "hot.cement.clinker")
         addItem(102, "cement.dust")
-
-        // Free ID: 103
-
+        addItem(103, "graphite_paper")
         addItem(104, "shape.mold.rod")
         addItem(105, "shape.mold.crucible")
         addItem(106, "crucible.boron.nitride")
@@ -243,7 +241,21 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(4022, "anode.mh")
         addItem(4023, "membrane.cast_film")
 
+
         addItem(4101, "vacuum_tube_components")
+        //Flow batteries 4200-4300
+        addItem(4200, "needle.steel")
+        addItem(4201, "needle.steel.barbed")
+        addItem(4202, "needle_assembly.steel.barbed")
+        addItem(4203, "membrane.vanadium_battery")
+        addItem(4204, "expanded_graphite_worms")
+        addItem(4205, "foil.punched_polyacrylonitrile")
+        addItem(4206, "foil.carbon_felt")
+        addItem(4207, "foil.activated_carbon_felt")
+        addItem(4208, "paste.lubricated_ptfe")
+        addItem(4209, "preform.lubricated_ptfe")
+        addItem(4210, "foil.extruded_ptfe")
+        addItem(4211, "foil.stretched_ptfe")
 
         //Dusts & Pulps 4500-4999
 
@@ -456,6 +468,9 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10316, "clay_graphite_paste")
         addItem(10317, "clay_graphite_crucible")
         addItem(10318, "raw_clay_graphite_crucible")
+        addItem(10319, "raw_carbon_plate")
+        addItem(10320, "carbon_plate")
+        addItem(10321, "graphite_plate")
 
         // Alumina Refractories 10330-10340
         addItem(10330, "cac_clinker")
