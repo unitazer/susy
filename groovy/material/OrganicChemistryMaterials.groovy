@@ -3270,6 +3270,8 @@ class OrganicChemistryMaterials {
                 .color(0x2dad80)
                 .build()
 
+        // FREE IDs: 15512-15513
+
         TrimethylGallium = new Material.Builder(15514, SuSyUtility.susyId('trimethyl_gallium'))
                 .liquid()
                 .components(Gallium * 1, Carbon * 3, Hydrogen * 9)

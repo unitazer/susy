@@ -15,7 +15,7 @@ import postInit.utils.RecyclingHelper
 log.infoMC("Running Batteries.groovy...")
 
 mods.jei.ingredient.yeet(
-//        metaitem('battery.re.ulv.tantalum'),
+    metaitem('battery.re.ulv.tantalum'),
     metaitem('battery.zpm.naquadria'),
     metaitem('battery.uv.naquadria'),
     metaitem('energy.module'),
@@ -29,13 +29,13 @@ mods.jei.ingredient.yeet(
     metaitem('battery.re.hv.sodium'),
     metaitem('battery.re.lv.lithium'),
     metaitem('battery.re.mv.lithium'),
-//        metaitem('battery.re.hv.lithium'),
+    metaitem('battery.re.hv.lithium'),
     metaitem('battery.re.lv.cadmium'),
     metaitem('battery.re.mv.cadmium'),
-//        metaitem('battery.re.hv.cadmium'),
+    metaitem('battery.re.hv.cadmium'),
     metaitem('energy_crystal'),
     metaitem('lapotron_crystal'),
-//        metaitem('battery.ev.vanadium'),
+    metaitem('battery.ev.vanadium'),
     metaitem('battery.iv.vanadium'),
     metaitem('battery.luv.vanadium'),
     metaitem('energy.lapotronic_orb'),
@@ -45,7 +45,7 @@ mods.jei.ingredient.yeet(
     mods.jei.ingredient.yeet(battery)
 }
 
-['lv', 'mv', 'iv', 'luv', 'zpm', 'uv'].each { voltage ->
+['lv', 'mv', 'hv', 'iv', 'ev', 'luv', 'zpm', 'uv'].each { voltage ->
     crafting.remove('gregtech:battery_hull_' + voltage)
     RecyclingHelper.removeRecyclingRecipes(metaitem('battery.hull.' + voltage))
     mods.jei.ingredient.yeet((metaitem('battery.hull.' + voltage)))
@@ -507,6 +507,15 @@ ASSEMBLER.recipeBuilder()
     .buildAndRegister()
 
 // Nickel Metal Hydride Battery
+
+// Liquid AB-2 Metal Alloy * 4320
+mods.gregtech.advanced_arc_furnace.removeByInput(1920, [metaitem('dustHighPurityZirconium') * 8, metaitem('dustTitanium') * 2, metaitem('dustVanadium') * 6, metaitem('dustManganese') * 3, metaitem('dustPalladium'), metaitem('dustNickel') * 8, metaitem('dustIron') * 2, metaitem('circuit.integrated').withNbt(['Configuration': 17])], [fluid('refractory_gunning_mixture') * 1700, fluid('argon') * 1500])
+mods.gregtech.advanced_arc_furnace.removeByInput(1920, [metaitem('dustHighPurityZirconium') * 8, metaitem('dustTitanium') * 2, metaitem('dustVanadium') * 6, metaitem('dustManganese') * 3, metaitem('dustPalladium'), metaitem('dustNickel') * 8, metaitem('dustIron') * 2, metaitem('circuit.integrated').withNbt(['Configuration': 7])], [fluid('refractory_gunning_mixture') * 2600])
+
+// Liquid Annealed AB-5 Metal Alloy * 8640
+mods.gregtech.advanced_arc_furnace.removeByInput(1920, [metaitem('dustLanthanum') * 8, metaitem('dustHighPurityZirconium') * 2, metaitem('dustNickel') * 45, metaitem('dustAluminium') * 5, metaitem('circuit.integrated').withNbt(['Configuration': 14])], [fluid('refractory_gunning_mixture') * 3650, fluid('argon') * 3000])
+mods.gregtech.advanced_arc_furnace.removeByInput(1920, [metaitem('dustLanthanum') * 8, metaitem('dustHighPurityZirconium') * 2, metaitem('dustNickel') * 45, metaitem('dustAluminium') * 5, metaitem('circuit.integrated').withNbt(['Configuration': 4])], [fluid('refractory_gunning_mixture') * 5550])
+
 
 ADVANCED_ARC_FURNACE.recipeBuilder()
     .inputs(ore('dustHighPurityZirconium') * 8)
