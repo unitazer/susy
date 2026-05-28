@@ -24,9 +24,7 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(100, "cement.clinker")
         addItem(101, "hot.cement.clinker")
         addItem(102, "cement.dust")
-
-        // Free ID: 103
-
+        addItem(103, "graphite_paper")
         addItem(104, "shape.mold.rod")
         addItem(105, "shape.mold.crucible")
         addItem(106, "crucible.boron.nitride")
@@ -470,6 +468,9 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(10316, "clay_graphite_paste")
         addItem(10317, "clay_graphite_crucible")
         addItem(10318, "raw_clay_graphite_crucible")
+        addItem(10319, "raw_carbon_plate")
+        addItem(10320, "carbon_plate")
+        addItem(10321, "graphite_plate")
 
         // Alumina Refractories 10330-10340
         addItem(10330, "cac_clinker")

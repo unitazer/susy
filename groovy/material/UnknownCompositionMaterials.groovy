@@ -3347,13 +3347,9 @@ class UnknownCompositionMaterials {
                 .color(0x5B5B5B)
                 .build()
 
-        GraphitePaper = new Material.Builder(4730, SuSyUtility.susyId('graphite_paper'))
-                .dust()
-                .flags(GENERATE_FOIL, NO_UNIFICATION)
-                .color(0x5B5B5B)
-                .build()
+        // FREE ID: 4730
 
-        VanadiumElectrolyteSlurry = new Material.Builder(4731, SuSyUtility.susyId('vanadium_electrolyte_slurry'))
+        /*VanadiumElectrolyteSlurry = new Material.Builder(4731, SuSyUtility.susyId('vanadium_electrolyte_slurry'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .color(0xE05F3E)
                 .build()
@@ -3367,7 +3363,7 @@ class UnknownCompositionMaterials {
         VanadiumBatteryElectrolyte = new Material.Builder(4733, SuSyUtility.susyId('vanadium_battery_electrolyte'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .color(0xFF6C47)
-                .build()
+                .build()*/
 
         GrapheneOxideDispersion = new Material.Builder(4734, SuSyUtility.susyId('graphene_oxide_dispersion'))
                 .liquid()
@@ -3403,21 +3399,15 @@ class UnknownCompositionMaterials {
                 .color(0xAD0079)
                 .build()
 
-        NafionDispersion = new Material.Builder(4740, SuSyUtility.susyId('nafion_dispersion'))
-                .liquid()
-                .color(0xcfccb0)
-                .flags(DISABLE_DECOMPOSITION)
-                .build()
-
-        NafionDispersion.setFormula('([(C2F4)(C7HF13O5S)]n)((CH3)2CHOH)', true)
+        // FREE ID: 4740
 
         NanoparticleModifiedNafion = new Material.Builder(4741, SuSyUtility.susyId('nanoparticle_modified_nafion'))
                 .dust()
-                .polymer(1)
                 .flags(GENERATE_PLATE, GENERATE_FOIL)
                 .iconSet("SHINY")
                 .color(0x99947A)
                 .build()
+                
         NanoparticleModifiedNafion.setFormula('[(C2F4)(C7HF13O5S)]n', true)
 
         NanoparticleModifiedNafionDispersion = new Material.Builder(4742, SuSyUtility.susyId('nanoparticle_modified_nafion_dispersion'))

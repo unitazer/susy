@@ -415,8 +415,8 @@ ASSEMBLER.recipeBuilder()
 ASSEMBLER.recipeBuilder()
         .circuitMeta(5)
         .inputs(ore('plateStainlessSteel') * 4)
-        .inputs(ore('ringStainlessSteel') * 1)
-        .inputs(ore('nuggetStainlessSteel') * 1)
+        .inputs(ore('ringStainlessSteel'))
+        .inputs(ore('nuggetStainlessSteel'))
         .outputs(metaitem('battery.stainless_steel_hull.hv'))
         .duration(40)
         .EUt(VA[HV])
@@ -425,8 +425,8 @@ ASSEMBLER.recipeBuilder()
 ASSEMBLER.recipeBuilder()
         .circuitMeta(7)
         .inputs(ore('plateStainlessSteel') * 6)
-        .inputs(ore('ringStainlessSteel') * 1)
-        .inputs(ore('nuggetStainlessSteel') * 1)
+        .inputs(ore('ringStainlessSteel'))
+        .inputs(ore('nuggetStainlessSteel'))
         .outputs(metaitem('battery.stainless_steel_hull.ev'))
         .duration(40)
         .EUt(VA[HV])
@@ -679,15 +679,13 @@ mods.gregtech.assembler.recipeBuilder()
         .EUt(16)
         .buildAndRegister()
 
-
-
 //Vanadium flow battery (for PSS)
 
 //Electrode
 //Source: https://hal.umontpellier.fr/hal-01670248/file/Carbon%2C%202017%2C%20122%2C%20564-591.pdf
 EXTRUDER.recipeBuilder()
         .notConsumable(metaitem('shape.extruder.wire'))
-        .inputs(metaitem('boltSteel'))
+        .inputs(ore('boltSteel'))
         .outputs(metaitem('needle.steel') * 4)
         .duration(50)
         .EUt(VA[MV])
@@ -702,25 +700,39 @@ BENDER.recipeBuilder()
 
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('needle.steel.barbed') * 64)
-        .inputs(metaitem('plateSteel'))
+        .inputs(ore('plateSteel'))
         .outputs(metaitem('needle_assembly.steel.barbed'))
         .duration(270)
         .EUt(VA[MV])
         .buildAndRegister()
 
-mods.gregtech.assembler.recipeBuilder()
+// Thin Polyacrylonitrile (PAN) Sheet * 4
+mods.gregtech.extruder.removeByInput(24, [metaitem('ingotPolyacrylonitrile'), metaitem('shape.extruder.foil')], null)
+// Thin Polyacrylonitrile (PAN) Sheet * 4
+mods.gregtech.extruder.removeByInput(24, [metaitem('dustPolyacrylonitrile'), metaitem('shape.extruder.foil')], null)
+
+ASSEMBLER.recipeBuilder()
+        .inputs(ore('threadPolyacrylonitrile') * 8)
+        .circuitMeta(2)
+        .outputs(metaitem('foilPolyacrylonitrile'))
+        .duration(40)
+        .EUt(VA[MV])
+        .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
         .notConsumable(metaitem('needle_assembly.steel.barbed'))
-        .inputs(metaitem('foilPolyacrylonitrile'))
+        .inputs(ore('foilPolyacrylonitrile'))
         .outputs(metaitem('foil.punched_polyacrylonitrile'))
         .duration(40)
         .EUt(VA[MV])
         .buildAndRegister()
 
-mods.gregtech.pyrolyse_oven.recipeBuilder()
+TUBE_FURNACE.recipeBuilder()
+        .fluidInputs(fluid('argon') * 50)
         .inputs(metaitem('foil.punched_polyacrylonitrile'))
         .outputs(metaitem('foil.carbon_felt'))
         .duration(300)
-        .EUt(VA[HV])
+        .EUt(VA[EV])
         .buildAndRegister()
 
 ROASTER.recipeBuilder()
@@ -730,53 +742,6 @@ ROASTER.recipeBuilder()
         .duration(180)
         .EUt(VA[MV])
         .buildAndRegister()
-
-//Electrolyte
-//Source (vanadium trioxide): https://link.springer.com/article/10.1007/s11837-025-07551-4?error=cookies_not_supported&code=6b81ec58-e6be-4dd8-a108-381282b53313
-ROASTER.recipeBuilder()
-        .inputs(ore('dustAmmoniumMetavanadate') * 90)
-        .inputs(ore('dustCarbon') * 7)
-        .fluidOutputs(fluid('ammonia_solution') * 8000)
-        .fluidOutputs(fluid('carbon_monoxide') * 7000)
-        .fluidOutputs(fluid('nitrogen') * 2000)
-        .outputs(metaitem('dustVanadiumTrioxide') * 25)
-        .duration(1000)
-        .circuitMeta(2)
-        .EUt(VA[HV])
-        .buildAndRegister()
-//10 NH4VO3 + 7 C -> 5 V2O3 + 7 CO + 8 H2O + N2 + 8 NH3
-//source says 6.8% carbon by weight, which is about 10:7 NH4VO3:C
-
-//Source (electrolyte): https://patents.google.com/patent/CA2627130A1/en
-MIXER.recipeBuilder()
-        .inputs(ore('dustVanadiumTrioxide') * 15)
-        .inputs(ore('dustVanadiumPentoxide') * 7)
-        .fluidInputs(fluid('sulfuric_acid') * 5000)
-        .fluidInputs(fluid('phosphoric_acid') * 500)
-        .notConsumable(fluid('argon') * 1000)
-        .fluidOutputs(fluid('vanadium_electrolyte_slurry') * 5500)
-        .duration(500)
-        .EUt(VA[EV])
-        .buildAndRegister()
-
-CRYSTALLIZER.recipeBuilder()
-        .fluidInputs(fluid('vanadium_electrolyte_slurry') * 5500)
-        .notConsumable(metaitem('springNichrome'))
-        .outputs(metaitem('dustCrystallizedVanadiumElectrolyte') * 1)
-        .fluidOutputs(fluid('dense_steam') * 5750)// 1 sulfuric acid -> 1 water, 1 phosphoric -> 1.5 water
-        .duration(400)
-        .EUt(VA[MV])
-        .buildAndRegister()
-
-MIXER.recipeBuilder()
-        .inputs(metaitem('dustCrystallizedVanadiumElectrolyte') * 1)
-        .fluidInputs(fluid('distilled_water') * 14000)
-        .notConsumable(metaitem('springNichrome'))
-        .fluidOutputs(fluid('vanadium_battery_electrolyte') * 14000)
-        .duration(360)
-        .EUt(VA[MV])
-        .buildAndRegister()
-
 
 //Membrane
 //Source (DADMAC): https://en.wikipedia.org/wiki/PolyDADMAC
@@ -802,27 +767,8 @@ POLYMERIZATION_TANK.recipeBuilder()
         .fluidInputs(fluid('diallyldimethylammonium_chloride_solution') * 2000)
         .fluidInputs(fluid('tert_butyl_hydroperoxide') * 50)
         .fluidOutputs(fluid('polydiallyldimethylammonium_chloride_solution') * 2000)
-        .duration(350)
-        .EUt(VA[HV])
-        .buildAndRegister()
-
-//Source (graphene oxide):  https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202408972
-ELECTROLYTIC_CELL.recipeBuilder()
-        .inputs(metaitem('carbon.fibers') * 16)
-        .fluidInputs(fluid('nitric_acid') * 50)
-        .fluidInputs(fluid('water') * 950)
-        .notConsumable(metaitem('stickPlatinum') * 1)
-        .fluidOutputs(fluid('graphene_oxide_dispersion') * 1000)
         .duration(200)
-        .EUt(VA[HV])
-        .buildAndRegister()
-
-DRYER.recipeBuilder()
-        .fluidInputs(fluid('graphene_oxide_dispersion') * 1000)
-        .outputs(metaitem('dustGrapheneOxide') * 1)
-        .fluidOutputs(fluid('dense_steam') * 1000)
-        .duration(2000)
-        .EUt(VA[LV])
+        .EUt(VA[MV])
         .buildAndRegister()
 
 //Source (membrane): https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202109427
@@ -830,42 +776,41 @@ DRYER.recipeBuilder()
 //source wasn't 100% clear on the manufacturing process, verification would be appreciated
 
 BR.recipeBuilder()
-        .inputs(metaitem('dustGrapheneOxide') * 1)
+        .inputs(metaitem('dustGrapheneOxide'))
         .fluidInputs(fluid('sodium_tungstate_solution') * 300)//0.3 H20, 0.6 Na
         .fluidInputs(fluid('polydiallyldimethylammonium_chloride_solution') * 600)//0.3 H2O
         .fluidOutputs(fluid('graphene_oxide_tungstate_solution') * 900)//0.6 H2O, 0.3 polydadmac, 0.6 Na
-        .duration(240)
-        .EUt(VA[EV])
+        .duration(200)
+        .EUt(VA[MV])
         .buildAndRegister()
 
 BR.recipeBuilder()
         .fluidInputs(fluid('graphene_oxide_tungstate_solution') * 900)//0.6 H2O, 0.3 polydadmac, 0.6 Na
         .fluidInputs(fluid('hydrochloric_acid') * 600)//0.6 H2O, 0.6 Cl
         .fluidOutputs(fluid('acidified_graphene_oxide_tungstate_solution') * 1500)// 1.2 H2O, 0.3 polydadmac, 0.6 NaCl
-        .duration(400)
+        .duration(200)
         .EUt(VA[MV])
         .buildAndRegister()
 
 CENTRIFUGE.recipeBuilder()
         .fluidInputs(fluid('acidified_graphene_oxide_tungstate_solution') * 1500)
         .fluidInputs(fluid('deionized_water') * 2000)
-        .outputs(metaitem('dustAcidifiedGrapheneOxideTungstate') * 1)//0.3 dadmac goes into the dust
-        .fluidOutputs(fluid('diluted_salt_water') * 1200)//maybe just 3200 wastewater?
-        .fluidOutputs(fluid('wastewater') * 2000)
-        .duration(300)
+        .outputs(metaitem('dustAcidifiedGrapheneOxideTungstate'))//0.3 dadmac goes into the dust
+        .fluidOutputs(fluid('wastewater') * 3200)
+        .duration(200)
         .EUt(VA[MV])
         .buildAndRegister()
 
 TUBE_FURNACE.recipeBuilder() //source says "annealed in a muffle furnace", tube furnace is imo the closest, though it could be the resistance furnace
-        .inputs(metaitem('dustAcidifiedGrapheneOxideTungstate') * 1)
-        .outputs(metaitem('dustTungstenModifiedGrapheneOxideNanosheet') * 1)
+        .inputs(metaitem('dustAcidifiedGrapheneOxideTungstate'))
+        .outputs(metaitem('dustTungstenModifiedGrapheneOxideNanosheet'))
         .duration(200)
         .EUt(VA[HV])
         .buildAndRegister()
 
 MIXER.recipeBuilder()
         .fluidInputs(fluid('isopropyl_alcohol') * 1000)
-        .inputs(metaitem('dustNafion') * 1)
+        .inputs(metaitem('dustNafion'))
         .fluidOutputs(fluid('nafion_dispersion') * 1000)
         .duration(140)
         .EUt(VA[MV])
@@ -873,7 +818,7 @@ MIXER.recipeBuilder()
 
 MIXER.recipeBuilder()
         .fluidInputs(fluid('nafion_dispersion') * 1000)
-        .inputs(metaitem('dustTinyTungstenModifiedGrapheneOxideNanosheet') * 1)
+        .inputs(metaitem('dustTinyTungstenModifiedGrapheneOxideNanosheet'))
         .fluidOutputs(fluid('nanoparticle_modified_nafion_dispersion') * 1000)
         .duration(320)
         .EUt(VA[EV])
@@ -881,53 +826,11 @@ MIXER.recipeBuilder()
 
 DISTILLERY.recipeBuilder()
         .fluidInputs(fluid('nanoparticle_modified_nafion_dispersion') * 1000)
-        .fluidOutputs(fluid('isopropyl_alcohol') * 1000)
         .outputs(metaitem('dustNanoparticleModifiedNafion'))
+        .fluidOutputs(fluid('isopropyl_alcohol') * 1000)
         .duration(400)
         .EUt(VA[LV])
         .buildAndRegister()
-
-//Source (expanded PTFE): https://www.sciencedirect.com/science/chapter/monograph/abs/pii/B9781437778557000055?via%3Dihub
-//Free version: https://sci-hub.st/10.1016/B978-1-4377-7855-7.00005-5
-MIXER.recipeBuilder()
-        .fluidInputs(fluid('light_naphtha') * 90)//ptfe density is 2200 kg/m^3; 1 dust = 2200/9 = 244 kg; source says 17-22% naphtha by weight (i went with 20) -> 61 kg of naphtha; naphtha density is 0.7 -> 87 l of naphtha; round to 90.
-        .inputs(metaitem('dustPolytetrafluoroethylene'))
-        .outputs(metaitem('paste.lubricated_ptfe'))
-        .duration(120)
-        .EUt(VA[LV])
-        .buildAndRegister()
-
-FORMING_PRESS.recipeBuilder()
-        .inputs(metaitem('paste.lubricated_ptfe'))
-        .notConsumable(metaitem('shape.mold.cylinder'))
-        .outputs(metaitem('preform.lubricated_ptfe'))
-        .duration(60)
-        .EUt(VA[LV])
-        .buildAndRegister()
-
-EXTRUDER.recipeBuilder()
-        .inputs(metaitem('preform.lubricated_ptfe'))
-        .notConsumable(metaitem('shape.extruder.foil'))//source says 75 um thick after extrusion
-        .outputs(metaitem('foil.extruded_ptfe') * 4)
-        .duration(140)
-        .EUt(VA[MV])
-        .buildAndRegister()
-
-BENDER.recipeBuilder()//i think bender is the best fit, though it's not super accurate
-        .inputs(metaitem('foil.extruded_ptfe'))
-        .notConsumable(metaitem('springNichrome') * 2)
-        .outputs(metaitem('foil.stretched_ptfe'))
-        .duration(180)
-        .EUt(VA[HV])
-        .buildAndRegister()
-
-DRYER.recipeBuilder()
-        .inputs(metaitem('foil.stretched_ptfe'))
-        .outputs(metaitem('foilExpandedPolytetrafluoroethylene'))
-        .duration(1600)
-        .EUt(VA[LV])
-        .buildAndRegister()
-
 
 ASSEMBLER.recipeBuilder()
         .inputs(metaitem('foilNanoparticleModifiedNafion') * 4)
@@ -949,10 +852,9 @@ BR.recipeBuilder()
         .buildAndRegister()
 
 //Source (graphite paper): https://patents.google.com/patent/CN114853475A/en
-
 BENDER.recipeBuilder()
         .inputs(metaitem('expanded_graphite_worms') * 2)
-        .outputs(metaitem('foilGraphitePaper'))
+        .outputs(metaitem('graphite_paper'))
         .duration(120)
         .EUt(VA[MV])
         .buildAndRegister()
@@ -971,15 +873,15 @@ ASSEMBLER.recipeBuilder()
 
 ASSEMBLER.recipeBuilder()
         .inputs(item('gregtech:battery_block'))
-        .inputs(metaitem('foilGraphitePaper') * 2)
+        .inputs(metaitem('graphite_paper') * 2)
         .inputs(metaitem('platePolytetrafluoroethylene') * 2)
         .inputs(metaitem('foil.activated_carbon_felt') * 2)
         .inputs(metaitem('plateGraphite') * 2)
         .inputs(metaitem('plateCopper') * 2)
         .inputs(metaitem('membrane.vanadium_battery'))
         .inputs(metaitem('cableGtSinglePlatinum') * 2)
-        .notConsumable(metaitem('toolHeadDrillTungstenCarbide'))
-        .fluidInputs(fluid('vanadium_battery_electrolyte') * 14000)
+        .fluidInputs(fluid('vanadyl_sulfate_solution') * 8000)
+        .fluidInputs(fluid('vanadium_iii_sulfate_solution') * 8000)
         .outputs(item('gregtech:battery_block', 1))
         .duration(240)
         .EUt(VA[EV])
