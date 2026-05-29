@@ -3436,6 +3436,7 @@ metaitem.demolded_low_pressure_steam_turbine_blade.name=Demolded Low-Pressure St
 metaitem.decored_low_pressure_steam_turbine_blade.name=Decored Low-Pressure Steam Turbine Blade
 metaitem.milled_low_pressure_steam_turbine_blade.name=Milled Low-Pressure Steam Turbine Blade
 metaitem.low_pressure_steam_turbine_blade.name=Low-Pressure Steam Turbine Blade
+metaitem.sputtering_magnetron.name=Sputtering Magnetron
 
 
 # Vanilla MC

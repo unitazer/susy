@@ -403,6 +403,8 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(6529, "milled_low_pressure_steam_turbine_blade")
         addItem(6530, "low_pressure_steam_turbine_blade")
 
+        addItem(6531, "sputtering_magnetron")
+
 
         //Seed crystals 7000-7500
 

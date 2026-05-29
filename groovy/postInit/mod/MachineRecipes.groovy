@@ -1577,3 +1577,53 @@ RecyclingHelper.addShaped("gregtech:greenhouse", metaitem('susy:greenhouse'), [
         [metaitem('robot.arm.lv'), metaitem('hull.lv'), metaitem('robot.arm.lv')],
         [ore('circuitLv'), ore('cableGtSingleTin'), ore('circuitLv')],
 ])
+
+// Sputtering Machine
+
+VACUUM_CHAMBER.recipeBuilder()
+        .inputs(ore('plateVanadiumSteel') * 6)
+        .inputs(ore('plateAnnealedCopper') * 2)
+        .inputs(ore('ringAlnicoMagnetic') * 4)
+        .inputs(ore('cableGtDoubleAluminium') * 2)
+        .fluidInputs(fluid('rubber') * 288)
+        .outputs(metaitem('sputtering_magnetron'))
+        .EUt(VA[HV])
+        .duration(280)
+        .buildAndRegister()
+
+VACUUM_CHAMBER.recipeBuilder()
+        .inputs(ore('plateVanadiumSteel') * 6)
+        .inputs(ore('plateAnnealedCopper') * 2)
+        .inputs(ore('ringAlnicoMagnetic') * 4)
+        .inputs(ore('cableGtDoubleAluminium') * 2)
+        .fluidInputs(fluid('silicone_rubber') * 288)
+        .outputs(metaitem('sputtering_magnetron'))
+        .EUt(VA[HV])
+        .duration(280)
+        .buildAndRegister()
+
+VACUUM_CHAMBER.recipeBuilder()
+        .inputs(ore('plateVanadiumSteel') * 6)
+        .inputs(ore('plateAnnealedCopper') * 2)
+        .inputs(ore('ringAlnicoMagnetic') * 4)
+        .inputs(ore('cableGtDoubleAluminium') * 2)
+        .fluidInputs(fluid('styrene_butadiene_rubber') * 288)
+        .outputs(metaitem('sputtering_magnetron'))
+        .EUt(VA[HV])
+        .duration(280)
+        .buildAndRegister()
+
+for (i = 1; i <= 8; i++) {
+    RecyclingHelper.addShaped("gregtech:sputter_deposition." + Globals.voltageTiers[i], metaitem('susy:sputter_deposition.' + Globals.voltageTiers[i]), [
+            [tieredCables[i], metaitem('sputtering_magnetron'), tieredCables[i]],
+            [pumps[i], hulls[i], pumps[i]],
+            [tieredPlates[i], circuits[i], tieredPlates[i]]
+    ])
+}
+
+//EDM
+
+crafting.addShaped(metaitem('susy:electric_discharge_machine'),
+        [[ore('circuitEv'),metaitem('plate.power_integrated_circuit'),ore('circuitEv')],
+         [metaitem('cableGtOctalSilver'), metaitem('hull.ev'), metaitem('cableGtOctalSilver')],
+         [metaitem('electric.motor.hv'),metaitem('rotorTitanium'),metaitem('electric.pump.hv')]])
