@@ -3,6 +3,50 @@ import globals.Globals
 import static prePostInit.Recipemaps.*
 import static gregtech.api.GTValues.*
 
+MIXER.recipeBuilder()
+        .inputs(ore('dustAnyPurityCopper'))
+        .inputs(ore('dustTungsten') * 3)
+        .outputs(metaitem('dustCopperTungstenAlloy') * 4)
+        .duration(320)
+        .EUt(VA[HV])
+        .buildAndRegister()
+
+SINTERING_OVEN.recipeBuilder()
+        .inputs(ore('dustCopperTungstenAlloy') * 4)
+        .notConsumable(metaitem('shape.mold.rod'))
+        .fluidInputs(fluid('argon') * 100)
+        .outputs(metaitem('stickCopperTungstenAlloy'))
+        .duration(400)
+        .EUt(VA[HV])
+        .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('stickCopperTungstenAlloy'))
+        .inputs(metaitem('cableGtQuadrupleSilver') * 8)
+        .inputs(metaitem('electric.piston.ev'))
+        .inputs(metaitem('conveyor.module.ev') * 2)
+        .inputs(metaitem('robot.arm.ev'))
+        .inputs(metaitem('plateTitanium') * 8)
+        .fluidInputs(fluid('silicone_rubber') * 576)
+        .outputs(item('susy:edm_electrode'))
+        .duration(600)
+        .EUt(VA[EV])
+        .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('stickCopperTungstenAlloy'))
+        .inputs(metaitem('cableGtQuadrupleSilver') * 8)
+        .inputs(metaitem('electric.piston.ev'))
+        .inputs(metaitem('conveyor.module.ev') * 2)
+        .inputs(metaitem('robot.arm.ev'))
+        .inputs(metaitem('plateTitanium') * 8)
+        .fluidInputs(fluid('styrene_butadiene_rubber') * 576)
+        .outputs(item('susy:edm_electrode'))
+        .duration(600)
+        .EUt(VA[EV])
+        .buildAndRegister()
+
+
 def EDMDielectricFluids = [
         [fluid: fluid('lubricating_oil'), duration: 6],
         [fluid: fluid('polychlorinated_biphenyl'), duration: 3],
