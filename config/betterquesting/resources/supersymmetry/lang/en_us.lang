@@ -1,7 +1,7 @@
 susy.quest.ql.0.title=§l§a0 - Primitive Age
 susy.quest.ql.0.desc=§l§a-- PRIMITIVE AGE -- %nThings lurk in the shadows...%n%n- Find shelter%n- Prepare for the winter%n- Acquire basic resources%n- Try not to die%n%n
 susy.quest.ql.1.title=§61 - Starting a Revolution
-susy.quest.ql.1.desc=§6-- INDUSTRIAL AGE -- %nStarting a Revolution%n%n- Industrialize%n- Use the power of steam%n- Start producing electricity%n- Create the most basic electronics%n%n-- %nTier: 1 %nEU/t : 0 %n--
+susy.quest.ql.1.desc=§6-- INDUSTRIAL AGE -- %nStarting a Revolution%n%n- Industrialize%n- Use the power of steam%n- Start producing electricity%n- Create the most basic electronics%n%n-- %nTier: 1 %nEU/t: 0 %n--
 susy.quest.ql.2.title=§72 - Locked and Loaded
 susy.quest.ql.2.desc=§7-- LV AGE --%nLocked and Loaded%n%n- Setup basic automatic defenses%n- Dig down to the nether and face its horrors%n- Find new and better materials%n- Rain fire on your enemies with rockets%n%n--%nTier: 2%nEU/t: 32%n--
 susy.quest.ql.3.title=§63 - Moving Mountains
@@ -1349,7 +1349,7 @@ susy.quest.db.643.desc=100L of Hydrogen Fluoride and 50L of Chloroform in a §cC
 susy.quest.db.644.title=Polytetrafluoroethylene [Steps 21-23]
 susy.quest.db.644.desc=Now it is time to §6polymerize the tetrafluoroethylene§r. %n%nThe Fluorinated Detergent Mixture is produced from 13 §6PFOA (perfluorooctanoic acid) dust§r and 500L of water. %n%nWe produce 1500L of §6Tetrafluoroethylene Emulsion §rfrom 1000L of Tetrafluoroethylene and 500L of Fluorinated Detergent Mixture.%n%nThen, we take 1500L of this emulsion and 1 Tiny Potassium Persulfate Dust in a §cpolymerization tank §rto produce 500L of §6Polytetrafluoroethylene Solution§r, which is dried to produce §l§c§lPTFE Dust§r and 500L of Fluorinated Detergent Mixture§r, so you can loop the mixture back into the processing line.%n%n%n%n%n
 susy.quest.db.645.title=Elytra
-susy.quest.db.645.desc=The §6Elytra §ris made with PTFE and is a cheaper glider alternative to the §cJet Wingpack §r. Firework Rockets no longer propel the §6Elytra §rin flight.
+susy.quest.db.645.desc=The §6Elytra §ris made with PTFE and is a cheaper glider alternative to the §cJet Wingpack§r. Firework Rockets no longer propel the §6Elytra §rin flight.
 susy.quest.db.646.title=LV Item Magnet
 susy.quest.db.646.desc=The§7 Item Magnet§r allows you to pick up items from the ground at a high distance.
 susy.quest.db.647.title=Cracking Unit
