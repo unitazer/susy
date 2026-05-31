@@ -856,5 +856,19 @@ class FirstDegreeMaterialsB {
                 .colorAverage()
                 .build()
 
+        /*VanadiumTrioxide = new Material.Builder(8789, SuSyUtility.susyId('vanadium_trioxide'))
+                .dust()
+                .components(Vanadium * 2, Oxygen * 3)
+                .colorAverage()
+                .build()*/
+        
+        ExpandedPolytetrafluoroethylene = new Material.Builder(8789, SuSyUtility.susyId('expanded_polytetrafluoroethylene'))
+                .polymer(1)
+                .color(0x634F4F)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, NO_UNIFICATION)
+                .components(Carbon * 2, Fluorine * 4)
+                .macerateInto(Polytetrafluoroethylene)
+                .build();
+
     }
 }
