@@ -1,6 +1,6 @@
 package prePostInit;
 
-import globals.Globals
+import static globals.Globals.*
 
 import supersymmetry.common.blocks.SuSyBlocks
 import supersymmetry.common.blocks.SusyStoneVariantBlock
@@ -259,7 +259,7 @@ ore('stone').remove(item('susy:susy_stone_smooth:9'))
 ore('cobblestone').remove(item('susy:susy_stone_cobble:9'))
 
 //Dust oredicting
-Globals.elements.each { element ->
+elementList.each { element ->
     String anyPurityDust = "dustAnyPurity${element}"
     String highPurityDust = "dustHighPurity${element}"
     String normalDust = "dust${element}"
