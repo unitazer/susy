@@ -485,10 +485,19 @@ crafting.addShaped('susy:kimberlite_bricks', item('susy:susy_stone_bricks', 8) *
         [ore('stoneKimberlite'), ore('stoneKimberlite')]
 ])
 
-crafting.addShaped('susy:industrial_concrete_bricks', item('susy:susy_stone_bricks', 9) * 4, [
-        [item('susy:susy_stone_smooth', 9), item('susy:susy_stone_smooth', 9)],
-        [item('susy:susy_stone_smooth', 9), item('susy:susy_stone_smooth', 9)]
-])
+//Dotted Panels
+def panels = [4, 5, 6, 7]
+
+panels.each { number ->
+    ASSEMBLER.recipeBuilder()
+            .circuitMeta(number)
+            .inputs(metaitem('plateWroughtIron') * 4)
+            .inputs(metaitem('screwWroughtIron') * 2)
+            .outputs(item('susy:random_concrete', number) * 8)
+            .duration(80)
+            .EUt(VA[LV])
+            .buildAndRegister()
+}
 
 crafting.addShapeless('marble_conversion', item('gregtech:stone_smooth', 2), [item('chisel:marble2', 7)])
 
