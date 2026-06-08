@@ -930,7 +930,12 @@ class ThirdDegreeMaterials {
                 .colorAverage()
                 .build()
 
-
+        IsopreneSolution = new Material.Builder(13186, SuSyUtility.susyId('isoprene_solution'))
+                .liquid()
+                .components(Water, Isoprene, Formaldehyde)
+                .colorAverage()
+                .build()
+      
         NafionDispersion = new Material.Builder(24151, SuSyUtility.susyId('nafion_dispersion'))
                 .liquid()
                 .components(Nafion, IsopropylAlcohol)
