@@ -27,7 +27,7 @@ MIXER.recipeBuilder()
         .EUt(VA[MV])
         .buildAndRegister()
 
-MIXER.recipeBuilder()
+CHEMICAL_BATH.recipeBuilder()
         .inputs(metaitem('dustRawInvestmentCastingMixture') * 25)
         .fluidInputs(fluid('tetraethyl_orthosilicate') * 1000)
         .outputs(metaitem('dustSilicaCoatedInvestmentCastingMixture') * 25)
@@ -153,7 +153,7 @@ CHEMICAL_BATH.recipeBuilder()
 
 ASSEMBLER.recipeBuilder()//not the best machine for this, chembath would be better but only has 1 input slot
         .inputs(metaitem('ceramic_coated_wax_turbine_blade_mold') * 1)
-        .inputs(metaitem('dustZircon') * 1)
+        .inputs(metaitem('dustZircon') * 2)
         .notConsumable(metaitem('dustZircon') * 16)
         .outputs(metaitem('stuccoed_ceramic_turbine_blade_mold') * 1)
         .duration(100)
