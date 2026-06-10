@@ -3404,7 +3404,7 @@ class UnknownCompositionMaterials {
         // FREE ID: 4740
 
         NanoparticleModifiedNafion = new Material.Builder(4741, SuSyUtility.susyId('nanoparticle_modified_nafion'))
-                .dust()
+                .polymer().ingot()
                 .flags(GENERATE_PLATE, GENERATE_FOIL)
                 .iconSet("SHINY")
                 .color(0x99947A)
