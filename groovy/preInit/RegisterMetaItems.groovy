@@ -376,9 +376,47 @@ eventManager.listen { PostMaterialEvent event ->
         addItem(6303, "anode_slime.copper")
         addItem(6304, "anode_slime.decopperized")
 
-        // Metallurgy 6400-6500
+        // Metallurgy 6400-6499
         addItem(6400, "work_roll.unfinished")
         addItem(6401, "nozzle.boron_nitride")
+
+        //Turbines 6500-6800
+        addItem(6500, "turbine_blade_core_die")
+        addItem(6501, "turbine_blade_shape_die")
+        addItem(6502, "investment_casting_binder")
+        addItem(6503, "turbine_blade_casting_core")
+        addItem(6504, "fired_turbine_blade_casting_core")
+        addItem(6505, "investment_casting_wax")
+        addItem(6506, "wax_turbine_blade_mold")
+        addItem(6507, "ceramic_coated_wax_turbine_blade_mold")
+        addItem(6508, "stuccoed_ceramic_turbine_blade_mold")
+        addItem(6509, "dried_ceramic_turbine_blade_mold")
+        addItem(6510, "dewaxed_ceramic_turbine_blade_mold")
+        addItem(6511, "turbine_blade_mold")
+        addItem(6512, "bridgman_furnace")
+
+        addItem(6513, "cast_gas_turbine_blade")
+        addItem(6514, "demolded_gas_turbine_blade")
+        addItem(6515, "decored_gas_turbine_blade")
+        addItem(6516, "milled_gas_turbine_blade")
+        addItem(6517, "surface_finished_gas_turbine_blade")
+        addItem(6518, "platinum_coated_gas_turbine_blade")
+        addItem(6519, "platinum_aluminide_coated_gas_turbine_blade")
+        addItem(6520, "gas_turbine_blade")
+        
+        addItem(6521, "cast_high_pressure_steam_turbine_blade")
+        addItem(6522, "demolded_high_pressure_steam_turbine_blade")
+        addItem(6523, "decored_high_pressure_steam_turbine_blade")
+        addItem(6524, "milled_high_pressure_steam_turbine_blade")
+        addItem(6525, "high_pressure_steam_turbine_blade")
+        addItem(6526, "cast_low_pressure_steam_turbine_blade")
+        addItem(6527, "demolded_low_pressure_steam_turbine_blade")
+        addItem(6528, "decored_low_pressure_steam_turbine_blade")
+        addItem(6529, "milled_low_pressure_steam_turbine_blade")
+        addItem(6530, "low_pressure_steam_turbine_blade")
+
+        addItem(6531, "sputtering_magnetron")
+
 
         //Seed crystals 7000-7500
 
