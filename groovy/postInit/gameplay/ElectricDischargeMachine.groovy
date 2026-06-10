@@ -27,25 +27,11 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('conveyor.module.ev') * 2)
         .inputs(metaitem('robot.arm.ev'))
         .inputs(metaitem('plateTitanium') * 8)
-        .fluidInputs(fluid('silicone_rubber') * 576)
+        .fluidInputs(fluid('polytetrafluoroethylene') * 576)
         .outputs(item('susy:edm_electrode'))
         .duration(600)
         .EUt(VA[EV])
         .buildAndRegister()
-
-ASSEMBLER.recipeBuilder()
-        .inputs(metaitem('stickCopperTungstenAlloy'))
-        .inputs(metaitem('cableGtQuadrupleSilver') * 8)
-        .inputs(metaitem('electric.piston.ev'))
-        .inputs(metaitem('conveyor.module.ev') * 2)
-        .inputs(metaitem('robot.arm.ev'))
-        .inputs(metaitem('plateTitanium') * 8)
-        .fluidInputs(fluid('styrene_butadiene_rubber') * 576)
-        .outputs(item('susy:edm_electrode'))
-        .duration(600)
-        .EUt(VA[EV])
-        .buildAndRegister()
-
 
 def EDMDielectricFluids = [
         [fluid: fluid('lubricating_oil'), duration: 6],

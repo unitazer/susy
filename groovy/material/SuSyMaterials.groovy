@@ -2466,8 +2466,8 @@ class SuSyMaterials {
     public static Material RawNitrileRubber
     public static Material NitrileRubber
     public static Material Norbornene
-    public static Material DicyclopentadieneNorborneneResin
-    public static Material HydrogenatedDicyclopentadieneNorborneneResin
+    public static Material PetroleumResin
+    public static Material HydrogenatedPetroleumResin
 
     public static Material TrimethylGallium
     public static Material TrimethylIndium
@@ -2623,7 +2623,7 @@ class SuSyMaterials {
     public static Material KetoneAlcoholOil
     public static Material AcetyleneSolution
     public static Material PolycaprolactamSolution
-    public static Material DicyclopentadieneNorborneneResinSolution
+    public static Material PetroleumResinSolution
     public static Material TrimethylGalliumSolution
     public static Material TrimethylIndiumSolution
     public static Material DiallyldimethylammoniumChlorideSolution

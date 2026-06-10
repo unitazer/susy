@@ -2841,9 +2841,9 @@ susy.material.raw_investment_casting_mixture=Raw Investment Casting Mixture
 susy.material.silica_coated_investment_casting_mixture=Silica-Coated Investment Casting Mixture
 susy.material.dried_silica_coated_investment_casting_mixture=Dried Silica-Coated Investment Casting Mixture
 susy.material.norbornene=Norbornene
-susy.material.dicyclopentadiene_norbornene_resin_solution=Dicyclopentadiene-Norbornene Resin Solution
-susy.material.dicyclopentadiene_norbornene_resin=Dicyclopentadiene-Norbornene Resin
-susy.material.hydrogenated_dicyclopentadiene_norbornene_resin=Hydrogenated Dicyclopentadiene-Norbornene Resin
+susy.material.petroleum_resin_solution=Petroleum Resin Solution
+susy.material.petroleum_resin=Petroleum Resin
+susy.material.hydrogenated_petroleum_resin=Hydrogenated Petroleum Resin
 
 
 susy.material.diallyldimethylammonium_chloride=Diallyldimethylammonium Chloride (DADMAC)

@@ -3365,21 +3365,21 @@ class OrganicChemistryMaterials {
                 .color(0xfffff0)
                 .build()
 
-        DicyclopentadieneNorborneneResin = new Material.Builder(15528, SuSyUtility.susyId('dicyclopentadiene_norbornene_resin'))
+        PetroleumResin = new Material.Builder(15528, SuSyUtility.susyId('petroleum_resin'))
                 .polymer(1)
                 .iconSet(ROUGH)
                 .color(0xA8B277)
                 .build()
 
-        DicyclopentadieneNorborneneResin.setFormula("[(C10H12)9(C7H10)]n", true)
+        PetroleumResin.setFormula("[(C10H12)9(C7H10)]n", true)
 
-        HydrogenatedDicyclopentadieneNorborneneResin = new Material.Builder(15529, SuSyUtility.susyId('hydrogenated_dicyclopentadiene_norbornene_resin'))
+        HydrogenatedPetroleumResin = new Material.Builder(15529, SuSyUtility.susyId('hydrogenated_petroleum_resin'))
                 .polymer(1)
                 .iconSet(DIAMOND)
                 .color(0xA8B277)
                 .build()
 
-        HydrogenatedDicyclopentadieneNorborneneResin.setFormula("[(C10H12)9(C7H10)]n", true) //should there be more hydrogen here?
+        HydrogenatedPetroleumResin.setFormula("[(C10H12)9(C7H10)]n", true) //should there be more hydrogen here?
 
     }
 }
