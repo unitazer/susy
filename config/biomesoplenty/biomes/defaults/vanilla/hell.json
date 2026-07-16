@@ -12,15 +12,6 @@
       "amountPerChunk": 1.5,
       "enable": true
     },
-    "hive": {
-      "maxRadius": 9,
-      "bottomExtra": 4,
-      "amountPerChunk": 0.2,
-      "enable": true,
-      "halfHeight": 7,
-      "emptyChance": 0.25,
-      "layerSize": 3
-    },
     "miners_delight": {
       "with": {
         "block": "biomesoplenty:flower_1",
